@@ -74,9 +74,9 @@ def get_chapters(weeks):
 def depth_to_base(depth: int) -> str:
     """Relative path prefix from a file at given depth to repo root.
 
-    depth=0 -> ''  (e.g. dist/ja/index.html)
-    depth=1 -> '../'  (e.g. dist/ja/chapter/1/index.html)
-    depth=2 -> '../../'  (e.g. dist/ja/flashcard/1/1/index.html)
+    depth=1 -> '../'         (e.g. dist/ja/index.html)
+    depth=2 -> '../../'     (e.g. dist/ja/chapter/1/index.html)
+    depth=3 -> '../../../'  (e.g. dist/ja/flashcard/1/1/index.html)
     """
     return "../" * depth
 
@@ -197,25 +197,23 @@ def main():
 
     # Render pages for each language
     for lang in LANGS:
-        base_root = ""  # at dist/{lang}/index.html, root assets are ./static/
-        env = make_env(lang, base_root)
-
-        # 1) /{lang}/                      depth=0  base=""
-        home_html = render_home(env, lang, chapters)
+        # 1) /{lang}/                      depth=1  base="../"
+        env_home = make_env(lang, "../")
+        home_html = render_home(env_home, lang, chapters)
         write(DIST / lang / "index.html", home_html)
 
-        # 2) /{lang}/chapter/<w>/          depth=2  base="../"
+        # 2) /{lang}/chapter/<w>/          depth=2  base="../../"
         for w in sorted(weeks.keys()):
-            env_w = make_env(lang, "../")
+            env_w = make_env(lang, "../../")
             html = render_chapter(env_w, w, weeks[w], lang)
             write(DIST / lang / "chapter" / str(w) / "index.html", html)
 
-            # 3) /{lang}/flashcard/<w>/      depth=2  base="../"
+            # 3) /{lang}/flashcard/<w>/      depth=2  base="../../"
             html = render_flashcard_overview(env_w, w, weeks[w], lang)
             write(DIST / lang / "flashcard" / str(w) / "index.html", html)
 
-            # 4) /{lang}/flashcard/<w>/<d>/  depth=3  base="../../"
-            env_wd = make_env(lang, "../../")
+            # 4) /{lang}/flashcard/<w>/<d>/  depth=3  base="../../../"
+            env_wd = make_env(lang, "../../../")
             for lesson in weeks[w].get("lessons", []):
                 html = render_flashcard(env_wd, w, lesson["day"], lesson, lang)
                 write(
@@ -223,7 +221,7 @@ def main():
                     html,
                 )
 
-            # 5) /{lang}/exercise/<w>/<mode>/  depth=3  base="../../"
+            # 5) /{lang}/exercise/<w>/<mode>/  depth=3  base="../../../"
             for mode in ("practice", "quiz"):
                 if mode == "practice":
                     qs = weeks[w].get("practice", {}).get("questions", [])
@@ -244,7 +242,7 @@ def main():
                 )
 
         # 6) /{lang}/404/ (for unknown routes within this lang)
-        env_404 = make_env(lang, "../")
+        env_404 = make_env(lang, "../../")
         write(DIST / lang / "404.html", render_404(env_404, lang))
 
         print(f"  rendered /{lang}/ pages")
