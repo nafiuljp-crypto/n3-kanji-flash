@@ -2,7 +2,7 @@
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
 <section class="chapter-header">
-    <a href="{{ base }}chapter/{{ week }}/" class="back-link">{{ T.back_to_week.format(week=week) }}</a>
+    <a href="{{ base }}{{ lang }}/chapter/{{ week }}/" class="back-link">{{ T.back_to_week.format(week=week) }}</a>
     <h1>{{ title }}</h1>
     <p class="muted">{{ question_count }} {{ T.questions_summary.replace('{count}', '') }}</p>
 </section>
@@ -40,7 +40,7 @@
     </div>
     <div class="result-actions">
         <button id="retry-btn" class="btn btn-primary">{{ T.btn_try_again }}</button>
-        <a href="{{ base }}chapter/{{ week }}/" class="btn btn-link">{{ T.back_to_week.format(week=week) }}</a>
+        <a href="{{ base }}{{ lang }}/chapter/{{ week }}/" class="btn btn-link">{{ T.back_to_week.format(week=week) }}</a>
     </div>
 </section>
 

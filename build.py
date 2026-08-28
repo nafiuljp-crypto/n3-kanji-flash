@@ -29,6 +29,12 @@ STATIC_SRC = BASE_DIR / "static"
 DATA_DIR = BASE_DIR / "data"
 DIST = BASE_DIR / "dist"
 
+# GitHub Pages serves the project at https://<owner>.github.io/<repo>/.
+# All asset / page URLs in the built HTML must be absolute so they resolve
+# correctly from any nested page (GH Pages does NOT collapse "../" segments).
+# Override with SITE_BASE=/your-repo/ python3 build.py
+SITE_BASE = os.environ.get("SITE_BASE", "/n3-kanji-flash/")
+
 LANGS = ("ja", "en")          # ja first so default redirect lands here
 DEFAULT_LANG = "ja"
 
@@ -72,13 +78,8 @@ def get_chapters(weeks):
 
 
 def depth_to_base(depth: int) -> str:
-    """Relative path prefix from a file at given depth to repo root.
-
-    depth=1 -> '../'         (e.g. dist/ja/index.html)
-    depth=2 -> '../../'     (e.g. dist/ja/chapter/1/index.html)
-    depth=3 -> '../../../'  (e.g. dist/ja/flashcard/1/1/index.html)
-    """
-    return "../" * depth
+    """For absolute paths, depth doesn't matter — base is the same for all pages."""
+    return SITE_BASE
 
 
 def write(path: Path, content: str):
@@ -88,8 +89,13 @@ def write(path: Path, content: str):
 
 # ---------- template environment ----------
 
-def make_env(lang: str, base: str):
-    """Jinja2 env with helpers that mimic the Flask app's globals."""
+def make_env(lang: str, base: str = None):
+    """Jinja2 env with helpers that mimic the Flask app's globals.
+
+    The `base` argument is accepted for backwards compat but ignored —
+    every page gets the absolute SITE_BASE so URLs resolve on GH Pages
+    (which does not collapse "../" segments).
+    """
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATE_DIR)),
         autoescape=True,
@@ -100,6 +106,7 @@ def make_env(lang: str, base: str):
     # i18n
     from i18n import get_translations, SUPPORTED_LANGS  # noqa
     T = get_translations(lang)
+    base = SITE_BASE
 
     def T_get(key, **kwargs):
         val = T.get(key, key)

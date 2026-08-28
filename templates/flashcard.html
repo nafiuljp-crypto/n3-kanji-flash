@@ -2,7 +2,7 @@
 {% block title %}{{ T.title_day.format(day=day, title=lesson.title_jp) }}{% endblock %}
 {% block content %}
 <section class="chapter-header">
-    <a href="{{ base }}flashcard/{{ week }}/" class="back-link">{{ T.back_to_week_lessons.format(week=week) }}</a>
+    <a href="{{ base }}{{ lang }}/flashcard/{{ week }}/" class="back-link">{{ T.back_to_week_lessons.format(week=week) }}</a>
     <h1>{{ T.day_word }} {{ day }} · <span class="jp">{{ lesson.title_jp }}</span></h1>
     <p class="theme-en">{{ lesson.title_en }}</p>
 </section>

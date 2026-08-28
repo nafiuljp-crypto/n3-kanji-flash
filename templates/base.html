@@ -38,9 +38,9 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="{{ base }}index.html" class="nav-brand">📚 {{ T.brand }}</a>
+        <a href="{{ base }}{{ lang }}/" class="nav-brand">📚 {{ T.brand }}</a>
         <div class="nav-links">
-            <a href="{{ base }}index.html">{{ T.home_nav }}</a>
+            <a href="{{ base }}{{ lang }}/">{{ T.home_nav }}</a>
             <div class="lang-switch">
                 <span class="lang-label">{{ T.lang_label }}</span>
                 {% for code in supported_langs %}

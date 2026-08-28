@@ -10,7 +10,7 @@
     <h2>{{ T.select_chapter }}</h2>
     <div class="chapter-grid">
         {% for ch in chapters %}
-        <a href="{{ base }}chapter/{{ ch.week }}/" class="chapter-card">
+        <a href="{{ base }}{{ lang }}/chapter/{{ ch.week }}/" class="chapter-card">
             <div class="chapter-number">{{ T.week_word }} {{ ch.week }}</div>
             <div class="chapter-theme-jp">{{ ch.theme_jp }}</div>
             <div class="chapter-theme-en">{{ ch.theme_en }}</div>
