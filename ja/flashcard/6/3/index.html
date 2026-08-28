@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 日目 · スポーツ記事 — フラッシュカード</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="../../index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../flashcard/6/" class="back-link">← 第 6 週の学習日</a>
+    <h1>日目 3 · <span class="jp">スポーツ記事</span></h1>
+    <p class="theme-en">A Sports Article</p>
+</section>
+
+<section class="game-controls">
+    <div class="mode-toggle">
+        <button id="mode-meaning" class="active" data-mode="meaning">意味</button>
+        <button id="mode-reading" data-mode="reading">読み</button>
+    </div>
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 8</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section class="flashcard-area">
+    <div id="flashcard" class="flashcard">
+        <div class="card-front">
+            <div class="card-label" id="card-question">この漢字の<span id="mode-label">意味</span>は？</div>
+            <div id="kanji-display" class="kanji-display">漢</div>
+            <div class="card-meta">
+                <span class="stroke-badge"><span id="stroke-count">0</span> 画</span>
+                <span class="id-badge">#<span id="kanji-id">1</span></span>
+            </div>
+            <input type="text" id="answer-input" class="answer-input" placeholder="意味を入力…" autocomplete="off" />
+            <button id="submit-btn" class="btn btn-primary">確認</button>
+            <button id="reveal-btn" class="btn btn-link">わからない</button>
+        </div>
+        <div class="card-back hidden" id="card-back">
+            <div id="result-banner" class="result-banner"></div>
+            <div class="answer-summary">
+                <div class="answer-row">
+                    <div class="answer-label">読み:</div>
+                    <div id="answer-reading" class="answer-value"></div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-label">意味:</div>
+                    <div id="answer-meaning" class="answer-value"></div>
+                </div>
+            </div>
+            <div class="compounds-section">
+                <h4>熟語</h4>
+                <div id="compounds-list" class="compounds-list"></div>
+            </div>
+            <div class="example-section" id="example-section">
+                <h4>例文</h4>
+                <div id="example-jp" class="example-jp"></div>
+                <div id="example-en" class="example-en"></div>
+            </div>
+            <button id="next-btn" class="btn btn-primary">次の漢字 →</button>
+        </div>
+    </div>
+</section>
+
+<section class="lesson-kanji-list">
+    <h3>この日の漢字一覧</h3>
+    <p class="muted">クリックするとその漢字にジャンプします。</p>
+    <div class="kanji-list-grid">
+        
+        <div class="kanji-list-item" data-idx="0">
+            <div class="kli-char">球</div>
+            <div class="kli-meaning">ball, sphere</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="1">
+            <div class="kli-char">決</div>
+            <div class="kli-meaning">decide, fix</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="2">
+            <div class="kli-char">勝</div>
+            <div class="kli-meaning">victory, win</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="3">
+            <div class="kli-char">対</div>
+            <div class="kli-meaning">opposite, versus</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="4">
+            <div class="kli-char">流</div>
+            <div class="kli-meaning">flow, stream</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="5">
+            <div class="kli-char">負</div>
+            <div class="kli-meaning">lose, defeat</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="6">
+            <div class="kli-char">投</div>
+            <div class="kli-meaning">throw, pitch</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="7">
+            <div class="kli-char">果</div>
+            <div class="kli-meaning">fruit, result</div>
+        </div>
+        
+    </div>
+</section>
+
+<script id="lesson-data" type="application/json">
+{"day": 3, "kanji": [{"char": "\u7403", "compounds": [{"meaning": "the earth", "reading": "\u3061\u304d\u3085\u3046", "word": "\u5730\u7403"}, {"meaning": "a light bulb", "reading": "\u3067\u3093\u304d\u3085\u3046", "word": "\u96fb\u7403"}, {"meaning": "baseball", "reading": "\u3084\u304d\u3085\u3046", "word": "\u91ce\u7403"}], "id": 1, "kunyomi": "", "meaning": "ball, sphere", "onyomi": "\u30ad\u30e5\u30a6", "stroke": 11}, {"char": "\u6c7a", "compounds": [{"meaning": "by no means", "reading": "\u3051\u3063\u3057\u3066", "word": "\u6c7a\u3057\u3066"}, {"meaning": "a decision", "reading": "\u3051\u3063\u3066\u3044", "word": "\u6c7a\u5b9a"}, {"meaning": "decide (something)", "reading": "\u304d\u3081\u308b", "word": "\u6c7a\u3081\u308b"}, {"meaning": "be decided", "reading": "\u304d\u307e\u308b", "word": "\u6c7a\u307e\u308b"}], "id": 2, "kunyomi": "\u304d\u30fb\u3081\u308b, \u304d\u30fb\u307e\u308b", "meaning": "decide, fix", "onyomi": "\u30b1\u30c4", "stroke": 7}, {"char": "\u52dd", "compounds": [{"meaning": "a victory, championship", "reading": "\u3086\u3046\u3057\u3087\u3046", "word": "\u512a\u52dd"}, {"meaning": "final game", "reading": "\u3051\u3063\u3057\u3087\u3046", "word": "\u6c7a\u52dd"}, {"meaning": "win", "reading": "\u304b\u3064", "word": "\u52dd\u3064"}], "id": 3, "kunyomi": "\u304b\u30fb\u3064", "meaning": "victory, win", "onyomi": "\u30b7\u30e7\u30a6", "stroke": 12}, {"char": "\u5bfe", "compounds": [{"meaning": "a score of one to two", "reading": "\u3044\u3061\u305f\u3044\u306b", "word": "1\u5bfe2"}, {"meaning": "opposite", "reading": "\u306f\u3093\u305f\u3044", "word": "\u53cd\u5bfe"}], "id": 4, "kunyomi": "", "meaning": "opposite, versus", "onyomi": "\u30bf\u30a4", "stroke": 7}, {"char": "\u6d41", "compounds": [{"meaning": "flow", "reading": "\u306a\u304c\u308c\u308b", "word": "\u6d41\u308c\u308b"}, {"meaning": "let (water, etc.) flow", "reading": "\u306a\u304c\u3059", "word": "\u6d41\u3059"}], "id": 5, "kunyomi": "\u306a\u304c\u30fb\u308c\u308b, \u306a\u304c\u30fb\u3059", "meaning": "flow, stream", "onyomi": "", "stroke": 10}, {"char": "\u8ca0", "compounds": [{"meaning": "a match, contest, game", "reading": "\u3057\u3087\u3046\u3076", "word": "\u52dd\u8ca0"}, {"meaning": "lose", "reading": "\u307e\u3051\u308b", "word": "\u8ca0\u3051\u308b"}], "id": 6, "kunyomi": "\u307e\u30fb\u3051\u308b", "meaning": "lose, defeat", "onyomi": "\u30d5", "stroke": 9}, {"char": "\u6295", "compounds": [{"meaning": "(baseball) pitcher", "reading": "\u3068\u3046\u3057\u3085", "word": "\u6295\u624b"}, {"meaning": "throw", "reading": "\u306a\u3052\u308b", "word": "\u6295\u3052\u308b"}], "id": 7, "kunyomi": "\u306a\u30fb\u3052\u308b", "meaning": "throw, pitch", "onyomi": "\u30c8\u30a6", "stroke": 7}, {"char": "\u679c", "compounds": [{"meaning": "a result", "reading": "\u3051\u3063\u304b", "word": "\u7d50\u679c"}, {"meaning": "fruit", "reading": "\u304f\u3060\u3082\u306e", "word": "\u679c\u7269"}], "id": 8, "kunyomi": "", "meaning": "fruit, result", "onyomi": "\u30ab", "stroke": 8}], "title_en": "A Sports Article", "title_jp": "\u30b9\u30dd\u30fc\u30c4\u8a18\u4e8b"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "\u7b2c {week} \u9031\u306b\u623b\u308b", "btn_next_kanji": "\u6b21\u306e\u6f22\u5b57 \u2192", "btn_try_again": "\u3082\u3046\u4e00\u5ea6", "label_meaning": "\u610f\u5473", "label_reading": "\u8aad\u307f", "lbl_accuracy": "\u6b63\u7b54\u7387", "lbl_correct": "\u6b63\u89e3", "lbl_wrong": "\u4e0d\u6b63\u89e3", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u5165\u529b\uff08\u304b\u306a\uff09\u2026", "result_correct": "\u2705 \u6b63\u89e3\uff01", "result_wrong": "\u274c \u4e0d\u6b63\u89e3", "summary_complete": "\u5b8c\u4e86\uff01", "what_is_meaning": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u610f\u5473\u003c/span\u003e\u306f\uff1f", "what_is_reading": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u8aad\u307f\u003c/span\u003e\u306f\uff1f"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initFlashcard(6, 3);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 日目 · 政治 — フラッシュカード</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="../../index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../flashcard/6/" class="back-link">← 第 6 週の学習日</a>
+    <h1>日目 6 · <span class="jp">政治</span></h1>
+    <p class="theme-en">Politics</p>
+</section>
+
+<section class="game-controls">
+    <div class="mode-toggle">
+        <button id="mode-meaning" class="active" data-mode="meaning">意味</button>
+        <button id="mode-reading" data-mode="reading">読み</button>
+    </div>
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 8</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section class="flashcard-area">
+    <div id="flashcard" class="flashcard">
+        <div class="card-front">
+            <div class="card-label" id="card-question">この漢字の<span id="mode-label">意味</span>は？</div>
+            <div id="kanji-display" class="kanji-display">漢</div>
+            <div class="card-meta">
+                <span class="stroke-badge"><span id="stroke-count">0</span> 画</span>
+                <span class="id-badge">#<span id="kanji-id">1</span></span>
+            </div>
+            <input type="text" id="answer-input" class="answer-input" placeholder="意味を入力…" autocomplete="off" />
+            <button id="submit-btn" class="btn btn-primary">確認</button>
+            <button id="reveal-btn" class="btn btn-link">わからない</button>
+        </div>
+        <div class="card-back hidden" id="card-back">
+            <div id="result-banner" class="result-banner"></div>
+            <div class="answer-summary">
+                <div class="answer-row">
+                    <div class="answer-label">読み:</div>
+                    <div id="answer-reading" class="answer-value"></div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-label">意味:</div>
+                    <div id="answer-meaning" class="answer-value"></div>
+                </div>
+            </div>
+            <div class="compounds-section">
+                <h4>熟語</h4>
+                <div id="compounds-list" class="compounds-list"></div>
+            </div>
+            <div class="example-section" id="example-section">
+                <h4>例文</h4>
+                <div id="example-jp" class="example-jp"></div>
+                <div id="example-en" class="example-en"></div>
+            </div>
+            <button id="next-btn" class="btn btn-primary">次の漢字 →</button>
+        </div>
+    </div>
+</section>
+
+<section class="lesson-kanji-list">
+    <h3>この日の漢字一覧</h3>
+    <p class="muted">クリックするとその漢字にジャンプします。</p>
+    <div class="kanji-list-grid">
+        
+        <div class="kanji-list-item" data-idx="0">
+            <div class="kli-char">政</div>
+            <div class="kli-meaning">government, politics</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="1">
+            <div class="kli-char">府</div>
+            <div class="kli-meaning">government, prefecture</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="2">
+            <div class="kli-char">改</div>
+            <div class="kli-meaning">reform, change, examine</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="3">
+            <div class="kli-char">否</div>
+            <div class="kli-meaning">no, deny</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="4">
+            <div class="kli-char">的</div>
+            <div class="kli-meaning">target, -ic, -like</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="5">
+            <div class="kli-char">実</div>
+            <div class="kli-meaning">reality, fruit, truth</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="6">
+            <div class="kli-char">欠</div>
+            <div class="kli-meaning">lack, gap</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="7">
+            <div class="kli-char">専</div>
+            <div class="kli-meaning">specialty, exclusive</div>
+        </div>
+        
+    </div>
+</section>
+
+<script id="lesson-data" type="application/json">
+{"day": 6, "kanji": [{"char": "\u653f", "compounds": [{"meaning": "politics", "reading": "\u305b\u3044\u3058", "word": "\u653f\u6cbb"}, {"meaning": "a politician", "reading": "\u305b\u3044\u3058\u304b", "word": "\u653f\u6cbb\u5bb6"}], "id": 1, "kunyomi": "", "meaning": "government, politics", "onyomi": "\u30bb\u30a4", "stroke": 9}, {"char": "\u5e9c", "compounds": [{"meaning": "a government, administration", "reading": "\u305b\u3044\u3075", "word": "\u653f\u5e9c"}, {"meaning": "prefectures", "reading": "\u3068\u3069\u3046\u3075\u3051\u3093", "word": "\u90fd\u9053\u5e9c\u770c"}], "id": 2, "kunyomi": "", "meaning": "government, prefecture", "onyomi": "\u30d5", "stroke": 8}, {"char": "\u6539", "compounds": [{"meaning": "an amendment", "reading": "\u304b\u3044\u305b\u3044", "word": "\u6539\u6b63"}, {"meaning": "a ticket gate", "reading": "\u304b\u3044\u3055\u3064\u3050\u3061", "word": "\u6539\u672d\u53e3"}, {"meaning": "change", "reading": "\u3042\u3089\u305f\u3081\u308b", "word": "\u6539\u3081\u308b"}], "id": 3, "kunyomi": "\u3042\u3089\u305f\u30fb\u3081\u308b", "meaning": "reform, change, examine", "onyomi": "\u30ab\u30a4", "stroke": 7}, {"char": "\u5426", "compounds": [{"meaning": "negation", "reading": "\u3072\u3066\u3044", "word": "\u5426\u5b9a"}], "id": 4, "kunyomi": "", "meaning": "no, deny", "onyomi": "\u30d2", "stroke": 7}, {"char": "\u7684", "compounds": [{"meaning": "negative", "reading": "\u3072\u3066\u3044\u3066\u304d", "word": "\u5426\u5b9a\u7684"}, {"meaning": "international", "reading": "\u3053\u304f\u3055\u3044\u3066\u304d", "word": "\u56fd\u969b\u7684"}, {"meaning": "an aim, purpose", "reading": "\u3082\u304f\u3066\u304d", "word": "\u76ee\u7684"}, {"meaning": "personal", "reading": "\u3053\u3058\u3093\u3066\u304d", "word": "\u500b\u4eba\u7684"}], "id": 5, "kunyomi": "", "meaning": "target, -ic, -like", "onyomi": "\u30c6\u30ad", "stroke": 8}, {"char": "\u5b9f", "compounds": [{"meaning": "practice, actual conditions", "reading": "\u3058\u3063\u3055\u3044\u306b", "word": "\u5b9f\u969b\u306b"}, {"meaning": "international", "reading": "\u3053\u304f\u3055\u3044\u3066\u304d", "word": "\u56fd\u969b\u7684"}, {"meaning": "an experiment", "reading": "\u3058\u3063\u3051\u3093", "word": "\u5b9f\u9a13"}, {"meaning": "to tell the truth", "reading": "\u3058\u3064\u306f", "word": "\u5b9f\u306f"}], "id": 6, "kunyomi": "", "meaning": "reality, fruit, truth", "onyomi": "\u30b8\u30c4", "stroke": 8}, {"char": "\u6b20", "compounds": [{"meaning": "a shortcoming", "reading": "\u3051\u3063\u3066\u3093", "word": "\u6b20\u70b9"}, {"meaning": "chip, lack", "reading": "\u304b\u3051\u308b", "word": "\u6b20\u3051\u308b"}, {"meaning": "absence", "reading": "\u3051\u3063\u305b\u304d", "word": "\u6b20\u5e2d"}], "id": 7, "kunyomi": "\u304b\u30fb\u3051\u308b", "meaning": "lack, gap", "onyomi": "\u30b1\u30c4", "stroke": 4}, {"char": "\u5c02", "compounds": [{"meaning": "specialty", "reading": "\u305b\u3093\u3082\u3093", "word": "\u5c02\u9580"}, {"meaning": "an expert", "reading": "\u305b\u3093\u3082\u3093\u304b", "word": "\u5c02\u9580\u5bb6"}], "id": 8, "kunyomi": "", "meaning": "specialty, exclusive", "onyomi": "\u30bb\u30f3", "stroke": 9}], "title_en": "Politics", "title_jp": "\u653f\u6cbb"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "\u7b2c {week} \u9031\u306b\u623b\u308b", "btn_next_kanji": "\u6b21\u306e\u6f22\u5b57 \u2192", "btn_try_again": "\u3082\u3046\u4e00\u5ea6", "label_meaning": "\u610f\u5473", "label_reading": "\u8aad\u307f", "lbl_accuracy": "\u6b63\u7b54\u7387", "lbl_correct": "\u6b63\u89e3", "lbl_wrong": "\u4e0d\u6b63\u89e3", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u5165\u529b\uff08\u304b\u306a\uff09\u2026", "result_correct": "\u2705 \u6b63\u89e3\uff01", "result_wrong": "\u274c \u4e0d\u6b63\u89e3", "summary_complete": "\u5b8c\u4e86\uff01", "what_is_meaning": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u610f\u5473\u003c/span\u003e\u306f\uff1f", "what_is_reading": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u8aad\u307f\u003c/span\u003e\u306f\uff1f"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initFlashcard(6, 6);
+</script>
+
+</body>
+</html>

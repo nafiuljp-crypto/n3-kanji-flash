@@ -1,0 +1,1057 @@
+{
+  "week": 4,
+  "theme": {"jp": "かう", "en": "Buy", "kr": "사다"},
+  "lessons": [
+    {
+      "day": 1,
+      "title_jp": "日用品",
+      "title_en": "Daily Necessities",
+      "kanji": [
+        {
+          "id": 171,
+          "char": "砂",
+          "stroke": 9,
+          "onyomi": "サ",
+          "kunyomi": "すな",
+          "meaning": "sand",
+          "compounds": [
+            {"word": "砂糖", "reading": "さとう", "meaning": "sugar"}
+          ],
+          "example": {
+            "jp": "砂で遊ぶのは楽しいです。",
+            "furigana": "すなであそぶのはたのしいです。",
+            "en": "Playing with sand is fun."
+          }
+        },
+        {
+          "id": 172,
+          "char": "塩",
+          "stroke": 13,
+          "onyomi": "エン",
+          "kunyomi": "しお",
+          "meaning": "salt",
+          "compounds": [
+            {"word": "食塩", "reading": "しょくえん", "meaning": "table salt"},
+            {"word": "塩", "reading": "しお", "meaning": "salt"}
+          ],
+          "example": {
+            "jp": "料理に塩を少し入れてください。",
+            "furigana": "りょうりにしおをすこしいれてください。",
+            "en": "Please put a little salt in the dish."
+          }
+        },
+        {
+          "id": 173,
+          "char": "油",
+          "stroke": 8,
+          "onyomi": "ユ",
+          "kunyomi": "あぶら",
+          "meaning": "oil",
+          "compounds": [
+            {"word": "しょうゆ", "reading": "しょうゆ", "meaning": "soy sauce"},
+            {"word": "灯油", "reading": "とうゆ", "meaning": "kerosene"},
+            {"word": "石油", "reading": "せきゆ", "meaning": "oil (petroleum)"},
+            {"word": "油", "reading": "あぶら", "meaning": "oil"}
+          ]
+        },
+        {
+          "id": 174,
+          "char": "緑",
+          "stroke": 14,
+          "onyomi": "リョク",
+          "kunyomi": "みどり",
+          "meaning": "green",
+          "compounds": [
+            {"word": "緑茶", "reading": "りょくちゃ", "meaning": "green tea"},
+            {"word": "緑(色)", "reading": "みどり(いろ)", "meaning": "green"}
+          ]
+        },
+        {
+          "id": 175,
+          "char": "紅",
+          "stroke": 9,
+          "onyomi": "コウ",
+          "kunyomi": "べに",
+          "meaning": "red, crimson",
+          "compounds": [
+            {"word": "紅茶", "reading": "こうちゃ", "meaning": "tea"},
+            {"word": "口紅", "reading": "くちべに", "meaning": "lipstick"}
+          ]
+        },
+        {
+          "id": 176,
+          "char": "冊",
+          "stroke": 5,
+          "onyomi": "サツ",
+          "kunyomi": "さつ",
+          "meaning": "counter for books",
+          "compounds": [
+            {"word": "一冊", "reading": "いっさつ", "meaning": "one volume (counter)"},
+            {"word": "冊数", "reading": "さっすう", "meaning": "the number of copies"}
+          ]
+        },
+        {
+          "id": 177,
+          "char": "個",
+          "stroke": 10,
+          "onyomi": "コ",
+          "kunyomi": "こ",
+          "meaning": "counter of general objects",
+          "compounds": [
+            {"word": "一個", "reading": "いっこ", "meaning": "one piece (counter)"},
+            {"word": "個数", "reading": "こすう", "meaning": "the number of items"},
+            {"word": "個人", "reading": "こじん", "meaning": "individual (person)"},
+            {"word": "団体", "reading": "だんたい", "meaning": "a group"}
+          ]
+        },
+        {
+          "id": 178,
+          "char": "枚",
+          "stroke": 8,
+          "onyomi": "マイ",
+          "kunyomi": "まい",
+          "meaning": "counter for flat objects",
+          "compounds": [
+            {"word": "一枚", "reading": "いちまい", "meaning": "one sheet (counter)"},
+            {"word": "枚数", "reading": "まいすう", "meaning": "the number of sheets/copies"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title_jp": "広告メール",
+      "title_en": "Advertisement E-mail",
+      "kanji": [
+        {
+          "id": 179,
+          "char": "告",
+          "stroke": 7,
+          "onyomi": "コク",
+          "kunyomi": "",
+          "meaning": "tell, announce",
+          "compounds": [
+            {"word": "広告", "reading": "こうこく", "meaning": "an advertisement"}
+          ],
+          "example": {
+            "jp": "新しい広告を見ました。",
+            "furigana": "あたらしいこうこくをみました。",
+            "en": "I saw a new advertisement."
+          }
+        },
+        {
+          "id": 180,
+          "char": "利",
+          "stroke": 7,
+          "onyomi": "リ",
+          "kunyomi": "",
+          "meaning": "convenience, advantage",
+          "compounds": [
+            {"word": "便利(な)", "reading": "べんり(な)", "meaning": "convenient"},
+            {"word": "利用", "reading": "りよう", "meaning": "use"}
+          ]
+        },
+        {
+          "id": 181,
+          "char": "割",
+          "stroke": 12,
+          "onyomi": "カツ",
+          "kunyomi": "わる, われる",
+          "meaning": "divide, split",
+          "compounds": [
+            {"word": "割る", "reading": "わる", "meaning": "break"},
+            {"word": "割れる", "reading": "われる", "meaning": "crack/cleave"},
+            {"word": "割合", "reading": "わりあい", "meaning": "a ratio, a percentage"},
+            {"word": "割引", "reading": "わりびき", "meaning": "a discount"}
+          ]
+        },
+        {
+          "id": 182,
+          "char": "倍",
+          "stroke": 10,
+          "onyomi": "バイ",
+          "kunyomi": "",
+          "meaning": "times (multiplication)",
+          "compounds": [
+            {"word": "二倍", "reading": "にばい", "meaning": "twice as many"}
+          ],
+          "example": {
+            "jp": "去年の倍のお客さんが来た。",
+            "furigana": "きょねんのばいのおきゃくさんがきた。",
+            "en": "Twice as many customers came as last year."
+          }
+        },
+        {
+          "id": 183,
+          "char": "値",
+          "stroke": 10,
+          "onyomi": "ネ",
+          "kunyomi": "ね, あたい",
+          "meaning": "price, value",
+          "compounds": [
+            {"word": "値段", "reading": "ねだん", "meaning": "a price"},
+            {"word": "値上げ", "reading": "ねあげ", "meaning": "a price increase"},
+            {"word": "値下げ", "reading": "ねさげ", "meaning": "a price reduction"}
+          ]
+        },
+        {
+          "id": 184,
+          "char": "商",
+          "stroke": 11,
+          "onyomi": "ショウ",
+          "kunyomi": "あきなう",
+          "meaning": "commerce, trade",
+          "compounds": [
+            {"word": "商品", "reading": "しょうひん", "meaning": "goods"},
+            {"word": "商店", "reading": "しょうてん", "meaning": "a shop"}
+          ]
+        },
+        {
+          "id": 185,
+          "char": "支",
+          "stroke": 4,
+          "onyomi": "シ",
+          "kunyomi": "ささえる",
+          "meaning": "branch, support",
+          "compounds": [
+            {"word": "支店", "reading": "してん", "meaning": "a branch"},
+            {"word": "支社", "reading": "ししゃ", "meaning": "a branch office"},
+            {"word": "本店", "reading": "ほんてん", "meaning": "the main branch of a store"},
+            {"word": "本社", "reading": "ほんしゃ", "meaning": "the head office"}
+          ]
+        },
+        {
+          "id": 186,
+          "char": "払",
+          "stroke": 5,
+          "onyomi": "フツ",
+          "kunyomi": "はらう",
+          "meaning": "pay",
+          "compounds": [
+            {"word": "払う", "reading": "はらう", "meaning": "pay"},
+            {"word": "支払い", "reading": "しはらい", "meaning": "a payment"}
+          ],
+          "example": {
+            "jp": "代金を現金で払います。",
+            "furigana": "だいきんをげんきんではらいます。",
+            "en": "I will pay the price in cash."
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title_jp": "通信販売",
+      "title_en": "Mail-Order Sales",
+      "kanji": [
+        {
+          "id": 187,
+          "char": "米",
+          "stroke": 6,
+          "onyomi": "ベイ, マイ",
+          "kunyomi": "こめ",
+          "meaning": "rice, the United States",
+          "compounds": [
+            {"word": "米国", "reading": "べいこく", "meaning": "the United States of America"},
+            {"word": "米", "reading": "こめ", "meaning": "rice"}
+          ],
+          "example": {
+            "jp": "米国へ留学に行きます。",
+            "furigana": "べいこくへりゅうがくにいきます。",
+            "en": "I am going to study in the United States."
+          }
+        },
+        {
+          "id": 188,
+          "char": "級",
+          "stroke": 9,
+          "onyomi": "キュウ",
+          "kunyomi": "",
+          "meaning": "grade, class, level",
+          "compounds": [
+            {"word": "高級", "reading": "こうきゅう", "meaning": "high class/grade"},
+            {"word": "中級", "reading": "ちゅうきゅう", "meaning": "intermediate level"},
+            {"word": "上級", "reading": "じょうきゅう", "meaning": "advanced level"}
+          ]
+        },
+        {
+          "id": 189,
+          "char": "残",
+          "stroke": 10,
+          "onyomi": "ザン",
+          "kunyomi": "のこす, のこる",
+          "meaning": "remain, remainder",
+          "compounds": [
+            {"word": "残業", "reading": "ざんぎょう", "meaning": "overtime work"},
+            {"word": "残る", "reading": "のこる", "meaning": "remain"},
+            {"word": "残り", "reading": "のこり", "meaning": "the remainder"},
+            {"word": "残す", "reading": "のこす", "meaning": "leave, leave behind"}
+          ]
+        },
+        {
+          "id": 190,
+          "char": "型",
+          "stroke": 9,
+          "onyomi": "ケイ",
+          "kunyomi": "かた",
+          "meaning": "type, model, mold",
+          "compounds": [
+            {"word": "大型", "reading": "おおがた", "meaning": "large, jumbo"},
+            {"word": "小型", "reading": "こがた", "meaning": "small-sized"},
+            {"word": "新型", "reading": "しんがた", "meaning": "new-model"}
+          ]
+        },
+        {
+          "id": 191,
+          "char": "税",
+          "stroke": 12,
+          "onyomi": "ゼイ",
+          "kunyomi": "",
+          "meaning": "tax",
+          "compounds": [
+            {"word": "消費税", "reading": "しょうひぜい", "meaning": "consumption tax"},
+            {"word": "税金", "reading": "ぜいきん", "meaning": "a tax"}
+          ]
+        },
+        {
+          "id": 192,
+          "char": "込",
+          "stroke": 5,
+          "onyomi": "コン",
+          "kunyomi": "こむ, こもる",
+          "meaning": "crowded, included",
+          "compounds": [
+            {"word": "込む", "reading": "こむ", "meaning": "congest/crowd"},
+            {"word": "振り込む", "reading": "ふりこむ", "meaning": "transfer money to a person's account"},
+            {"word": "税込", "reading": "ぜいこみ", "meaning": "tax included"}
+          ]
+        },
+        {
+          "id": 193,
+          "char": "価",
+          "stroke": 8,
+          "onyomi": "カ",
+          "kunyomi": "あたい",
+          "meaning": "price, value",
+          "compounds": [
+            {"word": "価格", "reading": "かかく", "meaning": "a price"},
+            {"word": "定価", "reading": "ていか", "meaning": "a fixed price"}
+          ]
+        },
+        {
+          "id": 194,
+          "char": "格",
+          "stroke": 10,
+          "onyomi": "カク",
+          "kunyomi": "",
+          "meaning": "rank, status, pattern",
+          "compounds": [
+            {"word": "合格", "reading": "ごうかく", "meaning": "pass an exam"},
+            {"word": "格安", "reading": "かくやす", "meaning": "a bargain"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title_jp": "申込書",
+      "title_en": "Application Forms",
+      "kanji": [
+        {
+          "id": 195,
+          "char": "申",
+          "stroke": 5,
+          "onyomi": "シン",
+          "kunyomi": "もうす",
+          "meaning": "apply, say (humble)",
+          "compounds": [
+            {"word": "申し込む", "reading": "もうしこむ", "meaning": "apply"},
+            {"word": "申込書", "reading": "もうしこみしょ", "meaning": "an application form"},
+            {"word": "申告", "reading": "しんこく", "meaning": "a declaration"},
+            {"word": "申請", "reading": "しんせい", "meaning": "application"},
+            {"word": "申す", "reading": "もうす", "meaning": "say (humble form)"},
+            {"word": "申し上げる", "reading": "もうしあげる", "meaning": "say (very humble form)"}
+          ],
+          "example": {
+            "jp": "鈴木と申します。",
+            "furigana": "すずきともうします。",
+            "en": "My name is Suzuki (humble)."
+          }
+        },
+        {
+          "id": 196,
+          "char": "記",
+          "stroke": 10,
+          "onyomi": "キ",
+          "kunyomi": "",
+          "meaning": "write, record",
+          "compounds": [
+            {"word": "記入", "reading": "きにゅう", "meaning": "entry"},
+            {"word": "記号", "reading": "きごう", "meaning": "a sign, a symbol"},
+            {"word": "日記", "reading": "にっき", "meaning": "a diary/journal"},
+            {"word": "記事", "reading": "きじ", "meaning": "an article"}
+          ]
+        },
+        {
+          "id": 197,
+          "char": "例",
+          "stroke": 8,
+          "onyomi": "レイ",
+          "kunyomi": "たとえる",
+          "meaning": "example",
+          "compounds": [
+            {"word": "例", "reading": "れい", "meaning": "an example"},
+            {"word": "例えば", "reading": "たとえば", "meaning": "for example"}
+          ]
+        },
+        {
+          "id": 198,
+          "char": "齢",
+          "stroke": 17,
+          "onyomi": "レイ",
+          "kunyomi": "",
+          "meaning": "age, years",
+          "compounds": [
+            {"word": "年齢", "reading": "ねんれい", "meaning": "age"},
+            {"word": "高齢", "reading": "こうれい", "meaning": "old age"}
+          ]
+        },
+        {
+          "id": 199,
+          "char": "歳",
+          "stroke": 13,
+          "onyomi": "サイ, セイ",
+          "kunyomi": "",
+          "meaning": "years (age)",
+          "compounds": [
+            {"word": "二十歳", "reading": "はたち", "meaning": "20 years old"}
+          ]
+        },
+        {
+          "id": 200,
+          "char": "性",
+          "stroke": 8,
+          "onyomi": "セイ, ショウ",
+          "kunyomi": "",
+          "meaning": "sex, gender, nature",
+          "compounds": [
+            {"word": "性別", "reading": "せいべつ", "meaning": "sex/gender"},
+            {"word": "性格", "reading": "せいかく", "meaning": "personality"},
+            {"word": "女性", "reading": "じょせい", "meaning": "woman"},
+            {"word": "男性", "reading": "だんせい", "meaning": "man"}
+          ]
+        },
+        {
+          "id": 201,
+          "char": "連",
+          "stroke": 10,
+          "onyomi": "レン",
+          "kunyomi": "つれる, つらなる, つらねる",
+          "meaning": "take along, connect",
+          "compounds": [
+            {"word": "連休", "reading": "れんきゅう", "meaning": "a holiday"},
+            {"word": "連れて行く", "reading": "つれていく", "meaning": "take someone to..."},
+            {"word": "連れて来る", "reading": "つれてくる", "meaning": "bring someone to..."}
+          ]
+        },
+        {
+          "id": 202,
+          "char": "絡",
+          "stroke": 12,
+          "onyomi": "ラク",
+          "kunyomi": "からむ, からまる, まつわる",
+          "meaning": "entangle, connection",
+          "compounds": [
+            {"word": "連絡", "reading": "れんらく", "meaning": "contact/connection"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title_jp": "注文",
+      "title_en": "Ordering",
+      "kanji": [
+        {
+          "id": 203,
+          "char": "届",
+          "stroke": 8,
+          "onyomi": "カイ",
+          "kunyomi": "とどける, とどく",
+          "meaning": "deliver, reach",
+          "compounds": [
+            {"word": "届ける", "reading": "とどける", "meaning": "deliver"},
+            {"word": "届く", "reading": "とどく", "meaning": "arrive (mail)"}
+          ]
+        },
+        {
+          "id": 204,
+          "char": "宅",
+          "stroke": 6,
+          "onyomi": "タク",
+          "kunyomi": "",
+          "meaning": "home, house",
+          "compounds": [
+            {"word": "自宅", "reading": "じたく", "meaning": "one's house/home"},
+            {"word": "お宅", "reading": "おたく", "meaning": "house/home (respectful)"},
+            {"word": "宅配", "reading": "たくはい", "meaning": "delivery to someone's house"}
+          ]
+        },
+        {
+          "id": 205,
+          "char": "配",
+          "stroke": 10,
+          "onyomi": "ハイ",
+          "kunyomi": "くばる",
+          "meaning": "distribute, deliver",
+          "compounds": [
+            {"word": "配達", "reading": "はいたつ", "meaning": "delivery"},
+            {"word": "心配", "reading": "しんぱい", "meaning": "anxiety/worry"},
+            {"word": "配達料", "reading": "はいたつりょう", "meaning": "a shipping charge"},
+            {"word": "配る", "reading": "くばる", "meaning": "distribute"}
+          ]
+        },
+        {
+          "id": 206,
+          "char": "希",
+          "stroke": 7,
+          "onyomi": "キ",
+          "kunyomi": "",
+          "meaning": "hope, rare",
+          "compounds": [
+            {"word": "希望", "reading": "きぼう", "meaning": "hope"}
+          ]
+        },
+        {
+          "id": 207,
+          "char": "望",
+          "stroke": 11,
+          "onyomi": "ボウ, モウ",
+          "kunyomi": "のぞむ, のぞましい",
+          "meaning": "hope, desire",
+          "compounds": [
+            {"word": "失望", "reading": "しつぼう", "meaning": "despair"},
+            {"word": "望む", "reading": "のぞむ", "meaning": "want, hope for"}
+          ]
+        },
+        {
+          "id": 208,
+          "char": "荷",
+          "stroke": 10,
+          "onyomi": "カ",
+          "kunyomi": "に",
+          "meaning": "luggage, load",
+          "compounds": [
+            {"word": "入荷", "reading": "にゅうか", "meaning": "receipt (of goods)"},
+            {"word": "荷物", "reading": "にもつ", "meaning": "luggage"},
+            {"word": "出荷", "reading": "しゅっか", "meaning": "shipment"},
+            {"word": "手荷物", "reading": "てにもつ", "meaning": "hand luggage"}
+          ]
+        },
+        {
+          "id": 209,
+          "char": "換",
+          "stroke": 12,
+          "onyomi": "カン",
+          "kunyomi": "かえる, かわる",
+          "meaning": "exchange, change",
+          "compounds": [
+            {"word": "交換", "reading": "こうかん", "meaning": "exchange"},
+            {"word": "乗り換え", "reading": "のりかえ", "meaning": "changing trains"},
+            {"word": "代金引換", "reading": "だいきんひきかえ", "meaning": "cash on delivery"}
+          ]
+        },
+        {
+          "id": 210,
+          "char": "額",
+          "stroke": 18,
+          "onyomi": "ガク",
+          "kunyomi": "ひたい",
+          "meaning": "amount, forehead, frame",
+          "compounds": [
+            {"word": "金額", "reading": "きんがく", "meaning": "an amount/sum (of money)"},
+            {"word": "半額", "reading": "はんがく", "meaning": "half price"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title_jp": "不在通知",
+      "title_en": "Missed-Delivery Notice",
+      "kanji": [
+        {
+          "id": 211,
+          "char": "在",
+          "stroke": 6,
+          "onyomi": "ザイ",
+          "kunyomi": "ある",
+          "meaning": "exist, present",
+          "compounds": [
+            {"word": "不在", "reading": "ふざい", "meaning": "absence"},
+            {"word": "現在", "reading": "げんざい", "meaning": "present (time)"}
+          ]
+        },
+        {
+          "id": 212,
+          "char": "取",
+          "stroke": 8,
+          "onyomi": "シュ",
+          "kunyomi": "とる",
+          "meaning": "take, fetch",
+          "compounds": [
+            {"word": "取る", "reading": "とる", "meaning": "take"},
+            {"word": "受け取る", "reading": "うけとる", "meaning": "receive, take"},
+            {"word": "受取人", "reading": "うけとりにん", "meaning": "a recipient"}
+          ]
+        },
+        {
+          "id": 213,
+          "char": "預",
+          "stroke": 13,
+          "onyomi": "ヨ",
+          "kunyomi": "あずける, あずかる",
+          "meaning": "deposit, entrust",
+          "compounds": [
+            {"word": "預金", "reading": "よきん", "meaning": "a money deposit"},
+            {"word": "預ける", "reading": "あずける", "meaning": "entrust"}
+          ]
+        },
+        {
+          "id": 214,
+          "char": "衣",
+          "stroke": 6,
+          "onyomi": "イ",
+          "kunyomi": "ころも, きぬ",
+          "meaning": "clothes",
+          "compounds": [
+            {"word": "衣類", "reading": "いるい", "meaning": "clothing"},
+            {"word": "衣服", "reading": "いふく", "meaning": "clothes"}
+          ]
+        },
+        {
+          "id": 215,
+          "char": "参",
+          "stroke": 8,
+          "onyomi": "サン, シン",
+          "kunyomi": "まいる",
+          "meaning": "participate, go (humble)",
+          "compounds": [
+            {"word": "参加", "reading": "さんか", "meaning": "participate"},
+            {"word": "参考書", "reading": "さんこうしょ", "meaning": "a reference book"},
+            {"word": "参る", "reading": "まいる", "meaning": "go/come (humble form)"}
+          ]
+        },
+        {
+          "id": 216,
+          "char": "達",
+          "stroke": 12,
+          "onyomi": "タツ, ダ",
+          "kunyomi": "たち, たつ, はるか",
+          "meaning": "reach, accomplish",
+          "compounds": [
+            {"word": "上達", "reading": "じょうたつ", "meaning": "make progress"},
+            {"word": "友達", "reading": "ともだち", "meaning": "a friend"},
+            {"word": "速達", "reading": "そくたつ", "meaning": "a special delivery"}
+          ]
+        },
+        {
+          "id": 217,
+          "char": "勤",
+          "stroke": 12,
+          "onyomi": "キン, ゴン",
+          "kunyomi": "つとめる, つとまる",
+          "meaning": "work, attend",
+          "compounds": [
+            {"word": "通勤", "reading": "つうきん", "meaning": "commuting to work"},
+            {"word": "勤める", "reading": "つとめる", "meaning": "work/be employed"}
+          ]
+        },
+        {
+          "id": 218,
+          "char": "帯",
+          "stroke": 10,
+          "onyomi": "タイ",
+          "kunyomi": "おびる, おび",
+          "meaning": "belt, zone, carry",
+          "compounds": [
+            {"word": "携帯(電話)", "reading": "けいたい(でんわ)", "meaning": "a cell phone/mobile phone"},
+            {"word": "時間帯", "reading": "じかんたい", "meaning": "a time zone, a time slot"},
+            {"word": "帯", "reading": "おび", "meaning": "a belt/sash"}
+          ]
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "day": 7,
+    "questions": [
+      {
+        "id": 1,
+        "section": 1,
+        "type": "read_word",
+        "stem": "合格の知らせによろこんだ。",
+        "options": [
+          {"label": "1", "text": "ごかく"},
+          {"label": "2", "text": "あいぎゃく"},
+          {"label": "3", "text": "ごうかく"},
+          {"label": "4", "text": "こうかく"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 2,
+        "section": 1,
+        "type": "read_word",
+        "stem": "代金は銀行から振り込みます。",
+        "options": [
+          {"label": "1", "text": "はりこみ"},
+          {"label": "2", "text": "おりこみ"},
+          {"label": "3", "text": "ふりこみ"},
+          {"label": "4", "text": "ほりこみ"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 3,
+        "section": 1,
+        "type": "read_word",
+        "stem": "田中と申します。",
+        "options": [
+          {"label": "1", "text": "もよおします"},
+          {"label": "2", "text": "もおします"},
+          {"label": "3", "text": "もうします"},
+          {"label": "4", "text": "もうします"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 4,
+        "section": 1,
+        "type": "read_word",
+        "stem": "中級レベルの日本語の本をさがしています。",
+        "options": [
+          {"label": "1", "text": "ちゅうきゅう"},
+          {"label": "2", "text": "ちょうきゅう"},
+          {"label": "3", "text": "じょうきゅう"},
+          {"label": "4", "text": "しょうきゅう"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 5,
+        "section": 1,
+        "type": "read_word",
+        "stem": "米国に留学する。",
+        "options": [
+          {"label": "1", "text": "まいこく"},
+          {"label": "2", "text": "めいこく"},
+          {"label": "3", "text": "べいこく"},
+          {"label": "4", "text": "みいこく"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 6,
+        "section": 1,
+        "type": "read_word",
+        "stem": "携帯電話は便利です。",
+        "options": [
+          {"label": "1", "text": "べんり"},
+          {"label": "2", "text": "べんり"},
+          {"label": "3", "text": "ぼんり"},
+          {"label": "4", "text": "べんに"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 7,
+        "section": 1,
+        "type": "read_word",
+        "stem": "品物が入荷したら、お知らせします。",
+        "options": [
+          {"label": "1", "text": "にゅうこ"},
+          {"label": "2", "text": "にゅうに"},
+          {"label": "3", "text": "にゅうこ"},
+          {"label": "4", "text": "にゅうか"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 8,
+        "section": 1,
+        "type": "read_word",
+        "stem": "白い砂の上を歩きました。",
+        "options": [
+          {"label": "1", "text": "しお"},
+          {"label": "2", "text": "いし"},
+          {"label": "3", "text": "たね"},
+          {"label": "4", "text": "すな"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 9,
+        "section": 1,
+        "type": "read_word",
+        "stem": "紅茶にミルクを入れて飲む。",
+        "options": [
+          {"label": "1", "text": "こうさ"},
+          {"label": "2", "text": "ほんちゃ"},
+          {"label": "3", "text": "こうちゃ"},
+          {"label": "4", "text": "きっさ"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 10,
+        "section": 1,
+        "type": "read_word",
+        "stem": "支社に書類を郵送する。",
+        "options": [
+          {"label": "1", "text": "しゃ"},
+          {"label": "2", "text": "ちゃ"},
+          {"label": "3", "text": "じゃ"},
+          {"label": "4", "text": "ぎゃ"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 11,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "バスの料金をはらう。",
+        "options": [
+          {"label": "1", "text": "去う"},
+          {"label": "2", "text": "払う"},
+          {"label": "3", "text": "仏う"},
+          {"label": "4", "text": "払う"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 12,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "たくはいで送る。",
+        "options": [
+          {"label": "1", "text": "配達"},
+          {"label": "2", "text": "宅配"},
+          {"label": "3", "text": "心配"},
+          {"label": "4", "text": "速達"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 13,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "子どもを両親にあずける。",
+        "options": [
+          {"label": "1", "text": "届ける"},
+          {"label": "2", "text": "受ける"},
+          {"label": "3", "text": "預ける"},
+          {"label": "4", "text": "続ける"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 14,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "このへやのみどりが少ない。",
+        "options": [
+          {"label": "1", "text": "縁"},
+          {"label": "2", "text": "録"},
+          {"label": "3", "text": "緑"},
+          {"label": "4", "text": "繰"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 15,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "（　）休は旅行に行く予定だ。",
+        "options": [
+          {"label": "1", "text": "連"},
+          {"label": "2", "text": "次"},
+          {"label": "3", "text": "来"},
+          {"label": "4", "text": "残"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 16,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "広（　）でセールを知る。",
+        "options": [
+          {"label": "1", "text": "告"},
+          {"label": "2", "text": "例"},
+          {"label": "3", "text": "記"},
+          {"label": "4", "text": "込"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 17,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "定（　）の半額以下で買った。",
+        "options": [
+          {"label": "1", "text": "割"},
+          {"label": "2", "text": "値"},
+          {"label": "3", "text": "価"},
+          {"label": "4", "text": "達"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 18,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "消費（　）は何パーセントですか。",
+        "options": [
+          {"label": "1", "text": "税"},
+          {"label": "2", "text": "性"},
+          {"label": "3", "text": "歳"},
+          {"label": "4", "text": "額"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 19,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "CDを何（　）持っていますか。",
+        "options": [
+          {"label": "1", "text": "冊"},
+          {"label": "2", "text": "枚"},
+          {"label": "3", "text": "本"},
+          {"label": "4", "text": "部"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 20,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "大（　）トラックが事故を起こした。",
+        "options": [
+          {"label": "1", "text": "形"},
+          {"label": "2", "text": "倍"},
+          {"label": "3", "text": "型"},
+          {"label": "4", "text": "級"}
+        ],
+        "answer": "3"
+      }
+    ]
+  },
+  "quiz": {
+    "id": 4,
+    "title": "クイズ④ 読みはどちら？",
+    "questions": [
+      {
+        "id": 1,
+        "stem": "細い糸",
+        "reading_hint": "細い",
+        "options": [
+          {"label": "1", "kanji": "こまかい"},
+          {"label": "2", "kanji": "ほそい"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 2,
+        "stem": "日米",
+        "reading_hint": "米",
+        "options": [
+          {"label": "1", "kanji": "まい"},
+          {"label": "2", "kanji": "べい"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 3,
+        "stem": "船便",
+        "reading_hint": "船",
+        "options": [
+          {"label": "1", "kanji": "ふね"},
+          {"label": "2", "kanji": "ふな"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 4,
+        "stem": "四角",
+        "reading_hint": "角",
+        "options": [
+          {"label": "1", "kanji": "かく"},
+          {"label": "2", "kanji": "かど"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 5,
+        "stem": "夫婦",
+        "reading_hint": "夫",
+        "options": [
+          {"label": "1", "kanji": "ふ"},
+          {"label": "2", "kanji": "ふう"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 6,
+        "stem": "びわ湖",
+        "reading_hint": "湖",
+        "options": [
+          {"label": "1", "kanji": "こ"},
+          {"label": "2", "kanji": "みずうみ"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 7,
+        "stem": "左右",
+        "reading_hint": "右",
+        "options": [
+          {"label": "1", "kanji": "ゆう"},
+          {"label": "2", "kanji": "う"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 8,
+        "stem": "雨戸",
+        "reading_hint": "雨",
+        "options": [
+          {"label": "1", "kanji": "あま"},
+          {"label": "2", "kanji": "あめ"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 9,
+        "stem": "苦い",
+        "reading_hint": "苦",
+        "options": [
+          {"label": "1", "kanji": "にがい"},
+          {"label": "2", "kanji": "くるしい"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 10,
+        "stem": "半ば",
+        "reading_hint": "半",
+        "options": [
+          {"label": "1", "kanji": "なか"},
+          {"label": "2", "kanji": "はん"}
+        ],
+        "answer": "1"
+      }
+    ]
+  }
+}

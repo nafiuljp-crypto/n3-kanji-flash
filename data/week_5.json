@@ -1,0 +1,1090 @@
+{
+  "week": 5,
+  "theme": {"jp": "かく", "en": "Write", "kr": "쓰다"},
+  "lessons": [
+    {
+      "day": 1,
+      "title_jp": "メールを送る",
+      "title_en": "Sending E-mail (texting)",
+      "kanji": [
+        {
+          "id": 246,
+          "char": "礼",
+          "stroke": 5,
+          "onyomi": "レイ",
+          "kunyomi": "",
+          "meaning": "thanks, gratitude; manners",
+          "compounds": [
+            {"word": "お礼", "reading": "おれい", "meaning": "thanks, gratitude"},
+            {"word": "礼儀", "reading": "れいぎ", "meaning": "manners, courtesy"}
+          ]
+        },
+        {
+          "id": 247,
+          "char": "伺",
+          "stroke": 7,
+          "onyomi": "",
+          "kunyomi": "うかがう",
+          "meaning": "visit, ask (humble form)",
+          "compounds": [
+            {"word": "伺う", "reading": "うかがう", "meaning": "to visit, to ask (humble)"}
+          ]
+        },
+        {
+          "id": 248,
+          "char": "遅",
+          "stroke": 12,
+          "onyomi": "チ",
+          "kunyomi": "おそい おくれる",
+          "meaning": "tardiness; slow; late",
+          "compounds": [
+            {"word": "遅刻", "reading": "ちこく", "meaning": "tardiness, lateness"},
+            {"word": "遅い", "reading": "おそい", "meaning": "slow, late"},
+            {"word": "遅れる", "reading": "おくれる", "meaning": "to be late, to fall behind"}
+          ]
+        },
+        {
+          "id": 249,
+          "char": "失",
+          "stroke": 5,
+          "onyomi": "シツ",
+          "kunyomi": "",
+          "meaning": "rudeness; failure",
+          "compounds": [
+            {"word": "失礼(な)", "reading": "しつれい", "meaning": "rudeness, impoliteness"},
+            {"word": "失敗", "reading": "しっぱい", "meaning": "failure, mistake"},
+            {"word": "失礼する", "reading": "しつれいする", "meaning": "to be excused, to apologize"}
+          ]
+        },
+        {
+          "id": 250,
+          "char": "汗",
+          "stroke": 6,
+          "onyomi": "カン",
+          "kunyomi": "あせ",
+          "meaning": "perspiration, sweat",
+          "compounds": [
+            {"word": "汗", "reading": "あせ", "meaning": "perspiration, sweat"},
+            {"word": "汗をかく", "reading": "あせをかく", "meaning": "to sweat"}
+          ]
+        },
+        {
+          "id": 251,
+          "char": "念",
+          "stroke": 8,
+          "onyomi": "ネン",
+          "kunyomi": "",
+          "meaning": "regret, disappointment; commemoration",
+          "compounds": [
+            {"word": "残念(な)", "reading": "ざんねん", "meaning": "regret, disappointment"},
+            {"word": "残念", "reading": "ざんねん", "meaning": "regret, disappointment"},
+            {"word": "記念", "reading": "きねん", "meaning": "commemoration, memory"}
+          ]
+        },
+        {
+          "id": 252,
+          "char": "涙",
+          "stroke": 10,
+          "onyomi": "ルイ",
+          "kunyomi": "なみだ",
+          "meaning": "tear(s)",
+          "compounds": [
+            {"word": "涙", "reading": "なみだ", "meaning": "tear(s)"},
+            {"word": "涙を流す", "reading": "なみだをながす", "meaning": "to weep, to shed tears"}
+          ]
+        },
+        {
+          "id": 253,
+          "char": "笑",
+          "stroke": 10,
+          "onyomi": "ショウ",
+          "kunyomi": "わらう",
+          "meaning": "laugh, smile",
+          "compounds": [
+            {"word": "笑う", "reading": "わらう", "meaning": "to laugh, to smile"},
+            {"word": "笑顔", "reading": "えがお", "meaning": "smile, smiling face"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title_jp": "アンケート",
+      "title_en": "A Questionnaire",
+      "kanji": [
+        {
+          "id": 254,
+          "char": "調",
+          "stroke": 15,
+          "onyomi": "チョウ",
+          "kunyomi": "しらべる",
+          "meaning": "condition; investigation; emphasis",
+          "compounds": [
+            {"word": "調子", "reading": "ちょうし", "meaning": "condition, state"},
+            {"word": "強調", "reading": "きょうちょう", "meaning": "emphasis, stress"},
+            {"word": "調べる", "reading": "しらべる", "meaning": "to look up, to investigate"}
+          ]
+        },
+        {
+          "id": 255,
+          "char": "査",
+          "stroke": 9,
+          "onyomi": "サ",
+          "kunyomi": "",
+          "meaning": "investigation, inquiry",
+          "compounds": [
+            {"word": "調査", "reading": "ちょうさ", "meaning": "investigation, inquiry"}
+          ]
+        },
+        {
+          "id": 256,
+          "char": "移",
+          "stroke": 11,
+          "onyomi": "イ",
+          "kunyomi": "うつる うつす",
+          "meaning": "move, transfer; shift",
+          "compounds": [
+            {"word": "移動", "reading": "いどう", "meaning": "move, transfer"},
+            {"word": "移る", "reading": "うつる", "meaning": "to move, to shift"},
+            {"word": "移す", "reading": "うつす", "meaning": "to move (something), to shift"}
+          ]
+        },
+        {
+          "id": 257,
+          "char": "難",
+          "stroke": 18,
+          "onyomi": "ナン",
+          "kunyomi": "むずかしい",
+          "meaning": "difficulty; difficult",
+          "compounds": [
+            {"word": "困難(な)", "reading": "こんなん", "meaning": "difficulty, hardship"},
+            {"word": "難しい", "reading": "むずかしい", "meaning": "difficult"},
+            {"word": "難問", "reading": "なんもん", "meaning": "a difficult problem"}
+          ]
+        },
+        {
+          "id": 258,
+          "char": "簡",
+          "stroke": 18,
+          "onyomi": "カン",
+          "kunyomi": "",
+          "meaning": "easy, simple",
+          "compounds": [
+            {"word": "簡単(な)", "reading": "かんたん", "meaning": "easy, simple"}
+          ]
+        },
+        {
+          "id": 259,
+          "char": "単",
+          "stroke": 9,
+          "onyomi": "タン",
+          "kunyomi": "",
+          "meaning": "vocabulary; unit",
+          "compounds": [
+            {"word": "単語", "reading": "たんご", "meaning": "vocabulary, word"},
+            {"word": "単位", "reading": "たんい", "meaning": "a unit, credit"}
+          ]
+        },
+        {
+          "id": 260,
+          "char": "感",
+          "stroke": 13,
+          "onyomi": "カン",
+          "kunyomi": "",
+          "meaning": "feel; inspiration",
+          "compounds": [
+            {"word": "感じる", "reading": "かんじる", "meaning": "to feel, to sense"},
+            {"word": "感動", "reading": "かんどう", "meaning": "inspiration, being moved"}
+          ]
+        },
+        {
+          "id": 261,
+          "char": "想",
+          "stroke": 13,
+          "onyomi": "ソウ",
+          "kunyomi": "",
+          "meaning": "impressions, thoughts; anticipation",
+          "compounds": [
+            {"word": "感想", "reading": "かんそう", "meaning": "impressions, thoughts"},
+            {"word": "予想", "reading": "よそう", "meaning": "anticipation, forecast, prediction"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title_jp": "日本語クラス",
+      "title_en": "A Japanese Class",
+      "kanji": [
+        {
+          "id": 262,
+          "char": "練",
+          "stroke": 14,
+          "onyomi": "レン",
+          "kunyomi": "",
+          "meaning": "practice",
+          "compounds": [
+            {"word": "練習", "reading": "れんしゅう", "meaning": "practice"}
+          ]
+        },
+        {
+          "id": 263,
+          "char": "最",
+          "stroke": 12,
+          "onyomi": "サイ",
+          "kunyomi": "もっとも",
+          "meaning": "most; recently; first, last",
+          "compounds": [
+            {"word": "最近", "reading": "さいきん", "meaning": "recently"},
+            {"word": "最初", "reading": "さいしょ", "meaning": "first, beginning"},
+            {"word": "最後", "reading": "さいご", "meaning": "last, end"},
+            {"word": "最も", "reading": "もっとも", "meaning": "most"}
+          ]
+        },
+        {
+          "id": 264,
+          "char": "適",
+          "stroke": 14,
+          "onyomi": "テキ",
+          "kunyomi": "",
+          "meaning": "correct, appropriate; comfortable",
+          "compounds": [
+            {"word": "適当(な)", "reading": "てきとう", "meaning": "correct, appropriate"},
+            {"word": "快適(な)", "reading": "かいてき", "meaning": "comfortable"}
+          ]
+        },
+        {
+          "id": 265,
+          "char": "選",
+          "stroke": 15,
+          "onyomi": "セン",
+          "kunyomi": "えらぶ",
+          "meaning": "election; choose; a player",
+          "compounds": [
+            {"word": "選挙", "reading": "せんきょ", "meaning": "an election"},
+            {"word": "選手", "reading": "せんしゅ", "meaning": "a player, an athlete"},
+            {"word": "選ぶ", "reading": "えらぶ", "meaning": "to choose"}
+          ]
+        },
+        {
+          "id": 266,
+          "char": "違",
+          "stroke": 13,
+          "onyomi": "イ",
+          "kunyomi": "ちがう ちがえる",
+          "meaning": "different, wrong; a mistake",
+          "compounds": [
+            {"word": "違う", "reading": "ちがう", "meaning": "different, wrong"},
+            {"word": "間違い", "reading": "まちがい", "meaning": "a mistake"},
+            {"word": "間違う", "reading": "まちがう", "meaning": "to make a mistake"},
+            {"word": "間違える", "reading": "まちがえる", "meaning": "to make a mistake, to get wrong"}
+          ]
+        },
+        {
+          "id": 267,
+          "char": "直",
+          "stroke": 8,
+          "onyomi": "チョク",
+          "kunyomi": "ただしい なおす なおる",
+          "meaning": "straight line; direct; fix, be repaired",
+          "compounds": [
+            {"word": "直線", "reading": "ちょくせん", "meaning": "a straight line"},
+            {"word": "直接", "reading": "ちょくせつ", "meaning": "direct"},
+            {"word": "直る", "reading": "なおる", "meaning": "to be repaired"},
+            {"word": "直す", "reading": "なおす", "meaning": "to fix, to correct"}
+          ]
+        },
+        {
+          "id": 268,
+          "char": "復",
+          "stroke": 12,
+          "onyomi": "フク",
+          "kunyomi": "",
+          "meaning": "review; recovery; a round trip",
+          "compounds": [
+            {"word": "復習", "reading": "ふくしゅう", "meaning": "review"},
+            {"word": "往復", "reading": "おうふく", "meaning": "a round trip"},
+            {"word": "回復", "reading": "かいふく", "meaning": "recovery, recuperation"}
+          ]
+        },
+        {
+          "id": 269,
+          "char": "辞",
+          "stroke": 13,
+          "onyomi": "ジ",
+          "kunyomi": "やめる",
+          "meaning": "dictionary; resign",
+          "compounds": [
+            {"word": "辞書", "reading": "じしょ", "meaning": "a dictionary"},
+            {"word": "辞める", "reading": "やめる", "meaning": "to resign, to quit"}
+          ]
+        },
+        {
+          "id": 270,
+          "char": "宿",
+          "stroke": 11,
+          "onyomi": "シュク",
+          "kunyomi": "やど",
+          "meaning": "a homework; an inn, a hotel",
+          "compounds": [
+            {"word": "宿題", "reading": "しゅくだい", "meaning": "a homework, assignment"},
+            {"word": "下宿", "reading": "げしゅく", "meaning": "lodgings"},
+            {"word": "宿", "reading": "やど", "meaning": "an inn, a hotel"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title_jp": "作文",
+      "title_en": "A Composition",
+      "kanji": [
+        {
+          "id": 271,
+          "char": "昨",
+          "stroke": 9,
+          "onyomi": "サク",
+          "kunyomi": "",
+          "meaning": "yesterday; last night; last year",
+          "compounds": [
+            {"word": "昨日", "reading": "きのう / さくじつ", "meaning": "yesterday"},
+            {"word": "昨夜", "reading": "さくや", "meaning": "last night"},
+            {"word": "昨年", "reading": "さくねん", "meaning": "last year"}
+          ]
+        },
+        {
+          "id": 272,
+          "char": "君",
+          "stroke": 7,
+          "onyomi": "クン",
+          "kunyomi": "きみ",
+          "meaning": "you (honorific, male); Mr.",
+          "compounds": [
+            {"word": "○○君", "reading": "○○くん", "meaning": "Mr. (honorific for male younger person)"},
+            {"word": "君", "reading": "きみ", "meaning": "you (male)"}
+          ]
+        },
+        {
+          "id": 273,
+          "char": "結",
+          "stroke": 12,
+          "onyomi": "ケツ",
+          "kunyomi": "むすぶ",
+          "meaning": "splendid, nice; after all; tie, connect",
+          "compounds": [
+            {"word": "結構(な)", "reading": "けっこう", "meaning": "splendid, nice"},
+            {"word": "結局", "reading": "けっきょく", "meaning": "after all"},
+            {"word": "結ぶ", "reading": "むすぶ", "meaning": "to tie, to connect, to conclude"}
+          ]
+        },
+        {
+          "id": 274,
+          "char": "婚",
+          "stroke": 11,
+          "onyomi": "コン",
+          "kunyomi": "",
+          "meaning": "marriage; engagement",
+          "compounds": [
+            {"word": "結婚", "reading": "けっこん", "meaning": "a marriage"},
+            {"word": "婚約", "reading": "こんやく", "meaning": "an engagement"},
+            {"word": "新婚旅行", "reading": "しんこんりょこう", "meaning": "a honeymoon"}
+          ]
+        },
+        {
+          "id": 275,
+          "char": "祝",
+          "stroke": 9,
+          "onyomi": "シュク",
+          "kunyomi": "いわう",
+          "meaning": "a holiday, festival; celebration",
+          "compounds": [
+            {"word": "祝日", "reading": "しゅくじつ", "meaning": "a holiday, festival day"},
+            {"word": "祝う", "reading": "いわう", "meaning": "to celebrate"},
+            {"word": "お祝い", "reading": "おいわい", "meaning": "celebration, congratulation"}
+          ]
+        },
+        {
+          "id": 276,
+          "char": "曲",
+          "stroke": 6,
+          "onyomi": "キョク",
+          "kunyomi": "まがる まげる",
+          "meaning": "a piece of music; a curve; bend",
+          "compounds": [
+            {"word": "曲", "reading": "きょく", "meaning": "a piece of music"},
+            {"word": "曲線", "reading": "きょくせん", "meaning": "a curve"},
+            {"word": "曲がる", "reading": "まがる", "meaning": "to bend, to turn a corner"},
+            {"word": "曲げる", "reading": "まげる", "meaning": "to bend"}
+          ]
+        },
+        {
+          "id": 277,
+          "char": "奥",
+          "stroke": 12,
+          "onyomi": "オウ",
+          "kunyomi": "おく",
+          "meaning": "another person's wife; innermost",
+          "compounds": [
+            {"word": "奥さん", "reading": "おくさん", "meaning": "another person's wife"},
+            {"word": "奥", "reading": "おく", "meaning": "innermost, deepest"}
+          ]
+        },
+        {
+          "id": 278,
+          "char": "寝",
+          "stroke": 13,
+          "onyomi": "シン",
+          "kunyomi": "ねる",
+          "meaning": "sleep; a nap; late riser",
+          "compounds": [
+            {"word": "寝る", "reading": "ねる", "meaning": "to sleep"},
+            {"word": "昼寝", "reading": "ひるね", "meaning": "a nap"},
+            {"word": "寝坊", "reading": "ねぼう", "meaning": "late riser, sleepyhead"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title_jp": "問診票―歯科で",
+      "title_en": "Dental Patient Registration Sheet",
+      "kanji": [
+        {
+          "id": 279,
+          "char": "痛",
+          "stroke": 12,
+          "onyomi": "ツウ",
+          "kunyomi": "いたい",
+          "meaning": "headache, stomach ache; sore, painful",
+          "compounds": [
+            {"word": "頭痛", "reading": "ずつう", "meaning": "a headache"},
+            {"word": "腹痛", "reading": "ふくつう", "meaning": "stomach ache"},
+            {"word": "痛い", "reading": "いたい", "meaning": "sore, painful"}
+          ]
+        },
+        {
+          "id": 280,
+          "char": "熱",
+          "stroke": 15,
+          "onyomi": "ネツ",
+          "kunyomi": "あつい",
+          "meaning": "heat, fever; enthusiasm, zeal",
+          "compounds": [
+            {"word": "熱", "reading": "ねつ", "meaning": "heat, fever"},
+            {"word": "熱心(な)", "reading": "ねっしん", "meaning": "enthusiasm, zeal"},
+            {"word": "熱い", "reading": "あつい", "meaning": "hot"}
+          ]
+        },
+        {
+          "id": 281,
+          "char": "虫",
+          "stroke": 6,
+          "onyomi": "チュウ",
+          "kunyomi": "むし",
+          "meaning": "an insect",
+          "compounds": [
+            {"word": "虫", "reading": "むし", "meaning": "an insect, bug"}
+          ]
+        },
+        {
+          "id": 282,
+          "char": "歯",
+          "stroke": 12,
+          "onyomi": "シ",
+          "kunyomi": "は",
+          "meaning": "dentistry; teeth; a dentist; a decayed tooth",
+          "compounds": [
+            {"word": "歯科", "reading": "しか", "meaning": "dentistry"},
+            {"word": "歯", "reading": "は", "meaning": "teeth, tooth"},
+            {"word": "歯医者", "reading": "はいしゃ", "meaning": "a dentist"},
+            {"word": "虫歯", "reading": "むしば", "meaning": "a decayed tooth, cavity"}
+          ]
+        },
+        {
+          "id": 283,
+          "char": "治",
+          "stroke": 8,
+          "onyomi": "チ",
+          "kunyomi": "なおる なおす",
+          "meaning": "politics, government; heal, cure; a treatment",
+          "compounds": [
+            {"word": "政治", "reading": "せいじ", "meaning": "politics, government"},
+            {"word": "治療", "reading": "ちりょう", "meaning": "a treatment"},
+            {"word": "治る", "reading": "なおる", "meaning": "to heal, to be cured"},
+            {"word": "治す", "reading": "なおす", "meaning": "to cure, to heal"}
+          ]
+        },
+        {
+          "id": 284,
+          "char": "汚",
+          "stroke": 6,
+          "onyomi": "オ",
+          "kunyomi": "けがれる よごれる きたない",
+          "meaning": "dirty; become dirty",
+          "compounds": [
+            {"word": "汚い", "reading": "きたない", "meaning": "dirty"},
+            {"word": "汚れる", "reading": "よごれる", "meaning": "to become dirty"}
+          ]
+        },
+        {
+          "id": 285,
+          "char": "並",
+          "stroke": 8,
+          "onyomi": "ヘイ",
+          "kunyomi": "ならぶ ならべる",
+          "meaning": "line up, set up; the alignment of your teeth",
+          "compounds": [
+            {"word": "並ぶ", "reading": "ならぶ", "meaning": "to line up, to stand in a line"},
+            {"word": "並べる", "reading": "ならべる", "meaning": "to line up, to set up"},
+            {"word": "歯並び", "reading": "はならび", "meaning": "the alignment of your teeth"}
+          ]
+        },
+        {
+          "id": 286,
+          "char": "他",
+          "stroke": 5,
+          "onyomi": "タ",
+          "kunyomi": "ほか",
+          "meaning": "other",
+          "compounds": [
+            {"word": "他の", "reading": "ほかの", "meaning": "other"},
+            {"word": "その他", "reading": "そのほか", "meaning": "other, etc."}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title_jp": "問診票―健康診断",
+      "title_en": "A Medical Check Up Questionnaire",
+      "kanji": [
+        {
+          "id": 287,
+          "char": "身",
+          "stroke": 7,
+          "onyomi": "シン",
+          "kunyomi": "み",
+          "meaning": "height; single, unmarried; social status; sashimi",
+          "compounds": [
+            {"word": "身長", "reading": "しんちょう", "meaning": "height"},
+            {"word": "独身", "reading": "どくしん", "meaning": "single, unmarried"},
+            {"word": "身分", "reading": "みぶん", "meaning": "social status"},
+            {"word": "刺身", "reading": "さしみ", "meaning": "sashimi (sliced raw fish)"}
+          ]
+        },
+        {
+          "id": 288,
+          "char": "酒",
+          "stroke": 10,
+          "onyomi": "シュ",
+          "kunyomi": "さけ さか",
+          "meaning": "sake; cooking sake; alcohol; a liquor store",
+          "compounds": [
+            {"word": "日本酒", "reading": "にほんしゅ", "meaning": "sake"},
+            {"word": "料理酒", "reading": "りょうりしゅ", "meaning": "cooking sake"},
+            {"word": "お酒", "reading": "おさけ", "meaning": "alcohol, liquor"},
+            {"word": "酒屋", "reading": "さかや", "meaning": "a liquor store"}
+          ]
+        },
+        {
+          "id": 289,
+          "char": "吸",
+          "stroke": 6,
+          "onyomi": "キュウ",
+          "kunyomi": "すう",
+          "meaning": "breathing, respiration; breathe/inhale",
+          "compounds": [
+            {"word": "呼吸", "reading": "こきゅう", "meaning": "breathing, respiration"},
+            {"word": "吸う", "reading": "すう", "meaning": "to breathe, to inhale, to smoke"}
+          ]
+        },
+        {
+          "id": 290,
+          "char": "欲",
+          "stroke": 11,
+          "onyomi": "ヨク",
+          "kunyomi": "ほしい",
+          "meaning": "appetite; a will, eagerness; want",
+          "compounds": [
+            {"word": "食欲", "reading": "しょくよく", "meaning": "appetite"},
+            {"word": "意欲", "reading": "いよく", "meaning": "a will, eagerness, motivation"},
+            {"word": "欲しい", "reading": "ほしい", "meaning": "want, desire"}
+          ]
+        },
+        {
+          "id": 291,
+          "char": "眠",
+          "stroke": 10,
+          "onyomi": "ミン",
+          "kunyomi": "ねむい ねむる",
+          "meaning": "sleep; sleepy; to sleep",
+          "compounds": [
+            {"word": "睡眠", "reading": "すいみん", "meaning": "sleep"},
+            {"word": "眠い", "reading": "ねむい", "meaning": "sleepy"},
+            {"word": "眠る", "reading": "ねむる", "meaning": "to sleep"}
+          ]
+        },
+        {
+          "id": 292,
+          "char": "疲",
+          "stroke": 10,
+          "onyomi": "ヒ",
+          "kunyomi": "つかれる",
+          "meaning": "get tired, exhaust",
+          "compounds": [
+            {"word": "疲れる", "reading": "つかれる", "meaning": "to get tired, to be exhausted"}
+          ]
+        },
+        {
+          "id": 293,
+          "char": "息",
+          "stroke": 10,
+          "onyomi": "ソク",
+          "kunyomi": "いき",
+          "meaning": "a breath; a son; be short of breath",
+          "compounds": [
+            {"word": "息", "reading": "いき", "meaning": "a breath"},
+            {"word": "息子", "reading": "むすこ", "meaning": "a son"},
+            {"word": "息切れ", "reading": "いきぎれ", "meaning": "to be short of breath"}
+          ]
+        },
+        {
+          "id": 294,
+          "char": "呼",
+          "stroke": 8,
+          "onyomi": "コ",
+          "kunyomi": "よぶ",
+          "meaning": "breathing, respiration; call",
+          "compounds": [
+            {"word": "呼吸", "reading": "こきゅう", "meaning": "breathing, respiration"},
+            {"word": "呼ぶ", "reading": "よぶ", "meaning": "to call"}
+          ]
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "day": 7,
+    "questions": [
+      {
+        "id": 1,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "結婚式に出られなくて残念です。",
+        "options": [
+          {"label": "1", "text": "だんねん"},
+          {"label": "2", "text": "きねん"},
+          {"label": "3", "text": "ざんねん"},
+          {"label": "4", "text": "むねん"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 2,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "写真をとりますよ。笑って。",
+        "options": [
+          {"label": "1", "text": "あらって"},
+          {"label": "2", "text": "いわって"},
+          {"label": "3", "text": "はらって"},
+          {"label": "4", "text": "わらって"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 3,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "車をあらたに移動させてください。",
+        "options": [
+          {"label": "1", "text": "じどう"},
+          {"label": "2", "text": "ほうどう"},
+          {"label": "3", "text": "いどう"},
+          {"label": "4", "text": "たどう"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 4,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "お返事が遅れて、すみません。",
+        "options": [
+          {"label": "1", "text": "おくれて"},
+          {"label": "2", "text": "おそれて"},
+          {"label": "3", "text": "あきれて"},
+          {"label": "4", "text": "つかれて"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 5,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "山田君は会社を辞めたそうです。",
+        "options": [
+          {"label": "1", "text": "やめた"},
+          {"label": "2", "text": "とめた"},
+          {"label": "3", "text": "ほめた"},
+          {"label": "4", "text": "やめた"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 6,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "くつのひもを結ぶ。",
+        "options": [
+          {"label": "1", "text": "むすぶ"},
+          {"label": "2", "text": "もすぶ"},
+          {"label": "3", "text": "みすぶ"},
+          {"label": "4", "text": "ゆすぶ"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 7,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "おじいさんは山の奥に住んでいます。",
+        "options": [
+          {"label": "1", "text": "そく"},
+          {"label": "2", "text": "ろく"},
+          {"label": "3", "text": "おく"},
+          {"label": "4", "text": "まく"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 8,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "政治の話は難しい。",
+        "options": [
+          {"label": "1", "text": "せいじ"},
+          {"label": "2", "text": "せいいち"},
+          {"label": "3", "text": "しょうち"},
+          {"label": "4", "text": "しょうじ"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 9,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "息子から手紙が来た。",
+        "options": [
+          {"label": "1", "text": "もっこ"},
+          {"label": "2", "text": "もすこ"},
+          {"label": "3", "text": "むすこ"},
+          {"label": "4", "text": "むつこ"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 10,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "日本酒は米からできています。",
+        "options": [
+          {"label": "1", "text": "にほんちょ"},
+          {"label": "2", "text": "にほんゆ"},
+          {"label": "3", "text": "にほんじゅ"},
+          {"label": "4", "text": "にほんしゅ"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 11,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "おれいのはがきを○書いた。",
+        "options": [
+          {"label": "1", "kanji": "お礼"},
+          {"label": "2", "kanji": "お礼"},
+          {"label": "3", "kanji": "お机"},
+          {"label": "4", "kanji": "お杯"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 12,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "いつうかがえばよろしいでしょうか。",
+        "options": [
+          {"label": "1", "kanji": "伺えば"},
+          {"label": "2", "kanji": "何えば"},
+          {"label": "3", "kanji": "何えば"},
+          {"label": "4", "kanji": "向えば"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 13,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "ことばの意味をしらべる。",
+        "options": [
+          {"label": "1", "kanji": "呼べる"},
+          {"label": "2", "kanji": "並べる"},
+          {"label": "3", "kanji": "選べる"},
+          {"label": "4", "kanji": "調べる"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 14,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "タオルで○をふく。",
+        "options": [
+          {"label": "1", "kanji": "息"},
+          {"label": "2", "kanji": "汗"},
+          {"label": "3", "kanji": "涙"},
+          {"label": "4", "kanji": "汁"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 15,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "まず（）初に材料を細かく切ります。",
+        "options": [
+          {"label": "1", "kanji": "再"},
+          {"label": "2", "kanji": "先"},
+          {"label": "3", "kanji": "際"},
+          {"label": "4", "kanji": "最"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 16,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "天気は回（）に向かっています。",
+        "options": [
+          {"label": "1", "kanji": "服"},
+          {"label": "2", "kanji": "復"},
+          {"label": "3", "kanji": "福"},
+          {"label": "4", "kanji": "腹"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 17,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "（）年はたいへんお世話になりました。",
+        "options": [
+          {"label": "1", "kanji": "次"},
+          {"label": "2", "kanji": "毎"},
+          {"label": "3", "kanji": "各"},
+          {"label": "4", "kanji": "昨"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 18,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "会社へ戻らずに（）接、帰宅します。",
+        "options": [
+          {"label": "1", "kanji": "直"},
+          {"label": "2", "kanji": "間"},
+          {"label": "3", "kanji": "真"},
+          {"label": "4", "kanji": "正"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 19,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "頭（）薬を買う。",
+        "options": [
+          {"label": "1", "kanji": "通"},
+          {"label": "2", "kanji": "痛"},
+          {"label": "3", "kanji": "病"},
+          {"label": "4", "kanji": "疼"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 20,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "食（）がない。",
+        "options": [
+          {"label": "1", "kanji": "色"},
+          {"label": "2", "kanji": "浴"},
+          {"label": "3", "kanji": "気"},
+          {"label": "4", "kanji": "欲"}
+        ],
+        "answer": "4"
+      }
+    ]
+  },
+  "quiz": {
+    "id": 5,
+    "title": "クイズ⑤ どっちを使う？",
+    "questions": [
+      {
+        "id": 1,
+        "stem": "色がかわる",
+        "reading_hint": "かわる",
+        "options": [
+          {"label": "1", "kanji": "変わる"},
+          {"label": "2", "kanji": "代わる"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 2,
+        "stem": "運転をかわる",
+        "reading_hint": "かわる",
+        "options": [
+          {"label": "1", "kanji": "変わる"},
+          {"label": "2", "kanji": "代わる"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 3,
+        "stem": "あついお茶",
+        "reading_hint": "あつい",
+        "options": [
+          {"label": "1", "kanji": "暑い"},
+          {"label": "2", "kanji": "熱い"},
+          {"label": "3", "kanji": "厚い"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 4,
+        "stem": "あつい本",
+        "reading_hint": "あつい",
+        "options": [
+          {"label": "1", "kanji": "暑い"},
+          {"label": "2", "kanji": "熱い"},
+          {"label": "3", "kanji": "厚い"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 5,
+        "stem": "夏はあつい",
+        "reading_hint": "あつい",
+        "options": [
+          {"label": "1", "kanji": "暑い"},
+          {"label": "2", "kanji": "熱い"},
+          {"label": "3", "kanji": "厚い"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 6,
+        "stem": "子どもがなく",
+        "reading_hint": "なく",
+        "options": [
+          {"label": "1", "kanji": "泣く"},
+          {"label": "2", "kanji": "鳴く"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 7,
+        "stem": "鳥がなく",
+        "reading_hint": "なく",
+        "options": [
+          {"label": "1", "kanji": "泣く"},
+          {"label": "2", "kanji": "鳴く"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 8,
+        "stem": "はじめまして",
+        "reading_hint": "はじめ",
+        "options": [
+          {"label": "1", "kanji": "始め"},
+          {"label": "2", "kanji": "初め"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 9,
+        "stem": "はじめよう",
+        "reading_hint": "はじめ",
+        "options": [
+          {"label": "1", "kanji": "始め"},
+          {"label": "2", "kanji": "初め"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 10,
+        "stem": "ケガをなおす",
+        "reading_hint": "なおす",
+        "options": [
+          {"label": "1", "kanji": "治す"},
+          {"label": "2", "kanji": "直す"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 11,
+        "stem": "間違いをなおす",
+        "reading_hint": "なおす",
+        "options": [
+          {"label": "1", "kanji": "治す"},
+          {"label": "2", "kanji": "直す"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 12,
+        "stem": "ホテルにとまる",
+        "reading_hint": "とまる",
+        "options": [
+          {"label": "1", "kanji": "泊まる"},
+          {"label": "2", "kanji": "止まる"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 13,
+        "stem": "車がとまる",
+        "reading_hint": "とまる",
+        "options": [
+          {"label": "1", "kanji": "泊まる"},
+          {"label": "2", "kanji": "止まる"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 14,
+        "stem": "はをみがく",
+        "reading_hint": "は",
+        "options": [
+          {"label": "1", "kanji": "歯"},
+          {"label": "2", "kanji": "葉"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 15,
+        "stem": "木のは",
+        "reading_hint": "は",
+        "options": [
+          {"label": "1", "kanji": "歯"},
+          {"label": "2", "kanji": "葉"}
+        ],
+        "answer": "2"
+      }
+    ]
+  }
+}

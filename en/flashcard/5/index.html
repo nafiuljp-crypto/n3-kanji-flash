@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 Flash Cards</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language:</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../chapter/5/" class="back-link">← Back to Week 5</a>
+    <h1>Flash cards</h1>
+    <p class="muted">Pick a lesson day to start studying.</p>
+</section>
+
+<div class="day-grid">
+    
+    <a href="../flashcard/5/1/" class="day-card">
+        <div class="day-number">Day 1</div>
+        <div class="day-title-jp">メールを送る</div>
+        <div class="day-title-en">Sending E-mail (texting)</div>
+        <div class="day-kanji-count">8 kanji</div>
+    </a>
+    
+    <a href="../flashcard/5/2/" class="day-card">
+        <div class="day-number">Day 2</div>
+        <div class="day-title-jp">アンケート</div>
+        <div class="day-title-en">A Questionnaire</div>
+        <div class="day-kanji-count">8 kanji</div>
+    </a>
+    
+    <a href="../flashcard/5/3/" class="day-card">
+        <div class="day-number">Day 3</div>
+        <div class="day-title-jp">日本語クラス</div>
+        <div class="day-title-en">A Japanese Class</div>
+        <div class="day-kanji-count">9 kanji</div>
+    </a>
+    
+    <a href="../flashcard/5/4/" class="day-card">
+        <div class="day-number">Day 4</div>
+        <div class="day-title-jp">作文</div>
+        <div class="day-title-en">A Composition</div>
+        <div class="day-kanji-count">8 kanji</div>
+    </a>
+    
+    <a href="../flashcard/5/5/" class="day-card">
+        <div class="day-number">Day 5</div>
+        <div class="day-title-jp">問診票―歯科で</div>
+        <div class="day-title-en">Dental Patient Registration Sheet</div>
+        <div class="day-kanji-count">8 kanji</div>
+    </a>
+    
+    <a href="../flashcard/5/6/" class="day-card">
+        <div class="day-number">Day 6</div>
+        <div class="day-title-jp">問診票―健康診断</div>
+        <div class="day-title-en">A Medical Check Up Questionnaire</div>
+        <div class="day-kanji-count">8 kanji</div>
+    </a>
+    
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Sou Matome N3 Kanji · Tailscale only</p>
+    </footer>
+
+    
+</body>
+</html>

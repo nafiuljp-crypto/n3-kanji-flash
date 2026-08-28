@@ -1,0 +1,1006 @@
+{
+  "week": 1,
+  "theme": {"jp": "でかける①", "en": "Go Out 1", "kr": "외출하기①"},
+  "lessons": [
+    {
+      "day": 1,
+      "title_jp": "駐車場",
+      "title_en": "Parking Lot",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "駐",
+          "stroke": 15,
+          "onyomi": "チュウ",
+          "kunyomi": "",
+          "meaning": "park",
+          "compounds": [
+            {"word": "駐車", "reading": "ちゅうしゃ", "meaning": "parking"},
+            {"word": "駐車場", "reading": "ちゅうしゃじょう", "meaning": "parking lot"}
+          ],
+          "example": {"jp": "ここに駐車しないでください。", "furigana": "ここにちゅうしゃしないでください。", "en": "Please do not park here."}
+        },
+        {
+          "id": 2,
+          "char": "無",
+          "stroke": 12,
+          "onyomi": "ム",
+          "kunyomi": "ない",
+          "meaning": "none",
+          "compounds": [
+            {"word": "無休", "reading": "むきゅう", "meaning": "work without a holiday"},
+            {"word": "無理", "reading": "むり", "meaning": "unreasonable"},
+            {"word": "無料", "reading": "むりょう", "meaning": "free of charge"},
+            {"word": "無い", "reading": "ない", "meaning": "does not exist, do not have, gone"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "満",
+          "stroke": 12,
+          "onyomi": "マン",
+          "kunyomi": "",
+          "meaning": "full",
+          "compounds": [
+            {"word": "満車", "reading": "まんしゃ", "meaning": "full (of cars)"},
+            {"word": "不満", "reading": "ふまん", "meaning": "dissatisfied"},
+            {"word": "満員", "reading": "まんいん", "meaning": "full (of people)"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "向",
+          "stroke": 6,
+          "onyomi": "コウ",
+          "kunyomi": "むかう / むける / むこう",
+          "meaning": "direction",
+          "compounds": [
+            {"word": "方向", "reading": "ほうこう", "meaning": "direction"},
+            {"word": "向かう", "reading": "むかう", "meaning": "go forward"},
+            {"word": "向こう", "reading": "むこう", "meaning": "over there/beyond"},
+            {"word": "向く / 向ける", "reading": "むく / むける", "meaning": "be suitable for / turn toward"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "禁",
+          "stroke": 13,
+          "onyomi": "キン",
+          "kunyomi": "",
+          "meaning": "prohibition",
+          "compounds": [
+            {"word": "禁止", "reading": "きんし", "meaning": "prohibition"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "関",
+          "stroke": 14,
+          "onyomi": "カン",
+          "kunyomi": "せき / かかわる",
+          "meaning": "related / barrier / involvement",
+          "compounds": [
+            {"word": "関心", "reading": "かんしん", "meaning": "interest"},
+            {"word": "関する", "reading": "かんする", "meaning": "related"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "係",
+          "stroke": 9,
+          "onyomi": "ケイ",
+          "kunyomi": "かかり",
+          "meaning": "connection / person in charge",
+          "compounds": [
+            {"word": "関係", "reading": "かんけい", "meaning": "relation/connection"},
+            {"word": "係", "reading": "かかり", "meaning": "person in charge"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "断",
+          "stroke": 11,
+          "onyomi": "ダン",
+          "kunyomi": "ことわる / たつ",
+          "meaning": "refuse / cut off",
+          "compounds": [
+            {"word": "無断", "reading": "むだん", "meaning": "without permission"},
+            {"word": "断水", "reading": "だんすい", "meaning": "suspension of the water supply"},
+            {"word": "断る", "reading": "ことわる", "meaning": "refuse"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title_jp": "横断歩道",
+      "title_en": "Pedestrian Crossing",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "横",
+          "stroke": 15,
+          "onyomi": "オウ",
+          "kunyomi": "よこ",
+          "meaning": "side / crossing",
+          "compounds": [
+            {"word": "横断", "reading": "おうだん", "meaning": "a crossing"},
+            {"word": "横", "reading": "よこ", "meaning": "side"},
+            {"word": "横断歩道", "reading": "おうだんほどう", "meaning": "a pedestrian crossing"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "押",
+          "stroke": 8,
+          "onyomi": "オウ",
+          "kunyomi": "おす / おさえる",
+          "meaning": "push",
+          "compounds": [
+            {"word": "押す", "reading": "おす", "meaning": "push"},
+            {"word": "押さえる", "reading": "おさえる", "meaning": "hold down"},
+            {"word": "押し入れ", "reading": "おしいれ", "meaning": "a closet"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "式",
+          "stroke": 6,
+          "onyomi": "シキ",
+          "kunyomi": "",
+          "meaning": "ceremony / type / formula",
+          "compounds": [
+            {"word": "押しボタン式", "reading": "おしぼたんしき", "meaning": "push-button"},
+            {"word": "入学式", "reading": "にゅうがくしき", "meaning": "a ceremony to begin the school term"},
+            {"word": "数式", "reading": "すうしき", "meaning": "a numerical formula"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "信",
+          "stroke": 9,
+          "onyomi": "シン",
+          "kunyomi": "",
+          "meaning": "trust / believe",
+          "compounds": [
+            {"word": "送信", "reading": "そうしん", "meaning": "transmit"},
+            {"word": "信じる", "reading": "しんじる", "meaning": "believe"},
+            {"word": "自信", "reading": "じしん", "meaning": "confidence"},
+            {"word": "信用", "reading": "しんよう", "meaning": "trust"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "号",
+          "stroke": 5,
+          "onyomi": "ゴウ",
+          "kunyomi": "",
+          "meaning": "number / signal",
+          "compounds": [
+            {"word": "信号", "reading": "しんごう", "meaning": "a signal / a traffic light"},
+            {"word": "〜号車", "reading": "〜ごうしゃ", "meaning": "carriage number"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "確",
+          "stroke": 15,
+          "onyomi": "カク",
+          "kunyomi": "たしか / たしかめる",
+          "meaning": "confirm / certain",
+          "compounds": [
+            {"word": "正確", "reading": "せいかく", "meaning": "correct, accurate"},
+            {"word": "確かめる", "reading": "たしかめる", "meaning": "confirm/verify"},
+            {"word": "確か", "reading": "たしか", "meaning": "certain"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "認",
+          "stroke": 14,
+          "onyomi": "ニン",
+          "kunyomi": "みとめる / したためる",
+          "meaning": "acknowledge / approval",
+          "compounds": [
+            {"word": "確認", "reading": "かくにん", "meaning": "confirmation"},
+            {"word": "認める", "reading": "みとめる", "meaning": "admit/approve"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "飛",
+          "stroke": 9,
+          "onyomi": "ヒ",
+          "kunyomi": "とぶ",
+          "meaning": "fly",
+          "compounds": [
+            {"word": "飛行場", "reading": "ひこうじょう", "meaning": "an airport"},
+            {"word": "飛ぶ", "reading": "とぶ", "meaning": "fly"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title_jp": "サイン",
+      "title_en": "Signs",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "非",
+          "stroke": 8,
+          "onyomi": "ヒ",
+          "kunyomi": "",
+          "meaning": "not",
+          "compounds": [
+            {"word": "非常", "reading": "ひじょう", "meaning": "emergency"},
+            {"word": "非常口", "reading": "ひじょうぐち", "meaning": "an emergency exit"},
+            {"word": "非常に", "reading": "ひじょうに", "meaning": "extremely"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "常",
+          "stroke": 11,
+          "onyomi": "ジョウ",
+          "kunyomi": "つね / とこ",
+          "meaning": "usual / always",
+          "compounds": [
+            {"word": "日常", "reading": "にちじょう", "meaning": "usual, everyday"},
+            {"word": "正常", "reading": "せいじょう", "meaning": "normal"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "階",
+          "stroke": 12,
+          "onyomi": "カイ",
+          "kunyomi": "",
+          "meaning": "floor",
+          "compounds": [
+            {"word": "〜階", "reading": "〜かい", "meaning": "floor"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "段",
+          "stroke": 9,
+          "onyomi": "ダン",
+          "kunyomi": "",
+          "meaning": "stairs / steps",
+          "compounds": [
+            {"word": "階段", "reading": "かいだん", "meaning": "stairs"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "箱",
+          "stroke": 15,
+          "onyomi": "",
+          "kunyomi": "はこ",
+          "meaning": "box",
+          "compounds": [
+            {"word": "箱", "reading": "はこ", "meaning": "a box"},
+            {"word": "ごみ箱", "reading": "ごみばこ", "meaning": "a trash box"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "危",
+          "stroke": 6,
+          "onyomi": "キ",
+          "kunyomi": "あぶない / あやうい",
+          "meaning": "dangerous",
+          "compounds": [
+            {"word": "危険", "reading": "きけん", "meaning": "danger"},
+            {"word": "危ない", "reading": "あぶない", "meaning": "dangerous"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "険",
+          "stroke": 11,
+          "onyomi": "ケン",
+          "kunyomi": "",
+          "meaning": "danger",
+          "compounds": [
+            {"word": "危険", "reading": "きけん", "meaning": "danger"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "捨",
+          "stroke": 11,
+          "onyomi": "",
+          "kunyomi": "すてる",
+          "meaning": "throw away",
+          "compounds": [
+            {"word": "捨てる", "reading": "すてる", "meaning": "throw away"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title_jp": "駅のホーム",
+      "title_en": "A Platform",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "線",
+          "stroke": 15,
+          "onyomi": "セン",
+          "kunyomi": "",
+          "meaning": "line",
+          "compounds": [
+            {"word": "線", "reading": "せん", "meaning": "a line"},
+            {"word": "〜番線", "reading": "〜ばんせん", "meaning": "line (platform) number"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "面",
+          "stroke": 9,
+          "onyomi": "メン",
+          "kunyomi": "おも / おもて",
+          "meaning": "surface / area",
+          "compounds": [
+            {"word": "全面", "reading": "ぜんめん", "meaning": "whole"},
+            {"word": "画面", "reading": "がめん", "meaning": "a screen"},
+            {"word": "〜方面", "reading": "〜ほうめん", "meaning": "area"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "普",
+          "stroke": 12,
+          "onyomi": "フ",
+          "kunyomi": "",
+          "meaning": "ordinary",
+          "compounds": [
+            {"word": "普通", "reading": "ふつう", "meaning": "ordinary"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "各",
+          "stroke": 6,
+          "onyomi": "カク",
+          "kunyomi": "",
+          "meaning": "each / every",
+          "compounds": [
+            {"word": "各駅", "reading": "かくえき", "meaning": "every station"},
+            {"word": "各国", "reading": "かくこく", "meaning": "each country"},
+            {"word": "各自", "reading": "かくじ", "meaning": "respective / each person"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "次",
+          "stroke": 6,
+          "onyomi": "ジ",
+          "kunyomi": "つぎ",
+          "meaning": "next",
+          "compounds": [
+            {"word": "目次", "reading": "もくじ", "meaning": "contents"},
+            {"word": "次回", "reading": "じかい", "meaning": "the next time"},
+            {"word": "次", "reading": "つぎ", "meaning": "next"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "快",
+          "stroke": 7,
+          "onyomi": "カイ",
+          "kunyomi": "こころよい",
+          "meaning": "fast / pleasant",
+          "compounds": [
+            {"word": "快速", "reading": "かいそく", "meaning": "ordinary (fast)"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "速",
+          "stroke": 10,
+          "onyomi": "ソク",
+          "kunyomi": "はやい / はやす / はやめる",
+          "meaning": "fast / speed",
+          "compounds": [
+            {"word": "高速道路", "reading": "こうそくどうろ", "meaning": "a highway"},
+            {"word": "速度", "reading": "そくど", "meaning": "speed"},
+            {"word": "速い", "reading": "はやい", "meaning": "fast"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "過",
+          "stroke": 12,
+          "onyomi": "カ",
+          "kunyomi": "すぎる / すごす",
+          "meaning": "pass / past",
+          "compounds": [
+            {"word": "通過", "reading": "つうか", "meaning": "passage / transit"},
+            {"word": "過去", "reading": "かこ", "meaning": "past"},
+            {"word": "過ぎる", "reading": "すぎる", "meaning": "pass"}
+          ]
+        },
+        {
+          "id": 9,
+          "char": "鉄",
+          "stroke": 13,
+          "onyomi": "テツ",
+          "kunyomi": "",
+          "meaning": "iron / rail",
+          "compounds": [
+            {"word": "地下鉄", "reading": "ちかてつ", "meaning": "a subway"},
+            {"word": "鉄道", "reading": "てつどう", "meaning": "a railway"},
+            {"word": "鉄", "reading": "てつ", "meaning": "steel"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title_jp": "特急電車",
+      "title_en": "Express Train",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "指",
+          "stroke": 9,
+          "onyomi": "シ",
+          "kunyomi": "ゆび / さす",
+          "meaning": "finger / designate",
+          "compounds": [
+            {"word": "指定", "reading": "してい", "meaning": "specify, designate"},
+            {"word": "指定席", "reading": "していせき", "meaning": "a reserved seat"},
+            {"word": "指", "reading": "ゆび", "meaning": "a finger"},
+            {"word": "指輪", "reading": "ゆびわ", "meaning": "a ring"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "定",
+          "stroke": 8,
+          "onyomi": "テイ",
+          "kunyomi": "さだめる / さだまる / さだかに",
+          "meaning": "set / regular / stable",
+          "compounds": [
+            {"word": "定休日", "reading": "ていきゅうび", "meaning": "a set/regular holiday"},
+            {"word": "安定", "reading": "あんてい", "meaning": "stable"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "席",
+          "stroke": 10,
+          "onyomi": "セキ",
+          "kunyomi": "",
+          "meaning": "seat",
+          "compounds": [
+            {"word": "席", "reading": "せき", "meaning": "a seat"},
+            {"word": "出席", "reading": "しゅっせき", "meaning": "attend"},
+            {"word": "欠席", "reading": "けっせき", "meaning": "absence"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "由",
+          "stroke": 5,
+          "onyomi": "ユウ / ユイ",
+          "kunyomi": "よし",
+          "meaning": "reason / by / free",
+          "compounds": [
+            {"word": "自由", "reading": "じゆう", "meaning": "free"},
+            {"word": "自由席", "reading": "じゆうせき", "meaning": "a non-reserved seat"},
+            {"word": "理由", "reading": "りゆう", "meaning": "reason"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "番",
+          "stroke": 12,
+          "onyomi": "バン",
+          "kunyomi": "",
+          "meaning": "number / order / turn",
+          "compounds": [
+            {"word": "番号", "reading": "ばんごう", "meaning": "a number"},
+            {"word": "〜番", "reading": "〜ばん", "meaning": "number"},
+            {"word": "〜番線", "reading": "〜ばんせん", "meaning": "line (platform) number"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "窓",
+          "stroke": 11,
+          "onyomi": "ソウ",
+          "kunyomi": "まど",
+          "meaning": "window",
+          "compounds": [
+            {"word": "窓", "reading": "まど", "meaning": "a window"},
+            {"word": "窓口", "reading": "まどぐち", "meaning": "a teller's window"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "側",
+          "stroke": 11,
+          "onyomi": "ソク",
+          "kunyomi": "かわ / がわ",
+          "meaning": "side",
+          "compounds": [
+            {"word": "両側", "reading": "りょうがわ", "meaning": "both sides"},
+            {"word": "窓側", "reading": "まどがわ", "meaning": "a window seat"},
+            {"word": "右側", "reading": "みぎがわ", "meaning": "the right side"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "路",
+          "stroke": 13,
+          "onyomi": "ロ",
+          "kunyomi": "じ",
+          "meaning": "road / route",
+          "compounds": [
+            {"word": "通路", "reading": "つうろ", "meaning": "an aisle"},
+            {"word": "道路", "reading": "どうろ", "meaning": "a road"},
+            {"word": "線路", "reading": "せんろ", "meaning": "a railway"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title_jp": "バス",
+      "title_en": "Bus",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "停",
+          "stroke": 11,
+          "onyomi": "テイ",
+          "kunyomi": "",
+          "meaning": "stop a vehicle",
+          "compounds": [
+            {"word": "停車", "reading": "ていしゃ", "meaning": "stop a vehicle"},
+            {"word": "バス停", "reading": "ばすてい", "meaning": "a bus stop"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "整",
+          "stroke": 16,
+          "onyomi": "セイ",
+          "kunyomi": "ととのえる / ととのう",
+          "meaning": "tidy",
+          "compounds": [
+            {"word": "整理", "reading": "せいり", "meaning": "tidy"},
+            {"word": "整理券", "reading": "せいりけん", "meaning": "numbered ticket (issued at cinemas, etc. to indicate the order in which people may enter)"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "券",
+          "stroke": 8,
+          "onyomi": "ケン",
+          "kunyomi": "",
+          "meaning": "ticket",
+          "compounds": [
+            {"word": "駐車券", "reading": "ちゅうしゃけん", "meaning": "a parking ticket"},
+            {"word": "乗車券", "reading": "じょうしゃけん", "meaning": "a (boarding) ticket"},
+            {"word": "回数券", "reading": "かいすうけん", "meaning": "(book of) commuter ticket(s)"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "現",
+          "stroke": 11,
+          "onyomi": "ゲン",
+          "kunyomi": "あらわれる / あらわす",
+          "meaning": "appear / cash",
+          "compounds": [
+            {"word": "現金", "reading": "げんきん", "meaning": "cash"},
+            {"word": "表現", "reading": "ひょうげん", "meaning": "expression"},
+            {"word": "現れる", "reading": "あらわれる", "meaning": "appear"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "両",
+          "stroke": 6,
+          "onyomi": "リョウ",
+          "kunyomi": "",
+          "meaning": "both",
+          "compounds": [
+            {"word": "両親", "reading": "りょうしん", "meaning": "parents"},
+            {"word": "〜両", "reading": "〜りょう", "meaning": "cars on a train"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "替",
+          "stroke": 12,
+          "onyomi": "",
+          "kunyomi": "かえる / かわる",
+          "meaning": "exchange",
+          "compounds": [
+            {"word": "取り替える", "reading": "とりかえる", "meaning": "exchange"},
+            {"word": "両替", "reading": "りょうがえ", "meaning": "exchange"},
+            {"word": "着替える", "reading": "きがえる", "meaning": "change your clothes"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "優",
+          "stroke": 17,
+          "onyomi": "ユウ",
+          "kunyomi": "やさしい",
+          "meaning": "kind / superior / actor",
+          "compounds": [
+            {"word": "優先席", "reading": "ゆうせんせき", "meaning": "a priority seat"},
+            {"word": "女優", "reading": "じょゆう", "meaning": "an actress"},
+            {"word": "優しい", "reading": "やさしい", "meaning": "kind"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "座",
+          "stroke": 10,
+          "onyomi": "ザ",
+          "kunyomi": "すわる",
+          "meaning": "seat / sit",
+          "compounds": [
+            {"word": "座席", "reading": "ざせき", "meaning": "a seat"},
+            {"word": "正座", "reading": "せいざ", "meaning": "sit on the floor Japanese style"},
+            {"word": "座る", "reading": "すわる", "meaning": "sit"}
+          ]
+        },
+        {
+          "id": 9,
+          "char": "降",
+          "stroke": 10,
+          "onyomi": "コウ",
+          "kunyomi": "おりる / ふる / くだる",
+          "meaning": "get off / fall",
+          "compounds": [
+            {"word": "降車口", "reading": "こうしゃぐち", "meaning": "exit (for getting off)"},
+            {"word": "以降", "reading": "いこう", "meaning": "after..."},
+            {"word": "降りる", "reading": "おりる", "meaning": "get off"},
+            {"word": "降る", "reading": "ふる", "meaning": "fall"}
+          ]
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "day": 7,
+    "questions": [
+      {
+        "id": 1,
+        "section": 1,
+        "type": "reading",
+        "stem": "「飛び出し注意」と書いてあります。",
+        "options": [
+          {"label": "1", "text": "よびだしちゅうい"},
+          {"label": "2", "text": "とびだしちゅうい"},
+          {"label": "3", "text": "とびだしじゅうい"},
+          {"label": "4", "text": "よびだしじゅうい"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 2,
+        "section": 1,
+        "type": "reading",
+        "stem": "この時計は正確です。",
+        "options": [
+          {"label": "1", "text": "せいかく"},
+          {"label": "2", "text": "せっかく"},
+          {"label": "3", "text": "しょうかく"},
+          {"label": "4", "text": "しょうがく"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 3,
+        "section": 1,
+        "type": "reading",
+        "stem": "横断歩道をわたりましょう。",
+        "options": [
+          {"label": "1", "text": "こうだん"},
+          {"label": "2", "text": "おうだん"},
+          {"label": "3", "text": "さんだん"},
+          {"label": "4", "text": "そうだん"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 4,
+        "section": 1,
+        "type": "reading",
+        "stem": "このなべは鉄で作られています。",
+        "options": [
+          {"label": "1", "text": "しつ"},
+          {"label": "2", "text": "ねつ"},
+          {"label": "3", "text": "れつ"},
+          {"label": "4", "text": "てつ"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 5,
+        "section": 1,
+        "type": "reading",
+        "stem": "優先席ではけいたい電話を使わないでください。",
+        "options": [
+          {"label": "1", "text": "うせん"},
+          {"label": "2", "text": "にゅうせん"},
+          {"label": "3", "text": "ゆうせん"},
+          {"label": "4", "text": "よやく"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 6,
+        "section": 1,
+        "type": "reading",
+        "stem": "料金は降りるときにはらってください。",
+        "options": [
+          {"label": "1", "text": "のりる"},
+          {"label": "2", "text": "ふりる"},
+          {"label": "3", "text": "こりる"},
+          {"label": "4", "text": "おりる"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 7,
+        "section": 1,
+        "type": "reading",
+        "stem": "関係者以外入らないでください。",
+        "options": [
+          {"label": "1", "text": "かんけいしや"},
+          {"label": "2", "text": "かんれんしゃ"},
+          {"label": "3", "text": "けいけんしゃ"},
+          {"label": "4", "text": "かんきょうしゃ"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 8,
+        "section": 1,
+        "type": "reading",
+        "stem": "確認ボタンを押します。",
+        "options": [
+          {"label": "1", "text": "せきにん"},
+          {"label": "2", "text": "かくにん"},
+          {"label": "3", "text": "しょうにん"},
+          {"label": "4", "text": "こうにん"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 9,
+        "section": 1,
+        "type": "reading",
+        "stem": "ドアの横にスイッチがあります。",
+        "options": [
+          {"label": "1", "text": "そば"},
+          {"label": "2", "text": "よこ"},
+          {"label": "3", "text": "たて"},
+          {"label": "4", "text": "となり"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 10,
+        "section": 1,
+        "type": "reading",
+        "stem": "高速道路から飛行場が見えます。",
+        "options": [
+          {"label": "1", "text": "こうくう"},
+          {"label": "2", "text": "ひこうば"},
+          {"label": "3", "text": "くうこう"},
+          {"label": "4", "text": "ひこうじょう"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 11,
+        "section": 2,
+        "type": "writing_kanji",
+        "stem": "席はなんばんですか。",
+        "options": [
+          {"label": "1", "text": "何号"},
+          {"label": "2", "text": "向番"},
+          {"label": "3", "text": "何番"},
+          {"label": "4", "text": "向号"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 12,
+        "section": 2,
+        "type": "writing_kanji",
+        "stem": "黄色いせんまで下がってお待ちください。",
+        "options": [
+          {"label": "1", "text": "線"},
+          {"label": "2", "text": "信"},
+          {"label": "3", "text": "段"},
+          {"label": "4", "text": "側"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 13,
+        "section": 2,
+        "type": "writing_kanji",
+        "stem": "あの女優はひょうげん力がある。",
+        "options": [
+          {"label": "1", "text": "表信"},
+          {"label": "2", "text": "表見"},
+          {"label": "3", "text": "表言"},
+          {"label": "4", "text": "表現"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 14,
+        "section": 2,
+        "type": "writing_kanji",
+        "stem": "社長はまちがいをみとめた。",
+        "options": [
+          {"label": "1", "text": "定めた"},
+          {"label": "2", "text": "認めた"},
+          {"label": "3", "text": "窓めた"},
+          {"label": "4", "text": "面めた"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 15,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "この電車は（　　）駅に止まります。",
+        "options": [
+          {"label": "1", "text": "毎"},
+          {"label": "2", "text": "次"},
+          {"label": "3", "text": "各"},
+          {"label": "4", "text": "両"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 16,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "あの信号は押しボタン（　　）です。",
+        "options": [
+          {"label": "1", "text": "箱"},
+          {"label": "2", "text": "席"},
+          {"label": "3", "text": "向"},
+          {"label": "4", "text": "式"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 17,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "駐車場はただいま（　　）車です。",
+        "options": [
+          {"label": "1", "text": "両"},
+          {"label": "2", "text": "満"},
+          {"label": "3", "text": "禁"},
+          {"label": "4", "text": "非"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 18,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "1万円以上は、送料（　　）料です。",
+        "options": [
+          {"label": "1", "text": "非"},
+          {"label": "2", "text": "不"},
+          {"label": "3", "text": "無"},
+          {"label": "4", "text": "禁"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 19,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "整理（　　）を取ってお待ちください。",
+        "options": [
+          {"label": "1", "text": "停"},
+          {"label": "2", "text": "箱"},
+          {"label": "3", "text": "路"},
+          {"label": "4", "text": "券"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 20,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "お金は料金（　　）に入れてください。",
+        "options": [
+          {"label": "1", "text": "箱"},
+          {"label": "2", "text": "式"},
+          {"label": "3", "text": "側"},
+          {"label": "4", "text": "券"}
+        ],
+        "answer": "1"
+      }
+    ]
+  },
+  "quiz": {
+    "id": 1,
+    "title": "クイズ① どちらの字？",
+    "questions": [
+      {
+        "id": 1,
+        "stem": "未来",
+        "reading_hint": "みらい",
+        "options": [
+          {"label": "1", "kanji": "未"},
+          {"label": "2", "kanji": "末"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 2,
+        "stem": "若い",
+        "reading_hint": "わかい",
+        "options": [
+          {"label": "1", "kanji": "苦"},
+          {"label": "2", "kanji": "若"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 3,
+        "stem": "勉強",
+        "reading_hint": "べんきょう",
+        "options": [
+          {"label": "1", "kanji": "勉"},
+          {"label": "2", "kanji": "晩"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 4,
+        "stem": "鳥が飛ぶ",
+        "reading_hint": "とりがとぶ",
+        "options": [
+          {"label": "1", "kanji": "鳥"},
+          {"label": "2", "kanji": "烏"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 5,
+        "stem": "1皿100円",
+        "reading_hint": "ひとさらひゃくえん",
+        "options": [
+          {"label": "1", "kanji": "皿"},
+          {"label": "2", "kanji": "血"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 6,
+        "stem": "取_けて！",
+        "reading_hint": "たす_けて！",
+        "options": [
+          {"label": "1", "kanji": "取"},
+          {"label": "2", "kanji": "助"}
+        ],
+        "answer": "2"
+      }
+    ]
+  }
+}

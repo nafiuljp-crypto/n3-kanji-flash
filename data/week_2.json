@@ -1,0 +1,988 @@
+{
+  "week": 2,
+  "theme": {"jp": "でかける②", "en": "Go Out 2", "kr": "외출하기②"},
+  "lessons": [
+    {
+      "day": 1,
+      "title_jp": "レストラン",
+      "title_en": "Restaurant",
+      "kanji": [
+        {
+          "id": 59,
+          "char": "準",
+          "stroke": 13,
+          "onyomi": "ジュン",
+          "kunyomi": "",
+          "meaning": "standard",
+          "compounds": [
+            {"word": "準備", "reading": "じゅんび", "meaning": "preparation"}
+          ],
+          "example": {
+            "jp": "旅行の準備をしています。",
+            "furigana": "りょこうのじゅんびをしています",
+            "en": "I am preparing for the trip."
+          }
+        },
+        {
+          "id": 60,
+          "char": "備",
+          "stroke": 12,
+          "onyomi": "ビ",
+          "kunyomi": "そなえる",
+          "meaning": "equip",
+          "compounds": [
+            {"word": "準備", "reading": "じゅんび", "meaning": "preparation"},
+            {"word": "備える", "reading": "そなえる", "meaning": "to prepare, to provide, to have"}
+          ]
+        },
+        {
+          "id": 61,
+          "char": "営",
+          "stroke": 12,
+          "onyomi": "エイ",
+          "kunyomi": "",
+          "meaning": "business",
+          "compounds": [
+            {"word": "営業", "reading": "えいぎょう", "meaning": "business"}
+          ]
+        },
+        {
+          "id": 62,
+          "char": "閉",
+          "stroke": 11,
+          "onyomi": "ヘイ",
+          "kunyomi": "しめる, とじる",
+          "meaning": "close",
+          "compounds": [
+            {"word": "開閉", "reading": "かいへい", "meaning": "open and shut"},
+            {"word": "閉まる", "reading": "しまる", "meaning": "to shut, to close"},
+            {"word": "閉める", "reading": "しめる", "meaning": "to shut, to close"}
+          ]
+        },
+        {
+          "id": 63,
+          "char": "案",
+          "stroke": 10,
+          "onyomi": "アン",
+          "kunyomi": "",
+          "meaning": "plan",
+          "compounds": [
+            {"word": "案内", "reading": "あんない", "meaning": "information"},
+            {"word": "案", "reading": "あん", "meaning": "a suggestion, proposal, plan"}
+          ]
+        },
+        {
+          "id": 64,
+          "char": "内",
+          "stroke": 4,
+          "onyomi": "ナイ",
+          "kunyomi": "うち",
+          "meaning": "inside",
+          "compounds": [
+            {"word": "家内", "reading": "かない", "meaning": "wife"},
+            {"word": "以内", "reading": "いない", "meaning": "within"},
+            {"word": "内側", "reading": "うちがわ", "meaning": "inside"},
+            {"word": "国内", "reading": "こくない", "meaning": "domestic"}
+          ]
+        },
+        {
+          "id": 65,
+          "char": "予",
+          "stroke": 4,
+          "onyomi": "ヨ",
+          "kunyomi": "",
+          "meaning": "beforehand",
+          "compounds": [
+            {"word": "予定", "reading": "よてい", "meaning": "a plan/schedule"},
+            {"word": "予習", "reading": "よしゅう", "meaning": "preparation (pre-study)"}
+          ]
+        },
+        {
+          "id": 66,
+          "char": "約",
+          "stroke": 9,
+          "onyomi": "ヤク",
+          "kunyomi": "",
+          "meaning": "promise",
+          "compounds": [
+            {"word": "予約", "reading": "よやく", "meaning": "an appointment/reservation"},
+            {"word": "約〜", "reading": "やく〜", "meaning": "approximately"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title_jp": "禁煙",
+      "title_en": "No Smoking",
+      "kanji": [
+        {
+          "id": 67,
+          "char": "煙",
+          "stroke": 13,
+          "onyomi": "エン",
+          "kunyomi": "けむり",
+          "meaning": "smoke",
+          "compounds": [
+            {"word": "禁煙", "reading": "きんえん", "meaning": "no smoking"},
+            {"word": "煙", "reading": "けむり", "meaning": "smoke"}
+          ]
+        },
+        {
+          "id": 68,
+          "char": "当",
+          "stroke": 6,
+          "onyomi": "トウ",
+          "kunyomi": "あたる",
+          "meaning": "hit",
+          "compounds": [
+            {"word": "本当", "reading": "ほんとう", "meaning": "the truth"},
+            {"word": "当○○", "reading": "とう○○", "meaning": "this ○○"},
+            {"word": "当たる", "reading": "あたる", "meaning": "hit/win (lottery)"},
+            {"word": "当たり前", "reading": "あたりまえ", "meaning": "natural, not surprising"}
+          ]
+        },
+        {
+          "id": 69,
+          "char": "全",
+          "stroke": 6,
+          "onyomi": "ゼン",
+          "kunyomi": "",
+          "meaning": "whole",
+          "compounds": [
+            {"word": "全部", "reading": "ぜんぶ", "meaning": "all/whole"},
+            {"word": "全席", "reading": "ぜんせき", "meaning": "all seats"},
+            {"word": "安全", "reading": "あんぜん", "meaning": "safety"}
+          ]
+        },
+        {
+          "id": 70,
+          "char": "客",
+          "stroke": 9,
+          "onyomi": "キャク",
+          "kunyomi": "きゃく",
+          "meaning": "guest",
+          "compounds": [
+            {"word": "客", "reading": "きゃく", "meaning": "a customer"},
+            {"word": "お客様", "reading": "おきゃくさま", "meaning": "a customer"}
+          ]
+        },
+        {
+          "id": 71,
+          "char": "様",
+          "stroke": 14,
+          "onyomi": "ヨウ",
+          "kunyomi": "さま",
+          "meaning": "manner",
+          "compounds": [
+            {"word": "様子", "reading": "ようす", "meaning": "appearance/situation"},
+            {"word": "○○様", "reading": "○○さま", "meaning": "an honorific added to people's names, particularly in letters"}
+          ]
+        },
+        {
+          "id": 72,
+          "char": "解",
+          "stroke": 13,
+          "onyomi": "カイ",
+          "kunyomi": "",
+          "meaning": "understand",
+          "compounds": [
+            {"word": "理解", "reading": "りかい", "meaning": "understand"},
+            {"word": "解答", "reading": "かいとう", "meaning": "an answer"},
+            {"word": "解説", "reading": "かいせつ", "meaning": "an explanation"},
+            {"word": "分解", "reading": "ぶんかい", "meaning": "take apart"}
+          ]
+        },
+        {
+          "id": 73,
+          "char": "協",
+          "stroke": 8,
+          "onyomi": "キョウ",
+          "kunyomi": "",
+          "meaning": "cooperate",
+          "compounds": [
+            {"word": "協力", "reading": "きょうりょく", "meaning": "cooperation"}
+          ]
+        },
+        {
+          "id": 74,
+          "char": "願",
+          "stroke": 19,
+          "onyomi": "ガン",
+          "kunyomi": "ねがう",
+          "meaning": "wish",
+          "compounds": [
+            {"word": "願う", "reading": "ねがう", "meaning": "wish"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title_jp": "観光地図",
+      "title_en": "Sightseeing Map",
+      "kanji": [
+        {
+          "id": 75,
+          "char": "観",
+          "stroke": 18,
+          "onyomi": "カン",
+          "kunyomi": "",
+          "meaning": "see",
+          "compounds": [
+            {"word": "観光", "reading": "かんこう", "meaning": "sightseeing"},
+            {"word": "観客", "reading": "かんきゃく", "meaning": "spectator, audience"}
+          ]
+        },
+        {
+          "id": 76,
+          "char": "園",
+          "stroke": 13,
+          "onyomi": "エン",
+          "kunyomi": "",
+          "meaning": "garden",
+          "compounds": [
+            {"word": "動物園", "reading": "どうぶつえん", "meaning": "a zoo"}
+          ]
+        },
+        {
+          "id": 77,
+          "char": "港",
+          "stroke": 12,
+          "onyomi": "コウ",
+          "kunyomi": "みなと",
+          "meaning": "port",
+          "compounds": [
+            {"word": "空港", "reading": "くうこう", "meaning": "an airport"},
+            {"word": "○○港", "reading": "○○こう", "meaning": "○○ port"},
+            {"word": "港", "reading": "みなと", "meaning": "a port"}
+          ]
+        },
+        {
+          "id": 78,
+          "char": "遊",
+          "stroke": 12,
+          "onyomi": "ユウ",
+          "kunyomi": "あそぶ",
+          "meaning": "play",
+          "compounds": [
+            {"word": "遊園地", "reading": "ゆうえんち", "meaning": "an amusement park"},
+            {"word": "遊ぶ", "reading": "あそぶ", "meaning": "play"}
+          ]
+        },
+        {
+          "id": 79,
+          "char": "美",
+          "stroke": 9,
+          "onyomi": "ビ",
+          "kunyomi": "うつくしい",
+          "meaning": "beautiful",
+          "compounds": [
+            {"word": "美術館", "reading": "びじゅつかん", "meaning": "a museum"},
+            {"word": "美人", "reading": "びじん", "meaning": "a beautiful woman"},
+            {"word": "美しい", "reading": "うつくしい", "meaning": "beautiful"}
+          ]
+        },
+        {
+          "id": 80,
+          "char": "術",
+          "stroke": 11,
+          "onyomi": "ジュツ",
+          "kunyomi": "",
+          "meaning": "art",
+          "compounds": [
+            {"word": "美術", "reading": "びじゅつ", "meaning": "(fine) art"},
+            {"word": "技術", "reading": "ぎじゅつ", "meaning": "technique, technology"},
+            {"word": "手術", "reading": "しゅじゅつ", "meaning": "surgery, operation"}
+          ]
+        },
+        {
+          "id": 81,
+          "char": "神",
+          "stroke": 9,
+          "onyomi": "シン, ジン",
+          "kunyomi": "カミ",
+          "meaning": "god",
+          "compounds": [
+            {"word": "神社", "reading": "じんじゃ", "meaning": "a shrine"},
+            {"word": "神様", "reading": "かみさま", "meaning": "a god"},
+            {"word": "神経質", "reading": "しんけいしつ", "meaning": "nervous"}
+          ]
+        },
+        {
+          "id": 82,
+          "char": "寺",
+          "stroke": 6,
+          "onyomi": "ジ",
+          "kunyomi": "てら",
+          "meaning": "temple",
+          "compounds": [
+            {"word": "○○寺", "reading": "○○じ", "meaning": "○○ Temple"},
+            {"word": "お寺", "reading": "おてら", "meaning": "a temple"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title_jp": "街の地図",
+      "title_en": "A Map of the City",
+      "kanji": [
+        {
+          "id": 83,
+          "char": "役",
+          "stroke": 7,
+          "onyomi": "ヤク",
+          "kunyomi": "",
+          "meaning": "role",
+          "compounds": [
+            {"word": "市役所", "reading": "しやくしょ", "meaning": "the city office"},
+            {"word": "役に立つ", "reading": "やくにたつ", "meaning": "useful"},
+            {"word": "役員", "reading": "やくいん", "meaning": "an officer/member"}
+          ]
+        },
+        {
+          "id": 84,
+          "char": "郵",
+          "stroke": 11,
+          "onyomi": "ユウ",
+          "kunyomi": "",
+          "meaning": "mail",
+          "compounds": [
+            {"word": "郵便", "reading": "ゆうびん", "meaning": "mail"}
+          ]
+        },
+        {
+          "id": 85,
+          "char": "局",
+          "stroke": 7,
+          "onyomi": "キョク",
+          "kunyomi": "",
+          "meaning": "bureau",
+          "compounds": [
+            {"word": "郵便局", "reading": "ゆうびんきょく", "meaning": "a post office"},
+            {"word": "薬局", "reading": "やっきょく", "meaning": "a drug store"}
+          ]
+        },
+        {
+          "id": 86,
+          "char": "交",
+          "stroke": 6,
+          "onyomi": "コウ",
+          "kunyomi": "",
+          "meaning": "exchange",
+          "compounds": [
+            {"word": "交番", "reading": "こうばん", "meaning": "a police box"},
+            {"word": "交通", "reading": "こうつう", "meaning": "transport"},
+            {"word": "交換", "reading": "こうかん", "meaning": "exchange"}
+          ]
+        },
+        {
+          "id": 87,
+          "char": "差",
+          "stroke": 10,
+          "onyomi": "サ",
+          "kunyomi": "さす",
+          "meaning": "difference",
+          "compounds": [
+            {"word": "差", "reading": "さ", "meaning": "difference"},
+            {"word": "差し出す", "reading": "さしだす", "meaning": "hand in"},
+            {"word": "差出人", "reading": "さしだしにん", "meaning": "a sender"}
+          ]
+        },
+        {
+          "id": 88,
+          "char": "点",
+          "stroke": 9,
+          "onyomi": "テン",
+          "kunyomi": "",
+          "meaning": "point",
+          "compounds": [
+            {"word": "交差点", "reading": "こうさてん", "meaning": "an intersection"},
+            {"word": "点数", "reading": "てんすう", "meaning": "score/points"},
+            {"word": "〜点", "reading": "〜てん", "meaning": "~ points"}
+          ]
+        },
+        {
+          "id": 89,
+          "char": "橋",
+          "stroke": 16,
+          "onyomi": "キョウ",
+          "kunyomi": "はし",
+          "meaning": "bridge",
+          "compounds": [
+            {"word": "歩道橋", "reading": "ほどうきょう", "meaning": "a foot bridge"},
+            {"word": "橋", "reading": "はし", "meaning": "a bridge"}
+          ]
+        },
+        {
+          "id": 90,
+          "char": "公",
+          "stroke": 4,
+          "onyomi": "コウ",
+          "kunyomi": "",
+          "meaning": "public",
+          "compounds": [
+            {"word": "公園", "reading": "こうえん", "meaning": "a park"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title_jp": "病院",
+      "title_en": "Hospital",
+      "kanji": [
+        {
+          "id": 91,
+          "char": "受",
+          "stroke": 8,
+          "onyomi": "ジュ",
+          "kunyomi": "うける",
+          "meaning": "receive",
+          "compounds": [
+            {"word": "受信", "reading": "じゅしん", "meaning": "receive"},
+            {"word": "受験", "reading": "じゅけん", "meaning": "an entrance examination"},
+            {"word": "受ける", "reading": "うける", "meaning": "receive"}
+          ]
+        },
+        {
+          "id": 92,
+          "char": "付",
+          "stroke": 5,
+          "onyomi": "フ",
+          "kunyomi": "つける, つく",
+          "meaning": "attach",
+          "compounds": [
+            {"word": "付ける", "reading": "つける", "meaning": "put on"},
+            {"word": "片付ける", "reading": "かたづける", "meaning": "tidy up"},
+            {"word": "付く", "reading": "つく", "meaning": "stick to"},
+            {"word": "受付", "reading": "うけつけ", "meaning": "a reception"}
+          ]
+        },
+        {
+          "id": 93,
+          "char": "科",
+          "stroke": 9,
+          "onyomi": "カ",
+          "kunyomi": "",
+          "meaning": "department",
+          "compounds": [
+            {"word": "科学", "reading": "かがく", "meaning": "science"},
+            {"word": "外科", "reading": "げか", "meaning": "surgery department"},
+            {"word": "内科", "reading": "ないか", "meaning": "internal medicine"},
+            {"word": "教科書", "reading": "きょうかしょ", "meaning": "a textbook"}
+          ]
+        },
+        {
+          "id": 94,
+          "char": "鼻",
+          "stroke": 14,
+          "onyomi": "ビ",
+          "kunyomi": "はな",
+          "meaning": "nose",
+          "compounds": [
+            {"word": "耳鼻科", "reading": "じびか", "meaning": "ears and nose department"},
+            {"word": "鼻", "reading": "はな", "meaning": "a nose"}
+          ]
+        },
+        {
+          "id": 95,
+          "char": "婦",
+          "stroke": 11,
+          "onyomi": "フ",
+          "kunyomi": "",
+          "meaning": "woman",
+          "compounds": [
+            {"word": "婦人", "reading": "ふじん", "meaning": "a woman"},
+            {"word": "主婦", "reading": "しゅふ", "meaning": "a housewife"},
+            {"word": "産婦人科", "reading": "さんふじんか", "meaning": "obstetrics and gynecology department"}
+          ]
+        },
+        {
+          "id": 96,
+          "char": "形",
+          "stroke": 7,
+          "onyomi": "ケイ, ギョウ",
+          "kunyomi": "かたち",
+          "meaning": "shape",
+          "compounds": [
+            {"word": "形式", "reading": "けいしき", "meaning": "form/type"},
+            {"word": "図形", "reading": "ずけい", "meaning": "a diagram"},
+            {"word": "整形外科", "reading": "せいけいげか", "meaning": "orthopedics department"},
+            {"word": "人形", "reading": "にんぎょう", "meaning": "a doll/puppet"},
+            {"word": "形", "reading": "かたち", "meaning": "shape/form"}
+          ]
+        },
+        {
+          "id": 97,
+          "char": "骨",
+          "stroke": 10,
+          "onyomi": "コツ",
+          "kunyomi": "ほね",
+          "meaning": "bone",
+          "compounds": [
+            {"word": "骨折", "reading": "こっせつ", "meaning": "a bone fracture"},
+            {"word": "骨", "reading": "ほね", "meaning": "a bone"}
+          ]
+        },
+        {
+          "id": 98,
+          "char": "折",
+          "stroke": 7,
+          "onyomi": "セツ",
+          "kunyomi": "おる, おりる",
+          "meaning": "fold",
+          "compounds": [
+            {"word": "右折", "reading": "うせつ", "meaning": "a right turn"},
+            {"word": "左折", "reading": "させつ", "meaning": "a left turn"},
+            {"word": "折る", "reading": "おる", "meaning": "break/fold (something)"},
+            {"word": "折り紙", "reading": "おりがみ", "meaning": "Japanese art of folding paper"},
+            {"word": "折れる", "reading": "おれる", "meaning": "break"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title_jp": "困ったときは",
+      "title_en": "When You Need Help",
+      "kanji": [
+        {
+          "id": 99,
+          "char": "困",
+          "stroke": 7,
+          "onyomi": "コン",
+          "kunyomi": "こまる",
+          "meaning": "trouble",
+          "compounds": [
+            {"word": "困る", "reading": "こまる", "meaning": "be in trouble"}
+          ]
+        },
+        {
+          "id": 100,
+          "char": "消",
+          "stroke": 10,
+          "onyomi": "ショウ",
+          "kunyomi": "きえる, けす",
+          "meaning": "extinguish",
+          "compounds": [
+            {"word": "消防", "reading": "しょうぼう", "meaning": "fire fighting"},
+            {"word": "消える", "reading": "きえる", "meaning": "be extinguished, disappear"},
+            {"word": "消す", "reading": "けす", "meaning": "extinguish"},
+            {"word": "消しゴム", "reading": "けしゴム", "meaning": "an eraser"}
+          ]
+        },
+        {
+          "id": 101,
+          "char": "防",
+          "stroke": 7,
+          "onyomi": "ボウ",
+          "kunyomi": "ふせぐ",
+          "meaning": "prevent",
+          "compounds": [
+            {"word": "予防", "reading": "よぼう", "meaning": "precaution, prevention"},
+            {"word": "防ぐ", "reading": "ふせぐ", "meaning": "prevent"}
+          ]
+        },
+        {
+          "id": 102,
+          "char": "救",
+          "stroke": 11,
+          "onyomi": "キュウ",
+          "kunyomi": "すくう",
+          "meaning": "save",
+          "compounds": [
+            {"word": "救急車", "reading": "きゅうきゅうしゃ", "meaning": "an ambulance"},
+            {"word": "救う", "reading": "すくう", "meaning": "save"}
+          ]
+        },
+        {
+          "id": 103,
+          "char": "警",
+          "stroke": 19,
+          "onyomi": "ケイ",
+          "kunyomi": "",
+          "meaning": "warn",
+          "compounds": [
+            {"word": "警官", "reading": "けいかん", "meaning": "a police officer"},
+            {"word": "警察", "reading": "けいさつ", "meaning": "police"}
+          ]
+        },
+        {
+          "id": 104,
+          "char": "察",
+          "stroke": 14,
+          "onyomi": "サツ",
+          "kunyomi": "",
+          "meaning": "guess",
+          "compounds": [
+            {"word": "警察", "reading": "けいさつ", "meaning": "police"}
+          ]
+        },
+        {
+          "id": 105,
+          "char": "故",
+          "stroke": 9,
+          "onyomi": "コ",
+          "kunyomi": "",
+          "meaning": "cause",
+          "compounds": [
+            {"word": "事故", "reading": "じこ", "meaning": "an accident"},
+            {"word": "故障", "reading": "こしょう", "meaning": "break-down, failure"},
+            {"word": "故○○", "reading": "こ○○", "meaning": "the late Mr."}
+          ]
+        },
+        {
+          "id": 106,
+          "char": "伝",
+          "stroke": 6,
+          "onyomi": "デン",
+          "kunyomi": "つたえる, つたわる",
+          "meaning": "transmit",
+          "compounds": [
+            {"word": "伝言", "reading": "でんごん", "meaning": "a message"},
+            {"word": "伝える", "reading": "つたえる", "meaning": "convey/communicate"},
+            {"word": "手伝う", "reading": "てつだう", "meaning": "help"}
+          ]
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "day": 7,
+    "questions": [
+      {
+        "id": 1,
+        "section": 1,
+        "type": "reading",
+        "stem": "ご【協力】ありがとうございます。",
+        "options": [
+          {"label": "1", "text": "きょうりょく"},
+          {"label": "2", "text": "きょうりょく"},
+          {"label": "3", "text": "こうりょく"},
+          {"label": "4", "text": "こうりゃく"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 2,
+        "section": 1,
+        "type": "reading",
+        "stem": "【日本語】がわからなくて困っています。",
+        "options": [
+          {"label": "1", "text": "くまって"},
+          {"label": "2", "text": "こまって"},
+          {"label": "3", "text": "よわって"},
+          {"label": "4", "text": "まいって"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 3,
+        "section": 1,
+        "type": "reading",
+        "stem": "【手伝って】くれませんか。",
+        "options": [
+          {"label": "1", "text": "たすけて"},
+          {"label": "2", "text": "つだって"},
+          {"label": "3", "text": "ことづかって"},
+          {"label": "4", "text": "つたえて"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 4,
+        "section": 1,
+        "type": "reading",
+        "stem": "【美術館】に絵を見に行きました。",
+        "options": [
+          {"label": "1", "text": "ふじゅつかん"},
+          {"label": "2", "text": "きじゅつかん"},
+          {"label": "3", "text": "びじゅつかん"},
+          {"label": "4", "text": "しゅじゅつかん"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 5,
+        "section": 1,
+        "type": "reading",
+        "stem": "【空港】は空の港です。",
+        "options": [
+          {"label": "1", "text": "くうこう"},
+          {"label": "2", "text": "くうきょう"},
+          {"label": "3", "text": "こうきょう"},
+          {"label": "4", "text": "こうこう"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 6,
+        "section": 1,
+        "type": "reading",
+        "stem": "京都に金閣堂という有名な【お寺】があります。",
+        "options": [
+          {"label": "1", "text": "じ"},
+          {"label": "2", "text": "ぎ"},
+          {"label": "3", "text": "に"},
+          {"label": "4", "text": "ち"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 7,
+        "section": 1,
+        "type": "reading",
+        "stem": "【地震】に【備えて】いろいろなことをしています。",
+        "options": [
+          {"label": "1", "text": "もかえて"},
+          {"label": "2", "text": "そなえて"},
+          {"label": "3", "text": "おさえて"},
+          {"label": "4", "text": "そなえて"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 8,
+        "section": 1,
+        "type": "reading",
+        "stem": "インフルエンザを【予防】する。",
+        "options": [
+          {"label": "1", "text": "ゆうぼう"},
+          {"label": "2", "text": "ようぼう"},
+          {"label": "3", "text": "ゆほう"},
+          {"label": "4", "text": "よぼう"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 9,
+        "section": 1,
+        "type": "reading",
+        "stem": "【消しゴム】を【貸して】くれませんか。",
+        "options": [
+          {"label": "1", "text": "きして"},
+          {"label": "2", "text": "けして"},
+          {"label": "3", "text": "かして"},
+          {"label": "4", "text": "さして"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 10,
+        "section": 1,
+        "type": "reading",
+        "stem": "危ないですから、【黄色い】線の【内側】に下がってお待ちください。",
+        "options": [
+          {"label": "1", "text": "うちがわ"},
+          {"label": "2", "text": "ないがわ"},
+          {"label": "3", "text": "そとがわ"},
+          {"label": "4", "text": "うしがわ"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 11,
+        "section": 2,
+        "type": "writing",
+        "stem": "友達を助けるのは【あ】たりまえのことです。",
+        "options": [
+          {"label": "1", "text": "光当たり前"},
+          {"label": "2", "text": "当当たり前"},
+          {"label": "3", "text": "満当たり前"},
+          {"label": "4", "text": "面当たり前"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 12,
+        "section": 2,
+        "type": "writing",
+        "stem": "富士山の【かたち】は美しい。",
+        "options": [
+          {"label": "1", "text": "形"},
+          {"label": "2", "text": "骨"},
+          {"label": "3", "text": "様"},
+          {"label": "4", "text": "煙"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 13,
+        "section": 2,
+        "type": "writing",
+        "stem": "ただ今、【じゅんびちゅう】です。",
+        "options": [
+          {"label": "1", "text": "予約中"},
+          {"label": "2", "text": "営業中"},
+          {"label": "3", "text": "閉店中"},
+          {"label": "4", "text": "準備中"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 14,
+        "section": 2,
+        "type": "writing",
+        "stem": "さいふをひろったので、【けいさつ】にとどけます。",
+        "options": [
+          {"label": "1", "text": "交番"},
+          {"label": "2", "text": "消防"},
+          {"label": "3", "text": "警察"},
+          {"label": "4", "text": "観光"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 15,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "（　）駅では禁煙となっております。",
+        "options": [
+          {"label": "1", "text": "本"},
+          {"label": "2", "text": "今"},
+          {"label": "3", "text": "御"},
+          {"label": "4", "text": "当"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 16,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "この電車は（　）席、指定です。",
+        "options": [
+          {"label": "1", "text": "満"},
+          {"label": "2", "text": "空"},
+          {"label": "3", "text": "全"},
+          {"label": "4", "text": "次"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 17,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "交差点（　）に車を止めてはいけません。",
+        "options": [
+          {"label": "1", "text": "向"},
+          {"label": "2", "text": "側"},
+          {"label": "3", "text": "線"},
+          {"label": "4", "text": "内"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 18,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "産婦人（　）の受付をする。",
+        "options": [
+          {"label": "1", "text": "科"},
+          {"label": "2", "text": "化"},
+          {"label": "3", "text": "係"},
+          {"label": "4", "text": "局"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 19,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "私はA（　）に賛成です。",
+        "options": [
+          {"label": "1", "text": "番"},
+          {"label": "2", "text": "券"},
+          {"label": "3", "text": "案"},
+          {"label": "4", "text": "段"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 20,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "この町の人口は（　）20万人です。",
+        "options": [
+          {"label": "1", "text": "各"},
+          {"label": "2", "text": "現"},
+          {"label": "3", "text": "過"},
+          {"label": "4", "text": "約"}
+        ],
+        "answer": "4"
+      }
+    ]
+  },
+  "quiz": {
+    "id": 2,
+    "title": "クイズ② 同じものを入れよう",
+    "questions": [
+      {
+        "id": 1,
+        "stem": "□会をかく / テレビ番□日",
+        "reading_hint": "2つの□には同じ文字が入ります。選んで書き入れましょう。",
+        "options": [
+          {"label": "1", "kanji": "糸"},
+          {"label": "2", "kanji": "束"},
+          {"label": "3", "kanji": "受"},
+          {"label": "4", "kanji": "度"},
+          {"label": "5", "kanji": "日"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 2,
+        "stem": "約□ / 花□",
+        "reading_hint": "",
+        "options": [
+          {"label": "1", "kanji": "糸"},
+          {"label": "2", "kanji": "束"},
+          {"label": "3", "kanji": "受"},
+          {"label": "4", "kanji": "度"},
+          {"label": "5", "kanji": "日"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 3,
+        "stem": "□付 / □信",
+        "reading_hint": "",
+        "options": [
+          {"label": "1", "kanji": "糸"},
+          {"label": "2", "kanji": "束"},
+          {"label": "3", "kanji": "受"},
+          {"label": "4", "kanji": "度"},
+          {"label": "5", "kanji": "日"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 4,
+        "stem": "一□ / 温□",
+        "reading_hint": "",
+        "options": [
+          {"label": "1", "kanji": "糸"},
+          {"label": "2", "kanji": "束"},
+          {"label": "3", "kanji": "受"},
+          {"label": "4", "kanji": "度"},
+          {"label": "5", "kanji": "日"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 5,
+        "stem": "本□ / 昔□",
+        "reading_hint": "",
+        "options": [
+          {"label": "1", "kanji": "糸"},
+          {"label": "2", "kanji": "束"},
+          {"label": "3", "kanji": "受"},
+          {"label": "4", "kanji": "度"},
+          {"label": "5", "kanji": "日"}
+        ],
+        "answer": "5"
+      }
+    ]
+  }
+}

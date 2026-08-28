@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ T.title_flashcards.format(week=week) }}{% endblock %}
+{% block content %}
+<section class="chapter-header">
+    <a href="{{ base }}chapter/{{ week }}/" class="back-link">{{ T.back_to_week.format(week=week) }}</a>
+    <h1>{{ T.flashcards_h1 }}</h1>
+    <p class="muted">{{ T.flashcards_overview_sub }}</p>
+</section>
+
+<div class="day-grid">
+    {% for lesson in data.lessons %}
+    <a href="{{ base }}flashcard/{{ week }}/{{ lesson.day }}/" class="day-card">
+        <div class="day-number">{{ T.day_word }} {{ lesson.day }}</div>
+        <div class="day-title-jp">{{ lesson.title_jp }}</div>
+        <div class="day-title-en">{{ lesson.title_en }}</div>
+        <div class="day-kanji-count">{{ lesson.kanji|length }} {{ T.kanji_label }}</div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 日目 · 広告メール — フラッシュカード</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="../../index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../flashcard/4/" class="back-link">← 第 4 週の学習日</a>
+    <h1>日目 2 · <span class="jp">広告メール</span></h1>
+    <p class="theme-en">Advertisement E-mail</p>
+</section>
+
+<section class="game-controls">
+    <div class="mode-toggle">
+        <button id="mode-meaning" class="active" data-mode="meaning">意味</button>
+        <button id="mode-reading" data-mode="reading">読み</button>
+    </div>
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 8</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section class="flashcard-area">
+    <div id="flashcard" class="flashcard">
+        <div class="card-front">
+            <div class="card-label" id="card-question">この漢字の<span id="mode-label">意味</span>は？</div>
+            <div id="kanji-display" class="kanji-display">漢</div>
+            <div class="card-meta">
+                <span class="stroke-badge"><span id="stroke-count">0</span> 画</span>
+                <span class="id-badge">#<span id="kanji-id">1</span></span>
+            </div>
+            <input type="text" id="answer-input" class="answer-input" placeholder="意味を入力…" autocomplete="off" />
+            <button id="submit-btn" class="btn btn-primary">確認</button>
+            <button id="reveal-btn" class="btn btn-link">わからない</button>
+        </div>
+        <div class="card-back hidden" id="card-back">
+            <div id="result-banner" class="result-banner"></div>
+            <div class="answer-summary">
+                <div class="answer-row">
+                    <div class="answer-label">読み:</div>
+                    <div id="answer-reading" class="answer-value"></div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-label">意味:</div>
+                    <div id="answer-meaning" class="answer-value"></div>
+                </div>
+            </div>
+            <div class="compounds-section">
+                <h4>熟語</h4>
+                <div id="compounds-list" class="compounds-list"></div>
+            </div>
+            <div class="example-section" id="example-section">
+                <h4>例文</h4>
+                <div id="example-jp" class="example-jp"></div>
+                <div id="example-en" class="example-en"></div>
+            </div>
+            <button id="next-btn" class="btn btn-primary">次の漢字 →</button>
+        </div>
+    </div>
+</section>
+
+<section class="lesson-kanji-list">
+    <h3>この日の漢字一覧</h3>
+    <p class="muted">クリックするとその漢字にジャンプします。</p>
+    <div class="kanji-list-grid">
+        
+        <div class="kanji-list-item" data-idx="0">
+            <div class="kli-char">告</div>
+            <div class="kli-meaning">tell, announce</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="1">
+            <div class="kli-char">利</div>
+            <div class="kli-meaning">convenience, advantage</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="2">
+            <div class="kli-char">割</div>
+            <div class="kli-meaning">divide, split</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="3">
+            <div class="kli-char">倍</div>
+            <div class="kli-meaning">times (multiplication)</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="4">
+            <div class="kli-char">値</div>
+            <div class="kli-meaning">price, value</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="5">
+            <div class="kli-char">商</div>
+            <div class="kli-meaning">commerce, trade</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="6">
+            <div class="kli-char">支</div>
+            <div class="kli-meaning">branch, support</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="7">
+            <div class="kli-char">払</div>
+            <div class="kli-meaning">pay</div>
+        </div>
+        
+    </div>
+</section>
+
+<script id="lesson-data" type="application/json">
+{"day": 2, "kanji": [{"char": "\u544a", "compounds": [{"meaning": "an advertisement", "reading": "\u3053\u3046\u3053\u304f", "word": "\u5e83\u544a"}], "example": {"en": "I saw a new advertisement.", "furigana": "\u3042\u305f\u3089\u3057\u3044\u3053\u3046\u3053\u304f\u3092\u307f\u307e\u3057\u305f\u3002", "jp": "\u65b0\u3057\u3044\u5e83\u544a\u3092\u898b\u307e\u3057\u305f\u3002"}, "id": 179, "kunyomi": "", "meaning": "tell, announce", "onyomi": "\u30b3\u30af", "stroke": 7}, {"char": "\u5229", "compounds": [{"meaning": "convenient", "reading": "\u3079\u3093\u308a(\u306a)", "word": "\u4fbf\u5229(\u306a)"}, {"meaning": "use", "reading": "\u308a\u3088\u3046", "word": "\u5229\u7528"}], "id": 180, "kunyomi": "", "meaning": "convenience, advantage", "onyomi": "\u30ea", "stroke": 7}, {"char": "\u5272", "compounds": [{"meaning": "break", "reading": "\u308f\u308b", "word": "\u5272\u308b"}, {"meaning": "crack/cleave", "reading": "\u308f\u308c\u308b", "word": "\u5272\u308c\u308b"}, {"meaning": "a ratio, a percentage", "reading": "\u308f\u308a\u3042\u3044", "word": "\u5272\u5408"}, {"meaning": "a discount", "reading": "\u308f\u308a\u3073\u304d", "word": "\u5272\u5f15"}], "id": 181, "kunyomi": "\u308f\u308b, \u308f\u308c\u308b", "meaning": "divide, split", "onyomi": "\u30ab\u30c4", "stroke": 12}, {"char": "\u500d", "compounds": [{"meaning": "twice as many", "reading": "\u306b\u3070\u3044", "word": "\u4e8c\u500d"}], "example": {"en": "Twice as many customers came as last year.", "furigana": "\u304d\u3087\u306d\u3093\u306e\u3070\u3044\u306e\u304a\u304d\u3083\u304f\u3055\u3093\u304c\u304d\u305f\u3002", "jp": "\u53bb\u5e74\u306e\u500d\u306e\u304a\u5ba2\u3055\u3093\u304c\u6765\u305f\u3002"}, "id": 182, "kunyomi": "", "meaning": "times (multiplication)", "onyomi": "\u30d0\u30a4", "stroke": 10}, {"char": "\u5024", "compounds": [{"meaning": "a price", "reading": "\u306d\u3060\u3093", "word": "\u5024\u6bb5"}, {"meaning": "a price increase", "reading": "\u306d\u3042\u3052", "word": "\u5024\u4e0a\u3052"}, {"meaning": "a price reduction", "reading": "\u306d\u3055\u3052", "word": "\u5024\u4e0b\u3052"}], "id": 183, "kunyomi": "\u306d, \u3042\u305f\u3044", "meaning": "price, value", "onyomi": "\u30cd", "stroke": 10}, {"char": "\u5546", "compounds": [{"meaning": "goods", "reading": "\u3057\u3087\u3046\u3072\u3093", "word": "\u5546\u54c1"}, {"meaning": "a shop", "reading": "\u3057\u3087\u3046\u3066\u3093", "word": "\u5546\u5e97"}], "id": 184, "kunyomi": "\u3042\u304d\u306a\u3046", "meaning": "commerce, trade", "onyomi": "\u30b7\u30e7\u30a6", "stroke": 11}, {"char": "\u652f", "compounds": [{"meaning": "a branch", "reading": "\u3057\u3066\u3093", "word": "\u652f\u5e97"}, {"meaning": "a branch office", "reading": "\u3057\u3057\u3083", "word": "\u652f\u793e"}, {"meaning": "the main branch of a store", "reading": "\u307b\u3093\u3066\u3093", "word": "\u672c\u5e97"}, {"meaning": "the head office", "reading": "\u307b\u3093\u3057\u3083", "word": "\u672c\u793e"}], "id": 185, "kunyomi": "\u3055\u3055\u3048\u308b", "meaning": "branch, support", "onyomi": "\u30b7", "stroke": 4}, {"char": "\u6255", "compounds": [{"meaning": "pay", "reading": "\u306f\u3089\u3046", "word": "\u6255\u3046"}, {"meaning": "a payment", "reading": "\u3057\u306f\u3089\u3044", "word": "\u652f\u6255\u3044"}], "example": {"en": "I will pay the price in cash.", "furigana": "\u3060\u3044\u304d\u3093\u3092\u3052\u3093\u304d\u3093\u3067\u306f\u3089\u3044\u307e\u3059\u3002", "jp": "\u4ee3\u91d1\u3092\u73fe\u91d1\u3067\u6255\u3044\u307e\u3059\u3002"}, "id": 186, "kunyomi": "\u306f\u3089\u3046", "meaning": "pay", "onyomi": "\u30d5\u30c4", "stroke": 5}], "title_en": "Advertisement E-mail", "title_jp": "\u5e83\u544a\u30e1\u30fc\u30eb"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "\u7b2c {week} \u9031\u306b\u623b\u308b", "btn_next_kanji": "\u6b21\u306e\u6f22\u5b57 \u2192", "btn_try_again": "\u3082\u3046\u4e00\u5ea6", "label_meaning": "\u610f\u5473", "label_reading": "\u8aad\u307f", "lbl_accuracy": "\u6b63\u7b54\u7387", "lbl_correct": "\u6b63\u89e3", "lbl_wrong": "\u4e0d\u6b63\u89e3", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u5165\u529b\uff08\u304b\u306a\uff09\u2026", "result_correct": "\u2705 \u6b63\u89e3\uff01", "result_wrong": "\u274c \u4e0d\u6b63\u89e3", "summary_complete": "\u5b8c\u4e86\uff01", "what_is_meaning": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u610f\u5473\u003c/span\u003e\u306f\uff1f", "what_is_reading": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u8aad\u307f\u003c/span\u003e\u306f\uff1f"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initFlashcard(4, 2);
+</script>
+
+</body>
+</html>

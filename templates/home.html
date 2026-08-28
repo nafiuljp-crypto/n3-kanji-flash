@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ T.title_home }}{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>📖 {{ T.hero_title }}</h1>
+    <p class="lead">{{ T.hero_lead }}</p>
+</section>
+
+<section class="chapters">
+    <h2>{{ T.select_chapter }}</h2>
+    <div class="chapter-grid">
+        {% for ch in chapters %}
+        <a href="{{ base }}chapter/{{ ch.week }}/" class="chapter-card">
+            <div class="chapter-number">{{ T.week_word }} {{ ch.week }}</div>
+            <div class="chapter-theme-jp">{{ ch.theme_jp }}</div>
+            <div class="chapter-theme-en">{{ ch.theme_en }}</div>
+            <div class="chapter-stats">
+                <span>📝 {{ ch.lesson_count }} {{ T.days_label }}</span>
+                <span>🈶 {{ ch.kanji_count }} {{ T.kanji_label }}</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ {{ ch.practice_q }} {{ T.practice_label }}</span>
+                <span>🎯 {{ ch.quiz_q }} {{ T.quiz_label }}</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="info">
+    <h2>{{ T.how_to_use }}</h2>
+    <ol>
+        {% for step in T.how_to_use_steps %}
+        <li>{{ step|safe }}</li>
+        {% endfor %}
+    </ol>
+</section>
+{% endblock %}

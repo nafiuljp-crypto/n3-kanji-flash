@@ -1,0 +1,698 @@
+/* N3 Kanji Flash Cards — Stylesheet
+   Clean, Japanese-friendly, red accent. */
+
+:root {
+    --color-bg: #fafaf7;
+    --color-surface: #ffffff;
+    --color-text: #1a1a1a;
+    --color-muted: #6b7280;
+    --color-border: #e5e7eb;
+    --color-primary: #c8252c;
+    --color-primary-dark: #9d1d22;
+    --color-accent: #fef3c7;
+    --color-success: #16a34a;
+    --color-success-bg: #dcfce7;
+    --color-error: #dc2626;
+    --color-error-bg: #fee2e2;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --radius: 8px;
+    --radius-lg: 16px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+                 "Hiragino Sans", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+    width: 100%;
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--color-primary);
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+}
+.nav-brand {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    opacity: 0.9;
+}
+.nav-links a:hover { opacity: 1; }
+
+.nav-links { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.nav-links .lang-switch { display: inline-flex; align-items: center; gap: 6px; margin-left: 14px; padding-left: 14px; border-left: 1px solid rgba(255,255,255,0.3); }
+.lang-label { color: rgba(255,255,255,0.7); font-size: 0.8rem; margin-right: 2px; }
+.lang-current { color: white; font-weight: 700; font-size: 0.95rem; padding: 2px 6px; border-radius: 4px; background: rgba(0,0,0,0.15); }
+.lang-link { color: white; opacity: 0.85; font-size: 0.95rem; padding: 2px 6px; border-radius: 4px; text-decoration: none; }
+.lang-link:hover { background: rgba(0,0,0,0.15); opacity: 1; }
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 36px 0 24px;
+}
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+}
+.lead { color: var(--color-muted); font-size: 1.05rem; }
+
+/* Chapter grid */
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+}
+.chapter-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    text-decoration: none;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.chapter-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+.chapter-number {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+.chapter-theme-jp {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 4px 0;
+}
+.chapter-theme-en {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+.chapter-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    padding: 2px 0;
+}
+
+/* Section headings */
+section h2 {
+    font-size: 1.4rem;
+    margin: 32px 0 12px;
+    color: var(--color-primary-dark);
+}
+
+/* Chapter header */
+.chapter-header {
+    margin-bottom: 16px;
+}
+.chapter-header h1 {
+    font-size: 1.8rem;
+    margin: 8px 0;
+}
+.chapter-header .jp {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+.theme-en {
+    color: var(--color-muted);
+}
+.back-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* Day cards */
+.day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    margin: 16px 0 24px;
+}
+.day-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 16px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.15s;
+}
+.day-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+.day-number {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.day-title-jp {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 4px 0;
+}
+.day-title-en {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+}
+.day-kanji-count {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+}
+
+/* Exercise cards */
+.exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+}
+.exercise-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    text-decoration: none;
+    color: var(--color-text);
+    text-align: center;
+    transition: all 0.15s;
+}
+.exercise-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+.exercise-card.practice:hover { border-color: var(--color-primary); }
+.exercise-card.quiz:hover { border-color: var(--color-success); }
+.ex-icon { font-size: 2.4rem; }
+.ex-title { font-size: 1.3rem; font-weight: 700; margin: 8px 0 4px; }
+.ex-sub { color: var(--color-primary); font-weight: 600; }
+.exercise-card.quiz .ex-sub { color: var(--color-success); }
+.ex-desc { color: var(--color-muted); font-size: 0.9rem; margin-top: 6px; }
+
+/* Info section */
+.info {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 32px 0;
+}
+.info ol { padding-left: 20px; }
+.info li { margin: 6px 0; }
+.muted { color: var(--color-muted); font-size: 0.95rem; }
+
+/* Game controls */
+.game-controls {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.mode-toggle {
+    display: inline-flex;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.mode-toggle button {
+    background: var(--color-surface);
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+.mode-toggle button.active {
+    background: var(--color-primary);
+    color: white;
+}
+.progress-bar {
+    position: relative;
+    background: var(--color-border);
+    height: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 1;
+    min-width: 200px;
+}
+.progress-fill {
+    background: var(--color-primary);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s;
+}
+.progress-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    font-weight: 600;
+    mix-blend-mode: difference;
+    color: white;
+}
+.score-tracker {
+    display: flex;
+    gap: 14px;
+    font-size: 0.95rem;
+}
+.score-correct { color: var(--color-success); font-weight: 600; }
+.score-wrong { color: var(--color-error); font-weight: 600; }
+
+/* Flash card */
+.flashcard-area {
+    margin: 24px 0;
+}
+.flashcard {
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 36px 24px;
+    box-shadow: var(--shadow-md);
+    min-height: 380px;
+    transition: border-color 0.2s;
+}
+.flashcard.correct { border-color: var(--color-success); }
+.flashcard.wrong { border-color: var(--color-error); }
+
+.card-front, .card-back { text-align: center; }
+.card-label {
+    color: var(--color-muted);
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+.kanji-display {
+    font-size: 9rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-text);
+    margin: 18px 0 24px;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", serif;
+}
+.card-meta {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.stroke-badge, .id-badge {
+    background: var(--color-accent);
+    color: #92400e;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+}
+.id-badge { background: var(--color-border); color: var(--color-muted); }
+
+.answer-input {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 12px;
+    padding: 12px 16px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 1.1rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.15s;
+}
+.answer-input:focus { border-color: var(--color-primary); }
+.answer-input.correct { border-color: var(--color-success); background: var(--color-success-bg); }
+.answer-input.wrong { border-color: var(--color-error); background: var(--color-error-bg); }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    margin: 4px;
+}
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+}
+.btn-primary:hover { background: var(--color-primary-dark); }
+.btn-link {
+    background: transparent;
+    color: var(--color-muted);
+    text-decoration: underline;
+}
+.btn-link:hover { color: var(--color-primary); }
+
+/* Card back */
+.card-back { padding: 8px; }
+.result-banner {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: var(--radius);
+    margin-bottom: 18px;
+}
+.result-banner.correct {
+    background: var(--color-success-bg);
+    color: var(--color-success);
+}
+.result-banner.wrong {
+    background: var(--color-error-bg);
+    color: var(--color-error);
+}
+.answer-summary {
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 16px;
+}
+.answer-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+    padding: 4px 0;
+    flex-wrap: wrap;
+}
+.answer-label {
+    color: var(--color-muted);
+    font-weight: 600;
+}
+.answer-value {
+    color: var(--color-text);
+    font-size: 1.05rem;
+}
+
+.compounds-section, .example-section {
+    text-align: left;
+    margin: 16px 0;
+}
+.compounds-section h4, .example-section h4 {
+    color: var(--color-primary-dark);
+    margin-bottom: 8px;
+}
+.compounds-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.compound-item {
+    background: var(--color-bg);
+    border-left: 3px solid var(--color-primary);
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.compound-word {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+.compound-reading {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+.compound-meaning {
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+.example-jp {
+    font-size: 1.3rem;
+    padding: 12px;
+    background: var(--color-accent);
+    border-radius: var(--radius);
+    text-align: center;
+    margin-bottom: 6px;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+.example-en {
+    color: var(--color-muted);
+    text-align: center;
+    font-style: italic;
+}
+
+.hidden { display: none !important; }
+
+/* Kanji list at bottom of flashcard page */
+.lesson-kanji-list {
+    margin: 32px 0;
+}
+.lesson-kanji-list h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 12px;
+}
+.kanji-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+}
+.kanji-list-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.kanji-list-item:hover {
+    border-color: var(--color-primary);
+}
+.kanji-list-item.current {
+    background: var(--color-accent);
+    border-color: var(--color-primary);
+}
+.kanji-list-item.correct { border-color: var(--color-success); }
+.kanji-list-item.wrong { border-color: var(--color-error); }
+.kli-char {
+    font-size: 1.8rem;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+.kli-meaning {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    margin-top: 4px;
+}
+
+/* Question area (exercise) */
+.question-area {
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    margin: 24px 0;
+    min-height: 320px;
+    box-shadow: var(--shadow-md);
+}
+.q-stem {
+    font-size: 1.15rem;
+    margin-bottom: 18px;
+    padding: 14px;
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    line-height: 1.8;
+}
+.q-section-label {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--color-border);
+}
+.q-stem .blank {
+    display: inline-block;
+    min-width: 60px;
+    border-bottom: 2px solid var(--color-primary);
+    text-align: center;
+    margin: 0 4px;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+.q-stem ruby rt {
+    font-size: 0.55em;
+}
+.q-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+}
+@media (max-width: 600px) {
+    .q-options { grid-template-columns: 1fr; }
+}
+.q-option {
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 14px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    transition: all 0.15s;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    color: var(--color-text);
+    font-family: inherit;
+    line-height: 1.5;
+}
+.q-option:hover:not(:disabled) {
+    border-color: var(--color-primary);
+    background: var(--color-bg);
+}
+.q-option.correct {
+    background: var(--color-success-bg);
+    border-color: var(--color-success);
+}
+.q-option.wrong {
+    background: var(--color-error-bg);
+    border-color: var(--color-error);
+}
+.q-option:disabled { cursor: default; }
+.q-option .opt-label {
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+.q-option.correct .opt-label { background: var(--color-success); }
+.q-option.wrong .opt-label { background: var(--color-error); }
+.q-option .opt-text { flex: 1; }
+.q-option .opt-kanji {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 1.3rem;
+}
+
+.q-explanation {
+    margin-top: 16px;
+    padding: 12px;
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    color: var(--color-text);
+}
+
+/* Result screen */
+.result-screen {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    text-align: center;
+    margin: 24px 0;
+}
+.result-screen h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+.result-stats {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+.stat-card {
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    padding: 20px 28px;
+    min-width: 110px;
+}
+.stat-num {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+.stat-label { color: var(--color-muted); margin-top: 4px; }
+.result-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* Error page */
+.error-page {
+    text-align: center;
+    padding: 64px 24px;
+}
+.error-page h1 {
+    font-size: 5rem;
+    color: var(--color-primary);
+}
+.error-page .btn { margin-top: 16px; }
+
+/* Furigana ruby support */
+ruby { ruby-align: center; }
+rt { font-size: 0.55em; color: var(--color-muted); }
+
+/* Responsive */
+@media (max-width: 720px) {
+    .hero h1 { font-size: 1.6rem; }
+    .kanji-display { font-size: 6rem; }
+    .game-controls { flex-direction: column; align-items: stretch; }
+    .progress-bar { width: 100%; }
+}

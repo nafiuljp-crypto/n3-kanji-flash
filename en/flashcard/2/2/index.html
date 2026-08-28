@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 · 禁煙 — Flash Cards</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="../../index.html">Home</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language:</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../flashcard/2/" class="back-link">← Week 2 lessons</a>
+    <h1>Day 2 · <span class="jp">禁煙</span></h1>
+    <p class="theme-en">No Smoking</p>
+</section>
+
+<section class="game-controls">
+    <div class="mode-toggle">
+        <button id="mode-meaning" class="active" data-mode="meaning">Meaning</button>
+        <button id="mode-reading" data-mode="reading">Reading</button>
+    </div>
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 8</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section class="flashcard-area">
+    <div id="flashcard" class="flashcard">
+        <div class="card-front">
+            <div class="card-label" id="card-question">What is the <span id="mode-label">meaning</span> of this kanji?</div>
+            <div id="kanji-display" class="kanji-display">漢</div>
+            <div class="card-meta">
+                <span class="stroke-badge"><span id="stroke-count">0</span> strokes</span>
+                <span class="id-badge">#<span id="kanji-id">1</span></span>
+            </div>
+            <input type="text" id="answer-input" class="answer-input" placeholder="Type the English meaning…" autocomplete="off" />
+            <button id="submit-btn" class="btn btn-primary">Check</button>
+            <button id="reveal-btn" class="btn btn-link">Show answer</button>
+        </div>
+        <div class="card-back hidden" id="card-back">
+            <div id="result-banner" class="result-banner"></div>
+            <div class="answer-summary">
+                <div class="answer-row">
+                    <div class="answer-label">Reading:</div>
+                    <div id="answer-reading" class="answer-value"></div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-label">Meaning:</div>
+                    <div id="answer-meaning" class="answer-value"></div>
+                </div>
+            </div>
+            <div class="compounds-section">
+                <h4>Compounds (熟語)</h4>
+                <div id="compounds-list" class="compounds-list"></div>
+            </div>
+            <div class="example-section" id="example-section">
+                <h4>Example sentence</h4>
+                <div id="example-jp" class="example-jp"></div>
+                <div id="example-en" class="example-en"></div>
+            </div>
+            <button id="next-btn" class="btn btn-primary">Next kanji →</button>
+        </div>
+    </div>
+</section>
+
+<section class="lesson-kanji-list">
+    <h3>Kanji in this lesson</h3>
+    <p class="muted">Click any kanji to jump to it.</p>
+    <div class="kanji-list-grid">
+        
+        <div class="kanji-list-item" data-idx="0">
+            <div class="kli-char">煙</div>
+            <div class="kli-meaning">smoke</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="1">
+            <div class="kli-char">当</div>
+            <div class="kli-meaning">hit</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="2">
+            <div class="kli-char">全</div>
+            <div class="kli-meaning">whole</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="3">
+            <div class="kli-char">客</div>
+            <div class="kli-meaning">guest</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="4">
+            <div class="kli-char">様</div>
+            <div class="kli-meaning">manner</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="5">
+            <div class="kli-char">解</div>
+            <div class="kli-meaning">understand</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="6">
+            <div class="kli-char">協</div>
+            <div class="kli-meaning">cooperate</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="7">
+            <div class="kli-char">願</div>
+            <div class="kli-meaning">wish</div>
+        </div>
+        
+    </div>
+</section>
+
+<script id="lesson-data" type="application/json">
+{"day": 2, "kanji": [{"char": "\u7159", "compounds": [{"meaning": "no smoking", "reading": "\u304d\u3093\u3048\u3093", "word": "\u7981\u7159"}, {"meaning": "smoke", "reading": "\u3051\u3080\u308a", "word": "\u7159"}], "id": 67, "kunyomi": "\u3051\u3080\u308a", "meaning": "smoke", "onyomi": "\u30a8\u30f3", "stroke": 13}, {"char": "\u5f53", "compounds": [{"meaning": "the truth", "reading": "\u307b\u3093\u3068\u3046", "word": "\u672c\u5f53"}, {"meaning": "this \u25cb\u25cb", "reading": "\u3068\u3046\u25cb\u25cb", "word": "\u5f53\u25cb\u25cb"}, {"meaning": "hit/win (lottery)", "reading": "\u3042\u305f\u308b", "word": "\u5f53\u305f\u308b"}, {"meaning": "natural, not surprising", "reading": "\u3042\u305f\u308a\u307e\u3048", "word": "\u5f53\u305f\u308a\u524d"}], "id": 68, "kunyomi": "\u3042\u305f\u308b", "meaning": "hit", "onyomi": "\u30c8\u30a6", "stroke": 6}, {"char": "\u5168", "compounds": [{"meaning": "all/whole", "reading": "\u305c\u3093\u3076", "word": "\u5168\u90e8"}, {"meaning": "all seats", "reading": "\u305c\u3093\u305b\u304d", "word": "\u5168\u5e2d"}, {"meaning": "safety", "reading": "\u3042\u3093\u305c\u3093", "word": "\u5b89\u5168"}], "id": 69, "kunyomi": "", "meaning": "whole", "onyomi": "\u30bc\u30f3", "stroke": 6}, {"char": "\u5ba2", "compounds": [{"meaning": "a customer", "reading": "\u304d\u3083\u304f", "word": "\u5ba2"}, {"meaning": "a customer", "reading": "\u304a\u304d\u3083\u304f\u3055\u307e", "word": "\u304a\u5ba2\u69d8"}], "id": 70, "kunyomi": "\u304d\u3083\u304f", "meaning": "guest", "onyomi": "\u30ad\u30e3\u30af", "stroke": 9}, {"char": "\u69d8", "compounds": [{"meaning": "appearance/situation", "reading": "\u3088\u3046\u3059", "word": "\u69d8\u5b50"}, {"meaning": "an honorific added to people\u0027s names, particularly in letters", "reading": "\u25cb\u25cb\u3055\u307e", "word": "\u25cb\u25cb\u69d8"}], "id": 71, "kunyomi": "\u3055\u307e", "meaning": "manner", "onyomi": "\u30e8\u30a6", "stroke": 14}, {"char": "\u89e3", "compounds": [{"meaning": "understand", "reading": "\u308a\u304b\u3044", "word": "\u7406\u89e3"}, {"meaning": "an answer", "reading": "\u304b\u3044\u3068\u3046", "word": "\u89e3\u7b54"}, {"meaning": "an explanation", "reading": "\u304b\u3044\u305b\u3064", "word": "\u89e3\u8aac"}, {"meaning": "take apart", "reading": "\u3076\u3093\u304b\u3044", "word": "\u5206\u89e3"}], "id": 72, "kunyomi": "", "meaning": "understand", "onyomi": "\u30ab\u30a4", "stroke": 13}, {"char": "\u5354", "compounds": [{"meaning": "cooperation", "reading": "\u304d\u3087\u3046\u308a\u3087\u304f", "word": "\u5354\u529b"}], "id": 73, "kunyomi": "", "meaning": "cooperate", "onyomi": "\u30ad\u30e7\u30a6", "stroke": 8}, {"char": "\u9858", "compounds": [{"meaning": "wish", "reading": "\u306d\u304c\u3046", "word": "\u9858\u3046"}], "id": 74, "kunyomi": "\u306d\u304c\u3046", "meaning": "wish", "onyomi": "\u30ac\u30f3", "stroke": 19}], "title_en": "No Smoking", "title_jp": "\u7981\u7159"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "Back to Week {week}", "btn_next_kanji": "Next kanji \u2192", "btn_try_again": "Try again", "label_meaning": "Meaning", "label_reading": "Reading", "lbl_accuracy": "Accuracy", "lbl_correct": "Correct", "lbl_wrong": "Wrong", "placeholder_meaning": "Type the English meaning\u2026", "placeholder_reading": "Type the reading (kana)\u2026", "result_correct": "\u2705 Correct!", "result_wrong": "\u274c Incorrect", "summary_complete": "Complete!", "what_is_meaning": "What is the \u003cspan id=\"mode-label\"\u003emeaning\u003c/span\u003e of this kanji?", "what_is_reading": "What is the \u003cspan id=\"mode-label\"\u003ereading\u003c/span\u003e of this kanji?"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>Sou Matome N3 Kanji · Tailscale only</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initFlashcard(2, 2);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,987 @@
+{
+  "week": 6,
+  "theme": {"jp": "よむ", "en": "Read", "kr": "읽다"},
+  "lessons": [
+    {
+      "day": 1,
+      "title_jp": "天気予報",
+      "title_en": "The Weather Forecast",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "報",
+          "stroke": 12,
+          "onyomi": "ホウ",
+          "kunyomi": "",
+          "meaning": "report, inform",
+          "compounds": [
+            {"word": "予報", "reading": "よほう", "meaning": "a forecast"},
+            {"word": "報告", "reading": "ほうこく", "meaning": "a report"}
+          ],
+          "example": {
+            "jp": "明日、県内はたいていのところで晴れますが、北部では雲が広がり、雨が降るところもあるでしょう。",
+            "furigana": "あした、けんないはたいていのところで はれますが、ほくぶではくもがひろがり、あめが ふる ところもあるでしょう。",
+            "en": "Tomorrow, it will be sunny in most of the prefecture, but in the northern region clouds will spread and there may be some rain."
+          }
+        },
+        {
+          "id": 2,
+          "char": "晴",
+          "stroke": 12,
+          "onyomi": "",
+          "kunyomi": "は・れる",
+          "meaning": "clear, sunny",
+          "compounds": [
+            {"word": "晴れる", "reading": "はれる", "meaning": "be sunny"},
+            {"word": "晴れ", "reading": "はれ", "meaning": "fine weather"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "雲",
+          "stroke": 12,
+          "onyomi": "",
+          "kunyomi": "くも",
+          "meaning": "cloud",
+          "compounds": [
+            {"word": "雲", "reading": "くも", "meaning": "clouds"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "吹",
+          "stroke": 7,
+          "onyomi": "",
+          "kunyomi": "ふ・く",
+          "meaning": "blow (wind)",
+          "compounds": [
+            {"word": "吹く", "reading": "ふく", "meaning": "blow"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "暖",
+          "stroke": 13,
+          "onyomi": "ダン",
+          "kunyomi": "あたたか・い",
+          "meaning": "warm",
+          "compounds": [
+            {"word": "暖房", "reading": "だんぼう", "meaning": "a heater"},
+            {"word": "暖かい", "reading": "あたたかい", "meaning": "warm"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "雪",
+          "stroke": 11,
+          "onyomi": "",
+          "kunyomi": "ゆき",
+          "meaning": "snow",
+          "compounds": [
+            {"word": "雪", "reading": "ゆき", "meaning": "snow"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "震",
+          "stroke": 15,
+          "onyomi": "シン",
+          "kunyomi": "",
+          "meaning": "quake, shake",
+          "compounds": [
+            {"word": "地震", "reading": "じしん", "meaning": "an earthquake"},
+            {"word": "震度", "reading": "しんど", "meaning": "seismic intensity"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "波",
+          "stroke": 8,
+          "onyomi": "ハ",
+          "kunyomi": "なみ",
+          "meaning": "wave",
+          "compounds": [
+            {"word": "電波", "reading": "でんぱ", "meaning": "electromagnetic wave"},
+            {"word": "波", "reading": "なみ", "meaning": "a wave"},
+            {"word": "津波", "reading": "つなみ", "meaning": "tsunami"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title_jp": "求人広告",
+      "title_en": "A Help-Wanted Ad",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "求",
+          "stroke": 7,
+          "onyomi": "キュウ",
+          "kunyomi": "もと・める",
+          "meaning": "request, seek",
+          "compounds": [
+            {"word": "要求", "reading": "ようきゅう", "meaning": "a demand, request"},
+            {"word": "請求書", "reading": "せいきゅうしょ", "meaning": "a bill, invoice"},
+            {"word": "求人", "reading": "きゅうじん", "meaning": "Help-Wanted"},
+            {"word": "求める", "reading": "もとめる", "meaning": "demand, request"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "募",
+          "stroke": 12,
+          "onyomi": "ボ",
+          "kunyomi": "",
+          "meaning": "recruit, raise",
+          "compounds": [
+            {"word": "募集", "reading": "ぼしゅう", "meaning": "recruitment"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "職",
+          "stroke": 18,
+          "onyomi": "ショク",
+          "kunyomi": "",
+          "meaning": "work, job, profession",
+          "compounds": [
+            {"word": "職場", "reading": "しょくば", "meaning": "a work place"},
+            {"word": "転職", "reading": "てんしょく", "meaning": "change your job"},
+            {"word": "職業", "reading": "しょくぎょう", "meaning": "an occupation/profession"},
+            {"word": "職員", "reading": "しょくいん", "meaning": "employees"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "容",
+          "stroke": 10,
+          "onyomi": "ヨウ",
+          "kunyomi": "",
+          "meaning": "contain, form, appearance",
+          "compounds": [
+            {"word": "美容院", "reading": "びよういん", "meaning": "a hairdresser"},
+            {"word": "内容", "reading": "ないよう", "meaning": "contents/substance"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "技",
+          "stroke": 7,
+          "onyomi": "ギ",
+          "kunyomi": "",
+          "meaning": "skill, technique",
+          "compounds": [
+            {"word": "技術", "reading": "ぎじゅつ", "meaning": "technique, technology"},
+            {"word": "技術者", "reading": "ぎじゅつしゃ", "meaning": "a technician"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "般",
+          "stroke": 10,
+          "onyomi": "ハン",
+          "kunyomi": "",
+          "meaning": "general, sort",
+          "compounds": [
+            {"word": "一般", "reading": "いっぱん", "meaning": "general, average"},
+            {"word": "一般に", "reading": "いっぱんに", "meaning": "in general"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "務",
+          "stroke": 11,
+          "onyomi": "ム",
+          "kunyomi": "",
+          "meaning": "duty, serve",
+          "compounds": [
+            {"word": "事務", "reading": "じむ", "meaning": "office work"},
+            {"word": "事務所", "reading": "じむしょ", "meaning": "an office"},
+            {"word": "公務員", "reading": "こうむいん", "meaning": "a civil servant, government employee"},
+            {"word": "税務署", "reading": "ぜいむしょ", "meaning": "tax office"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "課",
+          "stroke": 15,
+          "onyomi": "カ",
+          "kunyomi": "",
+          "meaning": "section, lesson",
+          "compounds": [
+            {"word": "第1課", "reading": "だいいっか", "meaning": "Lesson one"},
+            {"word": "課長", "reading": "かちょう", "meaning": "a section chief"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title_jp": "スポーツ記事",
+      "title_en": "A Sports Article",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "球",
+          "stroke": 11,
+          "onyomi": "キュウ",
+          "kunyomi": "",
+          "meaning": "ball, sphere",
+          "compounds": [
+            {"word": "地球", "reading": "ちきゅう", "meaning": "the earth"},
+            {"word": "電球", "reading": "でんきゅう", "meaning": "a light bulb"},
+            {"word": "野球", "reading": "やきゅう", "meaning": "baseball"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "決",
+          "stroke": 7,
+          "onyomi": "ケツ",
+          "kunyomi": "き・める, き・まる",
+          "meaning": "decide, fix",
+          "compounds": [
+            {"word": "決して", "reading": "けっして", "meaning": "by no means"},
+            {"word": "決定", "reading": "けってい", "meaning": "a decision"},
+            {"word": "決める", "reading": "きめる", "meaning": "decide (something)"},
+            {"word": "決まる", "reading": "きまる", "meaning": "be decided"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "勝",
+          "stroke": 12,
+          "onyomi": "ショウ",
+          "kunyomi": "か・つ",
+          "meaning": "victory, win",
+          "compounds": [
+            {"word": "優勝", "reading": "ゆうしょう", "meaning": "a victory, championship"},
+            {"word": "決勝", "reading": "けっしょう", "meaning": "final game"},
+            {"word": "勝つ", "reading": "かつ", "meaning": "win"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "対",
+          "stroke": 7,
+          "onyomi": "タイ",
+          "kunyomi": "",
+          "meaning": "opposite, versus",
+          "compounds": [
+            {"word": "1対2", "reading": "いちたいに", "meaning": "a score of one to two"},
+            {"word": "反対", "reading": "はんたい", "meaning": "opposite"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "流",
+          "stroke": 10,
+          "onyomi": "",
+          "kunyomi": "なが・れる, なが・す",
+          "meaning": "flow, stream",
+          "compounds": [
+            {"word": "流れる", "reading": "ながれる", "meaning": "flow"},
+            {"word": "流す", "reading": "ながす", "meaning": "let (water, etc.) flow"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "負",
+          "stroke": 9,
+          "onyomi": "フ",
+          "kunyomi": "ま・ける",
+          "meaning": "lose, defeat",
+          "compounds": [
+            {"word": "勝負", "reading": "しょうぶ", "meaning": "a match, contest, game"},
+            {"word": "負ける", "reading": "まける", "meaning": "lose"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "投",
+          "stroke": 7,
+          "onyomi": "トウ",
+          "kunyomi": "な・げる",
+          "meaning": "throw, pitch",
+          "compounds": [
+            {"word": "投手", "reading": "とうしゅ", "meaning": "(baseball) pitcher"},
+            {"word": "投げる", "reading": "なげる", "meaning": "throw"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "果",
+          "stroke": 8,
+          "onyomi": "カ",
+          "kunyomi": "",
+          "meaning": "fruit, result",
+          "compounds": [
+            {"word": "結果", "reading": "けっか", "meaning": "a result"},
+            {"word": "果物", "reading": "くだもの", "meaning": "fruit"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title_jp": "経済",
+      "title_en": "The Economy",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "戦",
+          "stroke": 13,
+          "onyomi": "セン",
+          "kunyomi": "たたか・う",
+          "meaning": "war, battle",
+          "compounds": [
+            {"word": "戦後", "reading": "せんご", "meaning": "after the war"},
+            {"word": "戦争", "reading": "せんそう", "meaning": "war"},
+            {"word": "戦う", "reading": "たたかう", "meaning": "fight"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "経",
+          "stroke": 11,
+          "onyomi": "ケイ",
+          "kunyomi": "",
+          "meaning": "passage, manage",
+          "compounds": [
+            {"word": "経験", "reading": "けいけん", "meaning": "an experience"},
+            {"word": "経営", "reading": "けいえい", "meaning": "management"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "済",
+          "stroke": 11,
+          "onyomi": "サイ",
+          "kunyomi": "す・む",
+          "meaning": "finish, settle",
+          "compounds": [
+            {"word": "経済", "reading": "けいざい", "meaning": "economy"},
+            {"word": "済む", "reading": "すむ", "meaning": "finish"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "成",
+          "stroke": 6,
+          "onyomi": "セイ",
+          "kunyomi": "",
+          "meaning": "become, achieve",
+          "compounds": [
+            {"word": "成長", "reading": "せいちょう", "meaning": "growth"},
+            {"word": "完成", "reading": "かんせい", "meaning": "completion"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "貿",
+          "stroke": 12,
+          "onyomi": "ボウ",
+          "kunyomi": "",
+          "meaning": "trade",
+          "compounds": [
+            {"word": "貿易", "reading": "ぼうえき", "meaning": "trade"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "易",
+          "stroke": 8,
+          "onyomi": "エキ",
+          "kunyomi": "やさしい",
+          "meaning": "easy, exchange",
+          "compounds": [
+            {"word": "貿易", "reading": "ぼうえき", "meaning": "trade"},
+            {"word": "易しい", "reading": "やさしい", "meaning": "easy, plain, simple"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "輸",
+          "stroke": 16,
+          "onyomi": "ユ",
+          "kunyomi": "",
+          "meaning": "transport, send",
+          "compounds": [
+            {"word": "輸出", "reading": "ゆしゅつ", "meaning": "export"},
+            {"word": "輸送", "reading": "ゆそう", "meaning": "transport"},
+            {"word": "輸入", "reading": "ゆにゅう", "meaning": "import"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "相",
+          "stroke": 9,
+          "onyomi": "ソウ, ショウ",
+          "kunyomi": "あい",
+          "meaning": "mutual, minister, together",
+          "compounds": [
+            {"word": "相談", "reading": "そうだん", "meaning": "consultation"},
+            {"word": "相手", "reading": "あいて", "meaning": "an opponent/competitor"},
+            {"word": "首相", "reading": "しゅしょう", "meaning": "prime minister"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title_jp": "地球温暖化",
+      "title_en": "Global Warming",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "化",
+          "stroke": 4,
+          "onyomi": "カ, ケ",
+          "kunyomi": "",
+          "meaning": "change, -ize, chemistry",
+          "compounds": [
+            {"word": "文化", "reading": "ぶんか", "meaning": "culture"},
+            {"word": "化学", "reading": "かがく", "meaning": "chemistry"},
+            {"word": "○○化", "reading": "○○か", "meaning": "-ize (change something into something else)"},
+            {"word": "化粧", "reading": "けしょう", "meaning": "makeup"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "比",
+          "stroke": 4,
+          "onyomi": "",
+          "kunyomi": "くら・べる",
+          "meaning": "compare, ratio",
+          "compounds": [
+            {"word": "比べる", "reading": "くらべる", "meaning": "compare"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "原",
+          "stroke": 10,
+          "onyomi": "ゲン",
+          "kunyomi": "",
+          "meaning": "original, field, plain",
+          "compounds": [
+            {"word": "原料", "reading": "げんりょう", "meaning": "(raw) material"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "因",
+          "stroke": 6,
+          "onyomi": "イン",
+          "kunyomi": "",
+          "meaning": "cause, factor",
+          "compounds": [
+            {"word": "原因", "reading": "げんいん", "meaning": "a cause"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "際",
+          "stroke": 14,
+          "onyomi": "サイ",
+          "kunyomi": "",
+          "meaning": "occasion, international",
+          "compounds": [
+            {"word": "国際の", "reading": "こくさいの", "meaning": "international"},
+            {"word": "交際", "reading": "こうさい", "meaning": "association/dealings (with)"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "議",
+          "stroke": 20,
+          "onyomi": "ギ",
+          "kunyomi": "",
+          "meaning": "discussion, deliberation",
+          "compounds": [
+            {"word": "会議", "reading": "かいぎ", "meaning": "a meeting"},
+            {"word": "議員", "reading": "ぎいん", "meaning": "a member of an assembly"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "活",
+          "stroke": 9,
+          "onyomi": "カツ",
+          "kunyomi": "",
+          "meaning": "life, activity",
+          "compounds": [
+            {"word": "生活", "reading": "せいかつ", "meaning": "life / livelihood"},
+            {"word": "活動", "reading": "かつどう", "meaning": "activity"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "変",
+          "stroke": 9,
+          "onyomi": "ヘン",
+          "kunyomi": "か・わる, か・える",
+          "meaning": "change, strange",
+          "compounds": [
+            {"word": "大変", "reading": "たいへん", "meaning": "very, serious"},
+            {"word": "変わる", "reading": "かわる", "meaning": "change"},
+            {"word": "変化", "reading": "へんか", "meaning": "a change"},
+            {"word": "変える", "reading": "かえる", "meaning": "change (something)"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title_jp": "政治",
+      "title_en": "Politics",
+      "kanji": [
+        {
+          "id": 1,
+          "char": "政",
+          "stroke": 9,
+          "onyomi": "セイ",
+          "kunyomi": "",
+          "meaning": "government, politics",
+          "compounds": [
+            {"word": "政治", "reading": "せいじ", "meaning": "politics"},
+            {"word": "政治家", "reading": "せいじか", "meaning": "a politician"}
+          ]
+        },
+        {
+          "id": 2,
+          "char": "府",
+          "stroke": 8,
+          "onyomi": "フ",
+          "kunyomi": "",
+          "meaning": "government, prefecture",
+          "compounds": [
+            {"word": "政府", "reading": "せいふ", "meaning": "a government, administration"},
+            {"word": "都道府県", "reading": "とどうふけん", "meaning": "prefectures"}
+          ]
+        },
+        {
+          "id": 3,
+          "char": "改",
+          "stroke": 7,
+          "onyomi": "カイ",
+          "kunyomi": "あらた・める",
+          "meaning": "reform, change, examine",
+          "compounds": [
+            {"word": "改正", "reading": "かいせい", "meaning": "an amendment"},
+            {"word": "改札口", "reading": "かいさつぐち", "meaning": "a ticket gate"},
+            {"word": "改める", "reading": "あらためる", "meaning": "change"}
+          ]
+        },
+        {
+          "id": 4,
+          "char": "否",
+          "stroke": 7,
+          "onyomi": "ヒ",
+          "kunyomi": "",
+          "meaning": "no, deny",
+          "compounds": [
+            {"word": "否定", "reading": "ひてい", "meaning": "negation"}
+          ]
+        },
+        {
+          "id": 5,
+          "char": "的",
+          "stroke": 8,
+          "onyomi": "テキ",
+          "kunyomi": "",
+          "meaning": "target, -ic, -like",
+          "compounds": [
+            {"word": "否定的", "reading": "ひていてき", "meaning": "negative"},
+            {"word": "国際的", "reading": "こくさいてき", "meaning": "international"},
+            {"word": "目的", "reading": "もくてき", "meaning": "an aim, purpose"},
+            {"word": "個人的", "reading": "こじんてき", "meaning": "personal"}
+          ]
+        },
+        {
+          "id": 6,
+          "char": "実",
+          "stroke": 8,
+          "onyomi": "ジツ",
+          "kunyomi": "",
+          "meaning": "reality, fruit, truth",
+          "compounds": [
+            {"word": "実際に", "reading": "じっさいに", "meaning": "practice, actual conditions"},
+            {"word": "国際的", "reading": "こくさいてき", "meaning": "international"},
+            {"word": "実験", "reading": "じっけん", "meaning": "an experiment"},
+            {"word": "実は", "reading": "じつは", "meaning": "to tell the truth"}
+          ]
+        },
+        {
+          "id": 7,
+          "char": "欠",
+          "stroke": 4,
+          "onyomi": "ケツ",
+          "kunyomi": "か・ける",
+          "meaning": "lack, gap",
+          "compounds": [
+            {"word": "欠点", "reading": "けってん", "meaning": "a shortcoming"},
+            {"word": "欠ける", "reading": "かける", "meaning": "chip, lack"},
+            {"word": "欠席", "reading": "けっせき", "meaning": "absence"}
+          ]
+        },
+        {
+          "id": 8,
+          "char": "専",
+          "stroke": 9,
+          "onyomi": "セン",
+          "kunyomi": "",
+          "meaning": "specialty, exclusive",
+          "compounds": [
+            {"word": "専門", "reading": "せんもん", "meaning": "specialty"},
+            {"word": "専門家", "reading": "せんもんか", "meaning": "an expert"}
+          ]
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "day": 7,
+    "questions": [
+      {
+        "id": 1,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "週末は全国的に晴れるでしょう。",
+        "options": [
+          {"label": "1", "text": "ばれる"},
+          {"label": "2", "text": "てれる"},
+          {"label": "3", "text": "はれる"},
+          {"label": "4", "text": "なれる"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 2,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "これは日本で一般に売られている食品です。",
+        "options": [
+          {"label": "1", "text": "いっせん"},
+          {"label": "2", "text": "いっそう"},
+          {"label": "3", "text": "いっせい"},
+          {"label": "4", "text": "いっぱいん"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 3,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "これはなんという果物ですか。",
+        "options": [
+          {"label": "1", "text": "けだもの"},
+          {"label": "2", "text": "くだもの"},
+          {"label": "3", "text": "こだもの"},
+          {"label": "4", "text": "こなもの"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 4,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "私たちのチームは強いチームと戦って勝ちました。",
+        "options": [
+          {"label": "1", "text": "かたたって"},
+          {"label": "2", "text": "たたかって"},
+          {"label": "3", "text": "かかたって"},
+          {"label": "4", "text": "たたかかって"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 5,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "国際会議に出席する。",
+        "options": [
+          {"label": "1", "text": "こくさいかいぎ"},
+          {"label": "2", "text": "こくさいがいぎ"},
+          {"label": "3", "text": "ごくさいかいぎ"},
+          {"label": "4", "text": "こくさいかいぎ"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 6,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "大学で政治経済を学ぶ。",
+        "options": [
+          {"label": "1", "text": "せいちょけいさい"},
+          {"label": "2", "text": "せいじけいざい"},
+          {"label": "3", "text": "せいちょけいざい"},
+          {"label": "4", "text": "せいじけいさい"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 7,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "楽さに負けないでがんばろう。",
+        "options": [
+          {"label": "1", "text": "なさけないで"},
+          {"label": "2", "text": "もけないで"},
+          {"label": "3", "text": "なまけないで"},
+          {"label": "4", "text": "まけないで"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 8,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "原料を輸入する。",
+        "options": [
+          {"label": "1", "text": "ひりょう"},
+          {"label": "2", "text": "ねんりょう"},
+          {"label": "3", "text": "げんりょう"},
+          {"label": "4", "text": "こうりょう"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 9,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "車の窓からごみを投げ捨てないでください。",
+        "options": [
+          {"label": "1", "text": "なげすて"},
+          {"label": "2", "text": "まげすて"},
+          {"label": "3", "text": "なげつて"},
+          {"label": "4", "text": "まげつて"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 10,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "宿題を済ませてから、テレビを見ます。",
+        "options": [
+          {"label": "1", "text": "からませて"},
+          {"label": "2", "text": "さませて"},
+          {"label": "3", "text": "おわませて"},
+          {"label": "4", "text": "すませて"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 11,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "じっけん結果を報告する。",
+        "options": [
+          {"label": "1", "text": "事件"},
+          {"label": "2", "text": "実験"},
+          {"label": "3", "text": "試験"},
+          {"label": "4", "text": "条件"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 12,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "せんもんかに意見を聞く。",
+        "options": [
+          {"label": "1", "text": "専門家"},
+          {"label": "2", "text": "専門家"},
+          {"label": "3", "text": "千聞家"},
+          {"label": "4", "text": "千文家"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 13,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "地球おんだんかについて話し合う。",
+        "options": [
+          {"label": "1", "text": "温暖化"},
+          {"label": "2", "text": "音暖化"},
+          {"label": "3", "text": "温暖化"},
+          {"label": "4", "text": "音暖化"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 14,
+        "section": 2,
+        "type": "write_kanji",
+        "stem": "明日は北風がふいて寒くなるでしょう。",
+        "options": [
+          {"label": "1", "text": "吸いて"},
+          {"label": "2", "text": "吹いて"},
+          {"label": "3", "text": "欠いて"},
+          {"label": "4", "text": "比いて"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 15,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "次の試験は第10（ ）までです。",
+        "options": [
+          {"label": "1", "text": "部"},
+          {"label": "2", "text": "課"},
+          {"label": "3", "text": "問"},
+          {"label": "4", "text": "料"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 16,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "工場は機械（ ）された。",
+        "options": [
+          {"label": "1", "text": "比"},
+          {"label": "2", "text": "的"},
+          {"label": "3", "text": "性"},
+          {"label": "4", "text": "化"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 17,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "個人（ ）な理由で、会社を辞めました。",
+        "options": [
+          {"label": "1", "text": "上"},
+          {"label": "2", "text": "因"},
+          {"label": "3", "text": "的"},
+          {"label": "4", "text": "内"}
+        ],
+        "answer": "3"
+      },
+      {
+        "id": 18,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "ラジオで天気（ ）を聞く。",
+        "options": [
+          {"label": "1", "text": "想"},
+          {"label": "2", "text": "報"},
+          {"label": "3", "text": "定"},
+          {"label": "4", "text": "防"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 19,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "首相はニュースの内容を（ ）定した。",
+        "options": [
+          {"label": "1", "text": "否"},
+          {"label": "2", "text": "内"},
+          {"label": "3", "text": "無"},
+          {"label": "4", "text": "正"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 20,
+        "section": 3,
+        "type": "fill_kanji",
+        "stem": "電話の相手は電（ ）の届かない所にいるようだ。",
+        "options": [
+          {"label": "1", "text": "池"},
+          {"label": "2", "text": "車"},
+          {"label": "3", "text": "信"},
+          {"label": "4", "text": "波"}
+        ],
+        "answer": "4"
+      }
+    ]
+  },
+  "quiz": {
+    "id": 6,
+    "title": "クイズ⑥ □に入る部分は？",
+    "questions": [
+      {
+        "id": 1,
+        "stem": "忙しい・忘れる・希望 の共通する部分",
+        "reading_hint": "isogashii / wasureru / kibou",
+        "options": [
+          {"label": "1", "kanji": "亡"},
+          {"label": "2", "kanji": "祭"},
+          {"label": "3", "kanji": "反"},
+          {"label": "4", "kanji": "忙"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 2,
+        "stem": "警告 / 国□センター",
+        "reading_hint": "keikoku / kokusaicenter",
+        "options": [
+          {"label": "1", "kanji": "祭"},
+          {"label": "2", "kanji": "際"},
+          {"label": "3", "kanji": "反"},
+          {"label": "4", "kanji": "力"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 3,
+        "stem": "要□ / 地□",
+        "reading_hint": "youkyuu / chikyuu",
+        "options": [
+          {"label": "1", "kanji": "球"},
+          {"label": "2", "kanji": "力"},
+          {"label": "3", "kanji": "求"},
+          {"label": "4", "kanji": "青"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 4,
+        "stem": "苦労する / 参□する",
+        "reading_hint": "kurou suru / sankasuru",
+        "options": [
+          {"label": "1", "kanji": "力"},
+          {"label": "2", "kanji": "加"},
+          {"label": "3", "kanji": "反"},
+          {"label": "4", "kanji": "青"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 5,
+        "stem": "情報 / 報じる",
+        "reading_hint": "jouhou / houzuru",
+        "options": [
+          {"label": "1", "kanji": "情"},
+          {"label": "2", "kanji": "反"},
+          {"label": "3", "kanji": "報"},
+          {"label": "4", "kanji": "求"}
+        ],
+        "answer": "1"
+      },
+      {
+        "id": 6,
+        "stem": "記事 / □対する",
+        "reading_hint": "kiji / hantai suru",
+        "options": [
+          {"label": "1", "kanji": "対"},
+          {"label": "2", "kanji": "反"},
+          {"label": "3", "kanji": "求"},
+          {"label": "4", "kanji": "変"}
+        ],
+        "answer": "2"
+      }
+    ]
+  }
+}

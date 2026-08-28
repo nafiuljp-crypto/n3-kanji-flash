@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム — N3 漢字</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="hero">
+    <h1>📖 N3 漢字フラッシュカード</h1>
+    <p class="lead">日本語総まとめ N3 漢字 · 全6週 · フラッシュカード &amp; 演習問題</p>
+</section>
+
+<section class="chapters">
+    <h2>週を選択</h2>
+    <div class="chapter-grid">
+        
+        <a href="chapter/1/" class="chapter-card">
+            <div class="chapter-number">週 1</div>
+            <div class="chapter-theme-jp">でかける①</div>
+            <div class="chapter-theme-en">Go Out 1</div>
+            <div class="chapter-stats">
+                <span>📝 6 日</span>
+                <span>🈶 50 漢字</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 実戦問題</span>
+                <span>🎯 6 クイズ</span>
+            </div>
+        </a>
+        
+        <a href="chapter/2/" class="chapter-card">
+            <div class="chapter-number">週 2</div>
+            <div class="chapter-theme-jp">でかける②</div>
+            <div class="chapter-theme-en">Go Out 2</div>
+            <div class="chapter-stats">
+                <span>📝 6 日</span>
+                <span>🈶 48 漢字</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 実戦問題</span>
+                <span>🎯 5 クイズ</span>
+            </div>
+        </a>
+        
+        <a href="chapter/3/" class="chapter-card">
+            <div class="chapter-number">週 3</div>
+            <div class="chapter-theme-jp">つかう</div>
+            <div class="chapter-theme-en">Use</div>
+            <div class="chapter-stats">
+                <span>📝 6 日</span>
+                <span>🈶 50 漢字</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 実戦問題</span>
+                <span>🎯 7 クイズ</span>
+            </div>
+        </a>
+        
+        <a href="chapter/4/" class="chapter-card">
+            <div class="chapter-number">週 4</div>
+            <div class="chapter-theme-jp">かう</div>
+            <div class="chapter-theme-en">Buy</div>
+            <div class="chapter-stats">
+                <span>📝 6 日</span>
+                <span>🈶 48 漢字</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 実戦問題</span>
+                <span>🎯 10 クイズ</span>
+            </div>
+        </a>
+        
+        <a href="chapter/5/" class="chapter-card">
+            <div class="chapter-number">週 5</div>
+            <div class="chapter-theme-jp">かく</div>
+            <div class="chapter-theme-en">Write</div>
+            <div class="chapter-stats">
+                <span>📝 6 日</span>
+                <span>🈶 49 漢字</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 実戦問題</span>
+                <span>🎯 15 クイズ</span>
+            </div>
+        </a>
+        
+        <a href="chapter/6/" class="chapter-card">
+            <div class="chapter-number">週 6</div>
+            <div class="chapter-theme-jp">よむ</div>
+            <div class="chapter-theme-en">Read</div>
+            <div class="chapter-stats">
+                <span>📝 6 日</span>
+                <span>🈶 48 漢字</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 実戦問題</span>
+                <span>🎯 6 クイズ</span>
+            </div>
+        </a>
+        
+    </div>
+</section>
+
+<section class="info">
+    <h2>使い方</h2>
+    <ol>
+        
+        <li><strong>週</strong>を選んでください（1〜6）。</li>
+        
+        <li><strong>フラッシュカード</strong>で漢字を覚えます。答えを入力すると、正誤と例文が見られます。</li>
+        
+        <li><strong>演習問題</strong>で選択問題を解きます。第7日目の実戦問題と、週末クイズがあります。</li>
+        
+    </ol>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+</body>
+</html>

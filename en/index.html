@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home — N3 Kanji Flash Cards</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language:</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="hero">
+    <h1>📖 N3 Kanji Flash Cards</h1>
+    <p class="lead">Sou Matome N3 Kanji · 6 chapters · Flash cards &amp; practice questions</p>
+</section>
+
+<section class="chapters">
+    <h2>Select a chapter</h2>
+    <div class="chapter-grid">
+        
+        <a href="chapter/1/" class="chapter-card">
+            <div class="chapter-number">Week 1</div>
+            <div class="chapter-theme-jp">でかける①</div>
+            <div class="chapter-theme-en">Go Out 1</div>
+            <div class="chapter-stats">
+                <span>📝 6 days</span>
+                <span>🈶 50 kanji</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 practice</span>
+                <span>🎯 6 quiz</span>
+            </div>
+        </a>
+        
+        <a href="chapter/2/" class="chapter-card">
+            <div class="chapter-number">Week 2</div>
+            <div class="chapter-theme-jp">でかける②</div>
+            <div class="chapter-theme-en">Go Out 2</div>
+            <div class="chapter-stats">
+                <span>📝 6 days</span>
+                <span>🈶 48 kanji</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 practice</span>
+                <span>🎯 5 quiz</span>
+            </div>
+        </a>
+        
+        <a href="chapter/3/" class="chapter-card">
+            <div class="chapter-number">Week 3</div>
+            <div class="chapter-theme-jp">つかう</div>
+            <div class="chapter-theme-en">Use</div>
+            <div class="chapter-stats">
+                <span>📝 6 days</span>
+                <span>🈶 50 kanji</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 practice</span>
+                <span>🎯 7 quiz</span>
+            </div>
+        </a>
+        
+        <a href="chapter/4/" class="chapter-card">
+            <div class="chapter-number">Week 4</div>
+            <div class="chapter-theme-jp">かう</div>
+            <div class="chapter-theme-en">Buy</div>
+            <div class="chapter-stats">
+                <span>📝 6 days</span>
+                <span>🈶 48 kanji</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 practice</span>
+                <span>🎯 10 quiz</span>
+            </div>
+        </a>
+        
+        <a href="chapter/5/" class="chapter-card">
+            <div class="chapter-number">Week 5</div>
+            <div class="chapter-theme-jp">かく</div>
+            <div class="chapter-theme-en">Write</div>
+            <div class="chapter-stats">
+                <span>📝 6 days</span>
+                <span>🈶 49 kanji</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 practice</span>
+                <span>🎯 15 quiz</span>
+            </div>
+        </a>
+        
+        <a href="chapter/6/" class="chapter-card">
+            <div class="chapter-number">Week 6</div>
+            <div class="chapter-theme-jp">よむ</div>
+            <div class="chapter-theme-en">Read</div>
+            <div class="chapter-stats">
+                <span>📝 6 days</span>
+                <span>🈶 48 kanji</span>
+            </div>
+            <div class="chapter-stats">
+                <span>✏️ 20 practice</span>
+                <span>🎯 6 quiz</span>
+            </div>
+        </a>
+        
+    </div>
+</section>
+
+<section class="info">
+    <h2>How to use</h2>
+    <ol>
+        
+        <li>Pick a <strong>chapter</strong> (1–6).</li>
+        
+        <li>Use <strong>Flash cards</strong> to memorize kanji. Type your answer (reading or meaning); get instant feedback with example sentences.</li>
+        
+        <li>Then take the <strong>Exercises</strong> — multiple-choice questions from the book's Day-7 practice set and the weekly quiz.</li>
+        
+    </ol>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Sou Matome N3 Kanji · Tailscale only</p>
+    </footer>
+
+    
+</body>
+</html>

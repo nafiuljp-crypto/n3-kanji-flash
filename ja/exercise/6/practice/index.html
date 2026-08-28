@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第 6 週 — 第7日目 実戦問題</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="../../index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../chapter/6/" class="back-link">← 第 6 週へ戻る</a>
+    <h1>第 6 週 — 第7日目 実戦問題</h1>
+    <p class="muted">20  問</p>
+</section>
+
+<section class="game-controls">
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 20</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section id="question-area" class="question-area">
+    <div id="question-loading" class="muted">問題を読み込み中…</div>
+</section>
+
+<section id="result-screen" class="result-screen hidden">
+    <h2>結果</h2>
+    <div class="result-stats">
+        <div class="stat-card">
+            <div class="stat-num" id="final-correct">0</div>
+            <div class="stat-label">正解</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num" id="final-wrong">0</div>
+            <div class="stat-label">不正解</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num" id="final-pct">0%</div>
+            <div class="stat-label">正答率</div>
+        </div>
+    </div>
+    <div class="result-actions">
+        <button id="retry-btn" class="btn btn-primary">もう一度</button>
+        <a href="../../chapter/6/" class="btn btn-link">← 第 6 週へ戻る</a>
+    </div>
+</section>
+
+<script id="exercise-data" type="application/json">
+[{"id": 1, "section": 1, "type": "fill_word", "stem": "週末は全国的に晴れるでしょう。", "options": [{"label": "1", "text": "ばれる"}, {"label": "2", "text": "てれる"}, {"label": "3", "text": "はれる"}, {"label": "4", "text": "なれる"}], "answer": "3"}, {"id": 2, "section": 1, "type": "fill_word", "stem": "これは日本で一般に売られている食品です。", "options": [{"label": "1", "text": "いっせん"}, {"label": "2", "text": "いっそう"}, {"label": "3", "text": "いっせい"}, {"label": "4", "text": "いっぱいん"}], "answer": "4"}, {"id": 3, "section": 1, "type": "fill_word", "stem": "これはなんという果物ですか。", "options": [{"label": "1", "text": "けだもの"}, {"label": "2", "text": "くだもの"}, {"label": "3", "text": "こだもの"}, {"label": "4", "text": "こなもの"}], "answer": "2"}, {"id": 4, "section": 1, "type": "fill_word", "stem": "私たちのチームは強いチームと戦って勝ちました。", "options": [{"label": "1", "text": "かたたって"}, {"label": "2", "text": "たたかって"}, {"label": "3", "text": "かかたって"}, {"label": "4", "text": "たたかかって"}], "answer": "4"}, {"id": 5, "section": 1, "type": "fill_word", "stem": "国際会議に出席する。", "options": [{"label": "1", "text": "こくさいかいぎ"}, {"label": "2", "text": "こくさいがいぎ"}, {"label": "3", "text": "ごくさいかいぎ"}, {"label": "4", "text": "こくさいかいぎ"}], "answer": "2"}, {"id": 6, "section": 1, "type": "fill_word", "stem": "大学で政治経済を学ぶ。", "options": [{"label": "1", "text": "せいちょけいさい"}, {"label": "2", "text": "せいじけいざい"}, {"label": "3", "text": "せいちょけいざい"}, {"label": "4", "text": "せいじけいさい"}], "answer": "2"}, {"id": 7, "section": 1, "type": "fill_word", "stem": "楽さに負けないでがんばろう。", "options": [{"label": "1", "text": "なさけないで"}, {"label": "2", "text": "もけないで"}, {"label": "3", "text": "なまけないで"}, {"label": "4", "text": "まけないで"}], "answer": "4"}, {"id": 8, "section": 1, "type": "fill_word", "stem": "原料を輸入する。", "options": [{"label": "1", "text": "ひりょう"}, {"label": "2", "text": "ねんりょう"}, {"label": "3", "text": "げんりょう"}, {"label": "4", "text": "こうりょう"}], "answer": "3"}, {"id": 9, "section": 1, "type": "fill_word", "stem": "車の窓からごみを投げ捨てないでください。", "options": [{"label": "1", "text": "なげすて"}, {"label": "2", "text": "まげすて"}, {"label": "3", "text": "なげつて"}, {"label": "4", "text": "まげつて"}], "answer": "1"}, {"id": 10, "section": 1, "type": "fill_word", "stem": "宿題を済ませてから、テレビを見ます。", "options": [{"label": "1", "text": "からませて"}, {"label": "2", "text": "さませて"}, {"label": "3", "text": "おわませて"}, {"label": "4", "text": "すませて"}], "answer": "4"}, {"id": 11, "section": 2, "type": "write_kanji", "stem": "じっけん結果を報告する。", "options": [{"label": "1", "text": "事件"}, {"label": "2", "text": "実験"}, {"label": "3", "text": "試験"}, {"label": "4", "text": "条件"}], "answer": "2"}, {"id": 12, "section": 2, "type": "write_kanji", "stem": "せんもんかに意見を聞く。", "options": [{"label": "1", "text": "専門家"}, {"label": "2", "text": "専門家"}, {"label": "3", "text": "千聞家"}, {"label": "4", "text": "千文家"}], "answer": "1"}, {"id": 13, "section": 2, "type": "write_kanji", "stem": "地球おんだんかについて話し合う。", "options": [{"label": "1", "text": "温暖化"}, {"label": "2", "text": "音暖化"}, {"label": "3", "text": "温暖化"}, {"label": "4", "text": "音暖化"}], "answer": "3"}, {"id": 14, "section": 2, "type": "write_kanji", "stem": "明日は北風がふいて寒くなるでしょう。", "options": [{"label": "1", "text": "吸いて"}, {"label": "2", "text": "吹いて"}, {"label": "3", "text": "欠いて"}, {"label": "4", "text": "比いて"}], "answer": "2"}, {"id": 15, "section": 3, "type": "fill_kanji", "stem": "次の試験は第10（ ）までです。", "options": [{"label": "1", "text": "部"}, {"label": "2", "text": "課"}, {"label": "3", "text": "問"}, {"label": "4", "text": "料"}], "answer": "2"}, {"id": 16, "section": 3, "type": "fill_kanji", "stem": "工場は機械（ ）された。", "options": [{"label": "1", "text": "比"}, {"label": "2", "text": "的"}, {"label": "3", "text": "性"}, {"label": "4", "text": "化"}], "answer": "4"}, {"id": 17, "section": 3, "type": "fill_kanji", "stem": "個人（ ）な理由で、会社を辞めました。", "options": [{"label": "1", "text": "上"}, {"label": "2", "text": "因"}, {"label": "3", "text": "的"}, {"label": "4", "text": "内"}], "answer": "3"}, {"id": 18, "section": 3, "type": "fill_kanji", "stem": "ラジオで天気（ ）を聞く。", "options": [{"label": "1", "text": "想"}, {"label": "2", "text": "報"}, {"label": "3", "text": "定"}, {"label": "4", "text": "防"}], "answer": "2"}, {"id": 19, "section": 3, "type": "fill_kanji", "stem": "首相はニュースの内容を（ ）定した。", "options": [{"label": "1", "text": "否"}, {"label": "2", "text": "内"}, {"label": "3", "text": "無"}, {"label": "4", "text": "正"}], "answer": "1"}, {"id": 20, "section": 3, "type": "fill_kanji", "stem": "電話の相手は電（ ）の届かない所にいるようだ。", "options": [{"label": "1", "text": "池"}, {"label": "2", "text": "車"}, {"label": "3", "text": "信"}, {"label": "4", "text": "波"}], "answer": "4"}]
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "\u7b2c {week} \u9031\u306b\u623b\u308b", "btn_next_question": "\u6b21\u306e\u554f\u984c \u2192", "btn_see_results": "\u7d50\u679c\u3092\u898b\u308b", "btn_try_again": "\u3082\u3046\u4e00\u5ea6", "check_failed": "\u56de\u7b54\u30c1\u30a7\u30c3\u30af\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002", "lbl_accuracy": "\u6b63\u7b54\u7387", "lbl_correct": "\u6b63\u89e3", "lbl_wrong": "\u4e0d\u6b63\u89e3", "load_failed": "\u554f\u984c\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002", "no_questions": "\u554f\u984c\u304c\u3042\u308a\u307e\u305b\u3093\u3002", "reading_hint_prefix": "\uff08\u8aad\u307f: ", "section_1": "\u554f\u984c 1 \u2014 \u8aad\u307f", "section_2": "\u554f\u984c 2 \u2014 \u6f22\u5b57\u3092\u66f8\u304f", "section_3": "\u554f\u984c 3 \u2014 \u6f22\u5b57\u3092\u57cb\u3081\u308b", "section_n": "\u554f\u984c {n}"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initExercise(6, 'practice');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1035 @@
+{
+  "week": 3,
+  "theme": {"jp": "つかう", "en": "Use", "kr": "사용하다"},
+  "lessons": [
+    {
+      "day": 1,
+      "title_jp": "要冷蔵",
+      "title_en": "Keep Refrigerated",
+      "kanji": [
+        {
+          "id": 114,
+          "char": "要",
+          "stroke": 9,
+          "onyomi": "ヨウ",
+          "kunyomi": "いる",
+          "meaning": "need, important, require",
+          "compounds": [
+            {"word": "必要(な)", "reading": "ひつような", "meaning": "necessary"},
+            {"word": "要る", "reading": "いる", "meaning": "need"},
+            {"word": "重要(な)", "reading": "じゅうような", "meaning": "important"}
+          ],
+          "example": {
+            "jp": "重要な会議があります。",
+            "furigana": "じゅうようなかいぎがあります。",
+            "en": "I have an important meeting."
+          }
+        },
+        {
+          "id": 115,
+          "char": "令",
+          "stroke": 7,
+          "onyomi": "レイ",
+          "kunyomi": "",
+          "meaning": "order, command; cold (cooling)",
+          "compounds": [
+            {"word": "冷房", "reading": "れいぼう", "meaning": "air-conditioning"},
+            {"word": "冷やす", "reading": "ひやす", "meaning": "cool"},
+            {"word": "冷たい", "reading": "つめたい", "meaning": "cold"},
+            {"word": "冷える", "reading": "ひえる", "meaning": "become cold"},
+            {"word": "冷める", "reading": "さめる", "meaning": "cool down"},
+            {"word": "冷ます", "reading": "さます", "meaning": "cool something"}
+          ]
+        },
+        {
+          "id": 116,
+          "char": "蔵",
+          "stroke": 15,
+          "onyomi": "ゾウ",
+          "kunyomi": "くら",
+          "meaning": "storehouse, hide",
+          "compounds": [
+            {"word": "冷蔵庫", "reading": "れいぞうこ", "meaning": "a refrigerator"}
+          ],
+          "example": {
+            "jp": "ビールを冷蔵庫に入れてください。",
+            "furigana": "ビールをれいぞうこにいれてください。",
+            "en": "Please put the beer in the refrigerator."
+          }
+        },
+        {
+          "id": 117,
+          "char": "凍",
+          "stroke": 10,
+          "onyomi": "トウ",
+          "kunyomi": "こおる",
+          "meaning": "freeze, frozen",
+          "compounds": [
+            {"word": "冷凍庫", "reading": "れいとうこ", "meaning": "a freezer"},
+            {"word": "凍る", "reading": "こおる", "meaning": "freeze"}
+          ]
+        },
+        {
+          "id": 118,
+          "char": "庫",
+          "stroke": 10,
+          "onyomi": "コ",
+          "kunyomi": "",
+          "meaning": "storehouse",
+          "compounds": [
+            {"word": "金庫", "reading": "きんこ", "meaning": "a safe"},
+            {"word": "車庫", "reading": "しゃこ", "meaning": "a garage"}
+          ]
+        },
+        {
+          "id": 119,
+          "char": "召",
+          "stroke": 5,
+          "onyomi": "ショウ",
+          "kunyomi": "めす",
+          "meaning": "call, summon (polite)",
+          "compounds": [
+            {"word": "召し上がる", "reading": "めしあがる", "meaning": "eat (polite form)"}
+          ]
+        },
+        {
+          "id": 120,
+          "char": "保",
+          "stroke": 9,
+          "onyomi": "ホ",
+          "kunyomi": "たもる",
+          "meaning": "preserve, protect",
+          "compounds": [
+            {"word": "保存する", "reading": "ほぞんする", "meaning": "preserve"}
+          ]
+        },
+        {
+          "id": 121,
+          "char": "存",
+          "stroke": 6,
+          "onyomi": "ソン",
+          "kunyomi": "",
+          "meaning": "exist, suppose, know (humble)",
+          "compounds": [
+            {"word": "ご存じです", "reading": "ごぞんじです", "meaning": "know (humble form)"},
+            {"word": "存じません", "reading": "ぞんじません", "meaning": "I do not know"}
+          ]
+        },
+        {
+          "id": 122,
+          "char": "必",
+          "stroke": 5,
+          "onyomi": "ヒツ",
+          "kunyomi": "かならず",
+          "meaning": "inevitable, certain",
+          "compounds": [
+            {"word": "必要(な)", "reading": "ひつような", "meaning": "necessary"},
+            {"word": "必ず", "reading": "かならず", "meaning": "always / certainly"},
+            {"word": "必死(に)", "reading": "ひっしに", "meaning": "desperately"}
+          ],
+          "example": {
+            "jp": "必ず来週までに連絡してください。",
+            "furigana": "かならずらいしゅうまでにれんらくしてください。",
+            "en": "Please be sure to contact me by next week."
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title_jp": "消費期限",
+      "title_en": "Expiration Date / EXP",
+      "kanji": [
+        {
+          "id": 176,
+          "char": "費",
+          "stroke": 12,
+          "onyomi": "ヒ",
+          "kunyomi": "",
+          "meaning": "expense, cost, consume",
+          "compounds": [
+            {"word": "費用", "reading": "ひよう", "meaning": "an expense, cost"},
+            {"word": "旅費", "reading": "りょひ", "meaning": "travelling expenses"},
+            {"word": "消費者", "reading": "しょうひしゃ", "meaning": "consumers"},
+            {"word": "会費", "reading": "かいひ", "meaning": "a membership fee"}
+          ]
+        },
+        {
+          "id": 177,
+          "char": "期",
+          "stroke": 12,
+          "onyomi": "キ",
+          "kunyomi": "",
+          "meaning": "period, time, expect",
+          "compounds": [
+            {"word": "期間", "reading": "きかん", "meaning": "a period of time"},
+            {"word": "長期", "reading": "ちょうき", "meaning": "a long period"},
+            {"word": "定期券", "reading": "ていきけん", "meaning": "a commuter pass"},
+            {"word": "短期", "reading": "たんき", "meaning": "a short period"}
+          ],
+          "example": {
+            "jp": "賞味期限を確認してください。",
+            "furigana": "しょうみきげんをかくにんしてください。",
+            "en": "Please check the best-before date."
+          }
+        },
+        {
+          "id": 178,
+          "char": "限",
+          "stroke": 19,
+          "onyomi": "ゲン",
+          "kunyomi": "かぎる",
+          "meaning": "limit, restrict",
+          "compounds": [
+            {"word": "期限", "reading": "きげん", "meaning": "a time limit"},
+            {"word": "限る", "reading": "かぎる", "meaning": "limit, restrict"},
+            {"word": "限度", "reading": "げんど", "meaning": "a limit"},
+            {"word": "限定", "reading": "げんてい", "meaning": "limitation"}
+          ]
+        },
+        {
+          "id": 179,
+          "char": "製",
+          "stroke": 14,
+          "onyomi": "セイ",
+          "kunyomi": "",
+          "meaning": "made in/of, manufacture",
+          "compounds": [
+            {"word": "○○製", "reading": "○○せい", "meaning": "made in/of ○○"},
+            {"word": "製品", "reading": "せいひん", "meaning": "a product"}
+          ]
+        },
+        {
+          "id": 180,
+          "char": "造",
+          "stroke": 10,
+          "onyomi": "ゾウ",
+          "kunyomi": "つくる",
+          "meaning": "make, create, build",
+          "compounds": [
+            {"word": "製造", "reading": "せいぞう", "meaning": "manufacture"},
+            {"word": "造る", "reading": "つくる", "meaning": "make"}
+          ]
+        },
+        {
+          "id": 181,
+          "char": "賞",
+          "stroke": 15,
+          "onyomi": "ショウ",
+          "kunyomi": "",
+          "meaning": "prize, reward",
+          "compounds": [
+            {"word": "賞", "reading": "しょう", "meaning": "a prize"},
+            {"word": "賞金", "reading": "しょうきん", "meaning": "prize money"},
+            {"word": "賞味期限", "reading": "しょうみきげん", "meaning": "best before"},
+            {"word": "賞品", "reading": "しょうひん", "meaning": "a prize"}
+          ]
+        },
+        {
+          "id": 182,
+          "char": "法",
+          "stroke": 8,
+          "onyomi": "ホウ",
+          "kunyomi": "",
+          "meaning": "law, method",
+          "compounds": [
+            {"word": "方法", "reading": "ほうほう", "meaning": "a method / way"},
+            {"word": "文法", "reading": "ぶんぽう", "meaning": "grammar"}
+          ]
+        },
+        {
+          "id": 183,
+          "char": "温",
+          "stroke": 12,
+          "onyomi": "オン",
+          "kunyomi": "あたたか(い)、あたたまる、ぬく、ぬるい",
+          "meaning": "warm",
+          "compounds": [
+            {"word": "温度", "reading": "おんど", "meaning": "temperature"},
+            {"word": "温かい", "reading": "あたたかい", "meaning": "warm"},
+            {"word": "気温", "reading": "きおん", "meaning": "temperature"},
+            {"word": "常温", "reading": "じょうおん", "meaning": "normal temperature"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title_jp": "自動販売機",
+      "title_en": "Vending Machines",
+      "kanji": [
+        {
+          "id": 151,
+          "char": "販",
+          "stroke": 11,
+          "onyomi": "ハン",
+          "kunyomi": "",
+          "meaning": "sell, trade",
+          "compounds": [
+            {"word": "販売", "reading": "はんばい", "meaning": "sell"},
+            {"word": "自動販売機", "reading": "じどうはんばいき", "meaning": "a vending machine"}
+          ],
+          "example": {
+            "jp": "自動販売機でジュースを買った。",
+            "furigana": "じどうはんばいきでジュースをかった。",
+            "en": "I bought juice at the vending machine."
+          }
+        },
+        {
+          "id": 152,
+          "char": "機",
+          "stroke": 16,
+          "onyomi": "キ",
+          "kunyomi": "はた",
+          "meaning": "machine, opportunity, plane",
+          "compounds": [
+            {"word": "飛行機", "reading": "ひこうき", "meaning": "an airplane"},
+            {"word": "機会", "reading": "きかい", "meaning": "an opportunity"},
+            {"word": "機械", "reading": "きかい", "meaning": "a machine"}
+          ],
+          "example": {
+            "jp": "飛行機で東京に行きます。",
+            "furigana": "ひこうきでとうきょうにいきます。",
+            "en": "I go to Tokyo by plane."
+          }
+        },
+        {
+          "id": 153,
+          "char": "増",
+          "stroke": 14,
+          "onyomi": "ゾウ",
+          "kunyomi": "ふえる、ふやす、ます",
+          "meaning": "increase, add",
+          "compounds": [
+            {"word": "増加", "reading": "ぞうか", "meaning": "an increase"},
+            {"word": "増える", "reading": "ふえる", "meaning": "increase"},
+            {"word": "増やす", "reading": "ふやす", "meaning": "increase, add"}
+          ]
+        },
+        {
+          "id": 154,
+          "char": "減",
+          "stroke": 12,
+          "onyomi": "ゲン",
+          "kunyomi": "へる、へらす",
+          "meaning": "decrease, reduce",
+          "compounds": [
+            {"word": "減少", "reading": "げんしょう", "meaning": "a decrease"},
+            {"word": "減らす", "reading": "へらす", "meaning": "decrease, reduce"}
+          ]
+        },
+        {
+          "id": 155,
+          "char": "量",
+          "stroke": 12,
+          "onyomi": "リョウ",
+          "kunyomi": "はかる",
+          "meaning": "quantity, measure",
+          "compounds": [
+            {"word": "量", "reading": "りょう", "meaning": "quantity"},
+            {"word": "数量", "reading": "すうりょう", "meaning": "amount"},
+            {"word": "増量", "reading": "ぞうりょう", "meaning": "increase the amount"},
+            {"word": "減量", "reading": "げんりょう", "meaning": "a loss in quantity (weight)"}
+          ],
+          "example": {
+            "jp": "水の量を減らしてください。",
+            "furigana": "みずのりょうをへらしてください。",
+            "en": "Please reduce the amount of water."
+          }
+        },
+        {
+          "id": 156,
+          "char": "氷",
+          "stroke": 5,
+          "onyomi": "ヒョウ",
+          "kunyomi": "こおり",
+          "meaning": "ice",
+          "compounds": [
+            {"word": "氷", "reading": "こおり", "meaning": "ice"}
+          ]
+        },
+        {
+          "id": 157,
+          "char": "返",
+          "stroke": 7,
+          "onyomi": "ヘン",
+          "kunyomi": "かえす、かえる",
+          "meaning": "return, reply",
+          "compounds": [
+            {"word": "返事", "reading": "へんじ", "meaning": "a reply"},
+            {"word": "返す", "reading": "かえす", "meaning": "return (something)"},
+            {"word": "返却", "reading": "へんきゃく", "meaning": "return"}
+          ]
+        },
+        {
+          "id": 158,
+          "char": "湯",
+          "stroke": 12,
+          "onyomi": "ユ",
+          "kunyomi": "ゆ",
+          "meaning": "hot water",
+          "compounds": [
+            {"word": "（お）湯", "reading": "おゆ", "meaning": "hot water"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title_jp": "レシピ",
+      "title_en": "Recipes",
+      "kanji": [
+        {
+          "id": 138,
+          "char": "材",
+          "stroke": 7,
+          "onyomi": "ザイ",
+          "kunyomi": "",
+          "meaning": "material, lumber",
+          "compounds": [
+            {"word": "材料", "reading": "ざいりょう", "meaning": "ingredients, materials"},
+            {"word": "教材", "reading": "きょうざい", "meaning": "teaching material"}
+          ]
+        },
+        {
+          "id": 139,
+          "char": "卵",
+          "stroke": 7,
+          "onyomi": "ラン",
+          "kunyomi": "たまご",
+          "meaning": "egg",
+          "compounds": [
+            {"word": "卵", "reading": "たまご", "meaning": "an egg"},
+            {"word": "卵焼き", "reading": "たまごやき", "meaning": "a Japanese omelet"}
+          ],
+          "example": {
+            "jp": "卵焼きを作ります。",
+            "furigana": "たまごやきをつくります。",
+            "en": "I make a Japanese omelet."
+          }
+        },
+        {
+          "id": 140,
+          "char": "乳",
+          "stroke": 8,
+          "onyomi": "ニュウ",
+          "kunyomi": "ちち、ち",
+          "meaning": "milk, breast",
+          "compounds": [
+            {"word": "牛乳", "reading": "ぎゅうにゅう", "meaning": "milk"}
+          ]
+        },
+        {
+          "id": 141,
+          "char": "粉",
+          "stroke": 10,
+          "onyomi": "フン",
+          "kunyomi": "こな、こ",
+          "meaning": "powder, flour",
+          "compounds": [
+            {"word": "粉", "reading": "こな", "meaning": "powder, flour"},
+            {"word": "小麦粉", "reading": "こむぎこ", "meaning": "wheat flour"}
+          ],
+          "example": {
+            "jp": "小麦粉を買ってください。",
+            "furigana": "こむぎこをかってください。",
+            "en": "Please buy wheat flour."
+          }
+        },
+        {
+          "id": 142,
+          "char": "袋",
+          "stroke": 11,
+          "onyomi": "タイ",
+          "kunyomi": "ふくろ",
+          "meaning": "bag, sack",
+          "compounds": [
+            {"word": "袋", "reading": "ふくろ", "meaning": "a bag"},
+            {"word": "紙袋", "reading": "かみぶくろ", "meaning": "a paper bag"},
+            {"word": "ごみ袋", "reading": "ごみぶくろ", "meaning": "a garbage bag"},
+            {"word": "手袋", "reading": "てぶくろ", "meaning": "gloves"},
+            {"word": "足袋", "reading": "たび", "meaning": "tabi (traditional Japanese socks worn with a kimono)"}
+          ]
+        },
+        {
+          "id": 143,
+          "char": "混",
+          "stroke": 11,
+          "onyomi": "コン",
+          "kunyomi": "まざる、まぜる",
+          "meaning": "mix, mix up",
+          "compounds": [
+            {"word": "混雑", "reading": "こんざつ", "meaning": "congestion"},
+            {"word": "混ぜる", "reading": "まぜる", "meaning": "be mixed"}
+          ],
+          "example": {
+            "jp": "牛乳と卵を混ぜます。",
+            "furigana": "ぎゅうにゅうとたまごをまぜます。",
+            "en": "Mix milk and eggs."
+          }
+        },
+        {
+          "id": 144,
+          "char": "焼",
+          "stroke": 12,
+          "onyomi": "ショウ",
+          "kunyomi": "やく、やける",
+          "meaning": "bake, grill",
+          "compounds": [
+            {"word": "焼く", "reading": "やく", "meaning": "roast, grill"},
+            {"word": "焼ける", "reading": "やける", "meaning": "be burnt/baked"}
+          ]
+        },
+        {
+          "id": 145,
+          "char": "表",
+          "stroke": 8,
+          "onyomi": "ヒョウ",
+          "kunyomi": "おもて、あらわす、あらわれる",
+          "meaning": "surface, table, express",
+          "compounds": [
+            {"word": "表", "reading": "おもて", "meaning": "a table (in written documents)"},
+            {"word": "表面", "reading": "ひょうめん", "meaning": "a surface"},
+            {"word": "発表", "reading": "はっぴょう", "meaning": "an announcement"},
+            {"word": "代表", "reading": "だいひょう", "meaning": "a representative"},
+            {"word": "表", "reading": "おもて", "meaning": "a surface, face"},
+            {"word": "表す", "reading": "あらわす", "meaning": "show, express"}
+          ]
+        },
+        {
+          "id": 146,
+          "char": "裏",
+          "stroke": 13,
+          "onyomi": "リ",
+          "kunyomi": "うら",
+          "meaning": "back, reverse, inside",
+          "compounds": [
+            {"word": "裏", "reading": "うら", "meaning": "reverse, back"},
+            {"word": "裏返す", "reading": "うらがえす", "meaning": "turnover"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title_jp": "コピー機・留守番電話",
+      "title_en": "A Copy Machine, An Answering Machine",
+      "kanji": [
+        {
+          "id": 147,
+          "char": "留",
+          "stroke": 10,
+          "onyomi": "リュウ、ル",
+          "kunyomi": "とめる、とまる",
+          "meaning": "stay, stop, detain",
+          "compounds": [
+            {"word": "留学", "reading": "りゅうがく", "meaning": "study abroad"},
+            {"word": "留守番", "reading": "るすばん", "meaning": "stay at home"},
+            {"word": "保留", "reading": "ほりゅう", "meaning": "reservation / suspension"},
+            {"word": "書留", "reading": "かきとめ", "meaning": "registration (registered mail)"}
+          ],
+          "example": {
+            "jp": "アメリカに留学しています。",
+            "furigana": "あめりかにりゅうがくしています。",
+            "en": "I am studying abroad in America."
+          }
+        },
+        {
+          "id": 148,
+          "char": "守",
+          "stroke": 6,
+          "onyomi": "シュ、ス",
+          "kunyomi": "まもる、もり",
+          "meaning": "protect, guard",
+          "compounds": [
+            {"word": "守備", "reading": "しゅび", "meaning": "defence"},
+            {"word": "留守", "reading": "るす", "meaning": "absence"},
+            {"word": "守る", "reading": "まもる", "meaning": "protect"}
+          ],
+          "example": {
+            "jp": "ルールを守りましょう。",
+            "furigana": "るーるをまもりましょう。",
+            "en": "Let's follow the rules."
+          }
+        },
+        {
+          "id": 149,
+          "char": "濃",
+          "stroke": 16,
+          "onyomi": "ノウ",
+          "kunyomi": "こい",
+          "meaning": "concentrated, thick, dark",
+          "compounds": [
+            {"word": "濃い", "reading": "こい", "meaning": "concentrate, dark (color)"}
+          ]
+        },
+        {
+          "id": 150,
+          "char": "薄",
+          "stroke": 16,
+          "onyomi": "ハク",
+          "kunyomi": "うすい、うすめる、うすまる、うすれる",
+          "meaning": "thin, light, weak",
+          "compounds": [
+            {"word": "薄い", "reading": "うすい", "meaning": "thin (material), light (color), weak (drink)"}
+          ]
+        },
+        {
+          "id": 152,
+          "char": "部",
+          "stroke": 11,
+          "onyomi": "ブ",
+          "kunyomi": "",
+          "meaning": "part, section, department",
+          "compounds": [
+            {"word": "部分", "reading": "ぶぶん", "meaning": "part"},
+            {"word": "学部", "reading": "がくぶ", "meaning": "faculty"},
+            {"word": "部長", "reading": "ぶちょう", "meaning": "department head / manager"},
+            {"word": "部屋", "reading": "へや", "meaning": "a room"}
+          ]
+        },
+        {
+          "id": 153,
+          "char": "数",
+          "stroke": 13,
+          "onyomi": "スウ、ス",
+          "kunyomi": "かず、かぞえる",
+          "meaning": "number, count",
+          "compounds": [
+            {"word": "数字", "reading": "すうじ", "meaning": "number"},
+            {"word": "数学", "reading": "すうがく", "meaning": "mathematics"},
+            {"word": "数", "reading": "かず", "meaning": "a number"},
+            {"word": "数える", "reading": "かぞえる", "meaning": "count"}
+          ]
+        },
+        {
+          "id": 154,
+          "char": "件",
+          "stroke": 6,
+          "onyomi": "ケン",
+          "kunyomi": "",
+          "meaning": "matter, item, case",
+          "compounds": [
+            {"word": "件名", "reading": "けんめい", "meaning": "subject"},
+            {"word": "用件", "reading": "ようけん", "meaning": "a business matter"},
+            {"word": "事件", "reading": "じけん", "meaning": "an incident"}
+          ]
+        },
+        {
+          "id": 155,
+          "char": "再",
+          "stroke": 6,
+          "onyomi": "サイ、サ",
+          "kunyomi": "",
+          "meaning": "again, re-",
+          "compounds": [
+            {"word": "再入国", "reading": "さいにゅうこく", "meaning": "re-enter a country"},
+            {"word": "再ダィヤル", "reading": "さいダィヤル", "meaning": "redial"},
+            {"word": "再生成", "reading": "さいせいせい", "meaning": "regenerate, recycle"},
+            {"word": "再来週", "reading": "さらいしゅう", "meaning": "the week after next"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title_jp": "携帯電話",
+      "title_en": "Cell Phones",
+      "kanji": [
+        {
+          "id": 156,
+          "char": "接",
+          "stroke": 11,
+          "onyomi": "セツ",
+          "kunyomi": "せつ",
+          "meaning": "connect, contact, touch",
+          "compounds": [
+            {"word": "接続", "reading": "せつぞく", "meaning": "connect"},
+            {"word": "面接", "reading": "めんせつ", "meaning": "interview"}
+          ],
+          "example": {
+            "jp": "インターネットに接続してください。",
+            "furigana": "インターネットにせつぞくしてください。",
+            "en": "Please connect to the internet."
+          }
+        },
+        {
+          "id": 157,
+          "char": "続",
+          "stroke": 13,
+          "onyomi": "ゾク",
+          "kunyomi": "つづく、つづける",
+          "meaning": "continue",
+          "compounds": [
+            {"word": "接続", "reading": "せつぞく", "meaning": "connect"},
+            {"word": "続く", "reading": "つづく", "meaning": "continue"},
+            {"word": "続ける", "reading": "つづける", "meaning": "continue"}
+          ]
+        },
+        {
+          "id": 158,
+          "char": "示",
+          "stroke": 5,
+          "onyomi": "ジ",
+          "kunyomi": "しめす",
+          "meaning": "show, indicate",
+          "compounds": [
+            {"word": "表示", "reading": "ひょうじ", "meaning": "indication, expression"},
+            {"word": "指示", "reading": "しじ", "meaning": "a direction, instruction"},
+            {"word": "示す", "reading": "しめす", "meaning": "show, point out"}
+          ]
+        },
+        {
+          "id": 159,
+          "char": "戻",
+          "stroke": 7,
+          "onyomi": "",
+          "kunyomi": "もどる、もどす",
+          "meaning": "return, put back",
+          "compounds": [
+            {"word": "戻る", "reading": "もどる", "meaning": "return"},
+            {"word": "戻す", "reading": "もどす", "meaning": "return, put back"}
+          ]
+        },
+        {
+          "id": 160,
+          "char": "完",
+          "stroke": 7,
+          "onyomi": "カン",
+          "kunyomi": "",
+          "meaning": "complete, perfect",
+          "compounds": [
+            {"word": "完了", "reading": "かんりょう", "meaning": "completion"},
+            {"word": "完全(な)", "reading": "かんぜんな", "meaning": "perfect, complete"}
+          ]
+        },
+        {
+          "id": 161,
+          "char": "了",
+          "stroke": 2,
+          "onyomi": "リョウ",
+          "kunyomi": "",
+          "meaning": "finish, understand",
+          "compounds": [
+            {"word": "了解", "reading": "りょうかい", "meaning": "understand, agree"},
+            {"word": "終了", "reading": "しゅうりょう", "meaning": "end, expiration"}
+          ]
+        },
+        {
+          "id": 162,
+          "char": "登",
+          "stroke": 12,
+          "onyomi": "ト、トウ",
+          "kunyomi": "のぼる",
+          "meaning": "climb, register",
+          "compounds": [
+            {"word": "登録", "reading": "とうろく", "meaning": "registration"},
+            {"word": "登山", "reading": "とざん", "meaning": "mountain climbing"},
+            {"word": "登る", "reading": "のぼる", "meaning": "climb"}
+          ]
+        },
+        {
+          "id": 163,
+          "char": "録",
+          "stroke": 16,
+          "onyomi": "ロク",
+          "kunyomi": "",
+          "meaning": "record",
+          "compounds": [
+            {"word": "記録", "reading": "きろく", "meaning": "a record"},
+            {"word": "録音", "reading": "ろくおん", "meaning": "record (sound)"},
+            {"word": "録画", "reading": "ろくが", "meaning": "record (video)"}
+          ],
+          "example": {
+            "jp": "会議を録音しました。",
+            "furigana": "かいぎをろくおんしました。",
+            "en": "I recorded the meeting."
+          }
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "day": 7,
+    "questions": [
+      {
+        "id": 1,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "自動販売機で飲み物を買う。",
+        "options": [{"label": "1", "text": "はんばい"}, {"label": "2", "text": "へんばい"}, {"label": "3", "text": "はんまい"}, {"label": "4", "text": "へんまい"}],
+        "answer": "1"
+      },
+      {
+        "id": 2,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "なるべく早くお召し上がりください。",
+        "options": [{"label": "1", "text": "おみしあがり"}, {"label": "2", "text": "おねしあがり"}, {"label": "3", "text": "おめしあがり"}, {"label": "4", "text": "おむしあがり"}],
+        "answer": "3"
+      },
+      {
+        "id": 3,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "日本語の教材をさがす。",
+        "options": [{"label": "1", "text": "きょうざい"}, {"label": "2", "text": "きゅうざい"}, {"label": "3", "text": "きょうぜい"}, {"label": "4", "text": "きゅうぜい"}],
+        "answer": "1"
+      },
+      {
+        "id": 4,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "そこに粉を入れて混ぜます。",
+        "options": [{"label": "1", "text": "すな"}, {"label": "2", "text": "こめ"}, {"label": "3", "text": "むぎ"}, {"label": "4", "text": "こな"}],
+        "answer": "4"
+      },
+      {
+        "id": 5,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "おべんとうに卵焼きが入っている。",
+        "options": [{"label": "1", "text": "たなごやき"}, {"label": "2", "text": "たまごやき"}, {"label": "3", "text": "たなこやき"}, {"label": "4", "text": "たまこやき"}],
+        "answer": "4"
+      },
+      {
+        "id": 6,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "交通ルールを守りましょう。",
+        "options": [{"label": "1", "text": "なもりましょう"}, {"label": "2", "text": "まもりましょう"}, {"label": "3", "text": "もまりましょう"}, {"label": "4", "text": "もなりましょう"}],
+        "answer": "2"
+      },
+      {
+        "id": 7,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "整を数えてください。",
+        "options": [{"label": "1", "text": "かぞ"}, {"label": "2", "text": "くず"}, {"label": "3", "text": "かず"}, {"label": "4", "text": "しゅう"}],
+        "answer": "3"
+      },
+      {
+        "id": 8,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "お湯を入れて、3分待って、できあがりです。",
+        "options": [{"label": "1", "text": "ゆ"}, {"label": "2", "text": "よ"}, {"label": "3", "text": "や"}, {"label": "4", "text": "い"}],
+        "answer": "1"
+      },
+      {
+        "id": 9,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "録音された伝言を再生する。",
+        "options": [{"label": "1", "text": "せいしょう"}, {"label": "2", "text": "さいせい"}, {"label": "3", "text": "せいせい"}, {"label": "4", "text": "さいしょう"}],
+        "answer": "2"
+      },
+      {
+        "id": 10,
+        "section": 1,
+        "type": "fill_word",
+        "stem": "冷房が強すぎます。",
+        "options": [{"label": "1", "text": "れいぼう"}, {"label": "2", "text": "れいぞう"}, {"label": "3", "text": "れいとう"}, {"label": "4", "text": "れいどう"}],
+        "answer": "1"
+      },
+      {
+        "id": 11,
+        "section": 2,
+        "type": "fill_word",
+        "stem": "図書館に本をかえす。",
+        "options": [{"label": "1", "text": "辺す"}, {"label": "2", "text": "帰す"}, {"label": "3", "text": "替す"}, {"label": "4", "text": "返す"}],
+        "answer": "4"
+      },
+      {
+        "id": 12,
+        "section": 2,
+        "type": "fill_word",
+        "stem": "ボクサーは試合前にげんりょうする。",
+        "options": [{"label": "1", "text": "減量"}, {"label": "2", "text": "消量"}, {"label": "3", "text": "増量"}, {"label": "4", "text": "限量"}],
+        "answer": "1"
+      },
+      {
+        "id": 13,
+        "section": 2,
+        "type": "fill_word",
+        "stem": "使い終わったら、もとの場所にもどしてください。",
+        "options": [{"label": "1", "text": "直し"}, {"label": "2", "text": "返し"}, {"label": "3", "text": "存し"}, {"label": "4", "text": "戻し"}],
+        "answer": "4"
+      },
+      {
+        "id": 14,
+        "section": 2,
+        "type": "fill_word",
+        "stem": "今日はここまで。つづきはまた来週。",
+        "options": [{"label": "1", "text": "付き"}, {"label": "2", "text": "続き"}, {"label": "3", "text": "向き"}, {"label": "4", "text": "次き"}],
+        "answer": "2"
+      },
+      {
+        "id": 15,
+        "section": 3,
+        "type": "fill_word",
+        "stem": "交通（　）はいくらですか。",
+        "options": [{"label": "1", "text": "金"}, {"label": "2", "text": "代"}, {"label": "3", "text": "料"}, {"label": "4", "text": "費"}],
+        "answer": "4"
+      },
+      {
+        "id": 16,
+        "section": 3,
+        "type": "fill_word",
+        "stem": "この資料を30（　）コピーしてください。",
+        "options": [{"label": "1", "text": "束"}, {"label": "2", "text": "部"}, {"label": "3", "text": "組"}, {"label": "4", "text": "点"}],
+        "answer": "2"
+      },
+      {
+        "id": 17,
+        "section": 3,
+        "type": "fill_word",
+        "stem": "紙（　）にお入れしましょうか。",
+        "options": [{"label": "1", "text": "袋"}, {"label": "2", "text": "庫"}, {"label": "3", "text": "材"}, {"label": "4", "text": "製"}],
+        "answer": "1"
+      },
+      {
+        "id": 18,
+        "section": 3,
+        "type": "fill_word",
+        "stem": "（　）冷凍と書いてあります。",
+        "options": [{"label": "1", "text": "必"}, {"label": "2", "text": "限"}, {"label": "3", "text": "要"}, {"label": "4", "text": "保"}],
+        "answer": "3"
+      },
+      {
+        "id": 19,
+        "section": 3,
+        "type": "fill_word",
+        "stem": "（　）ダイヤルボタンを押す。",
+        "options": [{"label": "1", "text": "濃"}, {"label": "2", "text": "再"}, {"label": "3", "text": "薄"}, {"label": "4", "text": "伝"}],
+        "answer": "2"
+      },
+      {
+        "id": 20,
+        "section": 3,
+        "type": "fill_word",
+        "stem": "短（　）留学をする。",
+        "options": [{"label": "1", "text": "機"}, {"label": "2", "text": "気"}, {"label": "3", "text": "期"}, {"label": "4", "text": "式"}],
+        "answer": "3"
+      }
+    ]
+  },
+  "quiz": {
+    "id": 3,
+    "title": "クイズ③ どれが入る？",
+    "questions": [
+      {
+        "id": 1,
+        "stem": "店□・満□",
+        "reading_hint": "Two same kanji fill both boxes",
+        "options": [
+          {"label": "1", "kanji": "石"},
+          {"label": "2", "kanji": "員"},
+          {"label": "3", "kanji": "社"},
+          {"label": "4", "kanji": "師"},
+          {"label": "5", "kanji": "教"},
+          {"label": "6", "kanji": "夫"},
+          {"label": "7", "kanji": "乗"},
+          {"label": "8", "kanji": "類"}
+        ],
+        "answer": "2"
+      },
+      {
+        "id": 2,
+        "stem": "□育・□室",
+        "reading_hint": "Two same kanji fill both boxes",
+        "options": [
+          {"label": "1", "kanji": "石"},
+          {"label": "2", "kanji": "員"},
+          {"label": "3", "kanji": "社"},
+          {"label": "4", "kanji": "師"},
+          {"label": "5", "kanji": "教"},
+          {"label": "6", "kanji": "夫"},
+          {"label": "7", "kanji": "乗"},
+          {"label": "8", "kanji": "類"}
+        ],
+        "answer": "5"
+      },
+      {
+        "id": 3,
+        "stem": "書□・種□",
+        "reading_hint": "Two same kanji fill both boxes",
+        "options": [
+          {"label": "1", "kanji": "石"},
+          {"label": "2", "kanji": "員"},
+          {"label": "3", "kanji": "社"},
+          {"label": "4", "kanji": "師"},
+          {"label": "5", "kanji": "教"},
+          {"label": "6", "kanji": "夫"},
+          {"label": "7", "kanji": "乗"},
+          {"label": "8", "kanji": "類"}
+        ],
+        "answer": "8"
+      },
+      {
+        "id": 4,
+        "stem": "教□・医□",
+        "reading_hint": "Two same kanji fill both boxes",
+        "options": [
+          {"label": "1", "kanji": "石"},
+          {"label": "2", "kanji": "員"},
+          {"label": "3", "kanji": "社"},
+          {"label": "4", "kanji": "師"},
+          {"label": "5", "kanji": "教"},
+          {"label": "6", "kanji": "夫"},
+          {"label": "7", "kanji": "乗"},
+          {"label": "8", "kanji": "類"}
+        ],
+        "answer": "4"
+      },
+      {
+        "id": 5,
+        "stem": "□妻・□婦",
+        "reading_hint": "Two same kanji fill both boxes",
+        "options": [
+          {"label": "1", "kanji": "石"},
+          {"label": "2", "kanji": "員"},
+          {"label": "3", "kanji": "社"},
+          {"label": "4", "kanji": "師"},
+          {"label": "5", "kanji": "教"},
+          {"label": "6", "kanji": "夫"},
+          {"label": "7", "kanji": "乗"},
+          {"label": "8", "kanji": "類"}
+        ],
+        "answer": "6"
+      },
+      {
+        "id": 6,
+        "stem": "□馬・□車",
+        "reading_hint": "Two same kanji fill both boxes",
+        "options": [
+          {"label": "1", "kanji": "石"},
+          {"label": "2", "kanji": "員"},
+          {"label": "3", "kanji": "社"},
+          {"label": "4", "kanji": "師"},
+          {"label": "5", "kanji": "教"},
+          {"label": "6", "kanji": "夫"},
+          {"label": "7", "kanji": "乗"},
+          {"label": "8", "kanji": "類"}
+        ],
+        "answer": "7"
+      },
+      {
+        "id": 7,
+        "stem": "□油・□けん",
+        "reading_hint": "Two same kanji fill both boxes",
+        "options": [
+          {"label": "1", "kanji": "石"},
+          {"label": "2", "kanji": "員"},
+          {"label": "3", "kanji": "社"},
+          {"label": "4", "kanji": "師"},
+          {"label": "5", "kanji": "教"},
+          {"label": "6", "kanji": "夫"},
+          {"label": "7", "kanji": "乗"},
+          {"label": "8", "kanji": "類"}
+        ],
+        "answer": "1"
+      }
+    ]
+  }
+}

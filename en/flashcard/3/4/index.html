@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 · レシピ — Flash Cards</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="../../index.html">Home</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language:</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../flashcard/3/" class="back-link">← Week 3 lessons</a>
+    <h1>Day 4 · <span class="jp">レシピ</span></h1>
+    <p class="theme-en">Recipes</p>
+</section>
+
+<section class="game-controls">
+    <div class="mode-toggle">
+        <button id="mode-meaning" class="active" data-mode="meaning">Meaning</button>
+        <button id="mode-reading" data-mode="reading">Reading</button>
+    </div>
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 9</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section class="flashcard-area">
+    <div id="flashcard" class="flashcard">
+        <div class="card-front">
+            <div class="card-label" id="card-question">What is the <span id="mode-label">meaning</span> of this kanji?</div>
+            <div id="kanji-display" class="kanji-display">漢</div>
+            <div class="card-meta">
+                <span class="stroke-badge"><span id="stroke-count">0</span> strokes</span>
+                <span class="id-badge">#<span id="kanji-id">1</span></span>
+            </div>
+            <input type="text" id="answer-input" class="answer-input" placeholder="Type the English meaning…" autocomplete="off" />
+            <button id="submit-btn" class="btn btn-primary">Check</button>
+            <button id="reveal-btn" class="btn btn-link">Show answer</button>
+        </div>
+        <div class="card-back hidden" id="card-back">
+            <div id="result-banner" class="result-banner"></div>
+            <div class="answer-summary">
+                <div class="answer-row">
+                    <div class="answer-label">Reading:</div>
+                    <div id="answer-reading" class="answer-value"></div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-label">Meaning:</div>
+                    <div id="answer-meaning" class="answer-value"></div>
+                </div>
+            </div>
+            <div class="compounds-section">
+                <h4>Compounds (熟語)</h4>
+                <div id="compounds-list" class="compounds-list"></div>
+            </div>
+            <div class="example-section" id="example-section">
+                <h4>Example sentence</h4>
+                <div id="example-jp" class="example-jp"></div>
+                <div id="example-en" class="example-en"></div>
+            </div>
+            <button id="next-btn" class="btn btn-primary">Next kanji →</button>
+        </div>
+    </div>
+</section>
+
+<section class="lesson-kanji-list">
+    <h3>Kanji in this lesson</h3>
+    <p class="muted">Click any kanji to jump to it.</p>
+    <div class="kanji-list-grid">
+        
+        <div class="kanji-list-item" data-idx="0">
+            <div class="kli-char">材</div>
+            <div class="kli-meaning">material, lumber</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="1">
+            <div class="kli-char">卵</div>
+            <div class="kli-meaning">egg</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="2">
+            <div class="kli-char">乳</div>
+            <div class="kli-meaning">milk, breast</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="3">
+            <div class="kli-char">粉</div>
+            <div class="kli-meaning">powder, flour</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="4">
+            <div class="kli-char">袋</div>
+            <div class="kli-meaning">bag, sack</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="5">
+            <div class="kli-char">混</div>
+            <div class="kli-meaning">mix, mix up</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="6">
+            <div class="kli-char">焼</div>
+            <div class="kli-meaning">bake, grill</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="7">
+            <div class="kli-char">表</div>
+            <div class="kli-meaning">surface, table, express</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="8">
+            <div class="kli-char">裏</div>
+            <div class="kli-meaning">back, reverse, inside</div>
+        </div>
+        
+    </div>
+</section>
+
+<script id="lesson-data" type="application/json">
+{"day": 4, "kanji": [{"char": "\u6750", "compounds": [{"meaning": "ingredients, materials", "reading": "\u3056\u3044\u308a\u3087\u3046", "word": "\u6750\u6599"}, {"meaning": "teaching material", "reading": "\u304d\u3087\u3046\u3056\u3044", "word": "\u6559\u6750"}], "id": 138, "kunyomi": "", "meaning": "material, lumber", "onyomi": "\u30b6\u30a4", "stroke": 7}, {"char": "\u5375", "compounds": [{"meaning": "an egg", "reading": "\u305f\u307e\u3054", "word": "\u5375"}, {"meaning": "a Japanese omelet", "reading": "\u305f\u307e\u3054\u3084\u304d", "word": "\u5375\u713c\u304d"}], "example": {"en": "I make a Japanese omelet.", "furigana": "\u305f\u307e\u3054\u3084\u304d\u3092\u3064\u304f\u308a\u307e\u3059\u3002", "jp": "\u5375\u713c\u304d\u3092\u4f5c\u308a\u307e\u3059\u3002"}, "id": 139, "kunyomi": "\u305f\u307e\u3054", "meaning": "egg", "onyomi": "\u30e9\u30f3", "stroke": 7}, {"char": "\u4e73", "compounds": [{"meaning": "milk", "reading": "\u304e\u3085\u3046\u306b\u3085\u3046", "word": "\u725b\u4e73"}], "id": 140, "kunyomi": "\u3061\u3061\u3001\u3061", "meaning": "milk, breast", "onyomi": "\u30cb\u30e5\u30a6", "stroke": 8}, {"char": "\u7c89", "compounds": [{"meaning": "powder, flour", "reading": "\u3053\u306a", "word": "\u7c89"}, {"meaning": "wheat flour", "reading": "\u3053\u3080\u304e\u3053", "word": "\u5c0f\u9ea6\u7c89"}], "example": {"en": "Please buy wheat flour.", "furigana": "\u3053\u3080\u304e\u3053\u3092\u304b\u3063\u3066\u304f\u3060\u3055\u3044\u3002", "jp": "\u5c0f\u9ea6\u7c89\u3092\u8cb7\u3063\u3066\u304f\u3060\u3055\u3044\u3002"}, "id": 141, "kunyomi": "\u3053\u306a\u3001\u3053", "meaning": "powder, flour", "onyomi": "\u30d5\u30f3", "stroke": 10}, {"char": "\u888b", "compounds": [{"meaning": "a bag", "reading": "\u3075\u304f\u308d", "word": "\u888b"}, {"meaning": "a paper bag", "reading": "\u304b\u307f\u3076\u304f\u308d", "word": "\u7d19\u888b"}, {"meaning": "a garbage bag", "reading": "\u3054\u307f\u3076\u304f\u308d", "word": "\u3054\u307f\u888b"}, {"meaning": "gloves", "reading": "\u3066\u3076\u304f\u308d", "word": "\u624b\u888b"}, {"meaning": "tabi (traditional Japanese socks worn with a kimono)", "reading": "\u305f\u3073", "word": "\u8db3\u888b"}], "id": 142, "kunyomi": "\u3075\u304f\u308d", "meaning": "bag, sack", "onyomi": "\u30bf\u30a4", "stroke": 11}, {"char": "\u6df7", "compounds": [{"meaning": "congestion", "reading": "\u3053\u3093\u3056\u3064", "word": "\u6df7\u96d1"}, {"meaning": "be mixed", "reading": "\u307e\u305c\u308b", "word": "\u6df7\u305c\u308b"}], "example": {"en": "Mix milk and eggs.", "furigana": "\u304e\u3085\u3046\u306b\u3085\u3046\u3068\u305f\u307e\u3054\u3092\u307e\u305c\u307e\u3059\u3002", "jp": "\u725b\u4e73\u3068\u5375\u3092\u6df7\u305c\u307e\u3059\u3002"}, "id": 143, "kunyomi": "\u307e\u3056\u308b\u3001\u307e\u305c\u308b", "meaning": "mix, mix up", "onyomi": "\u30b3\u30f3", "stroke": 11}, {"char": "\u713c", "compounds": [{"meaning": "roast, grill", "reading": "\u3084\u304f", "word": "\u713c\u304f"}, {"meaning": "be burnt/baked", "reading": "\u3084\u3051\u308b", "word": "\u713c\u3051\u308b"}], "id": 144, "kunyomi": "\u3084\u304f\u3001\u3084\u3051\u308b", "meaning": "bake, grill", "onyomi": "\u30b7\u30e7\u30a6", "stroke": 12}, {"char": "\u8868", "compounds": [{"meaning": "a table (in written documents)", "reading": "\u304a\u3082\u3066", "word": "\u8868"}, {"meaning": "a surface", "reading": "\u3072\u3087\u3046\u3081\u3093", "word": "\u8868\u9762"}, {"meaning": "an announcement", "reading": "\u306f\u3063\u3074\u3087\u3046", "word": "\u767a\u8868"}, {"meaning": "a representative", "reading": "\u3060\u3044\u3072\u3087\u3046", "word": "\u4ee3\u8868"}, {"meaning": "a surface, face", "reading": "\u304a\u3082\u3066", "word": "\u8868"}, {"meaning": "show, express", "reading": "\u3042\u3089\u308f\u3059", "word": "\u8868\u3059"}], "id": 145, "kunyomi": "\u304a\u3082\u3066\u3001\u3042\u3089\u308f\u3059\u3001\u3042\u3089\u308f\u308c\u308b", "meaning": "surface, table, express", "onyomi": "\u30d2\u30e7\u30a6", "stroke": 8}, {"char": "\u88cf", "compounds": [{"meaning": "reverse, back", "reading": "\u3046\u3089", "word": "\u88cf"}, {"meaning": "turnover", "reading": "\u3046\u3089\u304c\u3048\u3059", "word": "\u88cf\u8fd4\u3059"}], "id": 146, "kunyomi": "\u3046\u3089", "meaning": "back, reverse, inside", "onyomi": "\u30ea", "stroke": 13}], "title_en": "Recipes", "title_jp": "\u30ec\u30b7\u30d4"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "Back to Week {week}", "btn_next_kanji": "Next kanji \u2192", "btn_try_again": "Try again", "label_meaning": "Meaning", "label_reading": "Reading", "lbl_accuracy": "Accuracy", "lbl_correct": "Correct", "lbl_wrong": "Wrong", "placeholder_meaning": "Type the English meaning\u2026", "placeholder_reading": "Type the reading (kana)\u2026", "result_correct": "\u2705 Correct!", "result_wrong": "\u274c Incorrect", "summary_complete": "Complete!", "what_is_meaning": "What is the \u003cspan id=\"mode-label\"\u003emeaning\u003c/span\u003e of this kanji?", "what_is_reading": "What is the \u003cspan id=\"mode-label\"\u003ereading\u003c/span\u003e of this kanji?"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>Sou Matome N3 Kanji · Tailscale only</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initFlashcard(3, 4);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第 1 週 — N3 漢字</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="../index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../index.html" class="back-link">← ホームへ戻る</a>
+    <h1>週 1 · <span class="jp">でかける①</span></h1>
+    <p class="theme-en">Go Out 1 · 외출하기①</p>
+</section>
+
+<section class="games">
+    <h2>🎴 フラッシュカードゲーム</h2>
+    <p class="muted">漢字を覚えて、例文で確認しましょう。</p>
+    <div class="day-grid">
+        
+        <a href="../flashcard/1/1/" class="day-card">
+            <div class="day-number">日目 1</div>
+            <div class="day-title-jp">駐車場</div>
+            <div class="day-title-en">Parking Lot</div>
+            <div class="day-kanji-count">8 漢字</div>
+        </a>
+        
+        <a href="../flashcard/1/2/" class="day-card">
+            <div class="day-number">日目 2</div>
+            <div class="day-title-jp">横断歩道</div>
+            <div class="day-title-en">Pedestrian Crossing</div>
+            <div class="day-kanji-count">8 漢字</div>
+        </a>
+        
+        <a href="../flashcard/1/3/" class="day-card">
+            <div class="day-number">日目 3</div>
+            <div class="day-title-jp">サイン</div>
+            <div class="day-title-en">Signs</div>
+            <div class="day-kanji-count">8 漢字</div>
+        </a>
+        
+        <a href="../flashcard/1/4/" class="day-card">
+            <div class="day-number">日目 4</div>
+            <div class="day-title-jp">駅のホーム</div>
+            <div class="day-title-en">A Platform</div>
+            <div class="day-kanji-count">9 漢字</div>
+        </a>
+        
+        <a href="../flashcard/1/5/" class="day-card">
+            <div class="day-number">日目 5</div>
+            <div class="day-title-jp">特急電車</div>
+            <div class="day-title-en">Express Train</div>
+            <div class="day-kanji-count">8 漢字</div>
+        </a>
+        
+        <a href="../flashcard/1/6/" class="day-card">
+            <div class="day-number">日目 6</div>
+            <div class="day-title-jp">バス</div>
+            <div class="day-title-en">Bus</div>
+            <div class="day-kanji-count">9 漢字</div>
+        </a>
+        
+    </div>
+    <p style="margin-top:14px"><a href="../flashcard/1/" class="btn btn-link">← 学習日一覧</a></p>
+</section>
+
+<section class="games">
+    <h2>✏️ 演習問題（選択問題）</h2>
+    <p class="muted">フラッシュカードを学んだら、ここで実践問題を解きましょう。</p>
+    <div class="exercise-grid">
+        <a href="../exercise/1/practice/" class="exercise-card practice">
+            <div class="ex-icon">📝</div>
+            <div class="ex-title">実戦問題</div>
+            <div class="ex-sub">20  問</div>
+            <div class="ex-desc">読み・書き・漢字埋め</div>
+        </a>
+        <a href="../exercise/1/quiz/" class="exercise-card quiz">
+            <div class="ex-icon">🎯</div>
+            <div class="ex-title">週末クイズ</div>
+            <div class="ex-sub">6  問</div>
+            <div class="ex-desc">クイズ① どちらの字？</div>
+        </a>
+    </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+</body>
+</html>

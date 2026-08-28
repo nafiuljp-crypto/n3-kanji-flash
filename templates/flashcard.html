@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}{{ T.title_day.format(day=day, title=lesson.title_jp) }}{% endblock %}
+{% block content %}
+<section class="chapter-header">
+    <a href="{{ base }}flashcard/{{ week }}/" class="back-link">{{ T.back_to_week_lessons.format(week=week) }}</a>
+    <h1>{{ T.day_word }} {{ day }} · <span class="jp">{{ lesson.title_jp }}</span></h1>
+    <p class="theme-en">{{ lesson.title_en }}</p>
+</section>
+
+<section class="game-controls">
+    <div class="mode-toggle">
+        <button id="mode-meaning" class="active" data-mode="meaning">{{ T.label_meaning }}</button>
+        <button id="mode-reading" data-mode="reading">{{ T.label_reading }}</button>
+    </div>
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / {{ lesson.kanji|length }}</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section class="flashcard-area">
+    <div id="flashcard" class="flashcard">
+        <div class="card-front">
+            <div class="card-label" id="card-question">{{ T.what_is_meaning|safe }}</div>
+            <div id="kanji-display" class="kanji-display">漢</div>
+            <div class="card-meta">
+                <span class="stroke-badge"><span id="stroke-count">0</span> {{ T.stroke_unit }}</span>
+                <span class="id-badge">#<span id="kanji-id">1</span></span>
+            </div>
+            <input type="text" id="answer-input" class="answer-input" placeholder="{{ T.placeholder_meaning }}" autocomplete="off" />
+            <button id="submit-btn" class="btn btn-primary">{{ T.btn_check }}</button>
+            <button id="reveal-btn" class="btn btn-link">{{ T.btn_reveal }}</button>
+        </div>
+        <div class="card-back hidden" id="card-back">
+            <div id="result-banner" class="result-banner"></div>
+            <div class="answer-summary">
+                <div class="answer-row">
+                    <div class="answer-label">{{ T.lbl_reading }}</div>
+                    <div id="answer-reading" class="answer-value"></div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-label">{{ T.lbl_meaning }}</div>
+                    <div id="answer-meaning" class="answer-value"></div>
+                </div>
+            </div>
+            <div class="compounds-section">
+                <h4>{{ T.compounds_h4 }}</h4>
+                <div id="compounds-list" class="compounds-list"></div>
+            </div>
+            <div class="example-section" id="example-section">
+                <h4>{{ T.example_h4 }}</h4>
+                <div id="example-jp" class="example-jp"></div>
+                <div id="example-en" class="example-en"></div>
+            </div>
+            <button id="next-btn" class="btn btn-primary">{{ T.btn_next_kanji }}</button>
+        </div>
+    </div>
+</section>
+
+<section class="lesson-kanji-list">
+    <h3>{{ T.kanji_in_lesson }}</h3>
+    <p class="muted">{{ T.click_to_jump }}</p>
+    <div class="kanji-list-grid">
+        {% for k in lesson.kanji %}
+        <div class="kanji-list-item" data-idx="{{ loop.index0 }}">
+            <div class="kli-char">{{ k.char }}</div>
+            <div class="kli-meaning">{{ k.meaning }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<script id="lesson-data" type="application/json">
+{{ lesson | tojson }}
+</script>
+<script id="i18n-strings" type="application/json">
+{{ {
+    "what_is_meaning": T.what_is_meaning,
+    "what_is_reading": T.what_is_reading,
+    "placeholder_meaning": T.placeholder_meaning,
+    "placeholder_reading": T.placeholder_reading,
+    "result_correct": T.result_correct,
+    "result_wrong": T.result_wrong,
+    "summary_complete": T.summary_complete,
+    "lbl_correct": T.lbl_correct,
+    "lbl_wrong": T.lbl_wrong,
+    "lbl_accuracy": T.lbl_accuracy,
+    "btn_try_again": T.btn_try_again,
+    "back_to_week": T.back_to_week_x,
+    "label_meaning": T.label_meaning,
+    "label_reading": T.label_reading,
+    "btn_next_kanji": T.btn_next_kanji,
+} | tojson }}
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ base }}static/app.js"></script>
+<script>
+window.N3App.initFlashcard({{ week }}, {{ day }});
+</script>
+{% endblock %}

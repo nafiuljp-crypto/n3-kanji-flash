@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ 'ja' if lang == 'ja' else 'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ T.hero_title }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ base }}static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', '{{ default_lang | default("ja") }}');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ base }}index.html" class="nav-brand">📚 {{ T.brand }}</a>
+        <div class="nav-links">
+            <a href="{{ base }}index.html">{{ T.home_nav }}</a>
+            <div class="lang-switch">
+                <span class="lang-label">{{ T.lang_label }}</span>
+                {% for code in supported_langs %}
+                    {% if code == lang %}
+                        <span class="lang-current">{{ T['lang_' + code] }}</span>
+                    {% else %}
+                        <a href="#lang-{{ code }}" data-lang="{{ code }}" class="lang-link">{{ T['lang_' + code] }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>{{ T.footer }}</p>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

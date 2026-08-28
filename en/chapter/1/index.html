@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 — N3 Kanji</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language:</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../index.html" class="back-link">← Back to chapters</a>
+    <h1>Week 1 · <span class="jp">でかける①</span></h1>
+    <p class="theme-en">Go Out 1 · 외출하기①</p>
+</section>
+
+<section class="games">
+    <h2>🎴 Flash cards</h2>
+    <p class="muted">Memorize the kanji and review example sentences.</p>
+    <div class="day-grid">
+        
+        <a href="../flashcard/1/1/" class="day-card">
+            <div class="day-number">Day 1</div>
+            <div class="day-title-jp">駐車場</div>
+            <div class="day-title-en">Parking Lot</div>
+            <div class="day-kanji-count">8 kanji</div>
+        </a>
+        
+        <a href="../flashcard/1/2/" class="day-card">
+            <div class="day-number">Day 2</div>
+            <div class="day-title-jp">横断歩道</div>
+            <div class="day-title-en">Pedestrian Crossing</div>
+            <div class="day-kanji-count">8 kanji</div>
+        </a>
+        
+        <a href="../flashcard/1/3/" class="day-card">
+            <div class="day-number">Day 3</div>
+            <div class="day-title-jp">サイン</div>
+            <div class="day-title-en">Signs</div>
+            <div class="day-kanji-count">8 kanji</div>
+        </a>
+        
+        <a href="../flashcard/1/4/" class="day-card">
+            <div class="day-number">Day 4</div>
+            <div class="day-title-jp">駅のホーム</div>
+            <div class="day-title-en">A Platform</div>
+            <div class="day-kanji-count">9 kanji</div>
+        </a>
+        
+        <a href="../flashcard/1/5/" class="day-card">
+            <div class="day-number">Day 5</div>
+            <div class="day-title-jp">特急電車</div>
+            <div class="day-title-en">Express Train</div>
+            <div class="day-kanji-count">8 kanji</div>
+        </a>
+        
+        <a href="../flashcard/1/6/" class="day-card">
+            <div class="day-number">Day 6</div>
+            <div class="day-title-jp">バス</div>
+            <div class="day-title-en">Bus</div>
+            <div class="day-kanji-count">9 kanji</div>
+        </a>
+        
+    </div>
+    <p style="margin-top:14px"><a href="../flashcard/1/" class="btn btn-link">← All lesson days</a></p>
+</section>
+
+<section class="games">
+    <h2>✏️ Practice questions (multiple choice)</h2>
+    <p class="muted">After studying with the flash cards, test yourself here.</p>
+    <div class="exercise-grid">
+        <a href="../exercise/1/practice/" class="exercise-card practice">
+            <div class="ex-icon">📝</div>
+            <div class="ex-title">Day-7 Practice</div>
+            <div class="ex-sub">20  questions</div>
+            <div class="ex-desc">Reading, writing, fill-in kanji</div>
+        </a>
+        <a href="../exercise/1/quiz/" class="exercise-card quiz">
+            <div class="ex-icon">🎯</div>
+            <div class="ex-title">Weekly Quiz</div>
+            <div class="ex-sub">6  questions</div>
+            <div class="ex-desc">クイズ① どちらの字？</div>
+        </a>
+    </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Sou Matome N3 Kanji · Tailscale only</p>
+    </footer>
+
+    
+</body>
+</html>

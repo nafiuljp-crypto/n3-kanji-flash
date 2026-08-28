@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第 1 週 — 第7日目 実戦問題</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="../../index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../chapter/1/" class="back-link">← 第 1 週へ戻る</a>
+    <h1>第 1 週 — 第7日目 実戦問題</h1>
+    <p class="muted">20  問</p>
+</section>
+
+<section class="game-controls">
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 20</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section id="question-area" class="question-area">
+    <div id="question-loading" class="muted">問題を読み込み中…</div>
+</section>
+
+<section id="result-screen" class="result-screen hidden">
+    <h2>結果</h2>
+    <div class="result-stats">
+        <div class="stat-card">
+            <div class="stat-num" id="final-correct">0</div>
+            <div class="stat-label">正解</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num" id="final-wrong">0</div>
+            <div class="stat-label">不正解</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num" id="final-pct">0%</div>
+            <div class="stat-label">正答率</div>
+        </div>
+    </div>
+    <div class="result-actions">
+        <button id="retry-btn" class="btn btn-primary">もう一度</button>
+        <a href="../../chapter/1/" class="btn btn-link">← 第 1 週へ戻る</a>
+    </div>
+</section>
+
+<script id="exercise-data" type="application/json">
+[{"id": 1, "section": 1, "type": "reading", "stem": "「飛び出し注意」と書いてあります。", "options": [{"label": "1", "text": "よびだしちゅうい"}, {"label": "2", "text": "とびだしちゅうい"}, {"label": "3", "text": "とびだしじゅうい"}, {"label": "4", "text": "よびだしじゅうい"}], "answer": "2"}, {"id": 2, "section": 1, "type": "reading", "stem": "この時計は正確です。", "options": [{"label": "1", "text": "せいかく"}, {"label": "2", "text": "せっかく"}, {"label": "3", "text": "しょうかく"}, {"label": "4", "text": "しょうがく"}], "answer": "1"}, {"id": 3, "section": 1, "type": "reading", "stem": "横断歩道をわたりましょう。", "options": [{"label": "1", "text": "こうだん"}, {"label": "2", "text": "おうだん"}, {"label": "3", "text": "さんだん"}, {"label": "4", "text": "そうだん"}], "answer": "2"}, {"id": 4, "section": 1, "type": "reading", "stem": "このなべは鉄で作られています。", "options": [{"label": "1", "text": "しつ"}, {"label": "2", "text": "ねつ"}, {"label": "3", "text": "れつ"}, {"label": "4", "text": "てつ"}], "answer": "4"}, {"id": 5, "section": 1, "type": "reading", "stem": "優先席ではけいたい電話を使わないでください。", "options": [{"label": "1", "text": "うせん"}, {"label": "2", "text": "にゅうせん"}, {"label": "3", "text": "ゆうせん"}, {"label": "4", "text": "よやく"}], "answer": "3"}, {"id": 6, "section": 1, "type": "reading", "stem": "料金は降りるときにはらってください。", "options": [{"label": "1", "text": "のりる"}, {"label": "2", "text": "ふりる"}, {"label": "3", "text": "こりる"}, {"label": "4", "text": "おりる"}], "answer": "4"}, {"id": 7, "section": 1, "type": "reading", "stem": "関係者以外入らないでください。", "options": [{"label": "1", "text": "かんけいしや"}, {"label": "2", "text": "かんれんしゃ"}, {"label": "3", "text": "けいけんしゃ"}, {"label": "4", "text": "かんきょうしゃ"}], "answer": "1"}, {"id": 8, "section": 1, "type": "reading", "stem": "確認ボタンを押します。", "options": [{"label": "1", "text": "せきにん"}, {"label": "2", "text": "かくにん"}, {"label": "3", "text": "しょうにん"}, {"label": "4", "text": "こうにん"}], "answer": "2"}, {"id": 9, "section": 1, "type": "reading", "stem": "ドアの横にスイッチがあります。", "options": [{"label": "1", "text": "そば"}, {"label": "2", "text": "よこ"}, {"label": "3", "text": "たて"}, {"label": "4", "text": "となり"}], "answer": "2"}, {"id": 10, "section": 1, "type": "reading", "stem": "高速道路から飛行場が見えます。", "options": [{"label": "1", "text": "こうくう"}, {"label": "2", "text": "ひこうば"}, {"label": "3", "text": "くうこう"}, {"label": "4", "text": "ひこうじょう"}], "answer": "4"}, {"id": 11, "section": 2, "type": "writing_kanji", "stem": "席はなんばんですか。", "options": [{"label": "1", "text": "何号"}, {"label": "2", "text": "向番"}, {"label": "3", "text": "何番"}, {"label": "4", "text": "向号"}], "answer": "3"}, {"id": 12, "section": 2, "type": "writing_kanji", "stem": "黄色いせんまで下がってお待ちください。", "options": [{"label": "1", "text": "線"}, {"label": "2", "text": "信"}, {"label": "3", "text": "段"}, {"label": "4", "text": "側"}], "answer": "1"}, {"id": 13, "section": 2, "type": "writing_kanji", "stem": "あの女優はひょうげん力がある。", "options": [{"label": "1", "text": "表信"}, {"label": "2", "text": "表見"}, {"label": "3", "text": "表言"}, {"label": "4", "text": "表現"}], "answer": "4"}, {"id": 14, "section": 2, "type": "writing_kanji", "stem": "社長はまちがいをみとめた。", "options": [{"label": "1", "text": "定めた"}, {"label": "2", "text": "認めた"}, {"label": "3", "text": "窓めた"}, {"label": "4", "text": "面めた"}], "answer": "2"}, {"id": 15, "section": 3, "type": "fill_kanji", "stem": "この電車は（　　）駅に止まります。", "options": [{"label": "1", "text": "毎"}, {"label": "2", "text": "次"}, {"label": "3", "text": "各"}, {"label": "4", "text": "両"}], "answer": "3"}, {"id": 16, "section": 3, "type": "fill_kanji", "stem": "あの信号は押しボタン（　　）です。", "options": [{"label": "1", "text": "箱"}, {"label": "2", "text": "席"}, {"label": "3", "text": "向"}, {"label": "4", "text": "式"}], "answer": "4"}, {"id": 17, "section": 3, "type": "fill_kanji", "stem": "駐車場はただいま（　　）車です。", "options": [{"label": "1", "text": "両"}, {"label": "2", "text": "満"}, {"label": "3", "text": "禁"}, {"label": "4", "text": "非"}], "answer": "2"}, {"id": 18, "section": 3, "type": "fill_kanji", "stem": "1万円以上は、送料（　　）料です。", "options": [{"label": "1", "text": "非"}, {"label": "2", "text": "不"}, {"label": "3", "text": "無"}, {"label": "4", "text": "禁"}], "answer": "3"}, {"id": 19, "section": 3, "type": "fill_kanji", "stem": "整理（　　）を取ってお待ちください。", "options": [{"label": "1", "text": "停"}, {"label": "2", "text": "箱"}, {"label": "3", "text": "路"}, {"label": "4", "text": "券"}], "answer": "4"}, {"id": 20, "section": 3, "type": "fill_kanji", "stem": "お金は料金（　　）に入れてください。", "options": [{"label": "1", "text": "箱"}, {"label": "2", "text": "式"}, {"label": "3", "text": "側"}, {"label": "4", "text": "券"}], "answer": "1"}]
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "\u7b2c {week} \u9031\u306b\u623b\u308b", "btn_next_question": "\u6b21\u306e\u554f\u984c \u2192", "btn_see_results": "\u7d50\u679c\u3092\u898b\u308b", "btn_try_again": "\u3082\u3046\u4e00\u5ea6", "check_failed": "\u56de\u7b54\u30c1\u30a7\u30c3\u30af\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002", "lbl_accuracy": "\u6b63\u7b54\u7387", "lbl_correct": "\u6b63\u89e3", "lbl_wrong": "\u4e0d\u6b63\u89e3", "load_failed": "\u554f\u984c\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002", "no_questions": "\u554f\u984c\u304c\u3042\u308a\u307e\u305b\u3093\u3002", "reading_hint_prefix": "\uff08\u8aad\u307f: ", "section_1": "\u554f\u984c 1 \u2014 \u8aad\u307f", "section_2": "\u554f\u984c 2 \u2014 \u6f22\u5b57\u3092\u66f8\u304f", "section_3": "\u554f\u984c 3 \u2014 \u6f22\u5b57\u3092\u57cb\u3081\u308b", "section_n": "\u554f\u984c {n}"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initExercise(1, 'practice');
+</script>
+
+</body>
+</html>

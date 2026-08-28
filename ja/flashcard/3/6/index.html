@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 日目 · 携帯電話 — フラッシュカード</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="../../index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../flashcard/3/" class="back-link">← 第 3 週の学習日</a>
+    <h1>日目 6 · <span class="jp">携帯電話</span></h1>
+    <p class="theme-en">Cell Phones</p>
+</section>
+
+<section class="game-controls">
+    <div class="mode-toggle">
+        <button id="mode-meaning" class="active" data-mode="meaning">意味</button>
+        <button id="mode-reading" data-mode="reading">読み</button>
+    </div>
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 8</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section class="flashcard-area">
+    <div id="flashcard" class="flashcard">
+        <div class="card-front">
+            <div class="card-label" id="card-question">この漢字の<span id="mode-label">意味</span>は？</div>
+            <div id="kanji-display" class="kanji-display">漢</div>
+            <div class="card-meta">
+                <span class="stroke-badge"><span id="stroke-count">0</span> 画</span>
+                <span class="id-badge">#<span id="kanji-id">1</span></span>
+            </div>
+            <input type="text" id="answer-input" class="answer-input" placeholder="意味を入力…" autocomplete="off" />
+            <button id="submit-btn" class="btn btn-primary">確認</button>
+            <button id="reveal-btn" class="btn btn-link">わからない</button>
+        </div>
+        <div class="card-back hidden" id="card-back">
+            <div id="result-banner" class="result-banner"></div>
+            <div class="answer-summary">
+                <div class="answer-row">
+                    <div class="answer-label">読み:</div>
+                    <div id="answer-reading" class="answer-value"></div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-label">意味:</div>
+                    <div id="answer-meaning" class="answer-value"></div>
+                </div>
+            </div>
+            <div class="compounds-section">
+                <h4>熟語</h4>
+                <div id="compounds-list" class="compounds-list"></div>
+            </div>
+            <div class="example-section" id="example-section">
+                <h4>例文</h4>
+                <div id="example-jp" class="example-jp"></div>
+                <div id="example-en" class="example-en"></div>
+            </div>
+            <button id="next-btn" class="btn btn-primary">次の漢字 →</button>
+        </div>
+    </div>
+</section>
+
+<section class="lesson-kanji-list">
+    <h3>この日の漢字一覧</h3>
+    <p class="muted">クリックするとその漢字にジャンプします。</p>
+    <div class="kanji-list-grid">
+        
+        <div class="kanji-list-item" data-idx="0">
+            <div class="kli-char">接</div>
+            <div class="kli-meaning">connect, contact, touch</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="1">
+            <div class="kli-char">続</div>
+            <div class="kli-meaning">continue</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="2">
+            <div class="kli-char">示</div>
+            <div class="kli-meaning">show, indicate</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="3">
+            <div class="kli-char">戻</div>
+            <div class="kli-meaning">return, put back</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="4">
+            <div class="kli-char">完</div>
+            <div class="kli-meaning">complete, perfect</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="5">
+            <div class="kli-char">了</div>
+            <div class="kli-meaning">finish, understand</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="6">
+            <div class="kli-char">登</div>
+            <div class="kli-meaning">climb, register</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="7">
+            <div class="kli-char">録</div>
+            <div class="kli-meaning">record</div>
+        </div>
+        
+    </div>
+</section>
+
+<script id="lesson-data" type="application/json">
+{"day": 6, "kanji": [{"char": "\u63a5", "compounds": [{"meaning": "connect", "reading": "\u305b\u3064\u305e\u304f", "word": "\u63a5\u7d9a"}, {"meaning": "interview", "reading": "\u3081\u3093\u305b\u3064", "word": "\u9762\u63a5"}], "example": {"en": "Please connect to the internet.", "furigana": "\u30a4\u30f3\u30bf\u30fc\u30cd\u30c3\u30c8\u306b\u305b\u3064\u305e\u304f\u3057\u3066\u304f\u3060\u3055\u3044\u3002", "jp": "\u30a4\u30f3\u30bf\u30fc\u30cd\u30c3\u30c8\u306b\u63a5\u7d9a\u3057\u3066\u304f\u3060\u3055\u3044\u3002"}, "id": 156, "kunyomi": "\u305b\u3064", "meaning": "connect, contact, touch", "onyomi": "\u30bb\u30c4", "stroke": 11}, {"char": "\u7d9a", "compounds": [{"meaning": "connect", "reading": "\u305b\u3064\u305e\u304f", "word": "\u63a5\u7d9a"}, {"meaning": "continue", "reading": "\u3064\u3065\u304f", "word": "\u7d9a\u304f"}, {"meaning": "continue", "reading": "\u3064\u3065\u3051\u308b", "word": "\u7d9a\u3051\u308b"}], "id": 157, "kunyomi": "\u3064\u3065\u304f\u3001\u3064\u3065\u3051\u308b", "meaning": "continue", "onyomi": "\u30be\u30af", "stroke": 13}, {"char": "\u793a", "compounds": [{"meaning": "indication, expression", "reading": "\u3072\u3087\u3046\u3058", "word": "\u8868\u793a"}, {"meaning": "a direction, instruction", "reading": "\u3057\u3058", "word": "\u6307\u793a"}, {"meaning": "show, point out", "reading": "\u3057\u3081\u3059", "word": "\u793a\u3059"}], "id": 158, "kunyomi": "\u3057\u3081\u3059", "meaning": "show, indicate", "onyomi": "\u30b8", "stroke": 5}, {"char": "\u623b", "compounds": [{"meaning": "return", "reading": "\u3082\u3069\u308b", "word": "\u623b\u308b"}, {"meaning": "return, put back", "reading": "\u3082\u3069\u3059", "word": "\u623b\u3059"}], "id": 159, "kunyomi": "\u3082\u3069\u308b\u3001\u3082\u3069\u3059", "meaning": "return, put back", "onyomi": "", "stroke": 7}, {"char": "\u5b8c", "compounds": [{"meaning": "completion", "reading": "\u304b\u3093\u308a\u3087\u3046", "word": "\u5b8c\u4e86"}, {"meaning": "perfect, complete", "reading": "\u304b\u3093\u305c\u3093\u306a", "word": "\u5b8c\u5168(\u306a)"}], "id": 160, "kunyomi": "", "meaning": "complete, perfect", "onyomi": "\u30ab\u30f3", "stroke": 7}, {"char": "\u4e86", "compounds": [{"meaning": "understand, agree", "reading": "\u308a\u3087\u3046\u304b\u3044", "word": "\u4e86\u89e3"}, {"meaning": "end, expiration", "reading": "\u3057\u3085\u3046\u308a\u3087\u3046", "word": "\u7d42\u4e86"}], "id": 161, "kunyomi": "", "meaning": "finish, understand", "onyomi": "\u30ea\u30e7\u30a6", "stroke": 2}, {"char": "\u767b", "compounds": [{"meaning": "registration", "reading": "\u3068\u3046\u308d\u304f", "word": "\u767b\u9332"}, {"meaning": "mountain climbing", "reading": "\u3068\u3056\u3093", "word": "\u767b\u5c71"}, {"meaning": "climb", "reading": "\u306e\u307c\u308b", "word": "\u767b\u308b"}], "id": 162, "kunyomi": "\u306e\u307c\u308b", "meaning": "climb, register", "onyomi": "\u30c8\u3001\u30c8\u30a6", "stroke": 12}, {"char": "\u9332", "compounds": [{"meaning": "a record", "reading": "\u304d\u308d\u304f", "word": "\u8a18\u9332"}, {"meaning": "record (sound)", "reading": "\u308d\u304f\u304a\u3093", "word": "\u9332\u97f3"}, {"meaning": "record (video)", "reading": "\u308d\u304f\u304c", "word": "\u9332\u753b"}], "example": {"en": "I recorded the meeting.", "furigana": "\u304b\u3044\u304e\u3092\u308d\u304f\u304a\u3093\u3057\u307e\u3057\u305f\u3002", "jp": "\u4f1a\u8b70\u3092\u9332\u97f3\u3057\u307e\u3057\u305f\u3002"}, "id": 163, "kunyomi": "", "meaning": "record", "onyomi": "\u30ed\u30af", "stroke": 16}], "title_en": "Cell Phones", "title_jp": "\u643a\u5e2f\u96fb\u8a71"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "\u7b2c {week} \u9031\u306b\u623b\u308b", "btn_next_kanji": "\u6b21\u306e\u6f22\u5b57 \u2192", "btn_try_again": "\u3082\u3046\u4e00\u5ea6", "label_meaning": "\u610f\u5473", "label_reading": "\u8aad\u307f", "lbl_accuracy": "\u6b63\u7b54\u7387", "lbl_correct": "\u6b63\u89e3", "lbl_wrong": "\u4e0d\u6b63\u89e3", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u5165\u529b\uff08\u304b\u306a\uff09\u2026", "result_correct": "\u2705 \u6b63\u89e3\uff01", "result_wrong": "\u274c \u4e0d\u6b63\u89e3", "summary_complete": "\u5b8c\u4e86\uff01", "what_is_meaning": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u610f\u5473\u003c/span\u003e\u306f\uff1f", "what_is_reading": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u8aad\u307f\u003c/span\u003e\u306f\uff1f"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initFlashcard(3, 6);
+</script>
+
+</body>
+</html>

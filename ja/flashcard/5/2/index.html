@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 日目 · アンケート — フラッシュカード</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="../../index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../flashcard/5/" class="back-link">← 第 5 週の学習日</a>
+    <h1>日目 2 · <span class="jp">アンケート</span></h1>
+    <p class="theme-en">A Questionnaire</p>
+</section>
+
+<section class="game-controls">
+    <div class="mode-toggle">
+        <button id="mode-meaning" class="active" data-mode="meaning">意味</button>
+        <button id="mode-reading" data-mode="reading">読み</button>
+    </div>
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 8</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section class="flashcard-area">
+    <div id="flashcard" class="flashcard">
+        <div class="card-front">
+            <div class="card-label" id="card-question">この漢字の<span id="mode-label">意味</span>は？</div>
+            <div id="kanji-display" class="kanji-display">漢</div>
+            <div class="card-meta">
+                <span class="stroke-badge"><span id="stroke-count">0</span> 画</span>
+                <span class="id-badge">#<span id="kanji-id">1</span></span>
+            </div>
+            <input type="text" id="answer-input" class="answer-input" placeholder="意味を入力…" autocomplete="off" />
+            <button id="submit-btn" class="btn btn-primary">確認</button>
+            <button id="reveal-btn" class="btn btn-link">わからない</button>
+        </div>
+        <div class="card-back hidden" id="card-back">
+            <div id="result-banner" class="result-banner"></div>
+            <div class="answer-summary">
+                <div class="answer-row">
+                    <div class="answer-label">読み:</div>
+                    <div id="answer-reading" class="answer-value"></div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-label">意味:</div>
+                    <div id="answer-meaning" class="answer-value"></div>
+                </div>
+            </div>
+            <div class="compounds-section">
+                <h4>熟語</h4>
+                <div id="compounds-list" class="compounds-list"></div>
+            </div>
+            <div class="example-section" id="example-section">
+                <h4>例文</h4>
+                <div id="example-jp" class="example-jp"></div>
+                <div id="example-en" class="example-en"></div>
+            </div>
+            <button id="next-btn" class="btn btn-primary">次の漢字 →</button>
+        </div>
+    </div>
+</section>
+
+<section class="lesson-kanji-list">
+    <h3>この日の漢字一覧</h3>
+    <p class="muted">クリックするとその漢字にジャンプします。</p>
+    <div class="kanji-list-grid">
+        
+        <div class="kanji-list-item" data-idx="0">
+            <div class="kli-char">調</div>
+            <div class="kli-meaning">condition; investigation; emphasis</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="1">
+            <div class="kli-char">査</div>
+            <div class="kli-meaning">investigation, inquiry</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="2">
+            <div class="kli-char">移</div>
+            <div class="kli-meaning">move, transfer; shift</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="3">
+            <div class="kli-char">難</div>
+            <div class="kli-meaning">difficulty; difficult</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="4">
+            <div class="kli-char">簡</div>
+            <div class="kli-meaning">easy, simple</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="5">
+            <div class="kli-char">単</div>
+            <div class="kli-meaning">vocabulary; unit</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="6">
+            <div class="kli-char">感</div>
+            <div class="kli-meaning">feel; inspiration</div>
+        </div>
+        
+        <div class="kanji-list-item" data-idx="7">
+            <div class="kli-char">想</div>
+            <div class="kli-meaning">impressions, thoughts; anticipation</div>
+        </div>
+        
+    </div>
+</section>
+
+<script id="lesson-data" type="application/json">
+{"day": 2, "kanji": [{"char": "\u8abf", "compounds": [{"meaning": "condition, state", "reading": "\u3061\u3087\u3046\u3057", "word": "\u8abf\u5b50"}, {"meaning": "emphasis, stress", "reading": "\u304d\u3087\u3046\u3061\u3087\u3046", "word": "\u5f37\u8abf"}, {"meaning": "to look up, to investigate", "reading": "\u3057\u3089\u3079\u308b", "word": "\u8abf\u3079\u308b"}], "id": 254, "kunyomi": "\u3057\u3089\u3079\u308b", "meaning": "condition; investigation; emphasis", "onyomi": "\u30c1\u30e7\u30a6", "stroke": 15}, {"char": "\u67fb", "compounds": [{"meaning": "investigation, inquiry", "reading": "\u3061\u3087\u3046\u3055", "word": "\u8abf\u67fb"}], "id": 255, "kunyomi": "", "meaning": "investigation, inquiry", "onyomi": "\u30b5", "stroke": 9}, {"char": "\u79fb", "compounds": [{"meaning": "move, transfer", "reading": "\u3044\u3069\u3046", "word": "\u79fb\u52d5"}, {"meaning": "to move, to shift", "reading": "\u3046\u3064\u308b", "word": "\u79fb\u308b"}, {"meaning": "to move (something), to shift", "reading": "\u3046\u3064\u3059", "word": "\u79fb\u3059"}], "id": 256, "kunyomi": "\u3046\u3064\u308b \u3046\u3064\u3059", "meaning": "move, transfer; shift", "onyomi": "\u30a4", "stroke": 11}, {"char": "\u96e3", "compounds": [{"meaning": "difficulty, hardship", "reading": "\u3053\u3093\u306a\u3093", "word": "\u56f0\u96e3(\u306a)"}, {"meaning": "difficult", "reading": "\u3080\u305a\u304b\u3057\u3044", "word": "\u96e3\u3057\u3044"}, {"meaning": "a difficult problem", "reading": "\u306a\u3093\u3082\u3093", "word": "\u96e3\u554f"}], "id": 257, "kunyomi": "\u3080\u305a\u304b\u3057\u3044", "meaning": "difficulty; difficult", "onyomi": "\u30ca\u30f3", "stroke": 18}, {"char": "\u7c21", "compounds": [{"meaning": "easy, simple", "reading": "\u304b\u3093\u305f\u3093", "word": "\u7c21\u5358(\u306a)"}], "id": 258, "kunyomi": "", "meaning": "easy, simple", "onyomi": "\u30ab\u30f3", "stroke": 18}, {"char": "\u5358", "compounds": [{"meaning": "vocabulary, word", "reading": "\u305f\u3093\u3054", "word": "\u5358\u8a9e"}, {"meaning": "a unit, credit", "reading": "\u305f\u3093\u3044", "word": "\u5358\u4f4d"}], "id": 259, "kunyomi": "", "meaning": "vocabulary; unit", "onyomi": "\u30bf\u30f3", "stroke": 9}, {"char": "\u611f", "compounds": [{"meaning": "to feel, to sense", "reading": "\u304b\u3093\u3058\u308b", "word": "\u611f\u3058\u308b"}, {"meaning": "inspiration, being moved", "reading": "\u304b\u3093\u3069\u3046", "word": "\u611f\u52d5"}], "id": 260, "kunyomi": "", "meaning": "feel; inspiration", "onyomi": "\u30ab\u30f3", "stroke": 13}, {"char": "\u60f3", "compounds": [{"meaning": "impressions, thoughts", "reading": "\u304b\u3093\u305d\u3046", "word": "\u611f\u60f3"}, {"meaning": "anticipation, forecast, prediction", "reading": "\u3088\u305d\u3046", "word": "\u4e88\u60f3"}], "id": 261, "kunyomi": "", "meaning": "impressions, thoughts; anticipation", "onyomi": "\u30bd\u30a6", "stroke": 13}], "title_en": "A Questionnaire", "title_jp": "\u30a2\u30f3\u30b1\u30fc\u30c8"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "\u7b2c {week} \u9031\u306b\u623b\u308b", "btn_next_kanji": "\u6b21\u306e\u6f22\u5b57 \u2192", "btn_try_again": "\u3082\u3046\u4e00\u5ea6", "label_meaning": "\u610f\u5473", "label_reading": "\u8aad\u307f", "lbl_accuracy": "\u6b63\u7b54\u7387", "lbl_correct": "\u6b63\u89e3", "lbl_wrong": "\u4e0d\u6b63\u89e3", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u5165\u529b\uff08\u304b\u306a\uff09\u2026", "result_correct": "\u2705 \u6b63\u89e3\uff01", "result_wrong": "\u274c \u4e0d\u6b63\u89e3", "summary_complete": "\u5b8c\u4e86\uff01", "what_is_meaning": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u610f\u5473\u003c/span\u003e\u306f\uff1f", "what_is_reading": "\u3053\u306e\u6f22\u5b57\u306e\u003cspan id=\"mode-label\"\u003e\u8aad\u307f\u003c/span\u003e\u306f\uff1f"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initFlashcard(5, 2);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズ① どちらの字？</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="../../index.html">Home</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language:</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../../chapter/1/" class="back-link">← Back to Week 1</a>
+    <h1>クイズ① どちらの字？</h1>
+    <p class="muted">6  questions</p>
+</section>
+
+<section class="game-controls">
+    <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+        <span id="progress-text" class="progress-text">1 / 6</span>
+    </div>
+    <div class="score-tracker">
+        <span class="score-correct">✅ <span id="score-correct">0</span></span>
+        <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+    </div>
+</section>
+
+<section id="question-area" class="question-area">
+    <div id="question-loading" class="muted">Loading questions…</div>
+</section>
+
+<section id="result-screen" class="result-screen hidden">
+    <h2>Results</h2>
+    <div class="result-stats">
+        <div class="stat-card">
+            <div class="stat-num" id="final-correct">0</div>
+            <div class="stat-label">Correct</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num" id="final-wrong">0</div>
+            <div class="stat-label">Wrong</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num" id="final-pct">0%</div>
+            <div class="stat-label">Accuracy</div>
+        </div>
+    </div>
+    <div class="result-actions">
+        <button id="retry-btn" class="btn btn-primary">Try again</button>
+        <a href="../../chapter/1/" class="btn btn-link">← Back to Week 1</a>
+    </div>
+</section>
+
+<script id="exercise-data" type="application/json">
+[{"id": 1, "stem": "未来", "reading_hint": "みらい", "options": [{"label": "1", "kanji": "未"}, {"label": "2", "kanji": "末"}], "answer": "1"}, {"id": 2, "stem": "若い", "reading_hint": "わかい", "options": [{"label": "1", "kanji": "苦"}, {"label": "2", "kanji": "若"}], "answer": "2"}, {"id": 3, "stem": "勉強", "reading_hint": "べんきょう", "options": [{"label": "1", "kanji": "勉"}, {"label": "2", "kanji": "晩"}], "answer": "1"}, {"id": 4, "stem": "鳥が飛ぶ", "reading_hint": "とりがとぶ", "options": [{"label": "1", "kanji": "鳥"}, {"label": "2", "kanji": "烏"}], "answer": "1"}, {"id": 5, "stem": "1皿100円", "reading_hint": "ひとさらひゃくえん", "options": [{"label": "1", "kanji": "皿"}, {"label": "2", "kanji": "血"}], "answer": "1"}, {"id": 6, "stem": "取_けて！", "reading_hint": "たす_けて！", "options": [{"label": "1", "kanji": "取"}, {"label": "2", "kanji": "助"}], "answer": "2"}]
+</script>
+<script id="i18n-strings" type="application/json">
+{"back_to_week": "Back to Week {week}", "btn_next_question": "Next question \u2192", "btn_see_results": "See results", "btn_try_again": "Try again", "check_failed": "Error checking answer.", "lbl_accuracy": "Accuracy", "lbl_correct": "Correct", "lbl_wrong": "Wrong", "load_failed": "Failed to load questions.", "no_questions": "No questions available.", "reading_hint_prefix": "(reading: ", "section_1": "Section 1 \u2014 Reading", "section_2": "Section 2 \u2014 Write the kanji", "section_3": "Section 3 \u2014 Fill in the kanji", "section_n": "Section {n}"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>Sou Matome N3 Kanji · Tailscale only</p>
+    </footer>
+
+    
+<script src="../../static/app.js"></script>
+<script>
+window.N3App.initExercise(1, 'quiz');
+</script>
+
+</body>
+</html>

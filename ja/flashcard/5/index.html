@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第 5 週 フラッシュカード</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var path = location.pathname;
+                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="../index.html">ホーム</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語:</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="../chapter/5/" class="back-link">← 第 5 週へ戻る</a>
+    <h1>フラッシュカード</h1>
+    <p class="muted">学習する日を選んでください。</p>
+</section>
+
+<div class="day-grid">
+    
+    <a href="../flashcard/5/1/" class="day-card">
+        <div class="day-number">日目 1</div>
+        <div class="day-title-jp">メールを送る</div>
+        <div class="day-title-en">Sending E-mail (texting)</div>
+        <div class="day-kanji-count">8 漢字</div>
+    </a>
+    
+    <a href="../flashcard/5/2/" class="day-card">
+        <div class="day-number">日目 2</div>
+        <div class="day-title-jp">アンケート</div>
+        <div class="day-title-en">A Questionnaire</div>
+        <div class="day-kanji-count">8 漢字</div>
+    </a>
+    
+    <a href="../flashcard/5/3/" class="day-card">
+        <div class="day-number">日目 3</div>
+        <div class="day-title-jp">日本語クラス</div>
+        <div class="day-title-en">A Japanese Class</div>
+        <div class="day-kanji-count">9 漢字</div>
+    </a>
+    
+    <a href="../flashcard/5/4/" class="day-card">
+        <div class="day-number">日目 4</div>
+        <div class="day-title-jp">作文</div>
+        <div class="day-title-en">A Composition</div>
+        <div class="day-kanji-count">8 漢字</div>
+    </a>
+    
+    <a href="../flashcard/5/5/" class="day-card">
+        <div class="day-number">日目 5</div>
+        <div class="day-title-jp">問診票―歯科で</div>
+        <div class="day-title-en">Dental Patient Registration Sheet</div>
+        <div class="day-kanji-count">8 漢字</div>
+    </a>
+    
+    <a href="../flashcard/5/6/" class="day-card">
+        <div class="day-number">日目 6</div>
+        <div class="day-title-jp">問診票―健康診断</div>
+        <div class="day-title-en">A Medical Check Up Questionnaire</div>
+        <div class="day-kanji-count">8 漢字</div>
+    </a>
+    
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+    </footer>
+
+    
+</body>
+</html>
