@@ -23,6 +23,7 @@ from flask import (
 )
 
 from i18n import TRANSLATIONS, get_translations, format_string
+from wanikani import attach_week
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
@@ -85,7 +86,7 @@ def load_week(week: int):
     f = DATA_DIR / f"week_{week}.json"
     if not f.exists():
         abort(404, description=f"week_{week}.json not found")
-    return load_json(f)
+    return attach_week(load_json(f))
 
 
 def get_practice_questions(week_data):

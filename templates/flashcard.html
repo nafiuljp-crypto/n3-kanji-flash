@@ -47,6 +47,10 @@
                     <div id="answer-meaning" class="answer-value"></div>
                 </div>
             </div>
+            <div class="wk-section hidden" id="wk-section">
+                <h4>{{ T.wk_chain_h4 }}</h4>
+                <div class="wk-chain" id="wk-chain"></div>
+            </div>
             <div class="compounds-section">
                 <h4>{{ T.compounds_h4 }}</h4>
                 <div id="compounds-list" class="compounds-list"></div>
@@ -94,6 +98,12 @@
     "label_meaning": T.label_meaning,
     "label_reading": T.label_reading,
     "btn_next_kanji": T.btn_next_kanji,
+    "wk_radicals": T.wk_radicals,
+    "wk_kanji": T.wk_kanji,
+    "wk_vocab": T.wk_vocab,
+    "wk_level": T.wk_level,
+    "wk_more": T.wk_more,
+    "wk_open": T.wk_open,
 } | tojson }}
 </script>
 {% endblock %}

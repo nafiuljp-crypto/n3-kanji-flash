@@ -192,6 +192,10 @@ def main():
     DIST.mkdir(parents=True)
 
     weeks = load_all_weeks()
+    # Adds the WaniKani radical → kanji → vocabulary chain to every kanji.
+    from wanikani import attach_week
+    for w in weeks.values():
+        attach_week(w)
     chapters = get_chapters(weeks)
 
     # Bundled i18n.json for client-side use

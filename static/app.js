@@ -119,6 +119,8 @@ window.N3App = window.N3App || {};
             ansReading: $("answer-reading"),
             ansMeaning: $("answer-meaning"),
             compounds: $("compounds-list"),
+            wkSection: $("wk-section"),
+            wkChain: $("wk-chain"),
             exampleSection: $("example-section"),
             exampleJp: $("example-jp"),
             exampleEn: $("example-en"),
@@ -174,9 +176,74 @@ window.N3App = window.N3App || {};
             });
         }
 
+        function chip(glyph, name, extra, url, tone, title, img) {
+            const glyphHtml = img
+                ? '<img class="wk-glyph-img" src="' + escapeHtml(img) + '" alt="' +
+                  escapeHtml(name || "") + '" loading="lazy">'
+                : '<span class="wk-glyph">' + escapeHtml(glyph) + '</span>';
+            const inner =
+                glyphHtml +
+                (name ? '<span class="wk-name">' + escapeHtml(name) + '</span>' : '') +
+                (extra ? '<span class="wk-reading">' + escapeHtml(extra) + '</span>' : '');
+            const cls = "wk-chip wk-chip-" + tone;
+            const label = escapeHtml(title || name || glyph || "");
+            if (!url) return '<span class="' + cls + '">' + inner + '</span>';
+            return '<a class="' + cls + '" href="' + escapeHtml(url) +
+                '" target="_blank" rel="noopener" title="' + label + '">' + inner + '</a>';
+        }
+
+        function chainRow(label, chips) {
+            return '<div class="wk-row">' +
+                '<div class="wk-row-label">' + escapeHtml(label) + '</div>' +
+                '<div class="wk-chips">' + chips + '</div>' +
+                '</div>';
+        }
+
+        /* Renders the WaniKani chain: radicals that build the kanji, then the
+           kanji itself, then vocabulary that uses it. */
+        function buildWkChain(k) {
+            const wk = k.wanikani;
+            if (!wk) {
+                els.wkSection.classList.add("hidden");
+                return;
+            }
+            els.wkSection.classList.remove("hidden");
+
+            const radicalChips = (wk.radicals || []).map(r =>
+                chip(r.char || "?", r.meaning, "", r.url, "radical", r.meaning, r.image)
+            ).join("") || '<span class="wk-empty">—</span>';
+
+            const kanjiChip = chip(
+                k.char,
+                (wk.meanings || [k.meaning || ""])[0],
+                wk.level ? (T.wk_level || "WaniKani level {level}").replace("{level}", wk.level) : "",
+                wk.url, "kanji", k.char
+            );
+
+            let vocabChips = (wk.vocab || []).map(v =>
+                chip(v.char, v.meaning, v.reading, v.url, "vocab", v.char)
+            ).join("");
+            if (!vocabChips) {
+                vocabChips = '<span class="wk-empty">—</span>';
+            } else if (wk.vocab_total > (wk.vocab || []).length) {
+                const rest = wk.vocab_total - wk.vocab.length;
+                vocabChips += '<span class="wk-more">' +
+                    escapeHtml((T.wk_more || "+{count} more").replace("{count}", rest)) +
+                    '</span>';
+            }
+
+            els.wkChain.innerHTML =
+                chainRow(T.wk_radicals || "Radicals", radicalChips) +
+                '<div class="wk-arrow">↓</div>' +
+                chainRow(T.wk_kanji || "Kanji", kanjiChip) +
+                '<div class="wk-arrow">↓</div>' +
+                chainRow(T.wk_vocab || "Vocabulary", vocabChips);
+        }
+
         function buildBack(k) {
             els.ansReading.textContent = (k.onyomi || "—") + (k.kunyomi ? " / " + k.kunyomi : "");
             els.ansMeaning.textContent = k.meaning || "—";
+            buildWkChain(k);
 
             els.compounds.innerHTML = "";
             (k.compounds || []).forEach(c => {

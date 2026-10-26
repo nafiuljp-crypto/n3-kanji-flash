@@ -97,6 +97,51 @@ Each `data/week_N.json` contains:
 
 ---
 
+## WaniKani enrichment
+
+Every flash card also shows the WaniKani chain for its kanji:
+
+```
+radicals  →  kanji  →  vocabulary
+```
+
+- **Radicals** — the WaniKani radical subjects the kanji is built from, with their meanings.
+- **Kanji** — the WaniKani kanji subject, its primary meaning, and its level.
+- **Vocabulary** — up to 8 WaniKani vocabulary items that use the kanji, sorted by level, with reading and meaning. A `+N more` chip appears when more exist.
+
+All entries link to the corresponding WaniKani page.
+
+### How the data is produced
+
+`wanikani.py` downloads all 9,392 WaniKani subjects, caches them under `.cache/`
+(gitignored), and writes the small derived file `data/wanikani.json` — one entry
+per character used in the six weeks. `build.py` and `app.py` call
+`wanikani.attach_week()` so the templates receive the chain with the lesson data.
+
+```bash
+# one-time / occasional: re-download subjects and rebuild data/wanikani.json
+python3 wanikani.py --refresh
+
+# after changing week data: rebuild the derived file from the cache
+python3 wanikani.py
+```
+
+### API token
+
+The token is personal and must never be committed — the site is public.
+
+```bash
+mkdir -p ~/.config/wanikani
+printf '%s\n' '<your-token>' > ~/.config/wanikani/token
+chmod 600 ~/.config/wanikani/token
+```
+
+`WANIKANI_TOKEN` in the environment takes precedence over that file. Nothing
+under `.cache/` or `~/.config/wanikani/` is tracked by git, and the built pages
+contain only subject data, never the token.
+
+---
+
 ## Source
 
 - PDF: `Sou Matome N3 Kanji.pdf` (ASK Publishing, 2010, ISBN 978-4-87217-730-5)
