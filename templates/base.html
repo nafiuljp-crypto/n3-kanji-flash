@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ T.hero_title }}{% endblock %}</title>
+    <title>{% block title %}{{ T.home_title }}{% endblock %}</title>
     <link rel="stylesheet" href="{{ base }}static/style.css">
     <script>
     /* Language switcher + cookie initializer. Runs before any UI renders. */
@@ -24,9 +24,8 @@
                     e.preventDefault();
                     var newLang = a.getAttribute('data-lang');
                     setCookie('lang', newLang);
-                    var path = location.pathname;
-                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
-                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
                     var rest = (m && m[3]) ? m[3] : '/';
                     if (!rest.endsWith('/')) rest += '/';
                     location.href = prefix + '/' + newLang + rest;
@@ -40,7 +39,8 @@
     <nav class="navbar">
         <a href="{{ base }}{{ lang }}/" class="nav-brand">📚 {{ T.brand }}</a>
         <div class="nav-links">
-            <a href="{{ base }}{{ lang }}/">{{ T.home_nav }}</a>
+            <a href="{{ base }}{{ lang }}/">{{ T.nav_home }}</a>
+            <a href="{{ base }}{{ lang }}/test/">{{ T.nav_tests }}</a>
             <div class="lang-switch">
                 <span class="lang-label">{{ T.lang_label }}</span>
                 {% for code in supported_langs %}

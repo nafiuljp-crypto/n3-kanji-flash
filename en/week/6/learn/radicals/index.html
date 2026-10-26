@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radicals · Week 6 · N3 Kanji</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/en/" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/en/">Home</a>
+            <a href="/n3-kanji-flash/en/test/">Tests</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="/n3-kanji-flash/en/week/6/" class="back-link">← Week 6</a>
+    <h1>Radicals · <span class="jp">よむ</span></h1>
+    <p class="muted">The building blocks used by this week&#39;s kanji.</p>
+</section>
+
+<section class="lesson-shell" id="lesson-shell">
+    <div class="lesson-top">
+        <span id="lesson-progress-text" class="lesson-progress-text"></span>
+        <div class="progress-bar"><div id="lesson-progress-fill" class="progress-fill"></div></div>
+        <span id="lesson-score" class="lesson-score"></span>
+    </div>
+
+    <div class="lesson-card" id="lesson-card">
+        <div class="item-glyph" id="item-glyph">—</div>
+        <div class="item-meaning" id="item-meaning"></div>
+        <div class="item-readings" id="item-readings"></div>
+        <div class="item-radicals" id="item-radicals"></div>
+        <div class="item-kanji" id="item-kanji"></div>
+        <div class="item-extra" id="item-extra"></div>
+        <div class="item-links" id="item-links"></div>
+    </div>
+
+    <div class="lesson-controls">
+        <button id="prev-btn" class="btn btn-secondary">← Previous</button>
+        <button id="next-btn" class="btn btn-primary">Next →</button>
+    </div>
+</section>
+
+<section class="lesson-shell hidden" id="lesson-done">
+    <div class="lesson-card">
+        <h2>Lesson complete</h2>
+        <p class="muted">You have seen every item in this lesson. Take the test next.</p>
+        <div class="done-actions">
+            <a class="btn btn-primary" id="go-test-link" href="#">Go to the test</a>
+            <a class="btn btn-link" href="/n3-kanji-flash/en/week/6/">← Week 6</a>
+        </div>
+    </div>
+</section>
+
+<script id="page-data" type="application/json">
+{"items": [{"char": "\u5ddd", "id": 21, "image": null, "kanji": [], "meaning": "River", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/river"}, {"char": "\u6587", "id": 42, "image": null, "kanji": [], "meaning": "Writing", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/writing"}, {"char": "\u4e0d", "id": 96, "image": null, "kanji": [], "meaning": "Not", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/not"}, {"char": "\u96e8", "id": 119, "image": null, "kanji": [], "meaning": "Rain", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/rain"}, {"char": "\u9752", "id": 120, "image": null, "kanji": [], "meaning": "Blue", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/blue"}, {"char": "\u5369", "id": 145, "image": null, "kanji": [], "meaning": "Stamp", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/stamp"}, {"char": "\u77db", "id": 148, "image": null, "kanji": [], "meaning": "Spear", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/spear"}, {"char": "\u821f", "id": 149, "image": null, "kanji": [], "meaning": "Boat", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/boat"}, {"char": "\u5723", "id": 179, "image": null, "kanji": [], "meaning": "Tombstone", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/tombstone"}, {"char": "\u8fb0", "id": 183, "image": null, "kanji": [], "meaning": "Landslide", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/landslide"}, {"char": "\u97f3", "id": 197, "image": null, "kanji": [], "meaning": "Sound", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/sound"}, {"char": "\u679c", "id": 235, "image": null, "kanji": [], "meaning": "Fruit", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/fruit"}, {"char": "\u4ed8", "id": 248, "image": null, "kanji": [], "meaning": "Attach", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/attach"}, {"char": "\u5e78", "id": 260, "image": null, "kanji": [], "meaning": "Happiness", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/happiness"}, {"char": "\u6589", "id": 277, "image": null, "kanji": [], "meaning": "Simultaneous", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/simultaneous"}, {"char": "\u7230", "id": 286, "image": null, "kanji": [], "meaning": "Football", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/football"}, {"char": "\u5316", "id": 311, "image": null, "kanji": [], "meaning": "Change", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/change"}, {"char": "\u83ab", "id": 356, "image": null, "kanji": [], "meaning": "Greenhouse", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/greenhouse"}, {"char": "\u7fa9", "id": 383, "image": null, "kanji": [], "meaning": "Righteousness", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/righteousness"}, {"char": "\ud842\uded3", "id": 8776, "image": null, "kanji": [], "meaning": "Trash", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/trash"}, {"char": "\ud845\uddd7", "id": 8779, "image": null, "kanji": [], "meaning": "Spring", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/spring"}, {"char": null, "id": 8790, "image": "https://files.wanikani.com/dgeoshskssv0r7bnmaxj0o4lt1el", "kanji": [], "meaning": "Death Star", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/death-star"}, {"char": "\u4ea6", "id": 9329, "image": null, "kanji": [], "meaning": "Again", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/again"}], "test_url": "/n3-kanji-flash/en/week/6/test/radicals/", "type": "radicals", "week": 6}
+</script>
+<script id="i18n-strings" type="application/json">
+{"answer_was": "Answer", "btn_check": "Check", "btn_continue": "Continue", "btn_next": "Next \u2192", "btn_prev": "\u2190 Previous", "btn_show_answer": "Show answer", "correct": "Correct", "incorrect": "Incorrect", "lesson_done": "Lesson complete", "lesson_progress": "Item {pos} of {total}", "no_items": "Nothing to show here yet.", "placeholder_meaning": "type the meaning\u2026", "placeholder_reading": "type the reading in kana\u2026", "q_meaning_kanji": "What is the meaning of this kanji?", "q_meaning_radicals": "What is the meaning of this radical?", "q_meaning_vocab": "What is the meaning of this word?", "q_reading_kanji": "What is the reading of this kanji?", "q_reading_vocab": "What is the reading of this word?", "question_of": "{pos} / {total}", "test_complete": "Test complete", "wani_open": "Open on WaniKani"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 kanji study site · kanji list from 日本語総まとめ N3 漢字 · language data from WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initLesson();</script>
+
+</body>
+</html>

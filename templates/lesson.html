@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} · {{ T.week_word }} {{ week }} · {{ T.brand }}{% endblock %}
+{% block content %}
+<section class="chapter-header">
+    <a href="{{ base }}{{ lang }}/week/{{ week }}/" class="back-link">{{ T.back_to_week.format(week=week) }}</a>
+    <h1>{{ title }} · <span class="jp">{{ theme.jp }}</span></h1>
+    <p class="muted">{{ subtitle }}</p>
+</section>
+
+<section class="lesson-shell" id="lesson-shell">
+    <div class="lesson-top">
+        <span id="lesson-progress-text" class="lesson-progress-text"></span>
+        <div class="progress-bar"><div id="lesson-progress-fill" class="progress-fill"></div></div>
+        <span id="lesson-score" class="lesson-score"></span>
+    </div>
+
+    <div class="lesson-card" id="lesson-card">
+        <div class="item-glyph" id="item-glyph">—</div>
+        <div class="item-meaning" id="item-meaning"></div>
+        <div class="item-readings" id="item-readings"></div>
+        <div class="item-radicals" id="item-radicals"></div>
+        <div class="item-kanji" id="item-kanji"></div>
+        <div class="item-extra" id="item-extra"></div>
+        <div class="item-links" id="item-links"></div>
+    </div>
+
+    <div class="lesson-controls">
+        <button id="prev-btn" class="btn btn-secondary">{{ T.btn_prev }}</button>
+        <button id="next-btn" class="btn btn-primary">{{ T.btn_next }}</button>
+    </div>
+</section>
+
+<section class="lesson-shell hidden" id="lesson-done">
+    <div class="lesson-card">
+        <h2>{{ T.lesson_done }}</h2>
+        <p class="muted">{{ T.lesson_done_sub }}</p>
+        <div class="done-actions">
+            <a class="btn btn-primary" id="go-test-link" href="#">{{ T.go_to_test }}</a>
+            <a class="btn btn-link" href="{{ base }}{{ lang }}/week/{{ week }}/">{{ T.back_to_week.format(week=week) }}</a>
+        </div>
+    </div>
+</section>
+
+<script id="page-data" type="application/json">
+{{ page_data | tojson }}
+</script>
+<script id="i18n-strings" type="application/json">
+{{ ui_strings | tojson }}
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ base }}static/app.js"></script>
+<script>window.N3App.initLesson();</script>
+{% endblock %}

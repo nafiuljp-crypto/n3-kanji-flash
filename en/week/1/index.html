@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 · でかける①</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/en/" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/en/">Home</a>
+            <a href="/n3-kanji-flash/en/test/">Tests</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="/n3-kanji-flash/en/" class="back-link">← All weeks</a>
+    <h1>Week 1 · <span class="jp">でかける①</span></h1>
+    <p class="theme-en">Go Out 1 · 외출하기①</p>
+</section>
+
+<section class="games">
+    <h2>📚 Learn</h2>
+    <div class="learn-grid">
+        
+        
+        <a href="/n3-kanji-flash/en/week/1/learn/radicals/"
+           class="learn-card learn-radicals" data-progress-type="radicals"
+           data-total="0">
+            <div class="learn-icon">🧩</div>
+            <div class="learn-title">Radicals</div>
+            <div class="learn-sub">The building blocks used by this week&#39;s kanji.</div>
+            <div class="learn-meta">0 items</div>
+            <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
+            <div class="learn-state" data-state>Start lesson</div>
+        </a>
+        
+        
+        <a href="/n3-kanji-flash/en/week/1/learn/kanji/"
+           class="learn-card learn-kanji" data-progress-type="kanji"
+           data-total="0">
+            <div class="learn-icon">🈶</div>
+            <div class="learn-title">Kanji</div>
+            <div class="learn-sub">Meaning, readings, and the radicals each one is built from.</div>
+            <div class="learn-meta">0 items</div>
+            <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
+            <div class="learn-state" data-state>Start lesson</div>
+        </a>
+        
+        
+        <a href="/n3-kanji-flash/en/week/1/learn/vocab/"
+           class="learn-card learn-vocab" data-progress-type="vocab"
+           data-total="0">
+            <div class="learn-icon">📖</div>
+            <div class="learn-title">Vocabulary</div>
+            <div class="learn-sub">Words written with the kanji you have studied.</div>
+            <div class="learn-meta">0 items</div>
+            <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
+            <div class="learn-state" data-state>Start lesson</div>
+        </a>
+        
+    </div>
+</section>
+
+<section class="games">
+    <h2>✏️ Test yourself</h2>
+    <p class="muted">Repeatable — retake as often as you like.</p>
+    <div class="test-grid">
+        
+        <a href="/n3-kanji-flash/en/week/1/test/radicals/"
+           class="test-card test-radicals" data-test-type="radicals">
+            <div class="test-icon">✏️</div>
+            <div class="test-title">Radical test</div>
+            <div class="test-sub">Radical → meaning.</div>
+            <div class="test-score" data-score></div>
+            <div class="test-action">Start test</div>
+        </a>
+        
+        <a href="/n3-kanji-flash/en/week/1/test/kanji/"
+           class="test-card test-kanji" data-test-type="kanji">
+            <div class="test-icon">✏️</div>
+            <div class="test-title">Kanji test</div>
+            <div class="test-sub">Kanji → meaning and reading.</div>
+            <div class="test-score" data-score></div>
+            <div class="test-action">Start test</div>
+        </a>
+        
+        <a href="/n3-kanji-flash/en/week/1/test/vocab/"
+           class="test-card test-vocab" data-test-type="vocab">
+            <div class="test-icon">✏️</div>
+            <div class="test-title">Vocabulary test</div>
+            <div class="test-sub">Word → meaning and reading.</div>
+            <div class="test-score" data-score></div>
+            <div class="test-action">Start test</div>
+        </a>
+        
+    </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 kanji study site · kanji list from 日本語総まとめ N3 漢字 · language data from WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initWeek(1);</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漢字テスト · 第4週 · N3 漢字</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/ja/" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/ja/">ホーム</a>
+            <a href="/n3-kanji-flash/ja/test/">テスト</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="/n3-kanji-flash/ja/ja/week/4/" class="back-link">← 第4週</a>
+    <h1>漢字テスト · <span class="muted">第4週</span></h1>
+    <p class="muted">何度でも受けられます。</p>
+</section>
+
+<section class="test-shell" id="test-shell">
+    <div class="test-top">
+        <span id="test-progress-text" class="test-progress-text"></span>
+        <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
+        <span class="score-tracker">
+            <span class="score-correct">✅ <span id="score-correct">0</span></span>
+            <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+        </span>
+    </div>
+
+    <div class="question-card" id="question-card">
+        <div class="question-label" id="question-label"></div>
+        <div class="item-glyph" id="question-glyph">—</div>
+        <input type="text" id="answer-input" class="answer-input" autocomplete="off"
+               autocapitalize="off" autocorrect="off" spellcheck="false">
+        <div class="question-feedback hidden" id="question-feedback"></div>
+        <div class="question-actions">
+            <button id="check-btn" class="btn btn-primary">確認</button>
+            <button id="show-btn" class="btn btn-link">答えを見る</button>
+            <button id="continue-btn" class="btn btn-primary hidden">次へ</button>
+        </div>
+    </div>
+</section>
+
+<section class="test-shell hidden" id="test-result">
+    <div class="question-card">
+        <h2>テスト完了</h2>
+        <div class="result-stats">
+            <div class="stat-card"><div class="stat-num" id="final-correct">0</div><div class="stat-label">正解</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-wrong">0</div><div class="stat-label">不正解</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-pct">0%</div><div class="stat-label">正答率</div></div>
+        </div>
+        <div class="wrong-review hidden" id="wrong-review">
+            <h3>復習する項目</h3>
+            <div class="wrong-list" id="wrong-list"></div>
+        </div>
+        <div class="done-actions">
+            <button id="retry-wrong-btn" class="btn btn-primary hidden">間違いだけやり直す</button>
+            <button id="retake-btn" class="btn btn-secondary">もう一度受ける</button>
+            <a class="btn btn-link" href="/n3-kanji-flash/ja/ja/week/4/">← 第4週</a>
+        </div>
+    </div>
+</section>
+
+<script id="page-data" type="application/json">
+{"items": [{"char": "\u7802", "meanings": ["sand", "Sand"], "readings": ["\u3055", "\u3057\u3083", "\u3059\u306a", "\u30b5"]}, {"char": "\u5869", "meanings": ["salt", "Salt"], "readings": ["\u3048\u3093", "\u3057\u304a", "\u30a8\u30f3"]}, {"char": "\u6cb9", "meanings": ["oil", "Oil"], "readings": ["\u3086", "\u3042\u3076\u3089", "\u30e6"]}, {"char": "\u7dd1", "meanings": ["green", "Green"], "readings": ["\u308a\u3087\u304f", "\u307f\u3069\u308a", "\u30ea\u30e7\u30af"]}, {"char": "\u7d05", "meanings": ["red, crimson", "Deep Red", "Crimson"], "readings": ["\u3053\u3046", "\u304f", "\u3079\u306b", "\u304f\u308c\u306a\u3044", "\u30b3\u30a6"]}, {"char": "\u518a", "meanings": ["counter for books", "Book Counter", "Counter For Books"], "readings": ["\u3055\u3064", "\u30b5\u30c4"]}, {"char": "\u500b", "meanings": ["counter of general objects", "Individual"], "readings": ["\u3053", "\u30b3"]}, {"char": "\u679a", "meanings": ["counter for flat objects", "Flat Object Counter", "Counter For Flat Objects"], "readings": ["\u307e\u3044", "\u30de\u30a4"]}, {"char": "\u544a", "meanings": ["tell, announce", "Announce"], "readings": ["\u3053\u304f", "\u3064", "\u30b3\u30af"]}, {"char": "\u5229", "meanings": ["convenience, advantage", "Profit", "Benefit", "Advantage"], "readings": ["\u308a", "\u304d", "\u30ea"]}, {"char": "\u5272", "meanings": ["divide, split", "Divide"], "readings": ["\u304b\u3064", "\u308f\u308a", "\u308f", "\u3055", "\u30ab\u30c4", "\u308f\u308b, \u308f\u308c\u308b"]}, {"char": "\u500d", "meanings": ["times (multiplication)", "Double", "Times", "Multiply"], "readings": ["\u3070\u3044", "\u30d0\u30a4"]}, {"char": "\u5024", "meanings": ["price, value", "Value", "Price"], "readings": ["\u3061", "\u306d", "\u3042\u305f\u3044", "\u30cd", "\u306d, \u3042\u305f\u3044"]}, {"char": "\u5546", "meanings": ["commerce, trade", "Merchandise"], "readings": ["\u3057\u3087\u3046", "\u3042\u304d\u306a", "\u30b7\u30e7\u30a6", "\u3042\u304d\u306a\u3046"]}, {"char": "\u652f", "meanings": ["branch, support", "Support", "Branch"], "readings": ["\u3057", "\u3055\u3055", "\u30b7", "\u3055\u3055\u3048\u308b"]}, {"char": "\u6255", "meanings": ["pay", "Pay"], "readings": ["\u3075\u3064", "\u306f\u3089", "\u30d5\u30c4", "\u306f\u3089\u3046"]}, {"char": "\u7c73", "meanings": ["rice, the United States", "Rice", "America"], "readings": ["\u3079\u3044", "\u307e\u3044", "\u3053\u3081", "\u30d9\u30a4, \u30de\u30a4"]}, {"char": "\u7d1a", "meanings": ["grade, class, level", "Level", "Grade", "Rank"], "readings": ["\u304d\u3085\u3046", "\u30ad\u30e5\u30a6"]}, {"char": "\u6b8b", "meanings": ["remain, remainder", "Remainder"], "readings": ["\u3056\u3093", "\u306e\u3053", "\u30b6\u30f3", "\u306e\u3053\u3059, \u306e\u3053\u308b"]}, {"char": "\u578b", "meanings": ["type, model, mold", "Model", "Type"], "readings": ["\u3051\u3044", "\u304b\u305f", "\u30b1\u30a4"]}, {"char": "\u7a0e", "meanings": ["tax", "Tax"], "readings": ["\u305c\u3044", "\u30bc\u30a4"]}, {"char": "\u8fbc", "meanings": ["crowded, included", "Into", "Included"], "readings": ["\u3053", "\u30b3\u30f3", "\u3053\u3080, \u3053\u3082\u308b"]}, {"char": "\u4fa1", "meanings": ["price, value", "Value"], "readings": ["\u304b", "\u3042\u305f\u3044", "\u30ab"]}, {"char": "\u683c", "meanings": ["rank, status, pattern", "Status"], "readings": ["\u304b\u304f", "\u30ab\u30af"]}, {"char": "\u7533", "meanings": ["apply, say (humble)", "Say Humbly"], "readings": ["\u3057\u3093", "\u3082\u3046", "\u30b7\u30f3", "\u3082\u3046\u3059"]}, {"char": "\u8a18", "meanings": ["write, record", "Write Down", "Record"], "readings": ["\u304d", "\u3057\u308b", "\u30ad"]}, {"char": "\u4f8b", "meanings": ["example", "Example"], "readings": ["\u308c\u3044", "\u305f\u3068", "\u30ec\u30a4", "\u305f\u3068\u3048\u308b"]}, {"char": "\u9f62", "meanings": ["age, years", "Age"], "readings": ["\u308c\u3044", "\u3088\u308f\u3044", "\u30ec\u30a4"]}, {"char": "\u6b73", "meanings": ["years (age)", "Years Old", "Year", "Time"], "readings": ["\u3055\u3044", "\u305b\u3044", "\u3068\u3057", "\u3068\u305b", "\u30b5\u30a4, \u30bb\u30a4"]}, {"char": "\u6027", "meanings": ["sex, gender, nature", "Gender", "Nature", "Sex"], "readings": ["\u305b\u3044", "\u3057\u3087\u3046", "\u3055\u304c", "\u30bb\u30a4, \u30b7\u30e7\u30a6"]}, {"char": "\u9023", "meanings": ["take along, connect", "Take Along", "Connect"], "readings": ["\u308c\u3093", "\u3064", "\u3064\u3089", "\u30ec\u30f3", "\u3064\u308c\u308b, \u3064\u3089\u306a\u308b, \u3064\u3089\u306d\u308b"]}, {"char": "\u7d61", "meanings": ["entangle, connection", "Entangle", "Coil Around", "Entwine"], "readings": ["\u3089\u304f", "\u304b\u3089", "\u30e9\u30af", "\u304b\u3089\u3080, \u304b\u3089\u307e\u308b, \u307e\u3064\u308f\u308b"]}, {"char": "\u5c4a", "meanings": ["deliver, reach", "Deliver"], "readings": ["\u3068\u3069", "\u30ab\u30a4", "\u3068\u3069\u3051\u308b, \u3068\u3069\u304f"]}, {"char": "\u5b85", "meanings": ["home, house", "House", "Home"], "readings": ["\u305f\u304f", "\u30bf\u30af"]}, {"char": "\u914d", "meanings": ["distribute, deliver", "Distribute"], "readings": ["\u306f\u3044", "\u304f\u3070", "\u30cf\u30a4", "\u304f\u3070\u308b"]}, {"char": "\u5e0c", "meanings": ["hope, rare", "Wish"], "readings": ["\u304d", "\u307e\u308c", "\u30ad"]}, {"char": "\u671b", "meanings": ["hope, desire", "Hope"], "readings": ["\u307c\u3046", "\u306e\u305e", "\u30dc\u30a6, \u30e2\u30a6", "\u306e\u305e\u3080, \u306e\u305e\u307e\u3057\u3044"]}, {"char": "\u8377", "meanings": ["luggage, load", "Luggage"], "readings": ["\u304b", "\u306b", "\u30ab"]}, {"char": "\u63db", "meanings": ["exchange, change", "Exchange"], "readings": ["\u304b\u3093", "\u304b", "\u30ab\u30f3", "\u304b\u3048\u308b, \u304b\u308f\u308b"]}, {"char": "\u984d", "meanings": ["amount, forehead, frame", "Amount", "Picture Frame", "Forehead"], "readings": ["\u304c\u304f", "\u3072\u305f\u3044", "\u30ac\u30af"]}, {"char": "\u5728", "meanings": ["exist, present", "Exist"], "readings": ["\u3056\u3044", "\u30b6\u30a4", "\u3042\u308b"]}, {"char": "\u53d6", "meanings": ["take, fetch", "Take"], "readings": ["\u3057\u3085", "\u3068", "\u30b7\u30e5", "\u3068\u308b"]}, {"char": "\u9810", "meanings": ["deposit, entrust", "Deposit"], "readings": ["\u3088", "\u3042\u305a", "\u30e8", "\u3042\u305a\u3051\u308b, \u3042\u305a\u304b\u308b"]}, {"char": "\u8863", "meanings": ["clothes", "Clothes"], "readings": ["\u3044", "\u3048", "\u3053\u308d\u3082", "\u304d\u306c", "\u30a4", "\u3053\u308d\u3082, \u304d\u306c"]}, {"char": "\u53c2", "meanings": ["participate, go (humble)", "Participate"], "readings": ["\u3055\u3093", "\u3057\u3093", "\u307e\u3044", "\u30b5\u30f3, \u30b7\u30f3", "\u307e\u3044\u308b"]}, {"char": "\u9054", "meanings": ["reach, accomplish", "Attain", "Plural"], "readings": ["\u305f\u3064", "\u305f\u3061", "\u30bf\u30c4, \u30c0", "\u305f\u3061, \u305f\u3064, \u306f\u308b\u304b"]}, {"char": "\u52e4", "meanings": ["work, attend", "Work"], "readings": ["\u304d\u3093", "\u3064\u3068", "\u30ad\u30f3, \u30b4\u30f3", "\u3064\u3068\u3081\u308b, \u3064\u3068\u307e\u308b"]}, {"char": "\u5e2f", "meanings": ["belt, zone, carry", "Belt"], "readings": ["\u305f\u3044", "\u304a\u3073", "\u30bf\u30a4", "\u304a\u3073\u308b, \u304a\u3073"]}], "scope": "week4", "type": "kanji"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"answer_was": "\u7b54\u3048", "btn_check": "\u78ba\u8a8d", "btn_continue": "\u6b21\u3078", "btn_next": "\u6b21\u3078 \u2192", "btn_prev": "\u2190 \u524d\u3078", "btn_show_answer": "\u7b54\u3048\u3092\u898b\u308b", "correct": "\u6b63\u89e3", "incorrect": "\u4e0d\u6b63\u89e3", "lesson_done": "\u30ec\u30c3\u30b9\u30f3\u5b8c\u4e86", "lesson_progress": "{pos} / {total}", "no_items": "\u9805\u76ee\u304c\u3042\u308a\u307e\u305b\u3093\u3002", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u304b\u306a\u3067\u5165\u529b\u2026", "q_meaning_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u610f\u5473\u306f\uff1f", "q_meaning_radicals": "\u3053\u306e\u90e8\u9996\u306e\u610f\u5473\u306f\uff1f", "q_meaning_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u610f\u5473\u306f\uff1f", "q_reading_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u8aad\u307f\u306f\uff1f", "q_reading_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u8aad\u307f\u306f\uff1f", "question_of": "{pos} / {total}", "test_complete": "\u30c6\u30b9\u30c8\u5b8c\u4e86", "wani_open": "WaniKani \u3067\u958b\u304f"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 漢字学習サイト · 漢字一覧：日本語総まとめ N3 漢字 · データ：WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initTest();</script>
+
+</body>
+</html>

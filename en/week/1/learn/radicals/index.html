@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radicals · Week 1 · N3 Kanji</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/en/" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/en/">Home</a>
+            <a href="/n3-kanji-flash/en/test/">Tests</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="/n3-kanji-flash/en/week/1/" class="back-link">← Week 1</a>
+    <h1>Radicals · <span class="jp">でかける①</span></h1>
+    <p class="muted">The building blocks used by this week&#39;s kanji.</p>
+</section>
+
+<section class="lesson-shell" id="lesson-shell">
+    <div class="lesson-top">
+        <span id="lesson-progress-text" class="lesson-progress-text"></span>
+        <div class="progress-bar"><div id="lesson-progress-fill" class="progress-fill"></div></div>
+        <span id="lesson-score" class="lesson-score"></span>
+    </div>
+
+    <div class="lesson-card" id="lesson-card">
+        <div class="item-glyph" id="item-glyph">—</div>
+        <div class="item-meaning" id="item-meaning"></div>
+        <div class="item-readings" id="item-readings"></div>
+        <div class="item-radicals" id="item-radicals"></div>
+        <div class="item-kanji" id="item-kanji"></div>
+        <div class="item-extra" id="item-extra"></div>
+        <div class="item-links" id="item-links"></div>
+    </div>
+
+    <div class="lesson-controls">
+        <button id="prev-btn" class="btn btn-secondary">← Previous</button>
+        <button id="next-btn" class="btn btn-primary">Next →</button>
+    </div>
+</section>
+
+<section class="lesson-shell hidden" id="lesson-done">
+    <div class="lesson-card">
+        <h2>Lesson complete</h2>
+        <p class="muted">You have seen every item in this lesson. Take the test next.</p>
+        <div class="done-actions">
+            <a class="btn btn-primary" id="go-test-link" href="#">Go to the test</a>
+            <a class="btn btn-link" href="/n3-kanji-flash/en/week/1/">← Week 1</a>
+        </div>
+    </div>
+</section>
+
+<script id="page-data" type="application/json">
+{"items": [{"char": "\u4e00", "id": 1, "image": null, "kanji": [], "meaning": "Ground", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/ground"}, {"char": "\u4e36", "id": 3, "image": null, "kanji": [], "meaning": "Drop", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/drop"}, {"char": "\u4eba", "id": 9, "image": null, "kanji": [], "meaning": "Person", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/person"}, {"char": "\u52f9", "id": 14, "image": null, "kanji": [], "meaning": "Prison", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/prison"}, {"char": "\u5341", "id": 15, "image": null, "kanji": [], "meaning": "Cross", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/cross"}, {"char": "\u53e3", "id": 16, "image": null, "kanji": [], "meaning": "Mouth", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/mouth"}, {"char": "\u571f", "id": 17, "image": null, "kanji": [], "meaning": "Dirt", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/dirt"}, {"char": "\u5c71", "id": 20, "image": null, "kanji": [], "meaning": "Mountain", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/mountain"}, {"char": "\u65e5", "id": 22, "image": null, "kanji": [], "meaning": "Sun", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/sun"}, {"char": "\u6728", "id": 23, "image": null, "kanji": [], "meaning": "Tree", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/tree"}, {"char": "\u5200", "id": 24, "image": null, "kanji": [], "meaning": "Sword", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/sword"}, {"char": "\u5de5", "id": 25, "image": null, "kanji": [], "meaning": "Construction", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/construction"}, {"char": "\u5182", "id": 29, "image": null, "kanji": [], "meaning": "Head", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/head"}, {"char": "\u5929", "id": 40, "image": null, "kanji": [], "meaning": "Heaven", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/heaven"}, {"char": "\u6c34", "id": 45, "image": null, "kanji": [], "meaning": "Water", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/water"}, {"char": "\u738b", "id": 48, "image": null, "kanji": [], "meaning": "King", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/king"}, {"char": "\u7530", "id": 51, "image": null, "kanji": [], "meaning": "Rice Paddy", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/rice-paddy"}, {"char": "\u767d", "id": 52, "image": null, "kanji": [], "meaning": "White", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/white"}, {"char": "\u76ee", "id": 53, "image": null, "kanji": [], "meaning": "Eye", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/eye"}, {"char": "\u77f3", "id": 54, "image": null, "kanji": [], "meaning": "Stone", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/stone"}, {"char": "L", "id": 56, "image": null, "kanji": [], "meaning": "Lion", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/lion"}, {"char": "\u5315", "id": 57, "image": null, "kanji": [], "meaning": "Spoon", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/spoon"}, {"char": "\u5902", "id": 60, "image": null, "kanji": [], "meaning": "Winter", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/winter"}, {"char": "\u5e7f", "id": 62, "image": null, "kanji": [], "meaning": "Canopy", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/canopy"}, {"char": "\u624c", "id": 63, "image": null, "kanji": [], "meaning": "Fingers", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/fingers"}, {"char": "\u5fc3", "id": 65, "image": null, "kanji": [], "meaning": "Heart", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/heart"}, {"char": "\uff72", "id": 75, "image": null, "kanji": [], "meaning": "Leader", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/leader"}, {"char": "\u5196", "id": 76, "image": null, "kanji": [], "meaning": "Forehead", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/forehead"}, {"char": "\u5b80", "id": 78, "image": null, "kanji": [], "meaning": "Roof", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/roof"}, {"char": "\u5f0b", "id": 79, "image": null, "kanji": [], "meaning": "Ceremony", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/ceremony"}, {"char": "\u7af9", "id": 85, "image": null, "kanji": [], "meaning": "Bamboo", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/bamboo"}, {"char": "\u7cf8", "id": 86, "image": null, "kanji": [], "meaning": "Thread", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/thread"}, {"char": "\u8279", "id": 90, "image": null, "kanji": [], "meaning": "Flowers", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/flowers"}, {"char": "\u898b", "id": 91, "image": null, "kanji": [], "meaning": "See", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/see"}, {"char": "\u8c9d", "id": 94, "image": null, "kanji": [], "meaning": "Shellfish", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/shellfish"}, {"char": "\u8db3", "id": 95, "image": null, "kanji": [], "meaning": "Foot", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/foot"}, {"char": "\u7c73", "id": 98, "image": null, "kanji": [], "meaning": "Rice", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/rice"}, {"char": "\u5dfe", "id": 102, "image": null, "kanji": [], "meaning": "Towel", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/towel"}, {"char": "\u6c35", "id": 103, "image": null, "kanji": [], "meaning": "Tsunami", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/tsunami"}, {"char": "\u2ecc", "id": 114, "image": null, "kanji": [], "meaning": "Scooter", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/scooter"}, {"char": "\u65a4", "id": 115, "image": null, "kanji": [], "meaning": "Axe", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/axe"}, {"char": "\u5382", "id": 116, "image": null, "kanji": [], "meaning": "Cliff", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/cliff"}, {"char": "\u8a00", "id": 117, "image": null, "kanji": [], "meaning": "Say", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/say"}, {"char": "\u91d1", "id": 118, "image": null, "kanji": [], "meaning": "Gold", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/gold"}, {"char": "\u518b", "id": 121, "image": null, "kanji": [], "meaning": "Mustache", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/mustache"}, {"char": "\u51ab", "id": 123, "image": null, "kanji": [], "meaning": "Ice", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/ice"}, {"char": "\u725b", "id": 126, "image": null, "kanji": [], "meaning": "Cow", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/cow"}, {"char": "\u5202", "id": 128, "image": null, "kanji": [], "meaning": "Knife", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/knife"}, {"char": "\u30e0", "id": 140, "image": null, "kanji": [], "meaning": "Private", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/private"}, {"char": "\u6b20", "id": 142, "image": null, "kanji": [], "meaning": "Lack", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/lack"}, {"char": "\u592b", "id": 146, "image": null, "kanji": [], "meaning": "Husband", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/husband"}, {"char": "\u9ec4", "id": 152, "image": null, "kanji": [], "meaning": "Yellow", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/yellow"}, {"char": "\u4e3b", "id": 154, "image": null, "kanji": [], "meaning": "Master", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/master"}, {"char": "\u30e6", "id": 157, "image": null, "kanji": [], "meaning": "Hook", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/hook"}, {"char": "\u5df3", "id": 158, "image": null, "kanji": [], "meaning": "Snake", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/snake"}, {"char": "\u6bb3", "id": 160, "image": null, "kanji": [], "meaning": "Weapon", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/weapon"}, {"char": "\u6bd4", "id": 161, "image": null, "kanji": [], "meaning": "Compare", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/compare"}, {"char": "\u91c6", "id": 164, "image": null, "kanji": [], "meaning": "Sickle", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/sickle"}, {"char": "\u99ac", "id": 165, "image": null, "kanji": [], "meaning": "Horse", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/horse"}, {"char": "\u7a74", "id": 170, "image": null, "kanji": [], "meaning": "Hole", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/hole"}, {"char": "\u961d", "id": 176, "image": null, "kanji": [], "meaning": "Building", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/building"}, {"char": "\u5404", "id": 180, "image": null, "kanji": [], "meaning": "Kiss", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/kiss"}, {"char": "\u793a", "id": 207, "image": null, "kanji": [], "meaning": "Jackhammer", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/jackhammer"}, {"char": "\u975e", "id": 209, "image": null, "kanji": [], "meaning": "Criminal", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/criminal"}, {"char": "\u9580", "id": 214, "image": null, "kanji": [], "meaning": "Gate", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/gate"}, {"char": "\u675f", "id": 219, "image": null, "kanji": [], "meaning": "Bundle", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/bundle"}, {"char": "\u6b63", "id": 229, "image": null, "kanji": [], "meaning": "Correct", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/correct"}, {"char": "\u5fc4", "id": 232, "image": null, "kanji": [], "meaning": "Soul", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/soul"}, {"char": "\u767e", "id": 239, "image": null, "kanji": [], "meaning": "Hundred", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/hundred"}, {"char": "\u96b9", "id": 240, "image": null, "kanji": [], "meaning": "Turkey", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/turkey"}, {"char": "\u9762", "id": 250, "image": null, "kanji": [], "meaning": "Face", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/face"}, {"char": "\u7121", "id": 252, "image": null, "kanji": [], "meaning": "Nothing", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/nothing"}, {"char": "\u98db", "id": 270, "image": null, "kanji": [], "meaning": "Fly", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/fly"}, {"char": "\u5931", "id": 275, "image": null, "kanji": [], "meaning": "Fault", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/fault"}, {"char": "\u4ead", "id": 290, "image": null, "kanji": [], "meaning": "Restaurant", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/restaurant"}, {"char": "\u4e21", "id": 304, "image": null, "kanji": [], "meaning": "Both", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/both"}, {"char": "\u7532", "id": 330, "image": null, "kanji": [], "meaning": "Turtle Shell", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/turtle-shell"}, {"char": "\u4e26", "id": 334, "image": null, "kanji": [], "meaning": "Line Up", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/line-up"}, {"char": "\u5203", "id": 393, "image": null, "kanji": [], "meaning": "Blade", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/blade"}, {"char": "\u758b", "id": 420, "image": null, "kanji": [], "meaning": "Coat Rack", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/coat-rack"}, {"char": "\u820e", "id": 433, "image": null, "kanji": [], "meaning": "Cottage", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/cottage"}, {"char": "\u4e37", "id": 8767, "image": null, "kanji": [], "meaning": "Horns", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/horns"}, {"char": "\u9fb8", "id": 8769, "image": null, "kanji": [], "meaning": "Viking", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/viking"}, {"char": "\u3452", "id": 8785, "image": null, "kanji": [], "meaning": "Squid", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/squid"}, {"char": null, "id": 8787, "image": "https://files.wanikani.com/15z81qc4c77tmjeypri69yrtipgd", "kanji": [], "meaning": "Yurt", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/yurt"}, {"char": null, "id": 8792, "image": "https://files.wanikani.com/43evwoxebvriistgr2ti2lvnwjkd", "kanji": [], "meaning": "Comb", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/comb"}, {"char": "\u9fb9", "id": 8819, "image": null, "kanji": [], "meaning": "Gladiator", "radicals": [], "reading_display": "", "url": "https://www.wanikani.com/radicals/gladiator"}], "test_url": "/n3-kanji-flash/en/week/1/test/radicals/", "type": "radicals", "week": 1}
+</script>
+<script id="i18n-strings" type="application/json">
+{"answer_was": "Answer", "btn_check": "Check", "btn_continue": "Continue", "btn_next": "Next \u2192", "btn_prev": "\u2190 Previous", "btn_show_answer": "Show answer", "correct": "Correct", "incorrect": "Incorrect", "lesson_done": "Lesson complete", "lesson_progress": "Item {pos} of {total}", "no_items": "Nothing to show here yet.", "placeholder_meaning": "type the meaning\u2026", "placeholder_reading": "type the reading in kana\u2026", "q_meaning_kanji": "What is the meaning of this kanji?", "q_meaning_radicals": "What is the meaning of this radical?", "q_meaning_vocab": "What is the meaning of this word?", "q_reading_kanji": "What is the reading of this kanji?", "q_reading_vocab": "What is the reading of this word?", "question_of": "{pos} / {total}", "test_complete": "Test complete", "wani_open": "Open on WaniKani"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 kanji study site · kanji list from 日本語総まとめ N3 漢字 · language data from WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initLesson();</script>
+
+</body>
+</html>

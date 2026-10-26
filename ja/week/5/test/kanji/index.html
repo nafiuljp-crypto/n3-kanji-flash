@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漢字テスト · 第5週 · N3 漢字</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/ja/" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/ja/">ホーム</a>
+            <a href="/n3-kanji-flash/ja/test/">テスト</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="/n3-kanji-flash/ja/ja/week/5/" class="back-link">← 第5週</a>
+    <h1>漢字テスト · <span class="muted">第5週</span></h1>
+    <p class="muted">何度でも受けられます。</p>
+</section>
+
+<section class="test-shell" id="test-shell">
+    <div class="test-top">
+        <span id="test-progress-text" class="test-progress-text"></span>
+        <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
+        <span class="score-tracker">
+            <span class="score-correct">✅ <span id="score-correct">0</span></span>
+            <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+        </span>
+    </div>
+
+    <div class="question-card" id="question-card">
+        <div class="question-label" id="question-label"></div>
+        <div class="item-glyph" id="question-glyph">—</div>
+        <input type="text" id="answer-input" class="answer-input" autocomplete="off"
+               autocapitalize="off" autocorrect="off" spellcheck="false">
+        <div class="question-feedback hidden" id="question-feedback"></div>
+        <div class="question-actions">
+            <button id="check-btn" class="btn btn-primary">確認</button>
+            <button id="show-btn" class="btn btn-link">答えを見る</button>
+            <button id="continue-btn" class="btn btn-primary hidden">次へ</button>
+        </div>
+    </div>
+</section>
+
+<section class="test-shell hidden" id="test-result">
+    <div class="question-card">
+        <h2>テスト完了</h2>
+        <div class="result-stats">
+            <div class="stat-card"><div class="stat-num" id="final-correct">0</div><div class="stat-label">正解</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-wrong">0</div><div class="stat-label">不正解</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-pct">0%</div><div class="stat-label">正答率</div></div>
+        </div>
+        <div class="wrong-review hidden" id="wrong-review">
+            <h3>復習する項目</h3>
+            <div class="wrong-list" id="wrong-list"></div>
+        </div>
+        <div class="done-actions">
+            <button id="retry-wrong-btn" class="btn btn-primary hidden">間違いだけやり直す</button>
+            <button id="retake-btn" class="btn btn-secondary">もう一度受ける</button>
+            <a class="btn btn-link" href="/n3-kanji-flash/ja/ja/week/5/">← 第5週</a>
+        </div>
+    </div>
+</section>
+
+<script id="page-data" type="application/json">
+{"items": [{"char": "\u793c", "meanings": ["thanks, gratitude; manners", "Thanks", "Etiquette"], "readings": ["\u308c\u3044", "\u30ec\u30a4"]}, {"char": "\u4f3a", "meanings": ["visit, ask (humble form)", "Inquire"], "readings": ["\u3057", "\u3046\u304b\u304c", "\u3046\u304b\u304c\u3046"]}, {"char": "\u9045", "meanings": ["tardiness; slow; late", "Slow", "Late"], "readings": ["\u3061", "\u304a\u305d", "\u304a\u304f", "\u30c1", "\u304a\u305d\u3044 \u304a\u304f\u308c\u308b"]}, {"char": "\u5931", "meanings": ["rudeness; failure", "Fault"], "readings": ["\u3057\u3064", "\u3046\u3057\u306a", "\u30b7\u30c4"]}, {"char": "\u6c57", "meanings": ["perspiration, sweat", "Sweat"], "readings": ["\u304b\u3093", "\u3042\u305b", "\u30ab\u30f3"]}, {"char": "\u5ff5", "meanings": ["regret, disappointment; commemoration", "Thought"], "readings": ["\u306d\u3093", "\u30cd\u30f3"]}, {"char": "\u6d99", "meanings": ["tear(s)", "Teardrop"], "readings": ["\u308b\u3044", "\u306a\u307f\u3060", "\u30eb\u30a4"]}, {"char": "\u7b11", "meanings": ["laugh, smile", "Laugh"], "readings": ["\u3057\u3087\u3046", "\u308f\u3089", "\u3048", "\u30b7\u30e7\u30a6", "\u308f\u3089\u3046"]}, {"char": "\u8abf", "meanings": ["condition; investigation; emphasis", "Investigate", "Tone"], "readings": ["\u3061\u3087\u3046", "\u3057\u3089", "\u30c1\u30e7\u30a6", "\u3057\u3089\u3079\u308b"]}, {"char": "\u67fb", "meanings": ["investigation, inquiry", "Inspect", "Investigate"], "readings": ["\u3055", "\u30b5"]}, {"char": "\u79fb", "meanings": ["move, transfer; shift", "Shift"], "readings": ["\u3044", "\u3046\u3064", "\u30a4", "\u3046\u3064\u308b \u3046\u3064\u3059"]}, {"char": "\u96e3", "meanings": ["difficulty; difficult", "Difficult"], "readings": ["\u306a\u3093", "\u3080\u305a\u304b", "\u30ca\u30f3", "\u3080\u305a\u304b\u3057\u3044"]}, {"char": "\u7c21", "meanings": ["easy, simple", "Simplicity"], "readings": ["\u304b\u3093", "\u30ab\u30f3"]}, {"char": "\u5358", "meanings": ["vocabulary; unit", "Simple"], "readings": ["\u305f\u3093", "\u30bf\u30f3"]}, {"char": "\u611f", "meanings": ["feel; inspiration", "Feeling"], "readings": ["\u304b\u3093", "\u30ab\u30f3"]}, {"char": "\u60f3", "meanings": ["impressions, thoughts; anticipation", "Imagine", "Contemplate"], "readings": ["\u305d\u3046", "\u305d", "\u304a\u3082", "\u30bd\u30a6"]}, {"char": "\u7df4", "meanings": ["practice", "Practice"], "readings": ["\u308c\u3093", "\u306d", "\u30ec\u30f3"]}, {"char": "\u6700", "meanings": ["most; recently; first, last", "Most"], "readings": ["\u3055\u3044", "\u3082\u3063\u3068", "\u30b5\u30a4", "\u3082\u3063\u3068\u3082"]}, {"char": "\u9069", "meanings": ["correct, appropriate; comfortable", "Suitable"], "readings": ["\u3066\u304d", "\u30c6\u30ad"]}, {"char": "\u9078", "meanings": ["election; choose; a player", "Choose"], "readings": ["\u305b\u3093", "\u3048\u3089", "\u30bb\u30f3", "\u3048\u3089\u3076"]}, {"char": "\u9055", "meanings": ["different, wrong; a mistake", "Different"], "readings": ["\u3044", "\u3061\u304c", "\u30a4", "\u3061\u304c\u3046 \u3061\u304c\u3048\u308b"]}, {"char": "\u76f4", "meanings": ["straight line; direct; fix, be repaired", "Straight", "Direct", "Fix"], "readings": ["\u3061\u3087\u304f", "\u3058\u304d", "\u306a\u304a", "\u30c1\u30e7\u30af", "\u305f\u3060\u3057\u3044 \u306a\u304a\u3059 \u306a\u304a\u308b"]}, {"char": "\u5fa9", "meanings": ["review; recovery; a round trip", "Restore"], "readings": ["\u3075\u304f", "\u30d5\u30af"]}, {"char": "\u8f9e", "meanings": ["dictionary; resign", "Quit", "Word"], "readings": ["\u3058", "\u3084", "\u30b8", "\u3084\u3081\u308b"]}, {"char": "\u5bbf", "meanings": ["a homework; an inn, a hotel", "Lodge"], "readings": ["\u3057\u3085\u304f", "\u3084\u3069", "\u30b7\u30e5\u30af"]}, {"char": "\u6628", "meanings": ["yesterday; last night; last year", "Previous", "Yesterday"], "readings": ["\u3055\u304f", "\u30b5\u30af"]}, {"char": "\u541b", "meanings": ["you (honorific, male); Mr.", "Buddy", "Ruler"], "readings": ["\u304f\u3093", "\u304d\u307f", "\u30af\u30f3"]}, {"char": "\u7d50", "meanings": ["splendid, nice; after all; tie, connect", "Bind", "Tie"], "readings": ["\u3051\u3064", "\u3080\u3059", "\u3086", "\u30b1\u30c4", "\u3080\u3059\u3076"]}, {"char": "\u5a5a", "meanings": ["marriage; engagement", "Marriage"], "readings": ["\u3053\u3093", "\u30b3\u30f3"]}, {"char": "\u795d", "meanings": ["a holiday, festival; celebration", "Celebrate"], "readings": ["\u3057\u3085\u304f", "\u3057\u3085\u3046", "\u3044\u308f", "\u30b7\u30e5\u30af", "\u3044\u308f\u3046"]}, {"char": "\u66f2", "meanings": ["a piece of music; a curve; bend", "Music", "Bend"], "readings": ["\u304d\u3087\u304f", "\u307e", "\u30ad\u30e7\u30af", "\u307e\u304c\u308b \u307e\u3052\u308b"]}, {"char": "\u5965", "meanings": ["another person\u0027s wife; innermost", "Interior"], "readings": ["\u304a\u3046", "\u304a\u304f", "\u30aa\u30a6"]}, {"char": "\u5bdd", "meanings": ["sleep; a nap; late riser", "Lie Down", "Sleep"], "readings": ["\u3057\u3093", "\u306d", "\u30b7\u30f3", "\u306d\u308b"]}, {"char": "\u75db", "meanings": ["headache, stomach ache; sore, painful", "Pain"], "readings": ["\u3064\u3046", "\u3044\u305f", "\u30c4\u30a6", "\u3044\u305f\u3044"]}, {"char": "\u71b1", "meanings": ["heat, fever; enthusiasm, zeal", "Heat", "Fever"], "readings": ["\u306d\u3064", "\u3042\u3064", "\u30cd\u30c4", "\u3042\u3064\u3044"]}, {"char": "\u866b", "meanings": ["an insect", "Insect", "Bug"], "readings": ["\u3061\u3085\u3046", "\u304d", "\u3080\u3057", "\u30c1\u30e5\u30a6"]}, {"char": "\u6b6f", "meanings": ["dentistry; teeth; a dentist; a decayed tooth", "Tooth", "Teeth"], "readings": ["\u3057", "\u306f", "\u30b7"]}, {"char": "\u6cbb", "meanings": ["politics, government; heal, cure; a treatment", "Cure", "Heal", "Reign", "Rule"], "readings": ["\u3058", "\u3061", "\u306a\u304a", "\u30c1", "\u306a\u304a\u308b \u306a\u304a\u3059"]}, {"char": "\u6c5a", "meanings": ["dirty; become dirty", "Dirty"], "readings": ["\u304a", "\u3088\u3054", "\u304d\u305f\u306a", "\u3051\u304c", "\u30aa", "\u3051\u304c\u308c\u308b \u3088\u3054\u308c\u308b \u304d\u305f\u306a\u3044"]}, {"char": "\u4e26", "meanings": ["line up, set up; the alignment of your teeth", "Line Up"], "readings": ["\u3078\u3044", "\u306a\u3089", "\u306a\u307f", "\u30d8\u30a4", "\u306a\u3089\u3076 \u306a\u3089\u3079\u308b"]}, {"char": "\u4ed6", "meanings": ["other", "Other"], "readings": ["\u305f", "\u307b\u304b", "\u30bf"]}, {"char": "\u8eab", "meanings": ["height; single, unmarried; social status; sashimi", "Body", "Oneself"], "readings": ["\u3057\u3093", "\u307f", "\u30b7\u30f3"]}, {"char": "\u9152", "meanings": ["sake; cooking sake; alcohol; a liquor store", "Alcohol"], "readings": ["\u3057\u3085", "\u3055\u3051", "\u3055\u304b", "\u30b7\u30e5", "\u3055\u3051 \u3055\u304b"]}, {"char": "\u5438", "meanings": ["breathing, respiration; breathe/inhale", "Suck", "Inhale"], "readings": ["\u304d\u3085\u3046", "\u3059", "\u30ad\u30e5\u30a6", "\u3059\u3046"]}, {"char": "\u6b32", "meanings": ["appetite; a will, eagerness; want", "Want"], "readings": ["\u3088\u304f", "\u307b", "\u30e8\u30af", "\u307b\u3057\u3044"]}, {"char": "\u7720", "meanings": ["sleep; sleepy; to sleep", "Sleep"], "readings": ["\u307f\u3093", "\u306d\u3080", "\u30df\u30f3", "\u306d\u3080\u3044 \u306d\u3080\u308b"]}, {"char": "\u75b2", "meanings": ["get tired, exhaust", "Tired"], "readings": ["\u3072", "\u3064\u304b", "\u30d2", "\u3064\u304b\u308c\u308b"]}, {"char": "\u606f", "meanings": ["a breath; a son; be short of breath", "Breath"], "readings": ["\u305d\u304f", "\u3044\u304d", "\u30bd\u30af"]}, {"char": "\u547c", "meanings": ["breathing, respiration; call", "Call"], "readings": ["\u3053", "\u3088", "\u30b3", "\u3088\u3076"]}], "scope": "week5", "type": "kanji"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"answer_was": "\u7b54\u3048", "btn_check": "\u78ba\u8a8d", "btn_continue": "\u6b21\u3078", "btn_next": "\u6b21\u3078 \u2192", "btn_prev": "\u2190 \u524d\u3078", "btn_show_answer": "\u7b54\u3048\u3092\u898b\u308b", "correct": "\u6b63\u89e3", "incorrect": "\u4e0d\u6b63\u89e3", "lesson_done": "\u30ec\u30c3\u30b9\u30f3\u5b8c\u4e86", "lesson_progress": "{pos} / {total}", "no_items": "\u9805\u76ee\u304c\u3042\u308a\u307e\u305b\u3093\u3002", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u304b\u306a\u3067\u5165\u529b\u2026", "q_meaning_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u610f\u5473\u306f\uff1f", "q_meaning_radicals": "\u3053\u306e\u90e8\u9996\u306e\u610f\u5473\u306f\uff1f", "q_meaning_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u610f\u5473\u306f\uff1f", "q_reading_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u8aad\u307f\u306f\uff1f", "q_reading_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u8aad\u307f\u306f\uff1f", "question_of": "{pos} / {total}", "test_complete": "\u30c6\u30b9\u30c8\u5b8c\u4e86", "wani_open": "WaniKani \u3067\u958b\u304f"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 漢字学習サイト · 漢字一覧：日本語総まとめ N3 漢字 · データ：WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initTest();</script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第 4 · かう</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/ja/" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/ja/">ホーム</a>
+            <a href="/n3-kanji-flash/ja/test/">テスト</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="/n3-kanji-flash/ja/" class="back-link">← 週一覧</a>
+    <h1>第 4 · <span class="jp">かう</span></h1>
+    <p class="theme-en">Buy · 사다</p>
+</section>
+
+<section class="games">
+    <h2>📚 レッスン</h2>
+    <div class="learn-grid">
+        
+        
+        <a href="/n3-kanji-flash/ja/week/4/learn/radicals/"
+           class="learn-card learn-radicals" data-progress-type="radicals"
+           data-total="0">
+            <div class="learn-icon">🧩</div>
+            <div class="learn-title">部首</div>
+            <div class="learn-sub">この週の漢字を組み立てる部首。</div>
+            <div class="learn-meta">0 項目</div>
+            <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
+            <div class="learn-state" data-state>レッスンを始める</div>
+        </a>
+        
+        
+        <a href="/n3-kanji-flash/ja/week/4/learn/kanji/"
+           class="learn-card learn-kanji" data-progress-type="kanji"
+           data-total="0">
+            <div class="learn-icon">🈶</div>
+            <div class="learn-title">漢字</div>
+            <div class="learn-sub">意味・読み方・構成する部首。</div>
+            <div class="learn-meta">0 項目</div>
+            <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
+            <div class="learn-state" data-state>レッスンを始める</div>
+        </a>
+        
+        
+        <a href="/n3-kanji-flash/ja/week/4/learn/vocab/"
+           class="learn-card learn-vocab" data-progress-type="vocab"
+           data-total="0">
+            <div class="learn-icon">📖</div>
+            <div class="learn-title">単語</div>
+            <div class="learn-sub">学んだ漢字で書く単語。</div>
+            <div class="learn-meta">0 項目</div>
+            <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
+            <div class="learn-state" data-state>レッスンを始める</div>
+        </a>
+        
+    </div>
+</section>
+
+<section class="games">
+    <h2>✏️ テスト</h2>
+    <p class="muted">何度でも受けられます。</p>
+    <div class="test-grid">
+        
+        <a href="/n3-kanji-flash/ja/week/4/test/radicals/"
+           class="test-card test-radicals" data-test-type="radicals">
+            <div class="test-icon">✏️</div>
+            <div class="test-title">部首テスト</div>
+            <div class="test-sub">部首 → 意味。</div>
+            <div class="test-score" data-score></div>
+            <div class="test-action">テストを始める</div>
+        </a>
+        
+        <a href="/n3-kanji-flash/ja/week/4/test/kanji/"
+           class="test-card test-kanji" data-test-type="kanji">
+            <div class="test-icon">✏️</div>
+            <div class="test-title">漢字テスト</div>
+            <div class="test-sub">漢字 → 意味と読み。</div>
+            <div class="test-score" data-score></div>
+            <div class="test-action">テストを始める</div>
+        </a>
+        
+        <a href="/n3-kanji-flash/ja/week/4/test/vocab/"
+           class="test-card test-vocab" data-test-type="vocab">
+            <div class="test-icon">✏️</div>
+            <div class="test-title">単語テスト</div>
+            <div class="test-sub">単語 → 意味と読み。</div>
+            <div class="test-score" data-score></div>
+            <div class="test-action">テストを始める</div>
+        </a>
+        
+    </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 漢字学習サイト · 漢字一覧：日本語総まとめ N3 漢字 · データ：WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initWeek(4);</script>
+
+</body>
+</html>

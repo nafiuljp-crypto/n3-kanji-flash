@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanji test · Week 2 · N3 Kanji</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/en/" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/en/">Home</a>
+            <a href="/n3-kanji-flash/en/test/">Tests</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="/n3-kanji-flash/en/en/week/2/" class="back-link">← Week 2</a>
+    <h1>Kanji test · <span class="muted">Week 2</span></h1>
+    <p class="muted">Repeatable — retake as often as you like.</p>
+</section>
+
+<section class="test-shell" id="test-shell">
+    <div class="test-top">
+        <span id="test-progress-text" class="test-progress-text"></span>
+        <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
+        <span class="score-tracker">
+            <span class="score-correct">✅ <span id="score-correct">0</span></span>
+            <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+        </span>
+    </div>
+
+    <div class="question-card" id="question-card">
+        <div class="question-label" id="question-label"></div>
+        <div class="item-glyph" id="question-glyph">—</div>
+        <input type="text" id="answer-input" class="answer-input" autocomplete="off"
+               autocapitalize="off" autocorrect="off" spellcheck="false">
+        <div class="question-feedback hidden" id="question-feedback"></div>
+        <div class="question-actions">
+            <button id="check-btn" class="btn btn-primary">Check</button>
+            <button id="show-btn" class="btn btn-link">Show answer</button>
+            <button id="continue-btn" class="btn btn-primary hidden">Continue</button>
+        </div>
+    </div>
+</section>
+
+<section class="test-shell hidden" id="test-result">
+    <div class="question-card">
+        <h2>Test complete</h2>
+        <div class="result-stats">
+            <div class="stat-card"><div class="stat-num" id="final-correct">0</div><div class="stat-label">Correct</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-wrong">0</div><div class="stat-label">Wrong</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-pct">0%</div><div class="stat-label">Accuracy</div></div>
+        </div>
+        <div class="wrong-review hidden" id="wrong-review">
+            <h3>Items to review</h3>
+            <div class="wrong-list" id="wrong-list"></div>
+        </div>
+        <div class="done-actions">
+            <button id="retry-wrong-btn" class="btn btn-primary hidden">Retry wrong answers</button>
+            <button id="retake-btn" class="btn btn-secondary">Retake the whole test</button>
+            <a class="btn btn-link" href="/n3-kanji-flash/en/en/week/2/">← Week 2</a>
+        </div>
+    </div>
+</section>
+
+<script id="page-data" type="application/json">
+{"items": [{"char": "\u6e96", "meanings": ["standard", "Standard"], "readings": ["\u3058\u3085\u3093", "\u30b8\u30e5\u30f3"]}, {"char": "\u5099", "meanings": ["equip", "Provide", "Equip", "Prepare"], "readings": ["\u3073", "\u305d\u306a", "\u30d3", "\u305d\u306a\u3048\u308b"]}, {"char": "\u55b6", "meanings": ["business", "Manage"], "readings": ["\u3048\u3044", "\u3044\u3068\u306a", "\u30a8\u30a4"]}, {"char": "\u9589", "meanings": ["close", "Closed", "Close", "Closure"], "readings": ["\u3078\u3044", "\u3057", "\u3068", "\u30d8\u30a4", "\u3057\u3081\u308b, \u3068\u3058\u308b"]}, {"char": "\u6848", "meanings": ["plan", "Plan"], "readings": ["\u3042\u3093", "\u30a2\u30f3"]}, {"char": "\u5185", "meanings": ["inside", "Inside", "Within"], "readings": ["\u306a\u3044", "\u3046\u3061", "\u30ca\u30a4"]}, {"char": "\u4e88", "meanings": ["beforehand", "Beforehand"], "readings": ["\u3088", "\u3042\u3089\u304b\u3058", "\u30e8"]}, {"char": "\u7d04", "meanings": ["promise", "Promise"], "readings": ["\u3084\u304f", "\u30e4\u30af"]}, {"char": "\u7159", "meanings": ["smoke", "Smoke"], "readings": ["\u3048\u3093", "\u3051\u3080", "\u3051\u3080\u308a", "\u30a8\u30f3"]}, {"char": "\u5f53", "meanings": ["hit", "Correct", "Right", "Success"], "readings": ["\u3068\u3046", "\u3042", "\u30c8\u30a6", "\u3042\u305f\u308b"]}, {"char": "\u5168", "meanings": ["whole", "All", "Whole"], "readings": ["\u305c\u3093", "\u3059\u3079", "\u307e\u3063\u305f", "\u30bc\u30f3"]}, {"char": "\u5ba2", "meanings": ["guest", "Guest", "Customer"], "readings": ["\u304d\u3083\u304f", "\u30ad\u30e3\u30af"]}, {"char": "\u69d8", "meanings": ["manner", "Formal Name Ender", "Manner"], "readings": ["\u3088\u3046", "\u3055\u307e", "\u30e8\u30a6"]}, {"char": "\u89e3", "meanings": ["understand", "Solve", "Untie"], "readings": ["\u304b\u3044", "\u3068", "\u30ab\u30a4"]}, {"char": "\u5354", "meanings": ["cooperate", "Cooperation"], "readings": ["\u304d\u3087\u3046", "\u30ad\u30e7\u30a6"]}, {"char": "\u9858", "meanings": ["wish", "Request"], "readings": ["\u304c\u3093", "\u306d\u304c", "\u306d\u304c\u3044", "\u30ac\u30f3", "\u306d\u304c\u3046"]}, {"char": "\u89b3", "meanings": ["see", "View"], "readings": ["\u304b\u3093", "\u307f", "\u30ab\u30f3"]}, {"char": "\u5712", "meanings": ["garden", "Garden", "Park"], "readings": ["\u3048\u3093", "\u305d\u306e", "\u30a8\u30f3"]}, {"char": "\u6e2f", "meanings": ["port", "Harbor", "Port", "Harbour"], "readings": ["\u3053\u3046", "\u307f\u306a\u3068", "\u30b3\u30a6"]}, {"char": "\u904a", "meanings": ["play", "Play"], "readings": ["\u3086\u3046", "\u3042\u305d", "\u30e6\u30a6", "\u3042\u305d\u3076"]}, {"char": "\u7f8e", "meanings": ["beautiful", "Beauty", "Beautiful"], "readings": ["\u3073", "\u307f", "\u3046\u3064\u304f", "\u30d3", "\u3046\u3064\u304f\u3057\u3044"]}, {"char": "\u8853", "meanings": ["art", "Technique", "Art"], "readings": ["\u3058\u3085\u3064", "\u3059\u3079", "\u30b8\u30e5\u30c4"]}, {"char": "\u795e", "meanings": ["god", "God", "Spirit"], "readings": ["\u3057\u3093", "\u3058\u3093", "\u304b\u307f", "\u30b7\u30f3, \u30b8\u30f3", "\u30ab\u30df"]}, {"char": "\u5bfa", "meanings": ["temple", "Temple"], "readings": ["\u3058", "\u3066\u3089", "\u30b8"]}, {"char": "\u5f79", "meanings": ["role", "Service", "Duty"], "readings": ["\u3084\u304f", "\u3048\u304d", "\u30e4\u30af"]}, {"char": "\u90f5", "meanings": ["mail", "Mail", "Post"], "readings": ["\u3086\u3046", "\u30e6\u30a6"]}, {"char": "\u5c40", "meanings": ["bureau", "Bureau", "Department"], "readings": ["\u304d\u3087\u304f", "\u30ad\u30e7\u30af"]}, {"char": "\u4ea4", "meanings": ["exchange", "Mix", "Mingle"], "readings": ["\u3053\u3046", "\u307e\u3058", "\u307e", "\u304b", "\u30b3\u30a6"]}, {"char": "\u5dee", "meanings": ["difference", "Distinction"], "readings": ["\u3055", "\u3055", "\u30b5", "\u3055\u3059"]}, {"char": "\u70b9", "meanings": ["point", "Point"], "readings": ["\u3066\u3093", "\u3064", "\u30c6\u30f3"]}, {"char": "\u6a4b", "meanings": ["bridge", "Bridge"], "readings": ["\u304d\u3087\u3046", "\u306f\u3057", "\u30ad\u30e7\u30a6"]}, {"char": "\u516c", "meanings": ["public", "Public"], "readings": ["\u3053\u3046", "\u304f", "\u304a\u304a\u3084\u3051", "\u30b3\u30a6"]}, {"char": "\u53d7", "meanings": ["receive", "Accept", "Receive"], "readings": ["\u3058\u3085", "\u3046", "\u30b8\u30e5", "\u3046\u3051\u308b"]}, {"char": "\u4ed8", "meanings": ["attach", "Attach"], "readings": ["\u3075", "\u3064", "\u30d5", "\u3064\u3051\u308b, \u3064\u304f"]}, {"char": "\u79d1", "meanings": ["department", "Science", "Course", "Department"], "readings": ["\u304b", "\u30ab"]}, {"char": "\u9f3b", "meanings": ["nose", "Nose"], "readings": ["\u3073", "\u306f\u306a", "\u30d3"]}, {"char": "\u5a66", "meanings": ["woman", "Lady", "Wife"], "readings": ["\u3075", "\u30d5"]}, {"char": "\u5f62", "meanings": ["shape", "Shape", "Form", "Appearance"], "readings": ["\u3051\u3044", "\u304e\u3087\u3046", "\u304b\u305f", "\u304b\u305f\u3061", "\u30b1\u30a4, \u30ae\u30e7\u30a6"]}, {"char": "\u9aa8", "meanings": ["bone", "Bone"], "readings": ["\u3053\u3064", "\u307b\u306d", "\u30b3\u30c4"]}, {"char": "\u6298", "meanings": ["fold", "Fold", "Bend", "Break"], "readings": ["\u305b\u3064", "\u304a", "\u304a\u308a", "\u30bb\u30c4", "\u304a\u308b, \u304a\u308a\u308b"]}, {"char": "\u56f0", "meanings": ["trouble", "Distressed", "Troubled"], "readings": ["\u3053\u3093", "\u3053\u307e", "\u30b3\u30f3", "\u3053\u307e\u308b"]}, {"char": "\u6d88", "meanings": ["extinguish", "Extinguish"], "readings": ["\u3057\u3087\u3046", "\u304d", "\u3051", "\u30b7\u30e7\u30a6", "\u304d\u3048\u308b, \u3051\u3059"]}, {"char": "\u9632", "meanings": ["prevent", "Prevent", "Prevention"], "readings": ["\u307c\u3046", "\u3075\u305b", "\u30dc\u30a6", "\u3075\u305b\u3050"]}, {"char": "\u6551", "meanings": ["save", "Rescue"], "readings": ["\u304d\u3085\u3046", "\u3059\u304f", "\u30ad\u30e5\u30a6", "\u3059\u304f\u3046"]}, {"char": "\u8b66", "meanings": ["warn", "Warn", "Admonish"], "readings": ["\u3051\u3044", "\u30b1\u30a4"]}, {"char": "\u5bdf", "meanings": ["guess", "Guess"], "readings": ["\u3055\u3064", "\u30b5\u30c4"]}, {"char": "\u6545", "meanings": ["cause", "Circumstance", "Reason"], "readings": ["\u3053", "\u3086\u3048", "\u30b3"]}, {"char": "\u4f1d", "meanings": ["transmit", "Transmit", "Tell"], "readings": ["\u3067\u3093", "\u3064\u305f", "\u3064\u3066", "\u30c7\u30f3", "\u3064\u305f\u3048\u308b, \u3064\u305f\u308f\u308b"]}], "scope": "week2", "type": "kanji"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"answer_was": "Answer", "btn_check": "Check", "btn_continue": "Continue", "btn_next": "Next \u2192", "btn_prev": "\u2190 Previous", "btn_show_answer": "Show answer", "correct": "Correct", "incorrect": "Incorrect", "lesson_done": "Lesson complete", "lesson_progress": "Item {pos} of {total}", "no_items": "Nothing to show here yet.", "placeholder_meaning": "type the meaning\u2026", "placeholder_reading": "type the reading in kana\u2026", "q_meaning_kanji": "What is the meaning of this kanji?", "q_meaning_radicals": "What is the meaning of this radical?", "q_meaning_vocab": "What is the meaning of this word?", "q_reading_kanji": "What is the reading of this kanji?", "q_reading_vocab": "What is the reading of this word?", "question_of": "{pos} / {total}", "test_complete": "Test complete", "wani_open": "Open on WaniKani"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 kanji study site · kanji list from 日本語総まとめ N3 漢字 · language data from WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initTest();</script>
+
+</body>
+</html>

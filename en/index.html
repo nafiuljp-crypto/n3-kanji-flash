@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home — N3 Kanji Flash Cards</title>
+    <title>N3 Kanji Study</title>
     <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
     <script>
     /* Language switcher + cookie initializer. Runs before any UI renders. */
@@ -24,9 +24,8 @@
                     e.preventDefault();
                     var newLang = a.getAttribute('data-lang');
                     setCookie('lang', newLang);
-                    var path = location.pathname;
-                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
-                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
                     var rest = (m && m[3]) ? m[3] : '/';
                     if (!rest.endsWith('/')) rest += '/';
                     location.href = prefix + '/' + newLang + rest;
@@ -41,8 +40,9 @@
         <a href="/n3-kanji-flash/en/" class="nav-brand">📚 N3 Kanji</a>
         <div class="nav-links">
             <a href="/n3-kanji-flash/en/">Home</a>
+            <a href="/n3-kanji-flash/en/test/">Tests</a>
             <div class="lang-switch">
-                <span class="lang-label">Language:</span>
+                <span class="lang-label">Language</span>
                 
                     
                         <span class="lang-current">EN</span>
@@ -59,95 +59,144 @@
     <main class="container">
         
 <section class="hero">
-    <h1>📖 N3 Kanji Flash Cards</h1>
-    <p class="lead">Sou Matome N3 Kanji · 6 chapters · Flash cards &amp; practice questions</p>
+    <h1>🈶 N3 Kanji Study</h1>
+    <p class="lead">Learn the radicals, then the kanji, then the vocabulary — and test yourself as many times as you like.</p>
+</section>
+
+<section class="overall">
+    <h2>Overall progress</h2>
+    <div class="overall-bars" id="overall-bars" data-totals='{"kanji": 293, "radicals": 263, "vocab": 571}'>
+        
+        <div class="overall-row">
+            <span class="overall-label">Radicals</span>
+            <div class="progress-bar"><div class="progress-fill" data-fill="radicals"></div></div>
+            <span class="overall-count" data-count="radicals">0 / 263</span>
+        </div>
+        
+        <div class="overall-row">
+            <span class="overall-label">Kanji</span>
+            <div class="progress-bar"><div class="progress-fill" data-fill="kanji"></div></div>
+            <span class="overall-count" data-count="kanji">0 / 293</span>
+        </div>
+        
+        <div class="overall-row">
+            <span class="overall-label">Vocabulary</span>
+            <div class="progress-bar"><div class="progress-fill" data-fill="vocab"></div></div>
+            <span class="overall-count" data-count="vocab">0 / 571</span>
+        </div>
+        
+    </div>
 </section>
 
 <section class="chapters">
-    <h2>Select a chapter</h2>
+    <h2>Weeks</h2>
     <div class="chapter-grid">
         
-        <a href="/n3-kanji-flash/en/chapter/1/" class="chapter-card">
+        <a href="/n3-kanji-flash/en/week/1/" class="chapter-card">
             <div class="chapter-number">Week 1</div>
             <div class="chapter-theme-jp">でかける①</div>
             <div class="chapter-theme-en">Go Out 1</div>
             <div class="chapter-stats">
-                <span>📝 6 days</span>
-                <span>🈶 50 kanji</span>
+                <span>🧩 87 Radicals</span>
+                <span>🈶 50 Kanji</span>
+                <span>📖 77 Vocabulary</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 practice</span>
-                <span>🎯 6 quiz</span>
+            <div class="week-progress" data-week="1"
+                 data-radicals="87"
+                 data-kanji="50"
+                 data-vocab="77">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/en/chapter/2/" class="chapter-card">
+        <a href="/n3-kanji-flash/en/week/2/" class="chapter-card">
             <div class="chapter-number">Week 2</div>
             <div class="chapter-theme-jp">でかける②</div>
             <div class="chapter-theme-en">Go Out 2</div>
             <div class="chapter-stats">
-                <span>📝 6 days</span>
-                <span>🈶 48 kanji</span>
+                <span>🧩 57 Radicals</span>
+                <span>🈶 48 Kanji</span>
+                <span>📖 87 Vocabulary</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 practice</span>
-                <span>🎯 5 quiz</span>
+            <div class="week-progress" data-week="2"
+                 data-radicals="57"
+                 data-kanji="48"
+                 data-vocab="87">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/en/chapter/3/" class="chapter-card">
+        <a href="/n3-kanji-flash/en/week/3/" class="chapter-card">
             <div class="chapter-number">Week 3</div>
             <div class="chapter-theme-jp">つかう</div>
             <div class="chapter-theme-en">Use</div>
             <div class="chapter-stats">
-                <span>📝 6 days</span>
-                <span>🈶 50 kanji</span>
+                <span>🧩 40 Radicals</span>
+                <span>🈶 50 Kanji</span>
+                <span>📖 87 Vocabulary</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 practice</span>
-                <span>🎯 7 quiz</span>
+            <div class="week-progress" data-week="3"
+                 data-radicals="40"
+                 data-kanji="50"
+                 data-vocab="87">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/en/chapter/4/" class="chapter-card">
+        <a href="/n3-kanji-flash/en/week/4/" class="chapter-card">
             <div class="chapter-number">Week 4</div>
             <div class="chapter-theme-jp">かう</div>
             <div class="chapter-theme-en">Buy</div>
             <div class="chapter-stats">
-                <span>📝 6 days</span>
-                <span>🈶 48 kanji</span>
+                <span>🧩 24 Radicals</span>
+                <span>🈶 48 Kanji</span>
+                <span>📖 99 Vocabulary</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 practice</span>
-                <span>🎯 10 quiz</span>
+            <div class="week-progress" data-week="4"
+                 data-radicals="24"
+                 data-kanji="48"
+                 data-vocab="99">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/en/chapter/5/" class="chapter-card">
+        <a href="/n3-kanji-flash/en/week/5/" class="chapter-card">
             <div class="chapter-number">Week 5</div>
             <div class="chapter-theme-jp">かく</div>
             <div class="chapter-theme-en">Write</div>
             <div class="chapter-stats">
-                <span>📝 6 days</span>
-                <span>🈶 49 kanji</span>
+                <span>🧩 32 Radicals</span>
+                <span>🈶 49 Kanji</span>
+                <span>📖 102 Vocabulary</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 practice</span>
-                <span>🎯 15 quiz</span>
+            <div class="week-progress" data-week="5"
+                 data-radicals="32"
+                 data-kanji="49"
+                 data-vocab="102">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/en/chapter/6/" class="chapter-card">
+        <a href="/n3-kanji-flash/en/week/6/" class="chapter-card">
             <div class="chapter-number">Week 6</div>
             <div class="chapter-theme-jp">よむ</div>
             <div class="chapter-theme-en">Read</div>
             <div class="chapter-stats">
-                <span>📝 6 days</span>
-                <span>🈶 48 kanji</span>
+                <span>🧩 23 Radicals</span>
+                <span>🈶 48 Kanji</span>
+                <span>📖 119 Vocabulary</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 practice</span>
-                <span>🎯 6 quiz</span>
+            <div class="week-progress" data-week="6"
+                 data-radicals="23"
+                 data-kanji="48"
+                 data-vocab="119">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
@@ -155,14 +204,16 @@
 </section>
 
 <section class="info">
-    <h2>How to use</h2>
+    <h2>How it works</h2>
     <ol>
         
-        <li>Pick a <strong>chapter</strong> (1–6).</li>
+        <li>Pick a week. Each week has <strong>radicals</strong>, <strong>kanji</strong>, and <strong>vocabulary</strong> lessons.</li>
         
-        <li>Use <strong>Flash cards</strong> to memorize kanji. Type your answer (reading or meaning); get instant feedback with example sentences.</li>
+        <li>Study the radicals first — every kanji is built from them.</li>
         
-        <li>Then take the <strong>Exercises</strong> — multiple-choice questions from the book's Day-7 practice set and the weekly quiz.</li>
+        <li>Then study the kanji and the vocabulary that uses them.</li>
+        
+        <li>Take the three tests: radicals, kanji, vocabulary. Repeat any test whenever you want; nothing is locked.</li>
         
     </ol>
 </section>
@@ -170,9 +221,12 @@
     </main>
 
     <footer class="footer">
-        <p>Sou Matome N3 Kanji · Tailscale only</p>
+        <p>N3 kanji study site · kanji list from 日本語総まとめ N3 漢字 · language data from WaniKani</p>
     </footer>
 
     
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initHome();</script>
+
 </body>
 </html>

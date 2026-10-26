@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}{{ T.week_word }} {{ week.week }} · {{ week.theme.jp }}{% endblock %}
+{% block content %}
+<section class="chapter-header">
+    <a href="{{ base }}{{ lang }}/" class="back-link">{{ T.back_home }}</a>
+    <h1>{{ T.week_word }} {{ week.week }} · <span class="jp">{{ week.theme.jp }}</span></h1>
+    <p class="theme-en">{{ week.theme.en }} · {{ week.theme.kr }}</p>
+</section>
+
+<section class="games">
+    <h2>📚 {{ T.learn_h2 }}</h2>
+    <div class="learn-grid">
+        {% for type, title, sub in [
+            ("radicals", T.learn_radicals, T.learn_radicals_sub),
+            ("kanji", T.learn_kanji, T.learn_kanji_sub),
+            ("vocab", T.learn_vocab, T.learn_vocab_sub),
+        ] %}
+        {% set count = week[type] | length %}
+        <a href="{{ base }}{{ lang }}/week/{{ week.week }}/learn/{{ type }}/"
+           class="learn-card learn-{{ type }}" data-progress-type="{{ type }}"
+           data-total="{{ count }}">
+            <div class="learn-icon">{{ {"radicals": "🧩", "kanji": "🈶", "vocab": "📖"}[type] }}</div>
+            <div class="learn-title">{{ title }}</div>
+            <div class="learn-sub">{{ sub }}</div>
+            <div class="learn-meta">{{ T.items_count.format(count=count) }}</div>
+            <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
+            <div class="learn-state" data-state>{{ T.start_learning }}</div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="games">
+    <h2>✏️ {{ T.test_h2 }}</h2>
+    <p class="muted">{{ T.repeat_note }}</p>
+    <div class="test-grid">
+        {% for type, title, sub in [
+            ("radicals", T.test_radicals, T.test_radicals_sub),
+            ("kanji", T.test_kanji, T.test_kanji_sub),
+            ("vocab", T.test_vocab, T.test_vocab_sub),
+        ] %}
+        <a href="{{ base }}{{ lang }}/week/{{ week.week }}/test/{{ type }}/"
+           class="test-card test-{{ type }}" data-test-type="{{ type }}">
+            <div class="test-icon">✏️</div>
+            <div class="test-title">{{ title }}</div>
+            <div class="test-sub">{{ sub }}</div>
+            <div class="test-score" data-score></div>
+            <div class="test-action">{{ T.start_test }}</div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ base }}static/app.js"></script>
+<script>window.N3App.initWeek({{ week.week }});</script>
+{% endblock %}

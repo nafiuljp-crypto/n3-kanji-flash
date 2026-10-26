@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>部首テスト · 第3週 · N3 漢字</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/ja/" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/ja/">ホーム</a>
+            <a href="/n3-kanji-flash/ja/test/">テスト</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="/n3-kanji-flash/ja/ja/week/3/" class="back-link">← 第3週</a>
+    <h1>部首テスト · <span class="muted">第3週</span></h1>
+    <p class="muted">何度でも受けられます。</p>
+</section>
+
+<section class="test-shell" id="test-shell">
+    <div class="test-top">
+        <span id="test-progress-text" class="test-progress-text"></span>
+        <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
+        <span class="score-tracker">
+            <span class="score-correct">✅ <span id="score-correct">0</span></span>
+            <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+        </span>
+    </div>
+
+    <div class="question-card" id="question-card">
+        <div class="question-label" id="question-label"></div>
+        <div class="item-glyph" id="question-glyph">—</div>
+        <input type="text" id="answer-input" class="answer-input" autocomplete="off"
+               autocapitalize="off" autocorrect="off" spellcheck="false">
+        <div class="question-feedback hidden" id="question-feedback"></div>
+        <div class="question-actions">
+            <button id="check-btn" class="btn btn-primary">確認</button>
+            <button id="show-btn" class="btn btn-link">答えを見る</button>
+            <button id="continue-btn" class="btn btn-primary hidden">次へ</button>
+        </div>
+    </div>
+</section>
+
+<section class="test-shell hidden" id="test-result">
+    <div class="question-card">
+        <h2>テスト完了</h2>
+        <div class="result-stats">
+            <div class="stat-card"><div class="stat-num" id="final-correct">0</div><div class="stat-label">正解</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-wrong">0</div><div class="stat-label">不正解</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-pct">0%</div><div class="stat-label">正答率</div></div>
+        </div>
+        <div class="wrong-review hidden" id="wrong-review">
+            <h3>復習する項目</h3>
+            <div class="wrong-list" id="wrong-list"></div>
+        </div>
+        <div class="done-actions">
+            <button id="retry-wrong-btn" class="btn btn-primary hidden">間違いだけやり直す</button>
+            <button id="retake-btn" class="btn btn-secondary">もう一度受ける</button>
+            <a class="btn btn-link" href="/n3-kanji-flash/ja/ja/week/3/">← 第3週</a>
+        </div>
+    </div>
+</section>
+
+<script id="page-data" type="application/json">
+{"items": [{"char": "\u4e3f", "image": null, "meanings": ["Slide"], "readings": []}, {"char": "\u4e85", "image": null, "meanings": ["Barb"], "readings": []}, {"char": "\u30ca", "image": null, "meanings": ["Narwhal"], "readings": []}, {"char": "\u7acb", "image": null, "meanings": ["Stand"], "readings": []}, {"char": "\u5143", "image": null, "meanings": ["Origin"], "readings": []}, {"char": "\u6238", "image": null, "meanings": ["Door"], "readings": []}, {"char": "\u76bf", "image": null, "meanings": ["Plate"], "readings": []}, {"char": "\u5e7a", "image": null, "meanings": ["Poop"], "readings": []}, {"char": "\u8eca", "image": null, "meanings": ["Car"], "readings": []}, {"char": "\u91cc", "image": null, "meanings": ["Village"], "readings": []}, {"char": "\u7676", "image": null, "meanings": ["Tent"], "readings": []}, {"char": "\u6613", "image": null, "meanings": ["Easy"], "readings": []}, {"char": "\u5485", "image": null, "meanings": ["Clown"], "readings": []}, {"char": "\u8c46", "image": null, "meanings": ["Beans"], "readings": []}, {"char": "\u4ee4", "image": null, "meanings": ["Orders"], "readings": []}, {"char": "\u6208", "image": null, "meanings": ["Drunkard"], "readings": []}, {"char": "\u826e", "image": null, "meanings": ["Root"], "readings": []}, {"char": "\u5176", "image": null, "meanings": ["Crab"], "readings": []}, {"char": "\u4e5a", "image": null, "meanings": ["Umbrella"], "readings": []}, {"char": "\u53cd", "image": null, "meanings": ["Anti"], "readings": []}, {"char": "\u6771", "image": null, "meanings": ["East"], "readings": []}, {"char": "\u53bb", "image": null, "meanings": ["Past"], "readings": []}, {"char": "\u5206", "image": null, "meanings": ["Part"], "readings": []}, {"char": "\u5c2d", "image": null, "meanings": ["Gambler"], "readings": []}, {"char": "\u66fd", "image": null, "meanings": ["Mask"], "readings": []}, {"char": "\u5f17", "image": null, "meanings": ["Dollar"], "readings": []}, {"char": "\u65e6", "image": null, "meanings": ["Dawn"], "readings": []}, {"char": "\u5236", "image": null, "meanings": ["Control"], "readings": []}, {"char": "\u544a", "image": null, "meanings": ["Announce"], "readings": []}, {"char": "\u8fb2", "image": null, "meanings": ["Farming"], "readings": []}, {"char": "\u4ee3", "image": null, "meanings": ["Substitute"], "readings": []}, {"char": "\u5c02", "image": null, "meanings": ["Specialty"], "readings": []}, {"char": "\u8863", "image": null, "meanings": ["Clothes"], "readings": []}, {"char": "\u53ec", "image": null, "meanings": ["Call"], "readings": []}, {"char": "\u8535", "image": null, "meanings": ["Storehouse"], "readings": []}, {"char": "\u58f2", "image": null, "meanings": ["Sell"], "readings": []}, {"char": "\u4e28", "image": null, "meanings": ["Stick"], "readings": []}, {"char": "kick", "image": "https://files.wanikani.com/0dhu1giyf87t64fcp993ltgsrf5v", "meanings": ["Kick"], "readings": []}, {"char": "\u620c", "image": null, "meanings": ["Canine"], "readings": []}, {"char": "rib-cage", "image": "https://files.wanikani.com/w2i6pg4t17keomaoftbc1dqmot8k", "meanings": ["Rib Cage"], "readings": []}], "scope": "week3", "type": "radicals"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"answer_was": "\u7b54\u3048", "btn_check": "\u78ba\u8a8d", "btn_continue": "\u6b21\u3078", "btn_next": "\u6b21\u3078 \u2192", "btn_prev": "\u2190 \u524d\u3078", "btn_show_answer": "\u7b54\u3048\u3092\u898b\u308b", "correct": "\u6b63\u89e3", "incorrect": "\u4e0d\u6b63\u89e3", "lesson_done": "\u30ec\u30c3\u30b9\u30f3\u5b8c\u4e86", "lesson_progress": "{pos} / {total}", "no_items": "\u9805\u76ee\u304c\u3042\u308a\u307e\u305b\u3093\u3002", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u304b\u306a\u3067\u5165\u529b\u2026", "q_meaning_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u610f\u5473\u306f\uff1f", "q_meaning_radicals": "\u3053\u306e\u90e8\u9996\u306e\u610f\u5473\u306f\uff1f", "q_meaning_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u610f\u5473\u306f\uff1f", "q_reading_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u8aad\u307f\u306f\uff1f", "q_reading_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u8aad\u307f\u306f\uff1f", "question_of": "{pos} / {total}", "test_complete": "\u30c6\u30b9\u30c8\u5b8c\u4e86", "wani_open": "WaniKani \u3067\u958b\u304f"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 漢字学習サイト · 漢字一覧：日本語総まとめ N3 漢字 · データ：WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initTest();</script>
+
+</body>
+</html>

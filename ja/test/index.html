@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テスト</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/ja/" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/ja/">ホーム</a>
+            <a href="/n3-kanji-flash/ja/test/">テスト</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="hero">
+    <h1>✏️ テスト</h1>
+    <p class="lead">テストは3種類。週ごとでも全週でも受けられます。ロックはありません。</p>
+</section>
+
+<div class="tests-overview">
+    
+    <section class="test-type-card test-radicals">
+        <div class="test-icon">🧩</div>
+        <h2>部首テスト</h2>
+        <p class="muted">部首 → 意味。</p>
+        <div class="scope-links">
+            <a class="scope-link all" href="/n3-kanji-flash/ja/test/radicals/">全週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/1/test/radicals/">第1週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/2/test/radicals/">第2週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/3/test/radicals/">第3週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/4/test/radicals/">第4週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/5/test/radicals/">第5週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/6/test/radicals/">第6週</a>
+            
+        </div>
+    </section>
+    
+    <section class="test-type-card test-kanji">
+        <div class="test-icon">🈶</div>
+        <h2>漢字テスト</h2>
+        <p class="muted">漢字 → 意味と読み。</p>
+        <div class="scope-links">
+            <a class="scope-link all" href="/n3-kanji-flash/ja/test/kanji/">全週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/1/test/kanji/">第1週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/2/test/kanji/">第2週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/3/test/kanji/">第3週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/4/test/kanji/">第4週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/5/test/kanji/">第5週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/6/test/kanji/">第6週</a>
+            
+        </div>
+    </section>
+    
+    <section class="test-type-card test-vocab">
+        <div class="test-icon">📖</div>
+        <h2>単語テスト</h2>
+        <p class="muted">単語 → 意味と読み。</p>
+        <div class="scope-links">
+            <a class="scope-link all" href="/n3-kanji-flash/ja/test/vocab/">全週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/1/test/vocab/">第1週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/2/test/vocab/">第2週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/3/test/vocab/">第3週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/4/test/vocab/">第4週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/5/test/vocab/">第5週</a>
+            
+            <a class="scope-link" href="/n3-kanji-flash/ja/week/6/test/vocab/">第6週</a>
+            
+        </div>
+    </section>
+    
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 漢字学習サイト · 漢字一覧：日本語総まとめ N3 漢字 · データ：WaniKani</p>
+    </footer>
+
+    
+</body>
+</html>

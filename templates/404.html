@@ -1,9 +1,18 @@
-{% extends "base.html" %}
-{% block title %}{{ T.not_found }}{% endblock %}
-{% block content %}
-<section class="error-page">
-    <h1>404</h1>
-    <p>{{ message }}</p>
-    <a href="{{ base }}{{ lang }}/" class="btn btn-primary">{{ T.back_home }}</a>
-</section>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ T.not_found }} · {{ T.brand }}</title>
+    <link rel="stylesheet" href="{{ base }}static/style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="hero">
+            <h1>404</h1>
+            <p class="lead">{{ T.not_found }}</p>
+            <p><a class="btn btn-primary" href="{{ base }}{{ lang }}/">{{ T.nav_home }}</a></p>
+        </section>
+    </main>
+</body>
+</html>

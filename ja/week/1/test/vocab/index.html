@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>単語テスト · 第1週 · N3 漢字</title>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/ja/" class="nav-brand">📚 N3 漢字</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/ja/">ホーム</a>
+            <a href="/n3-kanji-flash/ja/test/">テスト</a>
+            <div class="lang-switch">
+                <span class="lang-label">言語</span>
+                
+                    
+                        <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
+                    
+                
+                    
+                        <span class="lang-current">日本語</span>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header">
+    <a href="/n3-kanji-flash/ja/ja/week/1/" class="back-link">← 第1週</a>
+    <h1>単語テスト · <span class="muted">第1週</span></h1>
+    <p class="muted">何度でも受けられます。</p>
+</section>
+
+<section class="test-shell" id="test-shell">
+    <div class="test-top">
+        <span id="test-progress-text" class="test-progress-text"></span>
+        <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
+        <span class="score-tracker">
+            <span class="score-correct">✅ <span id="score-correct">0</span></span>
+            <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+        </span>
+    </div>
+
+    <div class="question-card" id="question-card">
+        <div class="question-label" id="question-label"></div>
+        <div class="item-glyph" id="question-glyph">—</div>
+        <input type="text" id="answer-input" class="answer-input" autocomplete="off"
+               autocapitalize="off" autocorrect="off" spellcheck="false">
+        <div class="question-feedback hidden" id="question-feedback"></div>
+        <div class="question-actions">
+            <button id="check-btn" class="btn btn-primary">確認</button>
+            <button id="show-btn" class="btn btn-link">答えを見る</button>
+            <button id="continue-btn" class="btn btn-primary hidden">次へ</button>
+        </div>
+    </div>
+</section>
+
+<section class="test-shell hidden" id="test-result">
+    <div class="question-card">
+        <h2>テスト完了</h2>
+        <div class="result-stats">
+            <div class="stat-card"><div class="stat-num" id="final-correct">0</div><div class="stat-label">正解</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-wrong">0</div><div class="stat-label">不正解</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-pct">0%</div><div class="stat-label">正答率</div></div>
+        </div>
+        <div class="wrong-review hidden" id="wrong-review">
+            <h3>復習する項目</h3>
+            <div class="wrong-list" id="wrong-list"></div>
+        </div>
+        <div class="done-actions">
+            <button id="retry-wrong-btn" class="btn btn-primary hidden">間違いだけやり直す</button>
+            <button id="retake-btn" class="btn btn-secondary">もう一度受ける</button>
+            <a class="btn btn-link" href="/n3-kanji-flash/ja/ja/week/1/">← 第1週</a>
+        </div>
+    </div>
+</section>
+
+<script id="page-data" type="application/json">
+{"items": [{"char": "\u53f7", "meanings": ["Number", "Edition", "Model"], "readings": ["\u3054\u3046"]}, {"char": "\u5411\u304f", "meanings": ["To Turn Toward", "To Face", "To Be Suitable"], "readings": ["\u3080\u304f"]}, {"char": "\u5411\u3051\u308b", "meanings": ["To Turn Something Towards", "To Point Something At"], "readings": ["\u3080\u3051\u308b"]}, {"char": "\u5411\u3053\u3046", "meanings": ["Over There", "Over That Way", "Other Side"], "readings": ["\u3080\u3053\u3046"]}, {"char": "\u756a\u53f7", "meanings": ["Number", "Series Of Digits"], "readings": ["\u3070\u3093\u3054\u3046"]}, {"char": "\u301c\u5411\u3051", "meanings": ["Made For", "Intended For", "Aimed At"], "readings": ["\u3080\u3051"]}, {"char": "\u6a2a", "meanings": ["Side", "Beside", "Next To", "Horizontal"], "readings": ["\u3088\u3053"]}, {"char": "\u6b21", "meanings": ["Next"], "readings": ["\u3064\u304e"]}, {"char": "\u7dda", "meanings": ["Line"], "readings": ["\u305b\u3093"]}, {"char": "\u7dda\u8def", "meanings": ["Railroad Track", "Train Track", "Railway Track", "Track", "Line"], "readings": ["\u305b\u3093\u308d"]}, {"char": "\u901f\u3044", "meanings": ["Fast"], "readings": ["\u306f\u3084\u3044"]}, {"char": "\u6307", "meanings": ["Finger", "Toe"], "readings": ["\u3086\u3073"]}, {"char": "\u6307\u3059", "meanings": ["To Point", "To Point At", "To Indicate", "To Refer To"], "readings": ["\u3055\u3059"]}, {"char": "\u6307\u5b9a\u3059\u308b", "meanings": ["To Appoint", "To Assign", "To Designate", "To Specify"], "readings": ["\u3057\u3066\u3044\u3059\u308b"]}, {"char": "\u301c\u968e", "meanings": ["Floor", "Story", "Storey"], "readings": ["\u304b\u3044"]}, {"char": "\u4fe1\u3058\u308b", "meanings": ["To Believe", "To Trust In"], "readings": ["\u3057\u3093\u3058\u308b"]}, {"char": "\u4fe1\u53f7", "meanings": ["Traffic Light", "Signal", "Traffic Signal", "Stoplight", "Semaphore"], "readings": ["\u3057\u3093\u3054\u3046"]}, {"char": "\u5f0f", "meanings": ["Ceremony", "Ritual", "Equation", "Style"], "readings": ["\u3057\u304d"]}, {"char": "\u6574\u3048\u308b", "meanings": ["To Arrange", "To Put In Order"], "readings": ["\u3068\u3068\u306e\u3048\u308b"]}, {"char": "\u30b4\u30df\u7bb1", "meanings": ["Garbage Can", "Garbage Bin", "Trash Can", "Trash Bin", "Waste Can", "Waste Bin", "Rubbish Bin", "Bin"], "readings": ["\u3054\u307f\u3070\u3053"]}, {"char": "\u5371\u306a\u3044", "meanings": ["Dangerous", "Risky"], "readings": ["\u3042\u3076\u306a\u3044"]}, {"char": "\u5371\u967a", "meanings": ["Risky", "Unsafe", "Dangerous", "Danger", "Peril", "Hazard"], "readings": ["\u304d\u3051\u3093"]}, {"char": "\u7bb1", "meanings": ["Box"], "readings": ["\u306f\u3053"]}, {"char": "\u95a2\u3059\u308b", "meanings": ["To Be Related To", "To Be Concerned With", "To Pertain To"], "readings": ["\u304b\u3093\u3059\u308b"]}, {"char": "\u95a2\u4fc2", "meanings": ["Connection", "Relation"], "readings": ["\u304b\u3093\u3051\u3044"]}, {"char": "\u9762", "meanings": ["Surface", "Face"], "readings": ["\u3081\u3093"]}, {"char": "\u4e21\u5074", "meanings": ["Both Sides"], "readings": ["\u308a\u3087\u3046\u304c\u308f"]}, {"char": "\u5074", "meanings": ["Side", "Side Of Something", "Part"], "readings": ["\u305d\u3070"]}, {"char": "\u5e2d", "meanings": ["Seat"], "readings": ["\u305b\u304d"]}, {"char": "\u5e38\u306b", "meanings": ["Always", "Constantly", "Continually"], "readings": ["\u3064\u306d\u306b"]}, {"char": "\u7121\u3057", "meanings": ["Without", "With No"], "readings": ["\u306a\u3057"]}, {"char": "\u975e\u5e38", "meanings": ["Emergency", "Extreme", "Unusual"], "readings": ["\u3072\u3058\u3087\u3046"]}, {"char": "\u5ea7\u308b", "meanings": ["To Sit"], "readings": ["\u3059\u308f\u308b"]}, {"char": "\u5ea7\u5e2d", "meanings": ["Seat"], "readings": ["\u3056\u305b\u304d"]}, {"char": "\u7981\u3058\u308b", "meanings": ["To Prohibit", "To Forbid"], "readings": ["\u304d\u3093\u3058\u308b"]}, {"char": "\u95a2\u308f\u308b", "meanings": ["To Be Involved", "To Be Related", "To Be Connected"], "readings": ["\u304b\u304b\u308f\u308b"]}, {"char": "\u975e\u5e38\u306b", "meanings": ["Very", "Extremely", "Exceedingly"], "readings": ["\u3072\u3058\u3087\u3046\u306b"]}, {"char": "\u7121\u304f\u306a\u308b", "meanings": ["To Be Gone", "To Run Out", "To Be Lost", "To Disappear"], "readings": ["\u306a\u304f\u306a\u308b"]}, {"char": "\u78ba\u304b\u306b", "meanings": ["Certainly", "Surely"], "readings": ["\u305f\u3057\u304b\u306b"]}, {"char": "\u98db\u3076", "meanings": ["To Fly", "To Jump"], "readings": ["\u3068\u3076"]}, {"char": "\u65ad\u308b", "meanings": ["To Refuse", "To Reject"], "readings": ["\u3053\u3068\u308f\u308b"]}, {"char": "\u7121\u304f\u3059", "meanings": ["To Lose Something", "To Get Rid Of", "To Do Away With"], "readings": ["\u306a\u304f\u3059"]}, {"char": "\u78ba\u8a8d", "meanings": ["Confirmation", "Verification"], "readings": ["\u304b\u304f\u306b\u3093"]}, {"char": "\u8a8d\u3081\u308b", "meanings": ["To Acknowledge", "To Recognize", "To Perceive", "To Admit", "To Approve"], "readings": ["\u307f\u3068\u3081\u308b"]}, {"char": "\u5404\u301c", "meanings": ["Each", "Every", "Various"], "readings": ["\u304b\u304f"]}, {"char": "\u78ba\u304b\u3081\u308b", "meanings": ["To Make Sure Of", "To Verify", "To Confirm"], "readings": ["\u305f\u3057\u304b\u3081\u308b"]}, {"char": "\u904e\u304e\u308b", "meanings": ["To Pass", "To Be Over", "To Be Too Much"], "readings": ["\u3059\u304e\u308b"]}, {"char": "\u98db\u3070\u3059", "meanings": ["To Let Something Fly", "To Send Something Flying", "To Skip Over Something"], "readings": ["\u3068\u3070\u3059"]}, {"char": "\u30d0\u30b9\u505c", "meanings": ["Bus Stop"], "readings": ["\u3070\u3059\u3066\u3044"]}, {"char": "\u512a\u3057\u3044", "meanings": ["Gentle", "Kind", "Warm Hearted", "Nice"], "readings": ["\u3084\u3055\u3057\u3044"]}, {"char": "\u65ad\u3064", "meanings": ["To Cut Off", "To Quit Doing Something"], "readings": ["\u305f\u3064"]}, {"char": "\u73fe\u306b", "meanings": ["Actually", "Really"], "readings": ["\u3052\u3093\u306b"]}, {"char": "\u73fe\u308c\u308b", "meanings": ["To Appear", "To Emerge"], "readings": ["\u3042\u3089\u308f\u308c\u308b"]}, {"char": "\u78ba\u8a8d\u3059\u308b", "meanings": ["To Confirm", "To Verify"], "readings": ["\u304b\u304f\u306b\u3093\u3059\u308b"]}, {"char": "\u964d\u308a\u308b", "meanings": ["To Get Off", "To Step Down"], "readings": ["\u304a\u308a\u308b"]}, {"char": "\u904e\u304e", "meanings": ["Too Much", "After", "Past"], "readings": ["\u3059\u304e"]}, {"char": "\u4fc2\u308f\u308b", "meanings": ["To Be Involved", "To Be Related", "To Be Connected"], "readings": ["\u304b\u304b\u308f\u308b"]}, {"char": "\u512a\u308c\u308b", "meanings": ["To Surpass", "To Excel"], "readings": ["\u3059\u3050\u308c\u308b"]}, {"char": "\u66ff\u3048\u308b", "meanings": ["To Replace", "To Substitute", "To Switch", "To Exchange"], "readings": ["\u304b\u3048\u308b"]}, {"char": "\u73fe\u3059", "meanings": ["To Show", "To Reveal"], "readings": ["\u3042\u3089\u308f\u3059"]}, {"char": "\u964d\u308d\u3059", "meanings": ["To Take Down", "To Launch", "To Drop", "To Lower", "To Bring Down"], "readings": ["\u304a\u308d\u3059"]}, {"char": "\u66ff\u308f\u308b", "meanings": ["To Be Replaced", "To Be Substituted", "To Be Switched"], "readings": ["\u304b\u308f\u308b"]}, {"char": "\u904e\u3054\u3059", "meanings": ["To Pass Time", "To Spend Time"], "readings": ["\u3059\u3054\u3059"]}, {"char": "\u4e21\u66ff", "meanings": ["Change Money", "Money Exchange", "Currency Exchange"], "readings": ["\u308a\u3087\u3046\u304c\u3048"]}, {"char": "\u6bb5\u968e", "meanings": ["Stage", "Phase"], "readings": ["\u3060\u3093\u304b\u3044"]}, {"char": "\u968e\u6bb5", "meanings": ["Stairs", "Stairway"], "readings": ["\u304b\u3044\u3060\u3093"]}, {"char": "\u5238", "meanings": ["Ticket", "Coupon", "Pass"], "readings": ["\u3051\u3093"]}, {"char": "\u964d\u308b", "meanings": ["To Fall", "To Come Down"], "readings": ["\u3075\u308b"]}, {"char": "\u5feb\u3044", "meanings": ["Pleasant"], "readings": ["\u3053\u3053\u308d\u3088\u3044"]}, {"char": "\u5feb\u901f", "meanings": ["High Speed", "Express"], "readings": ["\u304b\u3044\u305d\u304f"]}, {"char": "\u62bc\u3055\u3048\u308b", "meanings": ["To Hold Something Down", "To Grasp Something"], "readings": ["\u304a\u3055\u3048\u308b"]}, {"char": "\u62bc\u3057", "meanings": ["Push", "Pressure"], "readings": ["\u304a\u3057"]}, {"char": "\u62bc\u3059", "meanings": ["To Push"], "readings": ["\u304a\u3059"]}, {"char": "\u666e\u6bb5", "meanings": ["Usual", "Usually", "Always"], "readings": ["\u3075\u3060\u3093"]}, {"char": "\u62bc\u3057\u30dc\u30bf\u30f3", "meanings": ["Push Button"], "readings": ["\u304a\u3057\u307c\u305f\u3093"]}, {"char": "\u6368\u3066\u308b", "meanings": ["To Throw Away", "To Abandon"], "readings": ["\u3059\u3066\u308b"]}, {"char": "\u7a93", "meanings": ["Window"], "readings": ["\u307e\u3069"]}], "scope": "week1", "type": "vocab"}
+</script>
+<script id="i18n-strings" type="application/json">
+{"answer_was": "\u7b54\u3048", "btn_check": "\u78ba\u8a8d", "btn_continue": "\u6b21\u3078", "btn_next": "\u6b21\u3078 \u2192", "btn_prev": "\u2190 \u524d\u3078", "btn_show_answer": "\u7b54\u3048\u3092\u898b\u308b", "correct": "\u6b63\u89e3", "incorrect": "\u4e0d\u6b63\u89e3", "lesson_done": "\u30ec\u30c3\u30b9\u30f3\u5b8c\u4e86", "lesson_progress": "{pos} / {total}", "no_items": "\u9805\u76ee\u304c\u3042\u308a\u307e\u305b\u3093\u3002", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u304b\u306a\u3067\u5165\u529b\u2026", "q_meaning_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u610f\u5473\u306f\uff1f", "q_meaning_radicals": "\u3053\u306e\u90e8\u9996\u306e\u610f\u5473\u306f\uff1f", "q_meaning_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u610f\u5473\u306f\uff1f", "q_reading_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u8aad\u307f\u306f\uff1f", "q_reading_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u8aad\u307f\u306f\uff1f", "question_of": "{pos} / {total}", "test_complete": "\u30c6\u30b9\u30c8\u5b8c\u4e86", "wani_open": "WaniKani \u3067\u958b\u304f"}
+</script>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 漢字学習サイト · 漢字一覧：日本語総まとめ N3 漢字 · データ：WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initTest();</script>
+
+</body>
+</html>

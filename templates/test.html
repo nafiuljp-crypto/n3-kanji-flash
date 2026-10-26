@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} · {{ scope_label }} · {{ T.brand }}{% endblock %}
+{% block content %}
+<section class="chapter-header">
+    <a href="{{ base }}{{ lang }}/{{ back_path }}" class="back-link">{{ back_label }}</a>
+    <h1>{{ title }} · <span class="muted">{{ scope_label }}</span></h1>
+    <p class="muted">{{ T.repeat_note }}</p>
+</section>
+
+<section class="test-shell" id="test-shell">
+    <div class="test-top">
+        <span id="test-progress-text" class="test-progress-text"></span>
+        <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
+        <span class="score-tracker">
+            <span class="score-correct">✅ <span id="score-correct">0</span></span>
+            <span class="score-wrong">❌ <span id="score-wrong">0</span></span>
+        </span>
+    </div>
+
+    <div class="question-card" id="question-card">
+        <div class="question-label" id="question-label"></div>
+        <div class="item-glyph" id="question-glyph">—</div>
+        <input type="text" id="answer-input" class="answer-input" autocomplete="off"
+               autocapitalize="off" autocorrect="off" spellcheck="false">
+        <div class="question-feedback hidden" id="question-feedback"></div>
+        <div class="question-actions">
+            <button id="check-btn" class="btn btn-primary">{{ T.btn_check }}</button>
+            <button id="show-btn" class="btn btn-link">{{ T.btn_show_answer }}</button>
+            <button id="continue-btn" class="btn btn-primary hidden">{{ T.btn_continue }}</button>
+        </div>
+    </div>
+</section>
+
+<section class="test-shell hidden" id="test-result">
+    <div class="question-card">
+        <h2>{{ T.test_complete }}</h2>
+        <div class="result-stats">
+            <div class="stat-card"><div class="stat-num" id="final-correct">0</div><div class="stat-label">{{ T.lbl_correct }}</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-wrong">0</div><div class="stat-label">{{ T.lbl_wrong }}</div></div>
+            <div class="stat-card"><div class="stat-num" id="final-pct">0%</div><div class="stat-label">{{ T.lbl_accuracy }}</div></div>
+        </div>
+        <div class="wrong-review hidden" id="wrong-review">
+            <h3>{{ T.review_wrong }}</h3>
+            <div class="wrong-list" id="wrong-list"></div>
+        </div>
+        <div class="done-actions">
+            <button id="retry-wrong-btn" class="btn btn-primary hidden">{{ T.retry_wrong }}</button>
+            <button id="retake-btn" class="btn btn-secondary">{{ T.retake_all }}</button>
+            <a class="btn btn-link" href="{{ base }}{{ lang }}/{{ back_path }}">{{ back_label }}</a>
+        </div>
+    </div>
+</section>
+
+<script id="page-data" type="application/json">
+{{ page_data | tojson }}
+</script>
+<script id="i18n-strings" type="application/json">
+{{ ui_strings | tojson }}
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ base }}static/app.js"></script>
+<script>window.N3App.initTest();</script>
+{% endblock %}

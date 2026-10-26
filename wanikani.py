@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-"""WaniKani subject data for the N3 kanji cards.
+"""WaniKani subject data for the N3 kanji study site.
 
-The site shows each kanji as a chain: the WaniKani radicals it is built from,
-the kanji itself, and the WaniKani vocabulary that uses it. This module fetches
-the subject list once, caches it, and derives the small per-kanji lookup the
-templates need.
+Downloads every WaniKani subject (radicals, kanji, vocabulary) once into
+.cache/, which curriculum.py then turns into data/curriculum.json.
 
 The API token belongs to the account, not the site. It is read from the
 WANIKANI_TOKEN environment variable or from ~/.config/wanikani/token, and it is
 never written into the repository or into the built pages.
 
 Usage:
-    python3 wanikani.py            # rebuild data/wanikani.json from the cache
-    python3 wanikani.py --refresh  # re-download all subjects first
+    python3 wanikani.py --refresh   # re-download all subjects
+    python3 wanikani.py             # report what is in the cache
 """
 
 import json
@@ -27,12 +25,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 CACHE_FILE = BASE_DIR / ".cache" / "wanikani_subjects.json"
-DERIVED_FILE = DATA_DIR / "wanikani.json"
 TOKEN_FILE = Path.home() / ".config" / "wanikani" / "token"
 
 API = "https://api.wanikani.com/v2"
 SUBJECT_TYPES = "radical,kanji,vocabulary"
-VOCAB_PER_KANJI = 8          # keeps each flash card page small
 USER_AGENT = "n3-kanji-flash/1.0 (personal study site)"
 
 
@@ -138,112 +134,6 @@ def load_cache():
     return {s["id"]: s for s in payload["subjects"]}
 
 
-# ---------- deriving the radical → kanji → vocabulary chain ----------
-
-def site_kanji_chars():
-    chars = []
-    seen = set()
-    for week in range(1, 7):
-        path = DATA_DIR / f"week_{week}.json"
-        if not path.exists():
-            continue
-        data = json.loads(path.read_text(encoding="utf-8"))
-        for lesson in data.get("lessons", []):
-            for k in lesson.get("kanji", []):
-                char = k.get("char")
-                if char and char not in seen:
-                    seen.add(char)
-                    chars.append(char)
-    return chars
-
-
-def radical_entry(subject):
-    return {
-        "char": subject["characters"],
-        "slug": subject["slug"],
-        "meaning": subject["primary_meaning"],
-        "image": subject["image"] if not subject["characters"] else None,
-        "url": subject["document_url"],
-    }
-
-
-def vocab_entry(subject):
-    return {
-        "char": subject["characters"],
-        "reading": subject["primary_reading"],
-        "meaning": subject["primary_meaning"],
-        "level": subject["level"],
-        "url": subject["document_url"],
-    }
-
-
-def build_derived(subjects):
-    by_char = {s["characters"]: s for s in subjects.values()
-               if s["type"] == "kanji" and s["characters"]}
-    derived = {}
-    matched = 0
-    for char in site_kanji_chars():
-        kanji = by_char.get(char)
-        if not kanji:
-            continue
-        matched += 1
-        radicals = []
-        for cid in kanji["components"]:
-            comp = subjects.get(cid)
-            if comp and comp["type"] == "radical":
-                radicals.append(radical_entry(comp))
-        vocab = []
-        for vid in kanji["amalgamations"]:
-            subj = subjects.get(vid)
-            if subj and subj["type"] == "vocabulary":
-                vocab.append(vocab_entry(subj))
-        vocab.sort(key=lambda v: (v["level"] or 99, len(v["char"]) if v["char"] else 0))
-        derived[char] = {
-            "level": kanji["level"],
-            "url": kanji["document_url"],
-            "meanings": kanji["meanings"],
-            "onyomi": kanji["onyomi"],
-            "kunyomi": kanji["kunyomi"],
-            "radicals": radicals,
-            "vocab": vocab[:VOCAB_PER_KANJI],
-            "vocab_total": len(vocab),
-        }
-    DERIVED_FILE.write_text(
-        json.dumps({"source": "WaniKani API v2",
-                    "generated_at": datetime.now(timezone.utc).isoformat(),
-                    "kanji": derived},
-                   ensure_ascii=False, indent=1, sort_keys=True),
-        encoding="utf-8",
-    )
-    return matched, len(derived), sum(len(v["vocab"]) for v in derived.values())
-
-
-# ---------- runtime lookup used by build.py and app.py ----------
-
-_LOOKUP = None
-
-
-def get_lookup():
-    global _LOOKUP
-    if _LOOKUP is None:
-        if DERIVED_FILE.exists():
-            _LOOKUP = json.loads(DERIVED_FILE.read_text(encoding="utf-8"))["kanji"]
-        else:
-            _LOOKUP = {}
-    return _LOOKUP
-
-
-def attach_week(data):
-    """Add a `wanikani` block to every kanji in a week's data (in place)."""
-    lookup = get_lookup()
-    if not lookup:
-        return data
-    for lesson in data.get("lessons", []):
-        for k in lesson.get("kanji", []):
-            k["wanikani"] = lookup.get(k.get("char"))
-    return data
-
-
 # ---------- CLI ----------
 
 def main(argv):
@@ -253,9 +143,11 @@ def main(argv):
         subjects = fetch_all_subjects(token)
     else:
         subjects = load_cache()
-    matched, total, vocab = build_derived(subjects)
-    print(f"{matched} site kanji matched, {total} entries, "
-          f"{vocab} vocabulary links → {DERIVED_FILE}")
+    counts = {}
+    for subject in subjects.values():
+        counts[subject["type"]] = counts.get(subject["type"], 0) + 1
+    print(f"{len(subjects)} subjects cached: " +
+          ", ".join(f"{k} {v}" for k, v in sorted(counts.items())))
 
 
 if __name__ == "__main__":

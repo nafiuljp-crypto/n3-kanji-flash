@@ -3,73 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not found</title>
+    <title>Page not found · N3 Kanji</title>
     <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
-    <script>
-    /* Language switcher + cookie initializer. Runs before any UI renders. */
-    (function () {
-        function getCookie(name) {
-            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-            return m ? m[2] : null;
-        }
-        function setCookie(name, value) {
-            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
-        }
-        if (!getCookie('lang')) {
-            setCookie('lang', 'ja');
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('[data-lang]').forEach(function (a) {
-                a.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    var newLang = a.getAttribute('data-lang');
-                    setCookie('lang', newLang);
-                    var path = location.pathname;
-                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
-                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
-                    var rest = (m && m[3]) ? m[3] : '/';
-                    if (!rest.endsWith('/')) rest += '/';
-                    location.href = prefix + '/' + newLang + rest;
-                });
-            });
-        });
-    })();
-    </script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="/n3-kanji-flash/en/" class="nav-brand">📚 N3 Kanji</a>
-        <div class="nav-links">
-            <a href="/n3-kanji-flash/en/">Home</a>
-            <div class="lang-switch">
-                <span class="lang-label">Language:</span>
-                
-                    
-                        <span class="lang-current">EN</span>
-                    
-                
-                    
-                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
-                    
-                
-            </div>
-        </div>
-    </nav>
-
     <main class="container">
-        
-<section class="error-page">
-    <h1>404</h1>
-    <p>Not found</p>
-    <a href="/n3-kanji-flash/en/" class="btn btn-primary">Back to home</a>
-</section>
-
+        <section class="hero">
+            <h1>404</h1>
+            <p class="lead">Page not found</p>
+            <p><a class="btn btn-primary" href="/n3-kanji-flash/en/">Home</a></p>
+        </section>
     </main>
-
-    <footer class="footer">
-        <p>Sou Matome N3 Kanji · Tailscale only</p>
-    </footer>
-
-    
 </body>
 </html>

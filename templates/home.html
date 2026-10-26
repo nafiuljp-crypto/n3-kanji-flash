@@ -1,26 +1,43 @@
 {% extends "base.html" %}
-{% block title %}{{ T.title_home }}{% endblock %}
+{% block title %}{{ T.home_title }}{% endblock %}
 {% block content %}
 <section class="hero">
-    <h1>📖 {{ T.hero_title }}</h1>
-    <p class="lead">{{ T.hero_lead }}</p>
+    <h1>🈶 {{ T.home_title }}</h1>
+    <p class="lead">{{ T.home_lead }}</p>
+</section>
+
+<section class="overall">
+    <h2>{{ T.overall_progress }}</h2>
+    <div class="overall-bars" id="overall-bars" data-totals='{{ totals | tojson }}'>
+        {% for key in ("radicals", "kanji", "vocab") %}
+        <div class="overall-row">
+            <span class="overall-label">{{ T[key] }}</span>
+            <div class="progress-bar"><div class="progress-fill" data-fill="{{ key }}"></div></div>
+            <span class="overall-count" data-count="{{ key }}">0 / {{ totals[key] }}</span>
+        </div>
+        {% endfor %}
+    </div>
 </section>
 
 <section class="chapters">
-    <h2>{{ T.select_chapter }}</h2>
+    <h2>{{ T.home_weeks_h2 }}</h2>
     <div class="chapter-grid">
-        {% for ch in chapters %}
-        <a href="{{ base }}{{ lang }}/chapter/{{ ch.week }}/" class="chapter-card">
-            <div class="chapter-number">{{ T.week_word }} {{ ch.week }}</div>
-            <div class="chapter-theme-jp">{{ ch.theme_jp }}</div>
-            <div class="chapter-theme-en">{{ ch.theme_en }}</div>
+        {% for wk in weeks %}
+        <a href="{{ base }}{{ lang }}/week/{{ wk.week }}/" class="chapter-card">
+            <div class="chapter-number">{{ T.week_word }} {{ wk.week }}</div>
+            <div class="chapter-theme-jp">{{ wk.theme.jp }}</div>
+            <div class="chapter-theme-en">{{ wk.theme.en }}</div>
             <div class="chapter-stats">
-                <span>📝 {{ ch.lesson_count }} {{ T.days_label }}</span>
-                <span>🈶 {{ ch.kanji_count }} {{ T.kanji_label }}</span>
+                <span>🧩 {{ wk.radical_count }} {{ T.radicals }}</span>
+                <span>🈶 {{ wk.kanji_count }} {{ T.kanji }}</span>
+                <span>📖 {{ wk.vocab_count }} {{ T.vocab }}</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ {{ ch.practice_q }} {{ T.practice_label }}</span>
-                <span>🎯 {{ ch.quiz_q }} {{ T.quiz_label }}</span>
+            <div class="week-progress" data-week="{{ wk.week }}"
+                 data-radicals="{{ wk.radical_count }}"
+                 data-kanji="{{ wk.kanji_count }}"
+                 data-vocab="{{ wk.vocab_count }}">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         {% endfor %}
@@ -28,11 +45,16 @@
 </section>
 
 <section class="info">
-    <h2>{{ T.how_to_use }}</h2>
+    <h2>{{ T.home_how_h2 }}</h2>
     <ol>
-        {% for step in T.how_to_use_steps %}
+        {% for step in T.how_steps %}
         <li>{{ step|safe }}</li>
         {% endfor %}
     </ol>
 </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ base }}static/app.js"></script>
+<script>window.N3App.initHome();</script>
 {% endblock %}

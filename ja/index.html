@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ホーム — N3 漢字</title>
+    <title>N3 漢字学習</title>
     <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
     <script>
     /* Language switcher + cookie initializer. Runs before any UI renders. */
@@ -24,9 +24,8 @@
                     e.preventDefault();
                     var newLang = a.getAttribute('data-lang');
                     setCookie('lang', newLang);
-                    var path = location.pathname;
-                    var m = path.match(/^(.*?)\/(en|ja)(\/.*)?$/);
-                    var prefix = m ? m[1] : path.replace(/\/?[^\/]*$/, '');
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
                     var rest = (m && m[3]) ? m[3] : '/';
                     if (!rest.endsWith('/')) rest += '/';
                     location.href = prefix + '/' + newLang + rest;
@@ -41,8 +40,9 @@
         <a href="/n3-kanji-flash/ja/" class="nav-brand">📚 N3 漢字</a>
         <div class="nav-links">
             <a href="/n3-kanji-flash/ja/">ホーム</a>
+            <a href="/n3-kanji-flash/ja/test/">テスト</a>
             <div class="lang-switch">
-                <span class="lang-label">言語:</span>
+                <span class="lang-label">言語</span>
                 
                     
                         <a href="#lang-en" data-lang="en" class="lang-link">EN</a>
@@ -59,95 +59,144 @@
     <main class="container">
         
 <section class="hero">
-    <h1>📖 N3 漢字フラッシュカード</h1>
-    <p class="lead">日本語総まとめ N3 漢字 · 全6週 · フラッシュカード &amp; 演習問題</p>
+    <h1>🈶 N3 漢字学習</h1>
+    <p class="lead">部首 → 漢字 → 単語の順に学び、何度でもテストできます。</p>
+</section>
+
+<section class="overall">
+    <h2>全体の進捗</h2>
+    <div class="overall-bars" id="overall-bars" data-totals='{"kanji": 293, "radicals": 263, "vocab": 571}'>
+        
+        <div class="overall-row">
+            <span class="overall-label">部首</span>
+            <div class="progress-bar"><div class="progress-fill" data-fill="radicals"></div></div>
+            <span class="overall-count" data-count="radicals">0 / 263</span>
+        </div>
+        
+        <div class="overall-row">
+            <span class="overall-label">漢字</span>
+            <div class="progress-bar"><div class="progress-fill" data-fill="kanji"></div></div>
+            <span class="overall-count" data-count="kanji">0 / 293</span>
+        </div>
+        
+        <div class="overall-row">
+            <span class="overall-label">単語</span>
+            <div class="progress-bar"><div class="progress-fill" data-fill="vocab"></div></div>
+            <span class="overall-count" data-count="vocab">0 / 571</span>
+        </div>
+        
+    </div>
 </section>
 
 <section class="chapters">
-    <h2>週を選択</h2>
+    <h2>週</h2>
     <div class="chapter-grid">
         
-        <a href="/n3-kanji-flash/ja/chapter/1/" class="chapter-card">
-            <div class="chapter-number">週 1</div>
+        <a href="/n3-kanji-flash/ja/week/1/" class="chapter-card">
+            <div class="chapter-number">第 1</div>
             <div class="chapter-theme-jp">でかける①</div>
             <div class="chapter-theme-en">Go Out 1</div>
             <div class="chapter-stats">
-                <span>📝 6 日</span>
+                <span>🧩 87 部首</span>
                 <span>🈶 50 漢字</span>
+                <span>📖 77 単語</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 実戦問題</span>
-                <span>🎯 6 クイズ</span>
+            <div class="week-progress" data-week="1"
+                 data-radicals="87"
+                 data-kanji="50"
+                 data-vocab="77">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/ja/chapter/2/" class="chapter-card">
-            <div class="chapter-number">週 2</div>
+        <a href="/n3-kanji-flash/ja/week/2/" class="chapter-card">
+            <div class="chapter-number">第 2</div>
             <div class="chapter-theme-jp">でかける②</div>
             <div class="chapter-theme-en">Go Out 2</div>
             <div class="chapter-stats">
-                <span>📝 6 日</span>
+                <span>🧩 57 部首</span>
                 <span>🈶 48 漢字</span>
+                <span>📖 87 単語</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 実戦問題</span>
-                <span>🎯 5 クイズ</span>
+            <div class="week-progress" data-week="2"
+                 data-radicals="57"
+                 data-kanji="48"
+                 data-vocab="87">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/ja/chapter/3/" class="chapter-card">
-            <div class="chapter-number">週 3</div>
+        <a href="/n3-kanji-flash/ja/week/3/" class="chapter-card">
+            <div class="chapter-number">第 3</div>
             <div class="chapter-theme-jp">つかう</div>
             <div class="chapter-theme-en">Use</div>
             <div class="chapter-stats">
-                <span>📝 6 日</span>
+                <span>🧩 40 部首</span>
                 <span>🈶 50 漢字</span>
+                <span>📖 87 単語</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 実戦問題</span>
-                <span>🎯 7 クイズ</span>
+            <div class="week-progress" data-week="3"
+                 data-radicals="40"
+                 data-kanji="50"
+                 data-vocab="87">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/ja/chapter/4/" class="chapter-card">
-            <div class="chapter-number">週 4</div>
+        <a href="/n3-kanji-flash/ja/week/4/" class="chapter-card">
+            <div class="chapter-number">第 4</div>
             <div class="chapter-theme-jp">かう</div>
             <div class="chapter-theme-en">Buy</div>
             <div class="chapter-stats">
-                <span>📝 6 日</span>
+                <span>🧩 24 部首</span>
                 <span>🈶 48 漢字</span>
+                <span>📖 99 単語</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 実戦問題</span>
-                <span>🎯 10 クイズ</span>
+            <div class="week-progress" data-week="4"
+                 data-radicals="24"
+                 data-kanji="48"
+                 data-vocab="99">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/ja/chapter/5/" class="chapter-card">
-            <div class="chapter-number">週 5</div>
+        <a href="/n3-kanji-flash/ja/week/5/" class="chapter-card">
+            <div class="chapter-number">第 5</div>
             <div class="chapter-theme-jp">かく</div>
             <div class="chapter-theme-en">Write</div>
             <div class="chapter-stats">
-                <span>📝 6 日</span>
+                <span>🧩 32 部首</span>
                 <span>🈶 49 漢字</span>
+                <span>📖 102 単語</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 実戦問題</span>
-                <span>🎯 15 クイズ</span>
+            <div class="week-progress" data-week="5"
+                 data-radicals="32"
+                 data-kanji="49"
+                 data-vocab="102">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
-        <a href="/n3-kanji-flash/ja/chapter/6/" class="chapter-card">
-            <div class="chapter-number">週 6</div>
+        <a href="/n3-kanji-flash/ja/week/6/" class="chapter-card">
+            <div class="chapter-number">第 6</div>
             <div class="chapter-theme-jp">よむ</div>
             <div class="chapter-theme-en">Read</div>
             <div class="chapter-stats">
-                <span>📝 6 日</span>
+                <span>🧩 23 部首</span>
                 <span>🈶 48 漢字</span>
+                <span>📖 119 単語</span>
             </div>
-            <div class="chapter-stats">
-                <span>✏️ 20 実戦問題</span>
-                <span>🎯 6 クイズ</span>
+            <div class="week-progress" data-week="6"
+                 data-radicals="23"
+                 data-kanji="48"
+                 data-vocab="119">
+                <div class="progress-bar"><div class="progress-fill" data-fill="overall"></div></div>
+                <span class="week-progress-text" data-text>0%</span>
             </div>
         </a>
         
@@ -158,11 +207,13 @@
     <h2>使い方</h2>
     <ol>
         
-        <li><strong>週</strong>を選んでください（1〜6）。</li>
+        <li>週を選びます。各週に<strong>部首</strong>・<strong>漢字</strong>・<strong>単語</strong>のレッスンがあります。</li>
         
-        <li><strong>フラッシュカード</strong>で漢字を覚えます。答えを入力すると、正誤と例文が見られます。</li>
+        <li>まず部首を学びます。漢字はすべて部首からできています。</li>
         
-        <li><strong>演習問題</strong>で選択問題を解きます。第7日目の実戦問題と、週末クイズがあります。</li>
+        <li>次に漢字と、その漢字を使う単語を学びます。</li>
+        
+        <li>部首・漢字・単語の3つのテストを受けます。繰り返し自由です。</li>
         
     </ol>
 </section>
@@ -170,9 +221,12 @@
     </main>
 
     <footer class="footer">
-        <p>日本語総まとめ N3 漢字 · Tailscale 限定</p>
+        <p>N3 漢字学習サイト · 漢字一覧：日本語総まとめ N3 漢字 · データ：WaniKani</p>
     </footer>
 
     
+<script src="/n3-kanji-flash/static/app.js"></script>
+<script>window.N3App.initHome();</script>
+
 </body>
 </html>
