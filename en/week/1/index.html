@@ -13,7 +13,10 @@
             return m ? m[2] : null;
         }
         function setCookie(name, value) {
-            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+            /* Scoped to the site, not to every project on *.github.io (B15). */
+            var path = '/n3-kanji-flash/' || '/';
+            document.cookie = name + '=' + value + '; path=' + path +
+                '; max-age=31536000; SameSite=Lax';
         }
         if (!getCookie('lang')) {
             setCookie('lang', 'ja');
@@ -61,7 +64,7 @@
 <section class="chapter-header">
     <a href="/n3-kanji-flash/en/" class="back-link">← All weeks</a>
     <h1>Week 1 · <span class="jp">でかける①</span></h1>
-    <p class="theme-en">Go Out 1 · 외출하기①</p>
+    <p class="theme-en">Go Out 1</p>
 </section>
 
 <section class="games">
@@ -71,11 +74,11 @@
         
         <a href="/n3-kanji-flash/en/week/1/learn/radicals/"
            class="learn-card learn-radicals" data-progress-type="radicals"
-           data-total="0">
+           data-total="87">
             <div class="learn-icon">🧩</div>
             <div class="learn-title">Radicals</div>
             <div class="learn-sub">The building blocks used by this week&#39;s kanji.</div>
-            <div class="learn-meta">0 items</div>
+            <div class="learn-meta">87 items</div>
             <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
             <div class="learn-state" data-state>Start lesson</div>
         </a>
@@ -83,11 +86,11 @@
         
         <a href="/n3-kanji-flash/en/week/1/learn/kanji/"
            class="learn-card learn-kanji" data-progress-type="kanji"
-           data-total="0">
+           data-total="50">
             <div class="learn-icon">🈶</div>
             <div class="learn-title">Kanji</div>
             <div class="learn-sub">Meaning, readings, and the radicals each one is built from.</div>
-            <div class="learn-meta">0 items</div>
+            <div class="learn-meta">50 items</div>
             <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
             <div class="learn-state" data-state>Start lesson</div>
         </a>
@@ -95,11 +98,11 @@
         
         <a href="/n3-kanji-flash/en/week/1/learn/vocab/"
            class="learn-card learn-vocab" data-progress-type="vocab"
-           data-total="0">
+           data-total="77">
             <div class="learn-icon">📖</div>
             <div class="learn-title">Vocabulary</div>
             <div class="learn-sub">Words written with the kanji you have studied.</div>
-            <div class="learn-meta">0 items</div>
+            <div class="learn-meta">77 items</div>
             <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
             <div class="learn-state" data-state>Start lesson</div>
         </a>

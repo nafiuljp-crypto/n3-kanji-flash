@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第 3 · つかう</title>
+    <title>第3週 · つかう</title>
     <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
     <script>
     /* Language switcher + cookie initializer. Runs before any UI renders. */
@@ -13,7 +13,10 @@
             return m ? m[2] : null;
         }
         function setCookie(name, value) {
-            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+            /* Scoped to the site, not to every project on *.github.io (B15). */
+            var path = '/n3-kanji-flash/' || '/';
+            document.cookie = name + '=' + value + '; path=' + path +
+                '; max-age=31536000; SameSite=Lax';
         }
         if (!getCookie('lang')) {
             setCookie('lang', 'ja');
@@ -60,8 +63,8 @@
         
 <section class="chapter-header">
     <a href="/n3-kanji-flash/ja/" class="back-link">← 週一覧</a>
-    <h1>第 3 · <span class="jp">つかう</span></h1>
-    <p class="theme-en">Use · 사용하다</p>
+    <h1>第3週 · <span class="jp">つかう</span></h1>
+    <p class="theme-en">Use</p>
 </section>
 
 <section class="games">
@@ -71,11 +74,11 @@
         
         <a href="/n3-kanji-flash/ja/week/3/learn/radicals/"
            class="learn-card learn-radicals" data-progress-type="radicals"
-           data-total="0">
+           data-total="40">
             <div class="learn-icon">🧩</div>
             <div class="learn-title">部首</div>
             <div class="learn-sub">この週の漢字を組み立てる部首。</div>
-            <div class="learn-meta">0 項目</div>
+            <div class="learn-meta">40 項目</div>
             <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
             <div class="learn-state" data-state>レッスンを始める</div>
         </a>
@@ -83,11 +86,11 @@
         
         <a href="/n3-kanji-flash/ja/week/3/learn/kanji/"
            class="learn-card learn-kanji" data-progress-type="kanji"
-           data-total="0">
+           data-total="50">
             <div class="learn-icon">🈶</div>
             <div class="learn-title">漢字</div>
             <div class="learn-sub">意味・読み方・構成する部首。</div>
-            <div class="learn-meta">0 項目</div>
+            <div class="learn-meta">50 項目</div>
             <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
             <div class="learn-state" data-state>レッスンを始める</div>
         </a>
@@ -95,11 +98,11 @@
         
         <a href="/n3-kanji-flash/ja/week/3/learn/vocab/"
            class="learn-card learn-vocab" data-progress-type="vocab"
-           data-total="0">
+           data-total="87">
             <div class="learn-icon">📖</div>
             <div class="learn-title">単語</div>
             <div class="learn-sub">学んだ漢字で書く単語。</div>
-            <div class="learn-meta">0 項目</div>
+            <div class="learn-meta">87 項目</div>
             <div class="progress-bar"><div class="progress-fill" data-fill="lesson"></div></div>
             <div class="learn-state" data-state>レッスンを始める</div>
         </a>

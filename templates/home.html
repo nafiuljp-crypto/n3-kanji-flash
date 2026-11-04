@@ -24,7 +24,7 @@
     <div class="chapter-grid">
         {% for wk in weeks %}
         <a href="{{ base }}{{ lang }}/week/{{ wk.week }}/" class="chapter-card">
-            <div class="chapter-number">{{ T.week_word }} {{ wk.week }}</div>
+            <div class="chapter-number">{{ T.week_n.format(week=wk.week) }}</div>
             <div class="chapter-theme-jp">{{ wk.theme.jp }}</div>
             <div class="chapter-theme-en">{{ wk.theme.en }}</div>
             <div class="chapter-stats">

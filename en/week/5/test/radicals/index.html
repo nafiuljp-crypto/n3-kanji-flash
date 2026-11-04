@@ -13,7 +13,10 @@
             return m ? m[2] : null;
         }
         function setCookie(name, value) {
-            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+            /* Scoped to the site, not to every project on *.github.io (B15). */
+            var path = '/n3-kanji-flash/' || '/';
+            document.cookie = name + '=' + value + '; path=' + path +
+                '; max-age=31536000; SameSite=Lax';
         }
         if (!getCookie('lang')) {
             setCookie('lang', 'ja');
@@ -59,13 +62,28 @@
     <main class="container">
         
 <section class="chapter-header">
-    <a href="/n3-kanji-flash/en/en/week/5/" class="back-link">← Week 5</a>
+    <a href="/n3-kanji-flash/en/week/5/" class="back-link">← Week 5</a>
     <h1>Radical test · <span class="muted">Week 5</span></h1>
     <p class="muted">Repeatable — retake as often as you like.</p>
 </section>
 
 <section class="test-shell" id="test-shell">
-    <div class="test-top">
+    <div class="range-panel" id="range-panel">
+        <h2 class="range-title">Choose the items</h2>
+        <div class="range-row">
+            <label for="range-from">From item</label>
+            <input type="number" id="range-from" class="range-input" min="1" step="1"
+                   inputmode="numeric" value="1">
+            <label for="range-to">to item</label>
+            <input type="number" id="range-to" class="range-input" min="1" step="1"
+                   inputmode="numeric" value="1">
+            <span class="range-of" id="range-of"></span>
+        </div>
+        <div class="range-hint" id="range-hint" aria-live="polite"></div>
+        <button id="start-btn" class="btn btn-primary" type="button">Start</button>
+    </div>
+
+    <div class="test-top hidden" id="test-top">
         <span id="test-progress-text" class="test-progress-text"></span>
         <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
         <span class="score-tracker">
@@ -74,14 +92,16 @@
         </span>
     </div>
 
-    <div class="question-card" id="question-card">
+    <div class="question-card hidden" id="question-card">
         <div class="question-label" id="question-label"></div>
         <div class="item-glyph" id="question-glyph">—</div>
         <input type="text" id="answer-input" class="answer-input" autocomplete="off"
-               autocapitalize="off" autocorrect="off" spellcheck="false">
+               autocapitalize="off" autocorrect="off" spellcheck="false"
+               aria-label="Your answer">
+        <div class="kana-preview hidden" id="kana-preview" aria-live="polite"></div>
         <div class="question-feedback hidden" id="question-feedback"></div>
         <div class="question-actions">
-            <button id="check-btn" class="btn btn-primary">Check</button>
+            <button id="check-btn" class="btn btn-primary" disabled>Check</button>
             <button id="show-btn" class="btn btn-link">Show answer</button>
             <button id="continue-btn" class="btn btn-primary hidden">Continue</button>
         </div>
@@ -103,7 +123,7 @@
         <div class="done-actions">
             <button id="retry-wrong-btn" class="btn btn-primary hidden">Retry wrong answers</button>
             <button id="retake-btn" class="btn btn-secondary">Retake the whole test</button>
-            <a class="btn btn-link" href="/n3-kanji-flash/en/en/week/5/">← Week 5</a>
+            <a class="btn btn-link" href="/n3-kanji-flash/en/week/5/">← Week 5</a>
         </div>
     </div>
 </section>
@@ -112,7 +132,7 @@
 {"items": [{"char": "\u4e8c", "image": null, "meanings": ["Two"], "readings": []}, {"char": "\u5915", "image": null, "meanings": ["Evening"], "readings": []}, {"char": "\u5e72", "image": null, "meanings": ["Dry"], "readings": []}, {"char": "\u4e5f", "image": null, "meanings": ["Alligator"], "readings": []}, {"char": "\u866b", "image": null, "meanings": ["Insect"], "readings": []}, {"char": "\u4e4d", "image": null, "meanings": ["Key"], "readings": []}, {"char": "\u51f5", "image": null, "meanings": ["Box"], "readings": []}, {"char": "\u6c0f", "image": null, "meanings": ["Clan"], "readings": []}, {"char": "\u5468", "image": null, "meanings": ["Circumference"], "readings": []}, {"char": "\u820c", "image": null, "meanings": ["Tongue"], "readings": []}, {"char": "\u8f9b", "image": null, "meanings": ["Spicy"], "readings": []}, {"char": "\u7592", "image": null, "meanings": ["Sick"], "readings": []}, {"char": "\u5144", "image": null, "meanings": ["Older Brother"], "readings": []}, {"char": "\u76ae", "image": null, "meanings": ["Skin"], "readings": []}, {"char": "\u5358", "image": null, "meanings": ["Simple"], "readings": []}, {"char": "\u5774", "image": null, "meanings": ["Womb"], "readings": []}, {"char": "\u4e38", "image": null, "meanings": ["Circle"], "readings": []}, {"char": "\u4eca", "image": null, "meanings": ["Now"], "readings": []}, {"char": "\u8c37", "image": null, "meanings": ["Valley"], "readings": []}, {"char": "\u5409", "image": null, "meanings": ["Good Luck"], "readings": []}, {"char": "\u590d", "image": null, "meanings": ["Black Hole"], "readings": []}, {"char": "\u53f8", "image": null, "meanings": ["Director"], "readings": []}, {"char": "\u5547", "image": null, "meanings": ["Mohawk"], "readings": []}, {"char": "\u5e73", "image": null, "meanings": ["Peace"], "readings": []}, {"char": "\u97cb", "image": null, "meanings": ["Korea"], "readings": []}, {"char": "\u6c11", "image": null, "meanings": ["Peoples"], "readings": []}, {"char": "\u9593", "image": null, "meanings": ["Interval"], "readings": []}, {"char": "\u53f0", "image": null, "meanings": ["Machine"], "readings": []}, {"char": "\u4e14", "image": null, "meanings": ["Top Hat"], "readings": []}, {"char": "\u4e1a", "image": null, "meanings": ["Spikes"], "readings": []}, {"char": "\ud85b\udc29", "image": null, "meanings": ["Chinese"], "readings": []}, {"char": "\u4e2c", "image": null, "meanings": ["Icicle"], "readings": []}], "scope": "week5", "type": "radicals"}
 </script>
 <script id="i18n-strings" type="application/json">
-{"answer_was": "Answer", "btn_check": "Check", "btn_continue": "Continue", "btn_next": "Next \u2192", "btn_prev": "\u2190 Previous", "btn_show_answer": "Show answer", "correct": "Correct", "incorrect": "Incorrect", "lesson_done": "Lesson complete", "lesson_progress": "Item {pos} of {total}", "no_items": "Nothing to show here yet.", "placeholder_meaning": "type the meaning\u2026", "placeholder_reading": "type the reading in kana\u2026", "q_meaning_kanji": "What is the meaning of this kanji?", "q_meaning_radicals": "What is the meaning of this radical?", "q_meaning_vocab": "What is the meaning of this word?", "q_reading_kanji": "What is the reading of this kanji?", "q_reading_vocab": "What is the reading of this word?", "question_of": "{pos} / {total}", "test_complete": "Test complete", "wani_open": "Open on WaniKani"}
+{"answer_aria": "Your answer", "answer_was": "Answer", "btn_check": "Check", "btn_continue": "Continue", "btn_next": "Next \u2192", "btn_prev": "\u2190 Previous", "btn_show_answer": "Show answer", "btn_start_session": "Start", "correct": "Correct", "incorrect": "Incorrect", "lesson_done": "Lesson complete", "lesson_progress": "Item {pos} of {total}", "no_items": "Nothing to show here yet.", "placeholder_meaning": "type the meaning\u2026", "placeholder_reading": "reading \u2014 romaji or kana\u2026", "q_meaning_kanji": "What is the meaning of this kanji?", "q_meaning_radicals": "What is the meaning of this radical?", "q_meaning_vocab": "What is the meaning of this word?", "q_reading_kanji": "What is the reading of this kanji?", "q_reading_vocab": "What is the reading of this word?", "question_of": "{pos} / {total}", "range_from": "From item", "range_of": "of {count} items", "range_questions": "= {count} questions", "range_title": "Choose the items", "range_to": "to item", "test_complete": "Test complete", "wani_open": "Open on WaniKani"}
 </script>
 
     </main>
@@ -122,6 +142,7 @@
     </footer>
 
     
+<script src="/n3-kanji-flash/static/romaji.js"></script>
 <script src="/n3-kanji-flash/static/app.js"></script>
 <script>window.N3App.initTest();</script>
 

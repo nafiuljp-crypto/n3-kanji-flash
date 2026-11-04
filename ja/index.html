@@ -13,7 +13,10 @@
             return m ? m[2] : null;
         }
         function setCookie(name, value) {
-            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+            /* Scoped to the site, not to every project on *.github.io (B15). */
+            var path = '/n3-kanji-flash/' || '/';
+            document.cookie = name + '=' + value + '; path=' + path +
+                '; max-age=31536000; SameSite=Lax';
         }
         if (!getCookie('lang')) {
             setCookie('lang', 'ja');
@@ -93,7 +96,7 @@
     <div class="chapter-grid">
         
         <a href="/n3-kanji-flash/ja/week/1/" class="chapter-card">
-            <div class="chapter-number">第 1</div>
+            <div class="chapter-number">第1週</div>
             <div class="chapter-theme-jp">でかける①</div>
             <div class="chapter-theme-en">Go Out 1</div>
             <div class="chapter-stats">
@@ -111,7 +114,7 @@
         </a>
         
         <a href="/n3-kanji-flash/ja/week/2/" class="chapter-card">
-            <div class="chapter-number">第 2</div>
+            <div class="chapter-number">第2週</div>
             <div class="chapter-theme-jp">でかける②</div>
             <div class="chapter-theme-en">Go Out 2</div>
             <div class="chapter-stats">
@@ -129,7 +132,7 @@
         </a>
         
         <a href="/n3-kanji-flash/ja/week/3/" class="chapter-card">
-            <div class="chapter-number">第 3</div>
+            <div class="chapter-number">第3週</div>
             <div class="chapter-theme-jp">つかう</div>
             <div class="chapter-theme-en">Use</div>
             <div class="chapter-stats">
@@ -147,7 +150,7 @@
         </a>
         
         <a href="/n3-kanji-flash/ja/week/4/" class="chapter-card">
-            <div class="chapter-number">第 4</div>
+            <div class="chapter-number">第4週</div>
             <div class="chapter-theme-jp">かう</div>
             <div class="chapter-theme-en">Buy</div>
             <div class="chapter-stats">
@@ -165,7 +168,7 @@
         </a>
         
         <a href="/n3-kanji-flash/ja/week/5/" class="chapter-card">
-            <div class="chapter-number">第 5</div>
+            <div class="chapter-number">第5週</div>
             <div class="chapter-theme-jp">かく</div>
             <div class="chapter-theme-en">Write</div>
             <div class="chapter-stats">
@@ -183,7 +186,7 @@
         </a>
         
         <a href="/n3-kanji-flash/ja/week/6/" class="chapter-card">
-            <div class="chapter-number">第 6</div>
+            <div class="chapter-number">第6週</div>
             <div class="chapter-theme-jp">よむ</div>
             <div class="chapter-theme-en">Read</div>
             <div class="chapter-stats">

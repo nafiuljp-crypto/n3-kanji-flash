@@ -32,6 +32,17 @@ retake any test as often as you like, retry only the items you got wrong, or
 run a test across all six weeks. Scores and lesson progress are stored in the
 browser (`localStorage`), so they are per device and never leave the browser.
 
+Each test opens with a **range picker**: `from` / `to` over that test's item
+list (1 = the first radical / kanji / word of the week), with the resulting
+question count shown live. A range counts *items*; kanji and vocabulary ask
+two questions per item (meaning and reading), radicals one. The last range used
+for a scope and test type is remembered, and `?from=1&to=10` seeds it from the
+URL.
+
+Reading answers accept **kana (hiragana or katakana) or romaji** — Hepburn and
+kunrei spellings, with long-vowel variants — while you type, the converted kana
+is previewed under the box.
+
 Totals: **263 radicals, 293 kanji, 571 vocabulary items.**
 
 ---
@@ -43,14 +54,13 @@ n3-kanji-flash/
 ├── app.py              # Optional Flask dev server (local only)
 ├── build.py            # Static site generator → dist/
 ├── curriculum.py       # data/curriculum.json: weeks → radicals/kanji/vocab
-├── wanikani.py         # WaniKani client, cache, and data/wanikani.json
+├── wanikani.py         # WaniKani client and .cache/ refresh
 ├── i18n.py             # EN / JA strings
 ├── data/
 │   ├── week_1..6.json  # Kanji lists and example sentences from the book
-│   ├── wanikani.json   # Derived WaniKani data per kanji (committed)
-│   └── curriculum.json # Derived curriculum (committed)
+│   └── curriculum.json # Derived curriculum (committed; treat as source)
 ├── templates/          # Jinja2: home, week, lesson, test, test picker
-├── static/             # app.js, style.css (source)
+├── static/             # app.js, romaji.js, style.css (source)
 ├── dist/               # Build output (gitignored)
 │
 │   --- copied from dist/ at deploy time and committed ---
@@ -68,19 +78,26 @@ built HTML is absolute (GH Pages does not collapse `../` segments).
 
 ## Build and deploy
 
+The site is a pre-rendered static build; GitHub Pages serves `main` directly,
+so pushing is the deploy. Only the build needs Python packages:
+`pip install jinja2` (`flask` pulls it in transitively; it is listed in
+`requirements.txt` with `jinja2` for a build-only machine).
+
 ```bash
-python3 curriculum.py      # regenerate data/curriculum.json from the cache
-python3 build.py           # regenerate dist/
+python3 build.py           # regenerate dist/ (needs Jinja2; no network)
 rm -rf en ja static index.html 404.html .nojekyll
 cp -r dist/. .
 git add -A && git commit -m "Rebuild site" && git push
 ```
 
-Refreshing the WaniKani data itself (only needed when you want newer subject
-data):
+Regenerating `data/curriculum.json` is **not** part of a normal rebuild: it
+needs the WaniKani subject cache (`.cache/wanikani_subjects.json`), which is
+gitignored and derived from a paid account, so a fresh clone cannot run
+`curriculum.py` without a token. Treat the committed `curriculum.json` as
+source; rerunning the generator will overwrite hand edits.
 
 ```bash
-python3 wanikani.py --refresh   # re-downloads all subjects into .cache/
+python3 wanikani.py --refresh   # re-downloads all subjects into .cache/ (token required)
 python3 curriculum.py
 python3 build.py
 ```
@@ -110,7 +127,10 @@ pip install flask --break-system-packages
 python3 app.py            # http://127.0.0.1:8080
 ```
 
-Same templates and data as the static build.
+Same templates and data as the static build. Pages are served both bare
+(`/week/1/`) and under the language prefix the links use (`/ja/week/1/`,
+`/en/week/1/`). It is a development convenience only — the public site is the
+static build.
 
 ---
 

@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-{% block title %}{{ T.week_word }} {{ week.week }} · {{ week.theme.jp }}{% endblock %}
+{% set week_label = T.week_n.format(week=week.week) %}
+{% block title %}{{ week_label }} · {{ week.theme.jp }}{% endblock %}
 {% block content %}
 <section class="chapter-header">
     <a href="{{ base }}{{ lang }}/" class="back-link">{{ T.back_home }}</a>
-    <h1>{{ T.week_word }} {{ week.week }} · <span class="jp">{{ week.theme.jp }}</span></h1>
-    <p class="theme-en">{{ week.theme.en }} · {{ week.theme.kr }}</p>
+    <h1>{{ week_label }} · <span class="jp">{{ week.theme.jp }}</span></h1>
+    <p class="theme-en">{{ week.theme.en }}</p>
 </section>
 
 <section class="games">
@@ -15,7 +16,7 @@
             ("kanji", T.learn_kanji, T.learn_kanji_sub),
             ("vocab", T.learn_vocab, T.learn_vocab_sub),
         ] %}
-        {% set count = week[type] | length %}
+        {% set count = week[{"radicals": "radical_count", "kanji": "kanji_count", "vocab": "vocab_count"}[type]] %}
         <a href="{{ base }}{{ lang }}/week/{{ week.week }}/learn/{{ type }}/"
            class="learn-card learn-{{ type }}" data-progress-type="{{ type }}"
            data-total="{{ count }}">

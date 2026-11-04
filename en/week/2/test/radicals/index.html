@@ -13,7 +13,10 @@
             return m ? m[2] : null;
         }
         function setCookie(name, value) {
-            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+            /* Scoped to the site, not to every project on *.github.io (B15). */
+            var path = '/n3-kanji-flash/' || '/';
+            document.cookie = name + '=' + value + '; path=' + path +
+                '; max-age=31536000; SameSite=Lax';
         }
         if (!getCookie('lang')) {
             setCookie('lang', 'ja');
@@ -59,13 +62,28 @@
     <main class="container">
         
 <section class="chapter-header">
-    <a href="/n3-kanji-flash/en/en/week/2/" class="back-link">← Week 2</a>
+    <a href="/n3-kanji-flash/en/week/2/" class="back-link">← Week 2</a>
     <h1>Radical test · <span class="muted">Week 2</span></h1>
     <p class="muted">Repeatable — retake as often as you like.</p>
 </section>
 
 <section class="test-shell" id="test-shell">
-    <div class="test-top">
+    <div class="range-panel" id="range-panel">
+        <h2 class="range-title">Choose the items</h2>
+        <div class="range-row">
+            <label for="range-from">From item</label>
+            <input type="number" id="range-from" class="range-input" min="1" step="1"
+                   inputmode="numeric" value="1">
+            <label for="range-to">to item</label>
+            <input type="number" id="range-to" class="range-input" min="1" step="1"
+                   inputmode="numeric" value="1">
+            <span class="range-of" id="range-of"></span>
+        </div>
+        <div class="range-hint" id="range-hint" aria-live="polite"></div>
+        <button id="start-btn" class="btn btn-primary" type="button">Start</button>
+    </div>
+
+    <div class="test-top hidden" id="test-top">
         <span id="test-progress-text" class="test-progress-text"></span>
         <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
         <span class="score-tracker">
@@ -74,14 +92,16 @@
         </span>
     </div>
 
-    <div class="question-card" id="question-card">
+    <div class="question-card hidden" id="question-card">
         <div class="question-label" id="question-label"></div>
         <div class="item-glyph" id="question-glyph">—</div>
         <input type="text" id="answer-input" class="answer-input" autocomplete="off"
-               autocapitalize="off" autocorrect="off" spellcheck="false">
+               autocapitalize="off" autocorrect="off" spellcheck="false"
+               aria-label="Your answer">
+        <div class="kana-preview hidden" id="kana-preview" aria-live="polite"></div>
         <div class="question-feedback hidden" id="question-feedback"></div>
         <div class="question-actions">
-            <button id="check-btn" class="btn btn-primary">Check</button>
+            <button id="check-btn" class="btn btn-primary" disabled>Check</button>
             <button id="show-btn" class="btn btn-link">Show answer</button>
             <button id="continue-btn" class="btn btn-primary hidden">Continue</button>
         </div>
@@ -103,7 +123,7 @@
         <div class="done-actions">
             <button id="retry-wrong-btn" class="btn btn-primary hidden">Retry wrong answers</button>
             <button id="retake-btn" class="btn btn-secondary">Retake the whole test</button>
-            <a class="btn btn-link" href="/n3-kanji-flash/en/en/week/2/">← Week 2</a>
+            <a class="btn btn-link" href="/n3-kanji-flash/en/week/2/">← Week 2</a>
         </div>
     </div>
 </section>
@@ -112,7 +132,7 @@
 {"items": [{"char": "\u30cf", "image": null, "meanings": ["Fins"], "readings": []}, {"char": "\u4ea0", "image": null, "meanings": ["Lid"], "readings": []}, {"char": "\u529b", "image": null, "meanings": ["Power"], "readings": []}, {"char": "\u5927", "image": null, "meanings": ["Big"], "readings": []}, {"char": "\u5973", "image": null, "meanings": ["Woman"], "readings": []}, {"char": "\u4e01", "image": null, "meanings": ["Street"], "readings": []}, {"char": "\u53c8", "image": null, "meanings": ["Stool"], "readings": []}, {"char": "\u5b50", "image": null, "meanings": ["Child"], "readings": []}, {"char": "\u5c38", "image": null, "meanings": ["Flag"], "readings": []}, {"char": "\u5f61", "image": null, "meanings": ["Hair"], "readings": []}, {"char": "\u6708", "image": null, "meanings": ["Moon"], "readings": []}, {"char": "\u706b", "image": null, "meanings": ["Fire"], "readings": []}, {"char": "\u65b9", "image": null, "meanings": ["Direction"], "readings": []}, {"char": "\u7236", "image": null, "meanings": ["Father"], "readings": []}, {"char": "\u53e4", "image": null, "meanings": ["Old"], "readings": []}, {"char": "\u7528", "image": null, "meanings": ["Task"], "readings": []}, {"char": "\u77e2", "image": null, "meanings": ["Arrow"], "readings": []}, {"char": "\u5bf8", "image": null, "meanings": ["Measurement"], "readings": []}, {"char": "\u30cd", "image": null, "meanings": ["Spirit"], "readings": []}, {"char": "\u5f73", "image": null, "meanings": ["Loiter"], "readings": []}, {"char": "\u30e8", "image": null, "meanings": ["Wolverine"], "readings": []}, {"char": "\u5efe", "image": null, "meanings": ["Twenty"], "readings": []}, {"char": "\u81ea", "image": null, "meanings": ["Self"], "readings": []}, {"char": "\u884c", "image": null, "meanings": ["Go"], "readings": []}, {"char": "\u6597", "image": null, "meanings": ["Ladle"], "readings": []}, {"char": "\u30db", "image": null, "meanings": ["Angel"], "readings": []}, {"char": "\u706c", "image": null, "meanings": ["Boil"], "readings": []}, {"char": "\u79be", "image": null, "meanings": ["Grain"], "readings": []}, {"char": "\u7f8a", "image": null, "meanings": ["Sheep"], "readings": []}, {"char": "\u30de", "image": null, "meanings": ["Mama"], "readings": []}, {"char": "\u5360", "image": null, "meanings": ["Fortune"], "readings": []}, {"char": "\u4e91", "image": null, "meanings": ["Cloud"], "readings": []}, {"char": "\u5f00", "image": null, "meanings": ["Lantern"], "readings": []}, {"char": "\u9801", "image": null, "meanings": ["Geoduck"], "readings": []}, {"char": "\u7533", "image": null, "meanings": ["Humble"], "readings": []}, {"char": "\u5bfa", "image": null, "meanings": ["Temple"], "readings": []}, {"char": "\u5df1", "image": null, "meanings": ["Oneself"], "readings": []}, {"char": "\u539f", "image": null, "meanings": ["Original"], "readings": []}, {"char": "\u52fa", "image": null, "meanings": ["Pool"], "readings": []}, {"char": "\u82df", "image": null, "meanings": ["Poem"], "readings": []}, {"char": "\u624d", "image": null, "meanings": ["Talent"], "readings": []}, {"char": "\u5171", "image": null, "meanings": ["Together"], "readings": []}, {"char": "\u89d2", "image": null, "meanings": ["Angle"], "readings": []}, {"char": "\u5442", "image": null, "meanings": ["Bathtub"], "readings": []}, {"char": "\u5b89", "image": null, "meanings": ["Cheap"], "readings": []}, {"char": "\u5185", "image": null, "meanings": ["Inside"], "readings": []}, {"char": "\u6c42", "image": null, "meanings": ["Request"], "readings": []}, {"char": "\u8980", "image": null, "meanings": ["Helicopter"], "readings": []}, {"char": "\ud840\udc89", "image": null, "meanings": ["Gun"], "readings": []}, {"char": "\ud840\udda2", "image": null, "meanings": ["Hat"], "readings": []}, {"char": "\u2e8c", "image": null, "meanings": ["Triceratops"], "readings": []}, {"char": "\u2ea4", "image": null, "meanings": ["Cleat"], "readings": []}, {"char": "\ud840\udccc", "image": null, "meanings": ["Cape"], "readings": []}, {"char": "\u8881", "image": null, "meanings": ["Zombie"], "readings": []}, {"char": "\u796d", "image": null, "meanings": ["Festival"], "readings": []}, {"char": "\u5782", "image": null, "meanings": ["Droopy"], "readings": []}, {"char": "\u5e1a", "image": null, "meanings": ["Broom"], "readings": []}], "scope": "week2", "type": "radicals"}
 </script>
 <script id="i18n-strings" type="application/json">
-{"answer_was": "Answer", "btn_check": "Check", "btn_continue": "Continue", "btn_next": "Next \u2192", "btn_prev": "\u2190 Previous", "btn_show_answer": "Show answer", "correct": "Correct", "incorrect": "Incorrect", "lesson_done": "Lesson complete", "lesson_progress": "Item {pos} of {total}", "no_items": "Nothing to show here yet.", "placeholder_meaning": "type the meaning\u2026", "placeholder_reading": "type the reading in kana\u2026", "q_meaning_kanji": "What is the meaning of this kanji?", "q_meaning_radicals": "What is the meaning of this radical?", "q_meaning_vocab": "What is the meaning of this word?", "q_reading_kanji": "What is the reading of this kanji?", "q_reading_vocab": "What is the reading of this word?", "question_of": "{pos} / {total}", "test_complete": "Test complete", "wani_open": "Open on WaniKani"}
+{"answer_aria": "Your answer", "answer_was": "Answer", "btn_check": "Check", "btn_continue": "Continue", "btn_next": "Next \u2192", "btn_prev": "\u2190 Previous", "btn_show_answer": "Show answer", "btn_start_session": "Start", "correct": "Correct", "incorrect": "Incorrect", "lesson_done": "Lesson complete", "lesson_progress": "Item {pos} of {total}", "no_items": "Nothing to show here yet.", "placeholder_meaning": "type the meaning\u2026", "placeholder_reading": "reading \u2014 romaji or kana\u2026", "q_meaning_kanji": "What is the meaning of this kanji?", "q_meaning_radicals": "What is the meaning of this radical?", "q_meaning_vocab": "What is the meaning of this word?", "q_reading_kanji": "What is the reading of this kanji?", "q_reading_vocab": "What is the reading of this word?", "question_of": "{pos} / {total}", "range_from": "From item", "range_of": "of {count} items", "range_questions": "= {count} questions", "range_title": "Choose the items", "range_to": "to item", "test_complete": "Test complete", "wani_open": "Open on WaniKani"}
 </script>
 
     </main>
@@ -122,6 +142,7 @@
     </footer>
 
     
+<script src="/n3-kanji-flash/static/romaji.js"></script>
 <script src="/n3-kanji-flash/static/app.js"></script>
 <script>window.N3App.initTest();</script>
 

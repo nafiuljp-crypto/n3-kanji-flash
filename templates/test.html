@@ -2,13 +2,28 @@
 {% block title %}{{ title }} · {{ scope_label }} · {{ T.brand }}{% endblock %}
 {% block content %}
 <section class="chapter-header">
-    <a href="{{ base }}{{ lang }}/{{ back_path }}" class="back-link">{{ back_label }}</a>
+    <a href="{{ base }}{{ back_path }}" class="back-link">{{ back_label }}</a>
     <h1>{{ title }} · <span class="muted">{{ scope_label }}</span></h1>
     <p class="muted">{{ T.repeat_note }}</p>
 </section>
 
 <section class="test-shell" id="test-shell">
-    <div class="test-top">
+    <div class="range-panel" id="range-panel">
+        <h2 class="range-title">{{ T.range_title }}</h2>
+        <div class="range-row">
+            <label for="range-from">{{ T.range_from }}</label>
+            <input type="number" id="range-from" class="range-input" min="1" step="1"
+                   inputmode="numeric" value="1">
+            <label for="range-to">{{ T.range_to }}</label>
+            <input type="number" id="range-to" class="range-input" min="1" step="1"
+                   inputmode="numeric" value="1">
+            <span class="range-of" id="range-of"></span>
+        </div>
+        <div class="range-hint" id="range-hint" aria-live="polite"></div>
+        <button id="start-btn" class="btn btn-primary" type="button">{{ T.btn_start_session }}</button>
+    </div>
+
+    <div class="test-top hidden" id="test-top">
         <span id="test-progress-text" class="test-progress-text"></span>
         <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
         <span class="score-tracker">
@@ -17,14 +32,16 @@
         </span>
     </div>
 
-    <div class="question-card" id="question-card">
+    <div class="question-card hidden" id="question-card">
         <div class="question-label" id="question-label"></div>
         <div class="item-glyph" id="question-glyph">—</div>
         <input type="text" id="answer-input" class="answer-input" autocomplete="off"
-               autocapitalize="off" autocorrect="off" spellcheck="false">
+               autocapitalize="off" autocorrect="off" spellcheck="false"
+               aria-label="{{ T.answer_aria }}">
+        <div class="kana-preview hidden" id="kana-preview" aria-live="polite"></div>
         <div class="question-feedback hidden" id="question-feedback"></div>
         <div class="question-actions">
-            <button id="check-btn" class="btn btn-primary">{{ T.btn_check }}</button>
+            <button id="check-btn" class="btn btn-primary" disabled>{{ T.btn_check }}</button>
             <button id="show-btn" class="btn btn-link">{{ T.btn_show_answer }}</button>
             <button id="continue-btn" class="btn btn-primary hidden">{{ T.btn_continue }}</button>
         </div>
@@ -46,7 +63,7 @@
         <div class="done-actions">
             <button id="retry-wrong-btn" class="btn btn-primary hidden">{{ T.retry_wrong }}</button>
             <button id="retake-btn" class="btn btn-secondary">{{ T.retake_all }}</button>
-            <a class="btn btn-link" href="{{ base }}{{ lang }}/{{ back_path }}">{{ back_label }}</a>
+            <a class="btn btn-link" href="{{ base }}{{ back_path }}">{{ back_label }}</a>
         </div>
     </div>
 </section>
@@ -60,6 +77,7 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="{{ base }}static/romaji.js"></script>
 <script src="{{ base }}static/app.js"></script>
 <script>window.N3App.initTest();</script>
 {% endblock %}

@@ -9,6 +9,7 @@ window.N3App = window.N3App || {};
 
     const LESSON_KEY = "n3lesson:v1";
     const TEST_KEY = "n3test:v1";
+    const RANGE_KEY = "n3range:v1";
 
     // ---------- helpers ----------
 
@@ -91,27 +92,83 @@ window.N3App = window.N3App || {};
         return prev[a.length];
     }
 
-    function matches(user, answers) {
+    // ---------- grading ----------
+
+    /* Leading "to "/article is optional on both sides ("To Turn Toward" =
+       "turn toward"). Runs twice so "to the park" loses both. */
+    function stripLead(s) {
+        let prev;
+        let out = s;
+        do {
+            prev = out;
+            out = out.replace(/^(?:to|a|an|the)\s+/, "");
+        } while (out !== prev);
+        return out;
+    }
+
+    function splitAlternatives(s) {
+        return String(s || "").split(/\s*[,/;、；]\s*/);
+    }
+
+    /* F4: typo tolerance only for long alternatives, and only for a
+       same-length substitution — so "residents"/"residentt" stay wrong for
+       "resident" while "restaraunt" still passes for "restaurant". */
+    function nearMiss(user, alt) {
+        return alt.length >= 8 && user.length === alt.length && levenshtein(user, alt) <= 1;
+    }
+
+    function matchesMeaning(user, answers) {
         const u = normalize(user);
         if (!u) return false;
-        for (const answer of answers) {
-            const e = normalize(answer);
-            if (!e) continue;
-            if (u === e) return true;
-            // WaniKani lists alternatives separated by commas or slashes.
-            for (const alt of e.split(/\s*[,/、]\s*/)) {
+        const uForms = [u, stripLead(u)];
+        for (const answer of answers || []) {
+            for (const part of splitAlternatives(answer)) {
+                const alt = normalize(part);
                 if (!alt) continue;
-                if (u === alt) return true;
-                if (alt.length >= 4 && levenshtein(u, alt) <= 1) return true;
+                const aForms = [alt, stripLead(alt)];
+                for (const a of uForms) {
+                    for (const b of aForms) {
+                        if (a === b) return true;
+                        if (nearMiss(a, b)) return true;
+                    }
+                }
             }
         }
         return false;
     }
 
-    function glyphHtml(char, image, cls) {
+    /* Readings accept kana (hiragana or katakana) and romaji, Hepburn or
+       kunrei, with long-vowel variants. */
+    function matchesReading(user, answers) {
+        const raw = String(user || "").trim();
+        if (!raw) return false;
+        const converter = window.N3Romaji;
+        const candidates = converter ? converter.candidates(raw) : [normalize(raw)];
+        for (const cand of candidates) {
+            if (!cand) continue;
+            for (const answer of answers || []) {
+                for (const part of splitAlternatives(answer)) {
+                    const alt = normalize(part);
+                    if (!alt) continue;
+                    if (cand === alt) return true;
+                    if (nearMiss(cand, alt)) return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    function matches(user, question) {
+        // B9: an empty box is never a submission.
+        if (!String(user === undefined || user === null ? "" : user).trim()) return false;
+        if (question.kind === "reading") return matchesReading(user, question.answers);
+        return matchesMeaning(user, question.answers);
+    }
+
+    function glyphHtml(char, image, cls, alt) {
         if (image) {
             return '<img class="' + (cls || "item-glyph-img") + '" src="' +
-                escapeHtml(image) + '" alt="' + escapeHtml(char || "") + '">';
+                escapeHtml(image) + '" alt="' + escapeHtml(alt || char || "") + '">';
         }
         return escapeHtml(char || "—");
     }
@@ -137,14 +194,26 @@ window.N3App = window.N3App || {};
 
     function testStore() { return storeGet(TEST_KEY, {}); }
 
+    /* One key scheme, shared with initWeek: "<scope>:<type>", scope being
+       "week4" or "all". Retries are counted separately and never touch
+       best/last (B7). */
     function saveTestScore(scope, type, correct, total) {
         const all = testStore();
         const key = scope + ":" + type;
-        const entry = all[key] || { best: 0, last: 0, runs: 0 };
+        const entry = all[key] || { best: 0, last: 0, runs: 0, retries: 0 };
         const pct = total ? Math.round((correct / total) * 100) : 0;
         entry.last = pct;
         entry.best = Math.max(entry.best || 0, pct);
         entry.runs = (entry.runs || 0) + 1;
+        all[key] = entry;
+        storeSet(TEST_KEY, all);
+    }
+
+    function recordRetry(scope, type) {
+        const all = testStore();
+        const key = scope + ":" + type;
+        const entry = all[key] || { best: 0, last: 0, runs: 0, retries: 0 };
+        entry.retries = (entry.retries || 0) + 1;
         all[key] = entry;
         storeSet(TEST_KEY, all);
     }
@@ -203,19 +272,19 @@ window.N3App = window.N3App || {};
             const state = card.querySelector("[data-state]");
             if (fill) fill.style.width = pctText(done, total);
             if (state) {
-                state.textContent = done >= total && total > 0
-                    ? done + " / " + total
-                    : done + " / " + total;
-                if (done >= total && total > 0) state.classList.add("complete");
+                state.textContent = done + " / " + total;
+                state.classList.toggle("complete", done >= total && total > 0);
             }
         });
 
         const tests = testStore();
         qsa("[data-test-type]").forEach(function (card) {
             const type = card.getAttribute("data-test-type");
-            const entry = tests[week + ":" + type];
+            const entry = tests["week" + week + ":" + type];
             const el = card.querySelector("[data-score]");
-            if (el && entry) el.textContent = "★ " + entry.best + "% · " + entry.runs + "×";
+            if (el && entry && entry.runs) {
+                el.textContent = "★ " + entry.best + "% · " + entry.runs + "×";
+            }
         });
     }
 
@@ -235,14 +304,14 @@ window.N3App = window.N3App || {};
         function renderItem() {
             const item = items[idx];
             const glyph = $("item-glyph");
-            glyph.innerHTML = glyphHtml(item.char, item.image, "item-glyph-img");
+            glyph.innerHTML = glyphHtml(item.char, item.image, "item-glyph-img", item.alt);
             $("item-meaning").textContent = item.meaning || "";
             $("item-readings").textContent = item.reading_display || "";
 
             const radicals = $("item-radicals");
             radicals.innerHTML = (item.radicals || []).map(function (r) {
                 return '<span class="mini-chip"><span class="mini-glyph">' +
-                    glyphHtml(r.char, r.image, "mini-glyph-img") + "</span>" +
+                    glyphHtml(r.char, r.image, "mini-glyph-img", r.meaning) + "</span>" +
                     '<span class="mini-name">' + escapeHtml(r.meaning) + "</span></span>";
             }).join("");
             radicals.classList.toggle("hidden", !(item.radicals || []).length);
@@ -308,14 +377,119 @@ window.N3App = window.N3App || {};
     function initTest() {
         const data = pageData();
         const T = uiStrings();
-        const items = data.items || [];
+        const allItems = data.items || [];
+        const scopeKey = data.scope + ":" + data.type;
 
-        if (!items.length) {
+        const panel = $("range-panel");
+        const fromInput = $("range-from");
+        const toInput = $("range-to");
+        const startBtn = $("start-btn");
+        const ofLabel = $("range-of");
+        const hint = $("range-hint");
+
+        if (!allItems.length) {
+            if (panel) panel.classList.add("hidden");
+            $("test-top").classList.add("hidden");
+            $("question-card").classList.remove("hidden");
             $("question-card").innerHTML = '<p class="muted">' + escapeHtml(T.no_items || "") + "</p>";
             return;
         }
 
-        function buildQuestions() {
+        // ----- range (items 1..N, inclusive) -----
+
+        function storedRange() {
+            const all = storeGet(RANGE_KEY, {});
+            return all[scopeKey] || null;
+        }
+
+        function saveRange(range) {
+            const all = storeGet(RANGE_KEY, {});
+            all[scopeKey] = range;
+            storeSet(RANGE_KEY, all);
+        }
+
+        function urlRange() {
+            if (!window.location || !window.location.search) return null;
+            const params = new URLSearchParams(window.location.search);
+            const from = parseInt(params.get("from"), 10);
+            const to = parseInt(params.get("to"), 10);
+            if (!isFinite(from) && !isFinite(to)) return null;
+            return { from: isFinite(from) ? from : null, to: isFinite(to) ? to : null };
+        }
+
+        function clampRange(range) {
+            const max = allItems.length;
+            let from = Math.round(Number(range.from));
+            let to = Math.round(Number(range.to));
+            if (!isFinite(from)) from = 1;
+            if (!isFinite(to)) to = max;
+            from = Math.min(Math.max(from, 1), max);
+            to = Math.min(Math.max(to, 1), max);
+            if (from > to) { const swap = from; from = to; to = swap; }
+            return { from: from, to: to };
+        }
+
+        function selectedItems(range) {
+            return allItems.slice(range.from - 1, range.to);
+        }
+
+        function questionsFor(items) {
+            let count = 0;
+            items.forEach(function (item) {
+                count += 1;                                    // meaning
+                if ((item.readings || []).length) count += 1;  // reading
+            });
+            return count;
+        }
+
+        function initialRange() {
+            const url = urlRange();
+            const saved = storedRange();
+            return clampRange({
+                from: (url && url.from) || (saved && saved.from) || 1,
+                to: (url && url.to) || (saved && saved.to) || allItems.length,
+            });
+        }
+
+        function readInputs() {
+            return clampRange({ from: fromInput.value, to: toInput.value });
+        }
+
+        function updatePreview() {
+            const range = readInputs();
+            const items = selectedItems(range);
+            const count = questionsFor(items);
+            ofLabel.textContent = (T.range_of || "{count} items")
+                .replace("{count}", allItems.length);
+            hint.textContent = (T.range_questions || "= {count} questions")
+                .replace("{count}", count);
+            hint.classList.toggle("invalid", !items.length);
+            startBtn.disabled = !items.length;
+        }
+
+        const range0 = initialRange();
+        fromInput.value = range0.from;
+        toInput.value = range0.to;
+        fromInput.max = allItems.length;
+        toInput.max = allItems.length;
+        updatePreview();
+
+        fromInput.addEventListener("input", updatePreview);
+        toInput.addEventListener("input", updatePreview);
+        fromInput.addEventListener("change", function () {
+            const range = readInputs();
+            fromInput.value = range.from;
+            toInput.value = range.to;
+            updatePreview();
+        });
+        toInput.addEventListener("change", function () {
+            const range = readInputs();
+            fromInput.value = range.from;
+            toInput.value = range.to;
+            updatePreview();
+        });
+
+        function buildQuestions(items) {
             const qs = [];
             items.forEach(function (item) {
                 qs.push({
@@ -340,7 +514,7 @@ window.N3App = window.N3App || {};
 
         let state = null;
 
-        function start(questions) {
+        function start(questions, isRetry) {
             state = {
                 queue: shuffle(questions),
                 idx: 0,
@@ -348,9 +522,13 @@ window.N3App = window.N3App || {};
                 wrong: 0,
                 wrongItems: [],
                 answered: false,
+                isRetry: !!isRetry,
             };
+            if (panel) panel.classList.add("hidden");
             $("test-result").classList.add("hidden");
             $("test-shell").classList.remove("hidden");
+            $("test-top").classList.remove("hidden");
+            $("question-card").classList.remove("hidden");
             updateScores();
             showQuestion();
         }
@@ -362,22 +540,36 @@ window.N3App = window.N3App || {};
 
         function currentQuestion() { return state.queue[state.idx]; }
 
+        function showRangePanel() {
+            $("test-shell").classList.remove("hidden");
+            if (panel) panel.classList.remove("hidden");
+            $("test-top").classList.add("hidden");
+            $("question-card").classList.add("hidden");
+            $("test-result").classList.add("hidden");
+            updatePreview();
+        }
+
         function showQuestion() {
             const q = currentQuestion();
             state.answered = false;
             const askKey = (q.kind === "meaning" ? "q_meaning_" : "q_reading_") + data.type;
-            $("question-label").textContent = T[askKey] ||
-                (q.kind === "meaning" ? "Meaning?" : "Reading?");
+            const label = T[askKey] || (q.kind === "meaning" ? "Meaning?" : "Reading?");
+            $("question-label").textContent = label;
             $("question-glyph").innerHTML = glyphHtml(q.char, q.image, "item-glyph-img");
             const input = $("answer-input");
             input.value = "";
             input.disabled = false;
+            input.classList.remove("correct", "wrong");
+            input.setAttribute("aria-label", label);
             input.placeholder = q.kind === "meaning"
                 ? (T.placeholder_meaning || "meaning…")
-                : (T.placeholder_reading || "reading…");
+                : (T.placeholder_reading || "romaji or kana…");
             input.focus();
+            $("kana-preview").classList.add("hidden");
+            $("kana-preview").textContent = "";
             $("question-feedback").classList.add("hidden");
             $("question-feedback").textContent = "";
+            $("check-btn").disabled = true;
             $("check-btn").classList.remove("hidden");
             $("show-btn").classList.remove("hidden");
             $("continue-btn").classList.add("hidden");
@@ -385,13 +577,16 @@ window.N3App = window.N3App || {};
                 (T.question_of || "{pos} / {total}")
                     .replace("{pos}", state.idx + 1).replace("{total}", state.queue.length);
             $("test-progress-fill").style.width =
-                ((state.idx) / state.queue.length * 100) + "%";
+                ((state.idx + 1) / state.queue.length * 100) + "%";
         }
 
         function settle(correct) {
             const q = currentQuestion();
             state.answered = true;
-            $("answer-input").disabled = true;
+            const input = $("answer-input");
+            input.disabled = true;
+            input.classList.remove("correct", "wrong");
+            input.classList.add(correct ? "correct" : "wrong");
             $("check-btn").classList.add("hidden");
             $("show-btn").classList.add("hidden");
             $("continue-btn").classList.remove("hidden");
@@ -415,13 +610,14 @@ window.N3App = window.N3App || {};
         }
 
         function check() {
-            if (state.answered) { next(); return; }
-            const q = currentQuestion();
-            settle(matches($("answer-input").value, q.answers));
+            if (!state || state.answered) return;
+            const value = $("answer-input").value;
+            if (!value || !value.trim()) return;   // B9: nothing typed, nothing submitted
+            settle(matches(value, currentQuestion()));
         }
 
         function next() {
-            if (!state.answered) return;
+            if (!state || !state.answered) return;
             if (state.idx + 1 >= state.queue.length) {
                 finish();
                 return;
@@ -446,39 +642,78 @@ window.N3App = window.N3App || {};
             if (state.wrongItems.length) {
                 review.classList.remove("hidden");
                 list.innerHTML = state.wrongItems.map(function (q) {
-                    return '<div class="wrong-item"><span class="wrong-glyph">' +
-                        escapeHtml(q.char) + "</span><span>" + escapeHtml(q.shown) + "</span></div>";
+                    const glyph = q.image
+                        ? '<img class="wrong-glyph-img" src="' + escapeHtml(q.image) +
+                          '" alt="' + escapeHtml(q.char || "") + '">'
+                        : '<span class="wrong-glyph">' + escapeHtml(q.char) + "</span>";
+                    return '<div class="wrong-item">' + glyph +
+                        "<span>" + escapeHtml(q.shown) + "</span></div>";
                 }).join("");
             } else {
                 review.classList.add("hidden");
             }
             $("retry-wrong-btn").classList.toggle("hidden", !state.wrongItems.length);
 
-            saveTestScore(data.scope, data.type, state.correct, total);
+            // A retry of the wrong answers is not a run of the whole test:
+            // it is counted, but best/last must not move (B7).
+            if (state.isRetry) {
+                recordRetry(data.scope, data.type);
+            } else {
+                saveTestScore(data.scope, data.type, state.correct, total);
+            }
         }
+
+        function updateKanaPreview() {
+            const el = $("kana-preview");
+            const q = state ? currentQuestion() : null;
+            const value = $("answer-input").value;
+            const wantsRomaji = q && q.kind === "reading" &&
+                /[A-Za-z]/.test(value) && window.N3Romaji;
+            if (!wantsRomaji) {
+                el.classList.add("hidden");
+                el.textContent = "";
+                return;
+            }
+            el.textContent = "→ " + window.N3Romaji.toKana(value);
+            el.classList.remove("hidden");
+        }
+
+        startBtn.addEventListener("click", function () {
+            const range = readInputs();
+            fromInput.value = range.from;
+            toInput.value = range.to;
+            saveRange(range);
+            start(buildQuestions(selectedItems(range)), false);
+        });
 
         $("check-btn").addEventListener("click", check);
         $("continue-btn").addEventListener("click", next);
         $("show-btn").addEventListener("click", function () {
-            if (state.answered) return;
+            if (!state || state.answered) return;
             const q = currentQuestion();
             $("answer-input").value = q.shown;
             settle(false);
         });
+        $("answer-input").addEventListener("input", function () {
+            $("check-btn").disabled = !this.value.trim();
+            updateKanaPreview();
+        });
         $("answer-input").addEventListener("keydown", function (e) {
             if (e.key === "Enter") {
-                if (state.answered) next(); else check();
+                if (state && state.answered) next(); else check();
             }
         });
         $("retake-btn").addEventListener("click", function () {
-            start(buildQuestions());
+            state = null;
+            showRangePanel();
         });
         $("retry-wrong-btn").addEventListener("click", function () {
+            if (!state) return;
             const retry = state.wrongItems.slice();
-            start(retry);
+            start(retry, true);
         });
 
-        start(buildQuestions());
+        showRangePanel();
     }
 
     window.N3App.initHome = initHome;

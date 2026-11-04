@@ -57,6 +57,9 @@ def lesson_items(week, type_):
                 "id": r["id"],
                 "char": r["char"],
                 "image": r["image"],
+                # Image-only radicals have no char: label the image with the
+                # meaning so the alt text is never empty (B14).
+                "alt": r["char"] or r["meaning"] or r.get("slug") or "",
                 "meaning": r["meaning"],
                 "reading_display": "",
                 "radicals": [],
@@ -72,7 +75,7 @@ def lesson_items(week, type_):
                 "id": k["char"],
                 "char": k["char"],
                 "image": None,
-                "meaning": k.get("meaning") or k.get("meaning"),
+                "meaning": k.get("meaning") or (k.get("meanings") or [""])[0],
                 "reading_display": " · ".join(readings),
                 "radicals": k.get("radicals", []),
                 "kanji": [],
@@ -163,6 +166,9 @@ def ui_strings(lang):
         "q_reading_kanji", "q_reading_vocab", "placeholder_meaning",
         "placeholder_reading", "btn_check", "btn_show_answer", "btn_continue",
         "correct", "incorrect", "answer_was", "question_of", "test_complete",
+        # range panel + romaji input (E.1 / E.2)
+        "range_title", "range_from", "range_to", "range_of", "range_questions",
+        "btn_start_session", "answer_aria",
     ]
     return {k: T[k] for k in keys}
 
@@ -215,8 +221,9 @@ def main():
     DIST.mkdir(parents=True)
     (DIST / "static").mkdir(parents=True, exist_ok=True)
 
-    (DIST / "static" / "i18n.json").write_text(
-        json.dumps(TRANSLATIONS, ensure_ascii=False), encoding="utf-8")
+    # NOTE: no i18n.json is generated any more. Nothing loaded it, and the
+    # static/ copy silently overwrote the generated one (B18). UI strings
+    # travel in each page's <script id="i18n-strings"> block.
 
     totals = {
         "radicals": sum(len(w["radicals"]) for w in weeks),
@@ -281,18 +288,27 @@ def main():
         write(DIST / lang / "404.html", env.get_template("404.html").render())
         print(f"  rendered /{lang}/ pages")
 
+    # Root and 404 both redirect to a real page. The URL is absolute: a
+    # relative redirect from /week/9/ resolves inside the missing path and
+    # loops forever (B8). The saved language cookie is honoured (B15/F12).
     root_redirect = """<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=./ja/">
 <title>N3 漢字学習</title>
-<link rel="canonical" href="./ja/">
-<script>location.replace('./ja/');</script>
+<link rel="canonical" href="{base}ja/">
+<script>
+(function () {{
+    var m = document.cookie.match(/(?:^|;\\s*)lang=(en|ja)(?:;|$)/);
+    var lang = m ? m[1] : '{default_lang}';
+    location.replace('{base}' + lang + '/');
+}})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url={base}{default_lang}/"></noscript>
 </head>
-<body><p><a href="./ja/">日本語</a></p></body>
+<body><p><a href="{base}ja/">日本語</a> · <a href="{base}en/">English</a></p></body>
 </html>
-"""
+""".format(base=SITE_BASE, default_lang=DEFAULT_LANG)
     write(DIST / "index.html", root_redirect)
     write(DIST / "404.html", root_redirect)
 

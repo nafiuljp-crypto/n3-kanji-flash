@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ title }} · {{ T.week_word }} {{ week }} · {{ T.brand }}{% endblock %}
+{% block title %}{{ title }} · {{ T.week_n.format(week=week) }} · {{ T.brand }}{% endblock %}
 {% block content %}
 <section class="chapter-header">
     <a href="{{ base }}{{ lang }}/week/{{ week }}/" class="back-link">{{ T.back_to_week.format(week=week) }}</a>

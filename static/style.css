@@ -266,8 +266,12 @@ section { margin: 28px 0; }
     gap: 12px;
 }
 .item-glyph {
-    font-size: 5rem;
+    /* Long vocabulary (お願いします) must wrap instead of overflowing (B11). */
+    font-size: clamp(2.25rem, 11vw, 5rem);
     line-height: 1.1;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
     font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
 }
 .item-glyph-img { width: 110px; height: 110px; object-fit: contain; }
@@ -376,6 +380,50 @@ section { margin: 28px 0; }
 
 /* ---------- tests ---------- */
 
+.range-panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+}
+.range-title { font-size: 1.1rem; }
+.range-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.range-row label { font-size: 0.9rem; color: var(--color-muted); }
+.range-input {
+    width: 76px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    text-align: center;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+.range-input:focus { outline: none; border-color: var(--color-primary); }
+.range-of { font-size: 0.85rem; color: var(--color-muted); }
+.range-hint { font-size: 0.95rem; font-weight: 600; color: var(--color-primary); }
+.range-hint.invalid { color: var(--color-error); }
+
+.kana-preview {
+    font-size: 1.05rem;
+    color: var(--color-primary-dark);
+    min-height: 1.4em;
+    letter-spacing: 0.02em;
+}
+
 .question-label { font-size: 1rem; color: var(--color-muted); }
 .question-feedback {
     font-size: 1.05rem;
@@ -420,6 +468,7 @@ section { margin: 28px 0; }
     font-size: 0.9rem;
 }
 .wrong-glyph { font-size: 1.2rem; font-weight: 700; }
+.wrong-glyph-img { width: 28px; height: 28px; object-fit: contain; }
 
 /* ---------- test picker ---------- */
 
@@ -450,7 +499,7 @@ section { margin: 28px 0; }
 
 @media (max-width: 560px) {
     .container { padding: 16px; }
-    .item-glyph { font-size: 4rem; }
+    .item-glyph { font-size: clamp(2rem, 13vw, 4rem); }
     .overall-row { grid-template-columns: 80px 1fr 70px; }
     .nav-links a { margin-left: 10px; }
 }

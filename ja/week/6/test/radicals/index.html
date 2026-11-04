@@ -13,7 +13,10 @@
             return m ? m[2] : null;
         }
         function setCookie(name, value) {
-            document.cookie = name + '=' + value + '; path=/; max-age=31536000; SameSite=Lax';
+            /* Scoped to the site, not to every project on *.github.io (B15). */
+            var path = '/n3-kanji-flash/' || '/';
+            document.cookie = name + '=' + value + '; path=' + path +
+                '; max-age=31536000; SameSite=Lax';
         }
         if (!getCookie('lang')) {
             setCookie('lang', 'ja');
@@ -59,13 +62,28 @@
     <main class="container">
         
 <section class="chapter-header">
-    <a href="/n3-kanji-flash/ja/ja/week/6/" class="back-link">← 第6週</a>
+    <a href="/n3-kanji-flash/ja/week/6/" class="back-link">← 第6週</a>
     <h1>部首テスト · <span class="muted">第6週</span></h1>
     <p class="muted">何度でも受けられます。</p>
 </section>
 
 <section class="test-shell" id="test-shell">
-    <div class="test-top">
+    <div class="range-panel" id="range-panel">
+        <h2 class="range-title">範囲を選ぶ</h2>
+        <div class="range-row">
+            <label for="range-from">開始</label>
+            <input type="number" id="range-from" class="range-input" min="1" step="1"
+                   inputmode="numeric" value="1">
+            <label for="range-to">終了</label>
+            <input type="number" id="range-to" class="range-input" min="1" step="1"
+                   inputmode="numeric" value="1">
+            <span class="range-of" id="range-of"></span>
+        </div>
+        <div class="range-hint" id="range-hint" aria-live="polite"></div>
+        <button id="start-btn" class="btn btn-primary" type="button">開始</button>
+    </div>
+
+    <div class="test-top hidden" id="test-top">
         <span id="test-progress-text" class="test-progress-text"></span>
         <div class="progress-bar"><div id="test-progress-fill" class="progress-fill"></div></div>
         <span class="score-tracker">
@@ -74,14 +92,16 @@
         </span>
     </div>
 
-    <div class="question-card" id="question-card">
+    <div class="question-card hidden" id="question-card">
         <div class="question-label" id="question-label"></div>
         <div class="item-glyph" id="question-glyph">—</div>
         <input type="text" id="answer-input" class="answer-input" autocomplete="off"
-               autocapitalize="off" autocorrect="off" spellcheck="false">
+               autocapitalize="off" autocorrect="off" spellcheck="false"
+               aria-label="回答">
+        <div class="kana-preview hidden" id="kana-preview" aria-live="polite"></div>
         <div class="question-feedback hidden" id="question-feedback"></div>
         <div class="question-actions">
-            <button id="check-btn" class="btn btn-primary">確認</button>
+            <button id="check-btn" class="btn btn-primary" disabled>確認</button>
             <button id="show-btn" class="btn btn-link">答えを見る</button>
             <button id="continue-btn" class="btn btn-primary hidden">次へ</button>
         </div>
@@ -103,7 +123,7 @@
         <div class="done-actions">
             <button id="retry-wrong-btn" class="btn btn-primary hidden">間違いだけやり直す</button>
             <button id="retake-btn" class="btn btn-secondary">もう一度受ける</button>
-            <a class="btn btn-link" href="/n3-kanji-flash/ja/ja/week/6/">← 第6週</a>
+            <a class="btn btn-link" href="/n3-kanji-flash/ja/week/6/">← 第6週</a>
         </div>
     </div>
 </section>
@@ -112,7 +132,7 @@
 {"items": [{"char": "\u5ddd", "image": null, "meanings": ["River"], "readings": []}, {"char": "\u6587", "image": null, "meanings": ["Writing"], "readings": []}, {"char": "\u4e0d", "image": null, "meanings": ["Not"], "readings": []}, {"char": "\u96e8", "image": null, "meanings": ["Rain"], "readings": []}, {"char": "\u9752", "image": null, "meanings": ["Blue"], "readings": []}, {"char": "\u5369", "image": null, "meanings": ["Stamp"], "readings": []}, {"char": "\u77db", "image": null, "meanings": ["Spear"], "readings": []}, {"char": "\u821f", "image": null, "meanings": ["Boat"], "readings": []}, {"char": "\u5723", "image": null, "meanings": ["Tombstone"], "readings": []}, {"char": "\u8fb0", "image": null, "meanings": ["Landslide"], "readings": []}, {"char": "\u97f3", "image": null, "meanings": ["Sound"], "readings": []}, {"char": "\u679c", "image": null, "meanings": ["Fruit"], "readings": []}, {"char": "\u4ed8", "image": null, "meanings": ["Attach"], "readings": []}, {"char": "\u5e78", "image": null, "meanings": ["Happiness"], "readings": []}, {"char": "\u6589", "image": null, "meanings": ["Simultaneous"], "readings": []}, {"char": "\u7230", "image": null, "meanings": ["Football"], "readings": []}, {"char": "\u5316", "image": null, "meanings": ["Change"], "readings": []}, {"char": "\u83ab", "image": null, "meanings": ["Greenhouse"], "readings": []}, {"char": "\u7fa9", "image": null, "meanings": ["Righteousness"], "readings": []}, {"char": "\ud842\uded3", "image": null, "meanings": ["Trash"], "readings": []}, {"char": "\ud845\uddd7", "image": null, "meanings": ["Spring"], "readings": []}, {"char": "death-star", "image": "https://files.wanikani.com/dgeoshskssv0r7bnmaxj0o4lt1el", "meanings": ["Death Star"], "readings": []}, {"char": "\u4ea6", "image": null, "meanings": ["Again"], "readings": []}], "scope": "week6", "type": "radicals"}
 </script>
 <script id="i18n-strings" type="application/json">
-{"answer_was": "\u7b54\u3048", "btn_check": "\u78ba\u8a8d", "btn_continue": "\u6b21\u3078", "btn_next": "\u6b21\u3078 \u2192", "btn_prev": "\u2190 \u524d\u3078", "btn_show_answer": "\u7b54\u3048\u3092\u898b\u308b", "correct": "\u6b63\u89e3", "incorrect": "\u4e0d\u6b63\u89e3", "lesson_done": "\u30ec\u30c3\u30b9\u30f3\u5b8c\u4e86", "lesson_progress": "{pos} / {total}", "no_items": "\u9805\u76ee\u304c\u3042\u308a\u307e\u305b\u3093\u3002", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f\u3092\u304b\u306a\u3067\u5165\u529b\u2026", "q_meaning_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u610f\u5473\u306f\uff1f", "q_meaning_radicals": "\u3053\u306e\u90e8\u9996\u306e\u610f\u5473\u306f\uff1f", "q_meaning_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u610f\u5473\u306f\uff1f", "q_reading_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u8aad\u307f\u306f\uff1f", "q_reading_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u8aad\u307f\u306f\uff1f", "question_of": "{pos} / {total}", "test_complete": "\u30c6\u30b9\u30c8\u5b8c\u4e86", "wani_open": "WaniKani \u3067\u958b\u304f"}
+{"answer_aria": "\u56de\u7b54", "answer_was": "\u7b54\u3048", "btn_check": "\u78ba\u8a8d", "btn_continue": "\u6b21\u3078", "btn_next": "\u6b21\u3078 \u2192", "btn_prev": "\u2190 \u524d\u3078", "btn_show_answer": "\u7b54\u3048\u3092\u898b\u308b", "btn_start_session": "\u958b\u59cb", "correct": "\u6b63\u89e3", "incorrect": "\u4e0d\u6b63\u89e3", "lesson_done": "\u30ec\u30c3\u30b9\u30f3\u5b8c\u4e86", "lesson_progress": "{pos} / {total}", "no_items": "\u9805\u76ee\u304c\u3042\u308a\u307e\u305b\u3093\u3002", "placeholder_meaning": "\u610f\u5473\u3092\u5165\u529b\u2026", "placeholder_reading": "\u8aad\u307f \u2014 \u30ed\u30fc\u30de\u5b57\u307e\u305f\u306f\u304b\u306a\u2026", "q_meaning_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u610f\u5473\u306f\uff1f", "q_meaning_radicals": "\u3053\u306e\u90e8\u9996\u306e\u610f\u5473\u306f\uff1f", "q_meaning_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u610f\u5473\u306f\uff1f", "q_reading_kanji": "\u3053\u306e\u6f22\u5b57\u306e\u8aad\u307f\u306f\uff1f", "q_reading_vocab": "\u3053\u306e\u5358\u8a9e\u306e\u8aad\u307f\u306f\uff1f", "question_of": "{pos} / {total}", "range_from": "\u958b\u59cb", "range_of": "\u5168 {count} \u9805\u76ee", "range_questions": "= {count} \u554f", "range_title": "\u7bc4\u56f2\u3092\u9078\u3076", "range_to": "\u7d42\u4e86", "test_complete": "\u30c6\u30b9\u30c8\u5b8c\u4e86", "wani_open": "WaniKani \u3067\u958b\u304f"}
 </script>
 
     </main>
@@ -122,6 +142,7 @@
     </footer>
 
     
+<script src="/n3-kanji-flash/static/romaji.js"></script>
 <script src="/n3-kanji-flash/static/app.js"></script>
 <script>window.N3App.initTest();</script>
 

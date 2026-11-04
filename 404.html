@@ -2,10 +2,16 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=./ja/">
 <title>N3 漢字学習</title>
-<link rel="canonical" href="./ja/">
-<script>location.replace('./ja/');</script>
+<link rel="canonical" href="/n3-kanji-flash/ja/">
+<script>
+(function () {
+    var m = document.cookie.match(/(?:^|;\s*)lang=(en|ja)(?:;|$)/);
+    var lang = m ? m[1] : 'ja';
+    location.replace('/n3-kanji-flash/' + lang + '/');
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=/n3-kanji-flash/ja/"></noscript>
 </head>
-<body><p><a href="./ja/">日本語</a></p></body>
+<body><p><a href="/n3-kanji-flash/ja/">日本語</a> · <a href="/n3-kanji-flash/en/">English</a></p></body>
 </html>
