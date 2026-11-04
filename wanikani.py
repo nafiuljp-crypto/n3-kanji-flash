@@ -95,6 +95,11 @@ def trim_subject(subject):
         "components": s.get("component_subject_ids") or [],
         "amalgamations": s.get("amalgamation_subject_ids") or [],
         "image": svg or (images[0]["url"] if images else None),
+        # WaniKani's own mnemonics, kept verbatim (they may contain inline
+        # tags such as <radical> / <kanji> / <reading>; the site strips them
+        # at render time). Radicals have no reading mnemonic.
+        "meaning_mnemonic": s.get("meaning_mnemonic") or None,
+        "reading_mnemonic": s.get("reading_mnemonic") or None,
         "lesson_position": s.get("lesson_position"),
         "document_url": s.get("document_url"),
     }

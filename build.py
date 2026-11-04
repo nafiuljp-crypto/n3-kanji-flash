@@ -65,6 +65,9 @@ def lesson_items(week, type_):
                 "radicals": [],
                 "kanji": [],
                 "url": r["url"],
+                # Radicals have a meaning mnemonic only.
+                "meaning_mnemonic": r.get("meaning_mnemonic"),
+                "reading_mnemonic": None,
             })
     elif type_ == "kanji":
         for k in week["kanji"]:
@@ -83,6 +86,8 @@ def lesson_items(week, type_):
                 "example": k.get("example"),
                 "compounds": k.get("compounds", []),
                 "url": k.get("url"),
+                "meaning_mnemonic": k.get("meaning_mnemonic"),
+                "reading_mnemonic": k.get("reading_mnemonic"),
             })
     else:
         for v in week["vocab"]:
@@ -95,6 +100,8 @@ def lesson_items(week, type_):
                 "radicals": [],
                 "kanji": v.get("kanji", []),
                 "url": v["url"],
+                "meaning_mnemonic": v.get("meaning_mnemonic"),
+                "reading_mnemonic": v.get("reading_mnemonic"),
             })
     return items
 
@@ -171,6 +178,8 @@ def ui_strings(lang):
         "btn_start_session", "answer_aria",
         # JLPT option mode: the option buttons are built in app.js
         "jlpt_option_aria",
+        # lesson mnemonic callout
+        "mnemonic", "meaning_label", "reading_label",
     ]
     return {k: T[k] for k in keys}
 

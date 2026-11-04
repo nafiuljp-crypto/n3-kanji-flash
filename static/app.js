@@ -27,6 +27,40 @@ window.N3App = window.N3App || {};
             .replace(/'/g, "&#39;");
     }
 
+    // WaniKani mnemonics carry inline markup: <radical>, <kanji>,
+    // <vocabulary>, <reading> (all wrapping their own text) plus the odd
+    // <ja> / <em> / <i>. Drop the tags, keep the words inside them.
+    const MNEMONIC_TAG = /<\/?(?:radical|kanji|vocabulary|reading|ja|em|i|b|strong|u)>/gi;
+
+    function mnemonicParagraphs(text) {
+        return String(text)
+            .replace(MNEMONIC_TAG, "")
+            .split(/\n{2,}/)
+            .map(function (p) { return p.trim(); })
+            .filter(Boolean);
+    }
+
+    // One labelled mnemonic row; "" when the subject has no mnemonic, so an
+    // item without one renders no heading at all.
+    function mnemonicRow(label, text) {
+        const paragraphs = mnemonicParagraphs(text || "");
+        if (!paragraphs.length) return "";
+        return '<div class="mnemonic-row">' +
+            '<div class="mnemonic-label">' + escapeHtml(label) + "</div>" +
+            paragraphs.map(function (p) {
+                return '<p class="mnemonic-text">' + escapeHtml(p) + "</p>";
+            }).join("") +
+            "</div>";
+    }
+
+    function mnemonicHtml(item, T) {
+        const title = T.mnemonic || "Mnemonic";
+        const rows = mnemonicRow(T.meaning_label || "Meaning", item.meaning_mnemonic) +
+            mnemonicRow(T.reading_label || "Reading", item.reading_mnemonic);
+        if (!rows) return "";
+        return '<div class="mnemonic-title">' + escapeHtml(title) + "</div>" + rows;
+    }
+
     function readJson(id) {
         const el = $(id);
         if (!el) return {};
@@ -337,6 +371,10 @@ window.N3App = window.N3App || {};
                 }).join("") + "</div>";
             }
             extra.innerHTML = extraHtml;
+
+            const mnemonics = $("item-mnemonics");
+            mnemonics.innerHTML = mnemonicHtml(item, T);
+            mnemonics.classList.toggle("hidden", !mnemonics.innerHTML);
 
             const links = $("item-links");
             links.innerHTML = item.url

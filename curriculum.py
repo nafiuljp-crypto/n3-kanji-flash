@@ -74,6 +74,10 @@ def build():
                         "onyomi_all": subject["onyomi"],
                         "kunyomi_all": subject["kunyomi"],
                         "radical_ids": subject["components"],
+                        # WaniKani's own mnemonics (raw text, inline tags and
+                        # all — the page strips the tags when rendering).
+                        "meaning_mnemonic": subject.get("meaning_mnemonic"),
+                        "reading_mnemonic": subject.get("reading_mnemonic"),
                     })
                 entries.append(entry)
         week_kanji[w] = entries
@@ -99,6 +103,8 @@ def build():
                         "meanings": subject["meanings"],
                         "slug": subject["slug"],
                         "url": subject["document_url"],
+                        # Radicals have a meaning mnemonic only.
+                        "meaning_mnemonic": subject.get("meaning_mnemonic"),
                     }
                     intro_week[rid] = w
         week_kanji[w] = week_kanji[w]
@@ -153,6 +159,8 @@ def build():
             "kanji": kanji_chars,
             "level": subject["level"],
             "url": subject["document_url"],
+            "meaning_mnemonic": subject.get("meaning_mnemonic"),
+            "reading_mnemonic": subject.get("reading_mnemonic"),
         })
 
     for w in vocab_by_week:

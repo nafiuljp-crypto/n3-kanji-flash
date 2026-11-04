@@ -21,6 +21,13 @@ Each week contains:
 | **Kanji** | Meaning, readings, the radicals it is built from, stroke count, compounds, and an example sentence. |
 | **Vocabulary** | WaniKani vocabulary written only with kanji in the N3 set, filed under the latest week among the kanji it uses. |
 
+Every lesson item also shows WaniKani's own **mnemonics** when the subject has
+them: the meaning mnemonic for all three types, plus the reading mnemonic for
+kanji and vocabulary (radicals have no reading mnemonic on WaniKani). The text
+is WaniKani's English, so it is the same on the `/en/` and `/ja/` pages; its
+inline markup (`<radical>`, `<kanji>`, `<reading>`, …) is stripped and the text
+escaped when the page renders. Items without a mnemonic show no callout.
+
 Each week also contains three tests:
 
 - **Radical test** — radical → meaning
