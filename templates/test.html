@@ -9,6 +9,21 @@
 
 <section class="test-shell" id="test-shell">
     <div class="range-panel" id="range-panel">
+        <div class="mode-panel" id="mode-panel">
+            <h2 class="range-title">{{ T.mode_title }}</h2>
+            <div class="mode-options" role="radiogroup" aria-label="{{ T.mode_title }}">
+                <label class="mode-option">
+                    <input type="radio" name="test-mode" value="typed" checked>
+                    <span class="mode-name">{{ T.mode_typed }}</span>
+                    <span class="mode-sub">{{ T.mode_typed_sub }}</span>
+                </label>
+                <label class="mode-option">
+                    <input type="radio" name="test-mode" value="jlpt">
+                    <span class="mode-name">{{ T.mode_jlpt }}</span>
+                    <span class="mode-sub">{{ T.mode_jlpt_sub }}</span>
+                </label>
+            </div>
+        </div>
         <h2 class="range-title">{{ T.range_title }}</h2>
         <div class="range-row">
             <label for="range-from">{{ T.range_from }}</label>
@@ -38,6 +53,8 @@
         <input type="text" id="answer-input" class="answer-input" autocomplete="off"
                autocapitalize="off" autocorrect="off" spellcheck="false"
                aria-label="{{ T.answer_aria }}">
+        <div class="jlpt-options hidden" id="jlpt-options" role="group"
+             aria-label="{{ T.mode_jlpt }}"></div>
         <div class="kana-preview hidden" id="kana-preview" aria-live="polite"></div>
         <div class="question-feedback hidden" id="question-feedback"></div>
         <div class="question-actions">

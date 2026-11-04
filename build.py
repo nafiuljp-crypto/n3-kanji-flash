@@ -169,6 +169,8 @@ def ui_strings(lang):
         # range panel + romaji input (E.1 / E.2)
         "range_title", "range_from", "range_to", "range_of", "range_questions",
         "btn_start_session", "answer_aria",
+        # JLPT option mode: the option buttons are built in app.js
+        "jlpt_option_aria",
     ]
     return {k: T[k] for k in keys}
 

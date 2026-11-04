@@ -10,6 +10,7 @@ window.N3App = window.N3App || {};
     const LESSON_KEY = "n3lesson:v1";
     const TEST_KEY = "n3test:v1";
     const RANGE_KEY = "n3range:v1";
+    const MODE_KEY = "n3mode:v1";   // "typed" (WaniKani) or "jlpt" (4 options)
 
     // ---------- helpers ----------
 
@@ -395,6 +396,44 @@ window.N3App = window.N3App || {};
             return;
         }
 
+        // ----- answer style: typed (WaniKani) or 4 options (JLPT) -----
+        // One global preference per browser, shared by every test page.
+
+        const modeRadios = qsa('input[name="test-mode"]');
+
+        function storedMode() {
+            return storeGet(MODE_KEY, "typed") === "jlpt" ? "jlpt" : "typed";
+        }
+
+        function paintMode(mode) {
+            qsa(".mode-option").forEach(function (el) {
+                const input = el.querySelector('input[name="test-mode"]');
+                el.classList.toggle("selected", !!input && input.value === mode);
+            });
+            modeRadios.forEach(function (radio) {
+                radio.checked = radio.value === mode;
+            });
+        }
+
+        function saveMode(mode) {
+            storeSet(MODE_KEY, mode);
+            paintMode(mode);
+        }
+
+        function readMode() {
+            const picked = modeRadios.filter(function (r) { return r.checked; })[0];
+            return picked && picked.value === "jlpt" ? "jlpt" : "typed";
+        }
+
+        const mode0 = storedMode();
+        modeRadios.forEach(function (radio) {
+            radio.checked = radio.value === mode0;
+            radio.addEventListener("change", function () {
+                if (this.checked) saveMode(this.value);
+            });
+        });
+        paintMode(mode0);
+
         // ----- range (items 1..N, inclusive) -----
 
         function storedRange() {
@@ -489,24 +528,106 @@ window.N3App = window.N3App || {};
             updatePreview();
         });
 
-        function buildQuestions(items) {
+        // ----- JLPT distractors -----
+        // Options come from the primary meaning/reading of OTHER items on the
+        // page (the whole scope, not just the selected range), so even a
+        // 3-item range has enough good distractors.
+
+        const itemIndex = new Map();
+        allItems.forEach(function (item, i) { itemIndex.set(item, i); });
+
+        function primaryText(item, kind) {
+            if (kind === "reading") return (item.readings || [])[0] || "";
+            return (item.meanings || [])[0] || "";
+        }
+
+        function allTexts(item, kind) {
+            return (kind === "reading" ? item.readings : item.meanings) || [];
+        }
+
+        /* True when the typed-mode grader would accept `text` for this
+           question — such a text can never be a distractor. */
+        function acceptedFor(q, text) {
+            if (!String(text || "").trim()) return false;
+            return q.kind === "reading"
+                ? matchesReading(text, q.answers)
+                : matchesMeaning(text, q.answers);
+        }
+
+        function buildOptions(q) {
+            const correct = String(q.shown || "");
+            const seen = new Set();
+            const correctNorm = normalize(correct);
+            if (correctNorm) seen.add(correctNorm);
+            const chosen = [];
+
+            function gather(primaryOnly) {
+                const out = [];
+                allItems.forEach(function (item, i) {
+                    if (i === q.itemIndex) return;
+                    const texts = primaryOnly
+                        ? [primaryText(item, q.kind)]
+                        : allTexts(item, q.kind);
+                    texts.forEach(function (text) {
+                        if (text) out.push(text);
+                    });
+                });
+                return out;
+            }
+
+            function take(pool, allowAccepted) {
+                shuffle(pool).forEach(function (text) {
+                    if (chosen.length >= 3) return;
+                    const norm = normalize(text);
+                    if (!norm || seen.has(norm)) return;
+                    if (!allowAccepted && acceptedFor(q, text)) return;
+                    chosen.push(text);
+                    seen.add(norm);
+                });
+            }
+
+            take(gather(true), false);
+            if (chosen.length < 3) take(gather(false), false);
+            // Guard only: with >= 23 items in every scope this never runs.
+            if (chosen.length < 3) take(gather(false), true);
+            let pad = 1;
+            while (chosen.length < 3) {
+                const filler = "— " + pad;
+                if (!seen.has(normalize(filler))) {
+                    chosen.push(filler);
+                    seen.add(normalize(filler));
+                }
+                pad++;
+            }
+            return shuffle([correct].concat(chosen));
+        }
+
+        function buildQuestions(items, mode) {
             const qs = [];
+            const jlpt = mode === "jlpt";
             items.forEach(function (item) {
-                qs.push({
+                const idx = itemIndex.get(item);
+                const meaningQ = {
                     kind: "meaning",
                     char: item.char,
                     image: item.image,
+                    itemIndex: idx,
                     answers: item.meanings || [],
                     shown: (item.meanings || [])[0] || "",
-                });
+                };
+                if (jlpt) meaningQ.options = buildOptions(meaningQ);
+                qs.push(meaningQ);
                 if ((item.readings || []).length) {
-                    qs.push({
+                    const readingQ = {
                         kind: "reading",
                         char: item.char,
                         image: item.image,
+                        itemIndex: idx,
                         answers: item.readings,
                         shown: item.readings[0],
-                    });
+                    };
+                    if (jlpt) readingQ.options = buildOptions(readingQ);
+                    qs.push(readingQ);
                 }
             });
             return qs;
@@ -514,7 +635,7 @@ window.N3App = window.N3App || {};
 
         let state = null;
 
-        function start(questions, isRetry) {
+        function start(questions, isRetry, mode) {
             state = {
                 queue: shuffle(questions),
                 idx: 0,
@@ -522,6 +643,8 @@ window.N3App = window.N3App || {};
                 wrong: 0,
                 wrongItems: [],
                 answered: false,
+                pickedText: null,
+                mode: mode === "jlpt" ? "jlpt" : "typed",
                 isRetry: !!isRetry,
             };
             if (panel) panel.classList.add("hidden");
@@ -546,6 +669,7 @@ window.N3App = window.N3App || {};
             $("test-top").classList.add("hidden");
             $("question-card").classList.add("hidden");
             $("test-result").classList.add("hidden");
+            paintMode(storedMode());
             updatePreview();
         }
 
@@ -557,22 +681,53 @@ window.N3App = window.N3App || {};
             $("question-label").textContent = label;
             $("question-glyph").innerHTML = glyphHtml(q.char, q.image, "item-glyph-img");
             const input = $("answer-input");
+            const optionsBox = $("jlpt-options");
+            const jlpt = state.mode === "jlpt";
+            state.pickedText = null;
+
             input.value = "";
-            input.disabled = false;
             input.classList.remove("correct", "wrong");
             input.setAttribute("aria-label", label);
             input.placeholder = q.kind === "meaning"
                 ? (T.placeholder_meaning || "meaning…")
                 : (T.placeholder_reading || "romaji or kana…");
-            input.focus();
             $("kana-preview").classList.add("hidden");
             $("kana-preview").textContent = "";
             $("question-feedback").classList.add("hidden");
             $("question-feedback").textContent = "";
             $("check-btn").disabled = true;
-            $("check-btn").classList.remove("hidden");
-            $("show-btn").classList.remove("hidden");
             $("continue-btn").classList.add("hidden");
+
+            optionsBox.innerHTML = "";
+            if (jlpt) {
+                // The click is the answer: no text box, Check, preview or
+                // Show-answer in this mode.
+                input.disabled = true;
+                input.classList.add("hidden");
+                optionsBox.classList.remove("hidden");
+                (q.options || [q.shown]).forEach(function (text, i) {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "jlpt-option";
+                    btn.textContent = text;
+                    btn.setAttribute("aria-label",
+                        (T.jlpt_option_aria || "Option {n}")
+                            .replace("{n}", i + 1) + ": " + text);
+                    btn.addEventListener("click", function () {
+                        chooseOption(text);
+                    });
+                    optionsBox.appendChild(btn);
+                });
+                $("check-btn").classList.add("hidden");
+                $("show-btn").classList.add("hidden");
+            } else {
+                input.disabled = false;
+                input.classList.remove("hidden");
+                input.focus();
+                optionsBox.classList.add("hidden");
+                $("check-btn").classList.remove("hidden");
+                $("show-btn").classList.remove("hidden");
+            }
             $("test-progress-text").textContent =
                 (T.question_of || "{pos} / {total}")
                     .replace("{pos}", state.idx + 1).replace("{total}", state.queue.length);
@@ -580,13 +735,32 @@ window.N3App = window.N3App || {};
                 ((state.idx + 1) / state.queue.length * 100) + "%";
         }
 
+        function chooseOption(text) {
+            if (!state || state.answered || state.mode !== "jlpt") return;
+            state.pickedText = text;
+            settle(text === currentQuestion().shown);
+        }
+
         function settle(correct) {
             const q = currentQuestion();
             state.answered = true;
-            const input = $("answer-input");
-            input.disabled = true;
-            input.classList.remove("correct", "wrong");
-            input.classList.add(correct ? "correct" : "wrong");
+            if (state.mode === "jlpt") {
+                // Lock every option; always reveal the right one. Only the
+                // first click counts, and it decided `correct` already.
+                qsa("#jlpt-options .jlpt-option").forEach(function (btn) {
+                    btn.disabled = true;
+                    if (btn.textContent === q.shown) {
+                        btn.classList.add("correct");
+                    } else if (btn.textContent === state.pickedText) {
+                        btn.classList.add("wrong");
+                    }
+                });
+            } else {
+                const input = $("answer-input");
+                input.disabled = true;
+                input.classList.remove("correct", "wrong");
+                input.classList.add(correct ? "correct" : "wrong");
+            }
             $("check-btn").classList.add("hidden");
             $("show-btn").classList.add("hidden");
             $("continue-btn").classList.remove("hidden");
@@ -610,7 +784,7 @@ window.N3App = window.N3App || {};
         }
 
         function check() {
-            if (!state || state.answered) return;
+            if (!state || state.answered || state.mode !== "typed") return;
             const value = $("answer-input").value;
             if (!value || !value.trim()) return;   // B9: nothing typed, nothing submitted
             settle(matches(value, currentQuestion()));
@@ -667,7 +841,7 @@ window.N3App = window.N3App || {};
             const el = $("kana-preview");
             const q = state ? currentQuestion() : null;
             const value = $("answer-input").value;
-            const wantsRomaji = q && q.kind === "reading" &&
+            const wantsRomaji = q && state.mode === "typed" && q.kind === "reading" &&
                 /[A-Za-z]/.test(value) && window.N3Romaji;
             if (!wantsRomaji) {
                 el.classList.add("hidden");
@@ -683,13 +857,15 @@ window.N3App = window.N3App || {};
             fromInput.value = range.from;
             toInput.value = range.to;
             saveRange(range);
-            start(buildQuestions(selectedItems(range)), false);
+            const mode = readMode();
+            saveMode(mode);
+            start(buildQuestions(selectedItems(range), mode), false, mode);
         });
 
         $("check-btn").addEventListener("click", check);
         $("continue-btn").addEventListener("click", next);
         $("show-btn").addEventListener("click", function () {
-            if (!state || state.answered) return;
+            if (!state || state.answered || state.mode !== "typed") return;
             const q = currentQuestion();
             $("answer-input").value = q.shown;
             settle(false);
@@ -710,7 +886,8 @@ window.N3App = window.N3App || {};
         $("retry-wrong-btn").addEventListener("click", function () {
             if (!state) return;
             const retry = state.wrongItems.slice();
-            start(retry, true);
+            const mode = state.mode;
+            start(retry, true, mode);
         });
 
         showRangePanel();

@@ -39,6 +39,12 @@ two questions per item (meaning and reading), radicals one. The last range used
 for a scope and test type is remembered, and `?from=1&to=10` seeds it from the
 URL.
 
+There are two **answer styles**, chosen on the same setup panel and remembered
+per browser: **WaniKani style** (type the answer) and **JLPT style** (pick one
+of four options — the correct answer plus three distractors drawn from other
+items in the same test scope). Both styles use the same questions, ranges,
+wrong-answer review, and score record.
+
 Reading answers accept **kana (hiragana or katakana) or romaji** — Hepburn and
 kunrei spellings, with long-vowel variants — while you type, the converted kana
 is previewed under the box.
