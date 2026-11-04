@@ -298,6 +298,9 @@ def main():
 <head>
 <meta charset="utf-8">
 <title>N3 漢字学習</title>
+<link rel="icon" type="image/svg+xml" href="{base}static/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="{base}static/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{base}static/apple-touch-icon.png">
 <link rel="canonical" href="{base}ja/">
 <script>
 (function () {{
