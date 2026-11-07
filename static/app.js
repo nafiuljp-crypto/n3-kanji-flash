@@ -324,6 +324,38 @@ window.N3App = window.N3App || {};
         });
     }
 
+    // ---------- keyboard navigation ----------
+
+    /* One document-level arrow handler shared by the pages that opt in.
+       goLeft/goRight mirror the page's on-screen control and return true
+       only when the key actually navigated; the key is swallowed only then,
+       so arrows keep scrolling the page everywhere else. Typing targets,
+       modifier chords and open dialogs are left alone. */
+    function arrowKeyNav(goLeft, goRight) {
+        function isTypingTarget(el) {
+            if (!el || el.nodeType !== 1) return false;
+            const tag = el.tagName;
+            return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" ||
+                el.isContentEditable === true;
+        }
+
+        function dialogOpen() {
+            return qsa('dialog[open], [aria-modal="true"], .modal').some(function (el) {
+                if (el.tagName === "DIALOG") return el.open;
+                return !el.classList.contains("hidden") && el.offsetParent !== null;
+            });
+        }
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+            if (e.ctrlKey || e.metaKey || e.altKey) return;
+            if (isTypingTarget(e.target)) return;
+            if (dialogOpen()) return;
+            const moved = e.key === "ArrowRight" ? goRight() : goLeft();
+            if (moved) e.preventDefault();
+        });
+    }
+
     // ---------- lesson player ----------
 
     /* A learn page shows one item at a time (slide view). Gallery view lays
@@ -462,11 +494,14 @@ window.N3App = window.N3App || {};
             });
         });
 
-        $("prev-btn").addEventListener("click", function () {
-            if (idx > 0) { idx--; renderItem(); }
-        });
+        function prevItem() {
+            if (idx <= 0) return false;
+            idx--;
+            renderItem();
+            return true;
+        }
 
-        $("next-btn").addEventListener("click", function () {
+        function nextItem() {
             if (idx < items.length - 1) {
                 idx++;
                 renderItem();
@@ -474,7 +509,24 @@ window.N3App = window.N3App || {};
                 done = true;
                 showView(view, false);
             }
-        });
+            return true;
+        }
+
+        $("prev-btn").addEventListener("click", prevItem);
+        $("next-btn").addEventListener("click", nextItem);
+
+        /* Arrows are the Prev/Next buttons, but only while the slide is on
+           screen: gallery is a grid (native scrolling stays untouched) and
+           the done panel has no controls to mirror. */
+        function slideActive() {
+            return view === "slide" && !done &&
+                !$("lesson-shell").classList.contains("hidden");
+        }
+
+        arrowKeyNav(
+            function () { return slideActive() ? prevItem() : false; },
+            function () { return slideActive() ? nextItem() : false; }
+        );
 
         $("go-test-link").setAttribute("href", data.test_url || "#");
         renderGallery();
@@ -998,6 +1050,24 @@ window.N3App = window.N3App || {};
             const mode = state.mode;
             start(retry, true, mode);
         });
+
+        /* Arrows follow the test's own controls: Right is the Continue
+           button that appears once an answer is graded (nothing otherwise),
+           Left is the page's Back link (none on pages without one). */
+        arrowKeyNav(
+            function () {
+                const back = document.querySelector("a.back-link");
+                if (!back) return false;
+                back.click();
+                return true;
+            },
+            function () {
+                const btn = $("continue-btn");
+                if (!btn || btn.classList.contains("hidden") || btn.disabled) return false;
+                btn.click();
+                return true;
+            }
+        );
 
         showRangePanel();
     }
