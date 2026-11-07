@@ -7,6 +7,13 @@
     <p class="muted">{{ subtitle }}</p>
 </section>
 
+<div class="lesson-view-bar" id="lesson-view-bar">
+    <div class="view-switch" role="group" aria-label="{{ T.view_switch_aria }}">
+        <button type="button" class="view-btn" id="view-slide-btn" data-view="slide" aria-pressed="true">{{ T.view_slide }}</button>
+        <button type="button" class="view-btn" id="view-gallery-btn" data-view="gallery" aria-pressed="false">{{ T.view_gallery }}</button>
+    </div>
+</div>
+
 <section class="lesson-shell" id="lesson-shell">
     <div class="lesson-top">
         <span id="lesson-progress-text" class="lesson-progress-text"></span>
@@ -29,6 +36,10 @@
         <button id="prev-btn" class="btn btn-secondary">{{ T.btn_prev }}</button>
         <button id="next-btn" class="btn btn-primary">{{ T.btn_next }}</button>
     </div>
+</section>
+
+<section class="lesson-shell gallery-shell hidden" id="lesson-gallery" aria-label="{{ T.view_gallery }}">
+    <div class="gallery-grid" id="gallery-grid"></div>
 </section>
 
 <section class="lesson-shell hidden" id="lesson-done">

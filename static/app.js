@@ -11,6 +11,7 @@ window.N3App = window.N3App || {};
     const TEST_KEY = "n3test:v1";
     const RANGE_KEY = "n3range:v1";
     const MODE_KEY = "n3mode:v1";   // "typed" (WaniKani) or "jlpt" (4 options)
+    const VIEW_KEY = "n3view:v1";   // lesson view: "slide" or "gallery"
 
     // ---------- helpers ----------
 
@@ -325,16 +326,24 @@ window.N3App = window.N3App || {};
 
     // ---------- lesson player ----------
 
+    /* A learn page shows one item at a time (slide view). Gallery view lays
+       every item of the same lesson out as a grid; clicking a card jumps
+       back to the slide at that item. The chosen view is one browser-wide
+       preference (VIEW_KEY), while lesson progress stays in LESSON_KEY. */
     function initLesson() {
         const data = pageData();
         const T = uiStrings();
         const items = data.items || [];
         if (!items.length) {
+            const bar = $("lesson-view-bar");
+            if (bar) bar.classList.add("hidden");
             $("lesson-card").innerHTML = '<p class="muted">' + escapeHtml(T.no_items || "") + "</p>";
             return;
         }
 
         let idx = 0;
+        let done = false;
+        let view = storeGet(VIEW_KEY, "slide") === "gallery" ? "gallery" : "slide";
 
         function renderItem() {
             const item = items[idx];
@@ -393,6 +402,66 @@ window.N3App = window.N3App || {};
             markLearned(data.week, data.type, item.id);
         }
 
+        // ----- gallery view -----
+
+        /* One card per lesson item, from the same records the slide renders:
+           radical → glyph/image + name; kanji → character + meaning + main
+           reading; vocab → word + reading + meaning. */
+        function galleryCard(item, i) {
+            const glyph = item.image
+                ? '<img class="gallery-glyph-img" src="' + escapeHtml(item.image) +
+                  '" alt="' + escapeHtml(item.alt || item.meaning || item.char || "") +
+                  '" loading="lazy">'
+                : '<span class="gallery-glyph">' + escapeHtml(item.char || "—") + "</span>";
+            const meaning = item.meaning
+                ? '<span class="gallery-meaning">' + escapeHtml(item.meaning) + "</span>"
+                : "";
+            const reading = item.reading_display
+                ? '<span class="gallery-reading">' + escapeHtml(item.reading_display) + "</span>"
+                : "";
+            const label = [item.meaning, item.reading_display].filter(Boolean).join(" · ");
+            return '<button type="button" class="gallery-card gallery-' +
+                escapeHtml(data.type) + '" data-index="' + i +
+                '" aria-label="' + escapeHtml((i + 1) + ". " + label) + '">' +
+                '<span class="gallery-index" aria-hidden="true">' + (i + 1) + "</span>" +
+                glyph + meaning + reading + "</button>";
+        }
+
+        function renderGallery() {
+            const grid = $("gallery-grid");
+            grid.innerHTML = items.map(galleryCard).join("");
+            qsa(".gallery-card", grid).forEach(function (card) {
+                card.addEventListener("click", function () {
+                    idx = Number(card.getAttribute("data-index")) || 0;
+                    done = false;   // a card always opens that item, even after the lesson ended
+                    renderItem();
+                    // Picking a card is a peek at the slide, not a change
+                    // of the saved view preference.
+                    showView("slide", false);
+                });
+            });
+        }
+
+        function showView(next, persist) {
+            view = next === "gallery" ? "gallery" : "slide";
+            if (persist) storeSet(VIEW_KEY, view);
+            const gallery = view === "gallery";
+            $("lesson-gallery").classList.toggle("hidden", !gallery);
+            $("lesson-shell").classList.toggle("hidden", gallery || done);
+            $("lesson-done").classList.toggle("hidden", gallery || !done);
+            qsa(".view-btn").forEach(function (btn) {
+                const active = btn.getAttribute("data-view") === view;
+                btn.classList.toggle("active", active);
+                btn.setAttribute("aria-pressed", active ? "true" : "false");
+            });
+        }
+
+        qsa(".view-btn").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                showView(btn.getAttribute("data-view"), true);
+            });
+        });
+
         $("prev-btn").addEventListener("click", function () {
             if (idx > 0) { idx--; renderItem(); }
         });
@@ -402,13 +471,15 @@ window.N3App = window.N3App || {};
                 idx++;
                 renderItem();
             } else {
-                $("lesson-shell").classList.add("hidden");
-                $("lesson-done").classList.remove("hidden");
+                done = true;
+                showView(view, false);
             }
         });
 
         $("go-test-link").setAttribute("href", data.test_url || "#");
+        renderGallery();
         renderItem();
+        showView(view, false);
     }
 
     // ---------- tests ----------

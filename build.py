@@ -184,6 +184,17 @@ def ui_strings(lang):
     return {k: T[k] for k in keys}
 
 
+def lesson_ui_strings(lang):
+    """Test pages + lesson pages share the base set; the slide/gallery
+    toggle exists only on learn pages, so its labels stay out of test pages
+    (their markup must not change for a learn-page feature)."""
+    strings = ui_strings(lang)
+    T = get_translations(lang)
+    for key in ("view_slide", "view_gallery", "view_switch_aria"):
+        strings[key] = T[key]
+    return strings
+
+
 # ---------- rendering ----------
 
 def make_env(lang):
@@ -285,7 +296,7 @@ def main():
                             "items": items,
                             "test_url": f"{SITE_BASE}{lang}/week/{n}/test/{type_}/",
                         },
-                        ui_strings=ui_strings(lang),
+                        ui_strings=lesson_ui_strings(lang),
                     ),
                 )
 

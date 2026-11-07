@@ -66,6 +66,9 @@ TRANSLATIONS = {
         "lesson_done_sub": "You have seen every item in this lesson. Take the test next.",
         "go_to_test": "Go to the test",
         "no_items": "Nothing to show here yet.",
+        "view_slide": "Slide",
+        "view_gallery": "Gallery",
+        "view_switch_aria": "Lesson view",
 
         # test runner
         "test_title": "Test",
@@ -183,6 +186,9 @@ TRANSLATIONS = {
         "lesson_done_sub": "すべての項目を見ました。次はテストです。",
         "go_to_test": "テストへ",
         "no_items": "項目がありません。",
+        "view_slide": "スライド",
+        "view_gallery": "一覧",
+        "view_switch_aria": "表示切り替え",
 
         "test_title": "テスト",
         "test_scope_week": "第{week}週",
