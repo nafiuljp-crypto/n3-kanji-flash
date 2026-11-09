@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ lang }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ T.not_found }} · {{ T.brand }}</title>
-    <link rel="icon" type="image/svg+xml" href="{{ base }}static/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ base }}static/favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ base }}static/apple-touch-icon.png">
-    <link rel="stylesheet" href="{{ base }}static/style.css">
-</head>
-<body>
-    <main class="container">
-        <section class="hero">
-            <h1>404</h1>
-            <p class="lead">{{ T.not_found }}</p>
-            <p><a class="btn btn-primary" href="{{ base }}{{ lang }}/">{{ T.nav_home }}</a></p>
-        </section>
-    </main>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}{{ T.not_found }} · {{ T.brand }}{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>404</h1>
+    <p class="lead">{{ T.not_found }}</p>
+    <p><a class="btn btn-primary" href="{{ base }}{{ lang }}/">{{ T.nav_home }}</a></p>
+</section>
+{% endblock %}

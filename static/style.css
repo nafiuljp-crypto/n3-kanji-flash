@@ -24,6 +24,35 @@
     --radius-lg: 16px;
 }
 
+/* Dark theme: same variables, re-tuned for a dark background. The light
+   :root above is untouched, so light mode renders exactly as before.
+   --color-primary is the red used for text/borders (light enough to read on
+   dark surfaces); --color-primary-filled is the deeper red behind white
+   button/navbar text. */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-bg: #121417;
+    --color-surface: #1c1f24;
+    --color-text: #e8eaed;
+    --color-muted: #9aa3ad;
+    --color-border: #2e3238;
+    --color-primary: #f05a5f;
+    --color-primary-filled: #b3262b;
+    --color-primary-filled-hover: #8f1e22;
+    --color-primary-dark: #ff8589;
+    --color-accent: #3a2f16;
+    --color-success: #4ade80;
+    --color-success-bg: #14301f;
+    --color-error: #f87171;
+    --color-error-bg: #3a1d1d;
+    --color-radical: #a78bfa;
+    --color-kanji: #f87171;
+    --color-vocab: #2dd4bf;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.55);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -48,7 +77,7 @@ body {
 /* ---------- navbar ---------- */
 
 .navbar {
-    background: var(--color-primary);
+    background: var(--color-primary-filled, var(--color-primary));
     color: white;
     padding: 14px 24px;
     display: flex;
@@ -90,6 +119,30 @@ body {
 }
 .lang-link { opacity: 0.85; padding: 2px 6px; border-radius: 4px; }
 .lang-link:hover { background: rgba(0, 0, 0, 0.15); opacity: 1; }
+
+/* theme toggle (navbar, present on every page) */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 14px;
+    padding: 4px 11px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.15);
+    color: white;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+}
+.theme-toggle:hover { background: rgba(0, 0, 0, 0.28); }
+.theme-toggle:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+.theme-toggle .when-dark { display: none; }
+:root[data-theme="dark"] .theme-toggle .when-light { display: none; }
+:root[data-theme="dark"] .theme-toggle .when-dark { display: inline; }
+.theme-icon { font-size: 0.9rem; line-height: 1; }
 
 /* ---------- footer ---------- */
 
@@ -396,7 +449,10 @@ section { margin: 28px 0; }
     transition: background 0.15s, color 0.15s;
 }
 .view-btn:hover { color: var(--color-primary); }
-.view-btn.active { background: var(--color-primary); color: white; }
+.view-btn.active {
+    background: var(--color-primary-filled, var(--color-primary));
+    color: white;
+}
 .view-btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
 
 /* gallery view: same cards as the rest of the site, one per lesson item */
@@ -476,8 +532,13 @@ section { margin: 28px 0; }
     font-family: inherit;
     transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
-.btn-primary { background: var(--color-primary); color: white; }
-.btn-primary:hover { background: var(--color-primary-dark); }
+.btn-primary {
+    background: var(--color-primary-filled, var(--color-primary));
+    color: white;
+}
+.btn-primary:hover {
+    background: var(--color-primary-filled-hover, var(--color-primary-dark));
+}
 .btn-secondary {
     background: var(--color-surface);
     color: var(--color-text);
@@ -720,7 +781,11 @@ section { margin: 28px 0; }
     font-size: 0.85rem;
 }
 .scope-link:hover { border-color: var(--color-primary); color: var(--color-primary); }
-.scope-link.all { background: var(--color-primary); color: white; border-color: var(--color-primary); }
+.scope-link.all {
+    background: var(--color-primary-filled, var(--color-primary));
+    color: white;
+    border-color: var(--color-primary-filled, var(--color-primary));
+}
 
 @media (max-width: 560px) {
     .container { padding: 16px; }
@@ -733,4 +798,36 @@ section { margin: 28px 0; }
     .mode-option { flex: 1 1 100%; max-width: none; }
     .question-card { padding: 24px 16px; }
     .jlpt-option { font-size: 1rem; padding: 12px; }
+}
+
+/* ---------- dark-theme spot overrides ---------- */
+/* Everything else is already variable-driven; these are the few hard-coded
+   light values and native form defaults that need an explicit dark take. */
+
+:root[data-theme="dark"] .mode-option.selected,
+:root[data-theme="dark"] .mode-option:has(input:checked) {
+    background: #2c1a1c;   /* warm dark tint of the light #fff5f5 */
+}
+
+:root[data-theme="dark"] .answer-input {
+    color: var(--color-text);
+}
+/* Keep the graded correct/wrong backgrounds (which use the dark success/
+   error variables) from being outranked by the rule above. */
+:root[data-theme="dark"] .answer-input:not(.wrong):not(.correct) {
+    background: var(--color-surface);
+}
+:root[data-theme="dark"] .answer-input::placeholder {
+    color: var(--color-muted);
+}
+
+/* WaniKani radical art is an SVG drawn with black strokes (its
+   stroke:var(--color-text, #000) cannot see the page's variable), so it
+   disappears on the dark card. Invert only those glyph images, in dark
+   only, turning the strokes white. No other images are touched. */
+:root[data-theme="dark"] .item-glyph-img,
+:root[data-theme="dark"] .mini-glyph-img,
+:root[data-theme="dark"] .gallery-glyph-img,
+:root[data-theme="dark"] .wrong-glyph-img {
+    filter: invert(1);
 }

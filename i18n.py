@@ -12,6 +12,8 @@ TRANSLATIONS = {
         "lang_label": "Language",
         "lang_en": "EN",
         "lang_ja": "日本語",
+        "theme_dark": "Dark mode",
+        "theme_light": "Light mode",
         "footer": "N3 kanji study site · kanji list from 日本語総まとめ N3 漢字 · language data from WaniKani",
 
         # home
@@ -135,6 +137,8 @@ TRANSLATIONS = {
         "lang_label": "言語",
         "lang_en": "EN",
         "lang_ja": "日本語",
+        "theme_dark": "ダークモード",
+        "theme_light": "ライトモード",
         "footer": "N3 漢字学習サイト · 漢字一覧：日本語総まとめ N3 漢字 · データ：WaniKani",
 
         "home_title": "N3 漢字学習",
