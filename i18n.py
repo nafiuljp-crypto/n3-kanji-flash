@@ -14,6 +14,12 @@ TRANSLATIONS = {
         "lang_ja": "日本語",
         "theme_dark": "Dark mode",
         "theme_light": "Light mode",
+        # password lock (lock screen + navbar lock button)
+        "lock_lead": "This site is password protected.",
+        "lock_password": "Password",
+        "lock_unlock": "Unlock",
+        "lock_wrong": "Wrong password. Try again.",
+        "lock_button": "Lock",
         "footer": "N3 kanji study site · kanji list from 日本語総まとめ N3 漢字 · language data from WaniKani",
 
         # home
@@ -139,6 +145,12 @@ TRANSLATIONS = {
         "lang_ja": "日本語",
         "theme_dark": "ダークモード",
         "theme_light": "ライトモード",
+        # password lock (lock screen + navbar lock button)
+        "lock_lead": "このサイトはパスワードで保護されています。",
+        "lock_password": "パスワード",
+        "lock_unlock": "ロック解除",
+        "lock_wrong": "パスワードが違います。もう一度お試しください。",
+        "lock_button": "ロック",
         "footer": "N3 漢字学習サイト · 漢字一覧：日本語総まとめ N3 漢字 · データ：WaniKani",
 
         "home_title": "N3 漢字学習",
