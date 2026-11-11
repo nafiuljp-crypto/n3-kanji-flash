@@ -41,6 +41,11 @@ window.N3App = window.N3App || {};
             .filter(Boolean);
     }
 
+    // The Bangla overlay is plain text and its labels stay the same on /en/
+    // and /ja/ pages (the English word plus বাংলা), so learners can find it.
+    const BN_MEANING_LABEL = "Meaning · বাংলা";
+    const BN_READING_LABEL = "Reading · বাংলা";
+
     // One labelled mnemonic row; "" when the subject has no mnemonic, so an
     // item without one renders no heading at all.
     function mnemonicRow(label, text) {
@@ -56,8 +61,12 @@ window.N3App = window.N3App || {};
 
     function mnemonicHtml(item, T) {
         const title = T.mnemonic || "Mnemonic";
+        // Bangla rows sit directly under their English counterpart and are
+        // omitted entirely when the overlay has no entry for the subject.
         const rows = mnemonicRow(T.meaning_label || "Meaning", item.meaning_mnemonic) +
-            mnemonicRow(T.reading_label || "Reading", item.reading_mnemonic);
+            mnemonicRow(BN_MEANING_LABEL, item.meaning_mnemonic_bn) +
+            mnemonicRow(T.reading_label || "Reading", item.reading_mnemonic) +
+            mnemonicRow(BN_READING_LABEL, item.reading_mnemonic_bn);
         if (!rows) return "";
         return '<div class="mnemonic-title">' + escapeHtml(title) + "</div>" + rows;
     }
