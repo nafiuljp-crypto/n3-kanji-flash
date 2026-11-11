@@ -395,6 +395,7 @@ section { margin: 28px 0; }
 }
 .item-glyph-img { width: 110px; height: 110px; object-fit: contain; }
 .item-meaning { font-size: 1.4rem; font-weight: 700; }
+.item-meaning-bn { font-size: 1.05rem; font-weight: 400; color: var(--color-muted); }
 .item-readings { font-size: 1.1rem; color: var(--color-primary-dark); }
 .item-radicals, .item-kanji {
     display: flex;

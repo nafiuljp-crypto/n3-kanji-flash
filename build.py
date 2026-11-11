@@ -28,9 +28,11 @@ STATIC_SRC = BASE_DIR / "static"
 DATA_DIR = BASE_DIR / "data"
 DIST = BASE_DIR / "dist"
 
-# Bangla overlay, keyed by WaniKani subject id. It is deliberately separate
-# from the WaniKani cache so a cache rebuild never drops the translations.
+# Bangla overlays, keyed by WaniKani subject id. They are deliberately
+# separate from the WaniKani cache so a cache rebuild never drops the
+# translations.
 MNEMONICS_BN_FILE = DATA_DIR / "mnemonics_bn.json"
+MEANINGS_BN_FILE = DATA_DIR / "meanings_bn.json"
 
 # GitHub Pages serves this project under /<repo>/. Absolute URLs keep nested
 # pages working, because GH Pages does not collapse "../" segments.
@@ -70,15 +72,33 @@ def load_mnemonics_bn():
     return {str(k): v for k, v in data.items() if isinstance(v, dict)}
 
 
+def load_meaning_bn():
+    """Bangla meaning glosses: {"<subject_id>": {"meaning_bn": ...}}.
+
+    Optional like the mnemonic overlay: without the file every kanji's
+    meaning_bn field is null. Keyed by subject id, not curriculum order.
+    """
+    if not MEANINGS_BN_FILE.exists():
+        return {}
+    try:
+        data = json.loads(MEANINGS_BN_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        raise SystemExit(f"{MEANINGS_BN_FILE} is not valid JSON: {e}")
+    if not isinstance(data, dict):
+        raise SystemExit(f"{MEANINGS_BN_FILE} must contain a JSON object.")
+    return {str(k): v for k, v in data.items() if isinstance(v, dict)}
+
+
 def bn_field(overlay, subject_id, key):
     entry = overlay.get(str(subject_id)) or {}
     value = entry.get(key)
     return value if isinstance(value, str) and value.strip() else None
 
 
-def lesson_items(week, type_, mnemonics_bn=None):
+def lesson_items(week, type_, mnemonics_bn=None, meanings_bn=None):
     """Display records for the lesson player."""
     mnemonics_bn = mnemonics_bn or {}
+    meanings_bn = meanings_bn or {}
     items = []
     if type_ == "radicals":
         for r in week["radicals"]:
@@ -121,6 +141,8 @@ def lesson_items(week, type_, mnemonics_bn=None):
                 "reading_mnemonic": k.get("reading_mnemonic"),
                 "meaning_mnemonic_bn": bn_field(mnemonics_bn, k["id"], "meaning"),
                 "reading_mnemonic_bn": bn_field(mnemonics_bn, k["id"], "reading"),
+                # Kanji only: the Bangla gloss of the meanings line.
+                "meaning_bn": bn_field(meanings_bn, k["id"], "meaning_bn"),
             })
     else:
         for v in week["vocab"]:
@@ -273,6 +295,7 @@ def main():
     weeks = curriculum["weeks"]
     by_week = {w["week"]: w for w in weeks}
     mnemonics_bn = load_mnemonics_bn()
+    meanings_bn = load_meaning_bn()
 
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -318,7 +341,7 @@ def main():
                 week={**week_summary(week), "theme": week["theme"]}))
 
             for type_ in TYPES:
-                items = lesson_items(week, type_, mnemonics_bn)
+                items = lesson_items(week, type_, mnemonics_bn, meanings_bn)
                 write(
                     week_dir / "learn" / type_ / "index.html",
                     env.get_template("lesson.html").render(

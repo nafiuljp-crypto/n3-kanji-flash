@@ -391,6 +391,11 @@ window.N3App = window.N3App || {};
             const glyph = $("item-glyph");
             glyph.innerHTML = glyphHtml(item.char, item.image, "item-glyph-img", item.alt);
             $("item-meaning").textContent = item.meaning || "";
+            // Bangla gloss of the meanings, kanji only. Radicals and vocab
+            // carry no meaning_bn, so the line stays hidden for them.
+            const meaningBn = $("item-meaning-bn");
+            meaningBn.textContent = item.meaning_bn || "";
+            meaningBn.classList.toggle("hidden", !item.meaning_bn);
             $("item-readings").textContent = item.reading_display || "";
 
             const radicals = $("item-radicals");
