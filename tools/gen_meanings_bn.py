@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Generate one-line Bangladeshi Bangla glosses of every kanji's meanings.
+"""Generate one-line Bangladeshi Bangla glosses of every item's meanings.
 
-The kanji set comes from the site's own curriculum (data/curriculum.json), so
+The item set comes from the site's own curriculum (data/curriculum.json), so
 subject ids, characters and the English meanings are exactly what the build
-uses. Each result is appended to data/meanings_bn.json under its WaniKani
-subject id:
+uses. Radicals, kanji and vocabulary are covered. Each result is appended to
+data/meanings_bn.json under its WaniKani subject id:
 
     {"<subject_id>": {"meaning_bn": "..."}}
 
@@ -17,8 +17,9 @@ curriculum order, so it survives WaniKani cache rebuilds.
 Only the local Ollama daemon is used (http://127.0.0.1:11434 by default).
 
 Usage:
-    python3 tools/gen_meanings_bn.py           # every missing kanji
-    python3 tools/gen_meanings_bn.py --week 1  # one week only
+    python3 tools/gen_meanings_bn.py                  # every missing item
+    python3 tools/gen_meanings_bn.py --type radicals  # one type
+    python3 tools/gen_meanings_bn.py --week 1         # one week only
 """
 
 import argparse
@@ -68,7 +69,7 @@ WORD_FIXES = (
 SYSTEM = """You write short Bangla meaning glosses for a Japanese kanji study site used by learners in Bangladesh.
 
 Non-negotiable rules:
-- You are given the English meanings of ONE kanji, in order. Translate EACH entry into Bangla and return the translations in the SAME order, joined with ", " (comma and space). Never add, drop, merge or reorder entries.
+- You are given the English meanings of ONE Japanese study item (a radical, a kanji, or a vocabulary word), in order. Translate EACH entry into Bangla and return the translations in the SAME order, joined with ", " (comma and space). Never add, drop, merge or reorder entries.
 - Use Bangladeshi Bangla only (Dhaka standard চলিত). Use everyday Bangladeshi vocabulary: পানি for water (never জল). Avoid Kolkata-style tatsama-heavy diction and West-Bengal-only words.
 - Short dictionary equivalents, not sentences. No explanations, no examples, no notes.
 - For verb and adjective meanings use the natural Bangla dictionary form (e.g. "to push" → ধাক্কা দেওয়া, "dangerous" → বিপজ্জনক).
@@ -97,8 +98,8 @@ def split_top(text, separators):
     return out
 
 
-def meaning_entries(kanji):
-    """The kanji's English meanings, primary first then secondary, in order."""
+def meaning_entries(item):
+    """The item's English meanings, primary first then secondary, in order."""
     entries = []
     seen = set()
 
@@ -110,18 +111,18 @@ def meaning_entries(kanji):
 
     # "a / b / c" separates whole glosses; a bare slash ("made in/of",
     # "breathe/inhale") is part of one gloss and is left alone.
-    primary = (kanji.get("meaning") or "").replace(" / ", ";")
+    primary = (item.get("meaning") or "").replace(" / ", ";")
     for segment in split_top(primary, ";"):
         for part in split_top(segment, ","):
             add(part)
-    for secondary in kanji.get("meanings") or []:
+    for secondary in item.get("meanings") or []:
         add(secondary)
     return entries
 
 
 def build_prompt(item):
     return "\n".join([
-        f"CHARACTER: {item['char']}",
+        f"{item['kind'].upper()}: {item['char']}",
         "ENGLISH MEANINGS (in order): " +
         json.dumps(item["meanings"], ensure_ascii=False),
         "",
@@ -130,23 +131,36 @@ def build_prompt(item):
     ])
 
 
-def collect_items(curriculum, week):
-    """Walk the kanji records build.py renders, keyed by source id."""
+def item_label(type_, record):
+    """The character to show the model; image-only radicals have no char."""
+    if record.get("char"):
+        return record["char"]
+    if type_ == "radicals":
+        slug = record.get("slug") or record.get("meaning") or ""
+        return f"image-only radical ({slug})"
+    return record.get("meaning") or record.get("slug") or ""
+
+
+def collect_items(curriculum, week, types):
+    """Walk the radical/kanji/vocab records build.py renders, keyed by id."""
+    kinds = {"radicals": "radical", "kanji": "kanji", "vocab": "word"}
     items = []
     seen = set()
     for wk in curriculum["weeks"]:
         if week is not None and wk["week"] != week:
             continue
-        for kanji in wk["kanji"]:
-            subject_id = str(kanji["id"])
-            if subject_id in seen:
-                continue
-            seen.add(subject_id)
-            items.append({
-                "id": subject_id,
-                "char": kanji["char"],
-                "meanings": meaning_entries(kanji),
-            })
+        for type_ in types:
+            for record in wk[type_]:
+                subject_id = str(record["id"])
+                if subject_id in seen:
+                    continue
+                seen.add(subject_id)
+                items.append({
+                    "id": subject_id,
+                    "kind": kinds[type_],
+                    "char": item_label(type_, record),
+                    "meanings": meaning_entries(record),
+                })
     return items
 
 
@@ -251,8 +265,11 @@ def log_failure(item, exc):
 def main(argv=None):
     parser = argparse.ArgumentParser(
         description="Generate Bangladeshi Bangla meaning glosses via local Ollama.")
+    parser.add_argument("--type", choices=("all", "radicals", "kanji", "vocab"),
+                        default="all",
+                        help="only this item type (default: all three)")
     parser.add_argument("--week", type=int, default=None,
-                        help="only this week's kanji (default: all missing)")
+                        help="only this week's items (default: all missing)")
     args = parser.parse_args(argv)
 
     curriculum = load_curriculum()
@@ -260,12 +277,15 @@ def main(argv=None):
             w["week"] == args.week for w in curriculum["weeks"]):
         raise SystemExit(f"week {args.week} is not in data/curriculum.json")
 
-    items = collect_items(curriculum, args.week)
+    types = (("radicals", "kanji", "vocab") if args.type == "all"
+             else (args.type,))
+    items = collect_items(curriculum, args.week, types)
     overlay = load_overlay()
     missing = [it for it in items if it["id"] not in overlay]
 
     scope = f"week {args.week}" if args.week is not None else "all weeks"
-    print(f"{scope}: {len(items)} kanji, {len(items) - len(missing)} already done, "
+    print(f"{scope} ({args.type}): {len(items)} items, "
+          f"{len(items) - len(missing)} already done, "
           f"{len(missing)} to generate", flush=True)
 
     if not missing:

@@ -18,7 +18,8 @@ from pathlib import Path
 
 from flask import Flask, abort, g, jsonify, redirect, render_template, request, session
 
-from build import lesson_items, test_items, ui_strings, week_summary
+from build import (bn_pool_for, lesson_items, load_meaning_bn, test_items,
+                   ui_strings, week_summary)
 from i18n import format_string, get_translations
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -44,6 +45,7 @@ def load_curriculum():
 CURRICULUM = load_curriculum()
 WEEKS = CURRICULUM["weeks"]
 BY_WEEK = {w["week"]: w for w in WEEKS}
+MEANINGS_BN = load_meaning_bn()
 
 
 def lang_route(rule):
@@ -132,13 +134,20 @@ def tests(lang=None):
 
 def render_test(type_, weeks, scope, scope_label, back_path, back_label):
     T = g.T
+    items = test_items(weeks, type_, MEANINGS_BN)
+    bn_pool = bn_pool_for(items)
     return render_template(
         "test.html",
         title=T["test_" + type_],
         scope_label=scope_label,
         back_path=back_path,
         back_label=back_label,
-        page_data={"type": type_, "scope": scope, "items": test_items(weeks, type_)},
+        page_data={
+            "type": type_,
+            "scope": scope,
+            "items": items,
+            "bn_pool": bn_pool,
+        },
         ui_strings=ui_strings(g.lang),
     )
 

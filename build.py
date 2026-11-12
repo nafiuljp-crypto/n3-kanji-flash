@@ -163,8 +163,9 @@ def lesson_items(week, type_, mnemonics_bn=None, meanings_bn=None):
     return items
 
 
-def test_items(weeks, type_):
-    """Test records: glyph plus every answer we accept."""
+def test_items(weeks, type_, meanings_bn=None):
+    """Test records: glyph, every answer we accept, and the Bangla gloss."""
+    meanings_bn = meanings_bn or {}
     items = []
     seen = set()
     for week in weeks:
@@ -178,6 +179,7 @@ def test_items(weeks, type_):
                     "image": r["image"],
                     "meanings": r["meanings"] or [r["meaning"]],
                     "readings": [],
+                    "meaning_bn": bn_field(meanings_bn, r["id"], "meaning_bn"),
                 })
         elif type_ == "kanji":
             for k in week["kanji"]:
@@ -198,6 +200,7 @@ def test_items(weeks, type_):
                     "char": k["char"],
                     "meanings": meanings or [k.get("meaning") or ""],
                     "readings": readings or k.get("readings") or [],
+                    "meaning_bn": bn_field(meanings_bn, k["id"], "meaning_bn"),
                 })
         else:
             for v in week["vocab"]:
@@ -208,8 +211,19 @@ def test_items(weeks, type_):
                     "char": v["char"],
                     "meanings": v["meanings"] or [v["meaning"]],
                     "readings": v["readings"] or [v["reading"]],
+                    "meaning_bn": bn_field(meanings_bn, v["id"], "meaning_bn"),
                 })
     return items
+
+
+def bn_pool_for(items):
+    """Distinct Bangla glosses in a test scope, in first-seen order.
+
+    app.js draws Bangla-mode distractors from other items' meaning_bn and
+    falls back to this list when the selected range's pool is too small.
+    """
+    return list(dict.fromkeys(
+        it["meaning_bn"] for it in items if it.get("meaning_bn")))
 
 
 def week_summary(week):
@@ -272,9 +286,14 @@ def write(path: Path, content: str):
     path.write_text(content, encoding="utf-8")
 
 
-def test_page(env, lang, type_, weeks, scope, week_label, back_path, back_label):
+def test_page(env, lang, type_, weeks, scope, week_label, back_path, back_label,
+              meanings_bn=None):
     T = env.globals["T"]
     title = T["test_" + type_]
+    items = test_items(weeks, type_, meanings_bn)
+    # Bangla-mode distractors come from this scope's own glosses; the list is
+    # the fallback pool when the selected range's items lack distinct glosses.
+    bn_pool = bn_pool_for(items)
     html = env.get_template("test.html").render(
         title=title,
         scope_label=week_label,
@@ -283,7 +302,8 @@ def test_page(env, lang, type_, weeks, scope, week_label, back_path, back_label)
         page_data={
             "type": type_,
             "scope": scope,
-            "items": test_items(weeks, type_),
+            "items": items,
+            "bn_pool": bn_pool,
         },
         ui_strings=ui_strings(lang),
     )
@@ -330,7 +350,8 @@ def main():
             write(
                 DIST / lang / "test" / type_ / "index.html",
                 test_page(env, lang, type_, weeks, "all",
-                          T["all_weeks"], f"{lang}/test/", T["nav_tests"]),
+                          T["all_weeks"], f"{lang}/test/", T["nav_tests"],
+                          meanings_bn),
             )
 
         for week in weeks:
@@ -363,7 +384,9 @@ def main():
                     week_dir / "test" / type_ / "index.html",
                     test_page(env, lang, type_, [week], f"week{n}",
                               format_string(T["week_n"], week=n),
-                              f"{lang}/week/{n}/", format_string(T["back_to_week"], week=n)),
+                              f"{lang}/week/{n}/",
+                              format_string(T["back_to_week"], week=n),
+                              meanings_bn),
                 )
 
         write(DIST / lang / "404.html", env.get_template("404.html").render())

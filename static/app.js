@@ -10,7 +10,7 @@ window.N3App = window.N3App || {};
     const LESSON_KEY = "n3lesson:v1";
     const TEST_KEY = "n3test:v1";
     const RANGE_KEY = "n3range:v1";
-    const MODE_KEY = "n3mode:v1";   // "typed" (WaniKani) or "jlpt" (4 options)
+    const MODE_KEY = "n3mode:v1";   // "typed", "jlpt" (4 options) or "bangla"
     const VIEW_KEY = "n3view:v1";   // lesson view: "slide" or "gallery"
 
     // ---------- helpers ----------
@@ -208,6 +208,17 @@ window.N3App = window.N3App || {};
         if (!String(user === undefined || user === null ? "" : user).trim()) return false;
         if (question.kind === "reading") return matchesReading(user, question.answers);
         return matchesMeaning(user, question.answers);
+    }
+
+    /* Answer styles: typed (WaniKani) or one of the two 4-option modes.
+       JLPT shows English meaning / kana reading options; Bangla shows the
+       item's Bangla gloss as the meaning options, kana as the reading ones. */
+    function validMode(value) {
+        return (value === "jlpt" || value === "bangla") ? value : "typed";
+    }
+
+    function optionMode(mode) {
+        return mode === "jlpt" || mode === "bangla";
     }
 
     function glyphHtml(char, image, cls, alt) {
@@ -571,13 +582,13 @@ window.N3App = window.N3App || {};
             return;
         }
 
-        // ----- answer style: typed (WaniKani) or 4 options (JLPT) -----
+        // ----- answer style: typed, JLPT options or Bangla options -----
         // One global preference per browser, shared by every test page.
 
         const modeRadios = qsa('input[name="test-mode"]');
 
         function storedMode() {
-            return storeGet(MODE_KEY, "typed") === "jlpt" ? "jlpt" : "typed";
+            return validMode(storeGet(MODE_KEY, "typed"));
         }
 
         function paintMode(mode) {
@@ -597,7 +608,16 @@ window.N3App = window.N3App || {};
 
         function readMode() {
             const picked = modeRadios.filter(function (r) { return r.checked; })[0];
-            return picked && picked.value === "jlpt" ? "jlpt" : "typed";
+            return picked ? validMode(picked.value) : "typed";
+        }
+
+        /* The visible name of a mode, from its own radio card, so the option
+           group's accessible name matches the language on /en/ and /ja/. */
+        function modeLabel(mode) {
+            const radio = modeRadios.filter(function (r) { return r.value === mode; })[0];
+            const name = radio && radio.closest(".mode-option") &&
+                radio.closest(".mode-option").querySelector(".mode-name");
+            return name ? name.textContent.trim() : mode;
         }
 
         const mode0 = storedMode();
@@ -777,20 +797,67 @@ window.N3App = window.N3App || {};
             return shuffle([correct].concat(chosen));
         }
 
+        /* Bangla-mode meaning options: the item's own gloss plus three
+           glosses from other items in the same test scope. A distractor whose
+           gloss equals the correct gloss is never allowed — duplicate-gloss
+           pairs must not produce two identical options. If the scope has too
+           few distinct glosses, the page's whole type/scope pool widens it. */
+        function buildBanglaOptions(q) {
+            const correct = String(q.shown || "");
+            const seen = new Set();
+            const correctNorm = normalize(correct);
+            if (correctNorm) seen.add(correctNorm);
+            const chosen = [];
+
+            function take(pool) {
+                shuffle(pool).forEach(function (text) {
+                    if (chosen.length >= 3) return;
+                    const gloss = String(text || "");
+                    const norm = normalize(gloss);
+                    if (!norm || seen.has(norm)) return;
+                    chosen.push(gloss);
+                    seen.add(norm);
+                });
+            }
+
+            take(allItems.filter(function (item, i) {
+                return i !== q.itemIndex;
+            }).map(function (item) { return item.meaning_bn; }));
+            if (chosen.length < 3 && Array.isArray(data.bn_pool)) {
+                take(data.bn_pool);
+            }
+            let pad = 1;
+            while (chosen.length < 3) {
+                const filler = "— " + pad;
+                if (!seen.has(normalize(filler))) {
+                    chosen.push(filler);
+                    seen.add(normalize(filler));
+                }
+                pad++;
+            }
+            return shuffle([correct].concat(chosen));
+        }
+
         function buildQuestions(items, mode) {
             const qs = [];
-            const jlpt = mode === "jlpt";
+            const options = optionMode(mode);
+            const bangla = mode === "bangla";
             items.forEach(function (item) {
                 const idx = itemIndex.get(item);
+                const gloss = bangla ? item.meaning_bn : null;
                 const meaningQ = {
                     kind: "meaning",
                     char: item.char,
                     image: item.image,
                     itemIndex: idx,
                     answers: item.meanings || [],
-                    shown: (item.meanings || [])[0] || "",
+                    shown: gloss || (item.meanings || [])[0] || "",
                 };
-                if (jlpt) meaningQ.options = buildOptions(meaningQ);
+                if (options) {
+                    meaningQ.options = gloss
+                        ? buildBanglaOptions(meaningQ)
+                        : buildOptions(meaningQ);
+                }
                 qs.push(meaningQ);
                 if ((item.readings || []).length) {
                     const readingQ = {
@@ -801,7 +868,8 @@ window.N3App = window.N3App || {};
                         answers: item.readings,
                         shown: item.readings[0],
                     };
-                    if (jlpt) readingQ.options = buildOptions(readingQ);
+                    // Readings stay kana options in bangla mode.
+                    if (options) readingQ.options = buildOptions(readingQ);
                     qs.push(readingQ);
                 }
             });
@@ -819,7 +887,7 @@ window.N3App = window.N3App || {};
                 wrongItems: [],
                 answered: false,
                 pickedText: null,
-                mode: mode === "jlpt" ? "jlpt" : "typed",
+                mode: validMode(mode),
                 isRetry: !!isRetry,
             };
             if (panel) panel.classList.add("hidden");
@@ -857,7 +925,7 @@ window.N3App = window.N3App || {};
             $("question-glyph").innerHTML = glyphHtml(q.char, q.image, "item-glyph-img");
             const input = $("answer-input");
             const optionsBox = $("jlpt-options");
-            const jlpt = state.mode === "jlpt";
+            const options = optionMode(state.mode);
             state.pickedText = null;
 
             input.value = "";
@@ -874,12 +942,13 @@ window.N3App = window.N3App || {};
             $("continue-btn").classList.add("hidden");
 
             optionsBox.innerHTML = "";
-            if (jlpt) {
+            if (options) {
                 // The click is the answer: no text box, Check, preview or
-                // Show-answer in this mode.
+                // Show-answer in these modes.
                 input.disabled = true;
                 input.classList.add("hidden");
                 optionsBox.classList.remove("hidden");
+                optionsBox.setAttribute("aria-label", modeLabel(state.mode));
                 (q.options || [q.shown]).forEach(function (text, i) {
                     const btn = document.createElement("button");
                     btn.type = "button";
@@ -911,7 +980,7 @@ window.N3App = window.N3App || {};
         }
 
         function chooseOption(text) {
-            if (!state || state.answered || state.mode !== "jlpt") return;
+            if (!state || state.answered || !optionMode(state.mode)) return;
             state.pickedText = text;
             settle(text === currentQuestion().shown);
         }
@@ -919,7 +988,7 @@ window.N3App = window.N3App || {};
         function settle(correct) {
             const q = currentQuestion();
             state.answered = true;
-            if (state.mode === "jlpt") {
+            if (optionMode(state.mode)) {
                 // Lock every option; always reveal the right one. Only the
                 // first click counts, and it decided `correct` already.
                 qsa("#jlpt-options .jlpt-option").forEach(function (btn) {

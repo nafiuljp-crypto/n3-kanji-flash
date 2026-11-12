@@ -97,12 +97,14 @@ TRANSLATIONS = {
         "range_to": "to item",
         "range_of": "of {count} items",
         "range_questions": "= {count} questions",
-        # answer-style picker (typed vs JLPT 4-option)
+        # answer-style picker (typed / JLPT / Bangla 4-option)
         "mode_title": "Answer style",
         "mode_typed": "WaniKani style",
         "mode_typed_sub": "Type the answer",
         "mode_jlpt": "JLPT style",
         "mode_jlpt_sub": "Choose from 4 options",
+        "mode_bangla": "Bangla",
+        "mode_bangla_sub": "Choose Bangla meanings",
         "jlpt_option_aria": "Option {n}",
         "btn_start_session": "Start",
         "btn_check": "Check",
@@ -224,12 +226,14 @@ TRANSLATIONS = {
         "range_to": "終了",
         "range_of": "全 {count} 項目",
         "range_questions": "= {count} 問",
-        # answer-style picker (typed vs JLPT 4-option)
+        # answer-style picker (typed / JLPT / Bangla 4-option)
         "mode_title": "回答方式",
         "mode_typed": "WaniKani 方式",
         "mode_typed_sub": "入力して答える",
         "mode_jlpt": "JLPT 方式",
         "mode_jlpt_sub": "4択から選ぶ",
+        "mode_bangla": "ベンガル語",
+        "mode_bangla_sub": "ベンガル語の意味から4択で選ぶ",
         "jlpt_option_aria": "選択肢 {n}",
         "btn_start_session": "開始",
         "btn_check": "確認",
