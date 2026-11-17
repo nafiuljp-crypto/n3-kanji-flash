@@ -34,6 +34,10 @@ DIST = BASE_DIR / "dist"
 MNEMONICS_BN_FILE = DATA_DIR / "mnemonics_bn.json"
 MEANINGS_BN_FILE = DATA_DIR / "meanings_bn.json"
 
+# Dec 2025 Vocab Practice: the 243 to-learn words. Copied verbatim to
+# dist/data/ so practice.js can fetch it at the same origin as the page.
+PRACTICE_DATA_FILE = DATA_DIR / "vocab_practice_2025_12.json"
+
 # GitHub Pages serves this project under /<repo>/. Absolute URLs keep nested
 # pages working, because GH Pages does not collapse "../" segments.
 SITE_BASE = os.environ.get("SITE_BASE", "/n3-kanji-flash/")
@@ -317,6 +321,13 @@ def main():
     mnemonics_bn = load_mnemonics_bn()
     meanings_bn = load_meaning_bn()
 
+    if not PRACTICE_DATA_FILE.exists():
+        raise SystemExit(f"{PRACTICE_DATA_FILE} missing — the Dec 2025 vocab practice needs it.")
+    practice_words = json.loads(PRACTICE_DATA_FILE.read_text(encoding="utf-8"))
+    if not isinstance(practice_words, list) or not practice_words:
+        raise SystemExit(f"{PRACTICE_DATA_FILE} must contain a non-empty JSON list.")
+    practice_count = len(practice_words)
+
     if DIST.exists():
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True)
@@ -339,7 +350,7 @@ def main():
 
         # home
         write(DIST / lang / "index.html", env.get_template("home.html").render(
-            weeks=summaries, totals=totals))
+            weeks=summaries, totals=totals, practice_count=practice_count))
 
         # test picker
         write(DIST / lang / "test" / "index.html",
@@ -418,6 +429,15 @@ def main():
 """.format(base=SITE_BASE, default_lang=DEFAULT_LANG)
     write(DIST / "index.html", root_redirect)
     write(DIST / "404.html", root_redirect)
+
+    # Vocab Practice lives at the site root (like the root redirect), because
+    # its URL is shared as /n3-kanji-flash/practice.html. It extends the base
+    # template, so it gets the same navbar, theme toggle, and password lock.
+    practice_env = make_env("en")
+    write(DIST / "practice.html", practice_env.get_template("practice.html").render(
+        word_count=practice_count))
+    (DIST / "data").mkdir(parents=True, exist_ok=True)
+    shutil.copy2(PRACTICE_DATA_FILE, DIST / "data" / PRACTICE_DATA_FILE.name)
 
     for f in STATIC_SRC.iterdir():
         if f.is_file():

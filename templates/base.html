@@ -147,7 +147,7 @@
        in the layout, so no page content can flash on the first paint. */
     html.n3-locked body > :not(#lock-screen) { display: none !important; }
     </style>
-    <link rel="stylesheet" href="{{ base }}static/style.css">
+    <link rel="stylesheet" href="{{ base }}static/style.css">{% block head %}{% endblock %}
     <script>
     /* Language switcher + cookie initializer. Runs before any UI renders. */
     (function () {
@@ -199,6 +199,7 @@
         <a href="{{ base }}{{ lang }}/" class="nav-brand">📚 {{ T.brand }}</a>
         <div class="nav-links">
             <a href="{{ base }}{{ lang }}/">{{ T.nav_home }}</a>
+            <a href="{{ base }}practice.html">{{ T.nav_practice }}</a>
             <a href="{{ base }}{{ lang }}/test/">{{ T.nav_tests }}</a>
             <div class="lang-switch">
                 <span class="lang-label">{{ T.lang_label }}</span>

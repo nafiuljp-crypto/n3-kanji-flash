@@ -6,6 +6,20 @@
     <p class="lead">{{ T.home_lead }}</p>
 </section>
 
+<section class="practice-entry">
+    <a href="{{ base }}practice.html" class="chapter-card practice-entry-card">
+        <div class="chapter-number">{{ T.practice_eyebrow }}</div>
+        <div class="chapter-theme-jp">{{ T.practice_title }}</div>
+        <div class="chapter-theme-en">{{ T.practice_lead }}</div>
+        <div class="chapter-stats">
+            <span>📝 {{ practice_count }} {{ T.vocab }}</span>
+            <span>✅ {{ T.practice_stats_feedback }}</span>
+            <span>⏱ {{ T.practice_stats_notimer }}</span>
+        </div>
+        <div class="practice-entry-cta">{{ T.practice_cta }}</div>
+    </a>
+</section>
+
 <section class="overall">
     <h2>{{ T.overall_progress }}</h2>
     <div class="overall-bars" id="overall-bars" data-totals='{{ totals | tojson }}'>

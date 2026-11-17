@@ -308,6 +308,16 @@ section { margin: 28px 0; }
 .info ol { padding-left: 22px; }
 .info li { margin: 6px 0; }
 
+/* Vocab Practice entry card on the home page. Reuses .chapter-card; only the
+   accent border and CTA are practice-specific. */
+.practice-entry-card { border-left: 4px solid var(--color-vocab); }
+.practice-entry-cta {
+    margin-top: 8px;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
 /* ---------- week page ---------- */
 
 .chapter-header { margin-bottom: 8px; }

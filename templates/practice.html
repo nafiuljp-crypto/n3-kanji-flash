@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Vocab Practice — Dec 2025{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ base }}static/practice.css">
+{% endblock %}
+{% block content %}
+<section class="chapter-header practice-head">
+    <a class="back-link" href="{{ base }}{{ lang }}/">← {{ T.nav_home }}</a>
+    <h1>Vocab Practice — Dec 2025 <span class="jp">語彙練習</span></h1>
+    <p class="muted">{{ T.practice_page_lead.format(count=word_count) }}</p>
+</section>
+
+<div id="practice-app" class="practice-app" data-words="{{ word_count }}">
+    <p class="loading">Loading Dec 2025 vocabulary practice…</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ base }}static/practice.js"></script>
+<script>
+(function () {
+    var el = document.getElementById('practice-app');
+    if (!el || !window.N3VocabPractice) return;
+    window.N3VocabPractice.mountPractice(el, {
+        backHref: '{{ base }}{{ lang }}/',
+        dataUrl: '{{ base }}data/vocab_practice_2025_12.json'
+    });
+})();
+</script>
+{% endblock %}

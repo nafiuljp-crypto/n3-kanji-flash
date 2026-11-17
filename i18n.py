@@ -8,6 +8,7 @@ TRANSLATIONS = {
     "en": {
         "brand": "N3 Kanji",
         "nav_home": "Home",
+        "nav_practice": "Vocab Practice",
         "nav_tests": "Tests",
         "lang_label": "Language",
         "lang_en": "EN",
@@ -25,6 +26,14 @@ TRANSLATIONS = {
         # home
         "home_title": "N3 Kanji Study",
         "home_lead": "Learn the radicals, then the kanji, then the vocabulary — and test yourself as many times as you like.",
+        # Dec 2025 vocab practice (home card + /practice.html)
+        "practice_eyebrow": "December 2025 · 文字・語彙",
+        "practice_title": "Vocab Practice — Dec 2025",
+        "practice_lead": "243 to-learn words from the December 2025 N3 vocabulary section — shuffled meaning and reading questions with instant feedback and no timer.",
+        "practice_page_lead": "Untaught vocabulary from the December 2025 N3 vocab section — {count} words. Mixed word → meaning and word → reading questions with immediate feedback and no timer.",
+        "practice_cta": "Start practice →",
+        "practice_stats_feedback": "instant feedback",
+        "practice_stats_notimer": "no timer",
         "home_weeks_h2": "Weeks",
         "home_how_h2": "How it works",
         "how_steps": [
@@ -141,6 +150,7 @@ TRANSLATIONS = {
     "ja": {
         "brand": "N3 漢字",
         "nav_home": "ホーム",
+        "nav_practice": "語彙練習",
         "nav_tests": "テスト",
         "lang_label": "言語",
         "lang_en": "EN",
@@ -157,6 +167,14 @@ TRANSLATIONS = {
 
         "home_title": "N3 漢字学習",
         "home_lead": "部首 → 漢字 → 単語の順に学び、何度でもテストできます。",
+        # Dec 2025 vocab practice (home card + /practice.html)
+        "practice_eyebrow": "2025年12月 · 文字・語彙",
+        "practice_title": "語彙練習 — 2025年12月",
+        "practice_lead": "2025年12月 N3 語彙の未習得語 243 語。意味と読みの4択をシャッフルで出題し、その場で採点します。タイマーなし。",
+        "practice_page_lead": "2025年12月 N3 語彙の未習得語 {count} 語。単語 → 意味／読みの4択、その場で採点、タイマーなし。",
+        "practice_cta": "練習を始める →",
+        "practice_stats_feedback": "その場で採点",
+        "practice_stats_notimer": "タイマーなし",
         "home_weeks_h2": "週",
         "home_how_h2": "使い方",
         "how_steps": [

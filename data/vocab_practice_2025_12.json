@@ -1,0 +1,2215 @@
+[
+  {
+    "word": "西洋",
+    "reading": "せいよう",
+    "meaning": "the west; western countries",
+    "questions": [
+      "m1_q1"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "建物",
+    "reading": "たてもの",
+    "meaning": "building; structure",
+    "questions": [
+      "m1_q1"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "写真",
+    "reading": "しゃしん",
+    "meaning": "photo; photograph",
+    "questions": [
+      "m1_q1",
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "声優",
+    "reading": "せいゆう",
+    "meaning": "voice actor",
+    "questions": [
+      "m1_q1"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "今回",
+    "reading": "こんかい",
+    "meaning": "this time",
+    "questions": [
+      "m1_q2"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "とても",
+    "reading": "とても",
+    "meaning": "very",
+    "questions": [
+      "m1_q2"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "苦しい",
+    "reading": "くるしい",
+    "meaning": "painful; distressing",
+    "questions": [
+      "m1_q2"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "試合",
+    "reading": "しあい",
+    "meaning": "game; match",
+    "questions": [
+      "m1_q2"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "惜しい",
+    "reading": "おしい",
+    "meaning": "regrettable; disappointing",
+    "questions": [
+      "m1_q2"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "悔しい",
+    "reading": "くやしい",
+    "meaning": "regrettable; frustrating",
+    "questions": [
+      "m1_q2"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "厳しい",
+    "reading": "きびしい",
+    "meaning": "strict; harsh",
+    "questions": [
+      "m1_q2"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "手紙",
+    "reading": "てがみ",
+    "meaning": "letter",
+    "questions": [
+      "m1_q3"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "他人",
+    "reading": "たにん",
+    "meaning": "another person; other people",
+    "questions": [
+      "m1_q3"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "見せる",
+    "reading": "みせる",
+    "meaning": "to show",
+    "questions": [
+      "m1_q3"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "担任",
+    "reading": "たんにん",
+    "meaning": "homeroom teacher; being in charge",
+    "questions": [
+      "m1_q3"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "昨日",
+    "reading": "きのう",
+    "meaning": "yesterday",
+    "questions": [
+      "m1_q4",
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "腹痛",
+    "reading": "ふくつう",
+    "meaning": "stomachache; abdominal pain",
+    "questions": [
+      "m1_q4"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "学校",
+    "reading": "がっこう",
+    "meaning": "school",
+    "questions": [
+      "m1_q4"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "休む",
+    "reading": "やすむ",
+    "meaning": "to rest; to take time off",
+    "questions": [
+      "m1_q4",
+      "m4_q30"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "頭痛",
+    "reading": "ずつう",
+    "meaning": "headache",
+    "questions": [
+      "m1_q4"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "不屈",
+    "reading": "ふくつ",
+    "meaning": "unyielding; indomitable",
+    "questions": [
+      "m1_q4"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "駅",
+    "reading": "えき",
+    "meaning": "station",
+    "questions": [
+      "m1_q5"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "終点",
+    "reading": "しゅうてん",
+    "meaning": "last stop; final stop",
+    "questions": [
+      "m1_q5"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "終電",
+    "reading": "しゅうでん",
+    "meaning": "last train",
+    "questions": [
+      "m1_q5"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "充電",
+    "reading": "じゅうでん",
+    "meaning": "recharge",
+    "questions": [
+      "m1_q5"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "充填",
+    "reading": "じゅうてん",
+    "meaning": "filling; packing",
+    "questions": [
+      "m1_q5"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "泣く",
+    "reading": "なく",
+    "meaning": "to cry",
+    "questions": [
+      "m1_q6"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "働く",
+    "reading": "はたらく",
+    "meaning": "to work; to labor",
+    "questions": [
+      "m1_q6"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "驚く",
+    "reading": "おどろく",
+    "meaning": "to be surprised; to be shocked",
+    "questions": [
+      "m1_q6"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "着物",
+    "reading": "きもの",
+    "meaning": "kimono; clothes",
+    "questions": [
+      "m1_q7"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "襟",
+    "reading": "えり",
+    "meaning": "collar; lapel",
+    "questions": [
+      "m1_q7"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "袖",
+    "reading": "そで",
+    "meaning": "sleeve",
+    "questions": [
+      "m1_q7"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "糸",
+    "reading": "いと",
+    "meaning": "thread",
+    "questions": [
+      "m1_q7"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "母",
+    "reading": "はは",
+    "meaning": "mother",
+    "questions": [
+      "m1_q8"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "郵便",
+    "reading": "ゆうびん",
+    "meaning": "mail; post",
+    "questions": [
+      "m1_q8"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "雄弁",
+    "reading": "ゆうべん",
+    "meaning": "eloquent; oratory",
+    "questions": [
+      "m1_q8"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "辺り",
+    "reading": "あたり",
+    "meaning": "area; vicinity",
+    "questions": [
+      "m2_q9"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "マンション",
+    "reading": "マンション",
+    "meaning": "apartment; condo",
+    "questions": [
+      "m2_q9"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "多い",
+    "reading": "おおい",
+    "meaning": "many; much",
+    "questions": [
+      "m2_q9",
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "通り",
+    "reading": "とおり",
+    "meaning": "avenue; street",
+    "questions": [
+      "m2_q9"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "図",
+    "reading": "ず",
+    "meaning": "diagram",
+    "questions": [
+      "m2_q10"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "見る",
+    "reading": "みる",
+    "meaning": "to see; to look",
+    "questions": [
+      "m2_q10",
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "絵",
+    "reading": "え",
+    "meaning": "picture; painting",
+    "questions": [
+      "m2_q10"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "例",
+    "reading": "れい",
+    "meaning": "example",
+    "questions": [
+      "m2_q10"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "貯金",
+    "reading": "ちょきん",
+    "meaning": "savings",
+    "questions": [
+      "m2_q11"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "少し",
+    "reading": "すこし",
+    "meaning": "a little; a few",
+    "questions": [
+      "m2_q11",
+      "m4_q27"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "来年",
+    "reading": "らいねん",
+    "meaning": "next year",
+    "questions": [
+      "m2_q12"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "歩道",
+    "reading": "ほどう",
+    "meaning": "sidewalk; footpath",
+    "questions": [
+      "m2_q12"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "パソコン",
+    "reading": "パソコン",
+    "meaning": "personal computer",
+    "questions": [
+      "m2_q13"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "キーボード",
+    "reading": "キーボード",
+    "meaning": "keyboard",
+    "questions": [
+      "m2_q13"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "打つ",
+    "reading": "うつ",
+    "meaning": "to hit something; to strike something",
+    "questions": [
+      "m2_q13"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "音",
+    "reading": "おと",
+    "meaning": "sound; noise",
+    "questions": [
+      "m2_q13"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "聞こえる",
+    "reading": "きこえる",
+    "meaning": "to be hearable; to be audible",
+    "questions": [
+      "m2_q13",
+      "m3_q20"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "まじめ",
+    "reading": "まじめ",
+    "meaning": "serious; diligent",
+    "questions": [
+      "m2_q14"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "私",
+    "reading": "わたし",
+    "meaning": "I; me",
+    "questions": [
+      "m3_q15",
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "国",
+    "reading": "くに",
+    "meaning": "country; nation",
+    "questions": [
+      "m3_q15"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "時間",
+    "reading": "じかん",
+    "meaning": "time; hour",
+    "questions": [
+      "m3_q15",
+      "m3_q23"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "昼",
+    "reading": "ひる",
+    "meaning": "noon; daytime",
+    "questions": [
+      "m3_q15",
+      "m3_q23"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "夜",
+    "reading": "よる",
+    "meaning": "night; evening",
+    "questions": [
+      "m3_q15"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "反対",
+    "reading": "はんたい",
+    "meaning": "opposite; opposition",
+    "questions": [
+      "m3_q15"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "時代",
+    "reading": "じだい",
+    "meaning": "period; era",
+    "questions": [
+      "m3_q15"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "時期",
+    "reading": "じき",
+    "meaning": "time; season",
+    "questions": [
+      "m3_q15"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "時速",
+    "reading": "じそく",
+    "meaning": "speed per hour",
+    "questions": [
+      "m3_q15"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "時差",
+    "reading": "じさ",
+    "meaning": "time difference",
+    "questions": [
+      "m3_q15"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "自転車",
+    "reading": "じてんしゃ",
+    "meaning": "bicycle; bike",
+    "questions": [
+      "m3_q16",
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "壊れる",
+    "reading": "こわれる",
+    "meaning": "to be broken; to get broken",
+    "questions": [
+      "m3_q16",
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "歩く",
+    "reading": "あるく",
+    "meaning": "to walk",
+    "questions": [
+      "m3_q16"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "家",
+    "reading": "いえ",
+    "meaning": "house; home",
+    "questions": [
+      "m3_q16"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "帰る",
+    "reading": "かえる",
+    "meaning": "to return home; to return",
+    "questions": [
+      "m3_q16"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "詳しい",
+    "reading": "くわしい",
+    "meaning": "detailed; expert",
+    "questions": [
+      "m3_q16"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "だらしない",
+    "reading": "だらしない",
+    "meaning": "sloppy; untidy",
+    "questions": [
+      "m3_q16"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "しかたない",
+    "reading": "しかたない",
+    "meaning": "it can't be helped",
+    "questions": [
+      "m3_q16"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "羨ましい",
+    "reading": "うらやましい",
+    "meaning": "envious; jealous",
+    "questions": [
+      "m3_q16"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "病気",
+    "reading": "びょうき",
+    "meaning": "sick; illness",
+    "questions": [
+      "m3_q17"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "人",
+    "reading": "ひと",
+    "meaning": "person",
+    "questions": [
+      "m3_q17",
+      "m3_q18",
+      "m3_q25",
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "高校生",
+    "reading": "こうこうせい",
+    "meaning": "high school student; high schooler",
+    "questions": [
+      "m3_q17"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "医者",
+    "reading": "いしゃ",
+    "meaning": "doctor; physician",
+    "questions": [
+      "m3_q17"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "決心",
+    "reading": "けっしん",
+    "meaning": "determination; resolution",
+    "questions": [
+      "m3_q17"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "証明",
+    "reading": "しょうめい",
+    "meaning": "proof; prove",
+    "questions": [
+      "m3_q17"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "仮定",
+    "reading": "かてい",
+    "meaning": "assumption; assume",
+    "questions": [
+      "m3_q17"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "彼",
+    "reading": "かれ",
+    "meaning": "he",
+    "questions": [
+      "m3_q18",
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "いつも",
+    "reading": "いつも",
+    "meaning": "always",
+    "questions": [
+      "m3_q18"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "言う",
+    "reading": "いう",
+    "meaning": "to say",
+    "questions": [
+      "m3_q18"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "みんな",
+    "reading": "みんな",
+    "meaning": "everyone",
+    "questions": [
+      "m3_q18",
+      "m5_q35"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "笑わせる",
+    "reading": "わらわせる",
+    "meaning": "to make someone laugh",
+    "questions": [
+      "m3_q18"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "面白い",
+    "reading": "おもしろい",
+    "meaning": "interesting; amusing",
+    "questions": [
+      "m3_q18"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "文句",
+    "reading": "もんく",
+    "meaning": "complaint; grumbling",
+    "questions": [
+      "m3_q18"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "冗談",
+    "reading": "じょうだん",
+    "meaning": "joke",
+    "questions": [
+      "m3_q18"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "自慢",
+    "reading": "じまん",
+    "meaning": "pride; boast",
+    "questions": [
+      "m3_q18"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "ホテル",
+    "reading": "ホテル",
+    "meaning": "hotel",
+    "questions": [
+      "m3_q19"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "到着",
+    "reading": "とうちゃく",
+    "meaning": "arrival",
+    "questions": [
+      "m3_q19"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "まだ",
+    "reading": "まだ",
+    "meaning": "still; not yet",
+    "questions": [
+      "m3_q19"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "部屋",
+    "reading": "へや",
+    "meaning": "room",
+    "questions": [
+      "m3_q19",
+      "m3_q25"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "入る",
+    "reading": "はいる",
+    "meaning": "to enter; to go in",
+    "questions": [
+      "m3_q19"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "荷物",
+    "reading": "にもつ",
+    "meaning": "luggage; baggage",
+    "questions": [
+      "m3_q19"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "出かける",
+    "reading": "でかける",
+    "meaning": "to go out; to leave",
+    "questions": [
+      "m3_q19"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "泊める",
+    "reading": "とめる",
+    "meaning": "to let someone stay over; to let someone stay the night",
+    "questions": [
+      "m3_q19"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "与える",
+    "reading": "あたえる",
+    "meaning": "to give; to grant",
+    "questions": [
+      "m3_q19"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "空港",
+    "reading": "くうこう",
+    "meaning": "airport",
+    "questions": [
+      "m3_q20"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "着く",
+    "reading": "つく",
+    "meaning": "to arrive",
+    "questions": [
+      "m3_q20"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "飛行機",
+    "reading": "ひこうき",
+    "meaning": "airplane; aeroplane",
+    "questions": [
+      "m3_q20"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "出発",
+    "reading": "しゅっぱつ",
+    "meaning": "departure",
+    "questions": [
+      "m3_q20"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "ガイダンス",
+    "reading": "ガイダンス",
+    "meaning": "guidance; orientation",
+    "questions": [
+      "m3_q20"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "アナウンス",
+    "reading": "アナウンス",
+    "meaning": "announcement",
+    "questions": [
+      "m3_q20"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "コマーシャル",
+    "reading": "コマーシャル",
+    "meaning": "commercial (ad)",
+    "questions": [
+      "m3_q20"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "スピーチ",
+    "reading": "スピーチ",
+    "meaning": "speech",
+    "questions": [
+      "m3_q20"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "休日",
+    "reading": "きゅうじつ",
+    "meaning": "day off; holiday",
+    "questions": [
+      "m3_q21"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "渋滞",
+    "reading": "じゅうたい",
+    "meaning": "traffic jam; traffic congestion",
+    "questions": [
+      "m3_q21"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "思う",
+    "reading": "おもう",
+    "meaning": "to think",
+    "questions": [
+      "m3_q21"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "道",
+    "reading": "みち",
+    "meaning": "road; street",
+    "questions": [
+      "m3_q21"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "空く",
+    "reading": "すく",
+    "meaning": "to be uncrowded",
+    "questions": [
+      "m3_q21"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "突然",
+    "reading": "とつぜん",
+    "meaning": "suddenly; sudden",
+    "questions": [
+      "m3_q21"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "当然",
+    "reading": "とうぜん",
+    "meaning": "natural; obvious",
+    "questions": [
+      "m3_q21"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "年中",
+    "reading": "ねんじゅう",
+    "meaning": "year round; all year",
+    "questions": [
+      "m3_q21"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "案外",
+    "reading": "あんがい",
+    "meaning": "unexpectedly; more than expected",
+    "questions": [
+      "m3_q21"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "若い",
+    "reading": "わかい",
+    "meaning": "young; youthful",
+    "questions": [
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "苦労",
+    "reading": "くろう",
+    "meaning": "hardship; troubles",
+    "questions": [
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "一生懸命",
+    "reading": "いっしょうけんめい",
+    "meaning": "with all one's might; all out",
+    "questions": [
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "立派",
+    "reading": "りっぱ",
+    "meaning": "splendid; admirable",
+    "questions": [
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "政治家",
+    "reading": "せいじか",
+    "meaning": "politician",
+    "questions": [
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "努力",
+    "reading": "どりょく",
+    "meaning": "great effort; exertion",
+    "questions": [
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "納得",
+    "reading": "なっとく",
+    "meaning": "being convinced; consent",
+    "questions": [
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "期待",
+    "reading": "きたい",
+    "meaning": "expectation; anticipation",
+    "questions": [
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "注意",
+    "reading": "ちゅうい",
+    "meaning": "caution; attention",
+    "questions": [
+      "m3_q22"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "朝",
+    "reading": "あさ",
+    "meaning": "morning",
+    "questions": [
+      "m3_q23"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "ご飯",
+    "reading": "ごはん",
+    "meaning": "meal; cooked rice",
+    "questions": [
+      "m3_q23",
+      "m4_q27"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "食べる",
+    "reading": "たべる",
+    "meaning": "to eat",
+    "questions": [
+      "m3_q23",
+      "m4_q27"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "おなか",
+    "reading": "おなか",
+    "meaning": "stomach; belly",
+    "questions": [
+      "m3_q23"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "ぺらぺら",
+    "reading": "ぺらぺら",
+    "meaning": "fluently; flimsy",
+    "questions": [
+      "m3_q23"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "からから",
+    "reading": "からから",
+    "meaning": "dry; parched",
+    "questions": [
+      "m3_q23"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "ぺこぺこ",
+    "reading": "ぺこぺこ",
+    "meaning": "very hungry",
+    "questions": [
+      "m3_q23"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "どきどき",
+    "reading": "どきどき",
+    "meaning": "heartbeat; nervous excitement",
+    "questions": [
+      "m3_q23"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "会社",
+    "reading": "かいしゃ",
+    "meaning": "company; corporation",
+    "questions": [
+      "m3_q24"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "聞く",
+    "reading": "きく",
+    "meaning": "to hear; to ask",
+    "questions": [
+      "m3_q24",
+      "m4_q29"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "情報",
+    "reading": "じょうほう",
+    "meaning": "information; data",
+    "questions": [
+      "m3_q24"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "満足",
+    "reading": "まんぞく",
+    "meaning": "satisfied",
+    "questions": [
+      "m3_q24"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "正常",
+    "reading": "せいじょう",
+    "meaning": "normal",
+    "questions": [
+      "m3_q24"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "確実",
+    "reading": "かくじつ",
+    "meaning": "certain; reliable",
+    "questions": [
+      "m3_q24"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "電気",
+    "reading": "でんき",
+    "meaning": "electricity; light",
+    "questions": [
+      "m3_q25"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "工事",
+    "reading": "こうじ",
+    "meaning": "construction; construction work",
+    "questions": [
+      "m3_q25"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "来る",
+    "reading": "くる",
+    "meaning": "to come",
+    "questions": [
+      "m3_q25"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "壁",
+    "reading": "かべ",
+    "meaning": "wall",
+    "questions": [
+      "m3_q25"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "エアコン",
+    "reading": "エアコン",
+    "meaning": "air conditioner",
+    "questions": [
+      "m3_q25"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "取り付ける",
+    "reading": "とりつける",
+    "meaning": "to install; to attach",
+    "questions": [
+      "m3_q25"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "取り上げる",
+    "reading": "とりあげる",
+    "meaning": "to pick up; to take away",
+    "questions": [
+      "m3_q25"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "受け入れる",
+    "reading": "うけいれる",
+    "meaning": "to accept something; to take in",
+    "questions": [
+      "m3_q25"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "引き受ける",
+    "reading": "ひきうける",
+    "meaning": "to undertake; to take on",
+    "questions": [
+      "m3_q25"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "清潔",
+    "reading": "せいけつ",
+    "meaning": "clean; cleanliness",
+    "questions": [
+      "m4_q26"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "タオル",
+    "reading": "タオル",
+    "meaning": "towel",
+    "questions": [
+      "m4_q26"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "拭く",
+    "reading": "ふく",
+    "meaning": "to wipe",
+    "questions": [
+      "m4_q26"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "柔らかい",
+    "reading": "やわらかい",
+    "meaning": "soft; tender",
+    "questions": [
+      "m4_q26"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "濡れる",
+    "reading": "ぬれる",
+    "meaning": "to get wet; to be wet",
+    "questions": [
+      "m4_q26"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "乾く",
+    "reading": "かわく",
+    "meaning": "to get dry; to become dry",
+    "questions": [
+      "m4_q26"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "きれい",
+    "reading": "きれい",
+    "meaning": "clean; pretty",
+    "questions": [
+      "m4_q26"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "さっき",
+    "reading": "さっき",
+    "meaning": "a moment ago",
+    "questions": [
+      "m4_q27"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "急ぐ",
+    "reading": "いそぐ",
+    "meaning": "to hurry",
+    "questions": [
+      "m4_q27"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "前",
+    "reading": "まえ",
+    "meaning": "front; before",
+    "questions": [
+      "m4_q27"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "ゆっくり",
+    "reading": "ゆっくり",
+    "meaning": "slowly; leisurely",
+    "questions": [
+      "m4_q27"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "キッチン",
+    "reading": "キッチン",
+    "meaning": "kitchen",
+    "questions": [
+      "m4_q28"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "置く",
+    "reading": "おく",
+    "meaning": "to put down; to set down",
+    "questions": [
+      "m4_q28"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "居間",
+    "reading": "いま",
+    "meaning": "living room; sitting room",
+    "questions": [
+      "m4_q28"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "台所",
+    "reading": "だいどころ",
+    "meaning": "kitchen",
+    "questions": [
+      "m4_q28"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "廊下",
+    "reading": "ろうか",
+    "meaning": "corridor; hallway",
+    "questions": [
+      "m4_q28"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "風呂",
+    "reading": "ふろ",
+    "meaning": "bath",
+    "questions": [
+      "m4_q28"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "今",
+    "reading": "いま",
+    "meaning": "now",
+    "questions": [
+      "m4_q29"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "指導",
+    "reading": "しどう",
+    "meaning": "guidance",
+    "questions": [
+      "m4_q29"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "答える",
+    "reading": "こたえる",
+    "meaning": "to answer; to reply",
+    "questions": [
+      "m4_q29"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "教える",
+    "reading": "おしえる",
+    "meaning": "to teach; to tell",
+    "questions": [
+      "m4_q29"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "そろそろ",
+    "reading": "そろそろ",
+    "meaning": "soon; it's about time",
+    "questions": [
+      "m4_q30"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "おしまい",
+    "reading": "おしまい",
+    "meaning": "the end; finish",
+    "questions": [
+      "m4_q30"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "食事",
+    "reading": "しょくじ",
+    "meaning": "meal; diet",
+    "questions": [
+      "m4_q30",
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "終わり",
+    "reading": "おわり",
+    "meaning": "the end",
+    "questions": [
+      "m4_q30"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "にぎる",
+    "reading": "にぎる",
+    "meaning": "to grip; to hold",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "引っ越し",
+    "reading": "ひっこし",
+    "meaning": "moving house",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "何度",
+    "reading": "なんど",
+    "meaning": "how many times; how often",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "重い",
+    "reading": "おもい",
+    "meaning": "heavy",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "家具",
+    "reading": "かぐ",
+    "meaning": "furniture",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "体",
+    "reading": "からだ",
+    "meaning": "body",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "お祭り",
+    "reading": "おまつり",
+    "meaning": "festival",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "弟",
+    "reading": "おとうと",
+    "meaning": "younger brother; little brother",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "迷子",
+    "reading": "まいご",
+    "meaning": "lost child; lost person",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "手",
+    "reading": "て",
+    "meaning": "hand; arm",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "しっかり",
+    "reading": "しっかり",
+    "meaning": "firmly; properly",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "風",
+    "reading": "かぜ",
+    "meaning": "wind",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "帽子",
+    "reading": "ぼうし",
+    "meaning": "hat; cap",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "走る",
+    "reading": "はしる",
+    "meaning": "to run",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "母親",
+    "reading": "ははおや",
+    "meaning": "mother; mom",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "生まれる",
+    "reading": "うまれる",
+    "meaning": "to be born",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "赤ちゃん",
+    "reading": "あかちゃん",
+    "meaning": "baby",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "大事",
+    "reading": "だいじ",
+    "meaning": "important; valuable",
+    "questions": [
+      "m5_q31"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "修理",
+    "reading": "しゅうり",
+    "meaning": "repair",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "今朝",
+    "reading": "けさ",
+    "meaning": "this morning",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "妻",
+    "reading": "つま",
+    "meaning": "wife",
+    "questions": [
+      "m5_q32",
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "けんか",
+    "reading": "けんか",
+    "meaning": "fight; quarrel",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "早い",
+    "reading": "はやい",
+    "meaning": "early; fast",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "仲",
+    "reading": "なか",
+    "meaning": "relationship; relation",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "腕",
+    "reading": "うで",
+    "meaning": "arm; ability",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "けが",
+    "reading": "けが",
+    "meaning": "injury",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "病院",
+    "reading": "びょういん",
+    "meaning": "hospital; doctor's office",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "買う",
+    "reading": "かう",
+    "meaning": "to buy",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "お店",
+    "reading": "おみせ",
+    "meaning": "shop; store",
+    "questions": [
+      "m5_q32",
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "間違える",
+    "reading": "まちがえる",
+    "meaning": "to make a mistake; to mistake",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "漢字",
+    "reading": "かんじ",
+    "meaning": "kanji; chinese letters",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "先生",
+    "reading": "せんせい",
+    "meaning": "teacher; sensei",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "赤い",
+    "reading": "あかい",
+    "meaning": "red",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "ペン",
+    "reading": "ペン",
+    "meaning": "pen",
+    "questions": [
+      "m5_q32"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "目的",
+    "reading": "もくてき",
+    "meaning": "purpose; goal",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "今日",
+    "reading": "きょう",
+    "meaning": "today",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "たくさん",
+    "reading": "たくさん",
+    "meaning": "a lot",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "商品",
+    "reading": "しょうひん",
+    "meaning": "merchandise; product",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "売れる",
+    "reading": "うれる",
+    "meaning": "to sell; to be sold",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "超える",
+    "reading": "こえる",
+    "meaning": "to exceed; to go beyond",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "窓側",
+    "reading": "まどぎわ",
+    "meaning": "window side",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "いい",
+    "reading": "いい",
+    "meaning": "good",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "来週",
+    "reading": "らいしゅう",
+    "meaning": "next week",
+    "questions": [
+      "m5_q33",
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "海外",
+    "reading": "かいがい",
+    "meaning": "overseas; foreign",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "出張",
+    "reading": "しゅっちょう",
+    "meaning": "business trip; official trip",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "忙しい",
+    "reading": "いそがしい",
+    "meaning": "busy",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "研究",
+    "reading": "けんきゅう",
+    "meaning": "research; investigation",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "新しい",
+    "reading": "あたらしい",
+    "meaning": "new",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "薬",
+    "reading": "くすり",
+    "meaning": "medicine; drug",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "効果",
+    "reading": "こうか",
+    "meaning": "an effect",
+    "questions": [
+      "m5_q33"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "懐かしい",
+    "reading": "なつかしい",
+    "meaning": "nostalgic; missed",
+    "questions": [
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "子ども",
+    "reading": "こども",
+    "meaning": "child",
+    "questions": [
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "気持ち",
+    "reading": "きもち",
+    "meaning": "feeling",
+    "questions": [
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "建てる",
+    "reading": "たてる",
+    "meaning": "to build; to construct",
+    "questions": [
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "見学",
+    "reading": "けんがく",
+    "meaning": "study visit; tour",
+    "questions": [
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "会う",
+    "reading": "あう",
+    "meaning": "to meet; to encounter",
+    "questions": [
+      "m5_q34"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "すぐに",
+    "reading": "すぐに",
+    "meaning": "immediately",
+    "questions": [
+      "m5_q34"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "友達",
+    "reading": "ともだち",
+    "meaning": "friend; companion",
+    "questions": [
+      "m5_q34",
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "都合",
+    "reading": "つごう",
+    "meaning": "one's convenience; circumstances",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "悪い",
+    "reading": "わるい",
+    "meaning": "bad; poor",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "約束",
+    "reading": "やくそく",
+    "meaning": "promise; appointment",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "住所",
+    "reading": "じゅうしょ",
+    "meaning": "address",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "知らせる",
+    "reading": "しらせる",
+    "meaning": "to inform; to notify",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "インターネット",
+    "reading": "インターネット",
+    "meaning": "the internet",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": false
+  },
+  {
+    "word": "登場",
+    "reading": "とうじょう",
+    "meaning": "appearance; entry (in a story)",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "人々",
+    "reading": "ひとびと",
+    "meaning": "people",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "生活",
+    "reading": "せいかつ",
+    "meaning": "life; livelihood",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "大きい",
+    "reading": "おおきい",
+    "meaning": "big; large",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "会議",
+    "reading": "かいぎ",
+    "meaning": "meeting; conference",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "司会",
+    "reading": "しかい",
+    "meaning": "host; MC",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  },
+  {
+    "word": "引っ越す",
+    "reading": "ひっこす",
+    "meaning": "to move; to move homes",
+    "questions": [
+      "m5_q35"
+    ],
+    "has_kanji": true
+  }
+]

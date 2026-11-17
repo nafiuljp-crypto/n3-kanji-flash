@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocab Practice — Dec 2025</title>
+    <link rel="icon" type="image/svg+xml" href="/n3-kanji-flash/static/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/n3-kanji-flash/static/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/n3-kanji-flash/static/apple-touch-icon.png">
+    <script>
+    /* Theme bootstrap. Runs before the stylesheet so data-theme is already
+       set on the first paint (no flash of the wrong theme, including when
+       navigating between pages). Saved choice beats the OS setting. */
+    (function () {
+        var KEY = 'n3theme:v1';
+
+        function savedTheme() {
+            try {
+                var v = localStorage.getItem(KEY);
+                return (v === 'dark' || v === 'light') ? v : null;
+            } catch (e) { return null; }
+        }
+
+        function preferredTheme() {
+            var saved = savedTheme();
+            if (saved) return saved;
+            return (window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches)
+                ? 'dark' : 'light';
+        }
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var btn = document.getElementById('theme-toggle');
+            if (!btn) return;
+            var next = theme === 'dark' ? 'light' : 'dark';
+            var label = btn.getAttribute('data-' + next) || next;
+            btn.setAttribute('title', label);
+            btn.setAttribute('aria-label', label);
+        }
+
+        /* The visible moon/sun label is swapped by CSS from data-theme; only
+           the accessible name needs this late pass once the button exists. */
+        applyTheme(preferredTheme());
+        document.addEventListener('DOMContentLoaded', function () {
+            applyTheme(document.documentElement.getAttribute('data-theme') ||
+                preferredTheme());
+        });
+        document.addEventListener('click', function (e) {
+            var btn = e.target && e.target.closest
+                ? e.target.closest('#theme-toggle') : null;
+            if (!btn) return;
+            var next = document.documentElement.getAttribute('data-theme') === 'dark'
+                ? 'light' : 'dark';
+            try { localStorage.setItem(KEY, next); } catch (err) { /* private mode */ }
+            applyTheme(next);
+        });
+    })();
+    </script>
+    <script>
+    /* Password lock bootstrap. Runs before the stylesheet so the locked
+       class is already on <html> for the first paint (no flash of page
+       content). Only the SHA-256 of the site password is stored — here and
+       as the localStorage value; the password itself is never written down.
+       Any page with this key set to the hash stays unlocked in this browser. */
+    (function () {
+        var KEY = 'n3lock:v1';
+        var HASH = '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4';
+        var root = document.documentElement;
+
+        function isUnlocked() {
+            try { return localStorage.getItem(KEY) === HASH; } catch (e) { return false; }
+        }
+
+        function setLocked(locked) {
+            root.classList.toggle('n3-locked', locked);
+        }
+
+        function sha256Hex(text) {
+            return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))
+                .then(function (buf) {
+                    return Array.prototype.map.call(new Uint8Array(buf), function (b) {
+                        return ('0' + b.toString(16)).slice(-2);
+                    }).join('');
+                });
+        }
+
+        setLocked(!isUnlocked());
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('lock-form');
+            var input = document.getElementById('lock-input');
+            var error = document.getElementById('lock-error');
+            var errorTimer = null;
+
+            function clearError() {
+                if (errorTimer) { clearTimeout(errorTimer); errorTimer = null; }
+                if (error) error.hidden = true;
+            }
+
+            function showError() {
+                if (!error) return;
+                error.hidden = false;
+                if (errorTimer) clearTimeout(errorTimer);
+                errorTimer = setTimeout(clearError, 4000);
+            }
+
+            if (form && input) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    clearError();
+                    var value = input.value;
+                    if (!value) return;
+                    if (!(window.crypto && crypto.subtle && window.TextEncoder)) return;
+                    sha256Hex(value).then(function (hex) {
+                        if (hex === HASH) {
+                            try { localStorage.setItem(KEY, HASH); } catch (err) {}
+                            setLocked(false);
+                            input.value = '';
+                            window.scrollTo(0, 0);
+                        } else {
+                            input.value = '';
+                            input.focus();
+                            showError();
+                        }
+                    }).catch(showError);
+                });
+                input.addEventListener('input', clearError);
+                if (root.classList.contains('n3-locked')) input.focus();
+            }
+
+            var lockBtn = document.getElementById('lock-btn');
+            if (lockBtn) {
+                lockBtn.addEventListener('click', function () {
+                    try { localStorage.removeItem(KEY); } catch (e) {}
+                    setLocked(true);
+                    clearError();
+                    if (input) { input.value = ''; input.focus(); }
+                    window.scrollTo(0, 0);
+                });
+            }
+        });
+    })();
+    </script>
+    <style>
+    /* Locked state, present before style.css loads: only the lock screen is
+       in the layout, so no page content can flash on the first paint. */
+    html.n3-locked body > :not(#lock-screen) { display: none !important; }
+    </style>
+    <link rel="stylesheet" href="/n3-kanji-flash/static/style.css">
+<link rel="stylesheet" href="/n3-kanji-flash/static/practice.css">
+
+    <script>
+    /* Language switcher + cookie initializer. Runs before any UI renders. */
+    (function () {
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return m ? m[2] : null;
+        }
+        function setCookie(name, value) {
+            /* Scoped to the site, not to every project on *.github.io (B15). */
+            var path = '/n3-kanji-flash/' || '/';
+            document.cookie = name + '=' + value + '; path=' + path +
+                '; max-age=31536000; SameSite=Lax';
+        }
+        if (!getCookie('lang')) {
+            setCookie('lang', 'ja');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newLang = a.getAttribute('data-lang');
+                    setCookie('lang', newLang);
+                    var m = location.pathname.match(/^(.*?)\/(en|ja)(\/.*)?$/);
+                    var prefix = m ? m[1] : location.pathname.replace(/\/?[^\/]*$/, '');
+                    var rest = (m && m[3]) ? m[3] : '/';
+                    if (!rest.endsWith('/')) rest += '/';
+                    location.href = prefix + '/' + newLang + rest;
+                });
+            });
+        });
+    })();
+    </script>
+</head>
+<body>
+    <div class="lock-screen" id="lock-screen">
+        <form class="lock-card" id="lock-form" autocomplete="off">
+            <h1 class="lock-brand">📚 N3 Kanji</h1>
+            <p class="lock-lead">This site is password protected.</p>
+            <label class="lock-label" for="lock-input">Password</label>
+            <input type="password" class="lock-input" id="lock-input"
+                   inputmode="numeric" autocomplete="off" autocapitalize="off"
+                   spellcheck="false" aria-describedby="lock-error">
+            <p class="lock-error" id="lock-error" role="alert" hidden>Wrong password. Try again.</p>
+            <button type="submit" class="btn btn-primary lock-submit">Unlock</button>
+        </form>
+    </div>
+
+    <nav class="navbar">
+        <a href="/n3-kanji-flash/en/" class="nav-brand">📚 N3 Kanji</a>
+        <div class="nav-links">
+            <a href="/n3-kanji-flash/en/">Home</a>
+            <a href="/n3-kanji-flash/practice.html">Vocab Practice</a>
+            <a href="/n3-kanji-flash/en/test/">Tests</a>
+            <div class="lang-switch">
+                <span class="lang-label">Language</span>
+                
+                    
+                        <span class="lang-current">EN</span>
+                    
+                
+                    
+                        <a href="#lang-ja" data-lang="ja" class="lang-link">日本語</a>
+                    
+                
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle"
+                    data-dark="Dark mode" data-light="Light mode"
+                    title="Dark mode" aria-label="Dark mode">
+                <span class="theme-icon when-light" aria-hidden="true">🌙</span>
+                <span class="theme-icon when-dark" aria-hidden="true">☀️</span>
+                <span class="theme-label when-light">Dark mode</span>
+                <span class="theme-label when-dark">Light mode</span>
+            </button>
+            <button type="button" class="lock-toggle" id="lock-btn"
+                    title="Lock" aria-label="Lock">
+                <span class="lock-icon" aria-hidden="true">🔒</span>
+                <span class="lock-btn-label">Lock</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+<section class="chapter-header practice-head">
+    <a class="back-link" href="/n3-kanji-flash/en/">← Home</a>
+    <h1>Vocab Practice — Dec 2025 <span class="jp">語彙練習</span></h1>
+    <p class="muted">Untaught vocabulary from the December 2025 N3 vocab section — 243 words. Mixed word → meaning and word → reading questions with immediate feedback and no timer.</p>
+</section>
+
+<div id="practice-app" class="practice-app" data-words="243">
+    <p class="loading">Loading Dec 2025 vocabulary practice…</p>
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <p>N3 kanji study site · kanji list from 日本語総まとめ N3 漢字 · language data from WaniKani</p>
+    </footer>
+
+    
+<script src="/n3-kanji-flash/static/practice.js"></script>
+<script>
+(function () {
+    var el = document.getElementById('practice-app');
+    if (!el || !window.N3VocabPractice) return;
+    window.N3VocabPractice.mountPractice(el, {
+        backHref: '/n3-kanji-flash/en/',
+        dataUrl: '/n3-kanji-flash/data/vocab_practice_2025_12.json'
+    });
+})();
+</script>
+
+</body>
+</html>
