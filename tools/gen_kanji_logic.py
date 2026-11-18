@@ -1,783 +1,1326 @@
 #!/usr/bin/env python3
-"""Generate data/kanji_logic.json — one structural-logic entry per kanji in
-the Dec 2025 Learn Vocab set.
+"""Generate data/kanji_logic.json from real kanji etymology.
 
-Data sources:
-  data/vocab_learn_2025_12.json          the 243 words and their kanji parts
-  data/curriculum.json                   site radical names
-  <WaniKani subjects.json>               full API subject dump (kanji/radicals)
+Sources (structured, not WaniKani components or mnemonics):
+  * KanjiVG       component trees; groups carry kvg:element, kvg:phon,
+                  kvg:radical and kvg:original annotations.
+  * KRADFILE      component decomposition cross-check (EDRDG).
+  * Kanjium       kanjidb.sqlite: radical / phonetic / type / onyomi /
+                  kunyomi / meanings / IDS, plus the phonetics table.
+  * Wiktionary    "Glyph origin" sections: the 六書 classification and the
+                  semantic (c1=s) / phonetic (c2=p) roles.
 
-The committed data/kanji_logic.json is the source of truth for the site; this
-script is the maintenance tool that rebuilds it. It needs the full WaniKani
-subject dump (the repo's .cache file is a reduced slice).
+The committed JSON is the source of truth for the site; this script is the
+maintenance tool that rebuilds it.  The source corpora are large and are not
+vendored in the repo, so pass their paths:
 
-Usage:
-    python3 tools/gen_kanji_logic.py [--subjects PATH] [--out PATH]
+    python3 tools/gen_kanji_logic.py \
+        --kanjivg ~/src/kanjivg --kanjium ~/src/kanjium/data/kanjidb.sqlite \
+        --kradfile ~/src/kradfile-u.gz --wikt-cache ~/src/wikt \
+        --out data/kanji_logic.json
+
+Environment fallbacks: KANJIVG_DIR, KANJIUM_DB, KRADFILE, WIKT_CACHE.
 """
-import argparse, collections, json, os, sys
+import argparse
+import collections
+import gzip
+import json
+import os
+import re
+import sqlite3
+import xml.etree.ElementTree as ET
+from pathlib import Path
 
-BASE = os.environ.get('KLOGIC_BASE') or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEFAULT_SUBJECTS = os.path.expanduser('~/workspace/wanikani-clone/data/subjects.json')
+BASE = Path(__file__).resolve().parent.parent
+WORDS_FILE = BASE / "data" / "vocab_learn_2025_12.json"
+DEFAULT_OUT = BASE / "data" / "kanji_logic.json"
+KANJIVG_NS = "{http://kanjivg.tagaini.net}"
+
+TYPE_LABEL = {
+    "phono-semantic": "形声",
+    "compound": "会意",
+    "pictograph": "象形",
+    "ideograph": "指事",
+    "opaque": "—",
+}
 
 # ---------------------------------------------------------------------------
-# Curated structural facts.
-#
-# WaniKani's component list is the default decomposition. Where it splits a
-# real sound component into strokes (e.g. 校 = 木 + 亠 + 父), the TRUE component
-# is listed in PHONO and the WaniKani split is noted in the reading line.
-# Ideographs/pictographs are curated because WaniKani often teaches them as a
-# single radical.
+# Classification
 # ---------------------------------------------------------------------------
-
-# char -> (sound component char, sound's on reading used, meaning component
-#          char or None, meaning-component family phrase, specific gloss)
-PHONO = {
-    '洋': ('羊', 'よう', '氵', 'water', 'So 洋 means "Western style; ocean" — the water radical places it in the sea/ocean field.'),
-    '惜': ('昔', 'せき', '忄', 'feeling', 'So 惜しい means "precious; regrettable" — a feeling held about something.'),
-    '紙': ('氏', 'し', '糸', 'thread/paper', '糸 is the material; the result is "paper".'),
-    '担': ('旦', 'たん', '扌', 'hand/action', 'So 担 means "carry on the shoulder".'),
-    '頭': ('豆', 'とう', '頁', 'head', 'So 頭 means "head".'),
-    '電': ('田', 'でん', '雨', 'weather', 'So 電 means "electricity" — lightning is weather.'),
-    '聞': ('門', 'もん', '耳', 'ear', 'So 聞 means "hear".'),
-    '時': ('寺', 'じ', '日', 'sun/time', 'So 時 means "time".'),
-    '速': ('束', 'そく', '⻌', 'movement/path', 'So 速 means "fast".'),
-    '証': ('正', 'しょう', '言', 'speech/words', 'So 証 means "evidence" — words that prove.'),
-    '彼': ('皮', 'ひ', '彳', 'walking person', 'So 彼 means "he; that one".'),
-    '荷': ('可', 'か', '艹', 'plants', 'So 荷 means "luggage" — a load of plants/goods.'),
-    '泊': ('白', 'はく', '氵', 'water', 'So 泊 means "overnight stay" — mooring by water.'),
-    '滞': ('帯', 'たい', '氵', 'water', 'So 滞 means "stagnate" — water held back.'),
-    '案': ('安', 'あん', '木', 'wood', 'So 案 means "plan" — originally a wooden tablet/desk.'),
-    '懸': ('県', 'けん', '心', 'heart/mind', 'So 懸 means "suspend" — suspense in the heart.'),
-    '政': ('正', 'せい', '夂', 'action', 'So 政 means "government" — correction carried out. (WaniKani names 夂 "Winter".)'),
-    '飯': ('反', 'はん', '食', 'food/eating', 'So 飯 means "meal".'),
-    '清': ('青', 'せい', '氵', 'water', 'So 清 means "pure; clear".'),
-    '廊': ('郎', 'ろう', '广', 'building', 'So 廊 means "corridor".'),
-    '導': ('道', 'どう', '寸', 'hand/measure', 'So 導 means "guide" — a hand leading the way.'),
-    '何': ('可', 'か', 'ｲ', 'person', 'So 何 means "what".'),
-    '迷': ('米', 'まい', '⻌', 'movement/path', 'So 迷 means "go astray".'),
-    '理': ('里', 'り', '王', 'jade/king', 'So 理 means "reason" — the veins of jade.'),
-    '仲': ('中', 'ちゅう', 'ｲ', 'person', 'So 仲 means "relationship" — the person in the middle.'),
-    '買': ('貝', 'ばい', '罒', 'net', 'So 買 means "buy".'),
-    '週': ('周', 'しゅう', '⻌', 'movement/path', 'So 週 means "week" — a cycle gone round.'),
-    '張': ('長', 'ちょう', '弓', 'bow', 'So 張 means "stretch" — a bow drawn long.'),
-    '忙': ('亡', 'ぼう', '忄', 'feeling', 'So 忙 means "busy" — the heart is occupied.'),
-    '究': ('九', 'きゅう', '穴', 'hole', 'So 究 means "research" — digging into a hole.'),
-    '効': ('交', 'こう', '力', 'power', 'So 効 means "effect".'),
-    '持': ('寺', 'じ', '扌', 'hand/action', 'So 持 means "hold".'),
-    '登': ('豆', 'とう', '癶', 'feet', 'So 登 means "climb".'),
-    '議': ('義', 'ぎ', '言', 'speech/words', 'So 議 means "deliberation" — words about what is right.'),
-    # Restored true sound components (WaniKani splits these into strokes).
-    '優': ('憂', 'ゆう', 'ｲ', 'person', 'So 優 means "superior; gentle" — the sense is lexical.'),
-    '校': ('交', 'こう', '木', 'wood', 'So 校 means "school" — a wooden building/frame.'),
-    '働': ('動', 'どう', 'ｲ', 'person', 'So 働 means "work"; 働 is a Japanese-made kanji.'),
-    '襟': ('禁', 'きん', '衤', 'clothing', 'So 襟 means "collar".'),
-    '機': ('幾', 'き', '木', 'wood', 'So 機 means "machine" — a wooden frame/loom.'),
-    '指': ('旨', 'し', '扌', 'hand/action', 'So 指 means "finger; point".'),
-    '帽': ('冒', 'ぼう', '巾', 'cloth', 'So 帽 means "hat".'),
-    '側': ('則', 'そく', 'ｲ', 'person', 'So 側 means "side".'),
-    '悪': ('亜', 'あ', '心', 'heart/mind', 'So 悪 means "bad".'),
+TRAD = {
+    "仮": "假", "医": "醫", "厳": "嚴", "国": "國", "声": "聲", "学": "學",
+    "対": "對", "帰": "歸", "悪": "惡", "担": "擔", "昼": "晝", "気": "氣",
+    "渋": "澁", "点": "點", "発": "發", "絵": "繪", "証": "證", "転": "轉",
+    "辺": "邊", "駅": "驛", "薬": "藥", "図": "圖", "壊": "壞", "懐": "懷",
+    "満": "滿", "滞": "滯", "労": "勞", "写": "寫", "着": "著", "会": "會",
+    "当": "當", "来": "來", "実": "實", "売": "賣", "買": "買", "読": "讀",
+    "続": "續", "悪": "惡", "圧": "壓", "为": "為",
 }
 
-# True decomposition for restored cases; other phono entries use WaniKani's.
-PHONO_COMPS = {
-    '優': ['ｲ', '憂'],
-    '校': ['木', '交'],
-    '働': ['ｲ', '動'],
-    '襟': ['衤', '禁'],
-    '機': ['木', '幾'],
-    '指': ['扌', '旨'],
-    '帽': ['巾', '冒'],
-    '側': ['ｲ', '則'],
-    '悪': ['亜', '心'],
+TYPE_OVERRIDE = {
+    "中": "pictograph",       # flagpole at the centre
+    "文": "pictograph",       # tattooed chest
+    "発": "phono-semantic",   # 發 = 弓 + 癹
+    "差": "compound",         # hulling wheat with the hand
+    "写": "phono-semantic",   # 寫 = 宀 + 舄
+    "着": "phono-semantic",   # 著 = 艸 + 者
+    "会": "phono-semantic",   # 會 = 合 + 𡆧
+    "当": "phono-semantic",   # 當 = 尚 + 田
+    "実": "compound",         # 實 = 宀 + 貫
+    "来": "pictograph",       # wheat plant
+    "金": "phono-semantic",   # 亼/今 phonetic
+    "買": "compound",         # 网 + 貝
+    "昼": "compound",         # 晝 = 聿 + 日
+    "見": "compound",         # 目 + 儿
+    "正": "ideograph",        # 一 + 止: a foot moving to a line
+    "外": "compound",         # 夕 + 卜: evening divination
+    "間": "compound",         # 門 + 日: light through a gate
+    "図": "phono-semantic",   # 圖 = 囗 + 啚
+    "笑": "phono-semantic",    # 竹 + 夭
+    "辺": "phono-semantic",   # 邊 = 辶 + 臱
+    "友": "compound",         # two hands
 }
-RESTORED_NOTE = {
-    '優': 'WaniKani splits 憂 into 百+冖+心+夂; the sound component is the whole 憂 (ゆう).',
-    '校': 'WaniKani splits 交 into 亠+父; the sound component is 交 (こう).',
-    '働': 'WaniKani splits 動 into 重+力; the sound component is the whole 動 (どう).',
-    '襟': 'WaniKani splits 禁 into 木+示; the sound component is the whole 禁 (きん).',
-    '機': 'WaniKani splits 幾 into 幺+戈+人; the sound component is the whole 幾 (き).',
-    '指': 'WaniKani splits 旨 into 匕+日; the sound component is the whole 旨 (し).',
-    '帽': 'WaniKani splits 冒 into 日+目; the sound component is the whole 冒 (ぼう).',
-    '側': 'WaniKani splits 則 into 貝+刂; the sound component is the whole 則 (そく).',
-}
-
-# Ideographs: components compose the meaning directly. All parts are "part".
-IDEO = {
-    '休': (['ｲ', '木'], 'a person (ｲ) resting at a tree (木) → rest'),
-    '国': (['口', '王', '丶'], 'the outer 口 is the enclosure 囗 (not "mouth"); 王 + 丶 = 玉 (jade) inside → a bordered treasure land → country'),
-    '回': (['口', '口'], 'a vessel/mouth inside an enclosure → go around; a turn; a time'),
-    '合': (['亼', '口'], 'a lid (亼) over a mouth or vessel (口) → things fitting together → suit; match'),
-    '句': (['勹', '口'], 'a mouth (口) inside a hook/wrap (勹) → a phrase; clause'),
-    '外': (['夕', 'ト'], 'evening (夕) + divination (卜) → what lies outside; outside'),
-    '見': (['目', '儿'], 'an eye (目) on legs (儿) → see'),
-    '明': (['日', '月'], 'sun (日) + moon (月) → the two lights → bright'),
-    '品': (['口', '口', '口'], 'three mouths (口) → many items → products'),
-    '果': (['田', '木'], 'fruit on a tree (木) above a field (田) → fruit; result'),
-    '束': (['木', '口'], 'a tree (木) tied with a loop (口) → bundle'),
-    '家': (['宀', '豕'], 'a pig (豕) under a roof (宀) → house'),
-    '赤': (['大', '火'], 'big (大) fire (火) → red'),
-    '多': (['夕', '夕'], 'evening (夕) after evening (夕) → many'),
-    '間': (['門', '日'], 'sun (日) seen through a gate (門) → interval; space'),
-    '思': (['田', '心'], 'head/field (田) + heart (心) → think'),
-    '音': (['言', '一'], 'speech (言) with one (一) tone → sound'),
-    '買': (['罒', '貝'], 'a net (罒) + shell money (貝) → buy; 貝 also gives ばい'),
-    '取': (['耳', '又'], 'a hand (又) taking an ear (耳) → take'),
-    '友': (['ナ', '又'], 'two hands (ナ/又) joined → friend'),
-    '体': (['ｲ', '本'], 'a person (ｲ) + root (本) → body'),
-    '住': (['ｲ', '主'], 'a person (ｲ) settled with a master (主) → dwell'),
-    '字': (['宀', '子'], 'a child (子) under a roof (宀) → character; learning'),
-    '屈': (['尸', '出'], 'a body (尸) bent out (出) → yield; bend'),
-    '少': (['小', '丿'], 'small (小) with a stroke removed (丿) → few'),
-    '歩': (['止', '少'], 'stop (止) + few (少) → stepping → walk'),
-    '道': (['⻌', '首'], 'movement (⻌) + head (首) → the road one heads along'),
-    '打': (['扌', '丁'], 'hand (扌) + nail (丁) → strike'),
-    '私': (['禾', '厶'], 'grain (禾) kept private (厶) → I; private'),
-    '反': (['厂', '又'], 'a cliff (厂) + hand (又) → turn over → anti'),
-    '転': (['車', '云'], 'a cart (車) rolling (云) → revolve'),
-    '命': (['令', '口'], 'an order (令) spoken (口) → fate; command'),
-    '意': (['音', '心'], 'sound (音) + heart (心) → intention'),
-    '会': (['人', '云'], 'people (人) gathering (云) → meet'),
-    '社': (['ネ', '土'], 'an earth (土) altar (ネ) → shrine; company'),
-    '正': (['一', '止'], 'a foot (止) stopped at one line (一) → correct'),
-    '付': (['ｲ', '寸'], 'a person (ｲ) with a hand (寸) → attach'),
-    '上': (['ト', '一'], 'a mark above a line → above'),
-    '下': (['一', 'ト'], 'a mark below a line → below'),
-    '引': (['弓', '丨'], 'a bow (弓) with a string (丨) → pull'),
-    '受': (['⺤', '冖', '又'], 'a hand (又) receiving under a cover (冖) → accept'),
-    '濡': (['氵', '雨', '而'], 'water (氵) + rain (雨) → wet'),
-    '祭': (['月', '又', '示'], 'meat (月) offered by hand (又) at an altar (示) → festival'),
-    '早': (['日', '十'], 'the sun (日) on a line (十) → early'),
-    '知': (['矢', '口'], 'words (口) straight as an arrow (矢) → know'),
-    '答': (['竹', '合'], 'bamboo (竹) slips that fit (合) → answer'),
-    '新': (['立', '木', '斤'], 'a tree (木) cut with an axe (斤) → new'),
-    '薬': (['艹', '楽'], 'plants (艹) + comfort (楽) → medicine'),
-    '店': (['广', '占'], 'a building (广) occupied (占) → shop'),
-    '都': (['者', '阝'], 'people (者) + place (阝) → metropolis'),
-    '約': (['糸', '勺'], 'thread (糸) bound → promise'),
-    '置': (['罒', '直'], 'a net (罒) set straight (直) → place; put'),
-    '帰': (['刂', '帚'], 'a broom (帚) and a knife (刂) → put things away → return home'),
-    '勝': (['月', '卷'], 'meat (月) + strength (卷) → win'),
-}
-# Drop the placeholder that is not in the set (no harm if absent).
-IDEO.pop('勝', None)
-
-PICTO = {
-    '西': 'Single-shape pictograph: the whole glyph is "west"; no component logic.',
-    '言': 'Pictograph of a mouth (口) with breath/sound lines above it → speech; words.',
-    '目': 'Pictograph of an eye, drawn upright → eye.',
-    '手': 'Single-shape pictograph of a hand: the whole glyph is the meaning.',
-    '人': 'Single-shape pictograph of a person\'s side profile.',
-    '日': 'Single-shape pictograph of the sun.',
-    '糸': 'Single-shape pictograph of twisted silk threads.',
-    '母': 'Single-shape pictograph of a woman with emphasized breasts → mother.',
-    '金': 'Single-shape pictograph of metal/gold in the ground.',
-    '車': 'Single-shape pictograph of a cart with axle and wheels.',
-    '自': 'Single-shape pictograph of a nose; used for "self".',
-    '生': 'Single-shape pictograph of a plant sprouting from the ground → life.',
-    '心': 'Single-shape pictograph of a heart.',
-    '面': 'Single-shape pictograph of a face.',
-    '白': 'Single-shape pictograph: the whole glyph is "white".',
-    '文': 'Single-shape pictograph of a patterned/tattooed chest → writing.',
-    '入': 'Single-shape pictograph of an entrance → enter.',
-    '飛': 'Single-shape pictograph of a bird in flight.',
-    '行': 'Single-shape pictograph of a crossroads → go.',
-    '中': 'A pole through the middle of a box → middle.',
-    '一': 'One horizontal stroke = one.',
-    '立': 'A person standing on the ground → stand.',
-    '力': 'Single-shape pictograph of a plough/muscle → power.',
-    '足': 'Single-shape pictograph of a foot and leg.',
-    '工': 'Single-shape pictograph of a carpenter\'s tool → construction.',
-    '子': 'Single-shape pictograph of a baby with outstretched arms.',
-    '大': 'A person with arms spread wide → big.',
-    '不': 'Single-shape kanji: the whole glyph is "not"; no component logic.',
-    '今': 'Single-shape kanji: the whole glyph is "now"; no component logic.',
-    '夜': 'Single-shape kanji: the whole glyph is "night"; no component logic.',
-    '重': 'Single-shape kanji: the whole glyph is "heavy"; no component logic.',
-    '呂': 'Single-shape kanji: "bath" is a later use of the glyph; no component logic.',
-    '高': 'Pictograph of a tall building; the modern strokes (亠, 口, 冋) are one picture, not a sound-meaning compound.',
-    '来': 'Pictograph of a wheat plant, borrowed for "come"; the modern strokes (一, 米) are not a sound-meaning compound.',
-    '年': 'Pictograph of a person carrying grain → year; the modern strokes (𠂉, 牛) are not a sound-meaning compound.',
-    '食': 'Pictograph of a covered food vessel → eat.',
-    '走': 'Pictograph of a person running → run.',
-    '出': 'Pictograph of a footstep emerging from a mountain/cave → exit.',
-    '弟': 'Pictograph of a younger brother; the modern strokes are not a sound-meaning compound.',
+KANJIUM_TYPE = {
+    "Phono-semantic compound": "phono-semantic",
+    "Compound ideograph": "compound",
+    "Pictograph": "pictograph",
+    "Ideograph": "ideograph",
 }
 
-# Honest sound-family notes for near-misses (component sound differs exactly).
-NEAR = {
-    '試': '式 (しき) is the historical sound source, but しき is not し — no exact key.',
-    '苦': '古 (こ) is the historical sound source; こ is not く — no exact key.',
-    '悔': '毎 (まい) is close to かい but not exact.',
-    '詳': '羊 (よう) is the historical sound source; よう is not しょう — no exact key.',
-    '情': '青 (せい/しょう) is the voiced source of じょう, but not exact.',
-    '物': '勿 (もち) is close to ぶつ/もつ but not exact.',
-    '昨': '乍 has the sound さく, but WaniKani gives 乍 no kanji reading — unverified.',
-    '壁': '辟 has the sound へき, but WaniKani gives 辟 no kanji reading — unverified.',
-    '違': '韋 has the sound い, but WaniKani gives 韋 no kanji reading — unverified.',
-    '空': '工 (く) is the historical sound source; く is not くう.',
-    '海': '毎 (まい) is close to かい but not exact.',
-    '痛': '用 (よう) is part of the sound source 甬 (つう), but 用 reads よう — no exact key.',
-    '終': '冬 (とう) is close to しゅう but not exact.',
-    '写': '写 is a simplified form of 寫; no sound component survives.',
-    '声': '声 is a simplified form of 聲; no sound component survives.',
-    '駅': 'The right side is a simplified phonetic, not 尺 — no exact key for えき.',
-    '学': '学 is a simplified form of 學; no exact sound component survives.',
-    '図': '図 is a simplified form of 圖; no sound component survives.',
-    '売': '売 is a simplified form of 賣; no sound component survives.',
-    '発': '発 is a simplified form of 發; no sound component survives.',
-    '当': '当 is a simplified form of 當; no sound component survives.',
-    '実': '実 is a simplified form of 實; no sound component survives.',
-    '医': '医 is a simplified form of 醫; no sound component survives.',
-    '気': '気 is a simplified form of 氣; 气 is the meaning side, not the sound (き).',
-    '研': '开 (けん) is the historical sound source, but it is not a kanji in WaniKani — unverified.',
-    '場': '昜 (よう) is the historical sound source; よう is not じょう — no exact key.',
-    '教': '孝 (こう) is the historical sound source; こう is not きょう — no exact key.',
-    '漢': '堇 (きん) is the historical sound source; きん is not かん — no exact key.',
-    '達': '羍 (たつ) is the historical sound source, but WaniKani splits it into 土+羊 — unverified.',
-    '修': '攸 (ゆう) is the historical sound source; ゆう is not しゅう — no exact key.',
-    '治': '台 (たい) is the historical sound source; たい is not じ — no exact key.',
+# Component glosses.  Radical names from Kanjium's radicals/radvars tables are
+# corrected where their English is misleading (頁 is "head", not "leaf").
+COMP_GLOSS = {
+    "一": "one", "丨": "vertical stroke", "丶": "dot", "丿": "slash stroke",
+    "乙": "second heavenly stem", "亅": "hook", "二": "two", "亠": "lid",
+    "人": "person", "亻": "person", "儿": "legs; person", "入": "enter",
+    "八": "eight; divide", "冂": "border", "冖": "cover", "冫": "ice",
+    "几": "table; stool", "凵": "container", "刀": "knife", "刂": "knife",
+    "力": "power; strength", "勹": "wrap", "匕": "spoon", "匚": "box",
+    "匸": "hiding enclosure", "十": "ten", "卜": "divination", "卩": "kneeling person",
+    "厂": "cliff", "厶": "private", "又": "right hand", "口": "mouth",
+    "囗": "enclosure", "土": "earth; soil", "士": "scholar; man",
+    "夂": "slow walk", "夕": "evening", "大": "big; person", "女": "woman",
+    "子": "child", "宀": "roof", "寸": "hand; measure", "小": "small",
+    "⺌": "small", "⺍": "small", "尢": "lame", "尸": "body; corpse",
+    "屮": "sprout", "山": "mountain", "巛": "river", "工": "work",
+    "己": "self", "巾": "cloth", "干": "shield; dry", "广": "building",
+    "廴": "long stride", "廾": "two hands", "弋": "stake; shoot",
+    "弓": "bow", "彐": "snout", "彡": "bristles; ornament", "彳": "step; road",
+    "心": "heart", "忄": "heart", "㣺": "heart", "戈": "halberd",
+    "戶": "door", "戸": "door", "手": "hand", "扌": "hand", "支": "branch",
+    "攴": "strike", "攵": "strike", "文": "writing; pattern", "斗": "dipper",
+    "斤": "axe", "方": "square; direction", "无": "not", "日": "sun; day",
+    "曰": "say", "月": "moon; month; flesh", "木": "tree; wood",
+    "欠": "yawn; breath", "止": "stop; foot", "龰": "foot", "歹": "death",
+    "殳": "weapon", "毋": "do not", "母": "mother", "比": "compare",
+    "毛": "hair", "氏": "clan", "气": "air; steam", "水": "water",
+    "氵": "water", "氺": "water", "火": "fire", "灬": "fire", "爪": "claw",
+    "爫": "claw", "父": "father", "爻": "crossed lines", "爿": "split wood",
+    "片": "slice", "牙": "tooth", "牛": "cow", "牜": "cow", "犬": "dog",
+    "犭": "dog", "玄": "dark", "玉": "jade", "王": "jade; king",
+    "瓜": "melon", "瓦": "tile", "甘": "sweet", "生": "life; sprout",
+    "用": "use", "田": "field", "疋": "bolt of cloth", "疒": "illness",
+    "癶": "footsteps", "白": "white", "皮": "skin", "皿": "dish",
+    "目": "eye", "矛": "spear", "矢": "arrow", "石": "stone",
+    "示": "altar; show", "礻": "altar", "ネ": "altar", "禸": "tracks",
+    "禾": "grain", "穴": "hole", "立": "stand", "竹": "bamboo",
+    "米": "rice", "糸": "silk; thread", "糹": "silk", "缶": "jar",
+    "网": "net", "罒": "net", "羊": "sheep", "羽": "feather",
+    "老": "old", "耂": "old", "而": "beard", "耒": "plough", "耳": "ear",
+    "聿": "brush", "肉": "flesh", "臣": "minister", "自": "nose; self",
+    "至": "arrive", "臼": "mortar", "舌": "tongue", "舛": "opposed feet",
+    "舟": "boat", "艮": "stopping", "色": "colour", "艸": "grass", "艹": "grass",
+    "虍": "tiger", "虫": "insect", "血": "blood", "行": "crossroads",
+    "衣": "clothing", "衤": "clothing", "西": "west", "襾": "cover",
+    "見": "see", "角": "horn", "言": "speech", "訁": "speech", "谷": "valley",
+    "豆": "bean; vessel", "豕": "pig", "豸": "badger", "貝": "shell; money",
+    "赤": "red", "走": "run", "足": "foot", "身": "body", "車": "cart",
+    "辛": "bitter; sharp", "辰": "dragon", "辵": "walk", "辶": "walk",
+    "⻌": "walk", "邑": "town", "⻏": "town", "阜": "mound", "⻖": "mound",
+    "酉": "alcohol; jar", "釆": "divide", "里": "village; mile",
+    "金": "metal; gold", "釒": "metal", "長": "long", "門": "gate",
+    "阝": "mound or town", "隶": "capture", "隹": "short-tailed bird",
+    "雨": "rain", "青": "blue-green", "靑": "blue-green", "非": "wrong",
+    "面": "face", "革": "leather", "韋": "leather", "音": "sound",
+    "頁": "head", "風": "wind", "飛": "fly", "食": "food", "飠": "food",
+    "首": "head", "香": "fragrance", "馬": "horse", "骨": "bone",
+    "高": "tall", "髟": "hair", "鬥": "fight", "魚": "fish", "鳥": "bird",
+    "鹿": "deer", "麥": "wheat", "麻": "hemp", "黃": "yellow", "黒": "black",
+    "鼓": "drum", "鼠": "rat", "鼻": "nose", "龍": "dragon", "龜": "turtle",
+    # phonetic / common non-radical parts
+    "寺": "temple", "交": "mix; cross", "古": "old", "旦": "dawn",
+    "甬": "bronze bell", "占": "divine; occupy", "云": "cloud; say",
+    "反": "turn over; oppose", "正": "correct", "主": "lord; master",
+    "勺": "ladle", "勿": "do not", "与": "give", "具": "tool",
+    "憂": "grief", "昔": "former times", "也": "also", "乍": "suddenly",
+    "复": "return", "冬": "winter", "真": "true", "敬": "respect",
+    "禁": "prohibit", "由": "reason; cause", "垂": "hang down",
+    "更": "renew", "厷": "upper arm", "會": "meet", "会": "meet",
+    "列": "row", "宁": "store", "少": "few", "丁": "nail", "其": "that",
+    "束": "bundle", "帚": "broom", "丙": "third", "冏": "window",
+    "夬": "decisive", "夭": "young", "炎": "flame", "曼": "long",
+    "咅": "spit out", "何": "what", "巷": "alley", "幾": "how many",
+    "帯": "belt", "帶": "belt", "安": "peace", "右": "right", "台": "stand",
+    "奴": "slave", "内": "inside", "㝵": "obtain", "尚": "esteem",
+    "吊": "hang", "寉": "crane", "辟": "law", "絜": "clean", "需": "need",
+    "乞": "beg", "直": "straight", "郎": "young man", "旨": "purport",
+    "道": "road", "合": "fit; join", "孝": "filial piety", "戉": "axe",
+    "可": "can", "千": "thousand", "本": "root", "冒": "risk",
+    "攸": "place; long", "宛": "address", "完": "complete", "召": "summon",
+    "則": "rule", "周": "circumference", "亡": "dead", "开": "open",
+    "九": "nine", "楽": "music; comfort", "樂": "music", "者": "person",
+    "昜": "sun; bright", "義": "righteousness", "敢": "daring",
+    "殸": "chime stone", "殹": "medical treatment", "舄": "magpie; shoe",
+    "詹": "verbose", "睪": "watch; net", "㒼": "fill", "褱": "bosom",
+    "羍": "lamb", "倝": "sunrise", "𬡤": "silk floss", "㠯": "use",
+    "丩": "entwine", "隺": "crane", "幵": "level", "𠯑": "swallow",
+    "囟": "fontanelle", "肰": "dog meat", "𡆧": "enclosure", "𢑓": "pig",
+    "𡉉": "house", "亦": "also", "亼": "gather; cover", "啚": "remote area",
+    "申": "lightning; report", "之": "go", "專": "special", "登": "climb",
+    "東": "east", "棗": "jujube", "每": "every", "每": "every",
+    "或": "territory; perhaps", "皀": "bowl of rice", "𠫓": "newborn",
+    "𠂤": "troops", "㚔": "handcuffs", "𠬝": "subdue", "鼎": "cauldron",
+    "堇": "clay", "卂": "fly", "𠂇": "left hand", "來": "wheat",
+    "龰": "foot", "甾": "jar", "𠦝": "sunrise", "𭕄": "grass",
+    "𠪚": "cliff", "𰃮": "two hands", "𭾱": "bosom", "⺕": "snout",
+    "𠂢": "river branch", "㐅": "five", "乂": "mow; govern",
+    "乃": "then", "丆": "cliff", "囬": "return", "𢌬": "bow",
+    "肀": "hand", "𡗗": "cowries", "㳄": "saliva", "𠂈": "fall headlong",
+    "𦥑": "two hands", "𡈼": "person on earth", "卪": "seal",
+    "𠂉": "person", "𠔿": "cover", "冃": "cap", "𡉀": "earth",
+    "癹": "trampling feet", "皀": "bowl of rice", "𦥑": "two hands",
+    "𠂆": "hand issuing orders", "貫": "string of cowries", "堇": "clay",
 }
 
-# Component char -> semantic field phrase, used when the composition is opaque.
-FIELD = {
-    '氵': 'water/liquid', '忄': 'heart/feeling', '心': 'heart/mind', '言': 'speech/words',
-    '糸': 'thread/textile', '疒': 'illness', '艹': 'plants', '日': 'sun/time',
-    '月': 'body/moon', '石': 'stone', '木': 'wood/trees', '扌': 'hand/action',
-    '⻌': 'movement/path', '口': 'mouth/speech', '土': 'earth', '金': 'metal',
-    '女': 'woman', '馬': 'horse', '山': 'mountain', '火': 'fire', 'ｲ': 'person',
-    '人': 'person', '子': 'child', '宀': 'roof/building', '广': 'building',
-    '門': 'gate', '尸': 'building/body', '阝': 'place', '頁': 'head',
-    '食': 'food/eating', '衤': 'clothing', 'ネ': 'ritual/altar', '示': 'ritual/altar',
-    '刂': 'cutting', '刀': 'cutting', '力': 'power', '弓': 'bow', '車': 'vehicle',
-    '貝': 'money/shell', '王': 'jewel', '玉': 'jewel', '目': 'eye', '耳': 'ear',
-    '足': 'foot', '米': 'rice', '雨': 'weather', '气': 'air', '欠': 'breath',
-    '首': 'neck', '竹': 'bamboo', '巾': 'cloth', '斤': 'axe', '彳': 'walking',
-    '穴': 'hole', '户': 'door', '犬': 'dog', '牛': 'cow', '禾': 'grain',
-    '虫': 'insect', '魚': 'fish', '鳥': 'bird', '骨': 'bone', '血': 'blood',
-    '色': 'color', '青': 'blue/green', '赤': 'red', '白': 'white', '黒': 'black',
-    '厂': 'cliff', '疋': 'cloth', '缶': 'jar', '皿': 'dish', '矢': 'arrow',
-    '戈': 'weapon', '攵': 'action', '頁': 'head', '隹': 'bird', '冖': 'cover',
+# ---------------------------------------------------------------------------
+# Curated decompositions where the modern glyph and the historical analysis
+# do not align mechanically (shinjitai, cursive simplifications, corruptions).
+# Entries: kanji -> [(label, role, reading, note)]; meanings come from
+# COMP_GLOSS.  For compound/pictograph entries use (label, meaning, role).
+# ---------------------------------------------------------------------------
+SPECIAL_COMPS = {
+    "写": [("冖", "meaning", None, "寫 has 宀; 写 writes a cover 冖"),
+           ("与", "part", None, "modern form of the phonetic 舄"),
+           ("舄", "sound", "しゃく", "historical phonetic of 寫, written 与 today")],
+    "真": [("十", "part", None, None), ("具", "part", None, "the modern lower part"),
+           ("𠂈", "sound", "てん", "historical phonetic"),
+           ("鼎", "meaning", None, "the original picture was a cauldron")],
+    "声": [("士", "part", None, None), ("尸", "part", None, "modern shape of 殸"),
+           ("殸", "sound", "けい", "historical phonetic of 聲"),
+           ("耳", "meaning", None, "聲 = 殸 (sound) + 耳 (ear)")],
+    "厳": [("厂", "meaning", None, "cliff; the 喦 side of 嚴"), ("敢", "sound", "かん", "phonetic of 嚴")],
+    "担": [("扌", "meaning", None, None),
+           ("旦", "sound", "たん", "shinjitai replacement for 詹; it now gives the reading"),
+           ("詹", "part", None, "historical phonetic of 擔")],
+    "屈": [("尸", "meaning", None, "body; 尾 lost its 毛 in clerical script"),
+           ("出", "sound", "くつ", "phonetic in Chinese; Japanese くつ is a conventional reading")],
+    "駅": [("馬", "meaning", None, None),
+           ("尺", "part", None, "shinjitai simplification, not the phonetic"),
+           ("睪", "sound", "えき", "historical phonetic of 驛, written 尺 today")],
+    "点": [("占", "sound", "せん", None),
+           ("灬", "meaning", None, "fire; 點's 黑 was reduced to 灬")],
+    "電": [("雨", "meaning", None, None),
+           ("田", "part", None, "the modern writing of the phonetic 申"),
+           ("申", "sound", "しん", "lightning; the historical phonetic")],
+    "着": [("艸", "meaning", None, "grass; 著's original semantic"),
+           ("目", "part", None, "著's 日 was corrupted to 目"),
+           ("者", "sound", "しゃ", "phonetic of 著; 着 is a corrupted variant")],
+    "辺": [("辶", "meaning", None, None),
+           ("刀", "part", None, "shinjitai simplification, not the phonetic"),
+           ("臱", "sound", "へん", "historical phonetic of 邊, lost in the shinjitai")],
+    "絵": [("糸", "meaning", None, None), ("会", "sound", "かい", None)],
+    "年": [("干", "part", None, None),
+           ("禾", "meaning", None, "grain; the original sense was harvest"),
+           ("人", "sound", "にん", "historical phonetic (bronze form 秂)")],
+    "道": [("辶", "meaning", None, None), ("首", "sound", "しゅ", None)],
+    "国": [("囗", "meaning", None, None), ("玉", "meaning", None, "jade inside the border"),
+           ("或", "sound", "こく", "historical phonetic of 國")],
+    "時": [("日", "meaning", None, None), ("寺", "sound", "じ", None)],
+    "昼": [("尺", "part", None, "modern corruption of 聿 (brush)"),
+           ("日", "meaning", None, "晝 = 聿 + 日: the daylight part of the day")],
+    "夜": [("亠", "part", None, None), ("亻", "part", None, None),
+           ("夕", "meaning", None, "moon; evening"),
+           ("亦", "sound", "えき", "phonetic of 夜; distorted into 亠 + 亻")],
+    "期": [("其", "sound", "き", None), ("月", "meaning", None, "month; a period of time")],
+    "差": [("羊", "part", None, "the reduced 來/麥 (wheat)"),
+           ("工", "part", None, "added under 𠂇 in the modern form")],
+    "転": [("車", "meaning", None, None),
+           ("云", "part", None, "shinjitai simplification, not the phonetic"),
+           ("專", "sound", "せん", "historical phonetic of 轉")],
+    "壊": [("土", "meaning", None, None), ("褱", "sound", "かい", "modern right side is a reduced 褱")],
+    "家": [("宀", "meaning", None, None), ("豕", "sound", "し", "pig; the phonetic 𢑓 was corrupted to 豕")],
+    "気": [("气", "meaning", None, "air; steam"),
+           ("米", "sound", "べい", "historical phonetic of 氣"),
+           ("乂", "part", None, "氣's 米 was reduced to 乂")],
+    "医": [("匚", "meaning", None, "box; medicine case"), ("矢", "part", None, "arrow"),
+           ("殹", "sound", "えい", "historical phonetic of 醫")],
+    "証": [("言", "meaning", None, None),
+           ("正", "sound", "しょう", "shinjitai replacement for 登; it now gives the reading"),
+           ("登", "part", None, "historical phonetic of 證")],
+    "仮": [("亻", "meaning", None, None), ("反", "part", None, "shinjitai replacement, not the phonetic"),
+           ("叚", "sound", "か", "historical phonetic of 假")],
+    "定": [("宀", "meaning", None, None), ("正", "sound", "てい", "written 疋-like today")],
+    "笑": [("竹", "meaning", None, "bamboo"), ("夭", "sound", "よう", "phonetic; Japanese しょう is a later reading")],
+    "句": [("勹", "meaning", None, "wrap; a hook"), ("口", "sound", "こう", None)],
+    "屋": [("尸", "meaning", None, "roof; house"), ("至", "part", None, None),
+           ("𡉉", "sound", "おく", "historical phonetic of 屋")],
+    "思": [("田", "part", None, "the modern writing of 囟"), ("心", "meaning", None, None),
+           ("囟", "sound", "しん", "fontanelle; the historical phonetic")],
+    "然": [("灬", "meaning", None, "fire; 然 originally meant 'to burn'"),
+           ("肰", "sound", "ぜん", "dog meat; the historical phonetic")],
+    "当": [("⺌", "part", None, "尚 reduced"), ("⺕", "meaning", None, "field (田 reduced)"),
+           ("尚", "sound", "しょう", "phonetic; 當 = 尚 + 田")],
+    "労": [("力", "meaning", None, None),
+           ("𬡤", "sound", "ろう", "historical phonetic of 勞")],
+    "命": [("令", "sound", "れい", None), ("口", "meaning", None, None)],
+    "会": [("人", "part", None, "合 reduced"), ("云", "part", None, "𡆧 reduced"),
+           ("合", "meaning", None, "to meet"), ("𡆧", "sound", "かい", "phonetic of 會")],
+    "満": [("氵", "meaning", None, None), ("㒼", "sound", "まん", "modern right side is a reduced 㒼")],
+    "常": [("尚", "sound", "しょう", None), ("巾", "meaning", None, "cloth; 常 was a skirt")],
+    "乾": [("日", "meaning", None, "sun; the 倝 side means sunrise"),
+           ("乞", "part", None, None),
+           ("倝", "sound", "かん", "historical phonetic of 乾")],
+    "急": [("心", "meaning", None, None), ("及", "sound", "きゅう", "phonetic; 急 = 及 + 心")],
+    "台": [("厶", "part", None, "㠯 reduced"), ("口", "meaning", None, None),
+           ("㠯", "sound", "い", "historical phonetic of 台")],
+    "教": [("孝", "part", None, None), ("攵", "meaning", None, "strike; action"),
+           ("爻", "sound", "こう", "phonetic of 教"), ("子", "meaning", None, "child")],
+    "度": [("广", "meaning", None, "building"), ("石", "sound", "せき", "phonetic of 度"),
+           ("又", "part", None, "hand")],
+    "重": [("千", "part", None, None), ("里", "part", None, None),
+           ("人", "meaning", None, "a person carrying a load"),
+           ("東", "sound", "とう", "phonetic of 重")],
+    "親": [("見", "meaning", None, None), ("辛", "sound", "しん", "phonetic of 親")],
+    "修": [("攸", "sound", "ゆう", None), ("彡", "meaning", None, "ornament; 修 = 攸 + 彡")],
+    "早": [("日", "meaning", None, None), ("十", "part", None, "棗 reduced"),
+           ("棗", "sound", "そう", "phonetic of 早")],
+    "新": [("斤", "meaning", None, "axe"), ("立", "part", None, None), ("木", "part", None, None),
+           ("辛", "sound", "しん", "phonetic of 新")],
+    "薬": [("艹", "meaning", None, None), ("楽", "sound", "やく", "modern form of 樂; the Japanese on やく is a kan'yō reading outside the series")],
+    "懐": [("忄", "meaning", None, None), ("褱", "sound", "かい", "modern right side is a reduced 褱")],
+    "達": [("辶", "meaning", None, None), ("羊", "part", None, None),
+           ("羍", "sound", "たつ", "phonetic of 達")],
+    "悪": [("亜", "sound", "あ", None), ("心", "meaning", None, None)],
+    "活": [("氵", "meaning", None, None), ("舌", "sound", "かつ", "modern writing of 𠯑")],
+    "朝": [("𠦝", "sound", "かん", "phonetic of 朝"), ("月", "meaning", None, "moon")],
+    "窓": [("穴", "meaning", None, "window"), ("忩", "sound", "そう", "written 公 + 心 in the modern glyph")],
+    "金": [("亼", "sound", "きん", "phonetic, written 人 in the modern glyph"),
+           ("王", "meaning", None, "metal in the earth"), ("呂", "part", None, "blocks of metal")],
+    "発": [("癶", "part", None, "the feet in 癹"), ("弓", "meaning", None, "bow"),
+           ("殳", "part", None, None), ("癹", "sound", "はつ", "phonetic of 發")],
+    "体": [("亻", "meaning", None, None), ("本", "sound", "ほん", "phonetic; Japanese たい comes from 體")],
+    "部": [("咅", "sound", "ほう", "phonetic of 部"), ("⻏", "meaning", None, "town")],
+    "到": [("至", "meaning", None, "arrive"), ("刀", "sound", "とう", "phonetic; written 刂")],
 }
 
-ALIAS = {'囗': '口', '亻': 'ｲ', '辶': '⻌', '攵': '夂', '龰': '止', '厶': 'ム'}
+# Pictographs: the glyph itself is the picture, so the "component" is the
+# depicted object or the parts of the picture.
+PICTO_COMPS = {
+    "西": [("西", "a bird's nest", "part")],
+    "回": [("回", "a spiral, a whirlpool", "part")],
+    "手": [("手", "a hand with five fingers", "part")],
+    "人": [("人", "a person seen from the side", "part")],
+    "日": [("日", "the sun", "part")],
+    "不": [("不", "the calyx of a flower", "part")],
+    "糸": [("糸", "a skein of silk", "part")],
+    "母": [("母", "a woman with emphasised breasts", "part")],
+    "少": [("少", "small grains, a few dots", "part")],
+    "来": [("来", "a wheat plant", "part")],
+    "歩": [("止", "a foot", "part"), ("少", "two feet, one forward", "part")],
+    "自": [("自", "a nose", "part")],
+    "車": [("車", "a cart seen from above", "part")],
+    "高": [("高", "a tall building", "part")],
+    "者": [("者", "a cooking pot, later a person", "part")],
+    "心": [("心", "the heart", "part")],
+    "面": [("面", "a face or mask", "part")],
+    "白": [("白", "an acorn", "part")],
+    "文": [("文", "a tattooed chest", "part")],
+    "飛": [("飛", "a bird in flight", "part")],
+    "行": [("行", "a crossroads", "part")],
+    "中": [("丨", "a flagpole", "part"), ("口", "the centre marked on it", "part")],
+    "若": [("艹", "hair or grass", "part"), ("右", "a kneeling woman", "part")],
+    "立": [("立", "a person standing on the ground", "part")],
+    "力": [("力", "a plough or a flexed arm", "part")],
+    "足": [("足", "a foot with the lower leg", "part")],
+    "工": [("工", "a carpenter's square", "part")],
+    "呂": [("呂", "two vertebrae", "part")],
+    "弟": [("弟", "a spool with thread", "part")],
+    "子": [("子", "a baby with outstretched arms", "part")],
+    "走": [("走", "a person running", "part")],
+    "大": [("大", "a person with arms outstretched", "part")],
+    "目": [("目", "an eye", "part")],
+    "果": [("木", "a tree", "part"), ("田", "fruit on the tree", "part")],
+}
+
+IDEO_COMPS = {
+    "一": [("一", "one stroke: the number one", "part")],
+    "上": [("上", "a line above a baseline: up", "part")],
+    "下": [("下", "a line below a baseline: down", "part")],
+    "入": [("入", "an arrowhead pointing inwards", "part")],
+    "今": [("亼", "an inverted mouth", "part"), ("一", "a stroke marking 'now'", "part")],
+    "音": [("言", "speech", "part"), ("一", "a stroke in the mouth: sound", "part")],
+    "言": [("口", "mouth", "part"), ("辛", "a flute or tattoo needle", "part")],
+    "束": [("木", "a tree", "part"), ("口", "a bundle tied round it", "part")],
+    "正": [("一", "the line to be reached", "part"), ("止", "a foot moving towards it", "part")],
+}
+
+# Messy compound glyphs: use the historically correct decomposition.
+COMPOUND_COMPS = {
+    "見": [("目", "eye", "meaning"), ("儿", "person", "meaning")],
+    "学": [("𦥑", "two hands", "meaning"), ("爻", "counting rods", "meaning"),
+           ("子", "child", "meaning"), ("冖", "cover; roof", "meaning")],
+    "図": [("囗", "enclosure; map border", "meaning"), ("啚", "sound", "と", "phonetic of 圖")],
+    "昼": [("聿", "brush; written 尺 today", "meaning"), ("日", "sun; day", "meaning")],
+    "対": [("文", "the modern top", "part"), ("寸", "hand", "meaning"),
+           ("丵", "ritual vessel", "part"), ("土", "earth", "part")],
+    "差": [("來", "wheat", "meaning"), ("𠂇", "left hand", "meaning"), ("工", "work", "part")],
+    "帰": [("𠂤", "troops", "meaning"), ("帚", "broom", "meaning")],
+    "冗": [("宀", "roof", "meaning"), ("儿", "person", "meaning")],
+    "出": [("止", "foot", "meaning"), ("凵", "cave", "meaning")],
+    "与": [("一", "a gift held out", "meaning"), ("勹", "a hand wrapping it", "meaning")],
+    "渋": [("氵", "water", "meaning"), ("止", "foot held back", "meaning"),
+           ("人", "meaning", None, "reduced from 歰 in the traditional form 澀")],
+    "突": [("穴", "hole", "meaning"), ("犬", "dog", "meaning")],
+    "報": [("幸", "meaning", None, "originally 㚔, handcuffs"),
+           ("卩", "kneeling person", "meaning"), ("又", "hand", "meaning")],
+    "実": [("宀", "roof", "meaning"), ("貫", "string of cowries", "meaning")],
+    "事": [("又", "hand", "meaning"), ("中", "staff with a drum", "meaning")],
+    "付": [("亻", "person", "meaning"), ("寸", "hand", "meaning")],
+    "受": [("爪", "hand above", "meaning"), ("冖", "cover", "meaning"), ("又", "hand below", "meaning")],
+    "引": [("弓", "bow", "meaning"), ("丨", "bowstring", "meaning")],
+    "前": [("止", "foot", "meaning"), ("舟", "boat", "meaning"), ("刂", "knife", "part")],
+    "風": [("几", "sail", "meaning"), ("虫", "insect", "meaning")],
+    "具": [("鼎", "cauldron", "meaning"), ("廾", "two hands", "meaning")],
+    "赤": [("大", "person", "meaning"), ("火", "fire", "meaning")],
+    "漢": [("氵", "water", "meaning"),
+           ("堇", "meaning", None, "originally 𦰩, a man with bound hands; not a phonetic in Japanese")],
+    "品": [("口", "mouth ×3", "meaning")],
+    "売": [("士", "scholar", "meaning"), ("冖", "cover", "meaning"), ("儿", "legs", "meaning")],
+    "知": [("矢", "arrow", "meaning"), ("口", "mouth", "meaning")],
+    "司": [("口", "mouth", "meaning"),
+           ("𠂆", "meaning", None, "the hand/scepter element above the mouth; the reading does not come from it")],
+    "多": [("夕", "evening ×2", "meaning")],
+    "買": [("罒", "net", "meaning"), ("貝", "shell money", "meaning")],
+    "得": [("彳", "step; road", "meaning"), ("㝵", "obtain", "meaning")],
+    "意": [("音", "sound; speech", "meaning"), ("心", "heart", "meaning")],
+    "商": [("立", "stand", "meaning"), ("冏", "window; emblem", "meaning")],
+    "柔": [("矛", "spear", "meaning"), ("木", "tree", "meaning")],
+    "友": [("又", "hand", "meaning"), ("又", "a second hand", "meaning")],
+    "外": [("夕", "evening", "meaning"), ("卜", "divination", "meaning")],
+    "間": [("門", "gate", "meaning"), ("日", "sunlight", "meaning")],
+}
+
+# Original-sense notes.  One short factual clause per kanji where the modern
+# meaning is not simply the literal component sense.
+ORIGIN = {
+    "洋": "The water radical first named a river, then the ocean; Japanese compounds extended it to 'Western'.",
+    "物": "Originally a coloured ox, later any thing.",
+    "写": "寫 showed something placed under a roof; 写 is a cursive simplification.",
+    "発": "發 showed a bow being released; 発 is the shinjitai.",
+    "真": "The original picture was a cauldron; the modern sense 'true' is a later borrowing.",
+    "声": "聲 was 'sound heard by the ear'; 声 is the shinjitai.",
+    "優": "Originally 'ample, abundant', later 'gentle, superior'.",
+    "苦": "A bitter plant: bitterness, then hardship.",
+    "惜": "The heart's reluctance to let go: pity, regret.",
+    "悔": "Regret: the heart turning over the past.",
+    "厳": "嚴 showed a cliff and a fierce boar: stern.",
+    "紙": "Silk was the writing surface before paper.",
+    "他": "Another person: 'other'.",
+    "担": "To carry a load on a shoulder pole.",
+    "任": "To carry a burden: responsibility.",
+    "昨": "The day just passed: yesterday.",
+    "腹": "The belly.",
+    "痛": "Illness with 甬 phonetic: pain.",
+    "校": "A wooden frame or building: a school, also to proofread.",
+    "頭": "The head; 頁 means head.",
+    "不": "A calyx in origin; borrowed for 'not'.",
+    "屈": "To bend the body: yield.",
+    "駅": "A relay-horse station.",
+    "終": "The knot at the end of a silk thread: end.",
+    "点": "A black spot; 黑 was reduced to 灬.",
+    "電": "Lightning from rain; 'electricity' is the modern extension.",
+    "填": "To fill earth into a gap.",
+    "働": "A person moving: to work (a Japanese-made kanji).",
+    "驚": "A horse startled: to be surprised.",
+    "着": "著 meant 'to place, attach'; 着 is its corrupted variant.",
+    "襟": "The collar of a robe.",
+    "袖": "The sleeve.",
+    "雄": "A male bird.",
+    "辺": "The edge of a road; 辺 is the shinjitai of 邊.",
+    "通": "To go through.",
+    "絵": "Coloured silk: a picture.",
+    "例": "A person used as a model: example.",
+    "貯": "Shell money stored away: savings.",
+    "金": "Originally copper; later metal, then gold.",
+    "年": "Originally 'harvest', later 'year'.",
+    "道": "A road; 首 gives the sound.",
+    "打": "To strike with the hand.",
+    "聞": "An ear at a gate: to hear.",
+    "私": "Private; 厶 originally meant 'private'.",
+    "国": "A bordered territory; 玉 replaced 或 in the shinjitai.",
+    "時": "The passing of time; 寺 replaced the older phonetic 之.",
+    "夜": "Night; 亦 is phonetic.",
+    "反": "To turn the hand over: reverse.",
+    "代": "To take another's place.",
+    "期": "A set period; 其 is phonetic.",
+    "速": "Quick; 束 is phonetic.",
+    "転": "To roll, revolve; 云 is a shinjitai simplification.",
+    "壊": "To break earth: demolition.",
+    "家": "A roof with a pig beneath: a household.",
+    "詳": "Detailed speech.",
+    "病": "Illness; 丙 is phonetic.",
+    "気": "Air, breath; 气 gives the sound.",
+    "医": "Medicine; 殹 is phonetic, 匚 the case.",
+    "決": "Water breaking through: decision.",
+    "証": "Evidence; 正 is the shinjitai phonetic.",
+    "仮": "Temporary, false; 叚 is phonetic.",
+    "定": "To settle; 正 gives the sound.",
+    "彼": "That person: he.",
+    "笑": "Laughter; 夭 is phonetic.",
+    "句": "A phrase; 口 gives the sound.",
+    "談": "To talk.",
+    "慢": "Pride or laziness; 'slow' is a later extension.",
+    "到": "To arrive.",
+    "部": "A division; it first named a place in Gansu.",
+    "屋": "A roof, a house.",
+    "荷": "To carry a load.",
+    "泊": "To moor a boat: overnight.",
+    "空": "Empty; 工 is phonetic.",
+    "港": "A harbour.",
+    "機": "A loom: mechanism.",
+    "滞": "Stagnant water.",
+    "思": "Thought: the fontanelle (囟) over the heart.",
+    "然": "To burn; later 'so, thus'.",
+    "当": "To hit, correspond; 尚 is phonetic.",
+    "案": "A plan laid out on a table.",
+    "外": "Evening divination: outside.",
+    "西": "A nest in origin; borrowed for 'west'.",
+    "友": "Two hands joined: a friend.",
+    "柔": "A spear against a tree: supple wood, tender.",
+    "白": "The original referent is disputed; 'white' is the modern sense.",
+    "来": "A wheat plant; borrowed for 'to come'.",
+    "回": "A spiral or whirlpool: to turn, hence a time or round.",
+    "労": "Labour, effort.",
+    "懸": "To hang; 縣 is phonetic.",
+    "命": "A command from above.",
+    "派": "A branch of a river: faction.",
+    "政": "To correct by action: government.",
+    "治": "A river name; later 'govern'.",
+    "努": "To exert strength.",
+    "納": "To bring inside: pay, store.",
+    "待": "To wait.",
+    "注": "To pour.",
+    "朝": "Morning.",
+    "飯": "Cooked rice.",
+    "会": "To meet.",
+    "情": "Feeling.",
+    "満": "Full.",
+    "常": "A skirt in origin; later 'usual'.",
+    "確": "Firm, certain.",
+    "壁": "A wall of earth.",
+    "清": "Clear water.",
+    "潔": "Clean.",
+    "拭": "To wipe.",
+    "濡": "To get wet.",
+    "乾": "Dry.",
+    "急": "Urgent; 及 is phonetic.",
+    "置": "To place.",
+    "居": "To reside.",
+    "台": "A stand; 㠯 is phonetic.",
+    "所": "A place.",
+    "廊": "A corridor.",
+    "指": "A finger; 旨 is phonetic.",
+    "導": "To lead.",
+    "答": "An answer.",
+    "教": "To teach.",
+    "越": "To cross over.",
+    "何": "What.",
+    "度": "A measure; 石 is phonetic.",
+    "重": "Heavy.",
+    "体": "The body; Japanese たい comes from 體, not from 本.",
+    "迷": "To lose the way.",
+    "帽": "A cap.",
+    "親": "Parent; 辛 is phonetic.",
+    "修": "To cultivate.",
+    "理": "Logic; 里 is phonetic.",
+    "早": "Early.",
+    "仲": "A go-between.",
+    "腕": "The arm.",
+    "院": "An institution.",
+    "店": "A shop.",
+    "違": "To differ.",
+    "字": "A character; 子 is phonetic.",
+    "的": "A target; the original form meant 'bright'.",
+    "超": "To exceed.",
+    "窓": "A window.",
+    "側": "The side.",
+    "週": "A week.",
+    "海": "The sea.",
+    "張": "To stretch.",
+    "忙": "Busy.",
+    "研": "To polish.",
+    "究": "To investigate.",
+    "新": "New.",
+    "薬": "Medicine.",
+    "効": "Effect.",
+    "懐": "Bosom, pocket.",
+    "持": "To hold.",
+    "友": "Friend.",
+    "達": "To reach.",
+    "都": "A capital.",
+    "悪": "Bad.",
+    "約": "To bind: a promise.",
+    "住": "To dwell.",
+    "場": "A place.",
+    "活": "To live.",
+    "議": "Deliberation.",
+    "建": "A hand plants a pole upright: to establish.",
+    "合": "A lid closing over a mouth or vessel: things fitting together.",
+    "見": "An eye on a kneeling person: to see.",
+    "学": "Two hands handle counting rods above a child under a roof: learning by instruction.",
+    "休": "A person leaning against a tree: rest.",
+    "充": "A newborn grows to stand: to fill out, become full.",
+    "郵": "A relay post at the edge of a town: mail.",
+    "便": "A person changing posture to be comfortable: convenience.",
+    "弁": "Two hands placing a cap on the head: a formal act; later 'valve, speech'.",
+    "多": "Two evenings stacked: many.",
+    "図": "A plan drawn inside a border: a map.",
+    "昼": "A brush and the sun: the daylight part of the day.",
+    "対": "A hand holding up a ritual vessel: a matching pair, hence 'opposite'.",
+    "差": "A hand hulls wheat; 工 was added later: difference, distinction.",
+    "帰": "A broom and troops: to put the enemy to flight and return home.",
+    "羨": "Sheep and saliva: desire, envy.",
+    "生": "A sprout emerging from the ground: life.",
+    "明": "Sun and moon together: brightness.",
+    "冗": "A person under a roof with nothing to do: superfluous.",
+    "出": "A foot stepping out of a cave: to exit.",
+    "与": "A gift held out and a hand wrapping it: to bestow.",
+    "渋": "The traditional form 澀 has 歰 (two 刃 over 止); 渋 reduces the right side to 止 and a lower stroke. Water that does not flow: astringent, sluggish.",
+    "突": "A dog bursting out of a hole: to thrust, sudden.",
+    "得": "To walk and obtain: to get.",
+    "意": "Sound or speech over the heart: intention.",
+    "食": "A covered vessel over a bowl of rice: to eat.",
+    "社": "An altar on the earth: the god of the soil, a company.",
+    "報": "A convict in handcuffs, kneeling, with a hand above: to convict and declare guilty, hence to report.",
+    "実": "A roof over a string of cowries: full, real.",
+    "事": "A hand holding a staff with a drum: an affair, matter.",
+    "取": "A hand taking an ear: to take.",
+    "付": "A person and a hand: to hand over, attach.",
+    "受": "A hand above and a hand below passing an object: to receive.",
+    "引": "A bow with a drawn string: to pull.",
+    "前": "A foot in a boat moving forward: in front.",
+    "風": "A sail and an insect: wind.",
+    "具": "Two hands holding a cauldron: a set of implements.",
+    "祭": "A hand offering meat at an altar: a ritual.",
+    "赤": "A person over fire: red.",
+    "妻": "A hand seizing a woman's hair: wife (marriage by capture).",
+    "買": "A net over shell money: to buy.",
+    "漢": "The water of the Han River; its right-hand element was originally 𦰩, a man with bound hands. The river name gave the dynasty and China.",
+    "先": "A foot ahead of a person: before.",
+    "商": "A stand with a window or emblem: trade, a merchant.",
+    "品": "Three mouths: goods, grades.",
+    "売": "A scholar under a cover with legs: to sell (賣).",
+    "知": "An arrow and a mouth: knowledge hitting the mark.",
+    "登": "Two feet climbing a raised step: to ascend.",
+    "司": "A mouth issuing orders under a hand: a director.",
+    "外": "Evening divination: outside.",
+    "西": "A nest in origin; borrowed for 'west'.",
+    "友": "Two hands joined: a friend.",
+    "柔": "A spear against a tree: supple wood, tender.",
+    "白": "The original referent is disputed; 'white' is the modern sense.",
+    "来": "A wheat plant; borrowed for 'to come'.",
+    "回": "A spiral or whirlpool: to turn, hence a time or round.",
+    "間": "Sunlight through a gate: an interval.",
+}
+
+# Established readings for phonetic components that are not standalone kanji
+# in Kanjium.  Values are standard on'yomi, used for sound verification.
+PHON_READING = {
+    "舄": ["しゃく"], "𠂈": ["てん"], "殸": ["けい"], "詹": ["せん"],
+    "睪": ["えき"], "㒼": ["まん"], "褱": ["かい"], "羍": ["たつ"],
+    "倝": ["かん"], "𬡤": ["ろう"], "㠯": ["い"], "丩": ["きゅう"],
+    "隺": ["かく"], "幵": ["けん"], "𠯑": ["かつ"], "囟": ["しん"],
+    "肰": ["ぜん"], "𡆧": ["かい"], "𢑓": ["し"], "𡉉": ["おく"],
+    "亼": ["きん"], "啚": ["と"], "𠂢": ["は"], "絜": ["けつ"],
+    "宁": ["ちょ"], "臱": ["へん"], "𠂆": ["し"], "𠫓": ["とつ"],
+    "殹": ["えい"], "癹": ["はつ"], "开": ["けん"], "忩": ["そう"],
+}
+
+# Where a shinjitai writes a substitute that is not the historical phonetic.
+HIST_PHON = {
+    "写": ("舄", "しゃく"),
+    "辺": ("臱", "へん"),
+    "駅": ("睪", "えき"),
+    "転": ("專", "せん"),
+    "仮": ("叚", "か"),
+    "証": ("登", "とう"),
+    "担": ("詹", "せん"),
+}
 
 
-def primary(e):
-    for m in e['data'].get('meanings') or []:
-        if m.get('primary'):
-            return m['meaning']
-    mm = e['data'].get('meanings') or []
-    return mm[0]['meaning'] if mm else ''
+def katakana_to_hiragana(s):
+    return "".join(chr(ord(c) - 0x60) if "ァ" <= c <= "ヶ" else c for c in s)
 
 
-class Data:
-    def __init__(self, subjects_path):
-        raw = json.load(open(subjects_path, encoding='utf-8'))
-        subs = raw['data'] if isinstance(raw, dict) else raw
-        self.byid = {e['id']: e for e in subs}
-        self.K = {e['data']['characters']: e for e in subs
-                  if e['object'] == 'kanji' and e['data'].get('characters')}
-        self.R = {e['data']['characters']: e for e in subs
-                  if e['object'] == 'radical' and e['data'].get('characters')}
-        cur = json.load(open(os.path.join(BASE, 'data', 'curriculum.json'),
-                             encoding='utf-8'))
-        self.CURR = {}
-        for w in cur['weeks']:
-            for r in w['radicals']:
-                if r.get('char') and r['char'] not in self.CURR:
-                    self.CURR[r['char']] = r['meaning']
+def onyomi_list(raw):
+    if not raw:
+        return []
+    return [katakana_to_hiragana(x) for x in re.findall(r"[ァ-ヶー]+", raw)]
 
-    def comp_info(self, cid):
-        s = self.byid[cid]
-        d = s['data']
-        return {'obj': s['object'], 'char': d.get('characters'),
-                'meaning': primary(s), 'id': cid}
 
-    def meaning(self, ch):
-        ch = ALIAS.get(ch, ch)
-        if ch in self.CURR:
-            return self.CURR[ch]
-        if ch in self.R:
-            return primary(self.R[ch])
-        if ch in self.K:
-            return primary(self.K[ch])
-        return None
+def norm_reading(s):
+    """Fold voicing so a rendaku form matches its base reading."""
+    s = katakana_to_hiragana(s)
+    table = str.maketrans("がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ",
+                          "かきくけこさしすせそたちつてとはひふへほはひふへほ")
+    return s.translate(table)
 
-    def onyomi(self, ch):
-        ch = ALIAS.get(ch, ch)
-        e = self.K.get(ch)
-        if not e:
+
+def split_params(s):
+    out, cur, depth = [], "", 0
+    for ch in s:
+        if ch in "[{":
+            depth += 1
+        elif ch in "]}":
+            depth -= 1
+        if ch == "|" and depth == 0:
+            out.append(cur)
+            cur = ""
+        else:
+            cur += ch
+    out.append(cur)
+    return out
+
+
+def find_templates(text, name):
+    res, i = [], 0
+    pat = "{{" + name
+    while True:
+        j = text.find(pat, i)
+        if j < 0:
+            break
+        after = j + len(pat)
+        if after < len(text) and text[after] not in "|}/":
+            i = after
+            continue
+        k, depth = j + 2, 0
+        while k < len(text) - 1:
+            if text[k:k + 2] == "{{":
+                depth += 1
+                k += 2
+                continue
+            if text[k:k + 2] == "}}":
+                if depth == 0:
+                    break
+                depth -= 1
+                k += 2
+                continue
+            k += 1
+        res.append(text[j + 2:k])
+        i = k + 2
+    return res
+
+
+class Sources:
+    def __init__(self, kanjivg, kanjium, kradfile, wikt_cache):
+        self.kanjivg = Path(kanjivg)
+        self.db = sqlite3.connect(str(kanjium))
+        self.db.row_factory = sqlite3.Row
+        self.kd = {r["kanji"]: dict(r) for r in self.db.execute("SELECT * FROM kanjidict")}
+        self.phon = {r["phonetic"]: dict(r) for r in self.db.execute("SELECT * FROM phonetics")}
+        self.krad = {}
+        with gzip.open(kradfile, "rt", encoding="utf-8") as f:
+            for line in f:
+                if line.startswith("#") or " : " not in line:
+                    continue
+                a, b = line.strip().split(" : ", 1)
+                self.krad[a] = b.split()
+        self.wikt = {}
+        for path in sorted(Path(wikt_cache).glob("*.json")):
+            try:
+                obj = json.loads(path.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            t = (obj.get("parse") or {}).get("wikitext", "")
+            if t:
+                self.wikt[chr(int(path.stem, 16))] = t
+
+    def kanjivg_top(self, ch):
+        path = self.kanjivg / "kanji" / ("%05x.svg" % ord(ch))
+        if not path.exists():
             return []
-        return [r['reading'] for r in (e['data'].get('readings') or [])
-                if r.get('type') == 'onyomi']
-
-    def kunyomi(self, ch):
-        ch = ALIAS.get(ch, ch)
-        e = self.K.get(ch)
-        if not e:
+        root = ET.parse(path).getroot()
+        tops = [g for g in root.iter() if g.get(KANJIVG_NS + "element") == ch]
+        if not tops:
             return []
-        return [r['reading'] for r in (e['data'].get('readings') or [])
-                if r.get('type') == 'kunyomi']
+        kids = [c for c in tops[0] if c.get(KANJIVG_NS + "element")]
+        while len(kids) == 1 and not any(
+                kids[0].get(KANJIVG_NS + a) for a in ("phon", "radical")):
+            nxt = [c for c in kids[0] if c.get(KANJIVG_NS + "element")]
+            if not nxt:
+                break
+            kids = nxt
+        out = []
+        for c in kids:
+            el = c.get(KANJIVG_NS + "element")
+            if not el:
+                continue
+            phon = c.get(KANJIVG_NS + "phon") or next(
+                (x.get(KANJIVG_NS + "phon") for x in c.iter()
+                 if x.get(KANJIVG_NS + "phon")), None)
+            rad = c.get(KANJIVG_NS + "radical") or next(
+                (x.get(KANJIVG_NS + "radical") for x in c.iter()
+                 if x.get(KANJIVG_NS + "radical")), None)
+            out.append({"element": el, "phon": phon, "radical": rad,
+                        "original": c.get(KANJIVG_NS + "original")})
+        return out
 
-    def wk_comps(self, ch):
-        e = self.K.get(ch)
-        if not e:
+    def glyph_section(self, ch):
+        t = self.wikt.get(ch, "")
+        m = re.search(r"===\s*Glyph origin\s*===(.*?)(?=\n===|\Z)", t, re.S)
+        return (m.group(1).strip() if m else ""), t
+
+    def wikt_compound(self, ch):
+        _, t = self.glyph_section(ch)
+        best = None
+        for tp in find_templates(t, "Han compound"):
+            ps = split_params(tp)[1:]
+            d = {"args": []}
+            for p in ps:
+                if "=" in p:
+                    k, v = p.split("=", 1)
+                    d[k.strip()] = v.strip()
+                elif p.strip():
+                    d["args"].append(p.strip())
+            if d.get("ls") in ("psc", "ic"):
+                if best is None or d.get("ls") == "psc":
+                    best = d
+                if d.get("ls") == "psc":
+                    break
+        return best
+
+    def wikt_liushu(self, ch):
+        _, t = self.glyph_section(ch)
+        return [p.split("|")[1].strip() for p in find_templates(t, "liushu")
+                if "|" in p]
+
+    def phonetic_readings(self, label):
+        if not label:
             return []
-        return [self.comp_info(cid)
-                for cid in e['data'].get('component_subject_ids') or []]
+        if label in PHON_READING:
+            return list(PHON_READING[label])
+        if label in self.phon:
+            return onyomi_list(self.phon[label]["reading"])
+        if label in self.kd:
+            return onyomi_list(self.kd[label].get("onyomi"))
+        return []
 
-    def subject_for(self, ch):
-        ch = ALIAS.get(ch, ch)
-        if ch in self.K:
-            return self.K[ch]
-        if ch in self.R:
-            return self.R[ch]
-        return None
+    def primary_reading(self, label):
+        """The phonetic's basic series reading, used as the series label.
+
+        The phonetics table records the reading the phonetic actually
+        contributes to its series, which can differ from the phonetic's own
+        standalone on'yomi (毎 is read まい as a kanji but かい in 海/悔).
+        """
+        if not label:
+            return ""
+        if label in self.phon:
+            rd = onyomi_list(self.phon[label]["reading"])
+            if rd:
+                return rd[0]
+        if label in self.kd:
+            rd = onyomi_list(self.kd[label].get("onyomi"))
+            if rd:
+                return rd[0]
+        if label in PHON_READING:
+            return PHON_READING[label][0]
+        return ""
+
+
+def classify(src, ch):
+    if ch == "々":
+        return "opaque"
+    if ch in TYPE_OVERRIDE:
+        return TYPE_OVERRIDE[ch]
+    page = TRAD.get(ch, ch)
+    comp = src.wikt_compound(page)
+    if comp:
+        return "phono-semantic" if comp.get("ls") == "psc" else "compound"
+    liu = src.wikt_liushu(page)
+    if "psc" in liu:
+        return "phono-semantic"
+    if "ic" in liu:
+        return "compound"
+    if "p" in liu:
+        return "pictograph"
+    if "i" in liu:
+        return "ideograph"
+    return KANJIUM_TYPE.get((src.kd.get(ch) or {}).get("type"), "opaque")
+
+
+def clean_wiki(text):
+    text = re.sub(r"<ref[^>]*>.*?</ref>", "", text, flags=re.S)
+    text = re.sub(r"<ref[^>]*/>", "", text)
+    text = re.sub(r"<!--.*?-->", "", text, flags=re.S)
+    text = re.sub(r"\{\|.*?\|\}", "", text, flags=re.S)
+    text = re.sub(r"\[\[(?:File|Image|file|image):.*?\]\]", "", text, flags=re.S)
+    text = re.sub(r"\[\[[^]|]*\|([^]]*)\]\]", r"\1", text)
+    text = re.sub(r"\[\[([^]]*)\]\]", r"\1", text)
+    text = re.sub(r"<[^>]+>", "", text)
+
+    def tmpl(m):
+        parts = split_params(m.group(1))
+        if not parts:
+            return ""
+        name = parts[0].strip()
+        vals = [p for p in parts[1:] if "=" not in p]
+        named = {}
+        for p in parts[1:]:
+            if "=" in p:
+                k, v = p.split("=", 1)
+                named[k.strip()] = v.strip()
+        if name in ("zh-l", "l", "l-lite", "och-l", "m", "m-lite", "lang",
+                    "w", "link", "lang-lite"):
+            val = (vals[-1] if vals else named.get("1", "")).strip("* ")
+            gloss = named.get("gloss") or named.get("t")
+            return (val + (" (%s)" % gloss if gloss else "")) if val else ""
+        return ""
+    for _ in range(4):
+        text = re.sub(r"\{\{([^{}]*)\}\}", tmpl, text)
+    text = re.sub(r"\|[^|{}]{0,60}\}\}", "", text)
+    text = text.replace("'''", "").replace("''", "")
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"\s*([,.;:!?])\s*", r"\1 ", text)
+    text = re.sub(r"\.{2,}", ".", text)
+    text = re.sub(r"\(\s*\)", "", text)
+    return text.strip(" :-–—*;,")
+
+
+def primary_gloss(kd):
+    if not kd:
+        return ""
+    return (kd.get("meaning") or kd.get("compact_meaning") or "").split(";")[0].strip()
+
+
+def label_gloss(label, kd):
+    if label in COMP_GLOSS:
+        return COMP_GLOSS[label]
+    if label in kd:
+        return primary_gloss(kd[label]) or "part"
+    return "part"
+
+
+COMP_MEANING_OVERRIDE = {
+    ("金", "王"): "metal in the earth",
+    ("金", "呂"): "blocks of metal",
+    ("昼", "聿"): "brush",
+    ("図", "囗"): "map border",
+    ("食", "亼"): "cover",
+    ("合", "亼"): "lid",
+    ("受", "爪"): "hand",
+    ("多", "夕"): "evening ×2",
+    ("当", "⺕"): "field (田 reduced)",
+    ("屋", "尸"): "roof; house",
+    ("辺", "臱"): "edge; phonetic",
+    ("渋", "人"): "reduced lower element from 歰",
+    ("漢", "堇"): "right-hand element, originally 𦰩",
+    ("窓", "忩"): "the element 公 + 心",
+    ("報", "幸"): "handcuffs, originally 㚔",
+}
+
+
+def special_components(rows, src, ch=""):
+    out = []
+    for row in rows:
+        if len(row) == 3:
+            label, meaning, role = row
+            out.append({"label": label, "meaning": meaning, "role": role})
+            continue
+        label, role, reading, note = row
+        c = {"label": label,
+             "meaning": COMP_MEANING_OVERRIDE.get((ch, label)) or label_gloss(label, src.kd),
+             "role": role}
+        if reading:
+            c["reading"] = reading
+        if note:
+            c["note"] = note
+        out.append(c)
+    return out
+
+
+def build_components(src, ch, kind):
+    if ch in PICTO_COMPS:
+        return special_components(PICTO_COMPS[ch], src, ch)
+    if ch in IDEO_COMPS:
+        return special_components(IDEO_COMPS[ch], src, ch)
+    if ch in COMPOUND_COMPS:
+        c = special_components(COMPOUND_COMPS[ch], src, ch)
+        return c
+    if ch in SPECIAL_COMPS:
+        return special_components(SPECIAL_COMPS[ch], src, ch)
+
+    page = TRAD.get(ch, ch)
+    comp = src.wikt_compound(page)
+    vg = src.kanjivg_top(ch)
+    aliases = {
+        "水": "氵", "手": "扌", "心": "忄", "人": "亻", "糸": "糹", "言": "訁",
+        "食": "飠", "金": "釒", "刀": "刂", "衣": "衤", "示": "礻", "犬": "犭",
+        "爪": "爫", "火": "灬", "网": "罒", "玉": "王", "肉": "月", "艸": "艹",
+        "邑": "⻏", "阜": "⻖", "辵": "⻌", "止": "龰", "小": "⺌", "戶": "戸",
+        "每": "毎", "帶": "帯", "樂": "楽", "亞": "亜", "攴": "攵", "麥": "麦",
+        "黑": "黒", "隺": "寉", "幵": "开", "專": "専", "宁": "宁",
+    }
+
+    def key(c):
+        c = re.sub(r"#.*", "", c).strip("* ")
+        return aliases.get(c, c)
+
+    entries, used = [], set()
+    if comp:
+        for i, arg in enumerate(comp.get("args", []), 1):
+            raw = re.sub(r"#.*", "", arg).strip("* ")
+            label = re.sub(r"#.*", "", comp.get("alt%d" % i, "") or "").strip() or raw
+            role = "sound" if comp.get("c%d" % i) == "p" else "meaning"
+            if kind == "compound":
+                role = "meaning"
+            vis = None
+            for v in vg:
+                if key(v["element"]) == key(label) or key(v["element"]) == key(raw):
+                    vis = v["element"]
+                    break
+            lab = vis or label
+            c = {"label": lab, "meaning": label_gloss(lab, src.kd), "role": role}
+            if role == "sound":
+                rd = src.phonetic_readings(raw)
+                c["reading"] = (rd[0] if rd else src.primary_reading(lab))
+                if not vis:
+                    c["note"] = "historical phonetic %s, not written as such in the modern glyph" % raw
+                elif vis != raw:
+                    c["note"] = "corresponds to the historical component %s" % raw
+            entries.append(c)
+            used.add(key(lab))
+    # Add visible components the template omits (typically the modern
+    # remains of a simplified glyph).  For a compound with no template at
+    # all, all visible parts carry meaning.
+    if kind != "compound" or not comp:
+        for v in vg:
+            el = v["element"]
+            if key(el) in used:
+                continue
+            if kind == "compound":
+                role = "meaning"
+            else:
+                role = "meaning" if v.get("radical") else "part"
+            c = {"label": el, "meaning": label_gloss(el, src.kd), "role": role}
+            if v.get("original") and v["original"] != el:
+                c["note"] = "originally written %s" % v["original"]
+            entries.append(c)
+            used.add(key(el))
+    seen, out = set(), []
+    for c in entries:
+        if c["label"] in seen:
+            continue
+        seen.add(c["label"])
+        out.append(c)
+    if not out:
+        out = [{"label": ch, "meaning": primary_gloss(src.kd.get(ch, {})), "role": "part"}]
+    return out
+
+
+def phonetic_of(src, ch, comps):
+    """Return (label, established_readings, note) for a phono-semantic kanji."""
+    sounds = [c for c in comps if c["role"] == "sound"]
+    if sounds:
+        c = sounds[0]
+        preads = src.phonetic_readings(c["label"])
+        if not preads and c.get("reading"):
+            preads = [c["reading"]]
+        return c["label"], preads, ""
+    if ch in HIST_PHON:
+        label, reading = HIST_PHON[ch]
+        return label, [reading], "historical phonetic"
+    page = TRAD.get(ch, ch)
+    comp = src.wikt_compound(page)
+    if comp:
+        for i, arg in enumerate(comp.get("args", []), 1):
+            if comp.get("c%d" % i) == "p":
+                raw = re.sub(r"#.*", "", arg).strip("* ")
+                rd = src.phonetic_readings(raw)
+                if rd:
+                    return raw, rd, ""
+    ph = (src.kd.get(ch) or {}).get("phonetic")
+    if ph and ph != ch:
+        rd = src.phonetic_readings(ph)
+        if rd:
+            return ph, rd, "Kanjium phonetic"
+    for v in src.kanjivg_top(ch):
+        if v.get("phon"):
+            raw = re.split(r"[/0-9]", v["phon"])[0]
+            rd = src.phonetic_readings(raw)
+            if rd:
+                return raw, rd, "KanjiVG phonetic"
+    return "", [], ""
+
+
+def relation_phrase(kread, pread):
+    if not kread or not pread:
+        return "the Japanese reading belongs to the phonetic's sound family"
+    if kread == pread:
+        return "exact match in the series"
+    nk, np = norm_reading(kread), norm_reading(pread)
+    if nk == np:
+        return "voicing alternation in the same series"
+    if len(np) > len(nk) and np.startswith(nk):
+        return ("the Japanese on reading is a shortened form of the series reading %s"
+                % pread)
+    if len(nk) > len(np) and nk.startswith(np):
+        return ("the Japanese on reading is an extended form of the series reading %s"
+                % pread)
+    return ("the Japanese on reading diverged from the series reading %s "
+            "(a historical sound-family relationship)" % pread)
+
+
+def meaning_line_for(ch, kind, comps, meaning):
+    sem = [c for c in comps if c["role"] == "meaning"]
+    snd = [c for c in comps if c["role"] == "sound"]
+    origin = ORIGIN.get(ch, "")
+
+    def fmt(c):
+        return "%s (%s)" % (c["label"], c["meaning"])
+
+    if kind == "phono-semantic":
+        parts = []
+        if sem:
+            parts.append("Semantic " + " + ".join(fmt(c) for c in sem))
+        if snd:
+            c = snd[0]
+            parts.append("phonetic %s (%s, %s)" % (c["label"], c["meaning"], c.get("reading", "")))
+        line = " + ".join(parts) if parts else "A phono-semantic compound"
+        if origin:
+            line += ". " + origin
+        line += ". Modern sense: %s." % meaning
+    elif kind == "compound":
+        line = " + ".join(fmt(c) for c in sem if c["role"] == "meaning")
+        if origin:
+            line += ". " + origin
+        else:
+            line += ": together they give the meaning."
+        line += " Modern sense: %s." % meaning
+    elif kind == "pictograph":
+        depiction = "; ".join(c["meaning"] for c in comps)
+        line = "Pictograph: %s." % depiction
+        if origin:
+            line += " " + origin
+        line += " Modern sense: %s." % meaning
+    elif kind == "ideograph":
+        depiction = "; ".join(c["meaning"] for c in comps)
+        line = "Indicative mark: %s." % depiction
+        if origin:
+            line += " " + origin
+        line += " Modern sense: %s." % meaning
+    else:
+        line = "No structured decomposition was found; the glyph is learned as a whole."
+    line = re.sub(r"\s+", " ", line)
+    line = re.sub(r"\.\s*\.", ".", line)
+    line = re.sub(r"\s+([.,;])", r"\1", line)
+    return line.strip()
+
+
+def reading_line_for(ch, kind, kd, comps, used_on, used_kun, standalone, sound):
+    ons = onyomi_list(kd.get("onyomi"))
+    used = sorted(used_on.get(ch) or [])
+    shown = used or ons[:2]
+    bits = []
+    if kind == "phono-semantic" and sound and sound.get("label"):
+        label = sound["label"]
+        pread = sound["reading"]
+        status = sound["status"]
+        if shown:
+            r0 = shown[0]
+            extra = ""
+            if sound.get("status") == "exact":
+                known = [norm_reading(x) for x in sound.get("phonetic_onyomi", [])]
+                cand = [r for r in shown if norm_reading(r) in known]
+                if not cand:
+                    cand = [r for r in onyomi_list(kd.get("onyomi"))
+                            if norm_reading(r) in known]
+                    if cand and cand[0] != r0:
+                        extra = " (the form used in this word is %s)" % r0
+                if cand:
+                    r0 = cand[0]
+                if r0 != pread and norm_reading(r0) == norm_reading(pread):
+                    rel = "exact match in the series (%s is a rendaku form of %s)" % (r0, pread)
+                else:
+                    rel = "exact match in the series"
+            else:
+                rel = sound.get("relation") or relation_phrase(r0, pread)
+            bits.append("On %s%s ← phonetic %s (%s); %s." %
+                        (r0, extra, label, pread, rel))
+        if sound.get("note"):
+            bits.append(sound["note"] + ".")
+    else:
+        if shown:
+            bits.append("On %s is learned with the kanji; the components give the meaning, not the sound." %
+                        ", ".join(shown))
+    kuns = (kd.get("kunyomi") or "").split("、")
+    kuns = [k.replace("（", "").replace("）", "") for k in kuns if k]
+    if used_kun.get(ch):
+        vals = []
+        for r in sorted(used_kun[ch]):
+            full = next((k for k in kuns if k.startswith(r)), r)
+            vals.append(full)
+        bits.append("Kun %s is the native reading tied to the meaning." % ", ".join(vals))
+    elif kuns:
+        bits.append("Kun %s (native reading, tied to the meaning)." % ", ".join(kuns[:2]))
+    if standalone.get(ch):
+        w, r = standalone[ch]
+        bits.append("Standalone word: %s (%s)." % (w, r))
+    return " ".join(bits).strip()
+
+
+MEANING_OVERRIDE = {
+    "母": "mother",
+}
+
+
+def build_entry(src, ch, used_on, used_kun, words_by, standalone):
+    kd = src.kd.get(ch) or {}
+    kind = classify(src, ch)
+    meaning = MEANING_OVERRIDE.get(ch) or primary_gloss(kd)
+    entry = {"type": kind, "kind": kind, "type_label": TYPE_LABEL[kind],
+             "meaning": meaning, "sources": []}
+
+    if ch == "々":
+        entry["sources"] = ["Kanjium"]
+        entry["components"] = [{"label": "々", "meaning": "iteration mark", "role": "part"}]
+        entry["meaning_line"] = ("々 is not a kanji with a meaning of its own: it repeats the preceding "
+                                 "kanji (人々 = ひとびと).")
+        entry["reading_line"] = "No reading of its own: it repeats the preceding kanji's reading."
+        return entry
+
+    comps = build_components(src, ch, kind)
+    entry["components"] = comps
+    sources = {"Kanjium"}
+    if src.kanjivg_top(ch):
+        sources.add("KanjiVG")
+    if TRAD.get(ch, ch) in src.wikt or ch in src.wikt:
+        sources.add("Wiktionary")
+
+    sound = None
+    if kind == "phono-semantic":
+        label, preads, pnote = phonetic_of(src, ch, comps)
+        kanji_on = sorted(set(onyomi_list(kd.get("onyomi")) + list(used_on.get(ch) or [])))
+        exact = any(norm_reading(a) == norm_reading(b) for a in kanji_on for b in preads)
+        kread = (sorted(used_on.get(ch) or []) or onyomi_list(kd.get("onyomi")) or [""])[0]
+        match = ""
+        for b in preads:
+            if any(norm_reading(a) == norm_reading(b) for a in kanji_on):
+                match = b
+                break
+        pread = match or (preads[0] if preads else src.primary_reading(label))
+        if exact:
+            rel = "exact match in the series"
+        elif kread and pread:
+            rel = relation_phrase(kread, pread)
+        else:
+            rel = "the reading is learned with the kanji"
+        sound = {"label": label, "reading": pread,
+                 "status": "exact" if exact else "family",
+                 "relation": rel,
+                 "phonetic_onyomi": sorted(set(preads) | ({src.primary_reading(label)} if src.primary_reading(label) else set()))}
+        if pnote:
+            sound["note"] = pnote
+        entry["sound"] = sound
+        # Keep the component's reading identical to the verified sound claim.
+        for c in comps:
+            if c["role"] == "sound" and c["label"] == label:
+                c["reading"] = pread
+        if label:
+            entry["phonetic_series"] = {"label": label, "reading": pread}
+            entry["_phonetic"] = label
+        sources.add("KanjiVG")
+
+    entry["meaning_line"] = meaning_line_for(ch, kind, comps, meaning)
+    entry["reading_line"] = reading_line_for(ch, kind, kd, comps, used_on,
+                                             used_kun, standalone, sound)
+    entry["sources"] = sorted(sources)
+    return entry
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--subjects', default=DEFAULT_SUBJECTS)
-    ap.add_argument('--out', default=os.path.join(BASE, 'data', 'kanji_logic.json'))
+    ap.add_argument("--kanjivg", default=os.environ.get("KANJIVG_DIR"))
+    ap.add_argument("--kanjium", default=os.environ.get("KANJIUM_DB"))
+    ap.add_argument("--kradfile", default=os.environ.get("KRADFILE"))
+    ap.add_argument("--wikt-cache", default=os.environ.get("WIKT_CACHE"))
+    ap.add_argument("--out", default=str(DEFAULT_OUT))
     args = ap.parse_args()
-    D = Data(args.subjects)
+    missing = [n for n in ("kanjivg", "kanjium", "kradfile", "wikt_cache")
+               if not getattr(args, n)]
+    if missing:
+        raise SystemExit("missing source path(s): %s\nSee the module docstring." %
+                         ", ".join("--" + m.replace("_", "-") for m in missing))
 
-    words = json.load(open(os.path.join(BASE, 'data', 'vocab_learn_2025_12.json'),
-                           encoding='utf-8'))
-    chars = []
-    used_on = collections.defaultdict(set)
-    used_kun = collections.defaultdict(set)
-    words_by = collections.defaultdict(list)
-    standalone = {}
-    part_meaning = {}
+    src = Sources(args.kanjivg, args.kanjium, args.kradfile, args.wikt_cache)
+    words = json.loads(WORDS_FILE.read_text(encoding="utf-8"))
+    chars, used_on, used_kun, words_by, standalone = [], {}, {}, {}, {}
     for w in words:
-        ks = [p for p in w['parts'] if p.get('type') == 'kanji']
+        ks = [p for p in w["parts"] if p.get("type") == "kanji"]
         for p in ks:
-            c = p['char']
+            c = p["char"]
             if c not in chars:
                 chars.append(c)
-                part_meaning[c] = p.get('meaning') or ''
-            words_by[c].append(w)
-            if p.get('used_type') == 'onyomi' and p.get('used_reading'):
-                used_on[c].add(p['used_reading'])
-            if p.get('used_type') == 'kunyomi' and p.get('used_reading'):
-                used_kun[c].add(p['used_reading'])
-            if len(ks) == 1:
-                standalone[c] = (w['word'], w['reading'])
-
-    entries = {}
-
-    def label_meaning(ch):
-        """Component label + WaniKani/site meaning, with alias handling."""
-        lab = ch
-        m = D.meaning(ch)
-        if m is None:
-            raise SystemExit(f'No traceable meaning for component {ch!r}')
-        return lab, m
-
-    def add_comp(ch, role, reading=None, note=None):
-        lab, m = label_meaning(ch)
-        c = {'label': lab, 'meaning': m, 'role': role}
-        if reading:
-            c['reading'] = reading
-        if note:
-            c['note'] = note
-        return c
-
-    def kun_phrase(kun_list):
-        ks = kun_list[:2]
-        if not ks:
-            return ''
+            words_by.setdefault(c, []).append(w)
+            if p.get("used_type") == "onyomi" and p.get("used_reading"):
+                used_on.setdefault(c, set()).add(p["used_reading"])
+            if p.get("used_type") == "kunyomi" and p.get("used_reading"):
+                used_kun.setdefault(c, set()).add(p["used_reading"])
         if len(ks) == 1:
-            return f"The native kun reading is {ks[0]}."
-        return f"The native kun readings are {', '.join(ks)}."
+            standalone[ks[0]["char"]] = (w["word"], w["reading"])
 
-    def wcomp_entry(ci, role='part', note=None):
-        lab = ci['char'] if ci['char'] else ci['meaning']
-        c = {'label': lab, 'meaning': ci['meaning'], 'role': role}
-        if note:
-            c['note'] = note
-        return c
+    entries = {c: build_entry(src, c, used_on, used_kun, words_by, standalone)
+               for c in chars}
 
-    for c in chars:
-        e = D.K.get(c)
-        meaning = primary(e) if e else part_meaning.get(c) or ''
-        comps = D.wk_comps(c) if e else []
-        on_all = D.onyomi(c)
-        kun_all = D.kunyomi(c)
-        on_used = sorted(used_on[c])
-        kun_used = sorted(used_kun[c])
-        word = words_by[c][0]
-        word_pair = f"{word['word']} ({word['reading']})"
-        kun_word = next((w for w in words_by[c]
-                         if any(p.get('char') == c and p.get('used_type') == 'kunyomi'
-                                for p in w['parts'])), None)
-        on_word = next((w for w in words_by[c]
-                        if any(p.get('char') == c and p.get('used_type') == 'onyomi'
-                               for p in w['parts'])), None)
-
-        entry = {'kind': 'opaque', 'meaning': meaning, 'components': [],
-                 'meaning_line': '', 'reading_line': ''}
-
-        # ---- phono-semantic ----
-        if c in PHONO:
-            snd, snd_reading, mcomp, family, specific = PHONO[c]
-            # Components: true decomposition where curated, else WaniKani.
-            if c in PHONO_COMPS:
-                comp_list = PHONO_COMPS[c]
-            elif comps:
-                comp_list = [x['char'] if x['char'] else x['meaning'] for x in comps]
-            else:
-                comp_list = [mcomp, snd]
-            for ch in comp_list:
-                if ch == snd:
-                    role = 'both' if c in ('買', '働') else 'sound'
-                    note = 'also the meaning side' if role == 'both' else None
-                    entry['components'].append(
-                        add_comp(ch, role, snd_reading, note))
-                elif ch == mcomp:
-                    entry['components'].append(add_comp(ch, 'meaning'))
-                else:
-                    entry['components'].append(add_comp(ch, 'part'))
-            # Ensure both key components are present even for odd WaniKani lists.
-            labs = [x['label'] for x in entry['components']]
-            if snd not in labs:
-                entry['components'].insert(0, add_comp(
-                    snd, 'both' if c in ('買', '働') else 'sound', snd_reading))
-            if mcomp and mcomp not in labs:
-                entry['components'].insert(0, add_comp(mcomp, 'meaning'))
-            entry['kind'] = 'ideograph' if c == '買' else 'phono-semantic'
-            if c == '買':
-                for comp in entry['components']:
-                    if comp['label'] == '罒':
-                        comp['role'] = 'part'
-                    if comp['label'] == '貝':
-                        comp['role'] = 'both'
-                        comp['note'] = 'also shell money'
-                entry['meaning_line'] = (
-                    '罒 (Net) + 貝 (Shellfish; also shell money) → buy; 貝 also '
-                    'supplies ばい.'
-                )
-            elif c == '働':
-                entry['meaning_line'] = (
-                    'ｲ (Leader) is the person side; 動 (Move) supplies both "move" '
-                    'and the sound どう → a person moving → work; 働 is a '
-                    'Japanese-made kanji.'
-                )
-            else:
-                entry['meaning_line'] = (
-                    f"{label_meaning(mcomp)[0]} ({label_meaning(mcomp)[1]}) is the "
-                    f"meaning side ({family}); {label_meaning(snd)[0]} "
-                    f"({label_meaning(snd)[1]}) is the sound component, giving "
-                    f"{snd_reading}. {specific}"
-                ).replace('  ', ' ')
-            # reading line
-            parts = [f"The on reading {snd_reading} comes from the sound component "
-                     f"{snd}."]
-            if on_used and on_used[0] != snd_reading:
-                ow = on_word or word
-                parts.append(f"{ow['word']} ({ow['reading']}) uses {on_used[0]}, a "
-                             f"shift from {snd_reading}.")
-            elif not on_used and on_all and snd_reading not in on_all:
-                parts.append(f"The kanji's on reading is {on_all[0]}.")
-            if c == '迷':
-                parts.append("The standard on is めい; まい survives in 迷子.")
-            if c in RESTORED_NOTE:
-                parts.append(RESTORED_NOTE[c])
-            if kun_used and kun_word:
-                parts.append(f"{kun_word['word']} ({kun_word['reading']}) uses the "
-                             f"native kun reading, tied to the meaning.")
-            if kun_all and not kun_used:
-                parts.append(kun_phrase(kun_all))
-            entry['reading_line'] = ' '.join(parts)
-            entry['_sound'] = snd
-            entries[c] = entry
+    series = collections.defaultdict(list)
+    for c, e in entries.items():
+        p = e.pop("_phonetic", "")
+        if p:
+            series[p].append(c)
+    for c, e in entries.items():
+        ps = e.get("phonetic_series")
+        if not ps or not ps.get("label"):
             continue
-
-        # ---- ideograph ----
-        if c in IDEO:
-            comp_chars, gloss = IDEO[c]
-            entry['kind'] = 'ideograph'
-            for i, ch in enumerate(comp_chars):
-                note = None
-                if c == '国' and ch == '口' and i == 0:
-                    note = 'here = enclosure 囗, not "mouth"'
-                elif c == '回' and i == 0:
-                    note = 'outer 口 is the enclosure 囗, not "mouth"'
-                elif c == '句' and ch == '勹':
-                    note = 'here = wrap, not "prison"'
-                elif c == '外' and ch == 'ト':
-                    note = 'here = divination 卜, not "toe"'
-                elif c == '屈' and ch == '尸':
-                    note = 'here = body, not "flag"'
-                elif c in ('上', '下') and ch == 'ト':
-                    note = 'here = mark, not "toe"'
-                elif c == '体' and ch == '本':
-                    note = 'here = root, not "book"'
-                elif c == '打' and ch == '丁':
-                    note = 'here = nail, not "street"'
-                elif c == '友' and ch == 'ナ':
-                    note = 'here = hand'
-                elif c == '国' and ch == '王':
-                    note = 'with 丶 this is 玉 (jade)'
-                elif c == '祭' and ch == '示':
-                    note = 'here = altar, not "jackhammer"'
-                entry['components'].append(add_comp(ch, 'part', note=note))
-            entry['meaning_line'] = (
-                ' + '.join(f"{ch} ({label_meaning(ch)[1]})" for ch in comp_chars)
-                + f" → {gloss}."
-            )
-            if c == '回':
-                entry['meaning_line'] = (
-                    'An inner 口 (mouth/vessel) inside an enclosure 囗 → go around; '
-                    'a turn; a time.'
-                )
-            on_txt = on_used[0] if on_used else (on_all[0] if on_all else '')
-            bits = []
-            if on_txt:
-                bits.append(f"On {on_txt} is learned with the kanji; the parts give "
-                            f"the meaning, not the sound.")
-            if kun_used and kun_word:
-                bits.append(f"{kun_word['word']} ({kun_word['reading']}) uses the "
-                            f"native kun reading, tied to the meaning.")
-            if kun_all and not kun_used:
-                bits.append(kun_phrase(kun_all))
-            if not bits:
-                bits.append("The reading is learned with the kanji; kun readings are "
-                            "tied to the meaning, not derived from the parts.")
-            entry['reading_line'] = ' '.join(bits)
-            entries[c] = entry
-            continue
-
-        # ---- pictograph ----
-        if c in PICTO:
-            entry['kind'] = 'pictograph'
-            if comps:
-                for ci in comps:
-                    entry['components'].append(wcomp_entry(ci))
-            else:
-                entry['components'].append(add_comp(c, 'part'))
-            entry['meaning_line'] = PICTO[c]
-            on_txt = on_used[0] if on_used else (on_all[0] if on_all else '')
-            bits = []
-            if on_txt:
-                bits.append(f"On {on_txt} is learned with the kanji — the shape gives "
-                            f"the meaning, not the sound.")
-            if kun_used and kun_word:
-                bits.append(f"{kun_word['word']} ({kun_word['reading']}) uses the "
-                            f"native kun reading, tied to the meaning.")
-            if kun_all and not kun_used:
-                bits.append(kun_phrase(kun_all))
-            if not bits:
-                bits.append("The reading is learned with the kanji; the shape gives the "
-                            "meaning, not the sound.")
-            entry['reading_line'] = ' '.join(bits)
-            entries[c] = entry
-            continue
-
-        # ---- 々 ----
-        if c == '々':
-            entry['kind'] = 'opaque'
-            entry['components'] = [{'label': '々', 'meaning': 'Repeater', 'role': 'part'}]
-            entry['meaning_line'] = (
-                '々 is not a kanji with a meaning of its own: it repeats the preceding '
-                'kanji (人々 = ひとびと).'
-            )
-            entry['reading_line'] = (
-                'No reading of its own — it repeats the preceding kanji\'s reading.'
-            )
-            entries[c] = entry
-            continue
-
-        # ---- opaque (generic) ----
-        entry['kind'] = 'opaque'
-        # 填 has no WaniKani kanji subject; its true parts are 土 + 真.
-        if c == '填':
-            for ch in ('土', '真'):
-                entry['components'].append(add_comp(ch, 'meaning' if ch == '土' else 'part'))
-        else:
-            for ci in comps:
-                entry['components'].append(wcomp_entry(ci))
-        if c == '充':
-            entry['components'] = [add_comp('亠', 'part'), add_comp('厶', 'part'),
-                                   add_comp('儿', 'part')]
-        custom = CUSTOM_OPAQUE.get(c)
-        if custom:
-            for comp in entry['components']:
-                comp['role'] = 'part'
-            if custom.get('meaning_comp'):
-                for comp in entry['components']:
-                    if comp['label'] == custom['meaning_comp']:
-                        comp['role'] = 'meaning'
-            entry['meaning_line'] = custom['line']
-        else:
-            # Pick a semantic radical for the hook.
-            radical = None
-            for comp in entry['components']:
-                ch = comp['label']
-                key = ch if ch in FIELD else ALIAS.get(ch, ch)
-                if key in FIELD:
-                    radical = comp
-                    break
-            if radical is not None:
-                radical['role'] = 'meaning'
-                rl = radical['label']
-                rm = radical['meaning']
-                field = FIELD.get(rl, FIELD.get(ALIAS.get(rl, rl), 'meaning field'))
-                entry['meaning_line'] = (
-                    f"{rl} ({rm}) is the semantic side ({field}); the rest of the modern "
-                    f"shape does not compose \"{meaning}\" — learn it with {word_pair}."
-                )
-            else:
-                labs = ', '.join(x['label'] for x in entry['components'][:3])
-                entry['meaning_line'] = (
-                    f"The modern parts ({labs}) do not compose \"{meaning}\" — learn "
-                    f"{c} as a whole with {word_pair}."
-                )
-        # reading line
-        near = NEAR.get(c)
-        on_txt = on_used[0] if on_used else (on_all[0] if on_all else '')
-        bits = []
-        if custom and custom.get('reading'):
-            bits.append(custom['reading'])
-        elif near:
-            bits.append(near)
-        elif on_txt:
-            bits.append(f"On {on_txt}: no component here carries it exactly; the on is "
-                        f"learned with the kanji.")
-        if kun_used and kun_word:
-            bits.append(f"{kun_word['word']} ({kun_word['reading']}) uses the native "
-                        f"kun reading, tied to the meaning.")
-        if kun_all and not kun_used:
-            bits.append(kun_phrase(kun_all))
-        if not bits:
-            bits.append('The reading is learned with the kanji; no component carries it.')
-        entry['reading_line'] = ' '.join(bits)
-        entries[c] = entry
-
-    # ---- cross references for sound components ----
-    for c, entry in entries.items():
-        snd = entry.get('_sound')
-        if not snd:
-            continue
-        same = []
-        for d, other in entries.items():
+        members = []
+        for d in series.get(ps["label"], []):
             if d == c:
                 continue
-            labs = [x['label'] for x in other['components']]
-            if snd not in labs:
-                continue
-            exact = other.get('_sound') == snd
-            near = (not exact) and NEAR.get(d, '').startswith(snd)
-            if not (exact or near):
-                continue
-            reading = ''
-            if exact:
-                for x in other['components']:
-                    if x['label'] == snd and x.get('reading'):
-                        reading = x['reading']
-            if not reading:
-                # Give the other kanji's first on reading as context.
-                oo = sorted(used_on[d]) or D.onyomi(d)
-                reading = oo[0] if oo else ''
-            same.append({'kanji': d, 'reading': reading, 'exact': exact,
-                         'words': [{'word': w['word'], 'reading': w['reading']}
-                                   for w in words_by[d][:3]]})
-        if same:
-            entry['sound'] = {'label': snd,
-                              'reading': next((x.get('reading') for x in entry['components']
-                                               if x['label'] == snd), ''),
-                              'same': same}
+            od = entries[d]
+            members.append({
+                "kanji": d,
+                "onyomi": sorted(used_on.get(d) or onyomi_list(
+                    (src.kd.get(d) or {}).get("onyomi"))),
+                "type": od["type"],
+                "words": [{"word": w["word"], "reading": w["reading"]}
+                          for w in words_by.get(d, [])[:2]],
+            })
+        if members:
+            ps["members"] = members
+        else:
+            e.pop("phonetic_series", None)
 
-    # ---- write ----
-    for entry in entries.values():
-        entry.pop('_sound', None)
-    with open(args.out, 'w', encoding='utf-8') as f:
+    with open(args.out, "w", encoding="utf-8") as f:
         json.dump(entries, f, ensure_ascii=False, indent=1)
-        f.write('\n')
-
-    # ---- checks ----
-    kinds = collections.Counter(e['kind'] for e in entries.values())
-    print(f'wrote {len(entries)} entries to {args.out}')
-    print('kinds:', dict(kinds))
-    missing = [c for c in chars if c not in entries]
-    print('missing:', missing)
-    bad = []
-    for c, e in entries.items():
-        if not e['components'] or not e['meaning_line'] or not e['reading_line']:
-            bad.append(c)
-    print('empty fields:', bad)
-    # sound verification
-    errs = []
-    for c, e in entries.items():
-        for comp in e['components']:
-            if comp['role'] in ('sound', 'both'):
-                claimed = comp.get('reading')
-                ons = D.onyomi(comp['label'])
-                if not claimed or claimed not in ons:
-                    errs.append((c, comp['label'], claimed, ons))
-    print('sound verification errors:', errs)
-    # traceability
-    terr = []
-    for c, e in entries.items():
-        for comp in e['components']:
-            if D.meaning(comp['label']) is None:
-                # Image-only radicals have no characters field; their label is
-                # the WaniKani meaning name itself, which is the source.
-                if comp['label'] == comp['meaning'] or comp['label'] == '々':
-                    continue
-                terr.append((c, comp['label'], comp['meaning']))
-            elif D.meaning(comp['label']) != comp['meaning'] and comp['label'] != '々':
-                # curriculum name can differ from WaniKani; report for review
-                terr.append((c, comp['label'], comp['meaning'], D.meaning(comp['label'])))
-    print('traceability mismatches:', terr)
+        f.write("\n")
+    kinds = collections.Counter(e["type"] for e in entries.values())
+    print("wrote %d entries to %s" % (len(entries), args.out))
+    print("types:", dict(kinds))
+    print("phonetic series:", sum(1 for e in entries.values() if e.get("phonetic_series")))
+    print("sound claims:", sum(1 for e in entries.values() if e.get("sound")))
+    print("empty components:", [c for c, e in entries.items() if not e.get("components")])
+    print("empty lines:", [c for c, e in entries.items()
+                           if not e.get("meaning_line") or not e.get("reading_line")])
+    return 0
 
 
-
-# ---------------------------------------------------------------------------
-# Opaque entries whose WaniKani component list would otherwise suggest a false
-# semantic radical. Each line says plainly what the parts do and do not do.
-# `meaning_comp` names the component (if any) that really is the semantic side.
-# `reading` overrides the generated reading line.
-# ---------------------------------------------------------------------------
-CUSTOM_OPAQUE = {
-    '声': {'line': '声 is a simplified form of 聲; the modern parts (士, 尸, 丨) do not compose "voice" — learn 声 with 声優 (せいゆう).'},
-    '充': {'line': '亠 + 厶 + 儿 are the modern strokes of 充; they do not compose "allocate" — learn 充 as a whole with 充電 (じゅうでん).'},
-    '者': {'line': '者 is learned as a whole; its old form is 耂 + 日, but the modern parts do not spell "someone" — learn 者 with 医者 (いしゃ).'},
-    '真': {'line': '真 is a simplified 眞; the modern parts do not compose "reality" — learn it with 写真 (しゃしん).'},
-    '点': {'line': '点 is a simplified 點; 灬 (fire) is the semantic side, 占 the sound source (せん) — てん is not an exact key.', 'meaning_comp': '灬', 'reading': 'On てん: 占 (せん) is the historical sound source, not exact.'},
-    '驚': {'line': '馬 (horse) is the meaning side — a horse shying; 敬 is the historical sound source (けい), not exact for きょう.', 'meaning_comp': '馬', 'reading': 'On きょう: 敬 (けい) is the historical sound source, not exact.'},
-    '着': {'line': '着 is a simplified variant of 著; the modern parts (丷, 王, 丿, 目) do not compose "wear" — learn it with 着物 (きもの).'},
-    '写': {'line': '写 is a simplified form of 寫; 冖 (cover) is the modern radical, but the parts do not compose "copy" — learn 写 with 写真 (しゃしん).'},
-    '図': {'line': '図 is a simplified 圖; the outer 口 is the enclosure 囗, the inside is a reduced 冬 — no component spells "diagram".', 'reading': 'On ず: 図 is a simplified 圖; no sound component survives. 図 (ず) is the word here.'},
-    '期': {'line': '月 (month) is the meaning side — a period of time; 其 (き) is the sound source, but WaniKani gives 其 no kanji reading — unverified.', 'meaning_comp': '月', 'reading': 'On き: 其 (き) is the sound source, but WaniKani gives 其 no kanji reading — unverified.'},
-    '病': {'line': '疒 (sick) is the meaning side; 丙 (へい) matches one on reading, but WaniKani gives 丙 no kanji reading — unverified, and the words here use びょう.', 'meaning_comp': '疒', 'reading': 'On びょう: 丙 (へい) is a historical sound source, but へい is not びょう — no exact key.'},
-    '医': {'line': '匚 (box) holds 矢 (arrow) — a medicine case; 医 is a simplified 醫, no exact sound key for い.', 'meaning_comp': '匚'},
-    '笑': {'line': '竹 (bamboo) + 天/夭 — the parts do not compose "laugh"; the old form is unclear — learn 笑う (わらう).'},
-    '冗': {'line': 'The modern parts (冖, 几) do not compose "superfluous" — learn 冗談 (じょうだん).'},
-    '慢': {'line': '忄 (heart) is the meaning side; 曼 has the sound まん, but WaniKani splits it and gives no kanji reading — unverified.', 'meaning_comp': '忄', 'reading': 'On まん: 曼 is the sound source, but WaniKani gives 曼 no kanji reading — unverified.'},
-    '到': {'line': '至 (arrive) is the meaning side; 刂 is the right-hand part — 到 means "arrive"; no exact sound key for とう.', 'meaning_comp': '至'},
-    '努': {'line': '力 (power) is the meaning side — effort; 奴 gives the sense of forced toil; no exact sound key for ど.', 'meaning_comp': '力'},
-    '常': {'line': '巾 (cloth) is the meaning side — 常 originally a skirt; 尚 is the sound source (しょう), not exact for じょう.', 'meaning_comp': '巾', 'reading': 'On じょう: 尚 (しょう) is the historical sound source, not exact; 常 means "normal".'},
-    '事': {'line': 'The modern parts (十, 口, ヨ) do not compose "occurrence" — learn it with 工事 (こうじ).'},
-    '前': {'line': '前 is 丷 + 一 + 月 (a reduced 舟, boat) + 刂; the modern parts do not compose "front" — learn 前 (まえ).'},
-    '台': {'line': '台 = ム + 口; the modern parts do not compose "stand/machine" — learn 台所 (だいどころ).'},
-    '所': {'line': '戸 (door) + 斤 (axe) — the modern parts do not compose "place"; learn 台所 (だいどころ).'},
-    '風': {'line': '風 = 几 + 丿 + 虫; the modern parts do not compose "wind" — learn 風呂 (ふろ).'},
-    '越': {'line': '走 (run) is the meaning side; 成 is the phonetic remnant, not exact for えつ.', 'meaning_comp': '走'},
-    '具': {'line': '具 = 目 + 一 + ハ (hands holding a vessel); the modern parts do not compose "tool" — learn 家具 (かぐ).'},
-    '親': {'line': '見 (see) is the meaning side; 亲 (しん) is the sound source, but WaniKani splits it into 立+木; 親 means "parent".', 'meaning_comp': '見', 'reading': 'On しん: 亲 (しん) is the sound source, but WaniKani splits it and gives no kanji subject — unverified.'},
-    '先': {'line': '先 = 丿 + 土 + 儿; the modern parts do not compose "previous" — learn 先生 (せんせい).'},
-    '的': {'line': '白 (white/bright) is the meaning side — a bright target; 勺 gives しゃく, not exact for てき.', 'meaning_comp': '白', 'reading': 'On てき: 勺 (しゃく) is the historical sound source, not exact; 的 means "target".'},
-    '売': {'line': '売 is a simplified 賣; the modern parts do not compose "sell" — learn 売れる (うれる).'},
-    '超': {'line': '走 (run) is the meaning side; 召 (しょう) is the sound source, not exact for ちょう.', 'meaning_comp': '走', 'reading': 'On ちょう: 召 (しょう) is the historical sound source, not exact.'},
-    '建': {'line': '建 = 廴 (the long-stride radical) + 聿 (brush); the parts suggest setting something up, but no exact sound key for けん.', 'meaning_comp': '廴'},
-    '決': {'line': '氵 (water) is the meaning side; the right side is 夬 (not 人+ユ) — 夬 has the sound けつ, but WaniKani gives it no kanji reading — unverified.', 'meaning_comp': '氵', 'reading': 'On けつ: 夬 is the sound source, but WaniKani gives 夬 no kanji reading — unverified.'},
-    '柔': {'line': '木 (wood) is the material side — soft wood; 矛 (spear) gives the shape; 柔 means "gentle".', 'meaning_comp': '木'},
-    '居': {'line': '尸 (building/body) + 古 (old) — the modern parts do not compose "reside"; learn 居間 (いま).', 'meaning_comp': '尸'},
-    '院': {'line': '阝 (place) is the meaning side; 完 (かん) is the historical sound source, not exact for いん — 院 means "institution".', 'meaning_comp': '阝'},
-}
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    raise SystemExit(main())

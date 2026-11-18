@@ -7,7 +7,7 @@
    {
     "char": "西",
     "type": "kanji",
-    "meaning": "West",
+    "meaning": "west",
     "onyomi": [
      "せい",
      "さい"
@@ -21,7 +21,7 @@
    {
     "char": "洋",
     "type": "kanji",
-    "meaning": "Western Style",
+    "meaning": "western style; ocean",
     "onyomi": [
      "よう"
     ],
@@ -31,7 +31,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "西 (west) + 洋 (Western style; also ‘ocean’) → the West — the lands across the western ocean."
+  "meaning_logic": "西 (west) + 洋 (western style; ocean) → the West — the lands across the western ocean."
  },
  {
   "word": "建物",
@@ -41,7 +41,7 @@
    {
     "char": "建",
     "type": "kanji",
-    "meaning": "Build",
+    "meaning": "build",
     "onyomi": [
      "けん"
     ],
@@ -55,7 +55,7 @@
    {
     "char": "物",
     "type": "kanji",
-    "meaning": "Thing",
+    "meaning": "thing",
     "onyomi": [
      "ぶつ",
      "もつ"
@@ -78,7 +78,7 @@
    {
     "char": "写",
     "type": "kanji",
-    "meaning": "Copy",
+    "meaning": "copy",
     "onyomi": [
      "しゃ"
     ],
@@ -91,7 +91,7 @@
    {
     "char": "真",
     "type": "kanji",
-    "meaning": "Reality",
+    "meaning": "reality",
     "onyomi": [
      "しん"
     ],
@@ -113,7 +113,7 @@
    {
     "char": "声",
     "type": "kanji",
-    "meaning": "Voice",
+    "meaning": "voice",
     "onyomi": [
      "せい"
     ],
@@ -126,7 +126,7 @@
    {
     "char": "優",
     "type": "kanji",
-    "meaning": "Superior",
+    "meaning": "superior; actor",
     "onyomi": [
      "ゆう"
     ],
@@ -139,7 +139,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "声 (voice) + 優 (superior; the ‘actor’ sense of 優 as in 俳優) → voice actor."
+  "meaning_logic": "声 (voice) + 優 (superior; actor) → voice actor."
  },
  {
   "word": "今回",
@@ -149,7 +149,7 @@
    {
     "char": "今",
     "type": "kanji",
-    "meaning": "Now",
+    "meaning": "now",
     "onyomi": [
      "こん"
     ],
@@ -162,7 +162,7 @@
    {
     "char": "回",
     "type": "kanji",
-    "meaning": "Times",
+    "meaning": "times",
     "onyomi": [
      "かい"
     ],
@@ -198,7 +198,7 @@
    {
     "char": "苦",
     "type": "kanji",
-    "meaning": "Suffering",
+    "meaning": "suffering",
     "onyomi": [
      "く"
     ],
@@ -225,7 +225,7 @@
    {
     "char": "試",
     "type": "kanji",
-    "meaning": "Try",
+    "meaning": "try",
     "onyomi": [
      "し"
     ],
@@ -239,7 +239,7 @@
    {
     "char": "合",
     "type": "kanji",
-    "meaning": "Suit",
+    "meaning": "suit; fit",
     "onyomi": [
      "ごう",
      "がっ"
@@ -253,7 +253,7 @@
    }
   ],
   "reading_pattern": "on-kun",
-  "meaning_logic": "試 (try) + 合 (suit, fit, join) → a match — trying your skill against another (試し合う)."
+  "meaning_logic": "試 (try) + 合 (suit; fit) → a match — trying your skill against another (試し合う)."
  },
  {
   "word": "惜しい",
@@ -263,7 +263,7 @@
    {
     "char": "惜",
     "type": "kanji",
-    "meaning": "Frugal",
+    "meaning": "frugal",
     "onyomi": [
      "せき"
     ],
@@ -279,7 +279,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "惜 (frugal, reluctant to part with) + しい → regrettable — you begrudge losing it."
+  "meaning_logic": "惜 (frugal) + しい → regrettable — you begrudge losing it."
  },
  {
   "word": "悔しい",
@@ -289,7 +289,7 @@
    {
     "char": "悔",
     "type": "kanji",
-    "meaning": "Regret",
+    "meaning": "regret",
     "onyomi": [
      "かい"
     ],
@@ -316,7 +316,7 @@
    {
     "char": "厳",
     "type": "kanji",
-    "meaning": "Strict",
+    "meaning": "strict",
     "onyomi": [
      "げん",
      "ごん"
@@ -344,7 +344,7 @@
    {
     "char": "手",
     "type": "kanji",
-    "meaning": "Hand",
+    "meaning": "hand",
     "onyomi": [
      "しゅ",
      "ず"
@@ -358,7 +358,7 @@
    {
     "char": "紙",
     "type": "kanji",
-    "meaning": "Paper",
+    "meaning": "paper",
     "onyomi": [
      "し"
     ],
@@ -395,7 +395,7 @@
    {
     "char": "人",
     "type": "kanji",
-    "meaning": "Person",
+    "meaning": "person",
     "onyomi": [
      "にん",
      "じん"
@@ -419,7 +419,7 @@
    {
     "char": "見",
     "type": "kanji",
-    "meaning": "See",
+    "meaning": "see",
     "onyomi": [
      "けん"
     ],
@@ -445,7 +445,7 @@
    {
     "char": "担",
     "type": "kanji",
-    "meaning": "Carry",
+    "meaning": "carry",
     "onyomi": [
      "たん"
     ],
@@ -459,7 +459,7 @@
    {
     "char": "任",
     "type": "kanji",
-    "meaning": "Duty",
+    "meaning": "duty",
     "onyomi": [
      "にん"
     ],
@@ -481,7 +481,7 @@
    {
     "char": "昨",
     "type": "kanji",
-    "meaning": "Previous",
+    "meaning": "previous",
     "onyomi": [
      "さく"
     ],
@@ -491,7 +491,7 @@
    {
     "char": "日",
     "type": "kanji",
-    "meaning": "Sun",
+    "meaning": "sun; day",
     "onyomi": [
      "にち",
      "じつ"
@@ -506,7 +506,7 @@
   ],
   "reading_pattern": "whole",
   "reading_note": "Fixed set reading きのう; the on-reading compound is さくじつ. Neither き nor のう is a usual reading of 昨 or 日.",
-  "meaning_logic": "昨 (previous) + 日 (sun/day) → yesterday."
+  "meaning_logic": "昨 (previous) + 日 (sun; day) → yesterday."
  },
  {
   "word": "腹痛",
@@ -516,7 +516,7 @@
    {
     "char": "腹",
     "type": "kanji",
-    "meaning": "Belly",
+    "meaning": "belly",
     "onyomi": [
      "ふく"
     ],
@@ -529,7 +529,7 @@
    {
     "char": "痛",
     "type": "kanji",
-    "meaning": "Pain",
+    "meaning": "pain",
     "onyomi": [
      "つう"
     ],
@@ -551,7 +551,7 @@
    {
     "char": "学",
     "type": "kanji",
-    "meaning": "Study",
+    "meaning": "study",
     "onyomi": [
      "がく"
     ],
@@ -566,7 +566,7 @@
    {
     "char": "校",
     "type": "kanji",
-    "meaning": "School",
+    "meaning": "school",
     "onyomi": [
      "こう"
     ],
@@ -586,7 +586,7 @@
    {
     "char": "休",
     "type": "kanji",
-    "meaning": "Rest",
+    "meaning": "rest",
     "onyomi": [
      "きゅう"
     ],
@@ -612,7 +612,7 @@
    {
     "char": "頭",
     "type": "kanji",
-    "meaning": "Head",
+    "meaning": "head",
     "onyomi": [
      "ず",
      "とう"
@@ -628,7 +628,7 @@
    {
     "char": "痛",
     "type": "kanji",
-    "meaning": "Pain",
+    "meaning": "pain",
     "onyomi": [
      "つう"
     ],
@@ -650,7 +650,7 @@
    {
     "char": "不",
     "type": "kanji",
-    "meaning": "Not",
+    "meaning": "not",
     "onyomi": [
      "ふ",
      "ぶ"
@@ -662,7 +662,7 @@
    {
     "char": "屈",
     "type": "kanji",
-    "meaning": "Yield",
+    "meaning": "yield",
     "onyomi": [
      "くつ"
     ],
@@ -684,7 +684,7 @@
    {
     "char": "駅",
     "type": "kanji",
-    "meaning": "Station",
+    "meaning": "station",
     "onyomi": [
      "えき"
     ],
@@ -704,7 +704,7 @@
    {
     "char": "終",
     "type": "kanji",
-    "meaning": "End",
+    "meaning": "end",
     "onyomi": [
      "しゅう"
     ],
@@ -740,7 +740,7 @@
    {
     "char": "終",
     "type": "kanji",
-    "meaning": "End",
+    "meaning": "end",
     "onyomi": [
      "しゅう"
     ],
@@ -754,7 +754,7 @@
    {
     "char": "電",
     "type": "kanji",
-    "meaning": "Electricity",
+    "meaning": "electricity",
     "onyomi": [
      "でん"
     ],
@@ -764,7 +764,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "終 (end) + 電 (electricity → electric train) → the last train."
+  "meaning_logic": "終 (end) + 電 (electricity) → the last train."
  },
  {
   "word": "充電",
@@ -774,7 +774,7 @@
    {
     "char": "充",
     "type": "kanji",
-    "meaning": "Allocate",
+    "meaning": "fill",
     "onyomi": [
      "じゅう"
     ],
@@ -788,7 +788,7 @@
    {
     "char": "電",
     "type": "kanji",
-    "meaning": "Electricity",
+    "meaning": "electricity",
     "onyomi": [
      "でん"
     ],
@@ -798,7 +798,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "充 (allocate, fill) + 電 (electricity) → to fill with electricity → to recharge."
+  "meaning_logic": "充 (fill) + 電 (electricity) → to fill with electricity → to recharge."
  },
  {
   "word": "充填",
@@ -808,7 +808,7 @@
    {
     "char": "充",
     "type": "kanji",
-    "meaning": "Allocate",
+    "meaning": "fill",
     "onyomi": [
      "じゅう"
     ],
@@ -844,7 +844,7 @@
    {
     "char": "泣",
     "type": "kanji",
-    "meaning": "Cry",
+    "meaning": "cry",
     "onyomi": [
      "きゅう"
     ],
@@ -870,7 +870,7 @@
    {
     "char": "働",
     "type": "kanji",
-    "meaning": "Work",
+    "meaning": "work",
     "onyomi": [
      "どう"
     ],
@@ -896,7 +896,7 @@
    {
     "char": "驚",
     "type": "kanji",
-    "meaning": "Surprised",
+    "meaning": "be surprised",
     "onyomi": [
      "きょう"
     ],
@@ -912,7 +912,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "驚 (surprised) + く → to be surprised."
+  "meaning_logic": "驚 (be surprised) + く → to be surprised."
  },
  {
   "word": "着物",
@@ -922,7 +922,7 @@
    {
     "char": "着",
     "type": "kanji",
-    "meaning": "Wear",
+    "meaning": "wear",
     "onyomi": [
      "ちゃく"
     ],
@@ -936,7 +936,7 @@
    {
     "char": "物",
     "type": "kanji",
-    "meaning": "Thing",
+    "meaning": "thing",
     "onyomi": [
      "ぶつ",
      "もつ"
@@ -959,7 +959,7 @@
    {
     "char": "襟",
     "type": "kanji",
-    "meaning": "Collar",
+    "meaning": "collar",
     "onyomi": [
      "きん"
     ],
@@ -981,7 +981,7 @@
    {
     "char": "袖",
     "type": "kanji",
-    "meaning": "Sleeve",
+    "meaning": "sleeve",
     "onyomi": [
      "しゅう"
     ],
@@ -1003,7 +1003,7 @@
    {
     "char": "糸",
     "type": "kanji",
-    "meaning": "Thread",
+    "meaning": "thread",
     "onyomi": [
      "し"
     ],
@@ -1025,7 +1025,7 @@
    {
     "char": "母",
     "type": "kanji",
-    "meaning": "Mother",
+    "meaning": "mother",
     "onyomi": [
      "ぼ"
     ],
@@ -1059,7 +1059,7 @@
    {
     "char": "便",
     "type": "kanji",
-    "meaning": "Convenience",
+    "meaning": "convenience",
     "onyomi": [
      "べん",
      "びん"
@@ -1072,7 +1072,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "郵 (mail) + 便 (service, convenience — as in 便り ‘news’) → the postal service → mail."
+  "meaning_logic": "郵 (mail) + 便 (convenience) → the postal service → mail."
  },
  {
   "word": "雄弁",
@@ -1082,7 +1082,7 @@
    {
     "char": "雄",
     "type": "kanji",
-    "meaning": "Male",
+    "meaning": "male; hero",
     "onyomi": [
      "ゆう"
     ],
@@ -1096,7 +1096,7 @@
    {
     "char": "弁",
     "type": "kanji",
-    "meaning": "Dialect",
+    "meaning": "dialect; speech",
     "onyomi": [
      "べん"
     ],
@@ -1106,7 +1106,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "雄 (male, heroic) + 弁 (dialect; here ‘speech’, as in 弁論 ‘debate’) → eloquent."
+  "meaning_logic": "雄 (male; hero) + 弁 (dialect; speech) → eloquent."
  },
  {
   "word": "辺り",
@@ -1116,7 +1116,7 @@
    {
     "char": "辺",
     "type": "kanji",
-    "meaning": "Area",
+    "meaning": "environs",
     "onyomi": [
      "へん"
     ],
@@ -1133,7 +1133,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "辺 (area) + okurigana り → the area around → vicinity."
+  "meaning_logic": "辺 (environs) + okurigana り → the area around → vicinity."
  },
  {
   "word": "マンション",
@@ -1157,7 +1157,7 @@
    {
     "char": "多",
     "type": "kanji",
-    "meaning": "Many",
+    "meaning": "many",
     "onyomi": [
      "た"
     ],
@@ -1183,7 +1183,7 @@
    {
     "char": "通",
     "type": "kanji",
-    "meaning": "Pass Through",
+    "meaning": "pass through",
     "onyomi": [
      "つう"
     ],
@@ -1210,7 +1210,7 @@
    {
     "char": "図",
     "type": "kanji",
-    "meaning": "Diagram",
+    "meaning": "diagram",
     "onyomi": [
      "ず",
      "と"
@@ -1234,7 +1234,7 @@
    {
     "char": "見",
     "type": "kanji",
-    "meaning": "See",
+    "meaning": "see",
     "onyomi": [
      "けん"
     ],
@@ -1260,7 +1260,7 @@
    {
     "char": "絵",
     "type": "kanji",
-    "meaning": "Picture",
+    "meaning": "picture",
     "onyomi": [
      "え"
     ],
@@ -1302,7 +1302,7 @@
    {
     "char": "貯",
     "type": "kanji",
-    "meaning": "Savings",
+    "meaning": "savings",
     "onyomi": [
      "ちょ"
     ],
@@ -1316,7 +1316,7 @@
    {
     "char": "金",
     "type": "kanji",
-    "meaning": "Gold",
+    "meaning": "gold; money",
     "onyomi": [
      "きん",
      "こん"
@@ -1330,7 +1330,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "貯 (savings) + 金 (gold, money) → savings."
+  "meaning_logic": "貯 (savings) + 金 (gold; money) → savings."
  },
  {
   "word": "少し",
@@ -1340,7 +1340,7 @@
    {
     "char": "少",
     "type": "kanji",
-    "meaning": "Few",
+    "meaning": "few",
     "onyomi": [
      "しょう"
     ],
@@ -1367,7 +1367,7 @@
    {
     "char": "来",
     "type": "kanji",
-    "meaning": "Come",
+    "meaning": "come; next",
     "onyomi": [
      "らい"
     ],
@@ -1381,7 +1381,7 @@
    {
     "char": "年",
     "type": "kanji",
-    "meaning": "Year",
+    "meaning": "year",
     "onyomi": [
      "ねん"
     ],
@@ -1403,7 +1403,7 @@
    {
     "char": "歩",
     "type": "kanji",
-    "meaning": "Walk",
+    "meaning": "walk",
     "onyomi": [
      "ほ"
     ],
@@ -1417,7 +1417,7 @@
    {
     "char": "道",
     "type": "kanji",
-    "meaning": "Road",
+    "meaning": "road",
     "onyomi": [
      "どう"
     ],
@@ -1467,7 +1467,7 @@
    {
     "char": "打",
     "type": "kanji",
-    "meaning": "Hit",
+    "meaning": "hit",
     "onyomi": [
      "だ"
     ],
@@ -1494,7 +1494,7 @@
    {
     "char": "音",
     "type": "kanji",
-    "meaning": "Sound",
+    "meaning": "sound",
     "onyomi": [
      "おん"
     ],
@@ -1517,7 +1517,7 @@
    {
     "char": "聞",
     "type": "kanji",
-    "meaning": "Hear",
+    "meaning": "hear",
     "onyomi": [
      "ぶん",
      "もん"
@@ -1558,7 +1558,7 @@
    {
     "char": "私",
     "type": "kanji",
-    "meaning": "I",
+    "meaning": "private",
     "onyomi": [
      "し"
     ],
@@ -1570,7 +1570,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "私 (I) — single kanji, read わたし."
+  "meaning_logic": "私 (private) — single kanji, read わたし."
  },
  {
   "word": "国",
@@ -1580,7 +1580,7 @@
    {
     "char": "国",
     "type": "kanji",
-    "meaning": "Country",
+    "meaning": "country",
     "onyomi": [
      "こく"
     ],
@@ -1602,7 +1602,7 @@
    {
     "char": "時",
     "type": "kanji",
-    "meaning": "Time",
+    "meaning": "time",
     "onyomi": [
      "じ"
     ],
@@ -1615,7 +1615,7 @@
    {
     "char": "間",
     "type": "kanji",
-    "meaning": "Interval",
+    "meaning": "interval",
     "onyomi": [
      "かん",
      "けん"
@@ -1639,7 +1639,7 @@
    {
     "char": "昼",
     "type": "kanji",
-    "meaning": "Noon",
+    "meaning": "noon",
     "onyomi": [
      "ちゅう"
     ],
@@ -1661,7 +1661,7 @@
    {
     "char": "夜",
     "type": "kanji",
-    "meaning": "Night",
+    "meaning": "night",
     "onyomi": [
      "や"
     ],
@@ -1684,7 +1684,7 @@
    {
     "char": "反",
     "type": "kanji",
-    "meaning": "Anti",
+    "meaning": "anti-",
     "onyomi": [
      "はん"
     ],
@@ -1697,7 +1697,7 @@
    {
     "char": "対",
     "type": "kanji",
-    "meaning": "Versus",
+    "meaning": "opposite",
     "onyomi": [
      "たい"
     ],
@@ -1707,7 +1707,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "反 (anti) + 対 (opposite) → opposition; the opposite."
+  "meaning_logic": "反 (anti-) + 対 (opposite) → opposition; the opposite."
  },
  {
   "word": "時代",
@@ -1717,7 +1717,7 @@
    {
     "char": "時",
     "type": "kanji",
-    "meaning": "Time",
+    "meaning": "time",
     "onyomi": [
      "じ"
     ],
@@ -1730,7 +1730,7 @@
    {
     "char": "代",
     "type": "kanji",
-    "meaning": "Substitute",
+    "meaning": "substitute",
     "onyomi": [
      "だい",
      "たい"
@@ -1746,7 +1746,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "時 (time) + 代 (era, substitute) → a period, an era."
+  "meaning_logic": "時 (time) + 代 (substitute) → a period, an era."
  },
  {
   "word": "時期",
@@ -1756,7 +1756,7 @@
    {
     "char": "時",
     "type": "kanji",
-    "meaning": "Time",
+    "meaning": "time",
     "onyomi": [
      "じ"
     ],
@@ -1769,7 +1769,7 @@
    {
     "char": "期",
     "type": "kanji",
-    "meaning": "Period Of Time",
+    "meaning": "period",
     "onyomi": [
      "き",
      "ご"
@@ -1790,7 +1790,7 @@
    {
     "char": "時",
     "type": "kanji",
-    "meaning": "Time",
+    "meaning": "hour",
     "onyomi": [
      "じ"
     ],
@@ -1803,7 +1803,7 @@
    {
     "char": "速",
     "type": "kanji",
-    "meaning": "Fast",
+    "meaning": "quick",
     "onyomi": [
      "そく"
     ],
@@ -1815,7 +1815,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "時 (hour) + 速 (speed) → speed per hour."
+  "meaning_logic": "時 (hour) + 速 (quick) → speed per hour."
  },
  {
   "word": "時差",
@@ -1825,7 +1825,7 @@
    {
     "char": "時",
     "type": "kanji",
-    "meaning": "Time",
+    "meaning": "time",
     "onyomi": [
      "じ"
     ],
@@ -1860,7 +1860,7 @@
    {
     "char": "自",
     "type": "kanji",
-    "meaning": "Self",
+    "meaning": "self",
     "onyomi": [
      "じ",
      "し"
@@ -1874,7 +1874,7 @@
    {
     "char": "転",
     "type": "kanji",
-    "meaning": "Revolve",
+    "meaning": "revolve",
     "onyomi": [
      "てん"
     ],
@@ -1887,7 +1887,7 @@
    {
     "char": "車",
     "type": "kanji",
-    "meaning": "Car",
+    "meaning": "car",
     "onyomi": [
      "しゃ"
     ],
@@ -1909,7 +1909,7 @@
    {
     "char": "壊",
     "type": "kanji",
-    "meaning": "Break",
+    "meaning": "break",
     "onyomi": [
      "かい"
     ],
@@ -1935,7 +1935,7 @@
    {
     "char": "歩",
     "type": "kanji",
-    "meaning": "Walk",
+    "meaning": "walk",
     "onyomi": [
      "ほ"
     ],
@@ -1962,7 +1962,7 @@
    {
     "char": "家",
     "type": "kanji",
-    "meaning": "House",
+    "meaning": "house",
     "onyomi": [
      "か",
      "け"
@@ -1987,7 +1987,7 @@
    {
     "char": "帰",
     "type": "kanji",
-    "meaning": "Return Home",
+    "meaning": "return; returning home",
     "onyomi": [
      "き"
     ],
@@ -2003,7 +2003,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "帰 (return home) + る → to return home."
+  "meaning_logic": "帰 (return; returning home) + る → to return home."
  },
  {
   "word": "詳しい",
@@ -2013,7 +2013,7 @@
    {
     "char": "詳",
     "type": "kanji",
-    "meaning": "Detailed",
+    "meaning": "detailed",
     "onyomi": [
      "しょう"
     ],
@@ -2067,7 +2067,7 @@
    {
     "char": "羨",
     "type": "kanji",
-    "meaning": "Envy",
+    "meaning": "envious",
     "onyomi": [
      "せん"
     ],
@@ -2083,7 +2083,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "羨 (envy) + ましい → envious."
+  "meaning_logic": "羨 (envious) + ましい → envious."
  },
  {
   "word": "病気",
@@ -2093,7 +2093,7 @@
    {
     "char": "病",
     "type": "kanji",
-    "meaning": "Sick",
+    "meaning": "sick",
     "onyomi": [
      "びょう",
      "へい"
@@ -2108,7 +2108,7 @@
    {
     "char": "気",
     "type": "kanji",
-    "meaning": "Energy",
+    "meaning": "spirit",
     "onyomi": [
      "き",
      "け"
@@ -2119,7 +2119,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "病 (sick) + 気 (energy, spirit) → a sick condition → illness."
+  "meaning_logic": "病 (sick) + 気 (spirit) → a sick condition → illness."
  },
  {
   "word": "人",
@@ -2129,7 +2129,7 @@
    {
     "char": "人",
     "type": "kanji",
-    "meaning": "Person",
+    "meaning": "person",
     "onyomi": [
      "にん",
      "じん"
@@ -2153,7 +2153,7 @@
    {
     "char": "高",
     "type": "kanji",
-    "meaning": "Tall",
+    "meaning": "tall; high",
     "onyomi": [
      "こう"
     ],
@@ -2166,7 +2166,7 @@
    {
     "char": "校",
     "type": "kanji",
-    "meaning": "School",
+    "meaning": "school",
     "onyomi": [
      "こう"
     ],
@@ -2177,7 +2177,7 @@
    {
     "char": "生",
     "type": "kanji",
-    "meaning": "Life",
+    "meaning": "life; student",
     "onyomi": [
      "せい",
      "しょう"
@@ -2194,7 +2194,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "高 (tall, high) + 校 (school) + 生 (life; here ‘student’, as in 学生) → high school student."
+  "meaning_logic": "高 (tall; high) + 校 (school) + 生 (life; student) → high school student."
  },
  {
   "word": "医者",
@@ -2204,7 +2204,7 @@
    {
     "char": "医",
     "type": "kanji",
-    "meaning": "Medicine",
+    "meaning": "medicine",
     "onyomi": [
      "い"
     ],
@@ -2215,7 +2215,7 @@
    {
     "char": "者",
     "type": "kanji",
-    "meaning": "Someone",
+    "meaning": "someone",
     "onyomi": [
      "しゃ"
     ],
@@ -2237,7 +2237,7 @@
    {
     "char": "決",
     "type": "kanji",
-    "meaning": "Decide",
+    "meaning": "decide",
     "onyomi": [
      "けつ"
     ],
@@ -2252,7 +2252,7 @@
    {
     "char": "心",
     "type": "kanji",
-    "meaning": "Heart",
+    "meaning": "heart",
     "onyomi": [
      "しん"
     ],
@@ -2274,7 +2274,7 @@
    {
     "char": "証",
     "type": "kanji",
-    "meaning": "Evidence",
+    "meaning": "evidence",
     "onyomi": [
      "しょう"
     ],
@@ -2287,7 +2287,7 @@
    {
     "char": "明",
     "type": "kanji",
-    "meaning": "Bright",
+    "meaning": "bright; clear",
     "onyomi": [
      "めい",
      "みょう"
@@ -2302,7 +2302,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "証 (evidence) + 明 (bright, clear) → making something clear with evidence → proof."
+  "meaning_logic": "証 (evidence) + 明 (bright; clear) → making something clear with evidence → proof."
  },
  {
   "word": "仮定",
@@ -2312,7 +2312,7 @@
    {
     "char": "仮",
     "type": "kanji",
-    "meaning": "Temporary",
+    "meaning": "temporary",
     "onyomi": [
      "か",
      "け"
@@ -2327,7 +2327,7 @@
    {
     "char": "定",
     "type": "kanji",
-    "meaning": "Determine",
+    "meaning": "determine",
     "onyomi": [
      "てい",
      "じょう"
@@ -2350,7 +2350,7 @@
    {
     "char": "彼",
     "type": "kanji",
-    "meaning": "He",
+    "meaning": "he",
     "onyomi": [
      "ひ"
     ],
@@ -2387,7 +2387,7 @@
    {
     "char": "言",
     "type": "kanji",
-    "meaning": "Say",
+    "meaning": "say",
     "onyomi": [
      "げん",
      "ごん"
@@ -2429,7 +2429,7 @@
    {
     "char": "笑",
     "type": "kanji",
-    "meaning": "Laugh",
+    "meaning": "laugh",
     "onyomi": [
      "しょう"
     ],
@@ -2456,7 +2456,7 @@
    {
     "char": "面",
     "type": "kanji",
-    "meaning": "Face",
+    "meaning": "face",
     "onyomi": [
      "めん"
     ],
@@ -2471,7 +2471,7 @@
    {
     "char": "白",
     "type": "kanji",
-    "meaning": "White",
+    "meaning": "white",
     "onyomi": [
      "はく"
     ],
@@ -2488,7 +2488,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "面 (face) + 白 (white, bright) → literally ‘face-brightening’ → interesting, amusing; the reading おもしろ is a fixed kun reading of the compound."
+  "meaning_logic": "面 (face) + 白 (white) → literally ‘face-brightening’ → interesting, amusing; the reading おもしろ is a fixed kun reading of the compound."
  },
  {
   "word": "文句",
@@ -2498,7 +2498,7 @@
    {
     "char": "文",
     "type": "kanji",
-    "meaning": "Writing",
+    "meaning": "writing; sentence",
     "onyomi": [
      "ぶん",
      "もん"
@@ -2512,7 +2512,7 @@
    {
     "char": "句",
     "type": "kanji",
-    "meaning": "Paragraph",
+    "meaning": "phrase",
     "onyomi": [
      "く"
     ],
@@ -2522,7 +2522,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "文 (writing, sentence) + 句 (phrase) → a phrase you say → a complaint."
+  "meaning_logic": "文 (writing; sentence) + 句 (phrase) → a phrase you say → a complaint."
  },
  {
   "word": "冗談",
@@ -2532,7 +2532,7 @@
    {
     "char": "冗",
     "type": "kanji",
-    "meaning": "Superfluous",
+    "meaning": "superfluous",
     "onyomi": [
      "じょう"
     ],
@@ -2543,7 +2543,7 @@
    {
     "char": "談",
     "type": "kanji",
-    "meaning": "Talk",
+    "meaning": "talk",
     "onyomi": [
      "だん"
     ],
@@ -2563,7 +2563,7 @@
    {
     "char": "自",
     "type": "kanji",
-    "meaning": "Self",
+    "meaning": "self",
     "onyomi": [
      "じ",
      "し"
@@ -2577,7 +2577,7 @@
    {
     "char": "慢",
     "type": "kanji",
-    "meaning": "Overconfidence",
+    "meaning": "ridicule",
     "onyomi": [
      "まん"
     ],
@@ -2587,7 +2587,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "自 (self) + 慢 (overconfidence) → pride; to boast."
+  "meaning_logic": "自 (self) + 慢 (ridicule) → pride; to boast."
  },
  {
   "word": "ホテル",
@@ -2611,7 +2611,7 @@
    {
     "char": "到",
     "type": "kanji",
-    "meaning": "Arrival",
+    "meaning": "arrival",
     "onyomi": [
      "とう"
     ],
@@ -2622,7 +2622,7 @@
    {
     "char": "着",
     "type": "kanji",
-    "meaning": "Wear",
+    "meaning": "wear; arrive",
     "onyomi": [
      "ちゃく"
     ],
@@ -2635,7 +2635,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "到 (arrival) + 着 (wear; here ‘arrive’) → arrival."
+  "meaning_logic": "到 (arrival) + 着 (wear; arrive) → arrival."
  },
  {
   "word": "まだ",
@@ -2659,7 +2659,7 @@
    {
     "char": "部",
     "type": "kanji",
-    "meaning": "Part",
+    "meaning": "section",
     "onyomi": [
      "ぶ"
     ],
@@ -2672,7 +2672,7 @@
    {
     "char": "屋",
     "type": "kanji",
-    "meaning": "Roof",
+    "meaning": "roof",
     "onyomi": [
      "おく"
     ],
@@ -2684,7 +2684,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "部 (part) + 屋 (roof, room) → a room."
+  "meaning_logic": "部 (section) + 屋 (roof) → a room."
  },
  {
   "word": "入る",
@@ -2694,7 +2694,7 @@
    {
     "char": "入",
     "type": "kanji",
-    "meaning": "Enter",
+    "meaning": "enter",
     "onyomi": [
      "にゅう"
     ],
@@ -2721,7 +2721,7 @@
    {
     "char": "荷",
     "type": "kanji",
-    "meaning": "Luggage",
+    "meaning": "luggage; shoulder-pole load",
     "onyomi": [
      "か"
     ],
@@ -2734,7 +2734,7 @@
    {
     "char": "物",
     "type": "kanji",
-    "meaning": "Thing",
+    "meaning": "thing",
     "onyomi": [
      "ぶつ",
      "もつ"
@@ -2747,7 +2747,7 @@
    }
   ],
   "reading_pattern": "kun-on",
-  "meaning_logic": "荷 (luggage, load) + 物 (thing) → luggage."
+  "meaning_logic": "荷 (luggage; shoulder-pole load) + 物 (thing) → luggage."
  },
  {
   "word": "出かける",
@@ -2757,7 +2757,7 @@
    {
     "char": "出",
     "type": "kanji",
-    "meaning": "Exit",
+    "meaning": "exit",
     "onyomi": [
      "しゅつ"
     ],
@@ -2784,7 +2784,7 @@
    {
     "char": "泊",
     "type": "kanji",
-    "meaning": "Overnight",
+    "meaning": "overnight",
     "onyomi": [
      "はく"
     ],
@@ -2810,7 +2810,7 @@
    {
     "char": "与",
     "type": "kanji",
-    "meaning": "Give",
+    "meaning": "give",
     "onyomi": [
      "よ"
     ],
@@ -2836,7 +2836,7 @@
    {
     "char": "空",
     "type": "kanji",
-    "meaning": "Sky",
+    "meaning": "sky",
     "onyomi": [
      "くう"
     ],
@@ -2852,7 +2852,7 @@
    {
     "char": "港",
     "type": "kanji",
-    "meaning": "port",
+    "meaning": "harbor; port",
     "onyomi": [
      "こう"
     ],
@@ -2864,7 +2864,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "空 (sky) + 港 (harbor, port) → a port for the sky → an airport."
+  "meaning_logic": "空 (sky) + 港 (harbor; port) → a port for the sky → an airport."
  },
  {
   "word": "着く",
@@ -2874,7 +2874,7 @@
    {
     "char": "着",
     "type": "kanji",
-    "meaning": "Wear",
+    "meaning": "arrive",
     "onyomi": [
      "ちゃく"
     ],
@@ -2914,7 +2914,7 @@
    {
     "char": "行",
     "type": "kanji",
-    "meaning": "Go",
+    "meaning": "going",
     "onyomi": [
      "こう",
      "ぎょう"
@@ -2930,7 +2930,7 @@
    {
     "char": "機",
     "type": "kanji",
-    "meaning": "Machine",
+    "meaning": "machine",
     "onyomi": [
      "き"
     ],
@@ -2942,7 +2942,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "飛 (fly) + 行 (go) + 機 (machine) → a flying machine → an airplane."
+  "meaning_logic": "飛 (fly) + 行 (going) + 機 (machine) → a flying machine → an airplane."
  },
  {
   "word": "出発",
@@ -2952,7 +2952,7 @@
    {
     "char": "出",
     "type": "kanji",
-    "meaning": "Exit",
+    "meaning": "exit",
     "onyomi": [
      "しゅつ"
     ],
@@ -2968,7 +2968,7 @@
    {
     "char": "発",
     "type": "kanji",
-    "meaning": "Departure",
+    "meaning": "departure",
     "onyomi": [
      "はつ"
     ],
@@ -3046,7 +3046,7 @@
    {
     "char": "休",
     "type": "kanji",
-    "meaning": "Rest",
+    "meaning": "rest",
     "onyomi": [
      "きゅう"
     ],
@@ -3059,7 +3059,7 @@
    {
     "char": "日",
     "type": "kanji",
-    "meaning": "Sun",
+    "meaning": "day",
     "onyomi": [
      "にち",
      "じつ"
@@ -3084,7 +3084,7 @@
    {
     "char": "渋",
     "type": "kanji",
-    "meaning": "Bitter",
+    "meaning": "astringent",
     "onyomi": [
      "じゅう"
     ],
@@ -3097,7 +3097,7 @@
    {
     "char": "滞",
     "type": "kanji",
-    "meaning": "Stagnate",
+    "meaning": "stagnate",
     "onyomi": [
      "たい"
     ],
@@ -3109,7 +3109,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "渋 (bitter, astringent → sluggish) + 滞 (stagnate) → traffic that stagnates → a traffic jam."
+  "meaning_logic": "渋 (astringent) + 滞 (stagnate) → traffic that stagnates → a traffic jam."
  },
  {
   "word": "思う",
@@ -3119,7 +3119,7 @@
    {
     "char": "思",
     "type": "kanji",
-    "meaning": "Think",
+    "meaning": "think",
     "onyomi": [
      "し"
     ],
@@ -3145,7 +3145,7 @@
    {
     "char": "道",
     "type": "kanji",
-    "meaning": "Road",
+    "meaning": "road",
     "onyomi": [
      "どう"
     ],
@@ -3167,7 +3167,7 @@
    {
     "char": "空",
     "type": "kanji",
-    "meaning": "Sky",
+    "meaning": "empty",
     "onyomi": [
      "くう"
     ],
@@ -3196,7 +3196,7 @@
    {
     "char": "突",
     "type": "kanji",
-    "meaning": "Stab",
+    "meaning": "stab; sudden",
     "onyomi": [
      "とつ"
     ],
@@ -3209,7 +3209,7 @@
    {
     "char": "然",
     "type": "kanji",
-    "meaning": "Nature",
+    "meaning": "sort of thing",
     "onyomi": [
      "ぜん",
      "ねん"
@@ -3223,7 +3223,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "突 (stab; sudden) + 然 (so, nature) → suddenly."
+  "meaning_logic": "突 (stab; sudden) + 然 (sort of thing) → suddenly."
  },
  {
   "word": "当然",
@@ -3246,7 +3246,7 @@
    {
     "char": "然",
     "type": "kanji",
-    "meaning": "Nature",
+    "meaning": "sort of thing",
     "onyomi": [
      "ぜん",
      "ねん"
@@ -3260,7 +3260,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "当 (correct, hit) + 然 (so) → ‘as it should be’ → natural, obvious."
+  "meaning_logic": "当 (hit) + 然 (sort of thing) → ‘as it should be’ → natural, obvious."
  },
  {
   "word": "年中",
@@ -3270,7 +3270,7 @@
    {
     "char": "年",
     "type": "kanji",
-    "meaning": "Year",
+    "meaning": "year",
     "onyomi": [
      "ねん"
     ],
@@ -3283,7 +3283,7 @@
    {
     "char": "中",
     "type": "kanji",
-    "meaning": "Middle",
+    "meaning": "middle",
     "onyomi": [
      "ちゅう"
     ],
@@ -3297,7 +3297,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "年 (year) + 中 (middle; here ‘throughout’) → all year round."
+  "meaning_logic": "年 (year) + 中 (middle) → all year round."
  },
  {
   "word": "案外",
@@ -3318,7 +3318,7 @@
    {
     "char": "外",
     "type": "kanji",
-    "meaning": "Outside",
+    "meaning": "outside",
     "onyomi": [
      "がい",
      "げ"
@@ -3344,7 +3344,7 @@
    {
     "char": "若",
     "type": "kanji",
-    "meaning": "Young",
+    "meaning": "young",
     "onyomi": [
      "じゃく"
     ],
@@ -3371,7 +3371,7 @@
    {
     "char": "苦",
     "type": "kanji",
-    "meaning": "Suffering",
+    "meaning": "suffering",
     "onyomi": [
      "く"
     ],
@@ -3385,7 +3385,7 @@
    {
     "char": "労",
     "type": "kanji",
-    "meaning": "Labor",
+    "meaning": "labor",
     "onyomi": [
      "ろう"
     ],
@@ -3407,7 +3407,7 @@
    {
     "char": "一",
     "type": "kanji",
-    "meaning": "One",
+    "meaning": "one",
     "onyomi": [
      "いち",
      "いつ"
@@ -3423,7 +3423,7 @@
    {
     "char": "生",
     "type": "kanji",
-    "meaning": "Life",
+    "meaning": "life",
     "onyomi": [
      "せい",
      "しょう"
@@ -3441,7 +3441,7 @@
    {
     "char": "懸",
     "type": "kanji",
-    "meaning": "Suspend",
+    "meaning": "suspend",
     "onyomi": [
      "けん"
     ],
@@ -3454,7 +3454,7 @@
    {
     "char": "命",
     "type": "kanji",
-    "meaning": "Fate",
+    "meaning": "life; fate",
     "onyomi": [
      "めい",
      "みょう"
@@ -3467,7 +3467,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "一 (one) + 生 (life) + 懸 (suspend) + 命 (life, fate) → ‘one life hanging’ — risking everything → with all one’s might. A set phrase; the older form is 一所懸命."
+  "meaning_logic": "一 (one) + 生 (life) + 懸 (suspend) + 命 (life; fate) → ‘one life hanging’ — risking everything → with all one’s might. A set phrase; the older form is 一所懸命."
  },
  {
   "word": "立派",
@@ -3477,7 +3477,7 @@
    {
     "char": "立",
     "type": "kanji",
-    "meaning": "Stand",
+    "meaning": "stand up",
     "onyomi": [
      "りつ",
      "りゅう"
@@ -3493,7 +3493,7 @@
    {
     "char": "派",
     "type": "kanji",
-    "meaning": "Sect",
+    "meaning": "faction",
     "onyomi": [
      "は"
     ],
@@ -3505,7 +3505,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "立 (stand) + 派 (faction) → literally ‘a faction that stands out’ → splendid, admirable; the modern sense is set, not a literal sum."
+  "meaning_logic": "立 (stand up) + 派 (faction) → literally ‘a faction that stands out’ → splendid, admirable; the modern sense is set, not a literal sum."
  },
  {
   "word": "政治家",
@@ -3515,7 +3515,7 @@
    {
     "char": "政",
     "type": "kanji",
-    "meaning": "Politics",
+    "meaning": "politics",
     "onyomi": [
      "せい"
     ],
@@ -3526,7 +3526,7 @@
    {
     "char": "治",
     "type": "kanji",
-    "meaning": "Cure",
+    "meaning": "cure; govern",
     "onyomi": [
      "じ",
      "ち"
@@ -3540,7 +3540,7 @@
    {
     "char": "家",
     "type": "kanji",
-    "meaning": "House",
+    "meaning": "house; professional",
     "onyomi": [
      "か",
      "け"
@@ -3555,7 +3555,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "政 (politics) + 治 (cure; here ‘govern’, as in 政治) + 家 (house; here ‘professional’, as in 画家) → politician."
+  "meaning_logic": "政 (politics) + 治 (cure; govern) + 家 (house; professional) → politician."
  },
  {
   "word": "努力",
@@ -3565,7 +3565,7 @@
    {
     "char": "努",
     "type": "kanji",
-    "meaning": "Toil",
+    "meaning": "toil",
     "onyomi": [
      "ど"
     ],
@@ -3578,7 +3578,7 @@
    {
     "char": "力",
     "type": "kanji",
-    "meaning": "Power",
+    "meaning": "power",
     "onyomi": [
      "りょく",
      "りき"
@@ -3601,7 +3601,7 @@
    {
     "char": "納",
     "type": "kanji",
-    "meaning": "Supply",
+    "meaning": "supply; pay",
     "onyomi": [
      "のう",
      "なっ",
@@ -3616,7 +3616,7 @@
    {
     "char": "得",
     "type": "kanji",
-    "meaning": "Acquire",
+    "meaning": "acquire",
     "onyomi": [
      "とく"
     ],
@@ -3629,7 +3629,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "納 (supply, pay in) + 得 (acquire) → taking something in and getting it → being convinced."
+  "meaning_logic": "納 (supply; pay) + 得 (acquire) → taking something in and getting it → being convinced."
  },
  {
   "word": "期待",
@@ -3639,7 +3639,7 @@
    {
     "char": "期",
     "type": "kanji",
-    "meaning": "Period Of Time",
+    "meaning": "period; expect",
     "onyomi": [
      "き",
      "ご"
@@ -3651,7 +3651,7 @@
    {
     "char": "待",
     "type": "kanji",
-    "meaning": "Wait",
+    "meaning": "wait",
     "onyomi": [
      "たい"
     ],
@@ -3673,7 +3673,7 @@
    {
     "char": "注",
     "type": "kanji",
-    "meaning": "Pour",
+    "meaning": "pour",
     "onyomi": [
      "ちゅう"
     ],
@@ -3688,7 +3688,7 @@
    {
     "char": "意",
     "type": "kanji",
-    "meaning": "Idea",
+    "meaning": "idea",
     "onyomi": [
      "い"
     ],
@@ -3698,7 +3698,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "注 (pour) + 意 (idea, attention) → pouring your mind into something → attention, caution."
+  "meaning_logic": "注 (pour) + 意 (idea) → pouring your mind into something → attention, caution."
  },
  {
   "word": "朝",
@@ -3708,7 +3708,7 @@
    {
     "char": "朝",
     "type": "kanji",
-    "meaning": "Morning",
+    "meaning": "morning",
     "onyomi": [
      "ちょう"
     ],
@@ -3734,7 +3734,7 @@
    {
     "char": "飯",
     "type": "kanji",
-    "meaning": "Meal",
+    "meaning": "meal",
     "onyomi": [
      "はん"
     ],
@@ -3756,7 +3756,7 @@
    {
     "char": "食",
     "type": "kanji",
-    "meaning": "Eat",
+    "meaning": "eat",
     "onyomi": [
      "しょく"
     ],
@@ -3853,7 +3853,7 @@
    {
     "char": "会",
     "type": "kanji",
-    "meaning": "Meet",
+    "meaning": "meet",
     "onyomi": [
      "かい"
     ],
@@ -3866,7 +3866,7 @@
    {
     "char": "社",
     "type": "kanji",
-    "meaning": "Company",
+    "meaning": "company",
     "onyomi": [
      "しゃ"
     ],
@@ -3888,7 +3888,7 @@
    {
     "char": "聞",
     "type": "kanji",
-    "meaning": "Hear",
+    "meaning": "hear",
     "onyomi": [
      "ぶん",
      "もん"
@@ -3915,7 +3915,7 @@
    {
     "char": "情",
     "type": "kanji",
-    "meaning": "Feeling",
+    "meaning": "feelings",
     "onyomi": [
      "じょう"
     ],
@@ -3928,7 +3928,7 @@
    {
     "char": "報",
     "type": "kanji",
-    "meaning": "News",
+    "meaning": "news; report",
     "onyomi": [
      "ほう"
     ],
@@ -3940,7 +3940,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "情 (feeling, circumstance) + 報 (news, report) → a report on circumstances → information."
+  "meaning_logic": "情 (feelings) + 報 (news; report) → a report on circumstances → information."
  },
  {
   "word": "満足",
@@ -3963,7 +3963,7 @@
    {
     "char": "足",
     "type": "kanji",
-    "meaning": "Foot",
+    "meaning": "foot; be sufficient",
     "onyomi": [
      "そく"
     ],
@@ -3978,7 +3978,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "満 (full) + 足 (foot; here ‘sufficient’) → full and sufficient → satisfied."
+  "meaning_logic": "満 (full) + 足 (foot; be sufficient) → full and sufficient → satisfied."
  },
  {
   "word": "正常",
@@ -3988,7 +3988,7 @@
    {
     "char": "正",
     "type": "kanji",
-    "meaning": "Correct",
+    "meaning": "correct",
     "onyomi": [
      "せい",
      "しょう"
@@ -4003,7 +4003,7 @@
    {
     "char": "常",
     "type": "kanji",
-    "meaning": "Normal",
+    "meaning": "normal",
     "onyomi": [
      "じょう"
     ],
@@ -4025,7 +4025,7 @@
    {
     "char": "確",
     "type": "kanji",
-    "meaning": "Certain",
+    "meaning": "certain",
     "onyomi": [
      "かく"
     ],
@@ -4038,7 +4038,7 @@
    {
     "char": "実",
     "type": "kanji",
-    "meaning": "Truth",
+    "meaning": "reality; truth",
     "onyomi": [
      "じつ"
     ],
@@ -4052,7 +4052,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "確 (certain) + 実 (reality, truth) → certain, reliable."
+  "meaning_logic": "確 (certain) + 実 (reality; truth) → certain, reliable."
  },
  {
   "word": "電気",
@@ -4062,7 +4062,7 @@
    {
     "char": "電",
     "type": "kanji",
-    "meaning": "Electricity",
+    "meaning": "electricity",
     "onyomi": [
      "でん"
     ],
@@ -4073,7 +4073,7 @@
    {
     "char": "気",
     "type": "kanji",
-    "meaning": "Energy",
+    "meaning": "spirit",
     "onyomi": [
      "き",
      "け"
@@ -4084,7 +4084,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "電 (electricity) + 気 (energy) → electricity; electric light."
+  "meaning_logic": "電 (electricity) + 気 (spirit) → electricity; electric light."
  },
  {
   "word": "工事",
@@ -4094,7 +4094,7 @@
    {
     "char": "工",
     "type": "kanji",
-    "meaning": "Construction",
+    "meaning": "construction",
     "onyomi": [
      "こう",
      "く"
@@ -4106,7 +4106,7 @@
    {
     "char": "事",
     "type": "kanji",
-    "meaning": "Occurrence",
+    "meaning": "matter",
     "onyomi": [
      "じ"
     ],
@@ -4119,7 +4119,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "工 (construction) + 事 (matter, work) → construction work."
+  "meaning_logic": "工 (construction) + 事 (matter) → construction work."
  },
  {
   "word": "来る",
@@ -4129,7 +4129,7 @@
    {
     "char": "来",
     "type": "kanji",
-    "meaning": "Come",
+    "meaning": "come",
     "onyomi": [
      "らい"
     ],
@@ -4156,7 +4156,7 @@
    {
     "char": "壁",
     "type": "kanji",
-    "meaning": "Wall",
+    "meaning": "wall",
     "onyomi": [
      "へき"
     ],
@@ -4192,7 +4192,7 @@
    {
     "char": "取",
     "type": "kanji",
-    "meaning": "Take",
+    "meaning": "take",
     "onyomi": [
      "しゅ"
     ],
@@ -4235,7 +4235,7 @@
    {
     "char": "取",
     "type": "kanji",
-    "meaning": "Take",
+    "meaning": "take",
     "onyomi": [
      "しゅ"
     ],
@@ -4252,7 +4252,7 @@
    {
     "char": "上",
     "type": "kanji",
-    "meaning": "Above",
+    "meaning": "above",
     "onyomi": [
      "じょう"
     ],
@@ -4272,7 +4272,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "取 (take) + 上 (up) → to take up → to pick up; to take away."
+  "meaning_logic": "取 (take) + 上 (above) → to take up → to pick up; to take away."
  },
  {
   "word": "受け入れる",
@@ -4282,7 +4282,7 @@
    {
     "char": "受",
     "type": "kanji",
-    "meaning": "receive",
+    "meaning": "accept",
     "onyomi": [
      "じゅ"
     ],
@@ -4299,7 +4299,7 @@
    {
     "char": "入",
     "type": "kanji",
-    "meaning": "Enter",
+    "meaning": "enter",
     "onyomi": [
      "にゅう"
     ],
@@ -4326,7 +4326,7 @@
    {
     "char": "引",
     "type": "kanji",
-    "meaning": "Pull",
+    "meaning": "pull",
     "onyomi": [
      "いん"
     ],
@@ -4343,7 +4343,7 @@
    {
     "char": "受",
     "type": "kanji",
-    "meaning": "receive",
+    "meaning": "accept",
     "onyomi": [
      "じゅ"
     ],
@@ -4369,7 +4369,7 @@
    {
     "char": "清",
     "type": "kanji",
-    "meaning": "Pure",
+    "meaning": "pure",
     "onyomi": [
      "せい",
      "しょう",
@@ -4384,7 +4384,7 @@
    {
     "char": "潔",
     "type": "kanji",
-    "meaning": "Pure",
+    "meaning": "pure; clean",
     "onyomi": [
      "けつ"
     ],
@@ -4396,7 +4396,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "清 (pure) + 潔 (pure, clean) → clean, cleanliness."
+  "meaning_logic": "清 (pure) + 潔 (pure; clean) → clean, cleanliness."
  },
  {
   "word": "タオル",
@@ -4420,7 +4420,7 @@
    {
     "char": "拭",
     "type": "kanji",
-    "meaning": "Wipe",
+    "meaning": "wipe",
     "onyomi": [
      "しょく"
     ],
@@ -4447,7 +4447,7 @@
    {
     "char": "柔",
     "type": "kanji",
-    "meaning": "Gentle",
+    "meaning": "tender",
     "onyomi": [
      "じゅう",
      "にゅう"
@@ -4464,7 +4464,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "柔 (gentle) + らかい → soft, tender."
+  "meaning_logic": "柔 (tender) + らかい → soft, tender."
  },
  {
   "word": "濡れる",
@@ -4474,7 +4474,7 @@
    {
     "char": "濡",
     "type": "kanji",
-    "meaning": "Wet",
+    "meaning": "get wet",
     "onyomi": [
      "じゅ"
     ],
@@ -4490,7 +4490,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "濡 (wet) + れる → to get wet."
+  "meaning_logic": "濡 (get wet) + れる → to get wet."
  },
  {
   "word": "乾く",
@@ -4500,7 +4500,7 @@
    {
     "char": "乾",
     "type": "kanji",
-    "meaning": "Dry",
+    "meaning": "dry",
     "onyomi": [
      "かん"
     ],
@@ -4555,7 +4555,7 @@
    {
     "char": "急",
     "type": "kanji",
-    "meaning": "Hurry",
+    "meaning": "hurry",
     "onyomi": [
      "きゅう"
     ],
@@ -4581,7 +4581,7 @@
    {
     "char": "前",
     "type": "kanji",
-    "meaning": "Front",
+    "meaning": "in front",
     "onyomi": [
      "ぜん"
     ],
@@ -4593,7 +4593,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "前 (front) — single kanji, read まえ."
+  "meaning_logic": "前 (in front) — single kanji, read まえ."
  },
  {
   "word": "ゆっくり",
@@ -4631,7 +4631,7 @@
    {
     "char": "置",
     "type": "kanji",
-    "meaning": "Put",
+    "meaning": "put",
     "onyomi": [
      "ち"
     ],
@@ -4657,7 +4657,7 @@
    {
     "char": "居",
     "type": "kanji",
-    "meaning": "Alive",
+    "meaning": "reside",
     "onyomi": [
      "きょ"
     ],
@@ -4670,7 +4670,7 @@
    {
     "char": "間",
     "type": "kanji",
-    "meaning": "Interval",
+    "meaning": "interval; space",
     "onyomi": [
      "かん",
      "けん"
@@ -4684,7 +4684,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "居 (alive → ‘to be, reside’, as in 居る) + 間 (interval, space) → living room."
+  "meaning_logic": "居 (reside) + 間 (interval; space) → living room."
  },
  {
   "word": "台所",
@@ -4694,7 +4694,7 @@
    {
     "char": "台",
     "type": "kanji",
-    "meaning": "Machine",
+    "meaning": "a stand",
     "onyomi": [
      "だい",
      "たい"
@@ -4706,7 +4706,7 @@
    {
     "char": "所",
     "type": "kanji",
-    "meaning": "Place",
+    "meaning": "place",
     "onyomi": [
      "しょ"
     ],
@@ -4720,7 +4720,7 @@
    }
   ],
   "reading_pattern": "on-kun",
-  "meaning_logic": "台 (stand, platform — WaniKani gloss ‘machine’) + 所 (place) → the place where the cooking platform stands → kitchen."
+  "meaning_logic": "台 (a stand) + 所 (place) → the place where the cooking platform stands → kitchen."
  },
  {
   "word": "廊下",
@@ -4730,7 +4730,7 @@
    {
     "char": "廊",
     "type": "kanji",
-    "meaning": "Corridor",
+    "meaning": "corridor",
     "onyomi": [
      "ろう"
     ],
@@ -4741,7 +4741,7 @@
    {
     "char": "下",
     "type": "kanji",
-    "meaning": "Below",
+    "meaning": "below",
     "onyomi": [
      "か",
      "げ"
@@ -4769,7 +4769,7 @@
    {
     "char": "風",
     "type": "kanji",
-    "meaning": "Wind",
+    "meaning": "wind",
     "onyomi": [
      "ふう",
      "ふ"
@@ -4783,7 +4783,7 @@
    {
     "char": "呂",
     "type": "kanji",
-    "meaning": "Bath",
+    "meaning": "spine",
     "onyomi": [
      "ろ",
      "りょ"
@@ -4796,7 +4796,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "Set spelling for ふろ ‘bath’: 風 (wind) + 呂 (bath). The kanji spelling is conventional, not a literal compound."
+  "meaning_logic": "Set spelling for ふろ ‘bath’: 風 (wind) + 呂 (spine). The kanji spelling is conventional, not a literal compound."
  },
  {
   "word": "今",
@@ -4806,7 +4806,7 @@
    {
     "char": "今",
     "type": "kanji",
-    "meaning": "Now",
+    "meaning": "now",
     "onyomi": [
      "こん"
     ],
@@ -4828,7 +4828,7 @@
    {
     "char": "指",
     "type": "kanji",
-    "meaning": "Finger",
+    "meaning": "finger; point to",
     "onyomi": [
      "し"
     ],
@@ -4842,7 +4842,7 @@
    {
     "char": "導",
     "type": "kanji",
-    "meaning": "Lead",
+    "meaning": "guidance",
     "onyomi": [
      "どう"
     ],
@@ -4854,7 +4854,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "指 (finger, point) + 導 (lead) → pointing the way and leading → guidance."
+  "meaning_logic": "指 (finger; point to) + 導 (guidance) → pointing the way and leading → guidance."
  },
  {
   "word": "答える",
@@ -4864,7 +4864,7 @@
    {
     "char": "答",
     "type": "kanji",
-    "meaning": "Answer",
+    "meaning": "answer",
     "onyomi": [
      "とう"
     ],
@@ -4890,7 +4890,7 @@
    {
     "char": "教",
     "type": "kanji",
-    "meaning": "Teach",
+    "meaning": "teach",
     "onyomi": [
      "きょう"
     ],
@@ -4945,7 +4945,7 @@
    {
     "char": "食",
     "type": "kanji",
-    "meaning": "Eat",
+    "meaning": "eat",
     "onyomi": [
      "しょく"
     ],
@@ -4959,7 +4959,7 @@
    {
     "char": "事",
     "type": "kanji",
-    "meaning": "Occurrence",
+    "meaning": "matter",
     "onyomi": [
      "じ"
     ],
@@ -4972,7 +4972,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "食 (eat) + 事 (occurrence, matter) → a meal."
+  "meaning_logic": "食 (eat) + 事 (matter) → a meal."
  },
  {
   "word": "終わり",
@@ -4982,7 +4982,7 @@
    {
     "char": "終",
     "type": "kanji",
-    "meaning": "End",
+    "meaning": "end",
     "onyomi": [
      "しゅう"
     ],
@@ -5023,7 +5023,7 @@
    {
     "char": "引",
     "type": "kanji",
-    "meaning": "Pull",
+    "meaning": "pull",
     "onyomi": [
      "いん"
     ],
@@ -5040,7 +5040,7 @@
    {
     "char": "越",
     "type": "kanji",
-    "meaning": "Go Beyond",
+    "meaning": "go beyond",
     "onyomi": [
      "えつ"
     ],
@@ -5066,7 +5066,7 @@
    {
     "char": "何",
     "type": "kanji",
-    "meaning": "What",
+    "meaning": "what",
     "onyomi": [
      "か"
     ],
@@ -5080,7 +5080,7 @@
    {
     "char": "度",
     "type": "kanji",
-    "meaning": "Degree",
+    "meaning": "time",
     "onyomi": [
      "ど",
      "たく"
@@ -5093,7 +5093,7 @@
    }
   ],
   "reading_pattern": "kun-on",
-  "meaning_logic": "何 (what) + 度 (times, degree) → how many times."
+  "meaning_logic": "何 (what) + 度 (time) → how many times."
  },
  {
   "word": "重い",
@@ -5103,7 +5103,7 @@
    {
     "char": "重",
     "type": "kanji",
-    "meaning": "Heavy",
+    "meaning": "heavy",
     "onyomi": [
      "じゅう",
      "ちょう"
@@ -5132,7 +5132,7 @@
    {
     "char": "家",
     "type": "kanji",
-    "meaning": "House",
+    "meaning": "house",
     "onyomi": [
      "か",
      "け"
@@ -5148,7 +5148,7 @@
    {
     "char": "具",
     "type": "kanji",
-    "meaning": "Tool",
+    "meaning": "tool",
     "onyomi": [
      "ぐ"
     ],
@@ -5168,7 +5168,7 @@
    {
     "char": "体",
     "type": "kanji",
-    "meaning": "Body",
+    "meaning": "body",
     "onyomi": [
      "たい",
      "てい"
@@ -5195,7 +5195,7 @@
    {
     "char": "祭",
     "type": "kanji",
-    "meaning": "Festival",
+    "meaning": "festival",
     "onyomi": [
      "さい"
     ],
@@ -5222,7 +5222,7 @@
    {
     "char": "弟",
     "type": "kanji",
-    "meaning": "Younger Brother",
+    "meaning": "younger brother",
     "onyomi": [
      "だい",
      "で",
@@ -5246,7 +5246,7 @@
    {
     "char": "迷",
     "type": "kanji",
-    "meaning": "Astray",
+    "meaning": "astray",
     "onyomi": [
      "めい"
     ],
@@ -5261,7 +5261,7 @@
    {
     "char": "子",
     "type": "kanji",
-    "meaning": "Child",
+    "meaning": "child",
     "onyomi": [
      "し",
      "す"
@@ -5286,7 +5286,7 @@
    {
     "char": "手",
     "type": "kanji",
-    "meaning": "Hand",
+    "meaning": "hand",
     "onyomi": [
      "しゅ",
      "ず"
@@ -5323,7 +5323,7 @@
    {
     "char": "風",
     "type": "kanji",
-    "meaning": "Wind",
+    "meaning": "wind",
     "onyomi": [
      "ふう",
      "ふ"
@@ -5346,7 +5346,7 @@
    {
     "char": "帽",
     "type": "kanji",
-    "meaning": "Hat",
+    "meaning": "cap",
     "onyomi": [
      "ぼう"
     ],
@@ -5357,7 +5357,7 @@
    {
     "char": "子",
     "type": "kanji",
-    "meaning": "Child",
+    "meaning": "noun suffix; child",
     "onyomi": [
      "し",
      "す"
@@ -5370,7 +5370,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "帽 (hat) + 子 (a suffix for a thing, not ‘child’) → a hat."
+  "meaning_logic": "帽 (cap) + 子 (noun suffix; child) → a hat."
  },
  {
   "word": "走る",
@@ -5380,7 +5380,7 @@
    {
     "char": "走",
     "type": "kanji",
-    "meaning": "Run",
+    "meaning": "run",
     "onyomi": [
      "そう"
     ],
@@ -5406,7 +5406,7 @@
    {
     "char": "母",
     "type": "kanji",
-    "meaning": "Mother",
+    "meaning": "mother",
     "onyomi": [
      "ぼ"
     ],
@@ -5420,7 +5420,7 @@
    {
     "char": "親",
     "type": "kanji",
-    "meaning": "Parent",
+    "meaning": "parent",
     "onyomi": [
      "しん"
     ],
@@ -5443,7 +5443,7 @@
    {
     "char": "生",
     "type": "kanji",
-    "meaning": "Life",
+    "meaning": "life",
     "onyomi": [
      "せい",
      "しょう"
@@ -5474,7 +5474,7 @@
    {
     "char": "赤",
     "type": "kanji",
-    "meaning": "Red",
+    "meaning": "red",
     "onyomi": [
      "せき"
     ],
@@ -5500,7 +5500,7 @@
    {
     "char": "大",
     "type": "kanji",
-    "meaning": "Big",
+    "meaning": "big",
     "onyomi": [
      "たい",
      "だい"
@@ -5514,7 +5514,7 @@
    {
     "char": "事",
     "type": "kanji",
-    "meaning": "Occurrence",
+    "meaning": "matter",
     "onyomi": [
      "じ"
     ],
@@ -5537,7 +5537,7 @@
    {
     "char": "修",
     "type": "kanji",
-    "meaning": "Mastering",
+    "meaning": "repair",
     "onyomi": [
      "しゅう"
     ],
@@ -5550,7 +5550,7 @@
    {
     "char": "理",
     "type": "kanji",
-    "meaning": "Reason",
+    "meaning": "reason",
     "onyomi": [
      "り"
     ],
@@ -5562,7 +5562,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "修 (repair) + 理 (reason, fix) → repair."
+  "meaning_logic": "修 (repair) + 理 (reason) → repair."
  },
  {
   "word": "今朝",
@@ -5572,7 +5572,7 @@
    {
     "char": "今",
     "type": "kanji",
-    "meaning": "Now",
+    "meaning": "now",
     "onyomi": [
      "こん"
     ],
@@ -5584,7 +5584,7 @@
    {
     "char": "朝",
     "type": "kanji",
-    "meaning": "Morning",
+    "meaning": "morning",
     "onyomi": [
      "ちょう"
     ],
@@ -5606,7 +5606,7 @@
    {
     "char": "妻",
     "type": "kanji",
-    "meaning": "Wife",
+    "meaning": "wife",
     "onyomi": [
      "さい"
     ],
@@ -5642,7 +5642,7 @@
    {
     "char": "早",
     "type": "kanji",
-    "meaning": "Early",
+    "meaning": "early",
     "onyomi": [
      "そう"
     ],
@@ -5669,7 +5669,7 @@
    {
     "char": "仲",
     "type": "kanji",
-    "meaning": "Relationship",
+    "meaning": "relationship",
     "onyomi": [
      "ちゅう"
     ],
@@ -5691,7 +5691,7 @@
    {
     "char": "腕",
     "type": "kanji",
-    "meaning": "Arm",
+    "meaning": "arm",
     "onyomi": [
      "わん"
     ],
@@ -5727,7 +5727,7 @@
    {
     "char": "病",
     "type": "kanji",
-    "meaning": "Sick",
+    "meaning": "sick",
     "onyomi": [
      "びょう",
      "へい"
@@ -5742,7 +5742,7 @@
    {
     "char": "院",
     "type": "kanji",
-    "meaning": "Institution",
+    "meaning": "institution",
     "onyomi": [
      "いん"
     ],
@@ -5762,7 +5762,7 @@
    {
     "char": "買",
     "type": "kanji",
-    "meaning": "Buy",
+    "meaning": "buy",
     "onyomi": [
      "ばい"
     ],
@@ -5792,7 +5792,7 @@
    {
     "char": "店",
     "type": "kanji",
-    "meaning": "Shop",
+    "meaning": "shop",
     "onyomi": [
      "てん"
     ],
@@ -5814,7 +5814,7 @@
    {
     "char": "間",
     "type": "kanji",
-    "meaning": "Interval",
+    "meaning": "interval",
     "onyomi": [
      "かん",
      "けん"
@@ -5829,7 +5829,7 @@
    {
     "char": "違",
     "type": "kanji",
-    "meaning": "Different",
+    "meaning": "differ",
     "onyomi": [
      "い"
     ],
@@ -5845,7 +5845,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "間 (interval) + 違 (different) → something is off/different → to make a mistake."
+  "meaning_logic": "間 (interval) + 違 (differ) → something is off/different → to make a mistake."
  },
  {
   "word": "漢字",
@@ -5868,7 +5868,7 @@
    {
     "char": "字",
     "type": "kanji",
-    "meaning": "Letter",
+    "meaning": "letter",
     "onyomi": [
      "じ"
     ],
@@ -5888,7 +5888,7 @@
    {
     "char": "先",
     "type": "kanji",
-    "meaning": "Previous",
+    "meaning": "previous",
     "onyomi": [
      "せん"
     ],
@@ -5902,7 +5902,7 @@
    {
     "char": "生",
     "type": "kanji",
-    "meaning": "Life",
+    "meaning": "be born",
     "onyomi": [
      "せい",
      "しょう"
@@ -5919,7 +5919,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "先 (previous) + 生 (born) → one born before you → a senior → a teacher."
+  "meaning_logic": "先 (previous) + 生 (be born) → one born before you → a senior → a teacher."
  },
  {
   "word": "赤い",
@@ -5929,7 +5929,7 @@
    {
     "char": "赤",
     "type": "kanji",
-    "meaning": "Red",
+    "meaning": "red",
     "onyomi": [
      "せき"
     ],
@@ -5969,7 +5969,7 @@
    {
     "char": "目",
     "type": "kanji",
-    "meaning": "Eye",
+    "meaning": "eye",
     "onyomi": [
      "もく"
     ],
@@ -5982,7 +5982,7 @@
    {
     "char": "的",
     "type": "kanji",
-    "meaning": "Target",
+    "meaning": "target",
     "onyomi": [
      "てき"
     ],
@@ -6004,7 +6004,7 @@
    {
     "char": "今",
     "type": "kanji",
-    "meaning": "Now",
+    "meaning": "now",
     "onyomi": [
      "こん"
     ],
@@ -6016,7 +6016,7 @@
    {
     "char": "日",
     "type": "kanji",
-    "meaning": "Sun",
+    "meaning": "sun; day",
     "onyomi": [
      "にち",
      "じつ"
@@ -6031,7 +6031,7 @@
   ],
   "reading_pattern": "whole",
   "reading_note": "Fixed set reading きょう, a jukujikun; it cannot be built from the usual readings of 今 (いま/こん) or 日 (ひ/にち).",
-  "meaning_logic": "今 (now) + 日 (sun/day) → today."
+  "meaning_logic": "今 (now) + 日 (sun; day) → today."
  },
  {
   "word": "たくさん",
@@ -6055,7 +6055,7 @@
    {
     "char": "商",
     "type": "kanji",
-    "meaning": "Merchandise",
+    "meaning": "make a deal",
     "onyomi": [
      "しょう"
     ],
@@ -6068,7 +6068,7 @@
    {
     "char": "品",
     "type": "kanji",
-    "meaning": "Product",
+    "meaning": "goods",
     "onyomi": [
      "ひん"
     ],
@@ -6080,7 +6080,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "商 (merchandise, commerce) + 品 (product, goods) → merchandise."
+  "meaning_logic": "商 (make a deal) + 品 (goods) → merchandise."
  },
  {
   "word": "売れる",
@@ -6090,7 +6090,7 @@
    {
     "char": "売",
     "type": "kanji",
-    "meaning": "Sell",
+    "meaning": "sell",
     "onyomi": [
      "ばい"
     ],
@@ -6116,7 +6116,7 @@
    {
     "char": "超",
     "type": "kanji",
-    "meaning": "Ultra",
+    "meaning": "transcend",
     "onyomi": [
      "ちょう"
     ],
@@ -6132,7 +6132,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "超 (ultra, beyond) + える → to go beyond, to exceed."
+  "meaning_logic": "超 (transcend) + える → to go beyond, to exceed."
  },
  {
   "word": "窓側",
@@ -6194,7 +6194,7 @@
    {
     "char": "来",
     "type": "kanji",
-    "meaning": "Come",
+    "meaning": "next",
     "onyomi": [
      "らい"
     ],
@@ -6208,7 +6208,7 @@
    {
     "char": "週",
     "type": "kanji",
-    "meaning": "Week",
+    "meaning": "week",
     "onyomi": [
      "しゅう"
     ],
@@ -6228,7 +6228,7 @@
    {
     "char": "海",
     "type": "kanji",
-    "meaning": "Sea",
+    "meaning": "sea",
     "onyomi": [
      "かい"
     ],
@@ -6241,7 +6241,7 @@
    {
     "char": "外",
     "type": "kanji",
-    "meaning": "Outside",
+    "meaning": "outside",
     "onyomi": [
      "がい",
      "げ"
@@ -6267,7 +6267,7 @@
    {
     "char": "出",
     "type": "kanji",
-    "meaning": "Exit",
+    "meaning": "go out",
     "onyomi": [
      "しゅつ"
     ],
@@ -6283,7 +6283,7 @@
    {
     "char": "張",
     "type": "kanji",
-    "meaning": "Stretch",
+    "meaning": "stretch",
     "onyomi": [
      "ちょう"
     ],
@@ -6295,7 +6295,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "出 (go out) + 張 (stretch, extend) → going out to extend the company’s work → a business trip."
+  "meaning_logic": "出 (go out) + 張 (stretch) → going out to extend the company’s work → a business trip."
  },
  {
   "word": "忙しい",
@@ -6305,7 +6305,7 @@
    {
     "char": "忙",
     "type": "kanji",
-    "meaning": "Busy",
+    "meaning": "busy",
     "onyomi": [
      "ぼう"
     ],
@@ -6331,7 +6331,7 @@
    {
     "char": "研",
     "type": "kanji",
-    "meaning": "Sharpen",
+    "meaning": "sharpen",
     "onyomi": [
      "けん"
     ],
@@ -6344,7 +6344,7 @@
    {
     "char": "究",
     "type": "kanji",
-    "meaning": "Research",
+    "meaning": "research",
     "onyomi": [
      "きゅう"
     ],
@@ -6366,7 +6366,7 @@
    {
     "char": "新",
     "type": "kanji",
-    "meaning": "New",
+    "meaning": "new",
     "onyomi": [
      "しん"
     ],
@@ -6394,7 +6394,7 @@
    {
     "char": "薬",
     "type": "kanji",
-    "meaning": "Medicine",
+    "meaning": "medicine",
     "onyomi": [
      "やく"
     ],
@@ -6416,7 +6416,7 @@
    {
     "char": "効",
     "type": "kanji",
-    "meaning": "Effective",
+    "meaning": "effect",
     "onyomi": [
      "こう"
     ],
@@ -6429,7 +6429,7 @@
    {
     "char": "果",
     "type": "kanji",
-    "meaning": "Fruit",
+    "meaning": "fruit",
     "onyomi": [
      "か"
     ],
@@ -6442,7 +6442,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "効 (effective) + 果 (fruit, result) → the result of being effective → an effect."
+  "meaning_logic": "効 (effect) + 果 (fruit) → the result of being effective → an effect."
  },
  {
   "word": "懐かしい",
@@ -6452,7 +6452,7 @@
    {
     "char": "懐",
     "type": "kanji",
-    "meaning": "Nostalgia",
+    "meaning": "pocket",
     "onyomi": [
      "かい"
     ],
@@ -6469,7 +6469,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "懐 (nostalgia) + かしい → nostalgic."
+  "meaning_logic": "懐 (pocket) + かしい → nostalgic."
  },
  {
   "word": "子ども",
@@ -6479,7 +6479,7 @@
    {
     "char": "子",
     "type": "kanji",
-    "meaning": "Child",
+    "meaning": "child",
     "onyomi": [
      "し",
      "す"
@@ -6506,7 +6506,7 @@
    {
     "char": "気",
     "type": "kanji",
-    "meaning": "Energy",
+    "meaning": "spirit",
     "onyomi": [
      "き",
      "け"
@@ -6518,7 +6518,7 @@
    {
     "char": "持",
     "type": "kanji",
-    "meaning": "Hold",
+    "meaning": "hold",
     "onyomi": [
      "じ"
     ],
@@ -6534,7 +6534,7 @@
    }
   ],
   "reading_pattern": "on-kun",
-  "meaning_logic": "気 (energy, spirit) + 持 (hold) + ち → what you hold in your spirit → a feeling."
+  "meaning_logic": "気 (spirit) + 持 (hold) + ち → what you hold in your spirit → a feeling."
  },
  {
   "word": "建てる",
@@ -6544,7 +6544,7 @@
    {
     "char": "建",
     "type": "kanji",
-    "meaning": "Build",
+    "meaning": "build",
     "onyomi": [
      "けん"
     ],
@@ -6570,7 +6570,7 @@
    {
     "char": "見",
     "type": "kanji",
-    "meaning": "See",
+    "meaning": "see",
     "onyomi": [
      "けん"
     ],
@@ -6583,7 +6583,7 @@
    {
     "char": "学",
     "type": "kanji",
-    "meaning": "Study",
+    "meaning": "study",
     "onyomi": [
      "がく"
     ],
@@ -6605,7 +6605,7 @@
    {
     "char": "会",
     "type": "kanji",
-    "meaning": "Meet",
+    "meaning": "meet",
     "onyomi": [
      "かい"
     ],
@@ -6645,7 +6645,7 @@
    {
     "char": "友",
     "type": "kanji",
-    "meaning": "Friend",
+    "meaning": "friend",
     "onyomi": [
      "ゆう"
     ],
@@ -6658,7 +6658,7 @@
    {
     "char": "達",
     "type": "kanji",
-    "meaning": "Attain",
+    "meaning": "attain",
     "onyomi": [
      "たつ"
     ],
@@ -6672,7 +6672,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "友 (friend) + 達 (attain; here a plural suffix) → friends; a friend."
+  "meaning_logic": "友 (friend) + 達 (attain) → friends; a friend."
  },
  {
   "word": "都合",
@@ -6682,7 +6682,7 @@
    {
     "char": "都",
     "type": "kanji",
-    "meaning": "Metropolis",
+    "meaning": "metropolis",
     "onyomi": [
      "と",
      "つ"
@@ -6696,7 +6696,7 @@
    {
     "char": "合",
     "type": "kanji",
-    "meaning": "Suit",
+    "meaning": "fit; combine",
     "onyomi": [
      "ごう",
      "がっ"
@@ -6710,7 +6710,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "都 (metropolis) + 合 (fit, combine) → how things fit together → circumstances, convenience; the modern sense is set."
+  "meaning_logic": "都 (metropolis) + 合 (fit; combine) → how things fit together → circumstances, convenience; the modern sense is set."
  },
  {
   "word": "悪い",
@@ -6720,7 +6720,7 @@
    {
     "char": "悪",
     "type": "kanji",
-    "meaning": "Bad",
+    "meaning": "bad",
     "onyomi": [
      "あく",
      "お"
@@ -6758,7 +6758,7 @@
    {
     "char": "束",
     "type": "kanji",
-    "meaning": "Bundle",
+    "meaning": "bundle",
     "onyomi": [
      "そく"
     ],
@@ -6780,7 +6780,7 @@
    {
     "char": "住",
     "type": "kanji",
-    "meaning": "Dwell",
+    "meaning": "dwell",
     "onyomi": [
      "じゅう"
     ],
@@ -6793,7 +6793,7 @@
    {
     "char": "所",
     "type": "kanji",
-    "meaning": "Place",
+    "meaning": "place",
     "onyomi": [
      "しょ"
     ],
@@ -6815,7 +6815,7 @@
    {
     "char": "知",
     "type": "kanji",
-    "meaning": "Know",
+    "meaning": "know",
     "onyomi": [
      "ち"
     ],
@@ -6855,7 +6855,7 @@
    {
     "char": "登",
     "type": "kanji",
-    "meaning": "Climb",
+    "meaning": "climb up",
     "onyomi": [
      "とう",
      "と"
@@ -6869,7 +6869,7 @@
    {
     "char": "場",
     "type": "kanji",
-    "meaning": "Location",
+    "meaning": "place",
     "onyomi": [
      "じょう"
     ],
@@ -6881,7 +6881,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "登 (climb, enter) + 場 (place, scene) → entering the scene → an appearance."
+  "meaning_logic": "登 (climb up) + 場 (place) → entering the scene → an appearance."
  },
  {
   "word": "人々",
@@ -6891,7 +6891,7 @@
    {
     "char": "人",
     "type": "kanji",
-    "meaning": "Person",
+    "meaning": "person",
     "onyomi": [
      "にん",
      "じん"
@@ -6906,7 +6906,7 @@
    {
     "char": "々",
     "type": "kanji",
-    "meaning": "Repeater",
+    "meaning": "iteration mark",
     "onyomi": [],
     "kunyomi": [
      "のま"
@@ -6918,7 +6918,7 @@
    }
   ],
   "reading_pattern": "kun-kun",
-  "meaning_logic": "人 (person) + 々 (repetition mark) → people."
+  "meaning_logic": "人 (person) + 々 (iteration mark) → people."
  },
  {
   "word": "生活",
@@ -6928,7 +6928,7 @@
    {
     "char": "生",
     "type": "kanji",
-    "meaning": "Life",
+    "meaning": "life",
     "onyomi": [
      "せい",
      "しょう"
@@ -6946,7 +6946,7 @@
    {
     "char": "活",
     "type": "kanji",
-    "meaning": "Lively",
+    "meaning": "lively",
     "onyomi": [
      "かつ"
     ],
@@ -6968,7 +6968,7 @@
    {
     "char": "大",
     "type": "kanji",
-    "meaning": "Big",
+    "meaning": "big",
     "onyomi": [
      "たい",
      "だい"
@@ -6995,7 +6995,7 @@
    {
     "char": "会",
     "type": "kanji",
-    "meaning": "Meet",
+    "meaning": "meet",
     "onyomi": [
      "かい"
     ],
@@ -7008,7 +7008,7 @@
    {
     "char": "議",
     "type": "kanji",
-    "meaning": "Deliberation",
+    "meaning": "deliberation; discuss",
     "onyomi": [
      "ぎ"
     ],
@@ -7018,7 +7018,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "会 (meet) + 議 (deliberation, discussion) → a meeting."
+  "meaning_logic": "会 (meet) + 議 (deliberation; discuss) → a meeting."
  },
  {
   "word": "司会",
@@ -7028,7 +7028,7 @@
    {
     "char": "司",
     "type": "kanji",
-    "meaning": "Director",
+    "meaning": "director",
     "onyomi": [
      "し"
     ],
@@ -7041,7 +7041,7 @@
    {
     "char": "会",
     "type": "kanji",
-    "meaning": "Meet",
+    "meaning": "meet; meeting",
     "onyomi": [
      "かい"
     ],
@@ -7053,7 +7053,7 @@
    }
   ],
   "reading_pattern": "on-on",
-  "meaning_logic": "司 (director; here ‘manage’) + 会 (meet, meeting) → the one who manages the meeting → a host, an MC."
+  "meaning_logic": "司 (director) + 会 (meet; meeting) → the one who manages the meeting → a host, an MC."
  },
  {
   "word": "引っ越す",
@@ -7063,7 +7063,7 @@
    {
     "char": "引",
     "type": "kanji",
-    "meaning": "Pull",
+    "meaning": "pull",
     "onyomi": [
      "いん"
     ],
@@ -7080,7 +7080,7 @@
    {
     "char": "越",
     "type": "kanji",
-    "meaning": "Go Beyond",
+    "meaning": "go beyond",
     "onyomi": [
      "えつ"
     ],

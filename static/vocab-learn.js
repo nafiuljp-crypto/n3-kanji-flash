@@ -22,6 +22,13 @@
     both: '音+意 both',
     part: '部 part'
   };
+  var TYPE_EN = {
+    'phono-semantic': 'phono-semantic',
+    compound: 'compound ideograph',
+    pictograph: 'pictograph',
+    ideograph: 'ideograph',
+    opaque: 'no kanji structure'
+  };
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
