@@ -39,6 +39,8 @@ MEANINGS_BN_FILE = DATA_DIR / "meanings_bn.json"
 PRACTICE_DATA_FILE = DATA_DIR / "vocab_practice_2025_12.json"
 # Dec 2025 Vocab Learn: the logical breakdowns behind the same 243 words.
 LEARN_DATA_FILE = DATA_DIR / "vocab_learn_2025_12.json"
+# Per-kanji structural logic (components, sound/meaning roles, reading source).
+KANJI_LOGIC_FILE = DATA_DIR / "kanji_logic.json"
 
 # GitHub Pages serves this project under /<repo>/. Absolute URLs keep nested
 # pages working, because GH Pages does not collapse "../" segments.
@@ -338,6 +340,17 @@ def main():
     if [w["word"] for w in learn_words] != [w["word"] for w in practice_words]:
         raise SystemExit(f"{LEARN_DATA_FILE} is not in the practice-data order.")
 
+    if not KANJI_LOGIC_FILE.exists():
+        raise SystemExit(f"{KANJI_LOGIC_FILE} missing — run `python3 tools/gen_kanji_logic.py`.")
+    kanji_logic = json.loads(KANJI_LOGIC_FILE.read_text(encoding="utf-8"))
+    if not isinstance(kanji_logic, dict) or not kanji_logic:
+        raise SystemExit(f"{KANJI_LOGIC_FILE} must be a non-empty JSON object.")
+    learn_kanji = {p["char"] for w in learn_words for p in w["parts"]
+                   if p.get("type") == "kanji"}
+    missing_logic = sorted(learn_kanji - set(kanji_logic))
+    if missing_logic:
+        raise SystemExit(f"{KANJI_LOGIC_FILE} is missing: {''.join(missing_logic)}")
+
     if DIST.exists():
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True)
@@ -453,6 +466,7 @@ def main():
     (DIST / "data").mkdir(parents=True, exist_ok=True)
     shutil.copy2(PRACTICE_DATA_FILE, DIST / "data" / PRACTICE_DATA_FILE.name)
     shutil.copy2(LEARN_DATA_FILE, DIST / "data" / LEARN_DATA_FILE.name)
+    shutil.copy2(KANJI_LOGIC_FILE, DIST / "data" / KANJI_LOGIC_FILE.name)
 
     for f in STATIC_SRC.iterdir():
         if f.is_file():

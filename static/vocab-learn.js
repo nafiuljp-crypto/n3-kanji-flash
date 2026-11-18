@@ -13,8 +13,15 @@
   'use strict';
 
   var DATA_URL = 'data/vocab_learn_2025_12.json';
+  var LOGIC_URL = 'data/kanji_logic.json';
   var RANGE_KEY = 'n3vocab:learn-range:v1';
   var HIDE_KEY = 'n3vocab:learn-hide:v1';
+  var ROLE_LABEL = {
+    sound: '音 sound',
+    meaning: '意 meaning',
+    both: '音+意 both',
+    part: '部 part'
+  };
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -44,7 +51,7 @@
     return chunks.join(' + ') + ' = ' + entry.reading;
   }
 
-  function partChip(p) {
+  function partChip(p, cardIndex, partIndex) {
     if (p.type === 'kana') {
       return '<div class="vl-part is-kana" role="listitem">' +
         '<span class="vl-part-text jp" lang="ja">' + esc(p.text) + '</span>' +
@@ -60,11 +67,61 @@
     var note = p.note
       ? '<span class="vl-readnote">' + esc(p.note) + '</span>'
       : '';
-    return '<div class="vl-part" role="listitem">' +
-      '<span class="vl-part-char jp" lang="ja">' + esc(p.char) + '</span>' +
-      '<span class="vl-part-meaning">' + esc(p.meaning) + '</span>' +
-      used + type + note +
+    var panelId = 'vl-logic-' + cardIndex + '-' + partIndex;
+    return '<div class="vl-part vl-part-logic" role="listitem">' +
+      '<button type="button" class="vl-part-btn" data-logic="' + esc(p.char) + '" ' +
+        'aria-expanded="false" aria-controls="' + panelId + '" ' +
+        'aria-label="' + esc('Why ' + p.char + ': ' + p.meaning) + '">' +
+        '<span class="vl-part-char jp" lang="ja">' + esc(p.char) + '</span>' +
+        '<span class="vl-part-meaning">' + esc(p.meaning) + '</span>' +
+        used + type + note +
+        '<span class="vl-why">why <span class="vl-caret" aria-hidden="true">▾</span></span>' +
+      '</button>' +
       '</div>';
+  }
+
+  function logicPanelHTML(ch, e) {
+    if (!e) {
+      return '<p class="vl-logic-empty">No structural entry for ' + esc(ch) + '.</p>';
+    }
+    var comps = (e.components || []).map(function (c) {
+      var role = c.role || 'part';
+      return '<span class="vl-lcomp vl-lcomp-' + esc(role) + '">' +
+        '<span class="vl-lcomp-label jp" lang="ja">' + esc(c.label) + '</span>' +
+        '<span class="vl-lcomp-meaning">' + esc(c.meaning) + '</span>' +
+        '<span class="vl-role vl-role-' + esc(role) + '">' +
+          esc(ROLE_LABEL[role] || role) + '</span>' +
+        (c.note ? '<span class="vl-lcomp-note">' + esc(c.note) + '</span>' : '') +
+        '</span>';
+    }).join('');
+    var exact = [], near = [];
+    if (e.sound && e.sound.same) {
+      e.sound.same.forEach(function (s) {
+        var w = s.words && s.words[0]
+          ? s.words[0].word + ' (' + s.words[0].reading + ')' : '';
+        var item = s.kanji + ' (' + s.reading + ')' + (w ? ' — ' + w : '');
+        (s.exact ? exact : near).push(item);
+      });
+    }
+    var sound = '';
+    if (e.sound) {
+      sound = '<p class="vl-sound"><span class="vl-logic-tag">Sound pattern</span> ' +
+        esc(e.sound.label) + ' (' + esc(e.sound.reading) + ')' +
+        (exact.length ? ' · same component: ' + esc(exact.join('; ')) : '') +
+        (near.length ? ' · near: ' + esc(near.join('; ')) : '') +
+        '</p>';
+    }
+    return '<div class="vl-logic-head">' +
+        '<span class="vl-logic-kanji jp" lang="ja">' + esc(ch) + '</span>' +
+        '<span class="vl-logic-kind">' + esc(e.kind || '') + '</span>' +
+        '<span class="vl-logic-word">' + esc(e.meaning || '') + '</span>' +
+      '</div>' +
+      '<div class="vl-lcomps">' + comps + '</div>' +
+      '<p class="vl-logic-line"><span class="vl-logic-tag">Meaning</span> ' +
+        esc(e.meaning_line) + '</p>' +
+      '<p class="vl-logic-line"><span class="vl-logic-tag">Reading</span> ' +
+        esc(e.reading_line) + '</p>' +
+      sound;
   }
 
   function cardHTML(entry, index) {
@@ -87,7 +144,12 @@
         '<button type="button" class="vl-reveal" data-act="reveal">Reveal</button>' +
       '</header>' +
       '<div class="vl-parts" role="list" aria-label="Kanji parts">' +
-        entry.parts.map(partChip).join('') +
+        entry.parts.map(function (p, pi) { return partChip(p, index, pi); }).join('') +
+        entry.parts.map(function (p, pi) {
+          if (p.type !== 'kanji' || !p.char) return '';
+          return '<div class="vl-logic-panel" id="vl-logic-' + index + '-' + pi +
+            '" data-for="' + esc(p.char) + '" hidden></div>';
+        }).join('') +
       '</div>' +
       '<p class="vl-compose">' + esc(readingComposition(entry)) + '</p>' +
       readNote +
@@ -104,6 +166,15 @@
       var list = Array.isArray(doc) ? doc : (doc && doc.words ? doc.words : []);
       if (!list.length) throw new Error('No vocabulary entries in ' + url);
       return list;
+    });
+  }
+
+  function loadLogic(url) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error(url + ': HTTP ' + r.status);
+      return r.json();
+    }).then(function (doc) {
+      return doc && typeof doc === 'object' && !Array.isArray(doc) ? doc : {};
     });
   }
 
@@ -154,7 +225,8 @@
     from: 1,
     to: 0,
     hideReadings: false,
-    hideMeanings: false
+    hideMeanings: false,
+    logic: {}
   };
 
   function rangeText() {
@@ -196,21 +268,71 @@
       var b = cards[i].querySelector('.vl-reveal');
       if (b) b.textContent = 'Reveal';
     }
+    var open = container.querySelectorAll('.vl-logic-panel:not([hidden])');
+    for (var j = 0; j < open.length; j++) {
+      var openCard = open[j].closest('.vl-card');
+      if (openCard) closeLogicPanels(openCard);
+    }
+  }
+
+  function closeLogicPanels(card) {
+    var panels = card.querySelectorAll('.vl-logic-panel');
+    for (var i = 0; i < panels.length; i++) {
+      if (panels[i].hidden) continue;
+      panels[i].hidden = true;
+      var btn = card.querySelector('[aria-controls="' + panels[i].id + '"]');
+      if (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+        var chip = btn.closest('.vl-part-logic');
+        if (chip) chip.classList.remove('is-open');
+      }
+    }
+  }
+
+  function toggleLogic(card, btn) {
+    var panelId = btn.getAttribute('aria-controls');
+    var panel = panelId ? card.querySelector('[id="' + panelId + '"]') : null;
+    if (!panel) return;
+    var wasOpen = !panel.hidden;
+    closeLogicPanels(card);
+    if (wasOpen) return;
+    var ch = btn.getAttribute('data-logic');
+    panel.innerHTML = logicPanelHTML(ch, state.logic[ch]);
+    panel.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    var chip = btn.closest('.vl-part-logic');
+    if (chip) chip.classList.add('is-open');
+  }
+
+  function setRevealed(card, on) {
+    card.classList.toggle('revealed', on);
+    var b = card.querySelector('.vl-reveal');
+    if (b) b.textContent = on ? 'Hide' : 'Reveal';
+    if (!on) closeLogicPanels(card);
   }
 
   function toggleReveal(card) {
     if (!state.hideReadings && !state.hideMeanings) return;
-    var on = card.classList.toggle('revealed');
-    var b = card.querySelector('.vl-reveal');
-    if (b) b.textContent = on ? 'Hide' : 'Reveal';
+    setRevealed(card, !card.classList.contains('revealed'));
   }
 
   function mount(container, options) {
     if (!container) return;
     options = options || {};
     var dataUrl = options.dataUrl || DATA_URL;
+    var logicUrl = options.logicUrl || LOGIC_URL;
 
-    loadWords(dataUrl).then(function (words) {
+    Promise.all([
+      loadWords(dataUrl),
+      loadLogic(logicUrl).catch(function (err) {
+        if (root.console && root.console.warn) {
+          root.console.warn('kanji logic unavailable:', err);
+        }
+        return {};
+      })
+    ]).then(function (res) {
+      var words = res[0];
+      state.logic = res[1] || {};
       state.total = words.length;
       var r = readRange(state.total);
       state.from = r.from;
@@ -276,6 +398,19 @@
           return;
         }
 
+        var logicBtn = t.closest('[data-logic]');
+        if (logicBtn) {
+          var logicCard = logicBtn.closest('.vl-card');
+          if (logicCard) {
+            if ((state.hideReadings || state.hideMeanings) &&
+                !logicCard.classList.contains('revealed')) {
+              setRevealed(logicCard, true);
+            }
+            toggleLogic(logicCard, logicBtn);
+          }
+          return;
+        }
+
         if (t.closest('a, input, button')) return;
         var cardEl = t.closest('.vl-card');
         if (cardEl) toggleReveal(cardEl);
@@ -321,11 +456,14 @@
 
   return {
     DATA_URL: DATA_URL,
+    LOGIC_URL: LOGIC_URL,
     RANGE_KEY: RANGE_KEY,
     HIDE_KEY: HIDE_KEY,
+    ROLE_LABEL: ROLE_LABEL,
     esc: esc,
     readingComposition: readingComposition,
     cardHTML: cardHTML,
+    logicPanelHTML: logicPanelHTML,
     mount: mount
   };
 });

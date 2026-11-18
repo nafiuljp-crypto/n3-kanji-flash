@@ -1,0 +1,4983 @@
+{
+ "西": {
+  "kind": "pictograph",
+  "meaning": "West",
+  "components": [
+   {
+    "label": "西",
+    "meaning": "West",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph: the whole glyph is \"west\"; no component logic.",
+  "reading_line": "On せい is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is にし."
+ },
+ "洋": {
+  "kind": "phono-semantic",
+  "meaning": "Western Style",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "羊",
+    "meaning": "Sheep",
+    "role": "sound",
+    "reading": "よう"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the meaning side (water); 羊 (Sheep) is the sound component, giving よう. So 洋 means \"Western style; ocean\" — the water radical places it in the sea/ocean field.",
+  "reading_line": "The on reading よう comes from the sound component 羊.",
+  "sound": {
+   "label": "羊",
+   "reading": "よう",
+   "same": [
+    {
+     "kanji": "詳",
+     "reading": "しょう",
+     "exact": false,
+     "words": [
+      {
+       "word": "詳しい",
+       "reading": "くわしい"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "建": {
+  "kind": "opaque",
+  "meaning": "Build",
+  "components": [
+   {
+    "label": "廴",
+    "meaning": "Yoga",
+    "role": "meaning"
+   },
+   {
+    "label": "聿",
+    "meaning": "Brush",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "建 = 廴 (the long-stride radical) + 聿 (brush); the parts suggest setting something up, but no exact sound key for けん.",
+  "reading_line": "On けん: no component here carries it exactly; the on is learned with the kanji. 建物 (たてもの) uses the native kun reading, tied to the meaning."
+ },
+ "物": {
+  "kind": "opaque",
+  "meaning": "Thing",
+  "components": [
+   {
+    "label": "牛",
+    "meaning": "Cow",
+    "role": "meaning"
+   },
+   {
+    "label": "勿",
+    "meaning": "Wing",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "牛 (Cow) is the semantic side (cow); the rest of the modern shape does not compose \"Thing\" — learn it with 建物 (たてもの).",
+  "reading_line": "勿 (もち) is close to ぶつ/もつ but not exact. 建物 (たてもの) uses the native kun reading, tied to the meaning."
+ },
+ "写": {
+  "kind": "opaque",
+  "meaning": "Copy",
+  "components": [
+   {
+    "label": "冖",
+    "meaning": "Forehead",
+    "role": "part"
+   },
+   {
+    "label": "Beggar",
+    "meaning": "Beggar",
+    "role": "part"
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "写 is a simplified form of 寫; 冖 (cover) is the modern radical, but the parts do not compose \"copy\" — learn 写 with 写真 (しゃしん).",
+  "reading_line": "写 is a simplified form of 寫; no sound component survives. The native kun reading is うつ."
+ },
+ "真": {
+  "kind": "opaque",
+  "meaning": "Reality",
+  "components": [
+   {
+    "label": "Pope",
+    "meaning": "Pope",
+    "role": "part"
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   },
+   {
+    "label": "ハ",
+    "meaning": "Fins",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "真 is a simplified 眞; the modern parts do not compose \"reality\" — learn it with 写真 (しゃしん).",
+  "reading_line": "On しん: no component here carries it exactly; the on is learned with the kanji. The native kun reading is ま."
+ },
+ "声": {
+  "kind": "opaque",
+  "meaning": "Voice",
+  "components": [
+   {
+    "label": "士",
+    "meaning": "Samurai",
+    "role": "part"
+   },
+   {
+    "label": "尸",
+    "meaning": "Flag",
+    "role": "part"
+   },
+   {
+    "label": "丨",
+    "meaning": "Stick",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "声 is a simplified form of 聲; the modern parts (士, 尸, 丨) do not compose \"voice\" — learn 声 with 声優 (せいゆう).",
+  "reading_line": "声 is a simplified form of 聲; no sound component survives. The native kun reading is こえ."
+ },
+ "優": {
+  "kind": "phono-semantic",
+  "meaning": "Superior",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "憂",
+    "meaning": "Grief",
+    "role": "sound",
+    "reading": "ゆう"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the meaning side (person); 憂 (Grief) is the sound component, giving ゆう. So 優 means \"superior; gentle\" — the sense is lexical.",
+  "reading_line": "The on reading ゆう comes from the sound component 憂. WaniKani splits 憂 into 百+冖+心+夂; the sound component is the whole 憂 (ゆう). The native kun readings are やさ, すぐ."
+ },
+ "今": {
+  "kind": "pictograph",
+  "meaning": "Now",
+  "components": [
+   {
+    "label": "今",
+    "meaning": "Now",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape kanji: the whole glyph is \"now\"; no component logic.",
+  "reading_line": "On こん is learned with the kanji — the shape gives the meaning, not the sound. 今 (いま) uses the native kun reading, tied to the meaning."
+ },
+ "回": {
+  "kind": "ideograph",
+  "meaning": "Times",
+  "components": [
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part",
+    "note": "outer 口 is the enclosure 囗, not \"mouth\""
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "An inner 口 (mouth/vessel) inside an enclosure 囗 → go around; a turn; a time.",
+  "reading_line": "On かい is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is まわ."
+ },
+ "苦": {
+  "kind": "opaque",
+  "meaning": "Suffering",
+  "components": [
+   {
+    "label": "艹",
+    "meaning": "Flowers",
+    "role": "meaning"
+   },
+   {
+    "label": "古",
+    "meaning": "Old",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "艹 (Flowers) is the semantic side (plants); the rest of the modern shape does not compose \"Suffering\" — learn it with 苦しい (くるしい).",
+  "reading_line": "古 (こ) is the historical sound source; こ is not く — no exact key. 苦しい (くるしい) uses the native kun reading, tied to the meaning."
+ },
+ "試": {
+  "kind": "opaque",
+  "meaning": "Try",
+  "components": [
+   {
+    "label": "言",
+    "meaning": "Say",
+    "role": "meaning"
+   },
+   {
+    "label": "弋",
+    "meaning": "Ceremony",
+    "role": "part"
+   },
+   {
+    "label": "工",
+    "meaning": "Construction",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "言 (Say) is the semantic side (speech/words); the rest of the modern shape does not compose \"Try\" — learn it with 試合 (しあい).",
+  "reading_line": "式 (しき) is the historical sound source, but しき is not し — no exact key. The native kun readings are こころ, ため."
+ },
+ "合": {
+  "kind": "ideograph",
+  "meaning": "Suit",
+  "components": [
+   {
+    "label": "亼",
+    "meaning": "Roof",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "亼 (Roof) + 口 (Mouth) → a lid (亼) over a mouth or vessel (口) → things fitting together → suit; match.",
+  "reading_line": "On ごう is learned with the kanji; the parts give the meaning, not the sound. 試合 (しあい) uses the native kun reading, tied to the meaning."
+ },
+ "惜": {
+  "kind": "phono-semantic",
+  "meaning": "Frugal",
+  "components": [
+   {
+    "label": "忄",
+    "meaning": "Soul",
+    "role": "meaning"
+   },
+   {
+    "label": "昔",
+    "meaning": "Long Ago",
+    "role": "sound",
+    "reading": "せき"
+   }
+  ],
+  "meaning_line": "忄 (Soul) is the meaning side (feeling); 昔 (Long Ago) is the sound component, giving せき. So 惜しい means \"precious; regrettable\" — a feeling held about something.",
+  "reading_line": "The on reading せき comes from the sound component 昔. 惜しい (おしい) uses the native kun reading, tied to the meaning."
+ },
+ "悔": {
+  "kind": "opaque",
+  "meaning": "Regret",
+  "components": [
+   {
+    "label": "忄",
+    "meaning": "Soul",
+    "role": "meaning"
+   },
+   {
+    "label": "毎",
+    "meaning": "Every",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "忄 (Soul) is the semantic side (heart/feeling); the rest of the modern shape does not compose \"Regret\" — learn it with 悔しい (くやしい).",
+  "reading_line": "毎 (まい) is close to かい but not exact. 悔しい (くやしい) uses the native kun reading, tied to the meaning."
+ },
+ "厳": {
+  "kind": "opaque",
+  "meaning": "Strict",
+  "components": [
+   {
+    "label": "𭕄",
+    "meaning": "Grass",
+    "role": "part"
+   },
+   {
+    "label": "厂",
+    "meaning": "Cliff",
+    "role": "meaning"
+   },
+   {
+    "label": "Elf",
+    "meaning": "Elf",
+    "role": "part"
+   },
+   {
+    "label": "夂",
+    "meaning": "Winter",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "厂 (Cliff) is the semantic side (cliff); the rest of the modern shape does not compose \"Strict\" — learn it with 厳しい (きびしい).",
+  "reading_line": "On げん: no component here carries it exactly; the on is learned with the kanji. 厳しい (きびしい) uses the native kun reading, tied to the meaning."
+ },
+ "手": {
+  "kind": "pictograph",
+  "meaning": "Hand",
+  "components": [
+   {
+    "label": "手",
+    "meaning": "Hand",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a hand: the whole glyph is the meaning.",
+  "reading_line": "On しゅ is learned with the kanji — the shape gives the meaning, not the sound. 手紙 (てがみ) uses the native kun reading, tied to the meaning."
+ },
+ "紙": {
+  "kind": "phono-semantic",
+  "meaning": "Paper",
+  "components": [
+   {
+    "label": "糸",
+    "meaning": "Thread",
+    "role": "meaning"
+   },
+   {
+    "label": "氏",
+    "meaning": "Clan",
+    "role": "sound",
+    "reading": "し"
+   }
+  ],
+  "meaning_line": "糸 (Thread) is the meaning side (thread/paper); 氏 (Clan) is the sound component, giving し. 糸 is the material; the result is \"paper\".",
+  "reading_line": "The on reading し comes from the sound component 氏. 手紙 (てがみ) uses the native kun reading, tied to the meaning."
+ },
+ "他": {
+  "kind": "opaque",
+  "meaning": "Other",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "也",
+    "meaning": "Alligator",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the semantic side (person); the rest of the modern shape does not compose \"Other\" — learn it with 他人 (たにん).",
+  "reading_line": "On た: no component here carries it exactly; the on is learned with the kanji. The native kun reading is ほか."
+ },
+ "人": {
+  "kind": "pictograph",
+  "meaning": "Person",
+  "components": [
+   {
+    "label": "人",
+    "meaning": "Person",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a person's side profile.",
+  "reading_line": "On にん is learned with the kanji — the shape gives the meaning, not the sound. 人 (ひと) uses the native kun reading, tied to the meaning."
+ },
+ "見": {
+  "kind": "ideograph",
+  "meaning": "See",
+  "components": [
+   {
+    "label": "目",
+    "meaning": "Eye",
+    "role": "part"
+   },
+   {
+    "label": "儿",
+    "meaning": "Legs",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "目 (Eye) + 儿 (Legs) → an eye (目) on legs (儿) → see.",
+  "reading_line": "On けん is learned with the kanji; the parts give the meaning, not the sound. 見せる (みせる) uses the native kun reading, tied to the meaning."
+ },
+ "担": {
+  "kind": "phono-semantic",
+  "meaning": "Carry",
+  "components": [
+   {
+    "label": "扌",
+    "meaning": "Fingers",
+    "role": "meaning"
+   },
+   {
+    "label": "旦",
+    "meaning": "Dawn",
+    "role": "sound",
+    "reading": "たん"
+   }
+  ],
+  "meaning_line": "扌 (Fingers) is the meaning side (hand/action); 旦 (Dawn) is the sound component, giving たん. So 担 means \"carry on the shoulder\".",
+  "reading_line": "The on reading たん comes from the sound component 旦. The native kun readings are にな, かつ."
+ },
+ "任": {
+  "kind": "opaque",
+  "meaning": "Duty",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "王",
+    "meaning": "King",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the semantic side (person); the rest of the modern shape does not compose \"Duty\" — learn it with 担任 (たんにん).",
+  "reading_line": "On にん: no component here carries it exactly; the on is learned with the kanji. The native kun reading is まか."
+ },
+ "昨": {
+  "kind": "opaque",
+  "meaning": "Previous",
+  "components": [
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "meaning"
+   },
+   {
+    "label": "乍",
+    "meaning": "Key",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "日 (Sun) is the semantic side (sun/time); the rest of the modern shape does not compose \"Previous\" — learn it with 昨日 (きのう).",
+  "reading_line": "乍 has the sound さく, but WaniKani gives 乍 no kanji reading — unverified."
+ },
+ "日": {
+  "kind": "pictograph",
+  "meaning": "Sun",
+  "components": [
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of the sun.",
+  "reading_line": "On じつ is learned with the kanji — the shape gives the meaning, not the sound. The native kun readings are ひ, か."
+ },
+ "腹": {
+  "kind": "opaque",
+  "meaning": "Belly",
+  "components": [
+   {
+    "label": "月",
+    "meaning": "Moon",
+    "role": "meaning"
+   },
+   {
+    "label": "复",
+    "meaning": "Black Hole",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "月 (Moon) is the semantic side (body/moon); the rest of the modern shape does not compose \"Belly\" — learn it with 腹痛 (ふくつう).",
+  "reading_line": "On ふく: no component here carries it exactly; the on is learned with the kanji. The native kun reading is はら."
+ },
+ "痛": {
+  "kind": "opaque",
+  "meaning": "Pain",
+  "components": [
+   {
+    "label": "疒",
+    "meaning": "Sick",
+    "role": "meaning"
+   },
+   {
+    "label": "マ",
+    "meaning": "Mama",
+    "role": "part"
+   },
+   {
+    "label": "用",
+    "meaning": "Task",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "疒 (Sick) is the semantic side (illness); the rest of the modern shape does not compose \"Pain\" — learn it with 腹痛 (ふくつう).",
+  "reading_line": "用 (よう) is part of the sound source 甬 (つう), but 用 reads よう — no exact key. The native kun reading is いた."
+ },
+ "学": {
+  "kind": "opaque",
+  "meaning": "Study",
+  "components": [
+   {
+    "label": "龸",
+    "meaning": "Viking",
+    "role": "part"
+   },
+   {
+    "label": "子",
+    "meaning": "Child",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "子 (Child) is the semantic side (child); the rest of the modern shape does not compose \"Study\" — learn it with 学校 (がっこう).",
+  "reading_line": "学 is a simplified form of 學; no exact sound component survives. The native kun reading is まな."
+ },
+ "校": {
+  "kind": "phono-semantic",
+  "meaning": "School",
+  "components": [
+   {
+    "label": "木",
+    "meaning": "Tree",
+    "role": "meaning"
+   },
+   {
+    "label": "交",
+    "meaning": "Mix",
+    "role": "sound",
+    "reading": "こう"
+   }
+  ],
+  "meaning_line": "木 (Tree) is the meaning side (wood); 交 (Mix) is the sound component, giving こう. So 校 means \"school\" — a wooden building/frame.",
+  "reading_line": "The on reading こう comes from the sound component 交. WaniKani splits 交 into 亠+父; the sound component is 交 (こう).",
+  "sound": {
+   "label": "交",
+   "reading": "こう",
+   "same": [
+    {
+     "kanji": "効",
+     "reading": "こう",
+     "exact": true,
+     "words": [
+      {
+       "word": "効果",
+       "reading": "こうか"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "休": {
+  "kind": "ideograph",
+  "meaning": "Rest",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "part"
+   },
+   {
+    "label": "木",
+    "meaning": "Tree",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) + 木 (Tree) → a person (ｲ) resting at a tree (木) → rest.",
+  "reading_line": "On きゅう is learned with the kanji; the parts give the meaning, not the sound. 休む (やすむ) uses the native kun reading, tied to the meaning."
+ },
+ "頭": {
+  "kind": "phono-semantic",
+  "meaning": "Head",
+  "components": [
+   {
+    "label": "豆",
+    "meaning": "Beans",
+    "role": "sound",
+    "reading": "とう"
+   },
+   {
+    "label": "頁",
+    "meaning": "Geoduck",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "頁 (Geoduck) is the meaning side (head); 豆 (Beans) is the sound component, giving とう. So 頭 means \"head\".",
+  "reading_line": "The on reading とう comes from the sound component 豆. 頭痛 (ずつう) uses ず, a shift from とう. The native kun readings are あたま, かしら.",
+  "sound": {
+   "label": "豆",
+   "reading": "とう",
+   "same": [
+    {
+     "kanji": "登",
+     "reading": "とう",
+     "exact": true,
+     "words": [
+      {
+       "word": "登場",
+       "reading": "とうじょう"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "不": {
+  "kind": "pictograph",
+  "meaning": "Not",
+  "components": [
+   {
+    "label": "不",
+    "meaning": "Not",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape kanji: the whole glyph is \"not\"; no component logic.",
+  "reading_line": "On ふ is learned with the kanji — the shape gives the meaning, not the sound."
+ },
+ "屈": {
+  "kind": "ideograph",
+  "meaning": "Yield",
+  "components": [
+   {
+    "label": "尸",
+    "meaning": "Flag",
+    "role": "part",
+    "note": "here = body, not \"flag\""
+   },
+   {
+    "label": "出",
+    "meaning": "Exit",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "尸 (Flag) + 出 (Exit) → a body (尸) bent out (出) → yield; bend.",
+  "reading_line": "On くつ is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is かが."
+ },
+ "駅": {
+  "kind": "opaque",
+  "meaning": "Station",
+  "components": [
+   {
+    "label": "馬",
+    "meaning": "Horse",
+    "role": "meaning"
+   },
+   {
+    "label": "尺",
+    "meaning": "Shrimp",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "馬 (Horse) is the semantic side (horse); the rest of the modern shape does not compose \"Station\" — learn it with 駅 (えき).",
+  "reading_line": "The right side is a simplified phonetic, not 尺 — no exact key for えき."
+ },
+ "終": {
+  "kind": "opaque",
+  "meaning": "End",
+  "components": [
+   {
+    "label": "糸",
+    "meaning": "Thread",
+    "role": "meaning"
+   },
+   {
+    "label": "夂",
+    "meaning": "Winter",
+    "role": "part"
+   },
+   {
+    "label": "冫",
+    "meaning": "Ice",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "糸 (Thread) is the semantic side (thread/textile); the rest of the modern shape does not compose \"End\" — learn it with 終点 (しゅうてん).",
+  "reading_line": "冬 (とう) is close to しゅう but not exact. 終わり (おわり) uses the native kun reading, tied to the meaning."
+ },
+ "点": {
+  "kind": "opaque",
+  "meaning": "Point",
+  "components": [
+   {
+    "label": "占",
+    "meaning": "Fortune",
+    "role": "part"
+   },
+   {
+    "label": "灬",
+    "meaning": "Boil",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "点 is a simplified 點; 灬 (fire) is the semantic side, 占 the sound source (せん) — てん is not an exact key.",
+  "reading_line": "On てん: 占 (せん) is the historical sound source, not exact. The native kun reading is つ."
+ },
+ "電": {
+  "kind": "phono-semantic",
+  "meaning": "Electricity",
+  "components": [
+   {
+    "label": "雨",
+    "meaning": "Rain",
+    "role": "meaning"
+   },
+   {
+    "label": "田",
+    "meaning": "Rice Paddy",
+    "role": "sound",
+    "reading": "でん"
+   },
+   {
+    "label": "乚",
+    "meaning": "Umbrella",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "雨 (Rain) is the meaning side (weather); 田 (Rice Paddy) is the sound component, giving でん. So 電 means \"electricity\" — lightning is weather.",
+  "reading_line": "The on reading でん comes from the sound component 田."
+ },
+ "充": {
+  "kind": "opaque",
+  "meaning": "Allocate",
+  "components": [
+   {
+    "label": "亠",
+    "meaning": "Lid",
+    "role": "part"
+   },
+   {
+    "label": "厶",
+    "meaning": "Private",
+    "role": "part"
+   },
+   {
+    "label": "儿",
+    "meaning": "Legs",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "亠 + 厶 + 儿 are the modern strokes of 充; they do not compose \"allocate\" — learn 充 as a whole with 充電 (じゅうでん).",
+  "reading_line": "On じゅう: no component here carries it exactly; the on is learned with the kanji. The native kun readings are あ, み."
+ },
+ "填": {
+  "kind": "opaque",
+  "meaning": "fill in",
+  "components": [
+   {
+    "label": "土",
+    "meaning": "Dirt",
+    "role": "meaning"
+   },
+   {
+    "label": "真",
+    "meaning": "Reality",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "土 (Dirt) is the semantic side (earth); the rest of the modern shape does not compose \"fill in\" — learn it with 充填 (じゅうてん).",
+  "reading_line": "On てん: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "泣": {
+  "kind": "opaque",
+  "meaning": "Cry",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "立",
+    "meaning": "Stand",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Cry\" — learn it with 泣く (なく).",
+  "reading_line": "On きゅう: no component here carries it exactly; the on is learned with the kanji. 泣く (なく) uses the native kun reading, tied to the meaning."
+ },
+ "働": {
+  "kind": "phono-semantic",
+  "meaning": "Work",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "動",
+    "meaning": "Move",
+    "role": "both",
+    "reading": "どう",
+    "note": "also the meaning side"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the person side; 動 (Move) supplies both \"move\" and the sound どう → a person moving → work; 働 is a Japanese-made kanji.",
+  "reading_line": "The on reading どう comes from the sound component 動. WaniKani splits 動 into 重+力; the sound component is the whole 動 (どう). 働く (はたらく) uses the native kun reading, tied to the meaning."
+ },
+ "驚": {
+  "kind": "opaque",
+  "meaning": "Surprised",
+  "components": [
+   {
+    "label": "苟",
+    "meaning": "Poem",
+    "role": "part"
+   },
+   {
+    "label": "夂",
+    "meaning": "Winter",
+    "role": "part"
+   },
+   {
+    "label": "馬",
+    "meaning": "Horse",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "馬 (horse) is the meaning side — a horse shying; 敬 is the historical sound source (けい), not exact for きょう.",
+  "reading_line": "On きょう: 敬 (けい) is the historical sound source, not exact. 驚く (おどろく) uses the native kun reading, tied to the meaning."
+ },
+ "着": {
+  "kind": "opaque",
+  "meaning": "Wear",
+  "components": [
+   {
+    "label": "丷",
+    "meaning": "Horns",
+    "role": "part"
+   },
+   {
+    "label": "王",
+    "meaning": "King",
+    "role": "part"
+   },
+   {
+    "label": "丿",
+    "meaning": "Slide",
+    "role": "part"
+   },
+   {
+    "label": "目",
+    "meaning": "Eye",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "着 is a simplified variant of 著; the modern parts (丷, 王, 丿, 目) do not compose \"wear\" — learn it with 着物 (きもの).",
+  "reading_line": "On ちゃく: no component here carries it exactly; the on is learned with the kanji. 着物 (きもの) uses the native kun reading, tied to the meaning."
+ },
+ "襟": {
+  "kind": "phono-semantic",
+  "meaning": "Collar",
+  "components": [
+   {
+    "label": "衤",
+    "meaning": "Outfit",
+    "role": "meaning"
+   },
+   {
+    "label": "禁",
+    "meaning": "Prohibit",
+    "role": "sound",
+    "reading": "きん"
+   }
+  ],
+  "meaning_line": "衤 (Outfit) is the meaning side (clothing); 禁 (Prohibit) is the sound component, giving きん. So 襟 means \"collar\".",
+  "reading_line": "The on reading きん comes from the sound component 禁. WaniKani splits 禁 into 木+示; the sound component is the whole 禁 (きん). 襟 (えり) uses the native kun reading, tied to the meaning."
+ },
+ "袖": {
+  "kind": "opaque",
+  "meaning": "Sleeve",
+  "components": [
+   {
+    "label": "衤",
+    "meaning": "Outfit",
+    "role": "meaning"
+   },
+   {
+    "label": "由",
+    "meaning": "Reason",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "衤 (Outfit) is the semantic side (clothing); the rest of the modern shape does not compose \"Sleeve\" — learn it with 袖 (そで).",
+  "reading_line": "On しゅう: no component here carries it exactly; the on is learned with the kanji. 袖 (そで) uses the native kun reading, tied to the meaning."
+ },
+ "糸": {
+  "kind": "pictograph",
+  "meaning": "Thread",
+  "components": [
+   {
+    "label": "糸",
+    "meaning": "Thread",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of twisted silk threads.",
+  "reading_line": "On し is learned with the kanji — the shape gives the meaning, not the sound. 糸 (いと) uses the native kun reading, tied to the meaning."
+ },
+ "母": {
+  "kind": "pictograph",
+  "meaning": "Mother",
+  "components": [
+   {
+    "label": "毋",
+    "meaning": "Window",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a woman with emphasized breasts → mother.",
+  "reading_line": "On ぼ is learned with the kanji — the shape gives the meaning, not the sound. 母 (はは) uses the native kun reading, tied to the meaning."
+ },
+ "郵": {
+  "kind": "opaque",
+  "meaning": "Mail",
+  "components": [
+   {
+    "label": "垂",
+    "meaning": "Droopy",
+    "role": "part"
+   },
+   {
+    "label": "阝",
+    "meaning": "Building",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "阝 (Building) is the semantic side (place); the rest of the modern shape does not compose \"Mail\" — learn it with 郵便 (ゆうびん).",
+  "reading_line": "On ゆう: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "便": {
+  "kind": "opaque",
+  "meaning": "Convenience",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   },
+   {
+    "label": "田",
+    "meaning": "Rice Paddy",
+    "role": "part"
+   },
+   {
+    "label": "メ",
+    "meaning": "Treasure",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the semantic side (person); the rest of the modern shape does not compose \"Convenience\" — learn it with 郵便 (ゆうびん).",
+  "reading_line": "On びん: no component here carries it exactly; the on is learned with the kanji. The native kun reading is たよ."
+ },
+ "雄": {
+  "kind": "opaque",
+  "meaning": "Male",
+  "components": [
+   {
+    "label": "ナ",
+    "meaning": "Narwhal",
+    "role": "part"
+   },
+   {
+    "label": "ム",
+    "meaning": "Private",
+    "role": "part"
+   },
+   {
+    "label": "隹",
+    "meaning": "Turkey",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "隹 (Turkey) is the semantic side (bird); the rest of the modern shape does not compose \"Male\" — learn it with 雄弁 (ゆうべん).",
+  "reading_line": "On ゆう: no component here carries it exactly; the on is learned with the kanji. The native kun readings are おす, お."
+ },
+ "弁": {
+  "kind": "opaque",
+  "meaning": "Dialect",
+  "components": [
+   {
+    "label": "ム",
+    "meaning": "Private",
+    "role": "part"
+   },
+   {
+    "label": "廾",
+    "meaning": "Twenty",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (ム, 廾) do not compose \"Dialect\" — learn 弁 as a whole with 雄弁 (ゆうべん).",
+  "reading_line": "On べん: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "辺": {
+  "kind": "opaque",
+  "meaning": "Area",
+  "components": [
+   {
+    "label": "⻌",
+    "meaning": "Scooter",
+    "role": "meaning"
+   },
+   {
+    "label": "刀",
+    "meaning": "Sword",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "⻌ (Scooter) is the semantic side (movement/path); the rest of the modern shape does not compose \"Area\" — learn it with 辺り (あたり).",
+  "reading_line": "On へん: no component here carries it exactly; the on is learned with the kanji. 辺り (あたり) uses the native kun reading, tied to the meaning."
+ },
+ "多": {
+  "kind": "ideograph",
+  "meaning": "Many",
+  "components": [
+   {
+    "label": "夕",
+    "meaning": "Evening",
+    "role": "part"
+   },
+   {
+    "label": "夕",
+    "meaning": "Evening",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "夕 (Evening) + 夕 (Evening) → evening (夕) after evening (夕) → many.",
+  "reading_line": "On た is learned with the kanji; the parts give the meaning, not the sound. 多い (おおい) uses the native kun reading, tied to the meaning."
+ },
+ "通": {
+  "kind": "opaque",
+  "meaning": "Pass Through",
+  "components": [
+   {
+    "label": "⻌",
+    "meaning": "Scooter",
+    "role": "meaning"
+   },
+   {
+    "label": "マ",
+    "meaning": "Mama",
+    "role": "part"
+   },
+   {
+    "label": "用",
+    "meaning": "Task",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "⻌ (Scooter) is the semantic side (movement/path); the rest of the modern shape does not compose \"Pass Through\" — learn it with 通り (とおり).",
+  "reading_line": "On つう: no component here carries it exactly; the on is learned with the kanji. 通り (とおり) uses the native kun reading, tied to the meaning."
+ },
+ "図": {
+  "kind": "opaque",
+  "meaning": "Diagram",
+  "components": [
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   },
+   {
+    "label": "丶",
+    "meaning": "Drop",
+    "role": "part"
+   },
+   {
+    "label": "メ",
+    "meaning": "Treasure",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "図 is a simplified 圖; the outer 口 is the enclosure 囗, the inside is a reduced 冬 — no component spells \"diagram\".",
+  "reading_line": "On ず: 図 is a simplified 圖; no sound component survives. 図 (ず) is the word here. The native kun readings are え, はか."
+ },
+ "絵": {
+  "kind": "opaque",
+  "meaning": "Picture",
+  "components": [
+   {
+    "label": "糸",
+    "meaning": "Thread",
+    "role": "meaning"
+   },
+   {
+    "label": "会",
+    "meaning": "Meet",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "糸 (Thread) is the semantic side (thread/textile); the rest of the modern shape does not compose \"Picture\" — learn it with 絵 (え).",
+  "reading_line": "On え: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "例": {
+  "kind": "opaque",
+  "meaning": "Example",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "歹",
+    "meaning": "Yakuza",
+    "role": "part"
+   },
+   {
+    "label": "刂",
+    "meaning": "Knife",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the semantic side (person); the rest of the modern shape does not compose \"Example\" — learn it with 例 (れい).",
+  "reading_line": "On れい: no component here carries it exactly; the on is learned with the kanji. The native kun reading is たと."
+ },
+ "貯": {
+  "kind": "opaque",
+  "meaning": "Savings",
+  "components": [
+   {
+    "label": "貝",
+    "meaning": "Shellfish",
+    "role": "meaning"
+   },
+   {
+    "label": "宀",
+    "meaning": "Roof",
+    "role": "part"
+   },
+   {
+    "label": "丁",
+    "meaning": "Street",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "貝 (Shellfish) is the semantic side (money/shell); the rest of the modern shape does not compose \"Savings\" — learn it with 貯金 (ちょきん).",
+  "reading_line": "On ちょ: no component here carries it exactly; the on is learned with the kanji. The native kun readings are た, たくわ."
+ },
+ "金": {
+  "kind": "pictograph",
+  "meaning": "Gold",
+  "components": [
+   {
+    "label": "金",
+    "meaning": "Gold",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of metal/gold in the ground.",
+  "reading_line": "On きん is learned with the kanji — the shape gives the meaning, not the sound. The native kun readings are かね, かな."
+ },
+ "少": {
+  "kind": "ideograph",
+  "meaning": "Few",
+  "components": [
+   {
+    "label": "小",
+    "meaning": "Small",
+    "role": "part"
+   },
+   {
+    "label": "丿",
+    "meaning": "Slide",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "小 (Small) + 丿 (Slide) → small (小) with a stroke removed (丿) → few.",
+  "reading_line": "On しょう is learned with the kanji; the parts give the meaning, not the sound. 少し (すこし) uses the native kun reading, tied to the meaning."
+ },
+ "来": {
+  "kind": "pictograph",
+  "meaning": "Come",
+  "components": [
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   },
+   {
+    "label": "米",
+    "meaning": "Rice",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Pictograph of a wheat plant, borrowed for \"come\"; the modern strokes (一, 米) are not a sound-meaning compound.",
+  "reading_line": "On らい is learned with the kanji — the shape gives the meaning, not the sound. 来る (くる) uses the native kun reading, tied to the meaning."
+ },
+ "年": {
+  "kind": "pictograph",
+  "meaning": "Year",
+  "components": [
+   {
+    "label": "𠂉",
+    "meaning": "Gun",
+    "role": "part"
+   },
+   {
+    "label": "牛",
+    "meaning": "Cow",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Pictograph of a person carrying grain → year; the modern strokes (𠂉, 牛) are not a sound-meaning compound.",
+  "reading_line": "On ねん is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is とし."
+ },
+ "歩": {
+  "kind": "ideograph",
+  "meaning": "Walk",
+  "components": [
+   {
+    "label": "止",
+    "meaning": "Stop",
+    "role": "part"
+   },
+   {
+    "label": "少",
+    "meaning": "Few",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "止 (Stop) + 少 (Few) → stop (止) + few (少) → stepping → walk.",
+  "reading_line": "On ほ is learned with the kanji; the parts give the meaning, not the sound. 歩く (あるく) uses the native kun reading, tied to the meaning."
+ },
+ "道": {
+  "kind": "ideograph",
+  "meaning": "Road",
+  "components": [
+   {
+    "label": "⻌",
+    "meaning": "Scooter",
+    "role": "part"
+   },
+   {
+    "label": "首",
+    "meaning": "Neck",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "⻌ (Scooter) + 首 (Neck) → movement (⻌) + head (首) → the road one heads along.",
+  "reading_line": "On どう is learned with the kanji; the parts give the meaning, not the sound. 道 (みち) uses the native kun reading, tied to the meaning."
+ },
+ "打": {
+  "kind": "ideograph",
+  "meaning": "Hit",
+  "components": [
+   {
+    "label": "扌",
+    "meaning": "Fingers",
+    "role": "part"
+   },
+   {
+    "label": "丁",
+    "meaning": "Street",
+    "role": "part",
+    "note": "here = nail, not \"street\""
+   }
+  ],
+  "meaning_line": "扌 (Fingers) + 丁 (Street) → hand (扌) + nail (丁) → strike.",
+  "reading_line": "On だ is learned with the kanji; the parts give the meaning, not the sound. 打つ (うつ) uses the native kun reading, tied to the meaning."
+ },
+ "音": {
+  "kind": "ideograph",
+  "meaning": "Sound",
+  "components": [
+   {
+    "label": "言",
+    "meaning": "Say",
+    "role": "part"
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "言 (Say) + 一 (Ground) → speech (言) with one (一) tone → sound.",
+  "reading_line": "On おん is learned with the kanji; the parts give the meaning, not the sound. 音 (おと) uses the native kun reading, tied to the meaning."
+ },
+ "聞": {
+  "kind": "phono-semantic",
+  "meaning": "Hear",
+  "components": [
+   {
+    "label": "門",
+    "meaning": "Gate",
+    "role": "sound",
+    "reading": "もん"
+   },
+   {
+    "label": "耳",
+    "meaning": "Ear",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "耳 (Ear) is the meaning side (ear); 門 (Gate) is the sound component, giving もん. So 聞 means \"hear\".",
+  "reading_line": "The on reading もん comes from the sound component 門. 聞こえる (きこえる) uses the native kun reading, tied to the meaning."
+ },
+ "私": {
+  "kind": "ideograph",
+  "meaning": "I",
+  "components": [
+   {
+    "label": "禾",
+    "meaning": "Grain",
+    "role": "part"
+   },
+   {
+    "label": "厶",
+    "meaning": "Private",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "禾 (Grain) + 厶 (Private) → grain (禾) kept private (厶) → I; private.",
+  "reading_line": "On し is learned with the kanji; the parts give the meaning, not the sound. 私 (わたし) uses the native kun reading, tied to the meaning."
+ },
+ "国": {
+  "kind": "ideograph",
+  "meaning": "Country",
+  "components": [
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part",
+    "note": "here = enclosure 囗, not \"mouth\""
+   },
+   {
+    "label": "王",
+    "meaning": "King",
+    "role": "part",
+    "note": "with 丶 this is 玉 (jade)"
+   },
+   {
+    "label": "丶",
+    "meaning": "Drop",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "口 (Mouth) + 王 (King) + 丶 (Drop) → the outer 口 is the enclosure 囗 (not \"mouth\"); 王 + 丶 = 玉 (jade) inside → a bordered treasure land → country.",
+  "reading_line": "On こく is learned with the kanji; the parts give the meaning, not the sound. 国 (くに) uses the native kun reading, tied to the meaning."
+ },
+ "時": {
+  "kind": "phono-semantic",
+  "meaning": "Time",
+  "components": [
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "meaning"
+   },
+   {
+    "label": "寺",
+    "meaning": "Temple",
+    "role": "sound",
+    "reading": "じ"
+   }
+  ],
+  "meaning_line": "日 (Sun) is the meaning side (sun/time); 寺 (Temple) is the sound component, giving じ. So 時 means \"time\".",
+  "reading_line": "The on reading じ comes from the sound component 寺. The native kun reading is とき.",
+  "sound": {
+   "label": "寺",
+   "reading": "じ",
+   "same": [
+    {
+     "kanji": "持",
+     "reading": "じ",
+     "exact": true,
+     "words": [
+      {
+       "word": "気持ち",
+       "reading": "きもち"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "間": {
+  "kind": "ideograph",
+  "meaning": "Interval",
+  "components": [
+   {
+    "label": "門",
+    "meaning": "Gate",
+    "role": "part"
+   },
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "門 (Gate) + 日 (Sun) → sun (日) seen through a gate (門) → interval; space.",
+  "reading_line": "On かん is learned with the kanji; the parts give the meaning, not the sound. 居間 (いま) uses the native kun reading, tied to the meaning."
+ },
+ "昼": {
+  "kind": "opaque",
+  "meaning": "Noon",
+  "components": [
+   {
+    "label": "尺",
+    "meaning": "Shrimp",
+    "role": "part"
+   },
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "meaning"
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "日 (Sun) is the semantic side (sun/time); the rest of the modern shape does not compose \"Noon\" — learn it with 昼 (ひる).",
+  "reading_line": "On ちゅう: no component here carries it exactly; the on is learned with the kanji. 昼 (ひる) uses the native kun reading, tied to the meaning."
+ },
+ "夜": {
+  "kind": "pictograph",
+  "meaning": "Night",
+  "components": [
+   {
+    "label": "夜",
+    "meaning": "Night",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape kanji: the whole glyph is \"night\"; no component logic.",
+  "reading_line": "On や is learned with the kanji — the shape gives the meaning, not the sound. 夜 (よる) uses the native kun reading, tied to the meaning."
+ },
+ "反": {
+  "kind": "ideograph",
+  "meaning": "Anti",
+  "components": [
+   {
+    "label": "厂",
+    "meaning": "Cliff",
+    "role": "part"
+   },
+   {
+    "label": "又",
+    "meaning": "Stool",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "厂 (Cliff) + 又 (Stool) → a cliff (厂) + hand (又) → turn over → anti.",
+  "reading_line": "On はん is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is そ."
+ },
+ "対": {
+  "kind": "opaque",
+  "meaning": "Versus",
+  "components": [
+   {
+    "label": "文",
+    "meaning": "Writing",
+    "role": "part"
+   },
+   {
+    "label": "寸",
+    "meaning": "Measurement",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (文, 寸) do not compose \"Versus\" — learn 対 as a whole with 反対 (はんたい).",
+  "reading_line": "On たい: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "代": {
+  "kind": "opaque",
+  "meaning": "Substitute",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "弋",
+    "meaning": "Ceremony",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the semantic side (person); the rest of the modern shape does not compose \"Substitute\" — learn it with 時代 (じだい).",
+  "reading_line": "On だい: no component here carries it exactly; the on is learned with the kanji. The native kun readings are か, かわ."
+ },
+ "期": {
+  "kind": "opaque",
+  "meaning": "Period Of Time",
+  "components": [
+   {
+    "label": "其",
+    "meaning": "Crab",
+    "role": "part"
+   },
+   {
+    "label": "月",
+    "meaning": "Moon",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "月 (month) is the meaning side — a period of time; 其 (き) is the sound source, but WaniKani gives 其 no kanji reading — unverified.",
+  "reading_line": "On き: 其 (き) is the sound source, but WaniKani gives 其 no kanji reading — unverified."
+ },
+ "速": {
+  "kind": "phono-semantic",
+  "meaning": "Fast",
+  "components": [
+   {
+    "label": "⻌",
+    "meaning": "Scooter",
+    "role": "meaning"
+   },
+   {
+    "label": "束",
+    "meaning": "Bundle",
+    "role": "sound",
+    "reading": "そく"
+   }
+  ],
+  "meaning_line": "⻌ (Scooter) is the meaning side (movement/path); 束 (Bundle) is the sound component, giving そく. So 速 means \"fast\".",
+  "reading_line": "The on reading そく comes from the sound component 束. The native kun reading is はや."
+ },
+ "差": {
+  "kind": "opaque",
+  "meaning": "Distinction",
+  "components": [
+   {
+    "label": "羊",
+    "meaning": "Sheep",
+    "role": "part"
+   },
+   {
+    "label": "工",
+    "meaning": "Construction",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (羊, 工) do not compose \"Distinction\" — learn 差 as a whole with 時差 (じさ).",
+  "reading_line": "On さ: no component here carries it exactly; the on is learned with the kanji. The native kun reading is さ."
+ },
+ "自": {
+  "kind": "pictograph",
+  "meaning": "Self",
+  "components": [
+   {
+    "label": "自",
+    "meaning": "Self",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a nose; used for \"self\".",
+  "reading_line": "On じ is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is みずか."
+ },
+ "転": {
+  "kind": "ideograph",
+  "meaning": "Revolve",
+  "components": [
+   {
+    "label": "車",
+    "meaning": "Car",
+    "role": "part"
+   },
+   {
+    "label": "云",
+    "meaning": "Cloud",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "車 (Car) + 云 (Cloud) → a cart (車) rolling (云) → revolve.",
+  "reading_line": "On てん is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is ころ."
+ },
+ "車": {
+  "kind": "pictograph",
+  "meaning": "Car",
+  "components": [
+   {
+    "label": "車",
+    "meaning": "Car",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a cart with axle and wheels.",
+  "reading_line": "On しゃ is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is くるま."
+ },
+ "壊": {
+  "kind": "opaque",
+  "meaning": "Break",
+  "components": [
+   {
+    "label": "土",
+    "meaning": "Dirt",
+    "role": "meaning"
+   },
+   {
+    "label": "十",
+    "meaning": "Cross",
+    "role": "part"
+   },
+   {
+    "label": "罒",
+    "meaning": "Net",
+    "role": "part"
+   },
+   {
+    "label": "衣",
+    "meaning": "Clothes",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "土 (Dirt) is the semantic side (earth); the rest of the modern shape does not compose \"Break\" — learn it with 壊れる (こわれる).",
+  "reading_line": "On かい: no component here carries it exactly; the on is learned with the kanji. 壊れる (こわれる) uses the native kun reading, tied to the meaning."
+ },
+ "家": {
+  "kind": "ideograph",
+  "meaning": "House",
+  "components": [
+   {
+    "label": "宀",
+    "meaning": "Roof",
+    "role": "part"
+   },
+   {
+    "label": "豕",
+    "meaning": "Pig",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "宀 (Roof) + 豕 (Pig) → a pig (豕) under a roof (宀) → house.",
+  "reading_line": "On か is learned with the kanji; the parts give the meaning, not the sound. 家 (いえ) uses the native kun reading, tied to the meaning."
+ },
+ "帰": {
+  "kind": "ideograph",
+  "meaning": "Return Home",
+  "components": [
+   {
+    "label": "刂",
+    "meaning": "Knife",
+    "role": "part"
+   },
+   {
+    "label": "帚",
+    "meaning": "Broom",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "刂 (Knife) + 帚 (Broom) → a broom (帚) and a knife (刂) → put things away → return home.",
+  "reading_line": "On き is learned with the kanji; the parts give the meaning, not the sound. 帰る (かえる) uses the native kun reading, tied to the meaning."
+ },
+ "詳": {
+  "kind": "opaque",
+  "meaning": "Detailed",
+  "components": [
+   {
+    "label": "言",
+    "meaning": "Say",
+    "role": "meaning"
+   },
+   {
+    "label": "羊",
+    "meaning": "Sheep",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "言 (Say) is the semantic side (speech/words); the rest of the modern shape does not compose \"Detailed\" — learn it with 詳しい (くわしい).",
+  "reading_line": "羊 (よう) is the historical sound source; よう is not しょう — no exact key. 詳しい (くわしい) uses the native kun reading, tied to the meaning."
+ },
+ "羨": {
+  "kind": "opaque",
+  "meaning": "Envy",
+  "components": [
+   {
+    "label": "羊",
+    "meaning": "Sheep",
+    "role": "part"
+   },
+   {
+    "label": "次",
+    "meaning": "Next",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (羊, 次) do not compose \"Envy\" — learn 羨 as a whole with 羨ましい (うらやましい).",
+  "reading_line": "On せん: no component here carries it exactly; the on is learned with the kanji. 羨ましい (うらやましい) uses the native kun reading, tied to the meaning."
+ },
+ "病": {
+  "kind": "opaque",
+  "meaning": "Sick",
+  "components": [
+   {
+    "label": "疒",
+    "meaning": "Sick",
+    "role": "meaning"
+   },
+   {
+    "label": "丙",
+    "meaning": "Dynamite",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "疒 (sick) is the meaning side; 丙 (へい) matches one on reading, but WaniKani gives 丙 no kanji reading — unverified, and the words here use びょう.",
+  "reading_line": "On びょう: 丙 (へい) is a historical sound source, but へい is not びょう — no exact key. The native kun readings are や, やまい."
+ },
+ "気": {
+  "kind": "opaque",
+  "meaning": "Energy",
+  "components": [
+   {
+    "label": "气",
+    "meaning": "Energy",
+    "role": "meaning"
+   },
+   {
+    "label": "メ",
+    "meaning": "Treasure",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "气 (Energy) is the semantic side (air); the rest of the modern shape does not compose \"Energy\" — learn it with 病気 (びょうき).",
+  "reading_line": "気 is a simplified form of 氣; 气 is the meaning side, not the sound (き)."
+ },
+ "高": {
+  "kind": "pictograph",
+  "meaning": "Tall",
+  "components": [
+   {
+    "label": "亠",
+    "meaning": "Lid",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   },
+   {
+    "label": "冋",
+    "meaning": "Mustache",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Pictograph of a tall building; the modern strokes (亠, 口, 冋) are one picture, not a sound-meaning compound.",
+  "reading_line": "On こう is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is たか."
+ },
+ "生": {
+  "kind": "pictograph",
+  "meaning": "Life",
+  "components": [
+   {
+    "label": "生",
+    "meaning": "Life",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a plant sprouting from the ground → life.",
+  "reading_line": "On しょう is learned with the kanji — the shape gives the meaning, not the sound. 生まれる (うまれる) uses the native kun reading, tied to the meaning."
+ },
+ "医": {
+  "kind": "opaque",
+  "meaning": "Medicine",
+  "components": [
+   {
+    "label": "匚",
+    "meaning": "Cage",
+    "role": "meaning"
+   },
+   {
+    "label": "矢",
+    "meaning": "Arrow",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "匚 (box) holds 矢 (arrow) — a medicine case; 医 is a simplified 醫, no exact sound key for い.",
+  "reading_line": "医 is a simplified form of 醫; no sound component survives."
+ },
+ "者": {
+  "kind": "opaque",
+  "meaning": "Someone",
+  "components": [
+   {
+    "label": "者",
+    "meaning": "Someone",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "者 is learned as a whole; its old form is 耂 + 日, but the modern parts do not spell \"someone\" — learn 者 with 医者 (いしゃ).",
+  "reading_line": "On しゃ: no component here carries it exactly; the on is learned with the kanji. The native kun reading is もの."
+ },
+ "決": {
+  "kind": "opaque",
+  "meaning": "Decide",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "人",
+    "meaning": "Person",
+    "role": "part"
+   },
+   {
+    "label": "ユ",
+    "meaning": "Hook",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (water) is the meaning side; the right side is 夬 (not 人+ユ) — 夬 has the sound けつ, but WaniKani gives it no kanji reading — unverified.",
+  "reading_line": "On けつ: 夬 is the sound source, but WaniKani gives 夬 no kanji reading — unverified. The native kun reading is き."
+ },
+ "心": {
+  "kind": "pictograph",
+  "meaning": "Heart",
+  "components": [
+   {
+    "label": "心",
+    "meaning": "Heart",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a heart.",
+  "reading_line": "On しん is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is こころ."
+ },
+ "証": {
+  "kind": "phono-semantic",
+  "meaning": "Evidence",
+  "components": [
+   {
+    "label": "言",
+    "meaning": "Say",
+    "role": "meaning"
+   },
+   {
+    "label": "正",
+    "meaning": "Correct",
+    "role": "sound",
+    "reading": "しょう"
+   }
+  ],
+  "meaning_line": "言 (Say) is the meaning side (speech/words); 正 (Correct) is the sound component, giving しょう. So 証 means \"evidence\" — words that prove.",
+  "reading_line": "The on reading しょう comes from the sound component 正. The native kun reading is あかし.",
+  "sound": {
+   "label": "正",
+   "reading": "しょう",
+   "same": [
+    {
+     "kanji": "政",
+     "reading": "せい",
+     "exact": true,
+     "words": [
+      {
+       "word": "政治家",
+       "reading": "せいじか"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "明": {
+  "kind": "ideograph",
+  "meaning": "Bright",
+  "components": [
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "part"
+   },
+   {
+    "label": "月",
+    "meaning": "Moon",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "日 (Sun) + 月 (Moon) → sun (日) + moon (月) → the two lights → bright.",
+  "reading_line": "On めい is learned with the kanji; the parts give the meaning, not the sound. The native kun readings are あ, あか."
+ },
+ "仮": {
+  "kind": "opaque",
+  "meaning": "Temporary",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "反",
+    "meaning": "Anti",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the semantic side (person); the rest of the modern shape does not compose \"Temporary\" — learn it with 仮定 (かてい).",
+  "reading_line": "On か: no component here carries it exactly; the on is learned with the kanji. The native kun readings are かり, か."
+ },
+ "定": {
+  "kind": "opaque",
+  "meaning": "Determine",
+  "components": [
+   {
+    "label": "宀",
+    "meaning": "Roof",
+    "role": "meaning"
+   },
+   {
+    "label": "疋",
+    "meaning": "Coat Rack",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "宀 (Roof) is the semantic side (roof/building); the rest of the modern shape does not compose \"Determine\" — learn it with 仮定 (かてい).",
+  "reading_line": "On てい: no component here carries it exactly; the on is learned with the kanji. The native kun reading is さだ."
+ },
+ "彼": {
+  "kind": "phono-semantic",
+  "meaning": "He",
+  "components": [
+   {
+    "label": "彳",
+    "meaning": "Loiter",
+    "role": "meaning"
+   },
+   {
+    "label": "皮",
+    "meaning": "Skin",
+    "role": "sound",
+    "reading": "ひ"
+   }
+  ],
+  "meaning_line": "彳 (Loiter) is the meaning side (walking person); 皮 (Skin) is the sound component, giving ひ. So 彼 means \"he; that one\".",
+  "reading_line": "The on reading ひ comes from the sound component 皮. 彼 (かれ) uses the native kun reading, tied to the meaning."
+ },
+ "言": {
+  "kind": "pictograph",
+  "meaning": "Say",
+  "components": [
+   {
+    "label": "言",
+    "meaning": "Say",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Pictograph of a mouth (口) with breath/sound lines above it → speech; words.",
+  "reading_line": "On げん is learned with the kanji — the shape gives the meaning, not the sound. 言う (いう) uses the native kun reading, tied to the meaning."
+ },
+ "笑": {
+  "kind": "opaque",
+  "meaning": "Laugh",
+  "components": [
+   {
+    "label": "竹",
+    "meaning": "Bamboo",
+    "role": "part"
+   },
+   {
+    "label": "天",
+    "meaning": "Heaven",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "竹 (bamboo) + 天/夭 — the parts do not compose \"laugh\"; the old form is unclear — learn 笑う (わらう).",
+  "reading_line": "On しょう: no component here carries it exactly; the on is learned with the kanji. 笑わせる (わらわせる) uses the native kun reading, tied to the meaning."
+ },
+ "面": {
+  "kind": "pictograph",
+  "meaning": "Face",
+  "components": [
+   {
+    "label": "面",
+    "meaning": "Face",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a face.",
+  "reading_line": "On めん is learned with the kanji — the shape gives the meaning, not the sound. 面白い (おもしろい) uses the native kun reading, tied to the meaning."
+ },
+ "白": {
+  "kind": "pictograph",
+  "meaning": "White",
+  "components": [
+   {
+    "label": "白",
+    "meaning": "White",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph: the whole glyph is \"white\".",
+  "reading_line": "On はく is learned with the kanji — the shape gives the meaning, not the sound. 面白い (おもしろい) uses the native kun reading, tied to the meaning."
+ },
+ "文": {
+  "kind": "pictograph",
+  "meaning": "Writing",
+  "components": [
+   {
+    "label": "文",
+    "meaning": "Writing",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a patterned/tattooed chest → writing.",
+  "reading_line": "On もん is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is ふみ."
+ },
+ "句": {
+  "kind": "ideograph",
+  "meaning": "Paragraph",
+  "components": [
+   {
+    "label": "勹",
+    "meaning": "Prison",
+    "role": "part",
+    "note": "here = wrap, not \"prison\""
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "勹 (Prison) + 口 (Mouth) → a mouth (口) inside a hook/wrap (勹) → a phrase; clause.",
+  "reading_line": "On く is learned with the kanji; the parts give the meaning, not the sound."
+ },
+ "冗": {
+  "kind": "opaque",
+  "meaning": "Superfluous",
+  "components": [
+   {
+    "label": "冖",
+    "meaning": "Forehead",
+    "role": "part"
+   },
+   {
+    "label": "几",
+    "meaning": "Table",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (冖, 几) do not compose \"superfluous\" — learn 冗談 (じょうだん).",
+  "reading_line": "On じょう: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "談": {
+  "kind": "opaque",
+  "meaning": "Talk",
+  "components": [
+   {
+    "label": "言",
+    "meaning": "Say",
+    "role": "meaning"
+   },
+   {
+    "label": "火",
+    "meaning": "Fire",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "言 (Say) is the semantic side (speech/words); the rest of the modern shape does not compose \"Talk\" — learn it with 冗談 (じょうだん).",
+  "reading_line": "On だん: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "慢": {
+  "kind": "opaque",
+  "meaning": "Overconfidence",
+  "components": [
+   {
+    "label": "忄",
+    "meaning": "Soul",
+    "role": "meaning"
+   },
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "part"
+   },
+   {
+    "label": "罒",
+    "meaning": "Net",
+    "role": "part"
+   },
+   {
+    "label": "又",
+    "meaning": "Stool",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "忄 (heart) is the meaning side; 曼 has the sound まん, but WaniKani splits it and gives no kanji reading — unverified.",
+  "reading_line": "On まん: 曼 is the sound source, but WaniKani gives 曼 no kanji reading — unverified."
+ },
+ "到": {
+  "kind": "opaque",
+  "meaning": "Arrival",
+  "components": [
+   {
+    "label": "至",
+    "meaning": "Mole",
+    "role": "meaning"
+   },
+   {
+    "label": "刂",
+    "meaning": "Knife",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "至 (arrive) is the meaning side; 刂 is the right-hand part — 到 means \"arrive\"; no exact sound key for とう.",
+  "reading_line": "On とう: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "部": {
+  "kind": "opaque",
+  "meaning": "Part",
+  "components": [
+   {
+    "label": "咅",
+    "meaning": "Clown",
+    "role": "part"
+   },
+   {
+    "label": "阝",
+    "meaning": "Building",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "阝 (Building) is the semantic side (place); the rest of the modern shape does not compose \"Part\" — learn it with 部屋 (へや).",
+  "reading_line": "On ぶ: no component here carries it exactly; the on is learned with the kanji. 部屋 (へや) uses the native kun reading, tied to the meaning."
+ },
+ "屋": {
+  "kind": "opaque",
+  "meaning": "Roof",
+  "components": [
+   {
+    "label": "尸",
+    "meaning": "Flag",
+    "role": "meaning"
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   },
+   {
+    "label": "ム",
+    "meaning": "Private",
+    "role": "part"
+   },
+   {
+    "label": "土",
+    "meaning": "Dirt",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "尸 (Flag) is the semantic side (building/body); the rest of the modern shape does not compose \"Roof\" — learn it with 部屋 (へや).",
+  "reading_line": "On おく: no component here carries it exactly; the on is learned with the kanji. 部屋 (へや) uses the native kun reading, tied to the meaning."
+ },
+ "入": {
+  "kind": "pictograph",
+  "meaning": "Enter",
+  "components": [
+   {
+    "label": "入",
+    "meaning": "Enter",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of an entrance → enter.",
+  "reading_line": "On にゅう is learned with the kanji — the shape gives the meaning, not the sound. 入る (はいる) uses the native kun reading, tied to the meaning."
+ },
+ "荷": {
+  "kind": "phono-semantic",
+  "meaning": "Luggage",
+  "components": [
+   {
+    "label": "艹",
+    "meaning": "Flowers",
+    "role": "meaning"
+   },
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "part"
+   },
+   {
+    "label": "可",
+    "meaning": "Lip Ring",
+    "role": "sound",
+    "reading": "か"
+   }
+  ],
+  "meaning_line": "艹 (Flowers) is the meaning side (plants); 可 (Lip Ring) is the sound component, giving か. So 荷 means \"luggage\" — a load of plants/goods.",
+  "reading_line": "The on reading か comes from the sound component 可. 荷物 (にもつ) uses the native kun reading, tied to the meaning.",
+  "sound": {
+   "label": "可",
+   "reading": "か",
+   "same": [
+    {
+     "kanji": "何",
+     "reading": "か",
+     "exact": true,
+     "words": [
+      {
+       "word": "何度",
+       "reading": "なんど"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "出": {
+  "kind": "pictograph",
+  "meaning": "Exit",
+  "components": [
+   {
+    "label": "山",
+    "meaning": "Mountain",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Pictograph of a footstep emerging from a mountain/cave → exit.",
+  "reading_line": "On しゅっ is learned with the kanji — the shape gives the meaning, not the sound. 出かける (でかける) uses the native kun reading, tied to the meaning."
+ },
+ "泊": {
+  "kind": "phono-semantic",
+  "meaning": "Overnight",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "白",
+    "meaning": "White",
+    "role": "sound",
+    "reading": "はく"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the meaning side (water); 白 (White) is the sound component, giving はく. So 泊 means \"overnight stay\" — mooring by water.",
+  "reading_line": "The on reading はく comes from the sound component 白. 泊める (とめる) uses the native kun reading, tied to the meaning."
+ },
+ "与": {
+  "kind": "opaque",
+  "meaning": "Give",
+  "components": [
+   {
+    "label": "Beggar",
+    "meaning": "Beggar",
+    "role": "part"
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (Beggar, 一) do not compose \"Give\" — learn 与 as a whole with 与える (あたえる).",
+  "reading_line": "On よ: no component here carries it exactly; the on is learned with the kanji. 与える (あたえる) uses the native kun reading, tied to the meaning."
+ },
+ "空": {
+  "kind": "opaque",
+  "meaning": "Sky",
+  "components": [
+   {
+    "label": "穴",
+    "meaning": "Hole",
+    "role": "meaning"
+   },
+   {
+    "label": "工",
+    "meaning": "Construction",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "穴 (Hole) is the semantic side (hole); the rest of the modern shape does not compose \"Sky\" — learn it with 空港 (くうこう).",
+  "reading_line": "工 (く) is the historical sound source; く is not くう. 空く (すく) uses the native kun reading, tied to the meaning."
+ },
+ "港": {
+  "kind": "opaque",
+  "meaning": "Harbor",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "共",
+    "meaning": "Together",
+    "role": "part"
+   },
+   {
+    "label": "己",
+    "meaning": "Oneself",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Harbor\" — learn it with 空港 (くうこう).",
+  "reading_line": "On こう: no component here carries it exactly; the on is learned with the kanji. The native kun reading is みなと."
+ },
+ "飛": {
+  "kind": "pictograph",
+  "meaning": "Fly",
+  "components": [
+   {
+    "label": "飛",
+    "meaning": "Fly",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a bird in flight.",
+  "reading_line": "On ひ is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is と."
+ },
+ "行": {
+  "kind": "pictograph",
+  "meaning": "Go",
+  "components": [
+   {
+    "label": "行",
+    "meaning": "Go",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a crossroads → go.",
+  "reading_line": "On こう is learned with the kanji — the shape gives the meaning, not the sound. The native kun readings are い, おこな."
+ },
+ "機": {
+  "kind": "phono-semantic",
+  "meaning": "Machine",
+  "components": [
+   {
+    "label": "木",
+    "meaning": "Tree",
+    "role": "meaning"
+   },
+   {
+    "label": "幾",
+    "meaning": "How Many",
+    "role": "sound",
+    "reading": "き"
+   }
+  ],
+  "meaning_line": "木 (Tree) is the meaning side (wood); 幾 (How Many) is the sound component, giving き. So 機 means \"machine\" — a wooden frame/loom.",
+  "reading_line": "The on reading き comes from the sound component 幾. WaniKani splits 幾 into 幺+戈+人; the sound component is the whole 幾 (き). The native kun reading is はた."
+ },
+ "発": {
+  "kind": "opaque",
+  "meaning": "Departure",
+  "components": [
+   {
+    "label": "癶",
+    "meaning": "Tent",
+    "role": "part"
+   },
+   {
+    "label": "开",
+    "meaning": "Lantern",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (癶, 开) do not compose \"Departure\" — learn 発 as a whole with 出発 (しゅっぱつ).",
+  "reading_line": "発 is a simplified form of 發; no sound component survives."
+ },
+ "渋": {
+  "kind": "opaque",
+  "meaning": "Bitter",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "止",
+    "meaning": "Stop",
+    "role": "part"
+   },
+   {
+    "label": "Explosion",
+    "meaning": "Explosion",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Bitter\" — learn it with 渋滞 (じゅうたい).",
+  "reading_line": "On じゅう: no component here carries it exactly; the on is learned with the kanji. The native kun reading is しぶ."
+ },
+ "滞": {
+  "kind": "phono-semantic",
+  "meaning": "Stagnate",
+  "components": [
+   {
+    "label": "帯",
+    "meaning": "Belt",
+    "role": "sound",
+    "reading": "たい"
+   },
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the meaning side (water); 帯 (Belt) is the sound component, giving たい. So 滞 means \"stagnate\" — water held back.",
+  "reading_line": "The on reading たい comes from the sound component 帯. The native kun reading is とどこお."
+ },
+ "思": {
+  "kind": "ideograph",
+  "meaning": "Think",
+  "components": [
+   {
+    "label": "田",
+    "meaning": "Rice Paddy",
+    "role": "part"
+   },
+   {
+    "label": "心",
+    "meaning": "Heart",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "田 (Rice Paddy) + 心 (Heart) → head/field (田) + heart (心) → think.",
+  "reading_line": "On し is learned with the kanji; the parts give the meaning, not the sound. 思う (おもう) uses the native kun reading, tied to the meaning."
+ },
+ "突": {
+  "kind": "opaque",
+  "meaning": "Stab",
+  "components": [
+   {
+    "label": "穴",
+    "meaning": "Hole",
+    "role": "meaning"
+   },
+   {
+    "label": "大",
+    "meaning": "Big",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "穴 (Hole) is the semantic side (hole); the rest of the modern shape does not compose \"Stab\" — learn it with 突然 (とつぜん).",
+  "reading_line": "On とつ: no component here carries it exactly; the on is learned with the kanji. The native kun reading is つ."
+ },
+ "然": {
+  "kind": "opaque",
+  "meaning": "Nature",
+  "components": [
+   {
+    "label": "月",
+    "meaning": "Moon",
+    "role": "meaning"
+   },
+   {
+    "label": "犬",
+    "meaning": "Dog",
+    "role": "part"
+   },
+   {
+    "label": "灬",
+    "meaning": "Boil",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "月 (Moon) is the semantic side (body/moon); the rest of the modern shape does not compose \"Nature\" — learn it with 突然 (とつぜん).",
+  "reading_line": "On ぜん: no component here carries it exactly; the on is learned with the kanji. The native kun readings are しか, さ."
+ },
+ "当": {
+  "kind": "opaque",
+  "meaning": "Correct",
+  "components": [
+   {
+    "label": "⺌",
+    "meaning": "Triceratops",
+    "role": "part"
+   },
+   {
+    "label": "ヨ",
+    "meaning": "Wolverine",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (⺌, ヨ) do not compose \"Correct\" — learn 当 as a whole with 当然 (とうぜん).",
+  "reading_line": "当 is a simplified form of 當; no sound component survives. The native kun reading is あ."
+ },
+ "中": {
+  "kind": "pictograph",
+  "meaning": "Middle",
+  "components": [
+   {
+    "label": "中",
+    "meaning": "Middle",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "A pole through the middle of a box → middle.",
+  "reading_line": "On じゅう is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is なか."
+ },
+ "案": {
+  "kind": "phono-semantic",
+  "meaning": "Plan",
+  "components": [
+   {
+    "label": "安",
+    "meaning": "Cheap",
+    "role": "sound",
+    "reading": "あん"
+   },
+   {
+    "label": "木",
+    "meaning": "Tree",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "木 (Tree) is the meaning side (wood); 安 (Cheap) is the sound component, giving あん. So 案 means \"plan\" — originally a wooden tablet/desk.",
+  "reading_line": "The on reading あん comes from the sound component 安."
+ },
+ "外": {
+  "kind": "ideograph",
+  "meaning": "Outside",
+  "components": [
+   {
+    "label": "夕",
+    "meaning": "Evening",
+    "role": "part"
+   },
+   {
+    "label": "ト",
+    "meaning": "Toe",
+    "role": "part",
+    "note": "here = divination 卜, not \"toe\""
+   }
+  ],
+  "meaning_line": "夕 (Evening) + ト (Toe) → evening (夕) + divination (卜) → what lies outside; outside.",
+  "reading_line": "On がい is learned with the kanji; the parts give the meaning, not the sound. The native kun readings are そと, はず."
+ },
+ "若": {
+  "kind": "opaque",
+  "meaning": "Young",
+  "components": [
+   {
+    "label": "艹",
+    "meaning": "Flowers",
+    "role": "meaning"
+   },
+   {
+    "label": "右",
+    "meaning": "Right",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "艹 (Flowers) is the semantic side (plants); the rest of the modern shape does not compose \"Young\" — learn it with 若い (わかい).",
+  "reading_line": "On じゃく: no component here carries it exactly; the on is learned with the kanji. 若い (わかい) uses the native kun reading, tied to the meaning."
+ },
+ "労": {
+  "kind": "opaque",
+  "meaning": "Labor",
+  "components": [
+   {
+    "label": "龸",
+    "meaning": "Viking",
+    "role": "part"
+   },
+   {
+    "label": "力",
+    "meaning": "Power",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "力 (Power) is the semantic side (power); the rest of the modern shape does not compose \"Labor\" — learn it with 苦労 (くろう).",
+  "reading_line": "On ろう: no component here carries it exactly; the on is learned with the kanji. The native kun reading is いたわ."
+ },
+ "一": {
+  "kind": "pictograph",
+  "meaning": "One",
+  "components": [
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "One horizontal stroke = one.",
+  "reading_line": "On いっ is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is ひと."
+ },
+ "懸": {
+  "kind": "phono-semantic",
+  "meaning": "Suspend",
+  "components": [
+   {
+    "label": "県",
+    "meaning": "Prefecture",
+    "role": "sound",
+    "reading": "けん"
+   },
+   {
+    "label": "系",
+    "meaning": "Lineage",
+    "role": "part"
+   },
+   {
+    "label": "心",
+    "meaning": "Heart",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "心 (Heart) is the meaning side (heart/mind); 県 (Prefecture) is the sound component, giving けん. So 懸 means \"suspend\" — suspense in the heart.",
+  "reading_line": "The on reading けん comes from the sound component 県. The native kun reading is か."
+ },
+ "命": {
+  "kind": "ideograph",
+  "meaning": "Fate",
+  "components": [
+   {
+    "label": "令",
+    "meaning": "Orders",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "令 (Orders) + 口 (Mouth) → an order (令) spoken (口) → fate; command.",
+  "reading_line": "On めい is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is いのち."
+ },
+ "立": {
+  "kind": "pictograph",
+  "meaning": "Stand",
+  "components": [
+   {
+    "label": "立",
+    "meaning": "Stand",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "A person standing on the ground → stand.",
+  "reading_line": "On りっ is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is た."
+ },
+ "派": {
+  "kind": "opaque",
+  "meaning": "Sect",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "厂",
+    "meaning": "Cliff",
+    "role": "part"
+   },
+   {
+    "label": "Tofu",
+    "meaning": "Tofu",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Sect\" — learn it with 立派 (りっぱ).",
+  "reading_line": "On ぱ: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "政": {
+  "kind": "phono-semantic",
+  "meaning": "Politics",
+  "components": [
+   {
+    "label": "正",
+    "meaning": "Correct",
+    "role": "sound",
+    "reading": "せい"
+   },
+   {
+    "label": "夂",
+    "meaning": "Winter",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "夂 (Winter) is the meaning side (action); 正 (Correct) is the sound component, giving せい. So 政 means \"government\" — correction carried out. (WaniKani names 夂 \"Winter\".)",
+  "reading_line": "The on reading せい comes from the sound component 正.",
+  "sound": {
+   "label": "正",
+   "reading": "せい",
+   "same": [
+    {
+     "kanji": "証",
+     "reading": "しょう",
+     "exact": true,
+     "words": [
+      {
+       "word": "証明",
+       "reading": "しょうめい"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "治": {
+  "kind": "opaque",
+  "meaning": "Cure",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "台",
+    "meaning": "Machine",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Cure\" — learn it with 政治家 (せいじか).",
+  "reading_line": "台 (たい) is the historical sound source; たい is not じ — no exact key. The native kun reading is なお."
+ },
+ "努": {
+  "kind": "opaque",
+  "meaning": "Toil",
+  "components": [
+   {
+    "label": "女",
+    "meaning": "Woman",
+    "role": "part"
+   },
+   {
+    "label": "又",
+    "meaning": "Stool",
+    "role": "part"
+   },
+   {
+    "label": "力",
+    "meaning": "Power",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "力 (power) is the meaning side — effort; 奴 gives the sense of forced toil; no exact sound key for ど.",
+  "reading_line": "On ど: no component here carries it exactly; the on is learned with the kanji. The native kun reading is つと."
+ },
+ "力": {
+  "kind": "pictograph",
+  "meaning": "Power",
+  "components": [
+   {
+    "label": "力",
+    "meaning": "Power",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a plough/muscle → power.",
+  "reading_line": "On りょく is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is ちから."
+ },
+ "納": {
+  "kind": "opaque",
+  "meaning": "Supply",
+  "components": [
+   {
+    "label": "糸",
+    "meaning": "Thread",
+    "role": "meaning"
+   },
+   {
+    "label": "内",
+    "meaning": "Inside",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "糸 (Thread) is the semantic side (thread/textile); the rest of the modern shape does not compose \"Supply\" — learn it with 納得 (なっとく).",
+  "reading_line": "On なっ: no component here carries it exactly; the on is learned with the kanji. The native kun reading is おさ."
+ },
+ "得": {
+  "kind": "opaque",
+  "meaning": "Acquire",
+  "components": [
+   {
+    "label": "彳",
+    "meaning": "Loiter",
+    "role": "meaning"
+   },
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "part"
+   },
+   {
+    "label": "寺",
+    "meaning": "Temple",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "彳 (Loiter) is the semantic side (walking); the rest of the modern shape does not compose \"Acquire\" — learn it with 納得 (なっとく).",
+  "reading_line": "On とく: no component here carries it exactly; the on is learned with the kanji. The native kun readings are え, う."
+ },
+ "待": {
+  "kind": "opaque",
+  "meaning": "Wait",
+  "components": [
+   {
+    "label": "彳",
+    "meaning": "Loiter",
+    "role": "meaning"
+   },
+   {
+    "label": "寺",
+    "meaning": "Temple",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "彳 (Loiter) is the semantic side (walking); the rest of the modern shape does not compose \"Wait\" — learn it with 期待 (きたい).",
+  "reading_line": "On たい: no component here carries it exactly; the on is learned with the kanji. The native kun reading is ま."
+ },
+ "注": {
+  "kind": "opaque",
+  "meaning": "Pour",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "主",
+    "meaning": "Master",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Pour\" — learn it with 注意 (ちゅうい).",
+  "reading_line": "On ちゅう: no component here carries it exactly; the on is learned with the kanji. The native kun readings are そそ, さ."
+ },
+ "意": {
+  "kind": "ideograph",
+  "meaning": "Idea",
+  "components": [
+   {
+    "label": "音",
+    "meaning": "Sound",
+    "role": "part"
+   },
+   {
+    "label": "心",
+    "meaning": "Heart",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "音 (Sound) + 心 (Heart) → sound (音) + heart (心) → intention.",
+  "reading_line": "On い is learned with the kanji; the parts give the meaning, not the sound."
+ },
+ "朝": {
+  "kind": "opaque",
+  "meaning": "Morning",
+  "components": [
+   {
+    "label": "十",
+    "meaning": "Cross",
+    "role": "part"
+   },
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "meaning"
+   },
+   {
+    "label": "月",
+    "meaning": "Moon",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "日 (Sun) is the semantic side (sun/time); the rest of the modern shape does not compose \"Morning\" — learn it with 朝 (あさ).",
+  "reading_line": "On ちょう: no component here carries it exactly; the on is learned with the kanji. 朝 (あさ) uses the native kun reading, tied to the meaning."
+ },
+ "飯": {
+  "kind": "phono-semantic",
+  "meaning": "Meal",
+  "components": [
+   {
+    "label": "食",
+    "meaning": "Eat",
+    "role": "meaning"
+   },
+   {
+    "label": "反",
+    "meaning": "Anti",
+    "role": "sound",
+    "reading": "はん"
+   }
+  ],
+  "meaning_line": "食 (Eat) is the meaning side (food/eating); 反 (Anti) is the sound component, giving はん. So 飯 means \"meal\".",
+  "reading_line": "The on reading はん comes from the sound component 反. The native kun reading is めし."
+ },
+ "食": {
+  "kind": "pictograph",
+  "meaning": "Eat",
+  "components": [
+   {
+    "label": "食",
+    "meaning": "Eat",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Pictograph of a covered food vessel → eat.",
+  "reading_line": "On しょく is learned with the kanji — the shape gives the meaning, not the sound. 食べる (たべる) uses the native kun reading, tied to the meaning."
+ },
+ "会": {
+  "kind": "ideograph",
+  "meaning": "Meet",
+  "components": [
+   {
+    "label": "人",
+    "meaning": "Person",
+    "role": "part"
+   },
+   {
+    "label": "云",
+    "meaning": "Cloud",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "人 (Person) + 云 (Cloud) → people (人) gathering (云) → meet.",
+  "reading_line": "On かい is learned with the kanji; the parts give the meaning, not the sound. 会う (あう) uses the native kun reading, tied to the meaning."
+ },
+ "社": {
+  "kind": "ideograph",
+  "meaning": "Company",
+  "components": [
+   {
+    "label": "ネ",
+    "meaning": "Spirit",
+    "role": "part"
+   },
+   {
+    "label": "土",
+    "meaning": "Dirt",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ネ (Spirit) + 土 (Dirt) → an earth (土) altar (ネ) → shrine; company.",
+  "reading_line": "On しゃ is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is やしろ."
+ },
+ "情": {
+  "kind": "opaque",
+  "meaning": "Feeling",
+  "components": [
+   {
+    "label": "忄",
+    "meaning": "Soul",
+    "role": "meaning"
+   },
+   {
+    "label": "青",
+    "meaning": "Blue",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "忄 (Soul) is the semantic side (heart/feeling); the rest of the modern shape does not compose \"Feeling\" — learn it with 情報 (じょうほう).",
+  "reading_line": "青 (せい/しょう) is the voiced source of じょう, but not exact. The native kun reading is なさ."
+ },
+ "報": {
+  "kind": "opaque",
+  "meaning": "News",
+  "components": [
+   {
+    "label": "幸",
+    "meaning": "Happiness",
+    "role": "part"
+   },
+   {
+    "label": "卩",
+    "meaning": "Stamp",
+    "role": "part"
+   },
+   {
+    "label": "又",
+    "meaning": "Stool",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (幸, 卩, 又) do not compose \"News\" — learn 報 as a whole with 情報 (じょうほう).",
+  "reading_line": "On ほう: no component here carries it exactly; the on is learned with the kanji. The native kun reading is むく."
+ },
+ "満": {
+  "kind": "opaque",
+  "meaning": "Full",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "艹",
+    "meaning": "Flowers",
+    "role": "part"
+   },
+   {
+    "label": "両",
+    "meaning": "Both",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Full\" — learn it with 満足 (まんぞく).",
+  "reading_line": "On まん: no component here carries it exactly; the on is learned with the kanji. The native kun reading is み."
+ },
+ "足": {
+  "kind": "pictograph",
+  "meaning": "Foot",
+  "components": [
+   {
+    "label": "足",
+    "meaning": "Foot",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a foot and leg.",
+  "reading_line": "On ぞく is learned with the kanji — the shape gives the meaning, not the sound. The native kun readings are あし, た."
+ },
+ "正": {
+  "kind": "ideograph",
+  "meaning": "Correct",
+  "components": [
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   },
+   {
+    "label": "止",
+    "meaning": "Stop",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "一 (Ground) + 止 (Stop) → a foot (止) stopped at one line (一) → correct.",
+  "reading_line": "On せい is learned with the kanji; the parts give the meaning, not the sound. The native kun readings are ただ, まさ."
+ },
+ "常": {
+  "kind": "opaque",
+  "meaning": "Normal",
+  "components": [
+   {
+    "label": "龸",
+    "meaning": "Viking",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   },
+   {
+    "label": "巾",
+    "meaning": "Towel",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "巾 (cloth) is the meaning side — 常 originally a skirt; 尚 is the sound source (しょう), not exact for じょう.",
+  "reading_line": "On じょう: 尚 (しょう) is the historical sound source, not exact; 常 means \"normal\". The native kun reading is つね."
+ },
+ "確": {
+  "kind": "opaque",
+  "meaning": "Certain",
+  "components": [
+   {
+    "label": "石",
+    "meaning": "Stone",
+    "role": "meaning"
+   },
+   {
+    "label": "冖",
+    "meaning": "Forehead",
+    "role": "part"
+   },
+   {
+    "label": "隹",
+    "meaning": "Turkey",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "石 (Stone) is the semantic side (stone); the rest of the modern shape does not compose \"Certain\" — learn it with 確実 (かくじつ).",
+  "reading_line": "On かく: no component here carries it exactly; the on is learned with the kanji. The native kun reading is たし."
+ },
+ "実": {
+  "kind": "opaque",
+  "meaning": "Truth",
+  "components": [
+   {
+    "label": "宀",
+    "meaning": "Roof",
+    "role": "meaning"
+   },
+   {
+    "label": "𡗗",
+    "meaning": "Spring",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "宀 (Roof) is the semantic side (roof/building); the rest of the modern shape does not compose \"Truth\" — learn it with 確実 (かくじつ).",
+  "reading_line": "実 is a simplified form of 實; no sound component survives. The native kun readings are み, みの."
+ },
+ "工": {
+  "kind": "pictograph",
+  "meaning": "Construction",
+  "components": [
+   {
+    "label": "工",
+    "meaning": "Construction",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a carpenter's tool → construction.",
+  "reading_line": "On こう is learned with the kanji — the shape gives the meaning, not the sound."
+ },
+ "事": {
+  "kind": "opaque",
+  "meaning": "Occurrence",
+  "components": [
+   {
+    "label": "十",
+    "meaning": "Cross",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   },
+   {
+    "label": "ヨ",
+    "meaning": "Wolverine",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (十, 口, ヨ) do not compose \"occurrence\" — learn it with 工事 (こうじ).",
+  "reading_line": "On じ: no component here carries it exactly; the on is learned with the kanji. The native kun readings are こと, つか."
+ },
+ "壁": {
+  "kind": "opaque",
+  "meaning": "Wall",
+  "components": [
+   {
+    "label": "辟",
+    "meaning": "Hot Pepper",
+    "role": "part"
+   },
+   {
+    "label": "土",
+    "meaning": "Dirt",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "土 (Dirt) is the semantic side (earth); the rest of the modern shape does not compose \"Wall\" — learn it with 壁 (かべ).",
+  "reading_line": "辟 has the sound へき, but WaniKani gives 辟 no kanji reading — unverified. 壁 (かべ) uses the native kun reading, tied to the meaning."
+ },
+ "取": {
+  "kind": "ideograph",
+  "meaning": "Take",
+  "components": [
+   {
+    "label": "耳",
+    "meaning": "Ear",
+    "role": "part"
+   },
+   {
+    "label": "又",
+    "meaning": "Stool",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "耳 (Ear) + 又 (Stool) → a hand (又) taking an ear (耳) → take.",
+  "reading_line": "On しゅ is learned with the kanji; the parts give the meaning, not the sound. 取り付ける (とりつける) uses the native kun reading, tied to the meaning."
+ },
+ "付": {
+  "kind": "ideograph",
+  "meaning": "Attach",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "part"
+   },
+   {
+    "label": "寸",
+    "meaning": "Measurement",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) + 寸 (Measurement) → a person (ｲ) with a hand (寸) → attach.",
+  "reading_line": "On ふ is learned with the kanji; the parts give the meaning, not the sound. 取り付ける (とりつける) uses the native kun reading, tied to the meaning."
+ },
+ "上": {
+  "kind": "ideograph",
+  "meaning": "Above",
+  "components": [
+   {
+    "label": "ト",
+    "meaning": "Toe",
+    "role": "part",
+    "note": "here = mark, not \"toe\""
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ト (Toe) + 一 (Ground) → a mark above a line → above.",
+  "reading_line": "On じょう is learned with the kanji; the parts give the meaning, not the sound. 取り上げる (とりあげる) uses the native kun reading, tied to the meaning."
+ },
+ "受": {
+  "kind": "ideograph",
+  "meaning": "Accept",
+  "components": [
+   {
+    "label": "⺤",
+    "meaning": "Cleat",
+    "role": "part"
+   },
+   {
+    "label": "冖",
+    "meaning": "Forehead",
+    "role": "part"
+   },
+   {
+    "label": "又",
+    "meaning": "Stool",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "⺤ (Cleat) + 冖 (Forehead) + 又 (Stool) → a hand (又) receiving under a cover (冖) → accept.",
+  "reading_line": "On じゅ is learned with the kanji; the parts give the meaning, not the sound. 受け入れる (うけいれる) uses the native kun reading, tied to the meaning."
+ },
+ "引": {
+  "kind": "ideograph",
+  "meaning": "Pull",
+  "components": [
+   {
+    "label": "弓",
+    "meaning": "Bow",
+    "role": "part"
+   },
+   {
+    "label": "丨",
+    "meaning": "Stick",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "弓 (Bow) + 丨 (Stick) → a bow (弓) with a string (丨) → pull.",
+  "reading_line": "On いん is learned with the kanji; the parts give the meaning, not the sound. 引き受ける (ひきうける) uses the native kun reading, tied to the meaning."
+ },
+ "清": {
+  "kind": "phono-semantic",
+  "meaning": "Pure",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "青",
+    "meaning": "Blue",
+    "role": "sound",
+    "reading": "せい"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the meaning side (water); 青 (Blue) is the sound component, giving せい. So 清 means \"pure; clear\".",
+  "reading_line": "The on reading せい comes from the sound component 青. The native kun reading is きよ.",
+  "sound": {
+   "label": "青",
+   "reading": "せい",
+   "same": [
+    {
+     "kanji": "情",
+     "reading": "じょう",
+     "exact": false,
+     "words": [
+      {
+       "word": "情報",
+       "reading": "じょうほう"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "潔": {
+  "kind": "opaque",
+  "meaning": "Pure",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "Rib Cage",
+    "meaning": "Rib Cage",
+    "role": "part"
+   },
+   {
+    "label": "刀",
+    "meaning": "Sword",
+    "role": "part"
+   },
+   {
+    "label": "糸",
+    "meaning": "Thread",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Pure\" — learn it with 清潔 (せいけつ).",
+  "reading_line": "On けつ: no component here carries it exactly; the on is learned with the kanji. The native kun reading is いさぎよ."
+ },
+ "拭": {
+  "kind": "opaque",
+  "meaning": "Wipe",
+  "components": [
+   {
+    "label": "扌",
+    "meaning": "Fingers",
+    "role": "meaning"
+   },
+   {
+    "label": "弋",
+    "meaning": "Ceremony",
+    "role": "part"
+   },
+   {
+    "label": "工",
+    "meaning": "Construction",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "扌 (Fingers) is the semantic side (hand/action); the rest of the modern shape does not compose \"Wipe\" — learn it with 拭く (ふく).",
+  "reading_line": "On しょく: no component here carries it exactly; the on is learned with the kanji. 拭く (ふく) uses the native kun reading, tied to the meaning."
+ },
+ "柔": {
+  "kind": "opaque",
+  "meaning": "Gentle",
+  "components": [
+   {
+    "label": "矛",
+    "meaning": "Spear",
+    "role": "part"
+   },
+   {
+    "label": "木",
+    "meaning": "Tree",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "木 (wood) is the material side — soft wood; 矛 (spear) gives the shape; 柔 means \"gentle\".",
+  "reading_line": "On じゅう: no component here carries it exactly; the on is learned with the kanji. 柔らかい (やわらかい) uses the native kun reading, tied to the meaning."
+ },
+ "濡": {
+  "kind": "ideograph",
+  "meaning": "Wet",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "part"
+   },
+   {
+    "label": "雨",
+    "meaning": "Rain",
+    "role": "part"
+   },
+   {
+    "label": "而",
+    "meaning": "Rake",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) + 雨 (Rain) + 而 (Rake) → water (氵) + rain (雨) → wet.",
+  "reading_line": "On じゅ is learned with the kanji; the parts give the meaning, not the sound. 濡れる (ぬれる) uses the native kun reading, tied to the meaning."
+ },
+ "乾": {
+  "kind": "opaque",
+  "meaning": "Dry",
+  "components": [
+   {
+    "label": "𠦝",
+    "meaning": "Morning",
+    "role": "part"
+   },
+   {
+    "label": "𠂉",
+    "meaning": "Gun",
+    "role": "part"
+   },
+   {
+    "label": "乙",
+    "meaning": "Nose",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (𠦝, 𠂉, 乙) do not compose \"Dry\" — learn 乾 as a whole with 乾く (かわく).",
+  "reading_line": "On かん: no component here carries it exactly; the on is learned with the kanji. 乾く (かわく) uses the native kun reading, tied to the meaning."
+ },
+ "急": {
+  "kind": "opaque",
+  "meaning": "Hurry",
+  "components": [
+   {
+    "label": "勹",
+    "meaning": "Prison",
+    "role": "part"
+   },
+   {
+    "label": "ヨ",
+    "meaning": "Wolverine",
+    "role": "part"
+   },
+   {
+    "label": "心",
+    "meaning": "Heart",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "心 (Heart) is the semantic side (heart/mind); the rest of the modern shape does not compose \"Hurry\" — learn it with 急ぐ (いそぐ).",
+  "reading_line": "On きゅう: no component here carries it exactly; the on is learned with the kanji. 急ぐ (いそぐ) uses the native kun reading, tied to the meaning."
+ },
+ "前": {
+  "kind": "opaque",
+  "meaning": "Front",
+  "components": [
+   {
+    "label": "丷",
+    "meaning": "Horns",
+    "role": "part"
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   },
+   {
+    "label": "月",
+    "meaning": "Moon",
+    "role": "part"
+   },
+   {
+    "label": "刂",
+    "meaning": "Knife",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "前 is 丷 + 一 + 月 (a reduced 舟, boat) + 刂; the modern parts do not compose \"front\" — learn 前 (まえ).",
+  "reading_line": "On ぜん: no component here carries it exactly; the on is learned with the kanji. 前 (まえ) uses the native kun reading, tied to the meaning."
+ },
+ "置": {
+  "kind": "ideograph",
+  "meaning": "Put",
+  "components": [
+   {
+    "label": "罒",
+    "meaning": "Net",
+    "role": "part"
+   },
+   {
+    "label": "直",
+    "meaning": "Straight",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "罒 (Net) + 直 (Straight) → a net (罒) set straight (直) → place; put.",
+  "reading_line": "On ち is learned with the kanji; the parts give the meaning, not the sound. 置く (おく) uses the native kun reading, tied to the meaning."
+ },
+ "居": {
+  "kind": "opaque",
+  "meaning": "Alive",
+  "components": [
+   {
+    "label": "尸",
+    "meaning": "Flag",
+    "role": "meaning"
+   },
+   {
+    "label": "古",
+    "meaning": "Old",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "尸 (building/body) + 古 (old) — the modern parts do not compose \"reside\"; learn 居間 (いま).",
+  "reading_line": "On きょ: no component here carries it exactly; the on is learned with the kanji. 居間 (いま) uses the native kun reading, tied to the meaning."
+ },
+ "台": {
+  "kind": "opaque",
+  "meaning": "Machine",
+  "components": [
+   {
+    "label": "ム",
+    "meaning": "Private",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "台 = ム + 口; the modern parts do not compose \"stand/machine\" — learn 台所 (だいどころ).",
+  "reading_line": "On だい: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "所": {
+  "kind": "opaque",
+  "meaning": "Place",
+  "components": [
+   {
+    "label": "戸",
+    "meaning": "Door",
+    "role": "part"
+   },
+   {
+    "label": "斤",
+    "meaning": "Axe",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "戸 (door) + 斤 (axe) — the modern parts do not compose \"place\"; learn 台所 (だいどころ).",
+  "reading_line": "On しょ: no component here carries it exactly; the on is learned with the kanji. 台所 (だいどころ) uses the native kun reading, tied to the meaning."
+ },
+ "廊": {
+  "kind": "phono-semantic",
+  "meaning": "Corridor",
+  "components": [
+   {
+    "label": "广",
+    "meaning": "Canopy",
+    "role": "meaning"
+   },
+   {
+    "label": "郎",
+    "meaning": "Guy",
+    "role": "sound",
+    "reading": "ろう"
+   }
+  ],
+  "meaning_line": "广 (Canopy) is the meaning side (building); 郎 (Guy) is the sound component, giving ろう. So 廊 means \"corridor\".",
+  "reading_line": "The on reading ろう comes from the sound component 郎."
+ },
+ "下": {
+  "kind": "ideograph",
+  "meaning": "Below",
+  "components": [
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   },
+   {
+    "label": "ト",
+    "meaning": "Toe",
+    "role": "part",
+    "note": "here = mark, not \"toe\""
+   }
+  ],
+  "meaning_line": "一 (Ground) + ト (Toe) → a mark below a line → below.",
+  "reading_line": "On か is learned with the kanji; the parts give the meaning, not the sound. The native kun readings are した, さ."
+ },
+ "風": {
+  "kind": "opaque",
+  "meaning": "Wind",
+  "components": [
+   {
+    "label": "几",
+    "meaning": "Table",
+    "role": "part"
+   },
+   {
+    "label": "丿",
+    "meaning": "Slide",
+    "role": "part"
+   },
+   {
+    "label": "虫",
+    "meaning": "Insect",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "風 = 几 + 丿 + 虫; the modern parts do not compose \"wind\" — learn 風呂 (ふろ).",
+  "reading_line": "On ふ: no component here carries it exactly; the on is learned with the kanji. 風 (かぜ) uses the native kun reading, tied to the meaning."
+ },
+ "呂": {
+  "kind": "pictograph",
+  "meaning": "Bath",
+  "components": [
+   {
+    "label": "呂",
+    "meaning": "Bathtub",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape kanji: \"bath\" is a later use of the glyph; no component logic.",
+  "reading_line": "On ろ is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is せぼね."
+ },
+ "指": {
+  "kind": "phono-semantic",
+  "meaning": "Finger",
+  "components": [
+   {
+    "label": "扌",
+    "meaning": "Fingers",
+    "role": "meaning"
+   },
+   {
+    "label": "旨",
+    "meaning": "Point",
+    "role": "sound",
+    "reading": "し"
+   }
+  ],
+  "meaning_line": "扌 (Fingers) is the meaning side (hand/action); 旨 (Point) is the sound component, giving し. So 指 means \"finger; point\".",
+  "reading_line": "The on reading し comes from the sound component 旨. WaniKani splits 旨 into 匕+日; the sound component is the whole 旨 (し). The native kun readings are ゆび, さ."
+ },
+ "導": {
+  "kind": "phono-semantic",
+  "meaning": "Lead",
+  "components": [
+   {
+    "label": "道",
+    "meaning": "Road",
+    "role": "sound",
+    "reading": "どう"
+   },
+   {
+    "label": "寸",
+    "meaning": "Measurement",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "寸 (Measurement) is the meaning side (hand/measure); 道 (Road) is the sound component, giving どう. So 導 means \"guide\" — a hand leading the way.",
+  "reading_line": "The on reading どう comes from the sound component 道. The native kun reading is みちび."
+ },
+ "答": {
+  "kind": "ideograph",
+  "meaning": "Answer",
+  "components": [
+   {
+    "label": "竹",
+    "meaning": "Bamboo",
+    "role": "part"
+   },
+   {
+    "label": "合",
+    "meaning": "Suit",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "竹 (Bamboo) + 合 (Suit) → bamboo (竹) slips that fit (合) → answer.",
+  "reading_line": "On とう is learned with the kanji; the parts give the meaning, not the sound. 答える (こたえる) uses the native kun reading, tied to the meaning."
+ },
+ "教": {
+  "kind": "opaque",
+  "meaning": "Teach",
+  "components": [
+   {
+    "label": "孝",
+    "meaning": "Teacher",
+    "role": "part"
+   },
+   {
+    "label": "夂",
+    "meaning": "Winter",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (孝, 夂) do not compose \"Teach\" — learn 教 as a whole with 教える (おしえる).",
+  "reading_line": "孝 (こう) is the historical sound source; こう is not きょう — no exact key. 教える (おしえる) uses the native kun reading, tied to the meaning."
+ },
+ "越": {
+  "kind": "opaque",
+  "meaning": "Go Beyond",
+  "components": [
+   {
+    "label": "走",
+    "meaning": "Run",
+    "role": "meaning"
+   },
+   {
+    "label": "成",
+    "meaning": "Become",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "走 (run) is the meaning side; 成 is the phonetic remnant, not exact for えつ.",
+  "reading_line": "On えつ: no component here carries it exactly; the on is learned with the kanji. 引っ越し (ひっこし) uses the native kun reading, tied to the meaning."
+ },
+ "何": {
+  "kind": "phono-semantic",
+  "meaning": "What",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "可",
+    "meaning": "Lip Ring",
+    "role": "sound",
+    "reading": "か"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the meaning side (person); 可 (Lip Ring) is the sound component, giving か. So 何 means \"what\".",
+  "reading_line": "The on reading か comes from the sound component 可. 何度 (なんど) uses the native kun reading, tied to the meaning.",
+  "sound": {
+   "label": "可",
+   "reading": "か",
+   "same": [
+    {
+     "kanji": "荷",
+     "reading": "か",
+     "exact": true,
+     "words": [
+      {
+       "word": "荷物",
+       "reading": "にもつ"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "度": {
+  "kind": "opaque",
+  "meaning": "Degree",
+  "components": [
+   {
+    "label": "Yurt",
+    "meaning": "Yurt",
+    "role": "part"
+   },
+   {
+    "label": "又",
+    "meaning": "Stool",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (Yurt, 又) do not compose \"Degree\" — learn 度 as a whole with 何度 (なんど).",
+  "reading_line": "On ど: no component here carries it exactly; the on is learned with the kanji. The native kun reading is たび."
+ },
+ "重": {
+  "kind": "pictograph",
+  "meaning": "Heavy",
+  "components": [
+   {
+    "label": "重",
+    "meaning": "Heavy",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape kanji: the whole glyph is \"heavy\"; no component logic.",
+  "reading_line": "On じゅう is learned with the kanji — the shape gives the meaning, not the sound. 重い (おもい) uses the native kun reading, tied to the meaning."
+ },
+ "具": {
+  "kind": "opaque",
+  "meaning": "Tool",
+  "components": [
+   {
+    "label": "目",
+    "meaning": "Eye",
+    "role": "part"
+   },
+   {
+    "label": "一",
+    "meaning": "Ground",
+    "role": "part"
+   },
+   {
+    "label": "ハ",
+    "meaning": "Fins",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "具 = 目 + 一 + ハ (hands holding a vessel); the modern parts do not compose \"tool\" — learn 家具 (かぐ).",
+  "reading_line": "On ぐ: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "体": {
+  "kind": "ideograph",
+  "meaning": "Body",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "part"
+   },
+   {
+    "label": "本",
+    "meaning": "Book",
+    "role": "part",
+    "note": "here = root, not \"book\""
+   }
+  ],
+  "meaning_line": "ｲ (Leader) + 本 (Book) → a person (ｲ) + root (本) → body.",
+  "reading_line": "On たい is learned with the kanji; the parts give the meaning, not the sound. 体 (からだ) uses the native kun reading, tied to the meaning."
+ },
+ "祭": {
+  "kind": "ideograph",
+  "meaning": "Festival",
+  "components": [
+   {
+    "label": "月",
+    "meaning": "Moon",
+    "role": "part"
+   },
+   {
+    "label": "又",
+    "meaning": "Stool",
+    "role": "part"
+   },
+   {
+    "label": "示",
+    "meaning": "Jackhammer",
+    "role": "part",
+    "note": "here = altar, not \"jackhammer\""
+   }
+  ],
+  "meaning_line": "月 (Moon) + 又 (Stool) + 示 (Jackhammer) → meat (月) offered by hand (又) at an altar (示) → festival.",
+  "reading_line": "On さい is learned with the kanji; the parts give the meaning, not the sound. お祭り (おまつり) uses the native kun reading, tied to the meaning."
+ },
+ "弟": {
+  "kind": "pictograph",
+  "meaning": "Younger Brother",
+  "components": [
+   {
+    "label": "丷",
+    "meaning": "Horns",
+    "role": "part"
+   },
+   {
+    "label": "弓",
+    "meaning": "Bow",
+    "role": "part"
+   },
+   {
+    "label": "丨",
+    "meaning": "Stick",
+    "role": "part"
+   },
+   {
+    "label": "丿",
+    "meaning": "Slide",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Pictograph of a younger brother; the modern strokes are not a sound-meaning compound.",
+  "reading_line": "On だい is learned with the kanji — the shape gives the meaning, not the sound. 弟 (おとうと) uses the native kun reading, tied to the meaning."
+ },
+ "迷": {
+  "kind": "phono-semantic",
+  "meaning": "Astray",
+  "components": [
+   {
+    "label": "⻌",
+    "meaning": "Scooter",
+    "role": "meaning"
+   },
+   {
+    "label": "米",
+    "meaning": "Rice",
+    "role": "sound",
+    "reading": "まい"
+   }
+  ],
+  "meaning_line": "⻌ (Scooter) is the meaning side (movement/path); 米 (Rice) is the sound component, giving まい. So 迷 means \"go astray\".",
+  "reading_line": "The on reading まい comes from the sound component 米. The standard on is めい; まい survives in 迷子. The native kun reading is まよ."
+ },
+ "子": {
+  "kind": "pictograph",
+  "meaning": "Child",
+  "components": [
+   {
+    "label": "子",
+    "meaning": "Child",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Single-shape pictograph of a baby with outstretched arms.",
+  "reading_line": "On し is learned with the kanji — the shape gives the meaning, not the sound. 迷子 (まいご) uses the native kun reading, tied to the meaning."
+ },
+ "帽": {
+  "kind": "phono-semantic",
+  "meaning": "Hat",
+  "components": [
+   {
+    "label": "巾",
+    "meaning": "Towel",
+    "role": "meaning"
+   },
+   {
+    "label": "冒",
+    "meaning": "Dare",
+    "role": "sound",
+    "reading": "ぼう"
+   }
+  ],
+  "meaning_line": "巾 (Towel) is the meaning side (cloth); 冒 (Dare) is the sound component, giving ぼう. So 帽 means \"hat\".",
+  "reading_line": "The on reading ぼう comes from the sound component 冒. WaniKani splits 冒 into 日+目; the sound component is the whole 冒 (ぼう)."
+ },
+ "走": {
+  "kind": "pictograph",
+  "meaning": "Run",
+  "components": [
+   {
+    "label": "走",
+    "meaning": "Run",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Pictograph of a person running → run.",
+  "reading_line": "On そう is learned with the kanji — the shape gives the meaning, not the sound. 走る (はしる) uses the native kun reading, tied to the meaning."
+ },
+ "親": {
+  "kind": "opaque",
+  "meaning": "Parent",
+  "components": [
+   {
+    "label": "立",
+    "meaning": "Stand",
+    "role": "part"
+   },
+   {
+    "label": "木",
+    "meaning": "Tree",
+    "role": "part"
+   },
+   {
+    "label": "見",
+    "meaning": "See",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "見 (see) is the meaning side; 亲 (しん) is the sound source, but WaniKani splits it into 立+木; 親 means \"parent\".",
+  "reading_line": "On しん: 亲 (しん) is the sound source, but WaniKani splits it and gives no kanji subject — unverified. 母親 (ははおや) uses the native kun reading, tied to the meaning."
+ },
+ "赤": {
+  "kind": "ideograph",
+  "meaning": "Red",
+  "components": [
+   {
+    "label": "大",
+    "meaning": "Big",
+    "role": "part"
+   },
+   {
+    "label": "火",
+    "meaning": "Fire",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "大 (Big) + 火 (Fire) → big (大) fire (火) → red.",
+  "reading_line": "On せき is learned with the kanji; the parts give the meaning, not the sound. 赤ちゃん (あかちゃん) uses the native kun reading, tied to the meaning."
+ },
+ "大": {
+  "kind": "pictograph",
+  "meaning": "Big",
+  "components": [
+   {
+    "label": "大",
+    "meaning": "Big",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "A person with arms spread wide → big.",
+  "reading_line": "On だい is learned with the kanji — the shape gives the meaning, not the sound. 大きい (おおきい) uses the native kun reading, tied to the meaning."
+ },
+ "修": {
+  "kind": "opaque",
+  "meaning": "Mastering",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "丨",
+    "meaning": "Stick",
+    "role": "part"
+   },
+   {
+    "label": "夂",
+    "meaning": "Winter",
+    "role": "part"
+   },
+   {
+    "label": "彡",
+    "meaning": "Hair",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the semantic side (person); the rest of the modern shape does not compose \"Mastering\" — learn it with 修理 (しゅうり).",
+  "reading_line": "攸 (ゆう) is the historical sound source; ゆう is not しゅう — no exact key. The native kun reading is おさ."
+ },
+ "理": {
+  "kind": "phono-semantic",
+  "meaning": "Reason",
+  "components": [
+   {
+    "label": "王",
+    "meaning": "King",
+    "role": "meaning"
+   },
+   {
+    "label": "里",
+    "meaning": "Village",
+    "role": "sound",
+    "reading": "り"
+   }
+  ],
+  "meaning_line": "王 (King) is the meaning side (jade/king); 里 (Village) is the sound component, giving り. So 理 means \"reason\" — the veins of jade.",
+  "reading_line": "The on reading り comes from the sound component 里. The native kun reading is ことわり."
+ },
+ "妻": {
+  "kind": "opaque",
+  "meaning": "Wife",
+  "components": [
+   {
+    "label": "十",
+    "meaning": "Cross",
+    "role": "part"
+   },
+   {
+    "label": "ヨ",
+    "meaning": "Wolverine",
+    "role": "part"
+   },
+   {
+    "label": "女",
+    "meaning": "Woman",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "女 (Woman) is the semantic side (woman); the rest of the modern shape does not compose \"Wife\" — learn it with 妻 (つま).",
+  "reading_line": "On さい: no component here carries it exactly; the on is learned with the kanji. 妻 (つま) uses the native kun reading, tied to the meaning."
+ },
+ "早": {
+  "kind": "ideograph",
+  "meaning": "Early",
+  "components": [
+   {
+    "label": "日",
+    "meaning": "Sun",
+    "role": "part"
+   },
+   {
+    "label": "十",
+    "meaning": "Cross",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "日 (Sun) + 十 (Cross) → the sun (日) on a line (十) → early.",
+  "reading_line": "On そう is learned with the kanji; the parts give the meaning, not the sound. 早い (はやい) uses the native kun reading, tied to the meaning."
+ },
+ "仲": {
+  "kind": "phono-semantic",
+  "meaning": "Relationship",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "中",
+    "meaning": "Middle",
+    "role": "sound",
+    "reading": "ちゅう"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the meaning side (person); 中 (Middle) is the sound component, giving ちゅう. So 仲 means \"relationship\" — the person in the middle.",
+  "reading_line": "The on reading ちゅう comes from the sound component 中. 仲 (なか) uses the native kun reading, tied to the meaning."
+ },
+ "腕": {
+  "kind": "opaque",
+  "meaning": "Arm",
+  "components": [
+   {
+    "label": "月",
+    "meaning": "Moon",
+    "role": "meaning"
+   },
+   {
+    "label": "宀",
+    "meaning": "Roof",
+    "role": "part"
+   },
+   {
+    "label": "夕",
+    "meaning": "Evening",
+    "role": "part"
+   },
+   {
+    "label": "巳",
+    "meaning": "Snake",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "月 (Moon) is the semantic side (body/moon); the rest of the modern shape does not compose \"Arm\" — learn it with 腕 (うで).",
+  "reading_line": "On わん: no component here carries it exactly; the on is learned with the kanji. 腕 (うで) uses the native kun reading, tied to the meaning."
+ },
+ "院": {
+  "kind": "opaque",
+  "meaning": "Institution",
+  "components": [
+   {
+    "label": "阝",
+    "meaning": "Building",
+    "role": "meaning"
+   },
+   {
+    "label": "宀",
+    "meaning": "Roof",
+    "role": "part"
+   },
+   {
+    "label": "元",
+    "meaning": "Origin",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "阝 (place) is the meaning side; 完 (かん) is the historical sound source, not exact for いん — 院 means \"institution\".",
+  "reading_line": "On いん: no component here carries it exactly; the on is learned with the kanji."
+ },
+ "買": {
+  "kind": "ideograph",
+  "meaning": "Buy",
+  "components": [
+   {
+    "label": "罒",
+    "meaning": "Net",
+    "role": "part"
+   },
+   {
+    "label": "貝",
+    "meaning": "Shellfish",
+    "role": "both",
+    "reading": "ばい",
+    "note": "also shell money"
+   }
+  ],
+  "meaning_line": "罒 (Net) + 貝 (Shellfish; also shell money) → buy; 貝 also supplies ばい.",
+  "reading_line": "The on reading ばい comes from the sound component 貝. 買う (かう) uses the native kun reading, tied to the meaning."
+ },
+ "店": {
+  "kind": "ideograph",
+  "meaning": "Shop",
+  "components": [
+   {
+    "label": "广",
+    "meaning": "Canopy",
+    "role": "part"
+   },
+   {
+    "label": "占",
+    "meaning": "Fortune",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "广 (Canopy) + 占 (Fortune) → a building (广) occupied (占) → shop.",
+  "reading_line": "On てん is learned with the kanji; the parts give the meaning, not the sound. お店 (おみせ) uses the native kun reading, tied to the meaning."
+ },
+ "違": {
+  "kind": "opaque",
+  "meaning": "Different",
+  "components": [
+   {
+    "label": "⻌",
+    "meaning": "Scooter",
+    "role": "meaning"
+   },
+   {
+    "label": "韋",
+    "meaning": "Korea",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "⻌ (Scooter) is the semantic side (movement/path); the rest of the modern shape does not compose \"Different\" — learn it with 間違える (まちがえる).",
+  "reading_line": "韋 has the sound い, but WaniKani gives 韋 no kanji reading — unverified. 間違える (まちがえる) uses the native kun reading, tied to the meaning."
+ },
+ "漢": {
+  "kind": "opaque",
+  "meaning": "Chinese",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "𦰩",
+    "meaning": "Chinese",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Chinese\" — learn it with 漢字 (かんじ).",
+  "reading_line": "堇 (きん) is the historical sound source; きん is not かん — no exact key. The native kun reading is おとこ."
+ },
+ "字": {
+  "kind": "ideograph",
+  "meaning": "Letter",
+  "components": [
+   {
+    "label": "宀",
+    "meaning": "Roof",
+    "role": "part"
+   },
+   {
+    "label": "子",
+    "meaning": "Child",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "宀 (Roof) + 子 (Child) → a child (子) under a roof (宀) → character; learning.",
+  "reading_line": "On じ is learned with the kanji; the parts give the meaning, not the sound."
+ },
+ "先": {
+  "kind": "opaque",
+  "meaning": "Previous",
+  "components": [
+   {
+    "label": "丿",
+    "meaning": "Slide",
+    "role": "part"
+   },
+   {
+    "label": "土",
+    "meaning": "Dirt",
+    "role": "part"
+   },
+   {
+    "label": "儿",
+    "meaning": "Legs",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "先 = 丿 + 土 + 儿; the modern parts do not compose \"previous\" — learn 先生 (せんせい).",
+  "reading_line": "On せん: no component here carries it exactly; the on is learned with the kanji. The native kun readings are さき, ま."
+ },
+ "目": {
+  "kind": "pictograph",
+  "meaning": "Eye",
+  "components": [
+   {
+    "label": "目",
+    "meaning": "Eye",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "Pictograph of an eye, drawn upright → eye.",
+  "reading_line": "On もく is learned with the kanji — the shape gives the meaning, not the sound. The native kun reading is め."
+ },
+ "的": {
+  "kind": "opaque",
+  "meaning": "Target",
+  "components": [
+   {
+    "label": "白",
+    "meaning": "White",
+    "role": "meaning"
+   },
+   {
+    "label": "勺",
+    "meaning": "Pool",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "白 (white/bright) is the meaning side — a bright target; 勺 gives しゃく, not exact for てき.",
+  "reading_line": "On てき: 勺 (しゃく) is the historical sound source, not exact; 的 means \"target\". The native kun reading is まと."
+ },
+ "商": {
+  "kind": "opaque",
+  "meaning": "Merchandise",
+  "components": [
+   {
+    "label": "立",
+    "meaning": "Stand",
+    "role": "part"
+   },
+   {
+    "label": "冋",
+    "meaning": "Mustache",
+    "role": "part"
+   },
+   {
+    "label": "儿",
+    "meaning": "Legs",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (立, 冋, 儿) do not compose \"Merchandise\" — learn 商 as a whole with 商品 (しょうひん).",
+  "reading_line": "On しょう: no component here carries it exactly; the on is learned with the kanji. The native kun reading is あきな."
+ },
+ "品": {
+  "kind": "ideograph",
+  "meaning": "Product",
+  "components": [
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "口 (Mouth) + 口 (Mouth) + 口 (Mouth) → three mouths (口) → many items → products.",
+  "reading_line": "On ひん is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is しな."
+ },
+ "売": {
+  "kind": "opaque",
+  "meaning": "Sell",
+  "components": [
+   {
+    "label": "士",
+    "meaning": "Samurai",
+    "role": "part"
+   },
+   {
+    "label": "冖",
+    "meaning": "Forehead",
+    "role": "part"
+   },
+   {
+    "label": "儿",
+    "meaning": "Legs",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "売 is a simplified 賣; the modern parts do not compose \"sell\" — learn 売れる (うれる).",
+  "reading_line": "売 is a simplified form of 賣; no sound component survives. 売れる (うれる) uses the native kun reading, tied to the meaning."
+ },
+ "超": {
+  "kind": "opaque",
+  "meaning": "Ultra",
+  "components": [
+   {
+    "label": "走",
+    "meaning": "Run",
+    "role": "meaning"
+   },
+   {
+    "label": "召",
+    "meaning": "Call",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "走 (run) is the meaning side; 召 (しょう) is the sound source, not exact for ちょう.",
+  "reading_line": "On ちょう: 召 (しょう) is the historical sound source, not exact. 超える (こえる) uses the native kun reading, tied to the meaning."
+ },
+ "窓": {
+  "kind": "opaque",
+  "meaning": "Window",
+  "components": [
+   {
+    "label": "穴",
+    "meaning": "Hole",
+    "role": "meaning"
+   },
+   {
+    "label": "ム",
+    "meaning": "Private",
+    "role": "part"
+   },
+   {
+    "label": "心",
+    "meaning": "Heart",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "穴 (Hole) is the semantic side (hole); the rest of the modern shape does not compose \"Window\" — learn it with 窓側 (まどぎわ).",
+  "reading_line": "On そう: no component here carries it exactly; the on is learned with the kanji. 窓側 (まどぎわ) uses the native kun reading, tied to the meaning."
+ },
+ "側": {
+  "kind": "phono-semantic",
+  "meaning": "Side",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "meaning"
+   },
+   {
+    "label": "則",
+    "meaning": "Rule",
+    "role": "sound",
+    "reading": "そく"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) is the meaning side (person); 則 (Rule) is the sound component, giving そく. So 側 means \"side\".",
+  "reading_line": "The on reading そく comes from the sound component 則. WaniKani splits 則 into 貝+刂; the sound component is the whole 則 (そく). 窓側 (まどぎわ) uses the native kun reading, tied to the meaning."
+ },
+ "週": {
+  "kind": "phono-semantic",
+  "meaning": "Week",
+  "components": [
+   {
+    "label": "⻌",
+    "meaning": "Scooter",
+    "role": "meaning"
+   },
+   {
+    "label": "周",
+    "meaning": "Circumference",
+    "role": "sound",
+    "reading": "しゅう"
+   }
+  ],
+  "meaning_line": "⻌ (Scooter) is the meaning side (movement/path); 周 (Circumference) is the sound component, giving しゅう. So 週 means \"week\" — a cycle gone round.",
+  "reading_line": "The on reading しゅう comes from the sound component 周."
+ },
+ "海": {
+  "kind": "opaque",
+  "meaning": "Sea",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "𠂉",
+    "meaning": "Gun",
+    "role": "part"
+   },
+   {
+    "label": "毋",
+    "meaning": "Window",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Sea\" — learn it with 海外 (かいがい).",
+  "reading_line": "毎 (まい) is close to かい but not exact. The native kun reading is うみ."
+ },
+ "張": {
+  "kind": "phono-semantic",
+  "meaning": "Stretch",
+  "components": [
+   {
+    "label": "弓",
+    "meaning": "Bow",
+    "role": "meaning"
+   },
+   {
+    "label": "長",
+    "meaning": "Long",
+    "role": "sound",
+    "reading": "ちょう"
+   }
+  ],
+  "meaning_line": "弓 (Bow) is the meaning side (bow); 長 (Long) is the sound component, giving ちょう. So 張 means \"stretch\" — a bow drawn long.",
+  "reading_line": "The on reading ちょう comes from the sound component 長. The native kun reading is は."
+ },
+ "忙": {
+  "kind": "phono-semantic",
+  "meaning": "Busy",
+  "components": [
+   {
+    "label": "忄",
+    "meaning": "Soul",
+    "role": "meaning"
+   },
+   {
+    "label": "亡",
+    "meaning": "Death",
+    "role": "sound",
+    "reading": "ぼう"
+   }
+  ],
+  "meaning_line": "忄 (Soul) is the meaning side (feeling); 亡 (Death) is the sound component, giving ぼう. So 忙 means \"busy\" — the heart is occupied.",
+  "reading_line": "The on reading ぼう comes from the sound component 亡. 忙しい (いそがしい) uses the native kun reading, tied to the meaning."
+ },
+ "研": {
+  "kind": "opaque",
+  "meaning": "Sharpen",
+  "components": [
+   {
+    "label": "石",
+    "meaning": "Stone",
+    "role": "meaning"
+   },
+   {
+    "label": "开",
+    "meaning": "Lantern",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "石 (Stone) is the semantic side (stone); the rest of the modern shape does not compose \"Sharpen\" — learn it with 研究 (けんきゅう).",
+  "reading_line": "开 (けん) is the historical sound source, but it is not a kanji in WaniKani — unverified. The native kun reading is と."
+ },
+ "究": {
+  "kind": "phono-semantic",
+  "meaning": "Research",
+  "components": [
+   {
+    "label": "穴",
+    "meaning": "Hole",
+    "role": "meaning"
+   },
+   {
+    "label": "九",
+    "meaning": "Nine",
+    "role": "sound",
+    "reading": "きゅう"
+   }
+  ],
+  "meaning_line": "穴 (Hole) is the meaning side (hole); 九 (Nine) is the sound component, giving きゅう. So 究 means \"research\" — digging into a hole.",
+  "reading_line": "The on reading きゅう comes from the sound component 九. The native kun reading is きわ."
+ },
+ "新": {
+  "kind": "ideograph",
+  "meaning": "New",
+  "components": [
+   {
+    "label": "立",
+    "meaning": "Stand",
+    "role": "part"
+   },
+   {
+    "label": "木",
+    "meaning": "Tree",
+    "role": "part"
+   },
+   {
+    "label": "斤",
+    "meaning": "Axe",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "立 (Stand) + 木 (Tree) + 斤 (Axe) → a tree (木) cut with an axe (斤) → new.",
+  "reading_line": "On しん is learned with the kanji; the parts give the meaning, not the sound. 新しい (あたらしい) uses the native kun reading, tied to the meaning."
+ },
+ "薬": {
+  "kind": "ideograph",
+  "meaning": "Medicine",
+  "components": [
+   {
+    "label": "艹",
+    "meaning": "Flowers",
+    "role": "part"
+   },
+   {
+    "label": "楽",
+    "meaning": "Comfort",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "艹 (Flowers) + 楽 (Comfort) → plants (艹) + comfort (楽) → medicine.",
+  "reading_line": "On やく is learned with the kanji; the parts give the meaning, not the sound. 薬 (くすり) uses the native kun reading, tied to the meaning."
+ },
+ "効": {
+  "kind": "phono-semantic",
+  "meaning": "Effective",
+  "components": [
+   {
+    "label": "交",
+    "meaning": "Mix",
+    "role": "sound",
+    "reading": "こう"
+   },
+   {
+    "label": "力",
+    "meaning": "Power",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "力 (Power) is the meaning side (power); 交 (Mix) is the sound component, giving こう. So 効 means \"effect\".",
+  "reading_line": "The on reading こう comes from the sound component 交. The native kun reading is き.",
+  "sound": {
+   "label": "交",
+   "reading": "こう",
+   "same": [
+    {
+     "kanji": "校",
+     "reading": "こう",
+     "exact": true,
+     "words": [
+      {
+       "word": "学校",
+       "reading": "がっこう"
+      },
+      {
+       "word": "高校生",
+       "reading": "こうこうせい"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "果": {
+  "kind": "ideograph",
+  "meaning": "Fruit",
+  "components": [
+   {
+    "label": "田",
+    "meaning": "Rice Paddy",
+    "role": "part"
+   },
+   {
+    "label": "木",
+    "meaning": "Tree",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "田 (Rice Paddy) + 木 (Tree) → fruit on a tree (木) above a field (田) → fruit; result.",
+  "reading_line": "On か is learned with the kanji; the parts give the meaning, not the sound. The native kun readings are くだ, は."
+ },
+ "懐": {
+  "kind": "opaque",
+  "meaning": "Nostalgia",
+  "components": [
+   {
+    "label": "忄",
+    "meaning": "Soul",
+    "role": "meaning"
+   },
+   {
+    "label": "十",
+    "meaning": "Cross",
+    "role": "part"
+   },
+   {
+    "label": "罒",
+    "meaning": "Net",
+    "role": "part"
+   },
+   {
+    "label": "衣",
+    "meaning": "Clothes",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "忄 (Soul) is the semantic side (heart/feeling); the rest of the modern shape does not compose \"Nostalgia\" — learn it with 懐かしい (なつかしい).",
+  "reading_line": "On かい: no component here carries it exactly; the on is learned with the kanji. 懐かしい (なつかしい) uses the native kun reading, tied to the meaning."
+ },
+ "持": {
+  "kind": "phono-semantic",
+  "meaning": "Hold",
+  "components": [
+   {
+    "label": "扌",
+    "meaning": "Fingers",
+    "role": "meaning"
+   },
+   {
+    "label": "寺",
+    "meaning": "Temple",
+    "role": "sound",
+    "reading": "じ"
+   }
+  ],
+  "meaning_line": "扌 (Fingers) is the meaning side (hand/action); 寺 (Temple) is the sound component, giving じ. So 持 means \"hold\".",
+  "reading_line": "The on reading じ comes from the sound component 寺. 気持ち (きもち) uses the native kun reading, tied to the meaning.",
+  "sound": {
+   "label": "寺",
+   "reading": "じ",
+   "same": [
+    {
+     "kanji": "時",
+     "reading": "じ",
+     "exact": true,
+     "words": [
+      {
+       "word": "時間",
+       "reading": "じかん"
+      },
+      {
+       "word": "時代",
+       "reading": "じだい"
+      },
+      {
+       "word": "時期",
+       "reading": "じき"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "友": {
+  "kind": "ideograph",
+  "meaning": "Friend",
+  "components": [
+   {
+    "label": "ナ",
+    "meaning": "Narwhal",
+    "role": "part",
+    "note": "here = hand"
+   },
+   {
+    "label": "又",
+    "meaning": "Stool",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ナ (Narwhal) + 又 (Stool) → two hands (ナ/又) joined → friend.",
+  "reading_line": "On ゆう is learned with the kanji; the parts give the meaning, not the sound. 友達 (ともだち) uses the native kun reading, tied to the meaning."
+ },
+ "達": {
+  "kind": "opaque",
+  "meaning": "Attain",
+  "components": [
+   {
+    "label": "⻌",
+    "meaning": "Scooter",
+    "role": "meaning"
+   },
+   {
+    "label": "土",
+    "meaning": "Dirt",
+    "role": "part"
+   },
+   {
+    "label": "羊",
+    "meaning": "Sheep",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "⻌ (Scooter) is the semantic side (movement/path); the rest of the modern shape does not compose \"Attain\" — learn it with 友達 (ともだち).",
+  "reading_line": "羍 (たつ) is the historical sound source, but WaniKani splits it into 土+羊 — unverified. 友達 (ともだち) uses the native kun reading, tied to the meaning."
+ },
+ "都": {
+  "kind": "ideograph",
+  "meaning": "Metropolis",
+  "components": [
+   {
+    "label": "者",
+    "meaning": "Someone",
+    "role": "part"
+   },
+   {
+    "label": "阝",
+    "meaning": "Building",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "者 (Someone) + 阝 (Building) → people (者) + place (阝) → metropolis.",
+  "reading_line": "On つ is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is みやこ."
+ },
+ "悪": {
+  "kind": "phono-semantic",
+  "meaning": "Bad",
+  "components": [
+   {
+    "label": "亜",
+    "meaning": "Asia",
+    "role": "sound",
+    "reading": "あ"
+   },
+   {
+    "label": "心",
+    "meaning": "Heart",
+    "role": "meaning"
+   }
+  ],
+  "meaning_line": "心 (Heart) is the meaning side (heart/mind); 亜 (Asia) is the sound component, giving あ. So 悪 means \"bad\".",
+  "reading_line": "The on reading あ comes from the sound component 亜. The kanji's on reading is あく. 悪い (わるい) uses the native kun reading, tied to the meaning."
+ },
+ "約": {
+  "kind": "ideograph",
+  "meaning": "Promise",
+  "components": [
+   {
+    "label": "糸",
+    "meaning": "Thread",
+    "role": "part"
+   },
+   {
+    "label": "勺",
+    "meaning": "Pool",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "糸 (Thread) + 勺 (Pool) → thread (糸) bound → promise.",
+  "reading_line": "On やく is learned with the kanji; the parts give the meaning, not the sound."
+ },
+ "束": {
+  "kind": "ideograph",
+  "meaning": "Bundle",
+  "components": [
+   {
+    "label": "木",
+    "meaning": "Tree",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "木 (Tree) + 口 (Mouth) → a tree (木) tied with a loop (口) → bundle.",
+  "reading_line": "On そく is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is たば."
+ },
+ "住": {
+  "kind": "ideograph",
+  "meaning": "Dwell",
+  "components": [
+   {
+    "label": "ｲ",
+    "meaning": "Leader",
+    "role": "part"
+   },
+   {
+    "label": "主",
+    "meaning": "Master",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "ｲ (Leader) + 主 (Master) → a person (ｲ) settled with a master (主) → dwell.",
+  "reading_line": "On じゅう is learned with the kanji; the parts give the meaning, not the sound. The native kun reading is す."
+ },
+ "知": {
+  "kind": "ideograph",
+  "meaning": "Know",
+  "components": [
+   {
+    "label": "矢",
+    "meaning": "Arrow",
+    "role": "part"
+   },
+   {
+    "label": "口",
+    "meaning": "Mouth",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "矢 (Arrow) + 口 (Mouth) → words (口) straight as an arrow (矢) → know.",
+  "reading_line": "On ち is learned with the kanji; the parts give the meaning, not the sound. 知らせる (しらせる) uses the native kun reading, tied to the meaning."
+ },
+ "登": {
+  "kind": "phono-semantic",
+  "meaning": "Climb",
+  "components": [
+   {
+    "label": "癶",
+    "meaning": "Tent",
+    "role": "meaning"
+   },
+   {
+    "label": "豆",
+    "meaning": "Beans",
+    "role": "sound",
+    "reading": "とう"
+   }
+  ],
+  "meaning_line": "癶 (Tent) is the meaning side (feet); 豆 (Beans) is the sound component, giving とう. So 登 means \"climb\".",
+  "reading_line": "The on reading とう comes from the sound component 豆. The native kun reading is のぼ.",
+  "sound": {
+   "label": "豆",
+   "reading": "とう",
+   "same": [
+    {
+     "kanji": "頭",
+     "reading": "とう",
+     "exact": true,
+     "words": [
+      {
+       "word": "頭痛",
+       "reading": "ずつう"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "場": {
+  "kind": "opaque",
+  "meaning": "Location",
+  "components": [
+   {
+    "label": "土",
+    "meaning": "Dirt",
+    "role": "meaning"
+   },
+   {
+    "label": "易",
+    "meaning": "Easy",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "土 (Dirt) is the semantic side (earth); the rest of the modern shape does not compose \"Location\" — learn it with 登場 (とうじょう).",
+  "reading_line": "昜 (よう) is the historical sound source; よう is not じょう — no exact key. The native kun reading is ば."
+ },
+ "々": {
+  "kind": "opaque",
+  "meaning": "Repeater",
+  "components": [
+   {
+    "label": "々",
+    "meaning": "Repeater",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "々 is not a kanji with a meaning of its own: it repeats the preceding kanji (人々 = ひとびと).",
+  "reading_line": "No reading of its own — it repeats the preceding kanji's reading."
+ },
+ "活": {
+  "kind": "opaque",
+  "meaning": "Lively",
+  "components": [
+   {
+    "label": "氵",
+    "meaning": "Tsunami",
+    "role": "meaning"
+   },
+   {
+    "label": "舌",
+    "meaning": "Tongue",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "氵 (Tsunami) is the semantic side (water/liquid); the rest of the modern shape does not compose \"Lively\" — learn it with 生活 (せいかつ).",
+  "reading_line": "On かつ: no component here carries it exactly; the on is learned with the kanji. The native kun reading is い."
+ },
+ "議": {
+  "kind": "phono-semantic",
+  "meaning": "Deliberation",
+  "components": [
+   {
+    "label": "言",
+    "meaning": "Say",
+    "role": "meaning"
+   },
+   {
+    "label": "義",
+    "meaning": "Righteousness",
+    "role": "sound",
+    "reading": "ぎ"
+   }
+  ],
+  "meaning_line": "言 (Say) is the meaning side (speech/words); 義 (Righteousness) is the sound component, giving ぎ. So 議 means \"deliberation\" — words about what is right.",
+  "reading_line": "The on reading ぎ comes from the sound component 義."
+ },
+ "司": {
+  "kind": "opaque",
+  "meaning": "Director",
+  "components": [
+   {
+    "label": "𠃌",
+    "meaning": "Cape",
+    "role": "part"
+   },
+   {
+    "label": "Creeper",
+    "meaning": "Creeper",
+    "role": "part"
+   }
+  ],
+  "meaning_line": "The modern parts (𠃌, Creeper) do not compose \"Director\" — learn 司 as a whole with 司会 (しかい).",
+  "reading_line": "On し: no component here carries it exactly; the on is learned with the kanji. The native kun reading is つかさど."
+ }
+}

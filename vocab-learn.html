@@ -258,7 +258,8 @@
     var el = document.getElementById('vocab-learn-app');
     if (!el || !window.N3VocabLearn) return;
     window.N3VocabLearn.mount(el, {
-        dataUrl: '/n3-kanji-flash/data/vocab_learn_2025_12.json'
+        dataUrl: '/n3-kanji-flash/data/vocab_learn_2025_12.json',
+        logicUrl: '/n3-kanji-flash/data/kanji_logic.json'
     });
 })();
 </script>
