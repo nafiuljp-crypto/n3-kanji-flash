@@ -1,0 +1,7101 @@
+[
+ {
+  "word": "西洋",
+  "reading": "せいよう",
+  "meaning": "the west; western countries",
+  "parts": [
+   {
+    "char": "西",
+    "type": "kanji",
+    "meaning": "West",
+    "onyomi": [
+     "せい",
+     "さい"
+    ],
+    "kunyomi": [
+     "にし"
+    ],
+    "used_reading": "せい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "洋",
+    "type": "kanji",
+    "meaning": "Western Style",
+    "onyomi": [
+     "よう"
+    ],
+    "kunyomi": [],
+    "used_reading": "よう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "西 (west) + 洋 (Western style; also ‘ocean’) → the West — the lands across the western ocean."
+ },
+ {
+  "word": "建物",
+  "reading": "たてもの",
+  "meaning": "building; structure",
+  "parts": [
+   {
+    "char": "建",
+    "type": "kanji",
+    "meaning": "Build",
+    "onyomi": [
+     "けん"
+    ],
+    "kunyomi": [
+     "た"
+    ],
+    "used_reading": "たて",
+    "used_type": "kunyomi",
+    "note": "kun'yomi た.てる — the て stays inside the compound (たて + もの)."
+   },
+   {
+    "char": "物",
+    "type": "kanji",
+    "meaning": "Thing",
+    "onyomi": [
+     "ぶつ",
+     "もつ"
+    ],
+    "kunyomi": [
+     "もの"
+    ],
+    "used_reading": "もの",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "建 (build) + 物 (thing) → a built thing → a building. 建 is read たて, the stem of たてる ‘to build’."
+ },
+ {
+  "word": "写真",
+  "reading": "しゃしん",
+  "meaning": "photo; photograph",
+  "parts": [
+   {
+    "char": "写",
+    "type": "kanji",
+    "meaning": "Copy",
+    "onyomi": [
+     "しゃ"
+    ],
+    "kunyomi": [
+     "うつ"
+    ],
+    "used_reading": "しゃ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "真",
+    "type": "kanji",
+    "meaning": "Reality",
+    "onyomi": [
+     "しん"
+    ],
+    "kunyomi": [
+     "ま"
+    ],
+    "used_reading": "しん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "写 (copy) + 真 (reality) → a copy of reality → a photograph."
+ },
+ {
+  "word": "声優",
+  "reading": "せいゆう",
+  "meaning": "voice actor",
+  "parts": [
+   {
+    "char": "声",
+    "type": "kanji",
+    "meaning": "Voice",
+    "onyomi": [
+     "せい"
+    ],
+    "kunyomi": [
+     "こえ"
+    ],
+    "used_reading": "せい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "優",
+    "type": "kanji",
+    "meaning": "Superior",
+    "onyomi": [
+     "ゆう"
+    ],
+    "kunyomi": [
+     "やさ",
+     "すぐ"
+    ],
+    "used_reading": "ゆう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "声 (voice) + 優 (superior; the ‘actor’ sense of 優 as in 俳優) → voice actor."
+ },
+ {
+  "word": "今回",
+  "reading": "こんかい",
+  "meaning": "this time",
+  "parts": [
+   {
+    "char": "今",
+    "type": "kanji",
+    "meaning": "Now",
+    "onyomi": [
+     "こん"
+    ],
+    "kunyomi": [
+     "いま"
+    ],
+    "used_reading": "こん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "回",
+    "type": "kanji",
+    "meaning": "Times",
+    "onyomi": [
+     "かい"
+    ],
+    "kunyomi": [
+     "まわ"
+    ],
+    "used_reading": "かい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "今 (now) + 回 (times) → this time — the current turn."
+ },
+ {
+  "word": "とても",
+  "reading": "とても",
+  "meaning": "very",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "とても"
+   }
+  ],
+  "meaning_logic": "Native adverb written in kana — no everyday kanji form (迚も is a rare ateji). Means ‘very’.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "苦しい",
+  "reading": "くるしい",
+  "meaning": "painful; distressing",
+  "parts": [
+   {
+    "char": "苦",
+    "type": "kanji",
+    "meaning": "Suffering",
+    "onyomi": [
+     "く"
+    ],
+    "kunyomi": [
+     "くる",
+     "にが"
+    ],
+    "used_reading": "くる",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "しい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "苦 (suffering) + okurigana しい → painful, distressing."
+ },
+ {
+  "word": "試合",
+  "reading": "しあい",
+  "meaning": "game; match",
+  "parts": [
+   {
+    "char": "試",
+    "type": "kanji",
+    "meaning": "Try",
+    "onyomi": [
+     "し"
+    ],
+    "kunyomi": [
+     "こころ",
+     "ため"
+    ],
+    "used_reading": "し",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "合",
+    "type": "kanji",
+    "meaning": "Suit",
+    "onyomi": [
+     "ごう",
+     "がっ"
+    ],
+    "kunyomi": [
+     "あ",
+     "あい"
+    ],
+    "used_reading": "あい",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "on-kun",
+  "meaning_logic": "試 (try) + 合 (suit, fit, join) → a match — trying your skill against another (試し合う)."
+ },
+ {
+  "word": "惜しい",
+  "reading": "おしい",
+  "meaning": "regrettable; disappointing",
+  "parts": [
+   {
+    "char": "惜",
+    "type": "kanji",
+    "meaning": "Frugal",
+    "onyomi": [
+     "せき"
+    ],
+    "kunyomi": [
+     "お"
+    ],
+    "used_reading": "お",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "しい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "惜 (frugal, reluctant to part with) + しい → regrettable — you begrudge losing it."
+ },
+ {
+  "word": "悔しい",
+  "reading": "くやしい",
+  "meaning": "regrettable; frustrating",
+  "parts": [
+   {
+    "char": "悔",
+    "type": "kanji",
+    "meaning": "Regret",
+    "onyomi": [
+     "かい"
+    ],
+    "kunyomi": [
+     "くや",
+     "く"
+    ],
+    "used_reading": "くや",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "しい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "悔 (regret) + しい → frustrating, regrettable."
+ },
+ {
+  "word": "厳しい",
+  "reading": "きびしい",
+  "meaning": "strict; harsh",
+  "parts": [
+   {
+    "char": "厳",
+    "type": "kanji",
+    "meaning": "Strict",
+    "onyomi": [
+     "げん",
+     "ごん"
+    ],
+    "kunyomi": [
+     "きび",
+     "おごそ"
+    ],
+    "used_reading": "きび",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "しい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "厳 (strict) + しい → strict, harsh."
+ },
+ {
+  "word": "手紙",
+  "reading": "てがみ",
+  "meaning": "letter",
+  "parts": [
+   {
+    "char": "手",
+    "type": "kanji",
+    "meaning": "Hand",
+    "onyomi": [
+     "しゅ",
+     "ず"
+    ],
+    "kunyomi": [
+     "て"
+    ],
+    "used_reading": "て",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "紙",
+    "type": "kanji",
+    "meaning": "Paper",
+    "onyomi": [
+     "し"
+    ],
+    "kunyomi": [
+     "かみ"
+    ],
+    "used_reading": "がみ",
+    "used_type": "kunyomi",
+    "transform": "rendaku",
+    "note": "rendaku: かみ → がみ"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "手 (hand) + 紙 (paper) → paper you write by hand → a letter."
+ },
+ {
+  "word": "他人",
+  "reading": "たにん",
+  "meaning": "another person; other people",
+  "parts": [
+   {
+    "char": "他",
+    "type": "kanji",
+    "meaning": "other",
+    "onyomi": [
+     "た"
+    ],
+    "kunyomi": [
+     "ほか"
+    ],
+    "used_reading": "た",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "人",
+    "type": "kanji",
+    "meaning": "Person",
+    "onyomi": [
+     "にん",
+     "じん"
+    ],
+    "kunyomi": [
+     "ひと",
+     "と"
+    ],
+    "used_reading": "にん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "他 (other) + 人 (person) → another person."
+ },
+ {
+  "word": "見せる",
+  "reading": "みせる",
+  "meaning": "to show",
+  "parts": [
+   {
+    "char": "見",
+    "type": "kanji",
+    "meaning": "See",
+    "onyomi": [
+     "けん"
+    ],
+    "kunyomi": [
+     "み"
+    ],
+    "used_reading": "み",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "せる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "見 (see) + causative せる → to make someone see → to show."
+ },
+ {
+  "word": "担任",
+  "reading": "たんにん",
+  "meaning": "homeroom teacher; being in charge",
+  "parts": [
+   {
+    "char": "担",
+    "type": "kanji",
+    "meaning": "Carry",
+    "onyomi": [
+     "たん"
+    ],
+    "kunyomi": [
+     "にな",
+     "かつ"
+    ],
+    "used_reading": "たん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "任",
+    "type": "kanji",
+    "meaning": "Duty",
+    "onyomi": [
+     "にん"
+    ],
+    "kunyomi": [
+     "まか"
+    ],
+    "used_reading": "にん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "担 (carry) + 任 (duty) → carrying a duty → being in charge; a homeroom teacher."
+ },
+ {
+  "word": "昨日",
+  "reading": "きのう",
+  "meaning": "yesterday",
+  "parts": [
+   {
+    "char": "昨",
+    "type": "kanji",
+    "meaning": "Previous",
+    "onyomi": [
+     "さく"
+    ],
+    "kunyomi": [],
+    "unsegmented": true
+   },
+   {
+    "char": "日",
+    "type": "kanji",
+    "meaning": "Sun",
+    "onyomi": [
+     "にち",
+     "じつ"
+    ],
+    "kunyomi": [
+     "ひ",
+     "か",
+     "び"
+    ],
+    "unsegmented": true
+   }
+  ],
+  "reading_pattern": "whole",
+  "reading_note": "Fixed set reading きのう; the on-reading compound is さくじつ. Neither き nor のう is a usual reading of 昨 or 日.",
+  "meaning_logic": "昨 (previous) + 日 (sun/day) → yesterday."
+ },
+ {
+  "word": "腹痛",
+  "reading": "ふくつう",
+  "meaning": "stomachache; abdominal pain",
+  "parts": [
+   {
+    "char": "腹",
+    "type": "kanji",
+    "meaning": "Belly",
+    "onyomi": [
+     "ふく"
+    ],
+    "kunyomi": [
+     "はら"
+    ],
+    "used_reading": "ふく",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "痛",
+    "type": "kanji",
+    "meaning": "Pain",
+    "onyomi": [
+     "つう"
+    ],
+    "kunyomi": [
+     "いた"
+    ],
+    "used_reading": "つう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "腹 (belly) + 痛 (pain) → stomachache."
+ },
+ {
+  "word": "学校",
+  "reading": "がっこう",
+  "meaning": "school",
+  "parts": [
+   {
+    "char": "学",
+    "type": "kanji",
+    "meaning": "Study",
+    "onyomi": [
+     "がく"
+    ],
+    "kunyomi": [
+     "まな"
+    ],
+    "used_reading": "がっ",
+    "used_type": "onyomi",
+    "transform": "gemination",
+    "note": "shortened from がく (before the next sound)"
+   },
+   {
+    "char": "校",
+    "type": "kanji",
+    "meaning": "School",
+    "onyomi": [
+     "こう"
+    ],
+    "kunyomi": [],
+    "used_reading": "こう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "学 (study) + 校 (school) → school."
+ },
+ {
+  "word": "休む",
+  "reading": "やすむ",
+  "meaning": "to rest; to take time off",
+  "parts": [
+   {
+    "char": "休",
+    "type": "kanji",
+    "meaning": "Rest",
+    "onyomi": [
+     "きゅう"
+    ],
+    "kunyomi": [
+     "やす"
+    ],
+    "used_reading": "やす",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "む"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "休 (rest) + okurigana む → to rest."
+ },
+ {
+  "word": "頭痛",
+  "reading": "ずつう",
+  "meaning": "headache",
+  "parts": [
+   {
+    "char": "頭",
+    "type": "kanji",
+    "meaning": "Head",
+    "onyomi": [
+     "ず",
+     "とう"
+    ],
+    "kunyomi": [
+     "あたま",
+     "かしら",
+     "こうべ"
+    ],
+    "used_reading": "ず",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "痛",
+    "type": "kanji",
+    "meaning": "Pain",
+    "onyomi": [
+     "つう"
+    ],
+    "kunyomi": [
+     "いた"
+    ],
+    "used_reading": "つう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "頭 (head) + 痛 (pain) → headache."
+ },
+ {
+  "word": "不屈",
+  "reading": "ふくつ",
+  "meaning": "unyielding; indomitable",
+  "parts": [
+   {
+    "char": "不",
+    "type": "kanji",
+    "meaning": "Not",
+    "onyomi": [
+     "ふ",
+     "ぶ"
+    ],
+    "kunyomi": [],
+    "used_reading": "ふ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "屈",
+    "type": "kanji",
+    "meaning": "Yield",
+    "onyomi": [
+     "くつ"
+    ],
+    "kunyomi": [
+     "かが"
+    ],
+    "used_reading": "くつ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "不 (not) + 屈 (yield) → not yielding → unyielding."
+ },
+ {
+  "word": "駅",
+  "reading": "えき",
+  "meaning": "station",
+  "parts": [
+   {
+    "char": "駅",
+    "type": "kanji",
+    "meaning": "Station",
+    "onyomi": [
+     "えき"
+    ],
+    "kunyomi": [],
+    "used_reading": "えき",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "駅 (station) — a single kanji word read えき."
+ },
+ {
+  "word": "終点",
+  "reading": "しゅうてん",
+  "meaning": "last stop; final stop",
+  "parts": [
+   {
+    "char": "終",
+    "type": "kanji",
+    "meaning": "End",
+    "onyomi": [
+     "しゅう"
+    ],
+    "kunyomi": [
+     "おわ",
+     "お"
+    ],
+    "used_reading": "しゅう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "点",
+    "type": "kanji",
+    "meaning": "point",
+    "onyomi": [
+     "てん"
+    ],
+    "kunyomi": [
+     "つ"
+    ],
+    "used_reading": "てん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "終 (end) + 点 (point) → the final stop."
+ },
+ {
+  "word": "終電",
+  "reading": "しゅうでん",
+  "meaning": "last train",
+  "parts": [
+   {
+    "char": "終",
+    "type": "kanji",
+    "meaning": "End",
+    "onyomi": [
+     "しゅう"
+    ],
+    "kunyomi": [
+     "おわ",
+     "お"
+    ],
+    "used_reading": "しゅう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "電",
+    "type": "kanji",
+    "meaning": "Electricity",
+    "onyomi": [
+     "でん"
+    ],
+    "kunyomi": [],
+    "used_reading": "でん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "終 (end) + 電 (electricity → electric train) → the last train."
+ },
+ {
+  "word": "充電",
+  "reading": "じゅうでん",
+  "meaning": "recharge",
+  "parts": [
+   {
+    "char": "充",
+    "type": "kanji",
+    "meaning": "Allocate",
+    "onyomi": [
+     "じゅう"
+    ],
+    "kunyomi": [
+     "あ",
+     "み"
+    ],
+    "used_reading": "じゅう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "電",
+    "type": "kanji",
+    "meaning": "Electricity",
+    "onyomi": [
+     "でん"
+    ],
+    "kunyomi": [],
+    "used_reading": "でん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "充 (allocate, fill) + 電 (electricity) → to fill with electricity → to recharge."
+ },
+ {
+  "word": "充填",
+  "reading": "じゅうてん",
+  "meaning": "filling; packing",
+  "parts": [
+   {
+    "char": "充",
+    "type": "kanji",
+    "meaning": "Allocate",
+    "onyomi": [
+     "じゅう"
+    ],
+    "kunyomi": [
+     "あ",
+     "み"
+    ],
+    "used_reading": "じゅう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "填",
+    "type": "kanji",
+    "meaning": "fill in",
+    "onyomi": [
+     "てん"
+    ],
+    "kunyomi": [],
+    "used_reading": "てん",
+    "used_type": "onyomi",
+    "source": "dictionary",
+    "note": "WaniKani does not teach 填; on'yomi てん, gloss ‘fill in’ (dictionary fact)."
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "充 (fill) + 填 (fill in) → filling, packing. 填 is not taught on WaniKani; its gloss comes from a dictionary."
+ },
+ {
+  "word": "泣く",
+  "reading": "なく",
+  "meaning": "to cry",
+  "parts": [
+   {
+    "char": "泣",
+    "type": "kanji",
+    "meaning": "Cry",
+    "onyomi": [
+     "きゅう"
+    ],
+    "kunyomi": [
+     "な"
+    ],
+    "used_reading": "な",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "泣 (cry) + く → to cry."
+ },
+ {
+  "word": "働く",
+  "reading": "はたらく",
+  "meaning": "to work; to labor",
+  "parts": [
+   {
+    "char": "働",
+    "type": "kanji",
+    "meaning": "Work",
+    "onyomi": [
+     "どう"
+    ],
+    "kunyomi": [
+     "はたら"
+    ],
+    "used_reading": "はたら",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "働 (work) + く → to work."
+ },
+ {
+  "word": "驚く",
+  "reading": "おどろく",
+  "meaning": "to be surprised; to be shocked",
+  "parts": [
+   {
+    "char": "驚",
+    "type": "kanji",
+    "meaning": "Surprised",
+    "onyomi": [
+     "きょう"
+    ],
+    "kunyomi": [
+     "おどろ"
+    ],
+    "used_reading": "おどろ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "驚 (surprised) + く → to be surprised."
+ },
+ {
+  "word": "着物",
+  "reading": "きもの",
+  "meaning": "kimono; clothes",
+  "parts": [
+   {
+    "char": "着",
+    "type": "kanji",
+    "meaning": "Wear",
+    "onyomi": [
+     "ちゃく"
+    ],
+    "kunyomi": [
+     "き",
+     "つ"
+    ],
+    "used_reading": "き",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "物",
+    "type": "kanji",
+    "meaning": "Thing",
+    "onyomi": [
+     "ぶつ",
+     "もつ"
+    ],
+    "kunyomi": [
+     "もの"
+    ],
+    "used_reading": "もの",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "着 (wear) + 物 (thing) → a thing to wear → kimono, clothes."
+ },
+ {
+  "word": "襟",
+  "reading": "えり",
+  "meaning": "collar; lapel",
+  "parts": [
+   {
+    "char": "襟",
+    "type": "kanji",
+    "meaning": "Collar",
+    "onyomi": [
+     "きん"
+    ],
+    "kunyomi": [
+     "えり"
+    ],
+    "used_reading": "えり",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "襟 (collar) — single kanji, read えり."
+ },
+ {
+  "word": "袖",
+  "reading": "そで",
+  "meaning": "sleeve",
+  "parts": [
+   {
+    "char": "袖",
+    "type": "kanji",
+    "meaning": "Sleeve",
+    "onyomi": [
+     "しゅう"
+    ],
+    "kunyomi": [
+     "そで"
+    ],
+    "used_reading": "そで",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "袖 (sleeve) — single kanji, read そで."
+ },
+ {
+  "word": "糸",
+  "reading": "いと",
+  "meaning": "thread",
+  "parts": [
+   {
+    "char": "糸",
+    "type": "kanji",
+    "meaning": "Thread",
+    "onyomi": [
+     "し"
+    ],
+    "kunyomi": [
+     "いと"
+    ],
+    "used_reading": "いと",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "糸 (thread) — single kanji, read いと."
+ },
+ {
+  "word": "母",
+  "reading": "はは",
+  "meaning": "mother",
+  "parts": [
+   {
+    "char": "母",
+    "type": "kanji",
+    "meaning": "Mother",
+    "onyomi": [
+     "ぼ"
+    ],
+    "kunyomi": [
+     "はは",
+     "かあ"
+    ],
+    "used_reading": "はは",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "母 (mother) — single kanji, read はは."
+ },
+ {
+  "word": "郵便",
+  "reading": "ゆうびん",
+  "meaning": "mail; post",
+  "parts": [
+   {
+    "char": "郵",
+    "type": "kanji",
+    "meaning": "mail",
+    "onyomi": [
+     "ゆう"
+    ],
+    "kunyomi": [],
+    "used_reading": "ゆう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "便",
+    "type": "kanji",
+    "meaning": "Convenience",
+    "onyomi": [
+     "べん",
+     "びん"
+    ],
+    "kunyomi": [
+     "たよ"
+    ],
+    "used_reading": "びん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "郵 (mail) + 便 (service, convenience — as in 便り ‘news’) → the postal service → mail."
+ },
+ {
+  "word": "雄弁",
+  "reading": "ゆうべん",
+  "meaning": "eloquent; oratory",
+  "parts": [
+   {
+    "char": "雄",
+    "type": "kanji",
+    "meaning": "Male",
+    "onyomi": [
+     "ゆう"
+    ],
+    "kunyomi": [
+     "おす",
+     "お"
+    ],
+    "used_reading": "ゆう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "弁",
+    "type": "kanji",
+    "meaning": "Dialect",
+    "onyomi": [
+     "べん"
+    ],
+    "kunyomi": [],
+    "used_reading": "べん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "雄 (male, heroic) + 弁 (dialect; here ‘speech’, as in 弁論 ‘debate’) → eloquent."
+ },
+ {
+  "word": "辺り",
+  "reading": "あたり",
+  "meaning": "area; vicinity",
+  "parts": [
+   {
+    "char": "辺",
+    "type": "kanji",
+    "meaning": "Area",
+    "onyomi": [
+     "へん"
+    ],
+    "kunyomi": [
+     "あた",
+     "べ"
+    ],
+    "used_reading": "あた",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "り"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "辺 (area) + okurigana り → the area around → vicinity."
+ },
+ {
+  "word": "マンション",
+  "reading": "マンション",
+  "meaning": "apartment; condo",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "マンション"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘mansion’, but in Japanese it means a multi-unit apartment block, not a grand house.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "多い",
+  "reading": "おおい",
+  "meaning": "many; much",
+  "parts": [
+   {
+    "char": "多",
+    "type": "kanji",
+    "meaning": "Many",
+    "onyomi": [
+     "た"
+    ],
+    "kunyomi": [
+     "おお"
+    ],
+    "used_reading": "おお",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "い"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "多 (many) + い → many."
+ },
+ {
+  "word": "通り",
+  "reading": "とおり",
+  "meaning": "avenue; street",
+  "parts": [
+   {
+    "char": "通",
+    "type": "kanji",
+    "meaning": "Pass Through",
+    "onyomi": [
+     "つう"
+    ],
+    "kunyomi": [
+     "とお",
+     "かよ"
+    ],
+    "used_reading": "とお",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "り"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "通 (pass through) + り → a way that passes through → a street, an avenue."
+ },
+ {
+  "word": "図",
+  "reading": "ず",
+  "meaning": "diagram",
+  "parts": [
+   {
+    "char": "図",
+    "type": "kanji",
+    "meaning": "Diagram",
+    "onyomi": [
+     "ず",
+     "と"
+    ],
+    "kunyomi": [
+     "え",
+     "はか"
+    ],
+    "used_reading": "ず",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "図 (diagram) — single kanji, read ず."
+ },
+ {
+  "word": "見る",
+  "reading": "みる",
+  "meaning": "to see; to look",
+  "parts": [
+   {
+    "char": "見",
+    "type": "kanji",
+    "meaning": "See",
+    "onyomi": [
+     "けん"
+    ],
+    "kunyomi": [
+     "み"
+    ],
+    "used_reading": "み",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "る"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "見 (see) + る → to see."
+ },
+ {
+  "word": "絵",
+  "reading": "え",
+  "meaning": "picture; painting",
+  "parts": [
+   {
+    "char": "絵",
+    "type": "kanji",
+    "meaning": "Picture",
+    "onyomi": [
+     "え"
+    ],
+    "kunyomi": [],
+    "used_reading": "え",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "絵 (picture) — single kanji, read え."
+ },
+ {
+  "word": "例",
+  "reading": "れい",
+  "meaning": "example",
+  "parts": [
+   {
+    "char": "例",
+    "type": "kanji",
+    "meaning": "example",
+    "onyomi": [
+     "れい"
+    ],
+    "kunyomi": [
+     "たと"
+    ],
+    "used_reading": "れい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "例 (example) — single kanji, read れい."
+ },
+ {
+  "word": "貯金",
+  "reading": "ちょきん",
+  "meaning": "savings",
+  "parts": [
+   {
+    "char": "貯",
+    "type": "kanji",
+    "meaning": "Savings",
+    "onyomi": [
+     "ちょ"
+    ],
+    "kunyomi": [
+     "た",
+     "たくわ"
+    ],
+    "used_reading": "ちょ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "金",
+    "type": "kanji",
+    "meaning": "Gold",
+    "onyomi": [
+     "きん",
+     "こん"
+    ],
+    "kunyomi": [
+     "かね",
+     "かな"
+    ],
+    "used_reading": "きん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "貯 (savings) + 金 (gold, money) → savings."
+ },
+ {
+  "word": "少し",
+  "reading": "すこし",
+  "meaning": "a little; a few",
+  "parts": [
+   {
+    "char": "少",
+    "type": "kanji",
+    "meaning": "Few",
+    "onyomi": [
+     "しょう"
+    ],
+    "kunyomi": [
+     "すこ",
+     "すく"
+    ],
+    "used_reading": "すこ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "し"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "少 (few) + し → a little."
+ },
+ {
+  "word": "来年",
+  "reading": "らいねん",
+  "meaning": "next year",
+  "parts": [
+   {
+    "char": "来",
+    "type": "kanji",
+    "meaning": "Come",
+    "onyomi": [
+     "らい"
+    ],
+    "kunyomi": [
+     "く",
+     "き"
+    ],
+    "used_reading": "らい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "年",
+    "type": "kanji",
+    "meaning": "Year",
+    "onyomi": [
+     "ねん"
+    ],
+    "kunyomi": [
+     "とし"
+    ],
+    "used_reading": "ねん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "来 (come; next) + 年 (year) → next year."
+ },
+ {
+  "word": "歩道",
+  "reading": "ほどう",
+  "meaning": "sidewalk; footpath",
+  "parts": [
+   {
+    "char": "歩",
+    "type": "kanji",
+    "meaning": "Walk",
+    "onyomi": [
+     "ほ"
+    ],
+    "kunyomi": [
+     "ある",
+     "あゆ"
+    ],
+    "used_reading": "ほ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "道",
+    "type": "kanji",
+    "meaning": "Road",
+    "onyomi": [
+     "どう"
+    ],
+    "kunyomi": [
+     "みち"
+    ],
+    "used_reading": "どう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "歩 (walk) + 道 (road) → a walking road → sidewalk."
+ },
+ {
+  "word": "パソコン",
+  "reading": "パソコン",
+  "meaning": "personal computer",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "パソコン"
+   }
+  ],
+  "meaning_logic": "Clipped compound of パーソナルコンピューター (‘personal computer’).",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "キーボード",
+  "reading": "キーボード",
+  "meaning": "keyboard",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "キーボード"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘keyboard’.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "打つ",
+  "reading": "うつ",
+  "meaning": "to hit something; to strike something",
+  "parts": [
+   {
+    "char": "打",
+    "type": "kanji",
+    "meaning": "Hit",
+    "onyomi": [
+     "だ"
+    ],
+    "kunyomi": [
+     "う",
+     "ぶ"
+    ],
+    "used_reading": "う",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "つ"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "打 (hit) + つ → to hit."
+ },
+ {
+  "word": "音",
+  "reading": "おと",
+  "meaning": "sound; noise",
+  "parts": [
+   {
+    "char": "音",
+    "type": "kanji",
+    "meaning": "Sound",
+    "onyomi": [
+     "おん"
+    ],
+    "kunyomi": [
+     "おと",
+     "ね"
+    ],
+    "used_reading": "おと",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "音 (sound) — single kanji, read おと."
+ },
+ {
+  "word": "聞こえる",
+  "reading": "きこえる",
+  "meaning": "to be hearable; to be audible",
+  "parts": [
+   {
+    "char": "聞",
+    "type": "kanji",
+    "meaning": "Hear",
+    "onyomi": [
+     "ぶん",
+     "もん"
+    ],
+    "kunyomi": [
+     "き"
+    ],
+    "used_reading": "き",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "こえる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "聞 (hear) + こえる → to be audible."
+ },
+ {
+  "word": "まじめ",
+  "reading": "まじめ",
+  "meaning": "serious; diligent",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "まじめ"
+   }
+  ],
+  "meaning_logic": "Native word usually written 真面目 — 真 (true) + 面目 (face, appearance) → a true face → serious, diligent.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "私",
+  "reading": "わたし",
+  "meaning": "I; me",
+  "parts": [
+   {
+    "char": "私",
+    "type": "kanji",
+    "meaning": "I",
+    "onyomi": [
+     "し"
+    ],
+    "kunyomi": [
+     "わたし"
+    ],
+    "used_reading": "わたし",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "私 (I) — single kanji, read わたし."
+ },
+ {
+  "word": "国",
+  "reading": "くに",
+  "meaning": "country; nation",
+  "parts": [
+   {
+    "char": "国",
+    "type": "kanji",
+    "meaning": "Country",
+    "onyomi": [
+     "こく"
+    ],
+    "kunyomi": [
+     "くに"
+    ],
+    "used_reading": "くに",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "国 (country) — single kanji, read くに."
+ },
+ {
+  "word": "時間",
+  "reading": "じかん",
+  "meaning": "time; hour",
+  "parts": [
+   {
+    "char": "時",
+    "type": "kanji",
+    "meaning": "Time",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [
+     "とき"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "間",
+    "type": "kanji",
+    "meaning": "Interval",
+    "onyomi": [
+     "かん",
+     "けん"
+    ],
+    "kunyomi": [
+     "あいだ",
+     "ま"
+    ],
+    "used_reading": "かん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "時 (time) + 間 (interval) → an interval of time → time; an hour."
+ },
+ {
+  "word": "昼",
+  "reading": "ひる",
+  "meaning": "noon; daytime",
+  "parts": [
+   {
+    "char": "昼",
+    "type": "kanji",
+    "meaning": "Noon",
+    "onyomi": [
+     "ちゅう"
+    ],
+    "kunyomi": [
+     "ひる"
+    ],
+    "used_reading": "ひる",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "昼 (noon) — single kanji, read ひる."
+ },
+ {
+  "word": "夜",
+  "reading": "よる",
+  "meaning": "night; evening",
+  "parts": [
+   {
+    "char": "夜",
+    "type": "kanji",
+    "meaning": "Night",
+    "onyomi": [
+     "や"
+    ],
+    "kunyomi": [
+     "よる",
+     "よ"
+    ],
+    "used_reading": "よる",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "夜 (night) — single kanji, read よる."
+ },
+ {
+  "word": "反対",
+  "reading": "はんたい",
+  "meaning": "opposite; opposition",
+  "parts": [
+   {
+    "char": "反",
+    "type": "kanji",
+    "meaning": "Anti",
+    "onyomi": [
+     "はん"
+    ],
+    "kunyomi": [
+     "そ"
+    ],
+    "used_reading": "はん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "対",
+    "type": "kanji",
+    "meaning": "Versus",
+    "onyomi": [
+     "たい"
+    ],
+    "kunyomi": [],
+    "used_reading": "たい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "反 (anti) + 対 (opposite) → opposition; the opposite."
+ },
+ {
+  "word": "時代",
+  "reading": "じだい",
+  "meaning": "period; era",
+  "parts": [
+   {
+    "char": "時",
+    "type": "kanji",
+    "meaning": "Time",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [
+     "とき"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "代",
+    "type": "kanji",
+    "meaning": "Substitute",
+    "onyomi": [
+     "だい",
+     "たい"
+    ],
+    "kunyomi": [
+     "か",
+     "かわ",
+     "よ",
+     "しろ"
+    ],
+    "used_reading": "だい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "時 (time) + 代 (era, substitute) → a period, an era."
+ },
+ {
+  "word": "時期",
+  "reading": "じき",
+  "meaning": "time; season",
+  "parts": [
+   {
+    "char": "時",
+    "type": "kanji",
+    "meaning": "Time",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [
+     "とき"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "期",
+    "type": "kanji",
+    "meaning": "Period Of Time",
+    "onyomi": [
+     "き",
+     "ご"
+    ],
+    "kunyomi": [],
+    "used_reading": "き",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "時 (time) + 期 (period) → a time, a season."
+ },
+ {
+  "word": "時速",
+  "reading": "じそく",
+  "meaning": "speed per hour",
+  "parts": [
+   {
+    "char": "時",
+    "type": "kanji",
+    "meaning": "Time",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [
+     "とき"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "速",
+    "type": "kanji",
+    "meaning": "Fast",
+    "onyomi": [
+     "そく"
+    ],
+    "kunyomi": [
+     "はや"
+    ],
+    "used_reading": "そく",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "時 (hour) + 速 (speed) → speed per hour."
+ },
+ {
+  "word": "時差",
+  "reading": "じさ",
+  "meaning": "time difference",
+  "parts": [
+   {
+    "char": "時",
+    "type": "kanji",
+    "meaning": "Time",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [
+     "とき"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "差",
+    "type": "kanji",
+    "meaning": "difference",
+    "onyomi": [
+     "さ"
+    ],
+    "kunyomi": [
+     "さ"
+    ],
+    "used_reading": "さ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "時 (time) + 差 (difference) → time difference."
+ },
+ {
+  "word": "自転車",
+  "reading": "じてんしゃ",
+  "meaning": "bicycle; bike",
+  "parts": [
+   {
+    "char": "自",
+    "type": "kanji",
+    "meaning": "Self",
+    "onyomi": [
+     "じ",
+     "し"
+    ],
+    "kunyomi": [
+     "みずか"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "転",
+    "type": "kanji",
+    "meaning": "Revolve",
+    "onyomi": [
+     "てん"
+    ],
+    "kunyomi": [
+     "ころ"
+    ],
+    "used_reading": "てん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "車",
+    "type": "kanji",
+    "meaning": "Car",
+    "onyomi": [
+     "しゃ"
+    ],
+    "kunyomi": [
+     "くるま"
+    ],
+    "used_reading": "しゃ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "自 (self) + 転 (revolve) + 車 (car) → a self-moving vehicle → a bicycle."
+ },
+ {
+  "word": "壊れる",
+  "reading": "こわれる",
+  "meaning": "to be broken; to get broken",
+  "parts": [
+   {
+    "char": "壊",
+    "type": "kanji",
+    "meaning": "Break",
+    "onyomi": [
+     "かい"
+    ],
+    "kunyomi": [
+     "こわ"
+    ],
+    "used_reading": "こわ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "れる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "壊 (break) + れる → to get broken."
+ },
+ {
+  "word": "歩く",
+  "reading": "あるく",
+  "meaning": "to walk",
+  "parts": [
+   {
+    "char": "歩",
+    "type": "kanji",
+    "meaning": "Walk",
+    "onyomi": [
+     "ほ"
+    ],
+    "kunyomi": [
+     "ある",
+     "あゆ"
+    ],
+    "used_reading": "ある",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "歩 (walk) + く → to walk."
+ },
+ {
+  "word": "家",
+  "reading": "いえ",
+  "meaning": "house; home",
+  "parts": [
+   {
+    "char": "家",
+    "type": "kanji",
+    "meaning": "House",
+    "onyomi": [
+     "か",
+     "け"
+    ],
+    "kunyomi": [
+     "いえ",
+     "や",
+     "うち"
+    ],
+    "used_reading": "いえ",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "家 (house) — single kanji, read いえ."
+ },
+ {
+  "word": "帰る",
+  "reading": "かえる",
+  "meaning": "to return home; to return",
+  "parts": [
+   {
+    "char": "帰",
+    "type": "kanji",
+    "meaning": "Return Home",
+    "onyomi": [
+     "き"
+    ],
+    "kunyomi": [
+     "かえ"
+    ],
+    "used_reading": "かえ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "る"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "帰 (return home) + る → to return home."
+ },
+ {
+  "word": "詳しい",
+  "reading": "くわしい",
+  "meaning": "detailed; expert",
+  "parts": [
+   {
+    "char": "詳",
+    "type": "kanji",
+    "meaning": "Detailed",
+    "onyomi": [
+     "しょう"
+    ],
+    "kunyomi": [
+     "くわ"
+    ],
+    "used_reading": "くわ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "しい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "詳 (detailed) + しい → detailed."
+ },
+ {
+  "word": "だらしない",
+  "reading": "だらしない",
+  "meaning": "sloppy; untidy",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "だらしない"
+   }
+  ],
+  "meaning_logic": "Native adjective, kana only, of uncertain origin — no kanji to derive it from. Means sloppy, untidy.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "しかたない",
+  "reading": "しかたない",
+  "meaning": "it can't be helped",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "しかたない"
+   }
+  ],
+  "meaning_logic": "From 仕方がない — 仕方 (way, method) + が + ない (none) → ‘there is no way’ → it can’t be helped.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "羨ましい",
+  "reading": "うらやましい",
+  "meaning": "envious; jealous",
+  "parts": [
+   {
+    "char": "羨",
+    "type": "kanji",
+    "meaning": "Envy",
+    "onyomi": [
+     "せん"
+    ],
+    "kunyomi": [
+     "うらや"
+    ],
+    "used_reading": "うらや",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "ましい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "羨 (envy) + ましい → envious."
+ },
+ {
+  "word": "病気",
+  "reading": "びょうき",
+  "meaning": "sick; illness",
+  "parts": [
+   {
+    "char": "病",
+    "type": "kanji",
+    "meaning": "Sick",
+    "onyomi": [
+     "びょう",
+     "へい"
+    ],
+    "kunyomi": [
+     "や",
+     "やまい"
+    ],
+    "used_reading": "びょう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "気",
+    "type": "kanji",
+    "meaning": "Energy",
+    "onyomi": [
+     "き",
+     "け"
+    ],
+    "kunyomi": [],
+    "used_reading": "き",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "病 (sick) + 気 (energy, spirit) → a sick condition → illness."
+ },
+ {
+  "word": "人",
+  "reading": "ひと",
+  "meaning": "person",
+  "parts": [
+   {
+    "char": "人",
+    "type": "kanji",
+    "meaning": "Person",
+    "onyomi": [
+     "にん",
+     "じん"
+    ],
+    "kunyomi": [
+     "ひと",
+     "と"
+    ],
+    "used_reading": "ひと",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "人 (person) — single kanji, read ひと."
+ },
+ {
+  "word": "高校生",
+  "reading": "こうこうせい",
+  "meaning": "high school student; high schooler",
+  "parts": [
+   {
+    "char": "高",
+    "type": "kanji",
+    "meaning": "Tall",
+    "onyomi": [
+     "こう"
+    ],
+    "kunyomi": [
+     "たか"
+    ],
+    "used_reading": "こう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "校",
+    "type": "kanji",
+    "meaning": "School",
+    "onyomi": [
+     "こう"
+    ],
+    "kunyomi": [],
+    "used_reading": "こう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "生",
+    "type": "kanji",
+    "meaning": "Life",
+    "onyomi": [
+     "せい",
+     "しょう"
+    ],
+    "kunyomi": [
+     "い",
+     "なま",
+     "う",
+     "は",
+     "き"
+    ],
+    "used_reading": "せい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "高 (tall, high) + 校 (school) + 生 (life; here ‘student’, as in 学生) → high school student."
+ },
+ {
+  "word": "医者",
+  "reading": "いしゃ",
+  "meaning": "doctor; physician",
+  "parts": [
+   {
+    "char": "医",
+    "type": "kanji",
+    "meaning": "Medicine",
+    "onyomi": [
+     "い"
+    ],
+    "kunyomi": [],
+    "used_reading": "い",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "者",
+    "type": "kanji",
+    "meaning": "Someone",
+    "onyomi": [
+     "しゃ"
+    ],
+    "kunyomi": [
+     "もの"
+    ],
+    "used_reading": "しゃ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "医 (medicine) + 者 (someone) → a medicine person → doctor."
+ },
+ {
+  "word": "決心",
+  "reading": "けっしん",
+  "meaning": "determination; resolution",
+  "parts": [
+   {
+    "char": "決",
+    "type": "kanji",
+    "meaning": "Decide",
+    "onyomi": [
+     "けつ"
+    ],
+    "kunyomi": [
+     "き"
+    ],
+    "used_reading": "けっ",
+    "used_type": "onyomi",
+    "transform": "gemination",
+    "note": "shortened from けつ (before the next sound)"
+   },
+   {
+    "char": "心",
+    "type": "kanji",
+    "meaning": "Heart",
+    "onyomi": [
+     "しん"
+    ],
+    "kunyomi": [
+     "こころ"
+    ],
+    "used_reading": "しん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "決 (decide) + 心 (heart) → a decision of the heart → determination."
+ },
+ {
+  "word": "証明",
+  "reading": "しょうめい",
+  "meaning": "proof; prove",
+  "parts": [
+   {
+    "char": "証",
+    "type": "kanji",
+    "meaning": "Evidence",
+    "onyomi": [
+     "しょう"
+    ],
+    "kunyomi": [
+     "あかし"
+    ],
+    "used_reading": "しょう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "明",
+    "type": "kanji",
+    "meaning": "Bright",
+    "onyomi": [
+     "めい",
+     "みょう"
+    ],
+    "kunyomi": [
+     "あ",
+     "あか",
+     "あき"
+    ],
+    "used_reading": "めい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "証 (evidence) + 明 (bright, clear) → making something clear with evidence → proof."
+ },
+ {
+  "word": "仮定",
+  "reading": "かてい",
+  "meaning": "assumption; assume",
+  "parts": [
+   {
+    "char": "仮",
+    "type": "kanji",
+    "meaning": "Temporary",
+    "onyomi": [
+     "か",
+     "け"
+    ],
+    "kunyomi": [
+     "かり",
+     "か"
+    ],
+    "used_reading": "か",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "定",
+    "type": "kanji",
+    "meaning": "Determine",
+    "onyomi": [
+     "てい",
+     "じょう"
+    ],
+    "kunyomi": [
+     "さだ"
+    ],
+    "used_reading": "てい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "仮 (temporary) + 定 (determine) → a temporary determination → an assumption."
+ },
+ {
+  "word": "彼",
+  "reading": "かれ",
+  "meaning": "he",
+  "parts": [
+   {
+    "char": "彼",
+    "type": "kanji",
+    "meaning": "He",
+    "onyomi": [
+     "ひ"
+    ],
+    "kunyomi": [
+     "かれ",
+     "かの"
+    ],
+    "used_reading": "かれ",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "彼 (he) — single kanji, read かれ."
+ },
+ {
+  "word": "いつも",
+  "reading": "いつも",
+  "meaning": "always",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "いつも"
+   }
+  ],
+  "meaning_logic": "From 何時も — いつ (when) + も (every) → ‘whenever’ → always.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "言う",
+  "reading": "いう",
+  "meaning": "to say",
+  "parts": [
+   {
+    "char": "言",
+    "type": "kanji",
+    "meaning": "Say",
+    "onyomi": [
+     "げん",
+     "ごん"
+    ],
+    "kunyomi": [
+     "い",
+     "こと"
+    ],
+    "used_reading": "い",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "う"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "言 (say) + う → to say."
+ },
+ {
+  "word": "みんな",
+  "reading": "みんな",
+  "meaning": "everyone",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "みんな"
+   }
+  ],
+  "meaning_logic": "Native word; the usual kanji is 皆, which means ‘all, everyone’.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "笑わせる",
+  "reading": "わらわせる",
+  "meaning": "to make someone laugh",
+  "parts": [
+   {
+    "char": "笑",
+    "type": "kanji",
+    "meaning": "Laugh",
+    "onyomi": [
+     "しょう"
+    ],
+    "kunyomi": [
+     "わら",
+     "え"
+    ],
+    "used_reading": "わら",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "わせる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "笑 (laugh) + causative わせる → to make someone laugh."
+ },
+ {
+  "word": "面白い",
+  "reading": "おもしろい",
+  "meaning": "interesting; amusing",
+  "parts": [
+   {
+    "char": "面",
+    "type": "kanji",
+    "meaning": "Face",
+    "onyomi": [
+     "めん"
+    ],
+    "kunyomi": [
+     "おも",
+     "おもて",
+     "つら"
+    ],
+    "used_reading": "おも",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "白",
+    "type": "kanji",
+    "meaning": "White",
+    "onyomi": [
+     "はく"
+    ],
+    "kunyomi": [
+     "しろ",
+     "しら"
+    ],
+    "used_reading": "しろ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "い"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "面 (face) + 白 (white, bright) → literally ‘face-brightening’ → interesting, amusing; the reading おもしろ is a fixed kun reading of the compound."
+ },
+ {
+  "word": "文句",
+  "reading": "もんく",
+  "meaning": "complaint; grumbling",
+  "parts": [
+   {
+    "char": "文",
+    "type": "kanji",
+    "meaning": "Writing",
+    "onyomi": [
+     "ぶん",
+     "もん"
+    ],
+    "kunyomi": [
+     "ふみ"
+    ],
+    "used_reading": "もん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "句",
+    "type": "kanji",
+    "meaning": "Paragraph",
+    "onyomi": [
+     "く"
+    ],
+    "kunyomi": [],
+    "used_reading": "く",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "文 (writing, sentence) + 句 (phrase) → a phrase you say → a complaint."
+ },
+ {
+  "word": "冗談",
+  "reading": "じょうだん",
+  "meaning": "joke",
+  "parts": [
+   {
+    "char": "冗",
+    "type": "kanji",
+    "meaning": "Superfluous",
+    "onyomi": [
+     "じょう"
+    ],
+    "kunyomi": [],
+    "used_reading": "じょう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "談",
+    "type": "kanji",
+    "meaning": "Talk",
+    "onyomi": [
+     "だん"
+    ],
+    "kunyomi": [],
+    "used_reading": "だん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "冗 (superfluous) + 談 (talk) → idle talk → a joke."
+ },
+ {
+  "word": "自慢",
+  "reading": "じまん",
+  "meaning": "pride; boast",
+  "parts": [
+   {
+    "char": "自",
+    "type": "kanji",
+    "meaning": "Self",
+    "onyomi": [
+     "じ",
+     "し"
+    ],
+    "kunyomi": [
+     "みずか"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "慢",
+    "type": "kanji",
+    "meaning": "Overconfidence",
+    "onyomi": [
+     "まん"
+    ],
+    "kunyomi": [],
+    "used_reading": "まん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "自 (self) + 慢 (overconfidence) → pride; to boast."
+ },
+ {
+  "word": "ホテル",
+  "reading": "ホテル",
+  "meaning": "hotel",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "ホテル"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘hotel’.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "到着",
+  "reading": "とうちゃく",
+  "meaning": "arrival",
+  "parts": [
+   {
+    "char": "到",
+    "type": "kanji",
+    "meaning": "Arrival",
+    "onyomi": [
+     "とう"
+    ],
+    "kunyomi": [],
+    "used_reading": "とう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "着",
+    "type": "kanji",
+    "meaning": "Wear",
+    "onyomi": [
+     "ちゃく"
+    ],
+    "kunyomi": [
+     "き",
+     "つ"
+    ],
+    "used_reading": "ちゃく",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "到 (arrival) + 着 (wear; here ‘arrive’) → arrival."
+ },
+ {
+  "word": "まだ",
+  "reading": "まだ",
+  "meaning": "still; not yet",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "まだ"
+   }
+  ],
+  "meaning_logic": "Native adverb; the kanji form is 未だ (未 = not yet). Means ‘still; not yet’.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "部屋",
+  "reading": "へや",
+  "meaning": "room",
+  "parts": [
+   {
+    "char": "部",
+    "type": "kanji",
+    "meaning": "Part",
+    "onyomi": [
+     "ぶ"
+    ],
+    "kunyomi": [
+     "へ"
+    ],
+    "used_reading": "へ",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "屋",
+    "type": "kanji",
+    "meaning": "Roof",
+    "onyomi": [
+     "おく"
+    ],
+    "kunyomi": [
+     "や"
+    ],
+    "used_reading": "や",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "部 (part) + 屋 (roof, room) → a room."
+ },
+ {
+  "word": "入る",
+  "reading": "はいる",
+  "meaning": "to enter; to go in",
+  "parts": [
+   {
+    "char": "入",
+    "type": "kanji",
+    "meaning": "Enter",
+    "onyomi": [
+     "にゅう"
+    ],
+    "kunyomi": [
+     "はい",
+     "い"
+    ],
+    "used_reading": "はい",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "る"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "入 (enter) + る → to enter."
+ },
+ {
+  "word": "荷物",
+  "reading": "にもつ",
+  "meaning": "luggage; baggage",
+  "parts": [
+   {
+    "char": "荷",
+    "type": "kanji",
+    "meaning": "Luggage",
+    "onyomi": [
+     "か"
+    ],
+    "kunyomi": [
+     "に"
+    ],
+    "used_reading": "に",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "物",
+    "type": "kanji",
+    "meaning": "Thing",
+    "onyomi": [
+     "ぶつ",
+     "もつ"
+    ],
+    "kunyomi": [
+     "もの"
+    ],
+    "used_reading": "もつ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "kun-on",
+  "meaning_logic": "荷 (luggage, load) + 物 (thing) → luggage."
+ },
+ {
+  "word": "出かける",
+  "reading": "でかける",
+  "meaning": "to go out; to leave",
+  "parts": [
+   {
+    "char": "出",
+    "type": "kanji",
+    "meaning": "Exit",
+    "onyomi": [
+     "しゅつ"
+    ],
+    "kunyomi": [
+     "で",
+     "だ"
+    ],
+    "used_reading": "で",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "かける"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "出 (exit) + かける → to go out."
+ },
+ {
+  "word": "泊める",
+  "reading": "とめる",
+  "meaning": "to let someone stay over; to let someone stay the night",
+  "parts": [
+   {
+    "char": "泊",
+    "type": "kanji",
+    "meaning": "Overnight",
+    "onyomi": [
+     "はく"
+    ],
+    "kunyomi": [
+     "と"
+    ],
+    "used_reading": "と",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "める"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "泊 (overnight) + める → to let someone stay overnight."
+ },
+ {
+  "word": "与える",
+  "reading": "あたえる",
+  "meaning": "to give; to grant",
+  "parts": [
+   {
+    "char": "与",
+    "type": "kanji",
+    "meaning": "Give",
+    "onyomi": [
+     "よ"
+    ],
+    "kunyomi": [
+     "あた"
+    ],
+    "used_reading": "あた",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "える"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "与 (give) + える → to give."
+ },
+ {
+  "word": "空港",
+  "reading": "くうこう",
+  "meaning": "airport",
+  "parts": [
+   {
+    "char": "空",
+    "type": "kanji",
+    "meaning": "Sky",
+    "onyomi": [
+     "くう"
+    ],
+    "kunyomi": [
+     "そら",
+     "あ",
+     "から",
+     "す"
+    ],
+    "used_reading": "くう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "港",
+    "type": "kanji",
+    "meaning": "port",
+    "onyomi": [
+     "こう"
+    ],
+    "kunyomi": [
+     "みなと"
+    ],
+    "used_reading": "こう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "空 (sky) + 港 (harbor, port) → a port for the sky → an airport."
+ },
+ {
+  "word": "着く",
+  "reading": "つく",
+  "meaning": "to arrive",
+  "parts": [
+   {
+    "char": "着",
+    "type": "kanji",
+    "meaning": "Wear",
+    "onyomi": [
+     "ちゃく"
+    ],
+    "kunyomi": [
+     "き",
+     "つ"
+    ],
+    "used_reading": "つ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "着 (arrive) + く → to arrive."
+ },
+ {
+  "word": "飛行機",
+  "reading": "ひこうき",
+  "meaning": "airplane; aeroplane",
+  "parts": [
+   {
+    "char": "飛",
+    "type": "kanji",
+    "meaning": "fly",
+    "onyomi": [
+     "ひ"
+    ],
+    "kunyomi": [
+     "と"
+    ],
+    "used_reading": "ひ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "行",
+    "type": "kanji",
+    "meaning": "Go",
+    "onyomi": [
+     "こう",
+     "ぎょう"
+    ],
+    "kunyomi": [
+     "い",
+     "おこな",
+     "ゆ"
+    ],
+    "used_reading": "こう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "機",
+    "type": "kanji",
+    "meaning": "Machine",
+    "onyomi": [
+     "き"
+    ],
+    "kunyomi": [
+     "はた"
+    ],
+    "used_reading": "き",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "飛 (fly) + 行 (go) + 機 (machine) → a flying machine → an airplane."
+ },
+ {
+  "word": "出発",
+  "reading": "しゅっぱつ",
+  "meaning": "departure",
+  "parts": [
+   {
+    "char": "出",
+    "type": "kanji",
+    "meaning": "Exit",
+    "onyomi": [
+     "しゅつ"
+    ],
+    "kunyomi": [
+     "で",
+     "だ"
+    ],
+    "used_reading": "しゅっ",
+    "used_type": "onyomi",
+    "transform": "gemination",
+    "note": "shortened from しゅつ (before the next sound)"
+   },
+   {
+    "char": "発",
+    "type": "kanji",
+    "meaning": "Departure",
+    "onyomi": [
+     "はつ"
+    ],
+    "kunyomi": [],
+    "used_reading": "ぱつ",
+    "used_type": "onyomi",
+    "transform": "rendaku",
+    "note": "rendaku: はつ → ぱつ"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "出 (exit) + 発 (departure) → departure."
+ },
+ {
+  "word": "ガイダンス",
+  "reading": "ガイダンス",
+  "meaning": "guidance; orientation",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "ガイダンス"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘guidance’.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "アナウンス",
+  "reading": "アナウンス",
+  "meaning": "announcement",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "アナウンス"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘announce’; means an announcement.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "コマーシャル",
+  "reading": "コマーシャル",
+  "meaning": "commercial (ad)",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "コマーシャル"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘commercial’; clipped to CM in everyday speech.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "スピーチ",
+  "reading": "スピーチ",
+  "meaning": "speech",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "スピーチ"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘speech’.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "休日",
+  "reading": "きゅうじつ",
+  "meaning": "day off; holiday",
+  "parts": [
+   {
+    "char": "休",
+    "type": "kanji",
+    "meaning": "Rest",
+    "onyomi": [
+     "きゅう"
+    ],
+    "kunyomi": [
+     "やす"
+    ],
+    "used_reading": "きゅう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "日",
+    "type": "kanji",
+    "meaning": "Sun",
+    "onyomi": [
+     "にち",
+     "じつ"
+    ],
+    "kunyomi": [
+     "ひ",
+     "か",
+     "び"
+    ],
+    "used_reading": "じつ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "休 (rest) + 日 (day) → a day off."
+ },
+ {
+  "word": "渋滞",
+  "reading": "じゅうたい",
+  "meaning": "traffic jam; traffic congestion",
+  "parts": [
+   {
+    "char": "渋",
+    "type": "kanji",
+    "meaning": "Bitter",
+    "onyomi": [
+     "じゅう"
+    ],
+    "kunyomi": [
+     "しぶ"
+    ],
+    "used_reading": "じゅう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "滞",
+    "type": "kanji",
+    "meaning": "Stagnate",
+    "onyomi": [
+     "たい"
+    ],
+    "kunyomi": [
+     "とどこお"
+    ],
+    "used_reading": "たい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "渋 (bitter, astringent → sluggish) + 滞 (stagnate) → traffic that stagnates → a traffic jam."
+ },
+ {
+  "word": "思う",
+  "reading": "おもう",
+  "meaning": "to think",
+  "parts": [
+   {
+    "char": "思",
+    "type": "kanji",
+    "meaning": "Think",
+    "onyomi": [
+     "し"
+    ],
+    "kunyomi": [
+     "おも"
+    ],
+    "used_reading": "おも",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "う"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "思 (think) + う → to think."
+ },
+ {
+  "word": "道",
+  "reading": "みち",
+  "meaning": "road; street",
+  "parts": [
+   {
+    "char": "道",
+    "type": "kanji",
+    "meaning": "Road",
+    "onyomi": [
+     "どう"
+    ],
+    "kunyomi": [
+     "みち"
+    ],
+    "used_reading": "みち",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "道 (road) — single kanji, read みち."
+ },
+ {
+  "word": "空く",
+  "reading": "すく",
+  "meaning": "to be uncrowded",
+  "parts": [
+   {
+    "char": "空",
+    "type": "kanji",
+    "meaning": "Sky",
+    "onyomi": [
+     "くう"
+    ],
+    "kunyomi": [
+     "そら",
+     "あ",
+     "から",
+     "す"
+    ],
+    "used_reading": "す",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "空 (empty) + く → to be empty, uncrowded."
+ },
+ {
+  "word": "突然",
+  "reading": "とつぜん",
+  "meaning": "suddenly; sudden",
+  "parts": [
+   {
+    "char": "突",
+    "type": "kanji",
+    "meaning": "Stab",
+    "onyomi": [
+     "とつ"
+    ],
+    "kunyomi": [
+     "つ"
+    ],
+    "used_reading": "とつ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "然",
+    "type": "kanji",
+    "meaning": "Nature",
+    "onyomi": [
+     "ぜん",
+     "ねん"
+    ],
+    "kunyomi": [
+     "しか",
+     "さ"
+    ],
+    "used_reading": "ぜん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "突 (stab; sudden) + 然 (so, nature) → suddenly."
+ },
+ {
+  "word": "当然",
+  "reading": "とうぜん",
+  "meaning": "natural; obvious",
+  "parts": [
+   {
+    "char": "当",
+    "type": "kanji",
+    "meaning": "hit",
+    "onyomi": [
+     "とう"
+    ],
+    "kunyomi": [
+     "あ"
+    ],
+    "used_reading": "とう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "然",
+    "type": "kanji",
+    "meaning": "Nature",
+    "onyomi": [
+     "ぜん",
+     "ねん"
+    ],
+    "kunyomi": [
+     "しか",
+     "さ"
+    ],
+    "used_reading": "ぜん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "当 (correct, hit) + 然 (so) → ‘as it should be’ → natural, obvious."
+ },
+ {
+  "word": "年中",
+  "reading": "ねんじゅう",
+  "meaning": "year round; all year",
+  "parts": [
+   {
+    "char": "年",
+    "type": "kanji",
+    "meaning": "Year",
+    "onyomi": [
+     "ねん"
+    ],
+    "kunyomi": [
+     "とし"
+    ],
+    "used_reading": "ねん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "中",
+    "type": "kanji",
+    "meaning": "Middle",
+    "onyomi": [
+     "ちゅう"
+    ],
+    "kunyomi": [
+     "なか"
+    ],
+    "used_reading": "じゅう",
+    "used_type": "onyomi",
+    "transform": "special",
+    "note": "read じゅう here, meaning ‘throughout (the year)’ — usual readings ちゅう / なか."
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "年 (year) + 中 (middle; here ‘throughout’) → all year round."
+ },
+ {
+  "word": "案外",
+  "reading": "あんがい",
+  "meaning": "unexpectedly; more than expected",
+  "parts": [
+   {
+    "char": "案",
+    "type": "kanji",
+    "meaning": "plan",
+    "onyomi": [
+     "あん"
+    ],
+    "kunyomi": [],
+    "used_reading": "あん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "外",
+    "type": "kanji",
+    "meaning": "Outside",
+    "onyomi": [
+     "がい",
+     "げ"
+    ],
+    "kunyomi": [
+     "そと",
+     "はず",
+     "ほか",
+     "と"
+    ],
+    "used_reading": "がい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "案 (plan) + 外 (outside) → outside the plan → unexpectedly."
+ },
+ {
+  "word": "若い",
+  "reading": "わかい",
+  "meaning": "young; youthful",
+  "parts": [
+   {
+    "char": "若",
+    "type": "kanji",
+    "meaning": "Young",
+    "onyomi": [
+     "じゃく"
+    ],
+    "kunyomi": [
+     "わか",
+     "も"
+    ],
+    "used_reading": "わか",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "い"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "若 (young) + い → young."
+ },
+ {
+  "word": "苦労",
+  "reading": "くろう",
+  "meaning": "hardship; troubles",
+  "parts": [
+   {
+    "char": "苦",
+    "type": "kanji",
+    "meaning": "Suffering",
+    "onyomi": [
+     "く"
+    ],
+    "kunyomi": [
+     "くる",
+     "にが"
+    ],
+    "used_reading": "く",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "労",
+    "type": "kanji",
+    "meaning": "Labor",
+    "onyomi": [
+     "ろう"
+    ],
+    "kunyomi": [
+     "いたわ"
+    ],
+    "used_reading": "ろう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "苦 (suffering) + 労 (labor) → hardship."
+ },
+ {
+  "word": "一生懸命",
+  "reading": "いっしょうけんめい",
+  "meaning": "with all one's might; all out",
+  "parts": [
+   {
+    "char": "一",
+    "type": "kanji",
+    "meaning": "One",
+    "onyomi": [
+     "いち",
+     "いつ"
+    ],
+    "kunyomi": [
+     "ひと"
+    ],
+    "used_reading": "いっ",
+    "used_type": "onyomi",
+    "transform": "gemination",
+    "note": "shortened from いち (before the next sound)"
+   },
+   {
+    "char": "生",
+    "type": "kanji",
+    "meaning": "Life",
+    "onyomi": [
+     "せい",
+     "しょう"
+    ],
+    "kunyomi": [
+     "い",
+     "なま",
+     "う",
+     "は",
+     "き"
+    ],
+    "used_reading": "しょう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "懸",
+    "type": "kanji",
+    "meaning": "Suspend",
+    "onyomi": [
+     "けん"
+    ],
+    "kunyomi": [
+     "か"
+    ],
+    "used_reading": "けん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "命",
+    "type": "kanji",
+    "meaning": "Fate",
+    "onyomi": [
+     "めい",
+     "みょう"
+    ],
+    "kunyomi": [
+     "いのち"
+    ],
+    "used_reading": "めい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "一 (one) + 生 (life) + 懸 (suspend) + 命 (life, fate) → ‘one life hanging’ — risking everything → with all one’s might. A set phrase; the older form is 一所懸命."
+ },
+ {
+  "word": "立派",
+  "reading": "りっぱ",
+  "meaning": "splendid; admirable",
+  "parts": [
+   {
+    "char": "立",
+    "type": "kanji",
+    "meaning": "Stand",
+    "onyomi": [
+     "りつ",
+     "りゅう"
+    ],
+    "kunyomi": [
+     "た"
+    ],
+    "used_reading": "りっ",
+    "used_type": "onyomi",
+    "transform": "gemination",
+    "note": "shortened from りつ (before the next sound)"
+   },
+   {
+    "char": "派",
+    "type": "kanji",
+    "meaning": "Sect",
+    "onyomi": [
+     "は"
+    ],
+    "kunyomi": [],
+    "used_reading": "ぱ",
+    "used_type": "onyomi",
+    "transform": "rendaku",
+    "note": "rendaku: は → ぱ"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "立 (stand) + 派 (faction) → literally ‘a faction that stands out’ → splendid, admirable; the modern sense is set, not a literal sum."
+ },
+ {
+  "word": "政治家",
+  "reading": "せいじか",
+  "meaning": "politician",
+  "parts": [
+   {
+    "char": "政",
+    "type": "kanji",
+    "meaning": "Politics",
+    "onyomi": [
+     "せい"
+    ],
+    "kunyomi": [],
+    "used_reading": "せい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "治",
+    "type": "kanji",
+    "meaning": "Cure",
+    "onyomi": [
+     "じ",
+     "ち"
+    ],
+    "kunyomi": [
+     "なお"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "家",
+    "type": "kanji",
+    "meaning": "House",
+    "onyomi": [
+     "か",
+     "け"
+    ],
+    "kunyomi": [
+     "いえ",
+     "や",
+     "うち"
+    ],
+    "used_reading": "か",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "政 (politics) + 治 (cure; here ‘govern’, as in 政治) + 家 (house; here ‘professional’, as in 画家) → politician."
+ },
+ {
+  "word": "努力",
+  "reading": "どりょく",
+  "meaning": "great effort; exertion",
+  "parts": [
+   {
+    "char": "努",
+    "type": "kanji",
+    "meaning": "Toil",
+    "onyomi": [
+     "ど"
+    ],
+    "kunyomi": [
+     "つと"
+    ],
+    "used_reading": "ど",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "力",
+    "type": "kanji",
+    "meaning": "Power",
+    "onyomi": [
+     "りょく",
+     "りき"
+    ],
+    "kunyomi": [
+     "ちから"
+    ],
+    "used_reading": "りょく",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "努 (toil) + 力 (power) → effort."
+ },
+ {
+  "word": "納得",
+  "reading": "なっとく",
+  "meaning": "being convinced; consent",
+  "parts": [
+   {
+    "char": "納",
+    "type": "kanji",
+    "meaning": "Supply",
+    "onyomi": [
+     "のう",
+     "なっ",
+     "な"
+    ],
+    "kunyomi": [
+     "おさ"
+    ],
+    "used_reading": "なっ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "得",
+    "type": "kanji",
+    "meaning": "Acquire",
+    "onyomi": [
+     "とく"
+    ],
+    "kunyomi": [
+     "え",
+     "う"
+    ],
+    "used_reading": "とく",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "納 (supply, pay in) + 得 (acquire) → taking something in and getting it → being convinced."
+ },
+ {
+  "word": "期待",
+  "reading": "きたい",
+  "meaning": "expectation; anticipation",
+  "parts": [
+   {
+    "char": "期",
+    "type": "kanji",
+    "meaning": "Period Of Time",
+    "onyomi": [
+     "き",
+     "ご"
+    ],
+    "kunyomi": [],
+    "used_reading": "き",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "待",
+    "type": "kanji",
+    "meaning": "Wait",
+    "onyomi": [
+     "たい"
+    ],
+    "kunyomi": [
+     "ま"
+    ],
+    "used_reading": "たい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "期 (period; expect) + 待 (wait) → expectation."
+ },
+ {
+  "word": "注意",
+  "reading": "ちゅうい",
+  "meaning": "caution; attention",
+  "parts": [
+   {
+    "char": "注",
+    "type": "kanji",
+    "meaning": "Pour",
+    "onyomi": [
+     "ちゅう"
+    ],
+    "kunyomi": [
+     "そそ",
+     "さ",
+     "つ"
+    ],
+    "used_reading": "ちゅう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "意",
+    "type": "kanji",
+    "meaning": "Idea",
+    "onyomi": [
+     "い"
+    ],
+    "kunyomi": [],
+    "used_reading": "い",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "注 (pour) + 意 (idea, attention) → pouring your mind into something → attention, caution."
+ },
+ {
+  "word": "朝",
+  "reading": "あさ",
+  "meaning": "morning",
+  "parts": [
+   {
+    "char": "朝",
+    "type": "kanji",
+    "meaning": "Morning",
+    "onyomi": [
+     "ちょう"
+    ],
+    "kunyomi": [
+     "あさ"
+    ],
+    "used_reading": "あさ",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "朝 (morning) — single kanji, read あさ."
+ },
+ {
+  "word": "ご飯",
+  "reading": "ごはん",
+  "meaning": "meal; cooked rice",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "ご"
+   },
+   {
+    "char": "飯",
+    "type": "kanji",
+    "meaning": "Meal",
+    "onyomi": [
+     "はん"
+    ],
+    "kunyomi": [
+     "めし"
+    ],
+    "used_reading": "はん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "ご (polite prefix) + 飯 (meal) → meal; cooked rice."
+ },
+ {
+  "word": "食べる",
+  "reading": "たべる",
+  "meaning": "to eat",
+  "parts": [
+   {
+    "char": "食",
+    "type": "kanji",
+    "meaning": "Eat",
+    "onyomi": [
+     "しょく"
+    ],
+    "kunyomi": [
+     "た",
+     "く"
+    ],
+    "used_reading": "た",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "べる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "食 (eat) + べる → to eat."
+ },
+ {
+  "word": "おなか",
+  "reading": "おなか",
+  "meaning": "stomach; belly",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "おなか"
+   }
+  ],
+  "meaning_logic": "お (polite prefix) + なか ‘inside’ (中) → the inside → belly. Usually written お腹 (腹 = belly).",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "ぺらぺら",
+  "reading": "ぺらぺら",
+  "meaning": "fluently; flimsy",
+  "kana_class": "onomatopoeia",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "ぺらぺら"
+   }
+  ],
+  "meaning_logic": "Onomatopoeia from the flapping of a sheet of paper: ‘flimsy’ for paper, ‘fluent’ for speech that flows off the tongue.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "からから",
+  "reading": "からから",
+  "meaning": "dry; parched",
+  "kana_class": "onomatopoeia",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "からから"
+   }
+  ],
+  "meaning_logic": "Onomatopoeia for a dry, rattling sound → parched, bone-dry.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "ぺこぺこ",
+  "reading": "ぺこぺこ",
+  "meaning": "very hungry",
+  "kana_class": "onomatopoeia",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "ぺこぺこ"
+   }
+  ],
+  "meaning_logic": "Onomatopoeia for an empty stomach’s pang → very hungry (also used for bowing repeatedly).",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "どきどき",
+  "reading": "どきどき",
+  "meaning": "heartbeat; nervous excitement",
+  "kana_class": "onomatopoeia",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "どきどき"
+   }
+  ],
+  "meaning_logic": "Onomatopoeia for a thumping heartbeat → nervous excitement.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "会社",
+  "reading": "かいしゃ",
+  "meaning": "company; corporation",
+  "parts": [
+   {
+    "char": "会",
+    "type": "kanji",
+    "meaning": "Meet",
+    "onyomi": [
+     "かい"
+    ],
+    "kunyomi": [
+     "あ"
+    ],
+    "used_reading": "かい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "社",
+    "type": "kanji",
+    "meaning": "Company",
+    "onyomi": [
+     "しゃ"
+    ],
+    "kunyomi": [
+     "やしろ"
+    ],
+    "used_reading": "しゃ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "会 (meet) + 社 (company) → a company."
+ },
+ {
+  "word": "聞く",
+  "reading": "きく",
+  "meaning": "to hear; to ask",
+  "parts": [
+   {
+    "char": "聞",
+    "type": "kanji",
+    "meaning": "Hear",
+    "onyomi": [
+     "ぶん",
+     "もん"
+    ],
+    "kunyomi": [
+     "き"
+    ],
+    "used_reading": "き",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "聞 (hear) + く → to hear; to ask."
+ },
+ {
+  "word": "情報",
+  "reading": "じょうほう",
+  "meaning": "information; data",
+  "parts": [
+   {
+    "char": "情",
+    "type": "kanji",
+    "meaning": "Feeling",
+    "onyomi": [
+     "じょう"
+    ],
+    "kunyomi": [
+     "なさ"
+    ],
+    "used_reading": "じょう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "報",
+    "type": "kanji",
+    "meaning": "News",
+    "onyomi": [
+     "ほう"
+    ],
+    "kunyomi": [
+     "むく"
+    ],
+    "used_reading": "ほう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "情 (feeling, circumstance) + 報 (news, report) → a report on circumstances → information."
+ },
+ {
+  "word": "満足",
+  "reading": "まんぞく",
+  "meaning": "satisfied",
+  "parts": [
+   {
+    "char": "満",
+    "type": "kanji",
+    "meaning": "full",
+    "onyomi": [
+     "まん"
+    ],
+    "kunyomi": [
+     "み"
+    ],
+    "used_reading": "まん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "足",
+    "type": "kanji",
+    "meaning": "Foot",
+    "onyomi": [
+     "そく"
+    ],
+    "kunyomi": [
+     "あし",
+     "た"
+    ],
+    "used_reading": "ぞく",
+    "used_type": "onyomi",
+    "transform": "rendaku",
+    "note": "rendaku: そく → ぞく"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "満 (full) + 足 (foot; here ‘sufficient’) → full and sufficient → satisfied."
+ },
+ {
+  "word": "正常",
+  "reading": "せいじょう",
+  "meaning": "normal",
+  "parts": [
+   {
+    "char": "正",
+    "type": "kanji",
+    "meaning": "Correct",
+    "onyomi": [
+     "せい",
+     "しょう"
+    ],
+    "kunyomi": [
+     "ただ",
+     "まさ"
+    ],
+    "used_reading": "せい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "常",
+    "type": "kanji",
+    "meaning": "Normal",
+    "onyomi": [
+     "じょう"
+    ],
+    "kunyomi": [
+     "つね"
+    ],
+    "used_reading": "じょう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "正 (correct) + 常 (normal) → normal."
+ },
+ {
+  "word": "確実",
+  "reading": "かくじつ",
+  "meaning": "certain; reliable",
+  "parts": [
+   {
+    "char": "確",
+    "type": "kanji",
+    "meaning": "Certain",
+    "onyomi": [
+     "かく"
+    ],
+    "kunyomi": [
+     "たし"
+    ],
+    "used_reading": "かく",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "実",
+    "type": "kanji",
+    "meaning": "Truth",
+    "onyomi": [
+     "じつ"
+    ],
+    "kunyomi": [
+     "み",
+     "みの",
+     "さね"
+    ],
+    "used_reading": "じつ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "確 (certain) + 実 (reality, truth) → certain, reliable."
+ },
+ {
+  "word": "電気",
+  "reading": "でんき",
+  "meaning": "electricity; light",
+  "parts": [
+   {
+    "char": "電",
+    "type": "kanji",
+    "meaning": "Electricity",
+    "onyomi": [
+     "でん"
+    ],
+    "kunyomi": [],
+    "used_reading": "でん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "気",
+    "type": "kanji",
+    "meaning": "Energy",
+    "onyomi": [
+     "き",
+     "け"
+    ],
+    "kunyomi": [],
+    "used_reading": "き",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "電 (electricity) + 気 (energy) → electricity; electric light."
+ },
+ {
+  "word": "工事",
+  "reading": "こうじ",
+  "meaning": "construction; construction work",
+  "parts": [
+   {
+    "char": "工",
+    "type": "kanji",
+    "meaning": "Construction",
+    "onyomi": [
+     "こう",
+     "く"
+    ],
+    "kunyomi": [],
+    "used_reading": "こう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "事",
+    "type": "kanji",
+    "meaning": "Occurrence",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [
+     "こと",
+     "つか"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "工 (construction) + 事 (matter, work) → construction work."
+ },
+ {
+  "word": "来る",
+  "reading": "くる",
+  "meaning": "to come",
+  "parts": [
+   {
+    "char": "来",
+    "type": "kanji",
+    "meaning": "Come",
+    "onyomi": [
+     "らい"
+    ],
+    "kunyomi": [
+     "く",
+     "き"
+    ],
+    "used_reading": "く",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "る"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "来 (come) + る → to come."
+ },
+ {
+  "word": "壁",
+  "reading": "かべ",
+  "meaning": "wall",
+  "parts": [
+   {
+    "char": "壁",
+    "type": "kanji",
+    "meaning": "Wall",
+    "onyomi": [
+     "へき"
+    ],
+    "kunyomi": [
+     "かべ"
+    ],
+    "used_reading": "かべ",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "壁 (wall) — single kanji, read かべ."
+ },
+ {
+  "word": "エアコン",
+  "reading": "エアコン",
+  "meaning": "air conditioner",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "エアコン"
+   }
+  ],
+  "meaning_logic": "Clipped compound of エアコンディショナー (‘air conditioner’).",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "取り付ける",
+  "reading": "とりつける",
+  "meaning": "to install; to attach",
+  "parts": [
+   {
+    "char": "取",
+    "type": "kanji",
+    "meaning": "Take",
+    "onyomi": [
+     "しゅ"
+    ],
+    "kunyomi": [
+     "と"
+    ],
+    "used_reading": "と",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "り"
+   },
+   {
+    "char": "付",
+    "type": "kanji",
+    "meaning": "attach",
+    "onyomi": [
+     "ふ"
+    ],
+    "kunyomi": [
+     "つ"
+    ],
+    "used_reading": "つ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "ける"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "取 (take) + 付 (attach) → to take and attach → to install."
+ },
+ {
+  "word": "取り上げる",
+  "reading": "とりあげる",
+  "meaning": "to pick up; to take away",
+  "parts": [
+   {
+    "char": "取",
+    "type": "kanji",
+    "meaning": "Take",
+    "onyomi": [
+     "しゅ"
+    ],
+    "kunyomi": [
+     "と"
+    ],
+    "used_reading": "と",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "り"
+   },
+   {
+    "char": "上",
+    "type": "kanji",
+    "meaning": "Above",
+    "onyomi": [
+     "じょう"
+    ],
+    "kunyomi": [
+     "うえ",
+     "あ",
+     "のぼ",
+     "うわ",
+     "かみ"
+    ],
+    "used_reading": "あ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "げる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "取 (take) + 上 (up) → to take up → to pick up; to take away."
+ },
+ {
+  "word": "受け入れる",
+  "reading": "うけいれる",
+  "meaning": "to accept something; to take in",
+  "parts": [
+   {
+    "char": "受",
+    "type": "kanji",
+    "meaning": "receive",
+    "onyomi": [
+     "じゅ"
+    ],
+    "kunyomi": [
+     "う"
+    ],
+    "used_reading": "う",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "け"
+   },
+   {
+    "char": "入",
+    "type": "kanji",
+    "meaning": "Enter",
+    "onyomi": [
+     "にゅう"
+    ],
+    "kunyomi": [
+     "はい",
+     "い"
+    ],
+    "used_reading": "い",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "れる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "受 (accept) + 入 (enter) → to accept and take in."
+ },
+ {
+  "word": "引き受ける",
+  "reading": "ひきうける",
+  "meaning": "to undertake; to take on",
+  "parts": [
+   {
+    "char": "引",
+    "type": "kanji",
+    "meaning": "Pull",
+    "onyomi": [
+     "いん"
+    ],
+    "kunyomi": [
+     "ひ"
+    ],
+    "used_reading": "ひ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "き"
+   },
+   {
+    "char": "受",
+    "type": "kanji",
+    "meaning": "receive",
+    "onyomi": [
+     "じゅ"
+    ],
+    "kunyomi": [
+     "う"
+    ],
+    "used_reading": "う",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "ける"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "引 (pull) + 受 (accept) → to pull something onto yourself and accept it → to undertake."
+ },
+ {
+  "word": "清潔",
+  "reading": "せいけつ",
+  "meaning": "clean; cleanliness",
+  "parts": [
+   {
+    "char": "清",
+    "type": "kanji",
+    "meaning": "Pure",
+    "onyomi": [
+     "せい",
+     "しょう",
+     "しん"
+    ],
+    "kunyomi": [
+     "きよ"
+    ],
+    "used_reading": "せい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "潔",
+    "type": "kanji",
+    "meaning": "Pure",
+    "onyomi": [
+     "けつ"
+    ],
+    "kunyomi": [
+     "いさぎよ"
+    ],
+    "used_reading": "けつ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "清 (pure) + 潔 (pure, clean) → clean, cleanliness."
+ },
+ {
+  "word": "タオル",
+  "reading": "タオル",
+  "meaning": "towel",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "タオル"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘towel’.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "拭く",
+  "reading": "ふく",
+  "meaning": "to wipe",
+  "parts": [
+   {
+    "char": "拭",
+    "type": "kanji",
+    "meaning": "Wipe",
+    "onyomi": [
+     "しょく"
+    ],
+    "kunyomi": [
+     "ふ",
+     "ぬぐ"
+    ],
+    "used_reading": "ふ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "拭 (wipe) + く → to wipe."
+ },
+ {
+  "word": "柔らかい",
+  "reading": "やわらかい",
+  "meaning": "soft; tender",
+  "parts": [
+   {
+    "char": "柔",
+    "type": "kanji",
+    "meaning": "Gentle",
+    "onyomi": [
+     "じゅう",
+     "にゅう"
+    ],
+    "kunyomi": [
+     "やわ"
+    ],
+    "used_reading": "やわ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "らかい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "柔 (gentle) + らかい → soft, tender."
+ },
+ {
+  "word": "濡れる",
+  "reading": "ぬれる",
+  "meaning": "to get wet; to be wet",
+  "parts": [
+   {
+    "char": "濡",
+    "type": "kanji",
+    "meaning": "Wet",
+    "onyomi": [
+     "じゅ"
+    ],
+    "kunyomi": [
+     "ぬ"
+    ],
+    "used_reading": "ぬ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "れる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "濡 (wet) + れる → to get wet."
+ },
+ {
+  "word": "乾く",
+  "reading": "かわく",
+  "meaning": "to get dry; to become dry",
+  "parts": [
+   {
+    "char": "乾",
+    "type": "kanji",
+    "meaning": "Dry",
+    "onyomi": [
+     "かん"
+    ],
+    "kunyomi": [
+     "かわ",
+     "ほ"
+    ],
+    "used_reading": "かわ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "乾 (dry) + く → to get dry."
+ },
+ {
+  "word": "きれい",
+  "reading": "きれい",
+  "meaning": "clean; pretty",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "きれい"
+   }
+  ],
+  "meaning_logic": "Na-adjective usually written 綺麗 — 綺 (beautiful) + 麗 (lovely) → clean, pretty.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "さっき",
+  "reading": "さっき",
+  "meaning": "a moment ago",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "さっき"
+   }
+  ],
+  "meaning_logic": "Native word from 先 (さき) ‘ahead, previous’ with a doubled consonant → a moment ago.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "急ぐ",
+  "reading": "いそぐ",
+  "meaning": "to hurry",
+  "parts": [
+   {
+    "char": "急",
+    "type": "kanji",
+    "meaning": "Hurry",
+    "onyomi": [
+     "きゅう"
+    ],
+    "kunyomi": [
+     "いそ"
+    ],
+    "used_reading": "いそ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "ぐ"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "急 (hurry) + ぐ → to hurry."
+ },
+ {
+  "word": "前",
+  "reading": "まえ",
+  "meaning": "front; before",
+  "parts": [
+   {
+    "char": "前",
+    "type": "kanji",
+    "meaning": "Front",
+    "onyomi": [
+     "ぜん"
+    ],
+    "kunyomi": [
+     "まえ"
+    ],
+    "used_reading": "まえ",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "前 (front) — single kanji, read まえ."
+ },
+ {
+  "word": "ゆっくり",
+  "reading": "ゆっくり",
+  "meaning": "slowly; leisurely",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "ゆっくり"
+   }
+  ],
+  "meaning_logic": "Native adverb, kana only, no standard kanji. Means slowly, at ease.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "キッチン",
+  "reading": "キッチン",
+  "meaning": "kitchen",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "キッチン"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘kitchen’.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "置く",
+  "reading": "おく",
+  "meaning": "to put down; to set down",
+  "parts": [
+   {
+    "char": "置",
+    "type": "kanji",
+    "meaning": "Put",
+    "onyomi": [
+     "ち"
+    ],
+    "kunyomi": [
+     "お"
+    ],
+    "used_reading": "お",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "く"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "置 (put) + く → to put down."
+ },
+ {
+  "word": "居間",
+  "reading": "いま",
+  "meaning": "living room; sitting room",
+  "parts": [
+   {
+    "char": "居",
+    "type": "kanji",
+    "meaning": "Alive",
+    "onyomi": [
+     "きょ"
+    ],
+    "kunyomi": [
+     "い"
+    ],
+    "used_reading": "い",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "間",
+    "type": "kanji",
+    "meaning": "Interval",
+    "onyomi": [
+     "かん",
+     "けん"
+    ],
+    "kunyomi": [
+     "あいだ",
+     "ま"
+    ],
+    "used_reading": "ま",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "居 (alive → ‘to be, reside’, as in 居る) + 間 (interval, space) → living room."
+ },
+ {
+  "word": "台所",
+  "reading": "だいどころ",
+  "meaning": "kitchen",
+  "parts": [
+   {
+    "char": "台",
+    "type": "kanji",
+    "meaning": "Machine",
+    "onyomi": [
+     "だい",
+     "たい"
+    ],
+    "kunyomi": [],
+    "used_reading": "だい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "所",
+    "type": "kanji",
+    "meaning": "Place",
+    "onyomi": [
+     "しょ"
+    ],
+    "kunyomi": [
+     "ところ"
+    ],
+    "used_reading": "どころ",
+    "used_type": "kunyomi",
+    "transform": "rendaku",
+    "note": "rendaku: ところ → どころ"
+   }
+  ],
+  "reading_pattern": "on-kun",
+  "meaning_logic": "台 (stand, platform — WaniKani gloss ‘machine’) + 所 (place) → the place where the cooking platform stands → kitchen."
+ },
+ {
+  "word": "廊下",
+  "reading": "ろうか",
+  "meaning": "corridor; hallway",
+  "parts": [
+   {
+    "char": "廊",
+    "type": "kanji",
+    "meaning": "Corridor",
+    "onyomi": [
+     "ろう"
+    ],
+    "kunyomi": [],
+    "used_reading": "ろう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "下",
+    "type": "kanji",
+    "meaning": "Below",
+    "onyomi": [
+     "か",
+     "げ"
+    ],
+    "kunyomi": [
+     "した",
+     "さ",
+     "くだ",
+     "お",
+     "しも",
+     "もと"
+    ],
+    "used_reading": "か",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "廊 (corridor) + 下 (below) → a covered passage → hallway."
+ },
+ {
+  "word": "風呂",
+  "reading": "ふろ",
+  "meaning": "bath",
+  "parts": [
+   {
+    "char": "風",
+    "type": "kanji",
+    "meaning": "Wind",
+    "onyomi": [
+     "ふう",
+     "ふ"
+    ],
+    "kunyomi": [
+     "かぜ"
+    ],
+    "used_reading": "ふ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "呂",
+    "type": "kanji",
+    "meaning": "Bath",
+    "onyomi": [
+     "ろ",
+     "りょ"
+    ],
+    "kunyomi": [
+     "せぼね"
+    ],
+    "used_reading": "ろ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "Set spelling for ふろ ‘bath’: 風 (wind) + 呂 (bath). The kanji spelling is conventional, not a literal compound."
+ },
+ {
+  "word": "今",
+  "reading": "いま",
+  "meaning": "now",
+  "parts": [
+   {
+    "char": "今",
+    "type": "kanji",
+    "meaning": "Now",
+    "onyomi": [
+     "こん"
+    ],
+    "kunyomi": [
+     "いま"
+    ],
+    "used_reading": "いま",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "今 (now) — single kanji, read いま."
+ },
+ {
+  "word": "指導",
+  "reading": "しどう",
+  "meaning": "guidance",
+  "parts": [
+   {
+    "char": "指",
+    "type": "kanji",
+    "meaning": "Finger",
+    "onyomi": [
+     "し"
+    ],
+    "kunyomi": [
+     "ゆび",
+     "さ"
+    ],
+    "used_reading": "し",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "導",
+    "type": "kanji",
+    "meaning": "Lead",
+    "onyomi": [
+     "どう"
+    ],
+    "kunyomi": [
+     "みちび"
+    ],
+    "used_reading": "どう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "指 (finger, point) + 導 (lead) → pointing the way and leading → guidance."
+ },
+ {
+  "word": "答える",
+  "reading": "こたえる",
+  "meaning": "to answer; to reply",
+  "parts": [
+   {
+    "char": "答",
+    "type": "kanji",
+    "meaning": "Answer",
+    "onyomi": [
+     "とう"
+    ],
+    "kunyomi": [
+     "こた"
+    ],
+    "used_reading": "こた",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "える"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "答 (answer) + える → to answer."
+ },
+ {
+  "word": "教える",
+  "reading": "おしえる",
+  "meaning": "to teach; to tell",
+  "parts": [
+   {
+    "char": "教",
+    "type": "kanji",
+    "meaning": "Teach",
+    "onyomi": [
+     "きょう"
+    ],
+    "kunyomi": [
+     "おし",
+     "おそ"
+    ],
+    "used_reading": "おし",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "える"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "教 (teach) + える → to teach."
+ },
+ {
+  "word": "そろそろ",
+  "reading": "そろそろ",
+  "meaning": "soon; it's about time",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "そろそろ"
+   }
+  ],
+  "meaning_logic": "Native reduplicated adverb, kana only. Means ‘soon, gradually, it’s about time’.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "おしまい",
+  "reading": "おしまい",
+  "meaning": "the end; finish",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "おしまい"
+   }
+  ],
+  "meaning_logic": "お (polite prefix) + 仕舞い (finish, from 仕舞う ‘to finish’) → the end.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "食事",
+  "reading": "しょくじ",
+  "meaning": "meal; diet",
+  "parts": [
+   {
+    "char": "食",
+    "type": "kanji",
+    "meaning": "Eat",
+    "onyomi": [
+     "しょく"
+    ],
+    "kunyomi": [
+     "た",
+     "く"
+    ],
+    "used_reading": "しょく",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "事",
+    "type": "kanji",
+    "meaning": "Occurrence",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [
+     "こと",
+     "つか"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "食 (eat) + 事 (occurrence, matter) → a meal."
+ },
+ {
+  "word": "終わり",
+  "reading": "おわり",
+  "meaning": "the end",
+  "parts": [
+   {
+    "char": "終",
+    "type": "kanji",
+    "meaning": "End",
+    "onyomi": [
+     "しゅう"
+    ],
+    "kunyomi": [
+     "おわ",
+     "お"
+    ],
+    "used_reading": "お",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "わり"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "終 (end) + わり → the end."
+ },
+ {
+  "word": "にぎる",
+  "reading": "にぎる",
+  "meaning": "to grip; to hold",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "にぎる"
+   }
+  ],
+  "meaning_logic": "Native verb usually written 握る — 握 (grip) + る → to grip, to hold.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "引っ越し",
+  "reading": "ひっこし",
+  "meaning": "moving house",
+  "parts": [
+   {
+    "char": "引",
+    "type": "kanji",
+    "meaning": "Pull",
+    "onyomi": [
+     "いん"
+    ],
+    "kunyomi": [
+     "ひ"
+    ],
+    "used_reading": "ひ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "っ"
+   },
+   {
+    "char": "越",
+    "type": "kanji",
+    "meaning": "Go Beyond",
+    "onyomi": [
+     "えつ"
+    ],
+    "kunyomi": [
+     "こ"
+    ],
+    "used_reading": "こ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "し"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "引 (pull) + 越 (go beyond) → pulling your things to a new place → moving house."
+ },
+ {
+  "word": "何度",
+  "reading": "なんど",
+  "meaning": "how many times; how often",
+  "parts": [
+   {
+    "char": "何",
+    "type": "kanji",
+    "meaning": "What",
+    "onyomi": [
+     "か"
+    ],
+    "kunyomi": [
+     "なに",
+     "なん"
+    ],
+    "used_reading": "なん",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "度",
+    "type": "kanji",
+    "meaning": "Degree",
+    "onyomi": [
+     "ど",
+     "たく"
+    ],
+    "kunyomi": [
+     "たび"
+    ],
+    "used_reading": "ど",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "kun-on",
+  "meaning_logic": "何 (what) + 度 (times, degree) → how many times."
+ },
+ {
+  "word": "重い",
+  "reading": "おもい",
+  "meaning": "heavy",
+  "parts": [
+   {
+    "char": "重",
+    "type": "kanji",
+    "meaning": "Heavy",
+    "onyomi": [
+     "じゅう",
+     "ちょう"
+    ],
+    "kunyomi": [
+     "おも",
+     "かさ",
+     "え"
+    ],
+    "used_reading": "おも",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "い"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "重 (heavy) + い → heavy."
+ },
+ {
+  "word": "家具",
+  "reading": "かぐ",
+  "meaning": "furniture",
+  "parts": [
+   {
+    "char": "家",
+    "type": "kanji",
+    "meaning": "House",
+    "onyomi": [
+     "か",
+     "け"
+    ],
+    "kunyomi": [
+     "いえ",
+     "や",
+     "うち"
+    ],
+    "used_reading": "か",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "具",
+    "type": "kanji",
+    "meaning": "Tool",
+    "onyomi": [
+     "ぐ"
+    ],
+    "kunyomi": [],
+    "used_reading": "ぐ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "家 (house) + 具 (tool) → house tools → furniture."
+ },
+ {
+  "word": "体",
+  "reading": "からだ",
+  "meaning": "body",
+  "parts": [
+   {
+    "char": "体",
+    "type": "kanji",
+    "meaning": "Body",
+    "onyomi": [
+     "たい",
+     "てい"
+    ],
+    "kunyomi": [
+     "からだ"
+    ],
+    "used_reading": "からだ",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "体 (body) — single kanji, read からだ."
+ },
+ {
+  "word": "お祭り",
+  "reading": "おまつり",
+  "meaning": "festival",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "お"
+   },
+   {
+    "char": "祭",
+    "type": "kanji",
+    "meaning": "Festival",
+    "onyomi": [
+     "さい"
+    ],
+    "kunyomi": [
+     "まつり",
+     "まつ"
+    ],
+    "used_reading": "まつ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "り"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "お (polite prefix) + 祭 (festival) + り → a festival."
+ },
+ {
+  "word": "弟",
+  "reading": "おとうと",
+  "meaning": "younger brother; little brother",
+  "parts": [
+   {
+    "char": "弟",
+    "type": "kanji",
+    "meaning": "Younger Brother",
+    "onyomi": [
+     "だい",
+     "で",
+     "てい"
+    ],
+    "kunyomi": [
+     "おとうと"
+    ],
+    "used_reading": "おとうと",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "弟 (younger brother) — single kanji, read おとうと."
+ },
+ {
+  "word": "迷子",
+  "reading": "まいご",
+  "meaning": "lost child; lost person",
+  "parts": [
+   {
+    "char": "迷",
+    "type": "kanji",
+    "meaning": "Astray",
+    "onyomi": [
+     "めい"
+    ],
+    "kunyomi": [
+     "まよ"
+    ],
+    "used_reading": "まい",
+    "used_type": "onyomi",
+    "transform": "special",
+    "note": "on'yomi めい, contracted to まい in this word."
+   },
+   {
+    "char": "子",
+    "type": "kanji",
+    "meaning": "Child",
+    "onyomi": [
+     "し",
+     "す"
+    ],
+    "kunyomi": [
+     "こ"
+    ],
+    "used_reading": "ご",
+    "used_type": "kunyomi",
+    "transform": "rendaku",
+    "note": "kun'yomi こ + rendaku → ご."
+   }
+  ],
+  "reading_pattern": "on-kun",
+  "meaning_logic": "迷 (astray) + 子 (child) → a child who has gone astray → a lost child."
+ },
+ {
+  "word": "手",
+  "reading": "て",
+  "meaning": "hand; arm",
+  "parts": [
+   {
+    "char": "手",
+    "type": "kanji",
+    "meaning": "Hand",
+    "onyomi": [
+     "しゅ",
+     "ず"
+    ],
+    "kunyomi": [
+     "て"
+    ],
+    "used_reading": "て",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "手 (hand) — single kanji, read て."
+ },
+ {
+  "word": "しっかり",
+  "reading": "しっかり",
+  "meaning": "firmly; properly",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "しっかり"
+   }
+  ],
+  "meaning_logic": "Native adverb, kana only, no standard kanji. Means firmly, properly.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "風",
+  "reading": "かぜ",
+  "meaning": "wind",
+  "parts": [
+   {
+    "char": "風",
+    "type": "kanji",
+    "meaning": "Wind",
+    "onyomi": [
+     "ふう",
+     "ふ"
+    ],
+    "kunyomi": [
+     "かぜ"
+    ],
+    "used_reading": "かぜ",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "風 (wind) — single kanji, read かぜ."
+ },
+ {
+  "word": "帽子",
+  "reading": "ぼうし",
+  "meaning": "hat; cap",
+  "parts": [
+   {
+    "char": "帽",
+    "type": "kanji",
+    "meaning": "Hat",
+    "onyomi": [
+     "ぼう"
+    ],
+    "kunyomi": [],
+    "used_reading": "ぼう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "子",
+    "type": "kanji",
+    "meaning": "Child",
+    "onyomi": [
+     "し",
+     "す"
+    ],
+    "kunyomi": [
+     "こ"
+    ],
+    "used_reading": "し",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "帽 (hat) + 子 (a suffix for a thing, not ‘child’) → a hat."
+ },
+ {
+  "word": "走る",
+  "reading": "はしる",
+  "meaning": "to run",
+  "parts": [
+   {
+    "char": "走",
+    "type": "kanji",
+    "meaning": "Run",
+    "onyomi": [
+     "そう"
+    ],
+    "kunyomi": [
+     "はし"
+    ],
+    "used_reading": "はし",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "る"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "走 (run) + る → to run."
+ },
+ {
+  "word": "母親",
+  "reading": "ははおや",
+  "meaning": "mother; mom",
+  "parts": [
+   {
+    "char": "母",
+    "type": "kanji",
+    "meaning": "Mother",
+    "onyomi": [
+     "ぼ"
+    ],
+    "kunyomi": [
+     "はは",
+     "かあ"
+    ],
+    "used_reading": "はは",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "親",
+    "type": "kanji",
+    "meaning": "Parent",
+    "onyomi": [
+     "しん"
+    ],
+    "kunyomi": [
+     "おや",
+     "した"
+    ],
+    "used_reading": "おや",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "母 (mother) + 親 (parent) → mother."
+ },
+ {
+  "word": "生まれる",
+  "reading": "うまれる",
+  "meaning": "to be born",
+  "parts": [
+   {
+    "char": "生",
+    "type": "kanji",
+    "meaning": "Life",
+    "onyomi": [
+     "せい",
+     "しょう"
+    ],
+    "kunyomi": [
+     "い",
+     "なま",
+     "う",
+     "は",
+     "き"
+    ],
+    "used_reading": "う",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "まれる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "生 (life) + まれる → to be born."
+ },
+ {
+  "word": "赤ちゃん",
+  "reading": "あかちゃん",
+  "meaning": "baby",
+  "parts": [
+   {
+    "char": "赤",
+    "type": "kanji",
+    "meaning": "Red",
+    "onyomi": [
+     "せき"
+    ],
+    "kunyomi": [
+     "あか"
+    ],
+    "used_reading": "あか",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "ちゃん"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "赤 (red) + ちゃん (affectionate suffix) → a red-faced newborn → a baby."
+ },
+ {
+  "word": "大事",
+  "reading": "だいじ",
+  "meaning": "important; valuable",
+  "parts": [
+   {
+    "char": "大",
+    "type": "kanji",
+    "meaning": "Big",
+    "onyomi": [
+     "たい",
+     "だい"
+    ],
+    "kunyomi": [
+     "おお"
+    ],
+    "used_reading": "だい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "事",
+    "type": "kanji",
+    "meaning": "Occurrence",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [
+     "こと",
+     "つか"
+    ],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "大 (big) + 事 (matter) → a big matter → important."
+ },
+ {
+  "word": "修理",
+  "reading": "しゅうり",
+  "meaning": "repair",
+  "parts": [
+   {
+    "char": "修",
+    "type": "kanji",
+    "meaning": "Mastering",
+    "onyomi": [
+     "しゅう"
+    ],
+    "kunyomi": [
+     "おさ"
+    ],
+    "used_reading": "しゅう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "理",
+    "type": "kanji",
+    "meaning": "Reason",
+    "onyomi": [
+     "り"
+    ],
+    "kunyomi": [
+     "ことわり"
+    ],
+    "used_reading": "り",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "修 (repair) + 理 (reason, fix) → repair."
+ },
+ {
+  "word": "今朝",
+  "reading": "けさ",
+  "meaning": "this morning",
+  "parts": [
+   {
+    "char": "今",
+    "type": "kanji",
+    "meaning": "Now",
+    "onyomi": [
+     "こん"
+    ],
+    "kunyomi": [
+     "いま"
+    ],
+    "unsegmented": true
+   },
+   {
+    "char": "朝",
+    "type": "kanji",
+    "meaning": "Morning",
+    "onyomi": [
+     "ちょう"
+    ],
+    "kunyomi": [
+     "あさ"
+    ],
+    "unsegmented": true
+   }
+  ],
+  "reading_pattern": "whole",
+  "reading_note": "Fixed set reading けさ, a jukujikun; it cannot be built from the usual readings of 今 (いま/こん) or 朝 (あさ/ちょう).",
+  "meaning_logic": "今 (now) + 朝 (morning) → this morning."
+ },
+ {
+  "word": "妻",
+  "reading": "つま",
+  "meaning": "wife",
+  "parts": [
+   {
+    "char": "妻",
+    "type": "kanji",
+    "meaning": "Wife",
+    "onyomi": [
+     "さい"
+    ],
+    "kunyomi": [
+     "つま"
+    ],
+    "used_reading": "つま",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "妻 (wife) — single kanji, read つま."
+ },
+ {
+  "word": "けんか",
+  "reading": "けんか",
+  "meaning": "fight; quarrel",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "けんか"
+   }
+  ],
+  "meaning_logic": "Native word usually written 喧嘩 — 喧 (noisy) + 嘩 (noisy) → a noisy clash → a fight, a quarrel.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "早い",
+  "reading": "はやい",
+  "meaning": "early; fast",
+  "parts": [
+   {
+    "char": "早",
+    "type": "kanji",
+    "meaning": "Early",
+    "onyomi": [
+     "そう"
+    ],
+    "kunyomi": [
+     "はや",
+     "さ"
+    ],
+    "used_reading": "はや",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "い"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "早 (early) + い → early."
+ },
+ {
+  "word": "仲",
+  "reading": "なか",
+  "meaning": "relationship; relation",
+  "parts": [
+   {
+    "char": "仲",
+    "type": "kanji",
+    "meaning": "Relationship",
+    "onyomi": [
+     "ちゅう"
+    ],
+    "kunyomi": [
+     "なか"
+    ],
+    "used_reading": "なか",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "仲 (relationship) — single kanji, read なか."
+ },
+ {
+  "word": "腕",
+  "reading": "うで",
+  "meaning": "arm; ability",
+  "parts": [
+   {
+    "char": "腕",
+    "type": "kanji",
+    "meaning": "Arm",
+    "onyomi": [
+     "わん"
+    ],
+    "kunyomi": [
+     "うで"
+    ],
+    "used_reading": "うで",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "腕 (arm) — single kanji, read うで."
+ },
+ {
+  "word": "けが",
+  "reading": "けが",
+  "meaning": "injury",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "けが"
+   }
+  ],
+  "meaning_logic": "Ateji 怪我: the kanji are used for sound only — 怪 (mystery) + 我 (self) do not mean ‘injury’.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "病院",
+  "reading": "びょういん",
+  "meaning": "hospital; doctor's office",
+  "parts": [
+   {
+    "char": "病",
+    "type": "kanji",
+    "meaning": "Sick",
+    "onyomi": [
+     "びょう",
+     "へい"
+    ],
+    "kunyomi": [
+     "や",
+     "やまい"
+    ],
+    "used_reading": "びょう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "院",
+    "type": "kanji",
+    "meaning": "Institution",
+    "onyomi": [
+     "いん"
+    ],
+    "kunyomi": [],
+    "used_reading": "いん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "病 (sick) + 院 (institution) → a hospital."
+ },
+ {
+  "word": "買う",
+  "reading": "かう",
+  "meaning": "to buy",
+  "parts": [
+   {
+    "char": "買",
+    "type": "kanji",
+    "meaning": "Buy",
+    "onyomi": [
+     "ばい"
+    ],
+    "kunyomi": [
+     "か"
+    ],
+    "used_reading": "か",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "う"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "買 (buy) + う → to buy."
+ },
+ {
+  "word": "お店",
+  "reading": "おみせ",
+  "meaning": "shop; store",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "お"
+   },
+   {
+    "char": "店",
+    "type": "kanji",
+    "meaning": "Shop",
+    "onyomi": [
+     "てん"
+    ],
+    "kunyomi": [
+     "みせ"
+    ],
+    "used_reading": "みせ",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "お (polite prefix) + 店 (shop) → a shop."
+ },
+ {
+  "word": "間違える",
+  "reading": "まちがえる",
+  "meaning": "to make a mistake; to mistake",
+  "parts": [
+   {
+    "char": "間",
+    "type": "kanji",
+    "meaning": "Interval",
+    "onyomi": [
+     "かん",
+     "けん"
+    ],
+    "kunyomi": [
+     "あいだ",
+     "ま"
+    ],
+    "used_reading": "ま",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "違",
+    "type": "kanji",
+    "meaning": "Different",
+    "onyomi": [
+     "い"
+    ],
+    "kunyomi": [
+     "ちが"
+    ],
+    "used_reading": "ちが",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "える"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "間 (interval) + 違 (different) → something is off/different → to make a mistake."
+ },
+ {
+  "word": "漢字",
+  "reading": "かんじ",
+  "meaning": "kanji; chinese letters",
+  "parts": [
+   {
+    "char": "漢",
+    "type": "kanji",
+    "meaning": "Chinese",
+    "onyomi": [
+     "かん"
+    ],
+    "kunyomi": [
+     "おとこ"
+    ],
+    "used_reading": "かん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "字",
+    "type": "kanji",
+    "meaning": "Letter",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [],
+    "used_reading": "じ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "漢 (Chinese) + 字 (letter) → Chinese characters → kanji."
+ },
+ {
+  "word": "先生",
+  "reading": "せんせい",
+  "meaning": "teacher; sensei",
+  "parts": [
+   {
+    "char": "先",
+    "type": "kanji",
+    "meaning": "Previous",
+    "onyomi": [
+     "せん"
+    ],
+    "kunyomi": [
+     "さき",
+     "ま"
+    ],
+    "used_reading": "せん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "生",
+    "type": "kanji",
+    "meaning": "Life",
+    "onyomi": [
+     "せい",
+     "しょう"
+    ],
+    "kunyomi": [
+     "い",
+     "なま",
+     "う",
+     "は",
+     "き"
+    ],
+    "used_reading": "せい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "先 (previous) + 生 (born) → one born before you → a senior → a teacher."
+ },
+ {
+  "word": "赤い",
+  "reading": "あかい",
+  "meaning": "red",
+  "parts": [
+   {
+    "char": "赤",
+    "type": "kanji",
+    "meaning": "Red",
+    "onyomi": [
+     "せき"
+    ],
+    "kunyomi": [
+     "あか"
+    ],
+    "used_reading": "あか",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "い"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "赤 (red) + い → red."
+ },
+ {
+  "word": "ペン",
+  "reading": "ペン",
+  "meaning": "pen",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "ペン"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘pen’.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "目的",
+  "reading": "もくてき",
+  "meaning": "purpose; goal",
+  "parts": [
+   {
+    "char": "目",
+    "type": "kanji",
+    "meaning": "Eye",
+    "onyomi": [
+     "もく"
+    ],
+    "kunyomi": [
+     "め"
+    ],
+    "used_reading": "もく",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "的",
+    "type": "kanji",
+    "meaning": "Target",
+    "onyomi": [
+     "てき"
+    ],
+    "kunyomi": [
+     "まと"
+    ],
+    "used_reading": "てき",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "目 (eye) + 的 (target) → the target of your eye → a purpose, a goal."
+ },
+ {
+  "word": "今日",
+  "reading": "きょう",
+  "meaning": "today",
+  "parts": [
+   {
+    "char": "今",
+    "type": "kanji",
+    "meaning": "Now",
+    "onyomi": [
+     "こん"
+    ],
+    "kunyomi": [
+     "いま"
+    ],
+    "unsegmented": true
+   },
+   {
+    "char": "日",
+    "type": "kanji",
+    "meaning": "Sun",
+    "onyomi": [
+     "にち",
+     "じつ"
+    ],
+    "kunyomi": [
+     "ひ",
+     "か",
+     "び"
+    ],
+    "unsegmented": true
+   }
+  ],
+  "reading_pattern": "whole",
+  "reading_note": "Fixed set reading きょう, a jukujikun; it cannot be built from the usual readings of 今 (いま/こん) or 日 (ひ/にち).",
+  "meaning_logic": "今 (now) + 日 (sun/day) → today."
+ },
+ {
+  "word": "たくさん",
+  "reading": "たくさん",
+  "meaning": "a lot",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "たくさん"
+   }
+  ],
+  "meaning_logic": "Usually written 沢山, an ateji-style spelling: 沢 (marsh) + 山 (mountain) are sound-only for たくさん ‘a lot’.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "商品",
+  "reading": "しょうひん",
+  "meaning": "merchandise; product",
+  "parts": [
+   {
+    "char": "商",
+    "type": "kanji",
+    "meaning": "Merchandise",
+    "onyomi": [
+     "しょう"
+    ],
+    "kunyomi": [
+     "あきな"
+    ],
+    "used_reading": "しょう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "品",
+    "type": "kanji",
+    "meaning": "Product",
+    "onyomi": [
+     "ひん"
+    ],
+    "kunyomi": [
+     "しな"
+    ],
+    "used_reading": "ひん",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "商 (merchandise, commerce) + 品 (product, goods) → merchandise."
+ },
+ {
+  "word": "売れる",
+  "reading": "うれる",
+  "meaning": "to sell; to be sold",
+  "parts": [
+   {
+    "char": "売",
+    "type": "kanji",
+    "meaning": "Sell",
+    "onyomi": [
+     "ばい"
+    ],
+    "kunyomi": [
+     "う"
+    ],
+    "used_reading": "う",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "れる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "売 (sell) + れる → to be sold."
+ },
+ {
+  "word": "超える",
+  "reading": "こえる",
+  "meaning": "to exceed; to go beyond",
+  "parts": [
+   {
+    "char": "超",
+    "type": "kanji",
+    "meaning": "Ultra",
+    "onyomi": [
+     "ちょう"
+    ],
+    "kunyomi": [
+     "こ"
+    ],
+    "used_reading": "こ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "える"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "超 (ultra, beyond) + える → to go beyond, to exceed."
+ },
+ {
+  "word": "窓側",
+  "reading": "まどぎわ",
+  "meaning": "window side",
+  "parts": [
+   {
+    "char": "窓",
+    "type": "kanji",
+    "meaning": "window",
+    "onyomi": [
+     "そう"
+    ],
+    "kunyomi": [
+     "まど"
+    ],
+    "used_reading": "まど",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "側",
+    "type": "kanji",
+    "meaning": "side",
+    "onyomi": [
+     "そく"
+    ],
+    "kunyomi": [
+     "がわ",
+     "そば"
+    ],
+    "used_reading": "ぎわ",
+    "used_type": "kunyomi",
+    "transform": "special",
+    "note": "compound form of かわ / がわ ‘side’ — here ぎわ."
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "窓 (window) + 側 (side) → the window side."
+ },
+ {
+  "word": "いい",
+  "reading": "いい",
+  "meaning": "good",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "いい"
+   }
+  ],
+  "meaning_logic": "Colloquial form of よい, usually written 良い — 良 (good).",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "来週",
+  "reading": "らいしゅう",
+  "meaning": "next week",
+  "parts": [
+   {
+    "char": "来",
+    "type": "kanji",
+    "meaning": "Come",
+    "onyomi": [
+     "らい"
+    ],
+    "kunyomi": [
+     "く",
+     "き"
+    ],
+    "used_reading": "らい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "週",
+    "type": "kanji",
+    "meaning": "Week",
+    "onyomi": [
+     "しゅう"
+    ],
+    "kunyomi": [],
+    "used_reading": "しゅう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "来 (next) + 週 (week) → next week."
+ },
+ {
+  "word": "海外",
+  "reading": "かいがい",
+  "meaning": "overseas; foreign",
+  "parts": [
+   {
+    "char": "海",
+    "type": "kanji",
+    "meaning": "Sea",
+    "onyomi": [
+     "かい"
+    ],
+    "kunyomi": [
+     "うみ"
+    ],
+    "used_reading": "かい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "外",
+    "type": "kanji",
+    "meaning": "Outside",
+    "onyomi": [
+     "がい",
+     "げ"
+    ],
+    "kunyomi": [
+     "そと",
+     "はず",
+     "ほか",
+     "と"
+    ],
+    "used_reading": "がい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "海 (sea) + 外 (outside) → outside the sea → overseas."
+ },
+ {
+  "word": "出張",
+  "reading": "しゅっちょう",
+  "meaning": "business trip; official trip",
+  "parts": [
+   {
+    "char": "出",
+    "type": "kanji",
+    "meaning": "Exit",
+    "onyomi": [
+     "しゅつ"
+    ],
+    "kunyomi": [
+     "で",
+     "だ"
+    ],
+    "used_reading": "しゅっ",
+    "used_type": "onyomi",
+    "transform": "gemination",
+    "note": "shortened from しゅつ (before the next sound)"
+   },
+   {
+    "char": "張",
+    "type": "kanji",
+    "meaning": "Stretch",
+    "onyomi": [
+     "ちょう"
+    ],
+    "kunyomi": [
+     "は"
+    ],
+    "used_reading": "ちょう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "出 (go out) + 張 (stretch, extend) → going out to extend the company’s work → a business trip."
+ },
+ {
+  "word": "忙しい",
+  "reading": "いそがしい",
+  "meaning": "busy",
+  "parts": [
+   {
+    "char": "忙",
+    "type": "kanji",
+    "meaning": "Busy",
+    "onyomi": [
+     "ぼう"
+    ],
+    "kunyomi": [
+     "いそが"
+    ],
+    "used_reading": "いそが",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "しい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "忙 (busy) + しい → busy."
+ },
+ {
+  "word": "研究",
+  "reading": "けんきゅう",
+  "meaning": "research; investigation",
+  "parts": [
+   {
+    "char": "研",
+    "type": "kanji",
+    "meaning": "Sharpen",
+    "onyomi": [
+     "けん"
+    ],
+    "kunyomi": [
+     "と"
+    ],
+    "used_reading": "けん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "究",
+    "type": "kanji",
+    "meaning": "Research",
+    "onyomi": [
+     "きゅう"
+    ],
+    "kunyomi": [
+     "きわ"
+    ],
+    "used_reading": "きゅう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "研 (sharpen) + 究 (research) → research."
+ },
+ {
+  "word": "新しい",
+  "reading": "あたらしい",
+  "meaning": "new",
+  "parts": [
+   {
+    "char": "新",
+    "type": "kanji",
+    "meaning": "New",
+    "onyomi": [
+     "しん"
+    ],
+    "kunyomi": [
+     "あたら",
+     "あら",
+     "にい"
+    ],
+    "used_reading": "あたら",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "しい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "新 (new) + しい → new."
+ },
+ {
+  "word": "薬",
+  "reading": "くすり",
+  "meaning": "medicine; drug",
+  "parts": [
+   {
+    "char": "薬",
+    "type": "kanji",
+    "meaning": "Medicine",
+    "onyomi": [
+     "やく"
+    ],
+    "kunyomi": [
+     "くすり"
+    ],
+    "used_reading": "くすり",
+    "used_type": "kunyomi"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "薬 (medicine) — single kanji, read くすり."
+ },
+ {
+  "word": "効果",
+  "reading": "こうか",
+  "meaning": "an effect",
+  "parts": [
+   {
+    "char": "効",
+    "type": "kanji",
+    "meaning": "Effective",
+    "onyomi": [
+     "こう"
+    ],
+    "kunyomi": [
+     "き"
+    ],
+    "used_reading": "こう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "果",
+    "type": "kanji",
+    "meaning": "Fruit",
+    "onyomi": [
+     "か"
+    ],
+    "kunyomi": [
+     "くだ",
+     "は"
+    ],
+    "used_reading": "か",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "効 (effective) + 果 (fruit, result) → the result of being effective → an effect."
+ },
+ {
+  "word": "懐かしい",
+  "reading": "なつかしい",
+  "meaning": "nostalgic; missed",
+  "parts": [
+   {
+    "char": "懐",
+    "type": "kanji",
+    "meaning": "Nostalgia",
+    "onyomi": [
+     "かい"
+    ],
+    "kunyomi": [
+     "なつ",
+     "ふところ"
+    ],
+    "used_reading": "なつ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "かしい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "懐 (nostalgia) + かしい → nostalgic."
+ },
+ {
+  "word": "子ども",
+  "reading": "こども",
+  "meaning": "child",
+  "parts": [
+   {
+    "char": "子",
+    "type": "kanji",
+    "meaning": "Child",
+    "onyomi": [
+     "し",
+     "す"
+    ],
+    "kunyomi": [
+     "こ"
+    ],
+    "used_reading": "こ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "ども"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "子 (child) + ども (plural suffix) → child; children."
+ },
+ {
+  "word": "気持ち",
+  "reading": "きもち",
+  "meaning": "feeling",
+  "parts": [
+   {
+    "char": "気",
+    "type": "kanji",
+    "meaning": "Energy",
+    "onyomi": [
+     "き",
+     "け"
+    ],
+    "kunyomi": [],
+    "used_reading": "き",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "持",
+    "type": "kanji",
+    "meaning": "Hold",
+    "onyomi": [
+     "じ"
+    ],
+    "kunyomi": [
+     "も"
+    ],
+    "used_reading": "も",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "ち"
+   }
+  ],
+  "reading_pattern": "on-kun",
+  "meaning_logic": "気 (energy, spirit) + 持 (hold) + ち → what you hold in your spirit → a feeling."
+ },
+ {
+  "word": "建てる",
+  "reading": "たてる",
+  "meaning": "to build; to construct",
+  "parts": [
+   {
+    "char": "建",
+    "type": "kanji",
+    "meaning": "Build",
+    "onyomi": [
+     "けん"
+    ],
+    "kunyomi": [
+     "た"
+    ],
+    "used_reading": "た",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "てる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "建 (build) + てる → to build."
+ },
+ {
+  "word": "見学",
+  "reading": "けんがく",
+  "meaning": "study visit; tour",
+  "parts": [
+   {
+    "char": "見",
+    "type": "kanji",
+    "meaning": "See",
+    "onyomi": [
+     "けん"
+    ],
+    "kunyomi": [
+     "み"
+    ],
+    "used_reading": "けん",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "学",
+    "type": "kanji",
+    "meaning": "Study",
+    "onyomi": [
+     "がく"
+    ],
+    "kunyomi": [
+     "まな"
+    ],
+    "used_reading": "がく",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "見 (see) + 学 (study) → learning by seeing → a study visit."
+ },
+ {
+  "word": "会う",
+  "reading": "あう",
+  "meaning": "to meet; to encounter",
+  "parts": [
+   {
+    "char": "会",
+    "type": "kanji",
+    "meaning": "Meet",
+    "onyomi": [
+     "かい"
+    ],
+    "kunyomi": [
+     "あ"
+    ],
+    "used_reading": "あ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "う"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "会 (meet) + う → to meet."
+ },
+ {
+  "word": "すぐに",
+  "reading": "すぐに",
+  "meaning": "immediately",
+  "kana_class": "native",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "すぐに"
+   }
+  ],
+  "meaning_logic": "From 直ぐに — 直 (straight, immediate) + ぐ + に → immediately.",
+  "reading_pattern": "kana"
+ },
+ {
+  "word": "友達",
+  "reading": "ともだち",
+  "meaning": "friend; companion",
+  "parts": [
+   {
+    "char": "友",
+    "type": "kanji",
+    "meaning": "Friend",
+    "onyomi": [
+     "ゆう"
+    ],
+    "kunyomi": [
+     "とも"
+    ],
+    "used_reading": "とも",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "達",
+    "type": "kanji",
+    "meaning": "Attain",
+    "onyomi": [
+     "たつ"
+    ],
+    "kunyomi": [
+     "たち"
+    ],
+    "used_reading": "だち",
+    "used_type": "kunyomi",
+    "transform": "rendaku",
+    "note": "rendaku: たち → だち"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "友 (friend) + 達 (attain; here a plural suffix) → friends; a friend."
+ },
+ {
+  "word": "都合",
+  "reading": "つごう",
+  "meaning": "one's convenience; circumstances",
+  "parts": [
+   {
+    "char": "都",
+    "type": "kanji",
+    "meaning": "Metropolis",
+    "onyomi": [
+     "と",
+     "つ"
+    ],
+    "kunyomi": [
+     "みやこ"
+    ],
+    "used_reading": "つ",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "合",
+    "type": "kanji",
+    "meaning": "Suit",
+    "onyomi": [
+     "ごう",
+     "がっ"
+    ],
+    "kunyomi": [
+     "あ",
+     "あい"
+    ],
+    "used_reading": "ごう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "都 (metropolis) + 合 (fit, combine) → how things fit together → circumstances, convenience; the modern sense is set."
+ },
+ {
+  "word": "悪い",
+  "reading": "わるい",
+  "meaning": "bad; poor",
+  "parts": [
+   {
+    "char": "悪",
+    "type": "kanji",
+    "meaning": "Bad",
+    "onyomi": [
+     "あく",
+     "お"
+    ],
+    "kunyomi": [
+     "わる"
+    ],
+    "used_reading": "わる",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "い"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "悪 (bad) + い → bad."
+ },
+ {
+  "word": "約束",
+  "reading": "やくそく",
+  "meaning": "promise; appointment",
+  "parts": [
+   {
+    "char": "約",
+    "type": "kanji",
+    "meaning": "promise",
+    "onyomi": [
+     "やく"
+    ],
+    "kunyomi": [],
+    "used_reading": "やく",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "束",
+    "type": "kanji",
+    "meaning": "Bundle",
+    "onyomi": [
+     "そく"
+    ],
+    "kunyomi": [
+     "たば"
+    ],
+    "used_reading": "そく",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "約 (promise) + 束 (bundle) → a bundle of agreed terms → a promise."
+ },
+ {
+  "word": "住所",
+  "reading": "じゅうしょ",
+  "meaning": "address",
+  "parts": [
+   {
+    "char": "住",
+    "type": "kanji",
+    "meaning": "Dwell",
+    "onyomi": [
+     "じゅう"
+    ],
+    "kunyomi": [
+     "す"
+    ],
+    "used_reading": "じゅう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "所",
+    "type": "kanji",
+    "meaning": "Place",
+    "onyomi": [
+     "しょ"
+    ],
+    "kunyomi": [
+     "ところ"
+    ],
+    "used_reading": "しょ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "住 (dwell) + 所 (place) → the place where you dwell → an address."
+ },
+ {
+  "word": "知らせる",
+  "reading": "しらせる",
+  "meaning": "to inform; to notify",
+  "parts": [
+   {
+    "char": "知",
+    "type": "kanji",
+    "meaning": "Know",
+    "onyomi": [
+     "ち"
+    ],
+    "kunyomi": [
+     "し"
+    ],
+    "used_reading": "し",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "らせる"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "知 (know) + causative らせる → to make someone know → to inform."
+ },
+ {
+  "word": "インターネット",
+  "reading": "インターネット",
+  "meaning": "the internet",
+  "kana_class": "loanword",
+  "parts": [
+   {
+    "type": "kana",
+    "text": "インターネット"
+   }
+  ],
+  "meaning_logic": "Loanword from English ‘internet’.",
+  "reading_pattern": "loanword"
+ },
+ {
+  "word": "登場",
+  "reading": "とうじょう",
+  "meaning": "appearance; entry (in a story)",
+  "parts": [
+   {
+    "char": "登",
+    "type": "kanji",
+    "meaning": "Climb",
+    "onyomi": [
+     "とう",
+     "と"
+    ],
+    "kunyomi": [
+     "のぼ"
+    ],
+    "used_reading": "とう",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "場",
+    "type": "kanji",
+    "meaning": "Location",
+    "onyomi": [
+     "じょう"
+    ],
+    "kunyomi": [
+     "ば"
+    ],
+    "used_reading": "じょう",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "登 (climb, enter) + 場 (place, scene) → entering the scene → an appearance."
+ },
+ {
+  "word": "人々",
+  "reading": "ひとびと",
+  "meaning": "people",
+  "parts": [
+   {
+    "char": "人",
+    "type": "kanji",
+    "meaning": "Person",
+    "onyomi": [
+     "にん",
+     "じん"
+    ],
+    "kunyomi": [
+     "ひと",
+     "と"
+    ],
+    "used_reading": "ひと",
+    "used_type": "kunyomi"
+   },
+   {
+    "char": "々",
+    "type": "kanji",
+    "meaning": "Repeater",
+    "onyomi": [],
+    "kunyomi": [
+     "のま"
+    ],
+    "used_reading": "びと",
+    "used_type": "kunyomi",
+    "transform": "rendaku",
+    "note": "々 repeats 人; ひと → びと (rendaku)."
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "人 (person) + 々 (repetition mark) → people."
+ },
+ {
+  "word": "生活",
+  "reading": "せいかつ",
+  "meaning": "life; livelihood",
+  "parts": [
+   {
+    "char": "生",
+    "type": "kanji",
+    "meaning": "Life",
+    "onyomi": [
+     "せい",
+     "しょう"
+    ],
+    "kunyomi": [
+     "い",
+     "なま",
+     "う",
+     "は",
+     "き"
+    ],
+    "used_reading": "せい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "活",
+    "type": "kanji",
+    "meaning": "Lively",
+    "onyomi": [
+     "かつ"
+    ],
+    "kunyomi": [
+     "い"
+    ],
+    "used_reading": "かつ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "生 (life) + 活 (lively) → life, livelihood."
+ },
+ {
+  "word": "大きい",
+  "reading": "おおきい",
+  "meaning": "big; large",
+  "parts": [
+   {
+    "char": "大",
+    "type": "kanji",
+    "meaning": "Big",
+    "onyomi": [
+     "たい",
+     "だい"
+    ],
+    "kunyomi": [
+     "おお"
+    ],
+    "used_reading": "おお",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "きい"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "大 (big) + きい → big."
+ },
+ {
+  "word": "会議",
+  "reading": "かいぎ",
+  "meaning": "meeting; conference",
+  "parts": [
+   {
+    "char": "会",
+    "type": "kanji",
+    "meaning": "Meet",
+    "onyomi": [
+     "かい"
+    ],
+    "kunyomi": [
+     "あ"
+    ],
+    "used_reading": "かい",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "議",
+    "type": "kanji",
+    "meaning": "Deliberation",
+    "onyomi": [
+     "ぎ"
+    ],
+    "kunyomi": [],
+    "used_reading": "ぎ",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "会 (meet) + 議 (deliberation, discussion) → a meeting."
+ },
+ {
+  "word": "司会",
+  "reading": "しかい",
+  "meaning": "host; MC",
+  "parts": [
+   {
+    "char": "司",
+    "type": "kanji",
+    "meaning": "Director",
+    "onyomi": [
+     "し"
+    ],
+    "kunyomi": [
+     "つかさど"
+    ],
+    "used_reading": "し",
+    "used_type": "onyomi"
+   },
+   {
+    "char": "会",
+    "type": "kanji",
+    "meaning": "Meet",
+    "onyomi": [
+     "かい"
+    ],
+    "kunyomi": [
+     "あ"
+    ],
+    "used_reading": "かい",
+    "used_type": "onyomi"
+   }
+  ],
+  "reading_pattern": "on-on",
+  "meaning_logic": "司 (director; here ‘manage’) + 会 (meet, meeting) → the one who manages the meeting → a host, an MC."
+ },
+ {
+  "word": "引っ越す",
+  "reading": "ひっこす",
+  "meaning": "to move; to move homes",
+  "parts": [
+   {
+    "char": "引",
+    "type": "kanji",
+    "meaning": "Pull",
+    "onyomi": [
+     "いん"
+    ],
+    "kunyomi": [
+     "ひ"
+    ],
+    "used_reading": "ひ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "っ"
+   },
+   {
+    "char": "越",
+    "type": "kanji",
+    "meaning": "Go Beyond",
+    "onyomi": [
+     "えつ"
+    ],
+    "kunyomi": [
+     "こ"
+    ],
+    "used_reading": "こ",
+    "used_type": "kunyomi"
+   },
+   {
+    "type": "kana",
+    "text": "す"
+   }
+  ],
+  "reading_pattern": "kun-kun",
+  "meaning_logic": "引 (pull) + 越 (go beyond) → to pull your things to a new place → to move house."
+ }
+]

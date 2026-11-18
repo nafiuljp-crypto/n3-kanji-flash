@@ -37,6 +37,8 @@ MEANINGS_BN_FILE = DATA_DIR / "meanings_bn.json"
 # Dec 2025 Vocab Practice: the 243 to-learn words. Copied verbatim to
 # dist/data/ so practice.js can fetch it at the same origin as the page.
 PRACTICE_DATA_FILE = DATA_DIR / "vocab_practice_2025_12.json"
+# Dec 2025 Vocab Learn: the logical breakdowns behind the same 243 words.
+LEARN_DATA_FILE = DATA_DIR / "vocab_learn_2025_12.json"
 
 # GitHub Pages serves this project under /<repo>/. Absolute URLs keep nested
 # pages working, because GH Pages does not collapse "../" segments.
@@ -328,6 +330,14 @@ def main():
         raise SystemExit(f"{PRACTICE_DATA_FILE} must contain a non-empty JSON list.")
     practice_count = len(practice_words)
 
+    if not LEARN_DATA_FILE.exists():
+        raise SystemExit(f"{LEARN_DATA_FILE} missing — run `python3 tools/gen_vocab_learn.py`.")
+    learn_words = json.loads(LEARN_DATA_FILE.read_text(encoding="utf-8"))
+    if not isinstance(learn_words, list) or len(learn_words) != practice_count:
+        raise SystemExit(f"{LEARN_DATA_FILE} must contain one entry per practice word.")
+    if [w["word"] for w in learn_words] != [w["word"] for w in practice_words]:
+        raise SystemExit(f"{LEARN_DATA_FILE} is not in the practice-data order.")
+
     if DIST.exists():
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True)
@@ -436,8 +446,13 @@ def main():
     practice_env = make_env("en")
     write(DIST / "practice.html", practice_env.get_template("practice.html").render(
         word_count=practice_count))
+    # Vocab Learn is the practice page's companion: same root URL pattern,
+    # same base template (navbar, theme toggle, password lock).
+    write(DIST / "vocab-learn.html", practice_env.get_template("vocab_learn.html").render(
+        word_count=practice_count))
     (DIST / "data").mkdir(parents=True, exist_ok=True)
     shutil.copy2(PRACTICE_DATA_FILE, DIST / "data" / PRACTICE_DATA_FILE.name)
+    shutil.copy2(LEARN_DATA_FILE, DIST / "data" / LEARN_DATA_FILE.name)
 
     for f in STATIC_SRC.iterdir():
         if f.is_file():

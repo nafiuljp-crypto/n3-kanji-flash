@@ -1,0 +1,753 @@
+{
+ "西洋": {
+  "meaning_logic": "西 (west) + 洋 (Western style; also ‘ocean’) → the West — the lands across the western ocean."
+ },
+ "建物": {
+  "meaning_logic": "建 (build) + 物 (thing) → a built thing → a building. 建 is read たて, the stem of たてる ‘to build’.",
+  "part_notes": {
+   "0": "kun'yomi た.てる — the て stays inside the compound (たて + もの)."
+  }
+ },
+ "写真": {
+  "meaning_logic": "写 (copy) + 真 (reality) → a copy of reality → a photograph."
+ },
+ "声優": {
+  "meaning_logic": "声 (voice) + 優 (superior; the ‘actor’ sense of 優 as in 俳優) → voice actor."
+ },
+ "今回": {
+  "meaning_logic": "今 (now) + 回 (times) → this time — the current turn."
+ },
+ "とても": {
+  "meaning_logic": "Native adverb written in kana — no everyday kanji form (迚も is a rare ateji). Means ‘very’."
+ },
+ "苦しい": {
+  "meaning_logic": "苦 (suffering) + okurigana しい → painful, distressing."
+ },
+ "試合": {
+  "meaning_logic": "試 (try) + 合 (suit, fit, join) → a match — trying your skill against another (試し合う)."
+ },
+ "惜しい": {
+  "meaning_logic": "惜 (frugal, reluctant to part with) + しい → regrettable — you begrudge losing it."
+ },
+ "悔しい": {
+  "meaning_logic": "悔 (regret) + しい → frustrating, regrettable."
+ },
+ "厳しい": {
+  "meaning_logic": "厳 (strict) + しい → strict, harsh."
+ },
+ "手紙": {
+  "meaning_logic": "手 (hand) + 紙 (paper) → paper you write by hand → a letter."
+ },
+ "他人": {
+  "meaning_logic": "他 (other) + 人 (person) → another person."
+ },
+ "見せる": {
+  "meaning_logic": "見 (see) + causative せる → to make someone see → to show."
+ },
+ "担任": {
+  "meaning_logic": "担 (carry) + 任 (duty) → carrying a duty → being in charge; a homeroom teacher."
+ },
+ "昨日": {
+  "meaning_logic": "昨 (previous) + 日 (sun/day) → yesterday.",
+  "reading_note": "Fixed set reading きのう; the on-reading compound is さくじつ. Neither き nor のう is a usual reading of 昨 or 日."
+ },
+ "腹痛": {
+  "meaning_logic": "腹 (belly) + 痛 (pain) → stomachache."
+ },
+ "学校": {
+  "meaning_logic": "学 (study) + 校 (school) → school."
+ },
+ "休む": {
+  "meaning_logic": "休 (rest) + okurigana む → to rest."
+ },
+ "頭痛": {
+  "meaning_logic": "頭 (head) + 痛 (pain) → headache."
+ },
+ "不屈": {
+  "meaning_logic": "不 (not) + 屈 (yield) → not yielding → unyielding."
+ },
+ "駅": {
+  "meaning_logic": "駅 (station) — a single kanji word read えき."
+ },
+ "終点": {
+  "meaning_logic": "終 (end) + 点 (point) → the final stop."
+ },
+ "終電": {
+  "meaning_logic": "終 (end) + 電 (electricity → electric train) → the last train."
+ },
+ "充電": {
+  "meaning_logic": "充 (allocate, fill) + 電 (electricity) → to fill with electricity → to recharge."
+ },
+ "充填": {
+  "meaning_logic": "充 (fill) + 填 (fill in) → filling, packing. 填 is not taught on WaniKani; its gloss comes from a dictionary.",
+  "part_notes": {
+   "1": "WaniKani does not teach 填; on'yomi てん, gloss ‘fill in’ (dictionary fact)."
+  }
+ },
+ "泣く": {
+  "meaning_logic": "泣 (cry) + く → to cry."
+ },
+ "働く": {
+  "meaning_logic": "働 (work) + く → to work."
+ },
+ "驚く": {
+  "meaning_logic": "驚 (surprised) + く → to be surprised."
+ },
+ "着物": {
+  "meaning_logic": "着 (wear) + 物 (thing) → a thing to wear → kimono, clothes."
+ },
+ "襟": {
+  "meaning_logic": "襟 (collar) — single kanji, read えり."
+ },
+ "袖": {
+  "meaning_logic": "袖 (sleeve) — single kanji, read そで."
+ },
+ "糸": {
+  "meaning_logic": "糸 (thread) — single kanji, read いと."
+ },
+ "母": {
+  "meaning_logic": "母 (mother) — single kanji, read はは."
+ },
+ "郵便": {
+  "meaning_logic": "郵 (mail) + 便 (service, convenience — as in 便り ‘news’) → the postal service → mail."
+ },
+ "雄弁": {
+  "meaning_logic": "雄 (male, heroic) + 弁 (dialect; here ‘speech’, as in 弁論 ‘debate’) → eloquent."
+ },
+ "辺り": {
+  "meaning_logic": "辺 (area) + okurigana り → the area around → vicinity."
+ },
+ "マンション": {
+  "meaning_logic": "Loanword from English ‘mansion’, but in Japanese it means a multi-unit apartment block, not a grand house."
+ },
+ "多い": {
+  "meaning_logic": "多 (many) + い → many."
+ },
+ "通り": {
+  "meaning_logic": "通 (pass through) + り → a way that passes through → a street, an avenue."
+ },
+ "図": {
+  "meaning_logic": "図 (diagram) — single kanji, read ず."
+ },
+ "見る": {
+  "meaning_logic": "見 (see) + る → to see."
+ },
+ "絵": {
+  "meaning_logic": "絵 (picture) — single kanji, read え."
+ },
+ "例": {
+  "meaning_logic": "例 (example) — single kanji, read れい."
+ },
+ "貯金": {
+  "meaning_logic": "貯 (savings) + 金 (gold, money) → savings."
+ },
+ "少し": {
+  "meaning_logic": "少 (few) + し → a little."
+ },
+ "来年": {
+  "meaning_logic": "来 (come; next) + 年 (year) → next year."
+ },
+ "歩道": {
+  "meaning_logic": "歩 (walk) + 道 (road) → a walking road → sidewalk."
+ },
+ "パソコン": {
+  "meaning_logic": "Clipped compound of パーソナルコンピューター (‘personal computer’)."
+ },
+ "キーボード": {
+  "meaning_logic": "Loanword from English ‘keyboard’."
+ },
+ "打つ": {
+  "meaning_logic": "打 (hit) + つ → to hit."
+ },
+ "音": {
+  "meaning_logic": "音 (sound) — single kanji, read おと."
+ },
+ "聞こえる": {
+  "meaning_logic": "聞 (hear) + こえる → to be audible."
+ },
+ "まじめ": {
+  "meaning_logic": "Native word usually written 真面目 — 真 (true) + 面目 (face, appearance) → a true face → serious, diligent."
+ },
+ "私": {
+  "meaning_logic": "私 (I) — single kanji, read わたし."
+ },
+ "国": {
+  "meaning_logic": "国 (country) — single kanji, read くに."
+ },
+ "時間": {
+  "meaning_logic": "時 (time) + 間 (interval) → an interval of time → time; an hour."
+ },
+ "昼": {
+  "meaning_logic": "昼 (noon) — single kanji, read ひる."
+ },
+ "夜": {
+  "meaning_logic": "夜 (night) — single kanji, read よる."
+ },
+ "反対": {
+  "meaning_logic": "反 (anti) + 対 (opposite) → opposition; the opposite."
+ },
+ "時代": {
+  "meaning_logic": "時 (time) + 代 (era, substitute) → a period, an era."
+ },
+ "時期": {
+  "meaning_logic": "時 (time) + 期 (period) → a time, a season."
+ },
+ "時速": {
+  "meaning_logic": "時 (hour) + 速 (speed) → speed per hour."
+ },
+ "時差": {
+  "meaning_logic": "時 (time) + 差 (difference) → time difference."
+ },
+ "自転車": {
+  "meaning_logic": "自 (self) + 転 (revolve) + 車 (car) → a self-moving vehicle → a bicycle."
+ },
+ "壊れる": {
+  "meaning_logic": "壊 (break) + れる → to get broken."
+ },
+ "歩く": {
+  "meaning_logic": "歩 (walk) + く → to walk."
+ },
+ "家": {
+  "meaning_logic": "家 (house) — single kanji, read いえ."
+ },
+ "帰る": {
+  "meaning_logic": "帰 (return home) + る → to return home."
+ },
+ "詳しい": {
+  "meaning_logic": "詳 (detailed) + しい → detailed."
+ },
+ "だらしない": {
+  "meaning_logic": "Native adjective, kana only, of uncertain origin — no kanji to derive it from. Means sloppy, untidy."
+ },
+ "しかたない": {
+  "meaning_logic": "From 仕方がない — 仕方 (way, method) + が + ない (none) → ‘there is no way’ → it can’t be helped."
+ },
+ "羨ましい": {
+  "meaning_logic": "羨 (envy) + ましい → envious."
+ },
+ "病気": {
+  "meaning_logic": "病 (sick) + 気 (energy, spirit) → a sick condition → illness."
+ },
+ "人": {
+  "meaning_logic": "人 (person) — single kanji, read ひと."
+ },
+ "高校生": {
+  "meaning_logic": "高 (tall, high) + 校 (school) + 生 (life; here ‘student’, as in 学生) → high school student."
+ },
+ "医者": {
+  "meaning_logic": "医 (medicine) + 者 (someone) → a medicine person → doctor."
+ },
+ "決心": {
+  "meaning_logic": "決 (decide) + 心 (heart) → a decision of the heart → determination."
+ },
+ "証明": {
+  "meaning_logic": "証 (evidence) + 明 (bright, clear) → making something clear with evidence → proof."
+ },
+ "仮定": {
+  "meaning_logic": "仮 (temporary) + 定 (determine) → a temporary determination → an assumption."
+ },
+ "彼": {
+  "meaning_logic": "彼 (he) — single kanji, read かれ."
+ },
+ "いつも": {
+  "meaning_logic": "From 何時も — いつ (when) + も (every) → ‘whenever’ → always."
+ },
+ "言う": {
+  "meaning_logic": "言 (say) + う → to say."
+ },
+ "みんな": {
+  "meaning_logic": "Native word; the usual kanji is 皆, which means ‘all, everyone’."
+ },
+ "笑わせる": {
+  "meaning_logic": "笑 (laugh) + causative わせる → to make someone laugh."
+ },
+ "面白い": {
+  "meaning_logic": "面 (face) + 白 (white, bright) → literally ‘face-brightening’ → interesting, amusing; the reading おもしろ is a fixed kun reading of the compound."
+ },
+ "文句": {
+  "meaning_logic": "文 (writing, sentence) + 句 (phrase) → a phrase you say → a complaint."
+ },
+ "冗談": {
+  "meaning_logic": "冗 (superfluous) + 談 (talk) → idle talk → a joke."
+ },
+ "自慢": {
+  "meaning_logic": "自 (self) + 慢 (overconfidence) → pride; to boast."
+ },
+ "ホテル": {
+  "meaning_logic": "Loanword from English ‘hotel’."
+ },
+ "到着": {
+  "meaning_logic": "到 (arrival) + 着 (wear; here ‘arrive’) → arrival."
+ },
+ "まだ": {
+  "meaning_logic": "Native adverb; the kanji form is 未だ (未 = not yet). Means ‘still; not yet’."
+ },
+ "部屋": {
+  "meaning_logic": "部 (part) + 屋 (roof, room) → a room."
+ },
+ "入る": {
+  "meaning_logic": "入 (enter) + る → to enter."
+ },
+ "荷物": {
+  "meaning_logic": "荷 (luggage, load) + 物 (thing) → luggage."
+ },
+ "出かける": {
+  "meaning_logic": "出 (exit) + かける → to go out."
+ },
+ "泊める": {
+  "meaning_logic": "泊 (overnight) + める → to let someone stay overnight."
+ },
+ "与える": {
+  "meaning_logic": "与 (give) + える → to give."
+ },
+ "空港": {
+  "meaning_logic": "空 (sky) + 港 (harbor, port) → a port for the sky → an airport."
+ },
+ "着く": {
+  "meaning_logic": "着 (arrive) + く → to arrive."
+ },
+ "飛行機": {
+  "meaning_logic": "飛 (fly) + 行 (go) + 機 (machine) → a flying machine → an airplane."
+ },
+ "出発": {
+  "meaning_logic": "出 (exit) + 発 (departure) → departure."
+ },
+ "ガイダンス": {
+  "meaning_logic": "Loanword from English ‘guidance’."
+ },
+ "アナウンス": {
+  "meaning_logic": "Loanword from English ‘announce’; means an announcement."
+ },
+ "コマーシャル": {
+  "meaning_logic": "Loanword from English ‘commercial’; clipped to CM in everyday speech."
+ },
+ "スピーチ": {
+  "meaning_logic": "Loanword from English ‘speech’."
+ },
+ "休日": {
+  "meaning_logic": "休 (rest) + 日 (day) → a day off."
+ },
+ "渋滞": {
+  "meaning_logic": "渋 (bitter, astringent → sluggish) + 滞 (stagnate) → traffic that stagnates → a traffic jam."
+ },
+ "思う": {
+  "meaning_logic": "思 (think) + う → to think."
+ },
+ "道": {
+  "meaning_logic": "道 (road) — single kanji, read みち."
+ },
+ "空く": {
+  "meaning_logic": "空 (empty) + く → to be empty, uncrowded."
+ },
+ "突然": {
+  "meaning_logic": "突 (stab; sudden) + 然 (so, nature) → suddenly."
+ },
+ "当然": {
+  "meaning_logic": "当 (correct, hit) + 然 (so) → ‘as it should be’ → natural, obvious."
+ },
+ "年中": {
+  "meaning_logic": "年 (year) + 中 (middle; here ‘throughout’) → all year round.",
+  "part_notes": {
+   "1": "read じゅう here, meaning ‘throughout (the year)’ — usual readings ちゅう / なか."
+  }
+ },
+ "案外": {
+  "meaning_logic": "案 (plan) + 外 (outside) → outside the plan → unexpectedly."
+ },
+ "若い": {
+  "meaning_logic": "若 (young) + い → young."
+ },
+ "苦労": {
+  "meaning_logic": "苦 (suffering) + 労 (labor) → hardship."
+ },
+ "一生懸命": {
+  "meaning_logic": "一 (one) + 生 (life) + 懸 (suspend) + 命 (life, fate) → ‘one life hanging’ — risking everything → with all one’s might. A set phrase; the older form is 一所懸命."
+ },
+ "立派": {
+  "meaning_logic": "立 (stand) + 派 (faction) → literally ‘a faction that stands out’ → splendid, admirable; the modern sense is set, not a literal sum."
+ },
+ "政治家": {
+  "meaning_logic": "政 (politics) + 治 (cure; here ‘govern’, as in 政治) + 家 (house; here ‘professional’, as in 画家) → politician."
+ },
+ "努力": {
+  "meaning_logic": "努 (toil) + 力 (power) → effort."
+ },
+ "納得": {
+  "meaning_logic": "納 (supply, pay in) + 得 (acquire) → taking something in and getting it → being convinced."
+ },
+ "期待": {
+  "meaning_logic": "期 (period; expect) + 待 (wait) → expectation."
+ },
+ "注意": {
+  "meaning_logic": "注 (pour) + 意 (idea, attention) → pouring your mind into something → attention, caution."
+ },
+ "朝": {
+  "meaning_logic": "朝 (morning) — single kanji, read あさ."
+ },
+ "ご飯": {
+  "meaning_logic": "ご (polite prefix) + 飯 (meal) → meal; cooked rice."
+ },
+ "食べる": {
+  "meaning_logic": "食 (eat) + べる → to eat."
+ },
+ "おなか": {
+  "meaning_logic": "お (polite prefix) + なか ‘inside’ (中) → the inside → belly. Usually written お腹 (腹 = belly)."
+ },
+ "ぺらぺら": {
+  "meaning_logic": "Onomatopoeia from the flapping of a sheet of paper: ‘flimsy’ for paper, ‘fluent’ for speech that flows off the tongue."
+ },
+ "からから": {
+  "meaning_logic": "Onomatopoeia for a dry, rattling sound → parched, bone-dry."
+ },
+ "ぺこぺこ": {
+  "meaning_logic": "Onomatopoeia for an empty stomach’s pang → very hungry (also used for bowing repeatedly)."
+ },
+ "どきどき": {
+  "meaning_logic": "Onomatopoeia for a thumping heartbeat → nervous excitement."
+ },
+ "会社": {
+  "meaning_logic": "会 (meet) + 社 (company) → a company."
+ },
+ "聞く": {
+  "meaning_logic": "聞 (hear) + く → to hear; to ask."
+ },
+ "情報": {
+  "meaning_logic": "情 (feeling, circumstance) + 報 (news, report) → a report on circumstances → information."
+ },
+ "満足": {
+  "meaning_logic": "満 (full) + 足 (foot; here ‘sufficient’) → full and sufficient → satisfied."
+ },
+ "正常": {
+  "meaning_logic": "正 (correct) + 常 (normal) → normal."
+ },
+ "確実": {
+  "meaning_logic": "確 (certain) + 実 (reality, truth) → certain, reliable."
+ },
+ "電気": {
+  "meaning_logic": "電 (electricity) + 気 (energy) → electricity; electric light."
+ },
+ "工事": {
+  "meaning_logic": "工 (construction) + 事 (matter, work) → construction work."
+ },
+ "来る": {
+  "meaning_logic": "来 (come) + る → to come."
+ },
+ "壁": {
+  "meaning_logic": "壁 (wall) — single kanji, read かべ."
+ },
+ "エアコン": {
+  "meaning_logic": "Clipped compound of エアコンディショナー (‘air conditioner’)."
+ },
+ "取り付ける": {
+  "meaning_logic": "取 (take) + 付 (attach) → to take and attach → to install."
+ },
+ "取り上げる": {
+  "meaning_logic": "取 (take) + 上 (up) → to take up → to pick up; to take away."
+ },
+ "受け入れる": {
+  "meaning_logic": "受 (accept) + 入 (enter) → to accept and take in."
+ },
+ "引き受ける": {
+  "meaning_logic": "引 (pull) + 受 (accept) → to pull something onto yourself and accept it → to undertake."
+ },
+ "清潔": {
+  "meaning_logic": "清 (pure) + 潔 (pure, clean) → clean, cleanliness."
+ },
+ "タオル": {
+  "meaning_logic": "Loanword from English ‘towel’."
+ },
+ "拭く": {
+  "meaning_logic": "拭 (wipe) + く → to wipe."
+ },
+ "柔らかい": {
+  "meaning_logic": "柔 (gentle) + らかい → soft, tender."
+ },
+ "濡れる": {
+  "meaning_logic": "濡 (wet) + れる → to get wet."
+ },
+ "乾く": {
+  "meaning_logic": "乾 (dry) + く → to get dry."
+ },
+ "きれい": {
+  "meaning_logic": "Na-adjective usually written 綺麗 — 綺 (beautiful) + 麗 (lovely) → clean, pretty."
+ },
+ "さっき": {
+  "meaning_logic": "Native word from 先 (さき) ‘ahead, previous’ with a doubled consonant → a moment ago."
+ },
+ "急ぐ": {
+  "meaning_logic": "急 (hurry) + ぐ → to hurry."
+ },
+ "前": {
+  "meaning_logic": "前 (front) — single kanji, read まえ."
+ },
+ "ゆっくり": {
+  "meaning_logic": "Native adverb, kana only, no standard kanji. Means slowly, at ease."
+ },
+ "キッチン": {
+  "meaning_logic": "Loanword from English ‘kitchen’."
+ },
+ "置く": {
+  "meaning_logic": "置 (put) + く → to put down."
+ },
+ "居間": {
+  "meaning_logic": "居 (alive → ‘to be, reside’, as in 居る) + 間 (interval, space) → living room."
+ },
+ "台所": {
+  "meaning_logic": "台 (stand, platform — WaniKani gloss ‘machine’) + 所 (place) → the place where the cooking platform stands → kitchen."
+ },
+ "廊下": {
+  "meaning_logic": "廊 (corridor) + 下 (below) → a covered passage → hallway."
+ },
+ "風呂": {
+  "meaning_logic": "Set spelling for ふろ ‘bath’: 風 (wind) + 呂 (bath). The kanji spelling is conventional, not a literal compound."
+ },
+ "今": {
+  "meaning_logic": "今 (now) — single kanji, read いま."
+ },
+ "指導": {
+  "meaning_logic": "指 (finger, point) + 導 (lead) → pointing the way and leading → guidance."
+ },
+ "答える": {
+  "meaning_logic": "答 (answer) + える → to answer."
+ },
+ "教える": {
+  "meaning_logic": "教 (teach) + える → to teach."
+ },
+ "そろそろ": {
+  "meaning_logic": "Native reduplicated adverb, kana only. Means ‘soon, gradually, it’s about time’."
+ },
+ "おしまい": {
+  "meaning_logic": "お (polite prefix) + 仕舞い (finish, from 仕舞う ‘to finish’) → the end."
+ },
+ "食事": {
+  "meaning_logic": "食 (eat) + 事 (occurrence, matter) → a meal."
+ },
+ "終わり": {
+  "meaning_logic": "終 (end) + わり → the end."
+ },
+ "にぎる": {
+  "meaning_logic": "Native verb usually written 握る — 握 (grip) + る → to grip, to hold."
+ },
+ "引っ越し": {
+  "meaning_logic": "引 (pull) + 越 (go beyond) → pulling your things to a new place → moving house."
+ },
+ "何度": {
+  "meaning_logic": "何 (what) + 度 (times, degree) → how many times."
+ },
+ "重い": {
+  "meaning_logic": "重 (heavy) + い → heavy."
+ },
+ "家具": {
+  "meaning_logic": "家 (house) + 具 (tool) → house tools → furniture."
+ },
+ "体": {
+  "meaning_logic": "体 (body) — single kanji, read からだ."
+ },
+ "お祭り": {
+  "meaning_logic": "お (polite prefix) + 祭 (festival) + り → a festival."
+ },
+ "弟": {
+  "meaning_logic": "弟 (younger brother) — single kanji, read おとうと."
+ },
+ "迷子": {
+  "meaning_logic": "迷 (astray) + 子 (child) → a child who has gone astray → a lost child.",
+  "part_notes": {
+   "0": "on'yomi めい, contracted to まい in this word.",
+   "1": "kun'yomi こ + rendaku → ご."
+  }
+ },
+ "手": {
+  "meaning_logic": "手 (hand) — single kanji, read て."
+ },
+ "しっかり": {
+  "meaning_logic": "Native adverb, kana only, no standard kanji. Means firmly, properly."
+ },
+ "風": {
+  "meaning_logic": "風 (wind) — single kanji, read かぜ."
+ },
+ "帽子": {
+  "meaning_logic": "帽 (hat) + 子 (a suffix for a thing, not ‘child’) → a hat."
+ },
+ "走る": {
+  "meaning_logic": "走 (run) + る → to run."
+ },
+ "母親": {
+  "meaning_logic": "母 (mother) + 親 (parent) → mother."
+ },
+ "生まれる": {
+  "meaning_logic": "生 (life) + まれる → to be born."
+ },
+ "赤ちゃん": {
+  "meaning_logic": "赤 (red) + ちゃん (affectionate suffix) → a red-faced newborn → a baby."
+ },
+ "大事": {
+  "meaning_logic": "大 (big) + 事 (matter) → a big matter → important."
+ },
+ "修理": {
+  "meaning_logic": "修 (repair) + 理 (reason, fix) → repair."
+ },
+ "今朝": {
+  "meaning_logic": "今 (now) + 朝 (morning) → this morning.",
+  "reading_note": "Fixed set reading けさ, a jukujikun; it cannot be built from the usual readings of 今 (いま/こん) or 朝 (あさ/ちょう)."
+ },
+ "妻": {
+  "meaning_logic": "妻 (wife) — single kanji, read つま."
+ },
+ "けんか": {
+  "meaning_logic": "Native word usually written 喧嘩 — 喧 (noisy) + 嘩 (noisy) → a noisy clash → a fight, a quarrel."
+ },
+ "早い": {
+  "meaning_logic": "早 (early) + い → early."
+ },
+ "仲": {
+  "meaning_logic": "仲 (relationship) — single kanji, read なか."
+ },
+ "腕": {
+  "meaning_logic": "腕 (arm) — single kanji, read うで."
+ },
+ "けが": {
+  "meaning_logic": "Ateji 怪我: the kanji are used for sound only — 怪 (mystery) + 我 (self) do not mean ‘injury’."
+ },
+ "病院": {
+  "meaning_logic": "病 (sick) + 院 (institution) → a hospital."
+ },
+ "買う": {
+  "meaning_logic": "買 (buy) + う → to buy."
+ },
+ "お店": {
+  "meaning_logic": "お (polite prefix) + 店 (shop) → a shop."
+ },
+ "間違える": {
+  "meaning_logic": "間 (interval) + 違 (different) → something is off/different → to make a mistake."
+ },
+ "漢字": {
+  "meaning_logic": "漢 (Chinese) + 字 (letter) → Chinese characters → kanji."
+ },
+ "先生": {
+  "meaning_logic": "先 (previous) + 生 (born) → one born before you → a senior → a teacher."
+ },
+ "赤い": {
+  "meaning_logic": "赤 (red) + い → red."
+ },
+ "ペン": {
+  "meaning_logic": "Loanword from English ‘pen’."
+ },
+ "目的": {
+  "meaning_logic": "目 (eye) + 的 (target) → the target of your eye → a purpose, a goal."
+ },
+ "今日": {
+  "meaning_logic": "今 (now) + 日 (sun/day) → today.",
+  "reading_note": "Fixed set reading きょう, a jukujikun; it cannot be built from the usual readings of 今 (いま/こん) or 日 (ひ/にち)."
+ },
+ "たくさん": {
+  "meaning_logic": "Usually written 沢山, an ateji-style spelling: 沢 (marsh) + 山 (mountain) are sound-only for たくさん ‘a lot’."
+ },
+ "商品": {
+  "meaning_logic": "商 (merchandise, commerce) + 品 (product, goods) → merchandise."
+ },
+ "売れる": {
+  "meaning_logic": "売 (sell) + れる → to be sold."
+ },
+ "超える": {
+  "meaning_logic": "超 (ultra, beyond) + える → to go beyond, to exceed."
+ },
+ "窓側": {
+  "meaning_logic": "窓 (window) + 側 (side) → the window side.",
+  "part_notes": {
+   "1": "compound form of かわ / がわ ‘side’ — here ぎわ."
+  }
+ },
+ "いい": {
+  "meaning_logic": "Colloquial form of よい, usually written 良い — 良 (good)."
+ },
+ "来週": {
+  "meaning_logic": "来 (next) + 週 (week) → next week."
+ },
+ "海外": {
+  "meaning_logic": "海 (sea) + 外 (outside) → outside the sea → overseas."
+ },
+ "出張": {
+  "meaning_logic": "出 (go out) + 張 (stretch, extend) → going out to extend the company’s work → a business trip."
+ },
+ "忙しい": {
+  "meaning_logic": "忙 (busy) + しい → busy."
+ },
+ "研究": {
+  "meaning_logic": "研 (sharpen) + 究 (research) → research."
+ },
+ "新しい": {
+  "meaning_logic": "新 (new) + しい → new."
+ },
+ "薬": {
+  "meaning_logic": "薬 (medicine) — single kanji, read くすり."
+ },
+ "効果": {
+  "meaning_logic": "効 (effective) + 果 (fruit, result) → the result of being effective → an effect."
+ },
+ "懐かしい": {
+  "meaning_logic": "懐 (nostalgia) + かしい → nostalgic."
+ },
+ "子ども": {
+  "meaning_logic": "子 (child) + ども (plural suffix) → child; children."
+ },
+ "気持ち": {
+  "meaning_logic": "気 (energy, spirit) + 持 (hold) + ち → what you hold in your spirit → a feeling."
+ },
+ "建てる": {
+  "meaning_logic": "建 (build) + てる → to build."
+ },
+ "見学": {
+  "meaning_logic": "見 (see) + 学 (study) → learning by seeing → a study visit."
+ },
+ "会う": {
+  "meaning_logic": "会 (meet) + う → to meet."
+ },
+ "すぐに": {
+  "meaning_logic": "From 直ぐに — 直 (straight, immediate) + ぐ + に → immediately."
+ },
+ "友達": {
+  "meaning_logic": "友 (friend) + 達 (attain; here a plural suffix) → friends; a friend."
+ },
+ "都合": {
+  "meaning_logic": "都 (metropolis) + 合 (fit, combine) → how things fit together → circumstances, convenience; the modern sense is set."
+ },
+ "悪い": {
+  "meaning_logic": "悪 (bad) + い → bad."
+ },
+ "約束": {
+  "meaning_logic": "約 (promise) + 束 (bundle) → a bundle of agreed terms → a promise."
+ },
+ "住所": {
+  "meaning_logic": "住 (dwell) + 所 (place) → the place where you dwell → an address."
+ },
+ "知らせる": {
+  "meaning_logic": "知 (know) + causative らせる → to make someone know → to inform."
+ },
+ "インターネット": {
+  "meaning_logic": "Loanword from English ‘internet’."
+ },
+ "登場": {
+  "meaning_logic": "登 (climb, enter) + 場 (place, scene) → entering the scene → an appearance."
+ },
+ "人々": {
+  "meaning_logic": "人 (person) + 々 (repetition mark) → people.",
+  "part_notes": {
+   "1": "々 repeats 人; ひと → びと (rendaku)."
+  }
+ },
+ "生活": {
+  "meaning_logic": "生 (life) + 活 (lively) → life, livelihood."
+ },
+ "大きい": {
+  "meaning_logic": "大 (big) + きい → big."
+ },
+ "会議": {
+  "meaning_logic": "会 (meet) + 議 (deliberation, discussion) → a meeting."
+ },
+ "司会": {
+  "meaning_logic": "司 (director; here ‘manage’) + 会 (meet, meeting) → the one who manages the meeting → a host, an MC."
+ },
+ "引っ越す": {
+  "meaning_logic": "引 (pull) + 越 (go beyond) → to pull your things to a new place → to move house."
+ }
+}

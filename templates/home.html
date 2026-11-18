@@ -20,6 +20,20 @@
     </a>
 </section>
 
+<section class="practice-entry">
+    <a href="{{ base }}vocab-learn.html" class="chapter-card practice-entry-card learn-entry-card">
+        <div class="chapter-number">{{ T.learn_eyebrow }}</div>
+        <div class="chapter-theme-jp">{{ T.learn_title }}</div>
+        <div class="chapter-theme-en">{{ T.learn_lead }}</div>
+        <div class="chapter-stats">
+            <span>🧩 {{ practice_count }} {{ T.vocab }}</span>
+            <span>🔤 {{ T.learn_stats_breakdowns }}</span>
+            <span>👁 {{ T.learn_stats_selfcheck }}</span>
+        </div>
+        <div class="practice-entry-cta">{{ T.learn_cta }}</div>
+    </a>
+</section>
+
 <section class="overall">
     <h2>{{ T.overall_progress }}</h2>
     <div class="overall-bars" id="overall-bars" data-totals='{{ totals | tojson }}'>

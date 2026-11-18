@@ -1,0 +1,287 @@
+/* N3 kanji site — Dec 2025 Vocab Learn.
+   Loaded only by vocab-learn.html. Every colour comes from the site variables
+   in style.css, so light/dark mode work without extra overrides. */
+
+.vl-app { max-width: 860px; margin: 0 auto; }
+.vl-head { margin-bottom: 16px; }
+.vl-head h1 { font-size: 1.7rem; }
+.vl-head .jp { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; white-space: nowrap; }
+.vl-crosslink { margin-top: 8px; font-size: 0.92rem; }
+.vl-crosslink a { color: var(--color-primary); font-weight: 600; text-decoration: none; }
+.vl-crosslink a:hover { text-decoration: underline; }
+
+/* ---------- controls ---------- */
+
+.vl-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+.vl-range, .vl-toggles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.vl-range label { font-size: 0.85rem; color: var(--color-muted); }
+.vl-range input {
+    width: 68px;
+    padding: 6px 8px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font: inherit;
+    font-size: 0.9rem;
+}
+.vl-range input:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 1px; }
+.vl-range-of { font-size: 0.8rem; color: var(--color-muted); }
+.vl-btn {
+    padding: 7px 12px;
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font: inherit;
+    font-size: 0.84rem;
+    cursor: pointer;
+}
+.vl-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.vl-btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.vl-toggle.is-active {
+    background: var(--color-primary-filled, var(--color-primary));
+    border-color: var(--color-primary-filled, var(--color-primary));
+    color: #fff;
+    font-weight: 600;
+}
+.vl-count { margin: 8px 2px 12px; font-size: 0.82rem; color: var(--color-muted); }
+
+/* ---------- cards ---------- */
+
+.vl-list { display: grid; gap: 12px; }
+
+.vl-card {
+    padding: 14px 16px 16px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow-wrap: anywhere;
+}
+.vl-card:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.vl-card.revealed { border-color: var(--color-primary); }
+
+.vl-card-head {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    grid-template-areas: "num word meaning reveal";
+    align-items: center;
+    gap: 4px 12px;
+}
+.vl-num {
+    grid-area: num;
+    align-self: start;
+    display: grid;
+    place-items: center;
+    min-width: 30px;
+    height: 30px;
+    padding: 0 6px;
+    background: var(--color-bg);
+    color: var(--color-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+.vl-word-wrap {
+    grid-area: word;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.15;
+}
+.vl-reading {
+    color: var(--color-primary-dark);
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
+}
+.vl-word {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+}
+.vl-kana-class {
+    margin-top: 3px;
+    padding: 1px 8px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.vl-meaning {
+    grid-area: meaning;
+    justify-self: end;
+    max-width: 260px;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    text-align: right;
+}
+.vl-reveal {
+    display: none;
+    grid-area: reveal;
+    justify-self: end;
+    padding: 5px 10px;
+    background: var(--color-bg);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.vl-app.hide-readings .vl-reveal,
+.vl-app.hide-meanings .vl-reveal { display: inline-flex; align-items: center; }
+.vl-app.hide-readings .vl-card:not(.revealed) .vl-meaning,
+.vl-app.hide-meanings .vl-card:not(.revealed) .vl-meaning { display: none; }
+
+.vl-parts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+.vl-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    min-width: 86px;
+    max-width: 180px;
+    padding: 8px 10px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+.vl-part-char {
+    color: var(--color-kanji);
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.vl-part-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.vl-part-meaning {
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    line-height: 1.25;
+    text-align: center;
+}
+.vl-part-used {
+    margin-top: 3px;
+    padding: 1px 8px;
+    background: var(--color-accent);
+    color: var(--color-text);
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+.vl-part-type {
+    color: var(--color-muted);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.vl-part-tag {
+    color: var(--color-muted);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.vl-part.is-kana { justify-content: center; min-height: 76px; }
+.vl-part .vl-readnote {
+    max-width: 150px;
+    margin-top: 2px;
+    text-align: center;
+}
+
+.vl-compose {
+    margin-top: 12px;
+    color: var(--color-primary-dark);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.vl-reading-note {
+    margin-top: 6px;
+    max-width: none;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+.vl-logic {
+    margin-top: 10px;
+    padding: 8px 11px;
+    background: var(--color-bg);
+    border-left: 3px solid var(--color-kanji);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.vl-logic-label {
+    display: inline-block;
+    margin-right: 4px;
+    color: var(--color-kanji);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ---------- self-check hiding ---------- */
+
+.vl-app.hide-readings .vl-card:not(.revealed) .vl-reading,
+.vl-app.hide-readings .vl-card:not(.revealed) .vl-compose,
+.vl-app.hide-readings .vl-card:not(.revealed) .vl-part-used,
+.vl-app.hide-readings .vl-card:not(.revealed) .vl-part-type,
+.vl-app.hide-readings .vl-card:not(.revealed) .vl-part .vl-readnote,
+.vl-app.hide-readings .vl-card:not(.revealed) .vl-reading-note {
+    display: none;
+}
+.vl-app.hide-meanings .vl-card:not(.revealed) .vl-meaning,
+.vl-app.hide-meanings .vl-card:not(.revealed) .vl-part-meaning,
+.vl-app.hide-meanings .vl-card:not(.revealed) .vl-logic {
+    display: none;
+}
+
+.vl-error { color: var(--color-error); padding: 20px 0; }
+.loading { padding: 36px 0; color: var(--color-muted); text-align: center; }
+
+@media (max-width: 620px) {
+    .vl-head h1 { font-size: 1.4rem; }
+    .vl-toolbar { position: static; padding: 10px; }
+    .vl-card { padding: 12px 12px 14px; }
+    .vl-card-head {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        grid-template-areas:
+            "num word reveal"
+            "meaning meaning meaning";
+        align-items: start;
+    }
+    .vl-meaning { justify-self: start; max-width: none; text-align: left; margin-top: 4px; }
+    .vl-reveal { grid-area: reveal; justify-self: end; margin-top: 2px; }
+    .vl-part { min-width: 76px; padding: 7px 8px; }
+    .vl-part-char { font-size: 1.6rem; }
+}

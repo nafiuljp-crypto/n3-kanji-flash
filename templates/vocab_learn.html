@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Learn Vocab — Dec 2025{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ base }}static/vocab-learn.css">
+{% endblock %}
+{% block content %}
+<section class="chapter-header vl-head">
+    <a class="back-link" href="{{ base }}{{ lang }}/">← {{ T.nav_home }}</a>
+    <h1>{{ T.learn_title }} <span class="jp">語彙学習</span></h1>
+    <p class="muted">{{ T.learn_page_lead.format(count=word_count) }}</p>
+    <p class="vl-crosslink"><a href="{{ base }}practice.html">{{ T.learn_practice_link }}</a></p>
+</section>
+
+<div id="vocab-learn-app" class="vl-app" data-words="{{ word_count }}">
+    <p class="loading">Loading Dec 2025 vocabulary breakdowns…</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ base }}static/vocab-learn.js"></script>
+<script>
+(function () {
+    var el = document.getElementById('vocab-learn-app');
+    if (!el || !window.N3VocabLearn) return;
+    window.N3VocabLearn.mount(el, {
+        dataUrl: '{{ base }}data/vocab_learn_2025_12.json'
+    });
+})();
+</script>
+{% endblock %}

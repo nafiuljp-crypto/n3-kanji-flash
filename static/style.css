@@ -311,6 +311,8 @@ section { margin: 28px 0; }
 /* Vocab Practice entry card on the home page. Reuses .chapter-card; only the
    accent border and CTA are practice-specific. */
 .practice-entry-card { border-left: 4px solid var(--color-vocab); }
+/* Dec 2025 vocab learn card sits next to the practice card. */
+.learn-entry-card { border-left-color: var(--color-kanji); }
 .practice-entry-cta {
     margin-top: 8px;
     color: var(--color-primary);
