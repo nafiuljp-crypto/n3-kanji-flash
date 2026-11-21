@@ -26,6 +26,7 @@ var POLICY = process.env.HATCH_WEBGL_POLICY ||
   '/var/lib/hatch-browser/rootfs-base/usr/share/hatch/chromium/webgl-allowed-domains.txt';
 var LOCK_HASH = '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4';
 var ORDER_KEY = 'n3practice-order:v1';
+var RANGE_KEY = 'n3practice-range:v1';
 
 var checks = 0;
 var failures = [];
@@ -148,6 +149,58 @@ function serveFromDist(route) {
         stored: localStorage.getItem('n3practice-order:v1')
       };
     });
+  }
+
+  function rangeState() {
+    return page.evaluate(function () {
+      var fromEl = document.querySelector('#ps-range-from');
+      var toEl = document.querySelector('#ps-range-to');
+      var badge = document.querySelector('.ps-range-badge');
+      var reset = document.querySelector('[data-act="range-reset"]');
+      var allBtn = document.querySelector('[data-count="243"]');
+      var qno = document.querySelector('.q-no');
+      var prompt = document.querySelector('.practice-prompt');
+      return {
+        from: fromEl ? fromEl.value : null,
+        to: toEl ? toEl.value : null,
+        hasInputs: Boolean(fromEl && toEl),
+        badge: badge ? badge.textContent.trim() : null,
+        resetActive: reset ? reset.classList.contains('is-active') : null,
+        allLabel: allBtn ? allBtn.textContent.trim() : null,
+        qno: qno ? qno.textContent.trim() : null,
+        prompt: prompt ? prompt.textContent : null,
+        stored: localStorage.getItem('n3practice-range:v1')
+      };
+    });
+  }
+
+  async function setRangeInputs(from, to) {
+    await page.evaluate(function (v) {
+      var f = document.querySelector('#ps-range-from');
+      var t = document.querySelector('#ps-range-to');
+      if (!f || !t) return;
+      f.value = v.from;
+      t.value = v.to;
+      t.dispatchEvent(new Event('change', { bubbles: true }));
+    }, { from: String(from), to: String(to) });
+    await page.waitForSelector('.practice-setup');
+  }
+
+  async function collectPrompts(n) {
+    var prompts = [];
+    for (var i = 0; i < n; i++) {
+      prompts.push((await state()).prompt);
+      if (i + 1 < n) {
+        await page.click('.practice-opt[data-opt="1"]');
+        await page.waitForSelector('.practice-feedback');
+        await page.click('[data-act="next"]');
+        await page.waitForFunction(function (k) {
+          var el = document.querySelector('.q-no');
+          return el && el.textContent.trim().indexOf(k + ' /') === 0;
+        }, i + 2);
+      }
+    }
+    return prompts;
   }
 
   async function startClean(mode) {
@@ -345,7 +398,209 @@ function serveFromDist(route) {
     'session-setup controls fit at 390px (' + fit.setup + ' <= ' + fit.setupBox + ')');
   await page.setViewportSize({ width: 1280, height: 900 });
 
-  /* ---------- 9. console ---------- */
+  /* ---------- 9. word range ---------- */
+  console.log('\n[9] word range');
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.evaluate(function (key) { localStorage.removeItem(key); }, RANGE_KEY);
+  await page.reload();
+  await page.waitForSelector('.practice-setup');
+  await page.click('[data-order="ordered"]');
+  await page.waitForFunction(function (key) {
+    return localStorage.getItem(key) === 'ordered';
+  }, ORDER_KEY);
+
+  /* Real typing: fill From, Tab (fires change), fill To, Tab. */
+  await page.fill('#ps-range-from', '51');
+  await page.press('#ps-range-from', 'Tab');
+  await page.fill('#ps-range-to', '100');
+  await page.press('#ps-range-to', 'Tab');
+  await page.waitForFunction(function () {
+    var b = document.querySelector('.ps-range-badge');
+    return b && b.textContent.indexOf('51') !== -1;
+  });
+  var rs = await rangeState();
+  check(rs.hasInputs, 'range From/To inputs are rendered in the setup bar');
+  check(rs.from === '51' && rs.to === '100', 'typed range 51-100 is kept in the inputs');
+  check(rs.badge === 'Words 51–100 of 243', 'range label reads "Words 51–100 of 243" (' + rs.badge + ')');
+  check(rs.stored === '{"from":51,"to":100}', 'range persisted as JSON under n3practice-range:v1');
+  check(rs.allLabel === 'All 50', 'All size button reflects the range size ("All 50" for 51-100)');
+  check(rs.resetActive === false, 'reset button is not active while a range is set');
+  check(rs.qno === '1 / 10', 'changing the range restarts the 10-question session');
+  check(rs.prompt === words[50].word, 'ordered range session starts at data[50]: ' + words[50].word);
+
+  var rangePrompts = await collectPrompts(6);
+  check(JSON.stringify(rangePrompts) ===
+    JSON.stringify(words.slice(50, 56).map(function (w) { return w.word; })),
+    'ordered range prompts follow data[50..55]');
+
+  /* Range survives a reload. */
+  await page.reload();
+  await page.waitForSelector('.practice-setup');
+  await page.waitForFunction(function () {
+    var b = document.querySelector('.ps-range-badge');
+    return b && b.textContent.indexOf('51') !== -1;
+  });
+  rs = await rangeState();
+  check(rs.stored === '{"from":51,"to":100}', 'range choice survives a reload');
+  check(rs.badge === 'Words 51–100 of 243', 'range label restored after reload');
+  check(rs.qno === '1 / 10' && rs.prompt === words[50].word,
+    'restored range session starts at data[50]');
+
+  /* Ordered All inside the range = exactly the range. */
+  await page.click('[data-count="243"]');
+  await page.waitForFunction(function (n) {
+    var el = document.querySelector('.q-no');
+    return el && el.textContent.trim() === '1 / ' + n;
+  }, 50);
+  rs = await rangeState();
+  check(rs.prompt === words[50].word, 'ordered All in range starts at data[50]');
+
+  /* Shuffle sessions draw only from the range. */
+  await page.click('[data-order="shuffle"]');
+  await page.waitForFunction(function (key) {
+    return localStorage.getItem(key) === 'shuffle';
+  }, ORDER_KEY);
+  var rangeSet = {};
+  words.slice(50, 100).forEach(function (w) { rangeSet[w.word] = true; });
+  var shufflePrompts = await collectPrompts(10);
+  check(new Set(shufflePrompts).size === 10, 'shuffled range session has 10 distinct words');
+  check(shufflePrompts.every(function (w) { return rangeSet[w] === true; }),
+    'shuffled range session draws only from data[50..99]');
+  await page.click('[data-order="ordered"]');
+  await page.waitForFunction(function (key) {
+    return localStorage.getItem(key) === 'ordered';
+  }, ORDER_KEY);
+
+  /* Size larger than the range: the whole range. */
+  await setRangeInputs(51, 55);
+  await page.waitForFunction(function () {
+    var b = document.querySelector('.ps-range-badge');
+    return b && b.textContent === 'Words 51–55 of 243';
+  });
+  await page.click('[data-count="20"]');
+  rs = await rangeState();
+  check(rs.qno === '1 / 5', 'size 20 in a 5-word range is the whole range (1 / 5)');
+  check(rs.allLabel === 'All 5', 'All size button reads "All 5" for a 5-word range');
+  check(rs.prompt === words[50].word, 'range 51-55 ordered session starts at data[50]');
+
+  /* Size within the range keeps the requested size. */
+  await setRangeInputs(51, 100);
+  await page.waitForFunction(function () {
+    var b = document.querySelector('.ps-range-badge');
+    return b && b.textContent === 'Words 51–100 of 243';
+  });
+  await page.click('[data-count="20"]');
+  rs = await rangeState();
+  check(rs.qno === '1 / 20', 'size 20 within range 51-100 gives 20 questions');
+
+  /* From > To is swapped, never empty. */
+  await setRangeInputs(100, 50);
+  await page.waitForFunction(function () {
+    var f = document.querySelector('#ps-range-from');
+    var t = document.querySelector('#ps-range-to');
+    return f && t && f.value === '50' && t.value === '100';
+  });
+  rs = await rangeState();
+  check(rs.badge === 'Words 50–100 of 243', 'From > To is swapped to Words 50–100');
+  check(rs.stored === '{"from":50,"to":100}', 'swapped range is persisted');
+  check(rs.qno === '1 / 20', 'swapped range keeps the session size (20)');
+
+  /* Out-of-bounds input clamps to the full list (no empty session). */
+  await setRangeInputs(-5, 999);
+  await page.waitForFunction(function () {
+    var b = document.querySelector('.ps-range-badge');
+    var f = document.querySelector('#ps-range-from');
+    var t = document.querySelector('#ps-range-to');
+    return !b && f && t && f.value === '1' && t.value === '243';
+  });
+  rs = await rangeState();
+  check(rs.badge === null, 'out-of-bounds range clamps to the full list (no range label)');
+  check(rs.stored === null, 'out-of-bounds range clears the stored range');
+  check(rs.allLabel === 'All 243', 'All size button is "All 243" again');
+  check(rs.qno === '1 / 20' && words.some(function (w) { return w.word === rs.prompt; }),
+    'full-list fallback still yields a valid session');
+
+  /* Empty fields fall back to the full list too. */
+  await setRangeInputs('', '');
+  await page.waitForFunction(function () {
+    var b = document.querySelector('.ps-range-badge');
+    return !b;
+  });
+  rs = await rangeState();
+  check(rs.from === '1' && rs.to === '243', 'empty fields reset to 1 / 243');
+  check(rs.stored === null, 'empty fields clear the stored range');
+
+  /* The "All words" reset button clears an active range. */
+  await setRangeInputs(51, 60);
+  await page.waitForFunction(function () {
+    var b = document.querySelector('.ps-range-badge');
+    return b && b.textContent === 'Words 51–60 of 243';
+  });
+  await page.click('[data-act="range-reset"]');
+  await page.waitForFunction(function () {
+    var b = document.querySelector('.ps-range-badge');
+    return !b;
+  });
+  rs = await rangeState();
+  check(rs.stored === null, 'All words button clears the stored range');
+  check(rs.resetActive === true, 'All words button is active for the full list');
+  check(rs.from === '1' && rs.to === '243', 'All words button restores 1 / 243');
+
+  /* 390px with a range active: no horizontal overflow. */
+  await setRangeInputs(51, 100);
+  await page.waitForFunction(function () {
+    var b = document.querySelector('.ps-range-badge');
+    return b && b.textContent.indexOf('51') !== -1;
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  var rangeFit = await page.evaluate(function () {
+    var setup = document.querySelector('.practice-setup');
+    return {
+      page: document.documentElement.scrollWidth,
+      win: window.innerWidth,
+      setup: setup.scrollWidth,
+      setupBox: setup.clientWidth
+    };
+  });
+  check(rangeFit.page <= rangeFit.win + 1,
+    'no page overflow at 390px with a range set (' + rangeFit.page + ' <= ' + rangeFit.win + ')');
+  check(rangeFit.setup <= rangeFit.setupBox + 1,
+    'range controls fit the setup bar at 390px (' + rangeFit.setup + ' <= ' + rangeFit.setupBox + ')');
+  await page.setViewportSize({ width: 1280, height: 900 });
+
+  /* Dark mode keeps the range controls legible. */
+  await page.click('#theme-toggle');
+  await page.waitForFunction(function () {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
+  });
+  var darkRange = await page.evaluate(function () {
+    var input = document.querySelector('.ps-range-input');
+    var badge = document.querySelector('.ps-range-badge');
+    function style(el) {
+      if (!el) return null;
+      var cs = getComputedStyle(el);
+      return { bg: cs.backgroundColor, color: cs.color, border: cs.borderTopColor };
+    }
+    return { input: style(input), badge: style(badge) };
+  });
+  check(darkRange.input && darkRange.input.bg !== 'rgba(0, 0, 0, 0)',
+    'range input has a solid background in dark mode');
+  check(darkRange.input && darkRange.input.color !== 'rgba(0, 0, 0, 0)',
+    'range input text is visible in dark mode');
+  check(darkRange.badge && darkRange.badge.color !== 'rgba(0, 0, 0, 0)',
+    'range label is visible in dark mode');
+  await page.click('#theme-toggle');
+  await page.waitForFunction(function () {
+    return document.documentElement.getAttribute('data-theme') === 'light';
+  });
+
+  /* Leave the page in its default state for the console check. */
+  await page.evaluate(function (keys) {
+    localStorage.removeItem(keys.range);
+    localStorage.removeItem(keys.order);
+  }, { range: RANGE_KEY, order: ORDER_KEY });
+
+  /* ---------- 10. console ---------- */
   check(consoleErrors.length === 0,
     'no console errors' + (consoleErrors.length ? ': ' + consoleErrors.join(' | ') : ''));
 

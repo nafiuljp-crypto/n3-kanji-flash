@@ -35,10 +35,38 @@
 }
 .btn.ghost:hover { border-color: var(--color-primary); color: var(--color-primary); }
 .count-btn.is-active,
-.order-btn.is-active {
+.order-btn.is-active,
+.range-reset-btn.is-active {
     background: var(--color-primary-filled, var(--color-primary));
     color: white;
     border-color: var(--color-primary-filled, var(--color-primary));
+}
+
+/* ---------- word range ---------- */
+
+.ps-range { gap: 6px; }
+.ps-range-label { color: var(--color-muted); font-size: 0.85rem; }
+.ps-range-input {
+    width: 64px;
+    padding: 6px 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+.ps-range-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary);
+}
+.ps-range-badge {
+    margin-top: 2px;
+    color: var(--color-primary);
+    font-size: 0.78rem;
+    font-weight: 600;
 }
 
 .practice-card {
@@ -235,6 +263,8 @@
 
 @media (max-width: 560px) {
     .practice-head h1 { font-size: 1.4rem; }
+    .ps-range-input { width: 58px; }
+    .ps-controls { width: 100%; }
     .practice-status { padding: 10px 12px; }
     .practice-body { padding: 14px 12px 18px; }
     .practice-prompt { padding: 14px 10px; }

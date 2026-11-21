@@ -227,7 +227,8 @@ function fakeStorage(initial) {
   return {
     data: data,
     getItem: function (k) { return Object.prototype.hasOwnProperty.call(data, k) ? data[k] : null; },
-    setItem: function (k, v) { data[k] = String(v); }
+    setItem: function (k, v) { data[k] = String(v); },
+    removeItem: function (k) { delete data[k]; }
   };
 }
 
@@ -249,6 +250,127 @@ var broken = {
 eq(P.readOrder(broken), 'shuffle', 'throwing storage reads as shuffle');
 P.writeOrder(broken, 'ordered'); /* must not throw */
 check(true, 'throwing storage does not break writeOrder');
+
+/* ---------- word range: clamping / pool ---------- */
+check(P.RANGE_KEY === 'n3practice-range:v1', 'storage key is n3practice-range:v1');
+
+eq(P.clampRange({ from: 51, to: 100 }, 243), { from: 51, to: 100 },
+  'valid range is kept');
+eq(P.clampRange({ from: 100, to: 51 }, 243), { from: 51, to: 100 },
+  'From > To is swapped, never empty');
+eq(P.clampRange({ from: 5, to: 5 }, 243), { from: 5, to: 5 },
+  'a single-word range stays valid');
+eq(P.clampRange({ from: -5, to: 999 }, 243), { from: 1, to: 243 },
+  'out-of-bounds range clamps to the list');
+eq(P.clampRange({ from: 0, to: 0 }, 243), { from: 1, to: 1 },
+  'zero/blank numbers clamp to a non-empty range');
+eq(P.clampRange({ from: 'x', to: 'y' }, 243), { from: 1, to: 243 },
+  'non-numeric range falls back to the full list');
+eq(P.clampRange({ from: 50.6, to: 60.2 }, 243), { from: 51, to: 60 },
+  'range endpoints are rounded');
+eq(P.clampRange({ from: 300, to: 400 }, 243), { from: 243, to: 243 },
+  'From beyond the list still yields a non-empty range');
+
+eq(P.rangeWords(words, null), words, 'no range means the full list');
+eq(P.rangeWords(words, { from: 1, to: 243 }), words, 'full range means the full list');
+eq(P.rangeWords(words, { from: 1, to: 999 }), words, 'range past the end means the full list');
+var r51pool = P.rangeWords(words, { from: 51, to: 100 });
+eq(r51pool.map(function (w) { return w.word; }),
+  words.slice(50, 100).map(function (w) { return w.word; }),
+  'range 51-100 is exactly data[50..99] in file order');
+eq(r51pool.length, 50, 'range 51-100 has 50 words');
+
+/* ---------- word range: sessions ---------- */
+var rOrdered10 = P.buildSession(words, 10, mulberry32(31), r51pool, 'ordered');
+validateSession(rOrdered10, words.slice(50, 60), words, 'range 51-100 ordered 10');
+var rOrderedAll = P.buildSession(words, 243, mulberry32(31), r51pool, 'ordered');
+validateSession(rOrderedAll, words.slice(50, 100), words, 'range 51-100 ordered All 243');
+var rOrderedAllSentinel = P.buildSession(words, 'all', mulberry32(31), r51pool, 'ordered');
+validateSession(rOrderedAllSentinel, words.slice(50, 100), words, 'range 51-100 ordered "all"');
+
+/* A size larger than the range is the whole range. */
+var tinyPool = P.rangeWords(words, { from: 1, to: 5 });
+validateSession(P.buildSession(words, 20, mulberry32(32), tinyPool, 'ordered'),
+  words.slice(0, 5), words, 'size 20 in a 5-word range ordered = whole range');
+validateSession(P.buildSession(words, 243, mulberry32(32), tinyPool, 'ordered'),
+  words.slice(0, 5), words, 'All in a 5-word range ordered = whole range');
+var tinyShuffle = P.buildSession(words, 20, mulberry32(32), tinyPool, 'shuffle');
+check(tinyShuffle.length === 5, 'size 20 in a 5-word range shuffle = 5 questions');
+check(tinyShuffle.every(function (q) {
+  return words.slice(0, 5).some(function (w) { return w.word === q.word; });
+}), 'shuffle session larger than the range draws only from the range');
+
+/* A range larger than the session keeps the session size. */
+var widePool = P.rangeWords(words, { from: 1, to: 100 });
+validateSession(P.buildSession(words, 10, mulberry32(33), widePool, 'ordered'),
+  words.slice(0, 10), words, 'size 10 in a 100-word range ordered = first 10 of the range');
+
+/* Shuffle sessions draw only from the range, every seed. */
+var rWords = Object.create(null);
+r51pool.forEach(function (w) { rWords[w.word] = true; });
+for (var rSeed = 1; rSeed <= 25; rSeed++) {
+  var rShuffle = P.buildSession(words, 10, mulberry32(rSeed), r51pool, 'shuffle');
+  check(rShuffle.length === 10, 'range shuffle seed ' + rSeed + ': 10 questions');
+  check(new Set(rShuffle.map(function (q) { return q.word; })).size === 10,
+    'range shuffle seed ' + rSeed + ': 10 distinct words');
+  check(rShuffle.every(function (q) { return rWords[q.word] === true; }),
+    'range shuffle seed ' + rSeed + ': every word is inside 51-100');
+}
+var rShuffleAll = P.buildSession(words, 'all', mulberry32(34), r51pool, 'shuffle');
+check(rShuffleAll.length === 50, 'shuffle All in range 51-100 = 50 questions');
+eq(Object.keys(rShuffleAll.reduce(function (m, q) { m[q.word] = true; return m; }, {})).sort(),
+  Object.keys(rWords).sort(), 'shuffle All in a range covers exactly the range');
+
+/* Distractors may still come from outside the range (allWords is the full
+   list), so a small range never runs out of options. */
+var tinyQuestions = P.buildSession(words, 5, mulberry32(35), tinyPool, 'ordered');
+tinyQuestions.forEach(function (q) {
+  validateQuestion(q, words.filter(function (w) { return w.word === q.word; })[0],
+    words, 'tiny-range distractor check ' + q.word);
+});
+
+/* Retry-missed subset still wins over the range. */
+var rangeSubset = [words[120], words[10], words[200]];
+validateSession(P.buildSession(words, 'all', mulberry32(36), rangeSubset, 'ordered'),
+  rangeSubset, words, 'retry-missed subset ignores the range (ordered)');
+var rangeSubsetShuffle = P.buildSession(words, 'all', mulberry32(36), rangeSubset, 'shuffle');
+check(rangeSubsetShuffle.length === 3 &&
+  rangeSubsetShuffle.every(function (q) {
+    return rangeSubset.some(function (w) { return w.word === q.word; });
+  }), 'retry-missed subset ignores the range (shuffle)');
+
+/* ---------- word range: persistence ---------- */
+var rangeStore = fakeStorage();
+eq(P.readRange(rangeStore), null, 'default range is none (full list)');
+P.writeRange(rangeStore, { from: 51, to: 100 });
+eq(rangeStore.getItem('n3practice-range:v1'), '{"from":51,"to":100}',
+  'range is stored as JSON {from,to}');
+eq(P.readRange(rangeStore), { from: 51, to: 100 }, 'range restored from storage');
+P.writeRange(rangeStore, null);
+eq(rangeStore.getItem('n3practice-range:v1'), null, 'reset removes the range key');
+eq(P.readRange(rangeStore), null, 'after reset the full list is active');
+eq(P.readRange(fakeStorage({ 'n3practice-range:v1': 'not json' })), null,
+  'unparseable stored range reads as full list');
+eq(P.readRange(fakeStorage({ 'n3practice-range:v1': '{"from":"x","to":10}' })), null,
+  'non-numeric stored range reads as full list');
+eq(P.readRange(fakeStorage({ 'n3practice-range:v1': '42' })), null,
+  'non-object stored range reads as full list');
+var storedOutOfBounds = P.readRange(fakeStorage({ 'n3practice-range:v1': '{"from":-20,"to":9999}' }));
+eq(storedOutOfBounds, { from: -20, to: 9999 }, 'stored out-of-bounds range is read raw');
+eq(P.clampRange(storedOutOfBounds, 243), { from: 1, to: 243 },
+  'stored out-of-bounds range clamps to the full list at load');
+var brokenRange = {
+  getItem: function () { throw new Error('blocked'); },
+  setItem: function () { throw new Error('blocked'); },
+  removeItem: function () { throw new Error('blocked'); }
+};
+eq(P.readRange(brokenRange), null, 'throwing storage reads as no range');
+P.writeRange(brokenRange, { from: 1, to: 2 }); /* must not throw */
+P.writeRange(brokenRange, null);              /* must not throw */
+check(true, 'throwing storage does not break writeRange');
+eq(P.rangeCoversAll({ from: 1, to: 243 }, 243), true, 'rangeCoversAll: full range');
+eq(P.rangeCoversAll({ from: 1, to: 242 }, 243), false, 'rangeCoversAll: partial range');
+eq(P.rangeCoversAll(null, 243), true, 'rangeCoversAll: no range');
 
 /* ---------- shuffle mode vs the pre-change git baseline ---------- */
 /* While the working tree has uncommitted changes, `git show HEAD:...` is the

@@ -14,6 +14,10 @@
   var DATA_URL = 'data/vocab_practice_2025_12.json';
   var COUNTS = [10, 20, 50, 243];
   var ORDER_KEY = 'n3practice-order:v1';
+  /* Word range for the session (1-based, inclusive, data-file order).
+     Stored as {"from":51,"to":100}; absent / unreadable / invalid means the
+     full 243-word list. */
+  var RANGE_KEY = 'n3practice-range:v1';
 
   /* Question order is a per-browser preference, like n3mode:v1 / n3theme:v1.
      Anything other than the literal "ordered" means the default shuffle. */
@@ -30,6 +34,71 @@
     try {
       if (storage) storage.setItem(ORDER_KEY, order === 'ordered' ? 'ordered' : 'shuffle');
     } catch (e) { /* private mode / storage disabled: keep the in-memory choice */ }
+  }
+
+  /* ---------- word range ---------- */
+
+  /* Returns the stored {from, to} (unvalidated against the word count, which
+     is unknown here) or null. Anything unreadable or non-numeric means "no
+     range": the caller falls back to the full list. */
+  function readRange(storage) {
+    try {
+      var raw = storage && storage.getItem(RANGE_KEY);
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (!obj || typeof obj !== 'object') return null;
+      var from = Math.round(Number(obj.from));
+      var to = Math.round(Number(obj.to));
+      if (!isFinite(from) || !isFinite(to)) return null;
+      return { from: from, to: to };
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /* null clears the stored range (the full list is the default, so nothing
+     needs to be written for it). Storage failures leave the in-memory choice
+     alone. */
+  function writeRange(storage, range) {
+    try {
+      if (!storage) return;
+      if (!range) {
+        if (typeof storage.removeItem === 'function') storage.removeItem(RANGE_KEY);
+        return;
+      }
+      storage.setItem(RANGE_KEY, JSON.stringify({ from: range.from, to: range.to }));
+    } catch (e) { /* private mode / storage disabled */ }
+  }
+
+  /* Always produces a usable, non-empty range: numbers are rounded, clamped
+     to 1..maxLen, and a reversed pair is swapped. */
+  function clampRange(range, maxLen) {
+    var max = Math.max(1, Math.round(Number(maxLen)) || 1);
+    var from = Math.round(Number(range && range.from));
+    var to = Math.round(Number(range && range.to));
+    if (!isFinite(from)) from = 1;
+    if (!isFinite(to)) to = max;
+    from = Math.min(Math.max(from, 1), max);
+    to = Math.min(Math.max(to, 1), max);
+    if (from > to) {
+      var t = from;
+      from = to;
+      to = t;
+    }
+    return { from: from, to: to };
+  }
+
+  function rangeCoversAll(range, maxLen) {
+    return !range || (range.from <= 1 && range.to >= maxLen);
+  }
+
+  /* The words of the range in data-file order, or the whole list when there
+     is no (or a full-list) range. */
+  function rangeWords(allWords, range) {
+    var list = Array.isArray(allWords) ? allWords : [];
+    if (rangeCoversAll(range, list.length)) return list;
+    var r = clampRange(range, list.length);
+    return list.slice(r.from - 1, r.to);
   }
 
   function esc(s) {
@@ -255,12 +324,17 @@
     var dataUrl = options.dataUrl || DATA_URL;
 
     var orderStorage = null;
-    try { orderStorage = window.localStorage; } catch (e) { /* storage disabled */ }
+    var rangeStorage = null;
+    try {
+      orderStorage = window.localStorage;
+      rangeStorage = window.localStorage;
+    } catch (e) { /* storage disabled */ }
 
     var ui = {
       words: [],
       selectedCount: 10,
       order: readOrder(orderStorage),
+      range: null,          /* {from, to} while a word range is active */
       questions: [],
       index: 0,
       answered: 0,
@@ -275,6 +349,11 @@
 
     loadWords(dataUrl).then(function (words) {
       ui.words = words;
+      var saved = readRange(rangeStorage);
+      if (saved) {
+        saved = clampRange(saved, words.length);
+        ui.range = rangeCoversAll(saved, words.length) ? null : saved;
+      }
       startSession(10, null);
     }).catch(function (err) {
       container.innerHTML =
@@ -282,10 +361,49 @@
         'vocabulary data: ' + esc(err.message) + '</p></section>';
     });
 
+    /* The active word range as a word list, or null for the full list.
+       Distractors still come from every word: buildSession receives
+       ui.words as allWords and this range as the session pool. */
+    function rangePool() {
+      return ui.range ? rangeWords(ui.words, ui.range) : null;
+    }
+
+    function rangeSize() {
+      return ui.range ? (ui.range.to - ui.range.from + 1) : ui.words.length;
+    }
+
+    function setRange(range) {
+      ui.range = range;
+      writeRange(rangeStorage, range);
+      /* Restart so what is on screen matches the controls, as with order. */
+      startSession(ui.selectedCount, null);
+    }
+
+    /* Read the From / To fields (on change, so typing does not restart the
+       session mid-edit). Empty or non-numeric input means the full list;
+       otherwise the pair is clamped/swapped into a valid non-empty range. */
+    function applyRangeInputs() {
+      var fromEl = container.querySelector('[data-range-input="from"]');
+      var toEl = container.querySelector('[data-range-input="to"]');
+      if (!fromEl || !toEl) return;
+      var rawFrom = String(fromEl.value).trim();
+      var rawTo = String(toEl.value).trim();
+      var from = Number(rawFrom);
+      var to = Number(rawTo);
+      if (!rawFrom || !rawTo || !isFinite(from) || !isFinite(to)) {
+        setRange(null);
+        return;
+      }
+      var clamped = clampRange({ from: from, to: to }, ui.words.length);
+      setRange(rangeCoversAll(clamped, ui.words.length) ? null : clamped);
+    }
+
     function startSession(count, subset) {
       ui.subset = subset || null;
       if (!subset) ui.selectedCount = count;
-      ui.questions = buildSession(ui.words, count, Math.random, subset, ui.order);
+      /* A retry-missed subset ignores the range, as it always has. */
+      ui.questions = buildSession(ui.words, count, Math.random,
+        subset || rangePool(), ui.order);
       ui.index = 0;
       ui.answered = 0;
       ui.correct = 0;
@@ -335,7 +453,7 @@
     }
 
     function sizeLabel(c) {
-      return c === 243 ? 'All ' + ui.words.length : String(c);
+      return c === 243 ? 'All ' + rangeSize() : String(c);
     }
 
     function setupHTML() {
@@ -344,6 +462,30 @@
         return '<button type="button" class="btn small count-btn' + (active ? ' is-active' : '') +
           '" data-count="' + c + '" aria-pressed="' + active + '">' + esc(sizeLabel(c)) + '</button>';
       }).join('');
+
+      var allWords = ui.words.length;
+      var rangeFrom = ui.range ? ui.range.from : 1;
+      var rangeTo = ui.range ? ui.range.to : allWords;
+      var rangeHTML =
+        '<div class="ps-group ps-range" role="group" aria-label="Word range">' +
+          '<label class="ps-range-label" for="ps-range-from">From</label>' +
+          '<input type="number" id="ps-range-from" class="ps-range-input" data-range-input="from"' +
+            ' min="1" max="' + allWords + '" step="1" inputmode="numeric"' +
+            ' value="' + rangeFrom + '" aria-label="First word of the range">' +
+          '<label class="ps-range-label" for="ps-range-to">To</label>' +
+          '<input type="number" id="ps-range-to" class="ps-range-input" data-range-input="to"' +
+            ' min="1" max="' + allWords + '" step="1" inputmode="numeric"' +
+            ' value="' + rangeTo + '" aria-label="Last word of the range">' +
+          '<button type="button" class="btn small ghost range-reset-btn' +
+            (ui.range ? '' : ' is-active') + '" data-act="range-reset"' +
+            ' aria-pressed="' + (ui.range ? 'false' : 'true') + '"' +
+            ' title="Practice all ' + allWords + ' words">All words</button>' +
+        '</div>';
+
+      var rangeBadge = ui.range
+        ? '<span class="ps-range-badge">Words ' + ui.range.from + '–' + ui.range.to +
+          ' of ' + allWords + '</span>'
+        : '';
 
       var orderButtons = [
         { value: 'shuffle', label: 'Shuffle' },
@@ -366,8 +508,10 @@
           '<div class="ps-copy">' +
             '<span class="ps-title">Session setup</span>' +
             '<span class="ps-sub">' + subText + '</span>' +
+            rangeBadge +
           '</div>' +
           '<div class="ps-controls">' +
+            rangeHTML +
             '<div class="ps-group" role="group" aria-label="Number of questions">' + buttons + '</div>' +
             '<div class="ps-group ps-order" role="group" aria-label="Question order">' + orderButtons + '</div>' +
             '<button type="button" class="btn small ghost" data-act="reshuffle" title="' + restartTitle + '">' +
@@ -488,7 +632,7 @@
               ' missed out of ' + total + ' answered</p>' +
             '<div class="pe-actions">' +
               '<button type="button" class="btn btn-primary" data-act="restart">Practice again (' +
-                esc(ui.selectedCount === 243 ? 'All ' + ui.words.length : ui.selectedCount) + ')</button>' +
+                esc(ui.selectedCount === 243 ? 'All ' + rangeSize() : ui.selectedCount) + ')</button>' +
               (missed.length
                 ? '<button type="button" class="btn btn-secondary" data-act="retry-missed">Retry ' +
                   missed.length + ' missed word' + (missed.length === 1 ? '' : 's') + '</button>'
@@ -540,6 +684,8 @@
         nextQuestion();
       } else if (act === 'reshuffle' || act === 'restart') {
         startSession(ui.selectedCount, null);
+      } else if (act === 'range-reset') {
+        setRange(null);
       } else if (act === 'finish-early') {
         finishEarly();
       } else if (act === 'retry-missed' && ui.missed.length) {
@@ -559,14 +705,27 @@
         startSession(sub.length, sub);
       }
     });
+
+    /* Range inputs commit on change (blur / Enter), never per keystroke. */
+    container.addEventListener('change', function (e) {
+      var t = e.target;
+      if (!t || !t.closest || !t.closest('[data-range-input]')) return;
+      applyRangeInputs();
+    });
   }
 
   return {
     DATA_URL: DATA_URL,
     COUNTS: COUNTS,
     ORDER_KEY: ORDER_KEY,
+    RANGE_KEY: RANGE_KEY,
     readOrder: readOrder,
     writeOrder: writeOrder,
+    readRange: readRange,
+    writeRange: writeRange,
+    clampRange: clampRange,
+    rangeCoversAll: rangeCoversAll,
+    rangeWords: rangeWords,
     shuffle: shuffle,
     glossParts: glossParts,
     canAskReading: canAskReading,
