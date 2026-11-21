@@ -133,6 +133,17 @@
     return Boolean(item && item.word && item.reading && item.word !== item.reading);
   }
 
+  /* Number of questions a word list produces: every word is asked for its
+     meaning, and a word whose reading differs from the word itself (i.e. one
+     written with kanji) is also asked for that reading. A session size counts
+     words, so its question count is this value, not the word count. */
+  function questionCount(wordList) {
+    var list = Array.isArray(wordList) ? wordList : [];
+    var n = 0;
+    list.forEach(function (w) { n += canAskReading(w) ? 2 : 1; });
+    return n;
+  }
+
   function sharesGloss(aParts, bParts) {
     for (var i = 0; i < aParts.length; i++) {
       if (bParts.indexOf(aParts[i]) !== -1) return true;
@@ -234,15 +245,22 @@
   }
 
   /**
-   * Build a session of `count` questions (10 / 20 / 50 / 243) with mixed
-   * word -> meaning and word -> reading questions.
+   * Build a session from `count` WORDS (10 / 20 / 50 / 243).
+   *
+   * Every chosen word is tested twice: word -> meaning and word -> reading,
+   * so a session of 10 kanji words is 20 questions. Kana-only words (whose
+   * reading is the word itself) are tested once, for meaning only — a
+   * reading question for them would be meaningless. Option generation is the
+   * unchanged buildQuestion().
    *
    * `order` (optional, default "shuffle"):
-   *  - "shuffle": a random sample of the pool, as always.
    *  - "ordered": the first `count` words of the pool in its existing order
-   *    (for subset sessions that is the order the subset was given in), so a
-   *    session is deterministic and runs through the list. Question-type
-   *    balancing and option shuffling are unchanged.
+   *    (for subset sessions that is the order the subset was given in); each
+   *    word's meaning question is immediately followed by its reading one.
+   *  - "shuffle": a random sample of the pool, as always; the resulting
+   *    question list is then shuffled as a whole, so a word's two questions
+   *    are not necessarily adjacent. Both steps use the supplied rng, so a
+   *    seeded run is deterministic.
    */
   function buildSession(allWords, count, rng, subsetWords, order) {
     rng = rng || Math.random;
@@ -251,28 +269,24 @@
       ? sourcePool.length
       : Math.max(1, Math.min(Number(count), sourcePool.length));
 
-    var chosen = order === 'ordered'
+    var ordered = order === 'ordered';
+    var chosen = ordered
       ? sourcePool.slice(0, n)
       : shuffle(sourcePool, rng).slice(0, n);
 
-    // Balance the two question types across kanji-capable words.
-    var kanjiIndices = [];
-    chosen.forEach(function (w, idx) {
-      if (canAskReading(w)) kanjiIndices.push(idx);
-    });
-    var shuffledKanjiIdx = shuffle(kanjiIndices, rng);
-    var typeMap = Object.create(null);
-    shuffledKanjiIdx.forEach(function (qIdx, i) {
-      typeMap[qIdx] = (i % 2 === 0) ? 'meaning' : 'reading';
+    var questions = [];
+    chosen.forEach(function (w) {
+      questions.push(buildQuestion(w, allWords, 'meaning', rng));
+      if (canAskReading(w)) questions.push(buildQuestion(w, allWords, 'reading', rng));
     });
 
-    return chosen.map(function (w, idx) {
-      var qType = canAskReading(w) ? (typeMap[idx] || 'meaning') : 'meaning';
-      var q = buildQuestion(w, allWords, qType, rng);
+    if (!ordered) questions = shuffle(questions, rng);
+
+    questions.forEach(function (q, idx) {
       q.n = idx + 1;
-      q.total = n;
-      return q;
+      q.total = questions.length;
     });
+    return questions;
   }
 
   /**
@@ -336,6 +350,7 @@
       order: readOrder(orderStorage),
       range: null,          /* {from, to} while a word range is active */
       questions: [],
+      sessionWords: 0,      /* words in the current session (size counts words) */
       index: 0,
       answered: 0,
       correct: 0,
@@ -404,6 +419,11 @@
       /* A retry-missed subset ignores the range, as it always has. */
       ui.questions = buildSession(ui.words, count, Math.random,
         subset || rangePool(), ui.order);
+      /* Each word contributes exactly one meaning question, so counting those
+         gives the session's word count however many readings it added. */
+      ui.sessionWords = ui.questions.filter(function (q) {
+        return q.type === 'meaning';
+      }).length;
       ui.index = 0;
       ui.answered = 0;
       ui.correct = 0;
@@ -496,10 +516,21 @@
           '" data-order="' + o.value + '" aria-pressed="' + active + '">' + o.label + '</button>';
       }).join('');
 
+      /* Honest counts: the size buttons count words, so the subtitle spells
+         out how many questions that produced (kana-only words add no reading
+         question). Derived from the live session, never a hardcoded 2x. */
       var ordered = ui.order === 'ordered';
-      var subText = ordered
-        ? 'Questions (in list order, mixed meaning &amp; reading · no timer)'
-        : 'Questions (shuffled, mixed meaning &amp; reading · no timer)';
+      var wordsN = ui.sessionWords;
+      var questionsN = ui.questions.length;
+      var perWord = questionsN === wordsN * 2
+        ? 'meaning + reading for each word'
+        : (questionsN === wordsN
+          ? 'meaning for each word'
+          : 'meaning for every word, reading where the word has kana');
+      var subText = wordsN + (wordsN === 1 ? ' word' : ' words') + ' · ' +
+        questionsN + (questionsN === 1 ? ' question' : ' questions') +
+        ' (' + (ordered ? 'in list order' : 'shuffled') + ' · ' + perWord +
+        ' · no timer)';
       var restartLabel = ordered ? 'Restart ↻' : 'Shuffle ↻';
       var restartTitle = ordered ? 'Restart this ordered session' : 'Start a newly shuffled session';
 
@@ -572,7 +603,8 @@
         '<article class="practice-card' + (res ? (' graded ' + (res.correct ? 'ok' : 'bad')) : '') + '">' +
           '<header class="practice-status">' +
             '<div class="ps-left">' +
-              '<span class="q-no">' + q.n + ' / ' + q.total + '</span>' +
+              '<span class="q-no" aria-label="Question ' + q.n + ' of ' + q.total + '">' +
+                q.n + ' / ' + q.total + '</span>' +
               '<span class="practice-type-badge">' + esc(q.typeLabel) +
                 ' · <span class="jp">' + esc(q.typeJp) + '</span></span>' +
             '</div>' +
@@ -632,7 +664,8 @@
               ' missed out of ' + total + ' answered</p>' +
             '<div class="pe-actions">' +
               '<button type="button" class="btn btn-primary" data-act="restart">Practice again (' +
-                esc(ui.selectedCount === 243 ? 'All ' + rangeSize() : ui.selectedCount) + ')</button>' +
+                esc(ui.selectedCount === 243 ? 'All ' + rangeSize() + ' words'
+                  : ui.selectedCount + (ui.selectedCount === 1 ? ' word' : ' words')) + ')</button>' +
               (missed.length
                 ? '<button type="button" class="btn btn-secondary" data-act="retry-missed">Retry ' +
                   missed.length + ' missed word' + (missed.length === 1 ? '' : 's') + '</button>'
@@ -729,6 +762,7 @@
     shuffle: shuffle,
     glossParts: glossParts,
     canAskReading: canAskReading,
+    questionCount: questionCount,
     buildQuestion: buildQuestion,
     buildSession: buildSession,
     gradeAnswer: gradeAnswer,

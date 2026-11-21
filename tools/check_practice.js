@@ -3,7 +3,9 @@
  *
  * There is no browser here: the module's UMD wrapper lets us require the
  * exact file the site ships, and buildSession/buildQuestion are pure. Covers
- * the original question guarantees plus the Shuffle / In-order toggle.
+ * the question guarantees, the Shuffle / In-order toggle, the word range and
+ * the rule that every word is tested for meaning AND reading (once each),
+ * except kana-only words which get a meaning question only.
  *
  * Run: node tools/check_practice.js
  */
@@ -55,6 +57,32 @@ function mulberry32(seed) {
 
 var P = loadModule(PRACTICE);
 var words = JSON.parse(fs.readFileSync(DATA, 'utf8'));
+var byWord = Object.create(null);
+words.forEach(function (w) { byWord[w.word] = w; });
+
+/* Independent restatement of the rule under test: a session size counts
+   words; each word yields a meaning question and, when its reading differs
+   from the word itself, a reading question too. */
+function qCount(list) {
+  var n = 0;
+  list.forEach(function (w) { n += (w && w.word && w.reading && w.word !== w.reading) ? 2 : 1; });
+  return n;
+}
+
+/* The expected ordered question sequence for a word list: per word, meaning
+   then reading (reading only for kanji words). */
+function expectedQuestions(list) {
+  var out = [];
+  list.forEach(function (w) {
+    out.push({ word: w.word, type: 'meaning' });
+    if (w.word !== w.reading) out.push({ word: w.word, type: 'reading' });
+  });
+  return out;
+}
+
+function signatures(list) {
+  return list.map(function (x) { return x.word + '\u0000' + x.type; });
+}
 
 /* ---------- data sanity ---------- */
 check(Array.isArray(words) && words.length === 243, 'data has 243 words');
@@ -63,6 +91,10 @@ words.forEach(function (w) { uniqueWords[w.word] = true; });
 check(Object.keys(uniqueWords).length === words.length, 'data words are unique');
 check(words.every(function (w) { return w.word && w.reading && w.meaning; }),
   'every data word has word/reading/meaning');
+var kanjiWords = words.filter(function (w) { return w.word !== w.reading; });
+var kanaWords = words.filter(function (w) { return w.word === w.reading; });
+check(kanjiWords.length === 206 && kanaWords.length === 37,
+  'data has 206 kanji words and 37 kana-only words');
 
 /* ---------- shared question validator ---------- */
 function validateQuestion(q, item, allWords, label) {
@@ -99,47 +131,115 @@ function sharesGloss(a, b) {
   return false;
 }
 
-function validateSession(session, expectedWords, allWords, label) {
+/* Ordered sessions: exact question sequence, numbering and totals. */
+function validateOrderedSession(session, expectedWordList, allWords, label) {
+  var exp = expectedQuestions(expectedWordList);
   check(Array.isArray(session), label + ': session is an array');
   if (!Array.isArray(session)) return;
-  check(session.length === expectedWords.length, label + ': session length ' + expectedWords.length);
-  eq(session.map(function (q) { return q.word; }),
-    expectedWords.map(function (w) { return w.word; }), label + ': word sequence');
+  check(session.length === exp.length,
+    label + ': ' + exp.length + ' questions for ' + expectedWordList.length + ' words');
+  eq(signatures(session), signatures(exp), label + ': word/type sequence');
   session.forEach(function (q, i) {
     check(q.n === i + 1, label + ': question ' + (i + 1) + ' numbering');
-    check(q.total === expectedWords.length, label + ': question ' + (i + 1) + ' total');
-    validateQuestion(q, expectedWords[i], allWords, label + ' q' + (i + 1));
+    check(q.total === exp.length, label + ': question ' + (i + 1) + ' total');
+    validateQuestion(q, byWord[q.word], allWords, label + ' q' + (i + 1));
   });
 }
+
+/* Shuffled sessions: the same multiset of word/type questions as the ordered
+   generation over the same word set, but in a different (seeded) order. */
+function validateSessionCoverage(session, expectedWordList, allWords, label) {
+  var exp = expectedQuestions(expectedWordList);
+  check(Array.isArray(session), label + ': session is an array');
+  if (!Array.isArray(session)) return;
+  check(session.length === exp.length,
+    label + ': ' + exp.length + ' questions for ' + expectedWordList.length + ' words');
+  eq(signatures(session).sort(), signatures(exp).sort(),
+    label + ': question multiset (one meaning + one reading per kanji word)');
+  session.forEach(function (q, i) {
+    check(q.n === i + 1, label + ': question ' + (i + 1) + ' numbering');
+    check(q.total === exp.length, label + ': question ' + (i + 1) + ' total');
+    validateQuestion(q, byWord[q.word], allWords, label + ' q' + (i + 1));
+  });
+}
+
+/* ---------- the core rule: both types per word ---------- */
+var tenKanji = kanjiWords.slice(0, 10);
+var tenKanjiOrdered = P.buildSession(words, 'all', mulberry32(1), tenKanji, 'ordered');
+check(tenKanjiOrdered.length === 20,
+  '10 kanji words ordered = 20 questions (' + tenKanjiOrdered.length + ')');
+var tenCounts = tenKanjiOrdered.reduce(function (m, q) {
+  m[q.type] = (m[q.type] || 0) + 1;
+  return m;
+}, {});
+eq(tenCounts, { meaning: 10, reading: 10 }, '10 kanji words = 10 meaning + 10 reading questions');
+validateOrderedSession(tenKanjiOrdered, tenKanji, words, '10 kanji words ordered');
+
+/* Same word set through the shuffle path: same 20-question multiset. */
+var tenKanjiShuffled = P.buildSession(words, 'all', mulberry32(1), tenKanji, 'shuffle');
+check(tenKanjiShuffled.length === 20, '10 kanji words shuffled = 20 questions');
+validateSessionCoverage(tenKanjiShuffled, tenKanji, words, '10 kanji words shuffled');
+
+/* Each word appears exactly twice, once per type. */
+tenKanji.forEach(function (w) {
+  var qs = tenKanjiOrdered.filter(function (q) { return q.word === w.word; });
+  check(qs.length === 2, 'kanji word ' + w.word + ' asked exactly twice (' + qs.length + ')');
+  eq(qs.map(function (q) { return q.type; }), ['meaning', 'reading'],
+    'kanji word ' + w.word + ' asked meaning then reading in ordered mode');
+});
+
+/* ---------- kana-only words: meaning only ---------- */
+var mixedPool = kanaWords.slice(0, 3).concat(kanjiWords.slice(0, 4));
+var mixedOrdered = P.buildSession(words, 'all', mulberry32(2), mixedPool, 'ordered');
+eq(mixedOrdered.length, 11, '3 kana + 4 kanji words = 11 questions (3 + 2*4)');
+mixedPool.forEach(function (w) {
+  var n = mixedOrdered.filter(function (q) { return q.word === w.word; }).length;
+  eq(n, w.word === w.reading ? 1 : 2,
+    (w.word === w.reading ? 'kana-only' : 'kanji') + ' word ' + w.word + ' question count');
+});
+validateOrderedSession(mixedOrdered, mixedPool, words, 'kana + kanji ordered');
+validateSessionCoverage(
+  P.buildSession(words, 'all', mulberry32(2), mixedPool, 'shuffle'),
+  mixedPool, words, 'kana + kanji shuffled');
+
+/* An all-kana pool yields one meaning question per word. */
+var allKanaSession = P.buildSession(words, 'all', mulberry32(3), kanaWords.slice(0, 6), 'ordered');
+check(allKanaSession.length === 6 && allKanaSession.every(function (q) { return q.type === 'meaning'; }),
+  'an all-kana pool has exactly one meaning question per word');
+
+/* ---------- exported questionCount helper ---------- */
+[words, words.slice(0, 10), mixedPool, kanaWords, tenKanji].forEach(function (list, i) {
+  eq(P.questionCount(list), qCount(list), 'exported questionCount matches the rule (list ' + i + ')');
+});
+check(typeof P.questionCount === 'function', 'questionCount is exported');
 
 /* ---------- ordered mode ---------- */
 [10, 20, 50].forEach(function (count) {
   var session = P.buildSession(words, count, mulberry32(count), null, 'ordered');
-  validateSession(session, words.slice(0, count), words, 'ordered ' + count);
+  validateOrderedSession(session, words.slice(0, count), words, 'ordered ' + count);
 });
 
 ['all', 243, 999].forEach(function (count) {
   var session = P.buildSession(words, count, mulberry32(7), null, 'ordered');
-  validateSession(session, words, words, 'ordered ' + count);
+  validateOrderedSession(session, words, words, 'ordered ' + count);
 });
 
 /* Ordered sessions ignore the RNG for word choice: same words, same order on
-   every call, whatever the seed. (Question types/options may still vary.) */
+   every call, whatever the seed. */
 [1, 2, 3, 99, 123456].forEach(function (seed) {
   var session = P.buildSession(words, 10, mulberry32(seed), null, 'ordered');
-  eq(session.map(function (q) { return q.word; }),
-    words.slice(0, 10).map(function (w) { return w.word; }),
-    'ordered 10 seed ' + seed + ': file order');
+  eq(signatures(session), signatures(expectedQuestions(words.slice(0, 10))),
+    'ordered 10 seed ' + seed + ': file order, meaning-then-reading pairs');
 });
 
 /* A subset (retry-missed) in ordered mode is taken in the order given. */
 var subset = [words[7], words[2], words[42], words[0]];
 var subSession = P.buildSession(words, 'all', mulberry32(5), subset, 'ordered');
-validateSession(subSession, subset, words, 'ordered subset');
+validateOrderedSession(subSession, subset, words, 'ordered subset');
 var subSessionN = P.buildSession(words, 2, mulberry32(5), subset, 'ordered');
-validateSession(subSessionN, subset.slice(0, 2), words, 'ordered subset first 2');
+validateOrderedSession(subSessionN, subset.slice(0, 2), words, 'ordered subset first 2');
 
-/* ---------- shuffle mode (unchanged behaviour) ---------- */
+/* ---------- shuffle mode ---------- */
 var defaultSession = P.buildSession(words, 10, mulberry32(42));
 var explicitShuffle = P.buildSession(words, 10, mulberry32(42), null, 'shuffle');
 eq(defaultSession, explicitShuffle, 'default order is shuffle');
@@ -147,35 +247,64 @@ eq(defaultSession, explicitShuffle, 'default order is shuffle');
 [10, 20, 50, 'all'].forEach(function (count) {
   var n = count === 'all' ? words.length : count;
   var session = P.buildSession(words, count, mulberry32(11), null, 'shuffle');
-  check(session.length === n, 'shuffle ' + count + ': length');
-  var seen = {};
+  var seen = Object.create(null);
   session.forEach(function (q) { seen[q.word] = true; });
-  check(Object.keys(seen).length === n, 'shuffle ' + count + ': unique words');
-  session.forEach(function (q) {
-    var item = words.filter(function (w) { return w.word === q.word; })[0];
-    validateQuestion(q, item, words, 'shuffle ' + count + ' ' + q.word);
-  });
+  var distinct = Object.keys(seen);
+  check(distinct.length === n, 'shuffle ' + count + ': ' + n + ' distinct words');
+  check(session.length === qCount(distinct.map(function (w) { return byWord[w]; })),
+    'shuffle ' + count + ': length is one or two questions per sampled word');
+  validateSessionCoverage(session, distinct.map(function (w) { return byWord[w]; }),
+    words, 'shuffle ' + count);
 });
 
 /* A shuffled sample must not simply be the file-order prefix. */
 var shuffledPrefixes = 0;
 for (var s = 1; s <= 25; s++) {
   var sh = P.buildSession(words, 10, mulberry32(s), null, 'shuffle');
-  if (sh.map(function (q) { return q.word; }).join('|') ===
+  var shWords = sh.reduce(function (m, q) { m[q.word] = true; return m; }, {});
+  if (Object.keys(shWords).join('|') ===
       words.slice(0, 10).map(function (w) { return w.word; }).join('|')) {
     shuffledPrefixes++;
   }
-  check(new Set(sh.map(function (q) { return q.word; })).size === 10,
-    'shuffle seed ' + s + ': ten distinct words');
+  check(Object.keys(shWords).length === 10, 'shuffle seed ' + s + ': ten distinct words');
 }
 check(shuffledPrefixes === 0, 'shuffle sessions are not the file-order prefix');
+
+/* Shuffle is deterministic under a seeded rng and actually reorders the
+   question list as a whole. */
+var shuffleA = P.buildSession(words, 10, mulberry32(77), null, 'shuffle');
+var shuffleB = P.buildSession(words, 10, mulberry32(77), null, 'shuffle');
+eq(shuffleA, shuffleB, 'seeded shuffle is deterministic');
+var shuffleC = P.buildSession(words, 10, mulberry32(78), null, 'shuffle');
+check(JSON.stringify(shuffleA) !== JSON.stringify(shuffleC),
+  'different seeds shuffle differently');
+/* Pairs are not forced adjacent in shuffle mode (they may be, by chance, so
+   compare against the ordered sequence instead: over 30 seeds at least one
+   session must break adjacent pairing). */
+var adjacentPairs = 0;
+for (var ps = 1; ps <= 30; ps++) {
+  var psSession = P.buildSession(words, 'all', mulberry32(ps), tenKanji, 'shuffle');
+  var sig = signatures(psSession);
+  for (var pi = 0; pi + 1 < sig.length; pi += 2) {
+    if (sig[pi].indexOf('\u0000meaning') !== -1 &&
+        sig[pi + 1] === sig[pi].replace('\u0000meaning', '\u0000reading')) {
+      adjacentPairs++;
+    }
+  }
+}
+check(adjacentPairs < 30 * 10, 'shuffle mode reorders the whole question list (pairs not always adjacent)');
 
 /* ---------- options still shuffled in ordered mode ---------- */
 var firstQuestionIndexes = {};
 var firstOptionOrders = {};
 for (var seed = 1; seed <= 40; seed++) {
   var ordered = P.buildSession(words, 10, mulberry32(seed), null, 'ordered');
-  check(ordered[0].word === words[0].word, 'ordered seed ' + seed + ': first word is data[0]');
+  check(ordered[0].word === words[0].word && ordered[0].type === 'meaning',
+    'ordered seed ' + seed + ': q1 is data[0] meaning');
+  if (words[0].word !== words[0].reading) {
+    check(ordered[1].word === words[0].word && ordered[1].type === 'reading',
+      'ordered seed ' + seed + ': q2 is data[0] reading');
+  }
   firstQuestionIndexes[ordered[0].answerIndex] = true;
   firstOptionOrders[ordered[0].options.join('\u0001')] = true;
 }
@@ -185,14 +314,16 @@ check(Object.keys(firstOptionOrders).length >= 3,
   'ordered mode: option order varies between sessions');
 
 /* ---------- every word, both question types ---------- */
-var byWord = Object.create(null);
-words.forEach(function (w) { byWord[w.word] = w; });
 words.forEach(function (w, i) {
   validateQuestion(P.buildQuestion(w, words, 'meaning', mulberry32(i + 1)),
     w, words, 'direct meaning ' + w.word);
   if (P.canAskReading(w)) {
     validateQuestion(P.buildQuestion(w, words, 'reading', mulberry32(i + 1)),
       w, words, 'direct reading ' + w.word);
+  } else {
+    var fallback = P.buildQuestion(w, words, 'reading', mulberry32(i + 1));
+    check(fallback.type === 'meaning',
+      'kana-only word ' + w.word + ' cannot produce a reading question');
   }
 });
 
@@ -201,21 +332,23 @@ var sessionTypes = {};
 for (var mixSeed = 1; mixSeed <= 60; mixSeed++) {
   var mixCount = [10, 20, 50, 'all'][mixSeed % 4];
   var mixOrder = mixSeed % 2 ? 'ordered' : 'shuffle';
-  var mixN = mixCount === 'all' ? words.length : mixCount;
   var mixSession = P.buildSession(words, mixCount, mulberry32(mixSeed * 17), null, mixOrder);
   var mixLabel = mixOrder + ' mixed seed ' + mixSeed;
-  check(mixSession.length === mixN, mixLabel + ': length');
   var mixSeen = Object.create(null);
   mixSession.forEach(function (q) {
     mixSeen[q.word] = true;
     sessionTypes[q.type] = true;
-    validateQuestion(q, byWord[q.word], words, mixLabel + ' ' + q.word);
   });
-  check(Object.keys(mixSeen).length === mixN, mixLabel + ': unique words');
+  var mixDistinct = Object.keys(mixSeen);
+  var expectedN = mixCount === 'all' ? words.length : mixCount;
+  check(mixDistinct.length === expectedN, mixLabel + ': ' + expectedN + ' distinct words');
+  check(mixSession.length === qCount(mixDistinct.map(function (w) { return byWord[w]; })),
+    mixLabel + ': question count follows the per-word rule');
   if (mixOrder === 'ordered') {
-    eq(mixSession.map(function (q) { return q.word; }),
-      words.slice(0, mixN).map(function (w) { return w.word; }),
-      mixLabel + ': file order');
+    validateOrderedSession(mixSession, words.slice(0, expectedN), words, mixLabel);
+  } else {
+    validateSessionCoverage(mixSession, mixDistinct.map(function (w) { return byWord[w]; }),
+      words, mixLabel);
   }
 }
 check(sessionTypes.meaning === true && sessionTypes.reading === true,
@@ -281,28 +414,30 @@ eq(r51pool.map(function (w) { return w.word; }),
 eq(r51pool.length, 50, 'range 51-100 has 50 words');
 
 /* ---------- word range: sessions ---------- */
-var rOrdered10 = P.buildSession(words, 10, mulberry32(31), r51pool, 'ordered');
-validateSession(rOrdered10, words.slice(50, 60), words, 'range 51-100 ordered 10');
-var rOrderedAll = P.buildSession(words, 243, mulberry32(31), r51pool, 'ordered');
-validateSession(rOrderedAll, words.slice(50, 100), words, 'range 51-100 ordered All 243');
-var rOrderedAllSentinel = P.buildSession(words, 'all', mulberry32(31), r51pool, 'ordered');
-validateSession(rOrderedAllSentinel, words.slice(50, 100), words, 'range 51-100 ordered "all"');
+var rOrdered10Words = words.slice(50, 60);
+validateOrderedSession(P.buildSession(words, 10, mulberry32(31), r51pool, 'ordered'),
+  rOrdered10Words, words, 'range 51-100 ordered 10');
+validateOrderedSession(P.buildSession(words, 243, mulberry32(31), r51pool, 'ordered'),
+  r51pool, words, 'range 51-100 ordered All 243');
+validateOrderedSession(P.buildSession(words, 'all', mulberry32(31), r51pool, 'ordered'),
+  r51pool, words, 'range 51-100 ordered "all"');
 
 /* A size larger than the range is the whole range. */
 var tinyPool = P.rangeWords(words, { from: 1, to: 5 });
-validateSession(P.buildSession(words, 20, mulberry32(32), tinyPool, 'ordered'),
-  words.slice(0, 5), words, 'size 20 in a 5-word range ordered = whole range');
-validateSession(P.buildSession(words, 243, mulberry32(32), tinyPool, 'ordered'),
-  words.slice(0, 5), words, 'All in a 5-word range ordered = whole range');
+validateOrderedSession(P.buildSession(words, 20, mulberry32(32), tinyPool, 'ordered'),
+  tinyPool, words, 'size 20 in a 5-word range ordered = whole range');
+validateOrderedSession(P.buildSession(words, 243, mulberry32(32), tinyPool, 'ordered'),
+  tinyPool, words, 'All in a 5-word range ordered = whole range');
 var tinyShuffle = P.buildSession(words, 20, mulberry32(32), tinyPool, 'shuffle');
-check(tinyShuffle.length === 5, 'size 20 in a 5-word range shuffle = 5 questions');
-check(tinyShuffle.every(function (q) {
-  return words.slice(0, 5).some(function (w) { return w.word === q.word; });
-}), 'shuffle session larger than the range draws only from the range');
+eq(Object.keys(tinyShuffle.reduce(function (m, q) { m[q.word] = true; return m; }, {})).sort(),
+  tinyPool.map(function (w) { return w.word; }).sort(),
+  'size 20 in a 5-word range shuffle covers the whole range');
+check(tinyShuffle.length === qCount(tinyPool),
+  'size 20 in a 5-word range shuffle = one or two questions per range word');
 
 /* A range larger than the session keeps the session size. */
 var widePool = P.rangeWords(words, { from: 1, to: 100 });
-validateSession(P.buildSession(words, 10, mulberry32(33), widePool, 'ordered'),
+validateOrderedSession(P.buildSession(words, 10, mulberry32(33), widePool, 'ordered'),
   words.slice(0, 10), words, 'size 10 in a 100-word range ordered = first 10 of the range');
 
 /* Shuffle sessions draw only from the range, every seed. */
@@ -310,14 +445,16 @@ var rWords = Object.create(null);
 r51pool.forEach(function (w) { rWords[w.word] = true; });
 for (var rSeed = 1; rSeed <= 25; rSeed++) {
   var rShuffle = P.buildSession(words, 10, mulberry32(rSeed), r51pool, 'shuffle');
-  check(rShuffle.length === 10, 'range shuffle seed ' + rSeed + ': 10 questions');
-  check(new Set(rShuffle.map(function (q) { return q.word; })).size === 10,
+  var rDistinct = rShuffle.reduce(function (m, q) { m[q.word] = true; return m; }, {});
+  check(Object.keys(rDistinct).length === 10,
     'range shuffle seed ' + rSeed + ': 10 distinct words');
+  check(rShuffle.length === qCount(Object.keys(rDistinct).map(function (w) { return byWord[w]; })),
+    'range shuffle seed ' + rSeed + ': question count follows the per-word rule');
   check(rShuffle.every(function (q) { return rWords[q.word] === true; }),
     'range shuffle seed ' + rSeed + ': every word is inside 51-100');
 }
 var rShuffleAll = P.buildSession(words, 'all', mulberry32(34), r51pool, 'shuffle');
-check(rShuffleAll.length === 50, 'shuffle All in range 51-100 = 50 questions');
+validateSessionCoverage(rShuffleAll, r51pool, words, 'shuffle All in range 51-100');
 eq(Object.keys(rShuffleAll.reduce(function (m, q) { m[q.word] = true; return m; }, {})).sort(),
   Object.keys(rWords).sort(), 'shuffle All in a range covers exactly the range');
 
@@ -325,19 +462,23 @@ eq(Object.keys(rShuffleAll.reduce(function (m, q) { m[q.word] = true; return m; 
    list), so a small range never runs out of options. */
 var tinyQuestions = P.buildSession(words, 5, mulberry32(35), tinyPool, 'ordered');
 tinyQuestions.forEach(function (q) {
-  validateQuestion(q, words.filter(function (w) { return w.word === q.word; })[0],
-    words, 'tiny-range distractor check ' + q.word);
+  validateQuestion(q, byWord[q.word], words, 'tiny-range distractor check ' + q.word);
 });
 
-/* Retry-missed subset still wins over the range. */
+/* Retry-missed subset still wins over the range and regenerates BOTH types
+   for each missed word. */
 var rangeSubset = [words[120], words[10], words[200]];
-validateSession(P.buildSession(words, 'all', mulberry32(36), rangeSubset, 'ordered'),
-  rangeSubset, words, 'retry-missed subset ignores the range (ordered)');
+validateOrderedSession(P.buildSession(words, 'all', mulberry32(36), rangeSubset, 'ordered'),
+  rangeSubset, words, 'retry-missed subset ignores the range (ordered) and keeps both types');
 var rangeSubsetShuffle = P.buildSession(words, 'all', mulberry32(36), rangeSubset, 'shuffle');
-check(rangeSubsetShuffle.length === 3 &&
-  rangeSubsetShuffle.every(function (q) {
-    return rangeSubset.some(function (w) { return w.word === q.word; });
-  }), 'retry-missed subset ignores the range (shuffle)');
+validateSessionCoverage(rangeSubsetShuffle, rangeSubset, words,
+  'retry-missed subset ignores the range (shuffle)');
+
+/* Retry-missed with a kana-only word: that word gets no reading question. */
+var retryMix = [words[5], words[0], words[5]]; /* とても (kana), 西洋, とても */
+var retryMixSession = P.buildSession(words, 'all', mulberry32(37), retryMix, 'ordered');
+validateOrderedSession(retryMixSession, retryMix, words, 'retry-missed kana + kanji');
+eq(retryMixSession.length, 4, 'retry-missed kana + kanji = 4 questions (1 + 2 + 1)');
 
 /* ---------- word range: persistence ---------- */
 var rangeStore = fakeStorage();
@@ -372,11 +513,13 @@ eq(P.rangeCoversAll({ from: 1, to: 243 }, 243), true, 'rangeCoversAll: full rang
 eq(P.rangeCoversAll({ from: 1, to: 242 }, 243), false, 'rangeCoversAll: partial range');
 eq(P.rangeCoversAll(null, 243), true, 'rangeCoversAll: no range');
 
-/* ---------- shuffle mode vs the pre-change git baseline ---------- */
-/* While the working tree has uncommitted changes, `git show HEAD:...` is the
-   previous release. Comparing seeded sessions proves shuffle mode is
-   behaviourally identical to it. After the orchestrator commits, HEAD is this
-   file and the comparison is skipped. */
+/* ---------- word-pool selection vs the pre-change git baseline ---------- */
+/* The question list is now two-per-word, so a session no longer matches the
+   old one. The guard that still must hold is POOL SELECTION: for a given
+   seed the sampled word set is exactly the old sampler's. While the working
+   tree has uncommitted changes, `git show HEAD:...` is the previous release.
+   After the orchestrator commits, HEAD is this file and the comparison is
+   skipped. */
 (function compareBaseline() {
   var working = fs.readFileSync(PRACTICE, 'utf8');
   var baseline = null;
@@ -395,14 +538,29 @@ eq(P.rangeCoversAll(null, 243), true, 'rangeCoversAll: no range');
     var oldP = loadModule(tmp);
     for (var seed = 1; seed <= 20; seed++) {
       [10, 20, 50, 'all'].forEach(function (count) {
-        var oldSession = oldP.buildSession(words, count, mulberry32(seed));
+        var oldWords = oldP.buildSession(words, count, mulberry32(seed)).map(function (q) { return q.word; });
         var newSession = P.buildSession(words, count, mulberry32(seed), null, 'shuffle');
-        eq(newSession, oldSession,
-          'shuffle ' + count + ' seed ' + seed + ' matches pre-change baseline');
+        var newWords = newSession.reduce(function (m, q) { m[q.word] = true; return m; }, {});
+        eq(Object.keys(newWords).sort(), oldWords.slice().sort(),
+          'shuffle ' + count + ' seed ' + seed + ': sampled word set matches the old sampler');
       });
-      var oldSub = oldP.buildSession(words, 'all', mulberry32(seed), subset);
-      var newSub = P.buildSession(words, 'all', mulberry32(seed), subset, 'shuffle');
-      eq(newSub, oldSub, 'shuffle subset seed ' + seed + ' matches pre-change baseline');
+      var oldSub = oldP.buildSession(words, 'all', mulberry32(seed), subset)
+        .map(function (q) { return q.word; });
+      var newSub = P.buildSession(words, 'all', mulberry32(seed), subset, 'shuffle')
+        .reduce(function (m, q) { m[q.word] = true; return m; }, {});
+      eq(Object.keys(newSub).sort(), oldSub.slice().sort(),
+        'shuffle subset seed ' + seed + ': sampled word set matches the old sampler');
+      [10, 20, 50].forEach(function (count) {
+        var oldOrdered = oldP.buildSession(words, count, mulberry32(seed), null, 'ordered')
+          .map(function (q) { return q.word; });
+        var seenOrder = Object.create(null);
+        var newOrdered = [];
+        P.buildSession(words, count, mulberry32(seed), null, 'ordered').forEach(function (q) {
+          if (!seenOrder[q.word]) { seenOrder[q.word] = true; newOrdered.push(q.word); }
+        });
+        eq(newOrdered, oldOrdered,
+          'ordered ' + count + ' seed ' + seed + ': word sequence matches the old session');
+      });
     }
   } finally {
     try { fs.unlinkSync(tmp); } catch (e) {}
