@@ -13,6 +13,24 @@
 
   var DATA_URL = 'data/vocab_practice_2025_12.json';
   var COUNTS = [10, 20, 50, 243];
+  var ORDER_KEY = 'n3practice-order:v1';
+
+  /* Question order is a per-browser preference, like n3mode:v1 / n3theme:v1.
+     Anything other than the literal "ordered" means the default shuffle. */
+  function readOrder(storage) {
+    try {
+      var v = storage && storage.getItem(ORDER_KEY);
+      return v === 'ordered' ? 'ordered' : 'shuffle';
+    } catch (e) {
+      return 'shuffle';
+    }
+  }
+
+  function writeOrder(storage, order) {
+    try {
+      if (storage) storage.setItem(ORDER_KEY, order === 'ordered' ? 'ordered' : 'shuffle');
+    } catch (e) { /* private mode / storage disabled: keep the in-memory choice */ }
+  }
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -147,17 +165,26 @@
   }
 
   /**
-   * Build a shuffled session of `count` questions (10 / 20 / 50 / 243) with
-   * mixed word -> meaning and word -> reading questions.
+   * Build a session of `count` questions (10 / 20 / 50 / 243) with mixed
+   * word -> meaning and word -> reading questions.
+   *
+   * `order` (optional, default "shuffle"):
+   *  - "shuffle": a random sample of the pool, as always.
+   *  - "ordered": the first `count` words of the pool in its existing order
+   *    (for subset sessions that is the order the subset was given in), so a
+   *    session is deterministic and runs through the list. Question-type
+   *    balancing and option shuffling are unchanged.
    */
-  function buildSession(allWords, count, rng, subsetWords) {
+  function buildSession(allWords, count, rng, subsetWords, order) {
     rng = rng || Math.random;
     var sourcePool = Array.isArray(subsetWords) && subsetWords.length ? subsetWords : allWords;
     var n = (count === 'all' || !count || Number(count) >= sourcePool.length)
       ? sourcePool.length
       : Math.max(1, Math.min(Number(count), sourcePool.length));
 
-    var chosen = shuffle(sourcePool, rng).slice(0, n);
+    var chosen = order === 'ordered'
+      ? sourcePool.slice(0, n)
+      : shuffle(sourcePool, rng).slice(0, n);
 
     // Balance the two question types across kanji-capable words.
     var kanjiIndices = [];
@@ -227,9 +254,13 @@
     var backHref = options.backHref || './';
     var dataUrl = options.dataUrl || DATA_URL;
 
+    var orderStorage = null;
+    try { orderStorage = window.localStorage; } catch (e) { /* storage disabled */ }
+
     var ui = {
       words: [],
       selectedCount: 10,
+      order: readOrder(orderStorage),
       questions: [],
       index: 0,
       answered: 0,
@@ -254,7 +285,7 @@
     function startSession(count, subset) {
       ui.subset = subset || null;
       if (!subset) ui.selectedCount = count;
-      ui.questions = buildSession(ui.words, count, Math.random, subset);
+      ui.questions = buildSession(ui.words, count, Math.random, subset, ui.order);
       ui.index = 0;
       ui.answered = 0;
       ui.correct = 0;
@@ -314,15 +345,33 @@
           '" data-count="' + c + '" aria-pressed="' + active + '">' + esc(sizeLabel(c)) + '</button>';
       }).join('');
 
+      var orderButtons = [
+        { value: 'shuffle', label: 'Shuffle' },
+        { value: 'ordered', label: 'In order' }
+      ].map(function (o) {
+        var active = ui.order === o.value;
+        return '<button type="button" class="btn small order-btn' + (active ? ' is-active' : '') +
+          '" data-order="' + o.value + '" aria-pressed="' + active + '">' + o.label + '</button>';
+      }).join('');
+
+      var ordered = ui.order === 'ordered';
+      var subText = ordered
+        ? 'Questions (in list order, mixed meaning &amp; reading · no timer)'
+        : 'Questions (shuffled, mixed meaning &amp; reading · no timer)';
+      var restartLabel = ordered ? 'Restart ↻' : 'Shuffle ↻';
+      var restartTitle = ordered ? 'Restart this ordered session' : 'Start a newly shuffled session';
+
       return '' +
         '<section class="practice-setup" aria-label="Session setup">' +
           '<div class="ps-copy">' +
             '<span class="ps-title">Session setup</span>' +
-            '<span class="ps-sub">Questions (shuffled, mixed meaning &amp; reading · no timer)</span>' +
+            '<span class="ps-sub">' + subText + '</span>' +
           '</div>' +
-          '<div class="ps-controls" role="group" aria-label="Number of questions">' +
-            buttons +
-            '<button type="button" class="btn small ghost" data-act="reshuffle" title="Start a newly shuffled session">Shuffle ↻</button>' +
+          '<div class="ps-controls">' +
+            '<div class="ps-group" role="group" aria-label="Number of questions">' + buttons + '</div>' +
+            '<div class="ps-group ps-order" role="group" aria-label="Question order">' + orderButtons + '</div>' +
+            '<button type="button" class="btn small ghost" data-act="reshuffle" title="' + restartTitle + '">' +
+              restartLabel + '</button>' +
           '</div>' +
         '</section>';
     }
@@ -466,6 +515,18 @@
         return;
       }
 
+      var orderBtn = t.closest('[data-order]');
+      if (orderBtn) {
+        var nextOrder = orderBtn.getAttribute('data-order') === 'ordered' ? 'ordered' : 'shuffle';
+        if (nextOrder !== ui.order) {
+          ui.order = nextOrder;
+          writeOrder(orderStorage, nextOrder);
+          /* Restart so the questions on screen match the chosen order. */
+          startSession(ui.selectedCount, null);
+        }
+        return;
+      }
+
       var optBtn = t.closest('.practice-opt[data-opt]');
       if (optBtn && !optBtn.disabled) {
         selectOpt(parseInt(optBtn.getAttribute('data-opt'), 10));
@@ -482,9 +543,19 @@
       } else if (act === 'finish-early') {
         finishEarly();
       } else if (act === 'retry-missed' && ui.missed.length) {
-        var missedWords = Object.create(null);
-        ui.missed.forEach(function (m) { missedWords[m.word] = true; });
-        var sub = ui.words.filter(function (w) { return missedWords[w.word]; });
+        /* Keep the misses in the order they were made, not data-file order,
+           so an in-order retry follows the session's own miss sequence. */
+        var wordByWord = Object.create(null);
+        ui.words.forEach(function (w) { wordByWord[w.word] = w; });
+        var seen = Object.create(null);
+        var sub = [];
+        ui.missed.forEach(function (m) {
+          var w = wordByWord[m.word];
+          if (w && !seen[m.word]) {
+            seen[m.word] = true;
+            sub.push(w);
+          }
+        });
         startSession(sub.length, sub);
       }
     });
@@ -493,6 +564,9 @@
   return {
     DATA_URL: DATA_URL,
     COUNTS: COUNTS,
+    ORDER_KEY: ORDER_KEY,
+    readOrder: readOrder,
+    writeOrder: writeOrder,
     shuffle: shuffle,
     glossParts: glossParts,
     canAskReading: canAskReading,

@@ -24,7 +24,8 @@
 .ps-copy { display: flex; flex-direction: column; gap: 2px; }
 .ps-title { font-weight: 700; }
 .ps-sub { color: var(--color-muted); font-size: 0.82rem; }
-.ps-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+.ps-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ps-group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 
 .btn.small { padding: 7px 12px; font-size: 0.85rem; }
 .btn.ghost {
@@ -33,7 +34,8 @@
     border-color: var(--color-border);
 }
 .btn.ghost:hover { border-color: var(--color-primary); color: var(--color-primary); }
-.count-btn.is-active {
+.count-btn.is-active,
+.order-btn.is-active {
     background: var(--color-primary-filled, var(--color-primary));
     color: white;
     border-color: var(--color-primary-filled, var(--color-primary));
